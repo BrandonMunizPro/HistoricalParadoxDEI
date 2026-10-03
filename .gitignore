@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Test / coverage output
+coverage/
+.vitest/
+
+# Editor / OS noise
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# --- Research (research/rome2-dei) -------------------------------------------
+# Preserved interoperability research. The small, hand-written parts (HANDOFF.md
+# and the extraction/build scripts) ARE tracked; the generated and third-party
+# parts are NOT.
+
+# Generated extraction output (~36 MB, reproducible via tools/rpfm_extract.js)
+research/rome2-dei/extracted/
+
+# Generated catalogues (~96 MB, reproducible via tools/build_catalogs.js)
+research/rome2-dei/catalogs/
+
+# Pack inventories produced by the inventory scripts (~7.5 MB, reproducible)
+research/rome2-dei/tools/*_list.txt
+
+# Verbatim copy of upstream RPFM server source (GPL, re-obtainable from the
+# official release; kept on disk for reference only)
+research/rome2-dei/tools/server_mcp.rs
+
+# Never track third-party game assets or tool binaries, wherever they land.
+*.pack
+*.pfh
+*.pak
+*.exe
+*.dll
