@@ -9,6 +9,25 @@ Repository for a historical strategy game.
 - **Tactical battles are delegated** to an external battle engine. The first
   integration target is Total War: Rome II / Divide et Impera, reached only
   through an adapter boundary (`BattleAdapter`).
+- The **campaign owns its own geography**. An adapter translates campaign
+  geographic context into an engine battlefield representation; the domain never
+  contains engine map or battlefield identifiers.
+- The campaign owns the **command hierarchy** and decides who commands and who is
+  player-controlled, but it issues **no tactical orders** during a battle. Rome II
+  / DeI *is* the tactical battlefield.
+- **Cohesion, population migration and government are campaign state**, not
+  presentation concerns: organisational survival after battle, mobile
+  population cohorts, and mutable government with political transformation are
+  all simulated.
+- The MVP is **single-player only**. No networking or multiplayer architecture is
+  carried. Determinism is retained for debugging, testing, benchmarking,
+  save/load, bug reproduction and controlled replay.
+- **AI is external.** Jev is implemented in and exposed through **TheRev**, not
+  in this repository. The game owns canonical state, knowledge filtering and the
+  legal-action gate, and keeps only a game-side intelligence seam; provider
+  selection, routing and model management belong to TheRev (ADR-0012).
+- **Playable is not the same as simulated.** A limited set of factions receives
+  handcrafted playable packages; every faction in the world is simulated.
 - The domain layer never imports engine-specific code, identifiers, file formats
   or catalogue structures.
 - `research/rome2-dei/` contains the **completed interoperability research**:
@@ -28,8 +47,24 @@ src/
   infrastructure/      Catalogue access boundary (interface + shell)
   shared/              Small cross-cutting helpers
 tests/                 TypeScript tests (vitest)
+docs/                  Design documentation (see docs/README.md)
 research/rome2-dei/    Preserved Rome II / DeI interoperability research
 ```
+
+## Design documentation
+
+Design documentation lives under [`docs/`](docs/README.md): the domain
+relationship model, system dependency graph, simulation scheduling and
+performance analysis, event taxonomy, legal-action architecture, vertical slices
+and epics, an assumptions/open-decisions register, a glossary, the event
+catalogue, the presentation requirements, and the architecture decision records
+(ADRs).
+
+Every recommendation is marked **Approved**, **Proposal**, **Unresolved** or
+**Research-dependent**. Unresolved items are design questions, not implicit
+decisions, and nothing in `docs/` authorises building a gameplay system yet.
+
+See also [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Working on the code
 

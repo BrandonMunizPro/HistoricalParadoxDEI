@@ -1,0 +1,213 @@
+# Domain relationship model
+
+- Status: **Proposal**. Contains approved parts (marked) and unresolved parts.
+- Related: [ADR-0001](../adr/0001-campaign-military-representation-vs-dei-tactical.md), [ADR-0002](../adr/0002-authoritative-state-causal-ledger-snapshots.md), [ADR-0003](../adr/0003-strategic-command-periods-simtime-pause.md), [ADR-0015](../adr/0015-campaign-command-hierarchy-and-tactical-control.md), [ADR-0016](../adr/0016-military-cohesion-and-post-battle-survival.md), [ADR-0017](../adr/0017-population-cohorts-migration-and-displacement.md), [ADR-0018](../adr/0018-mutable-government-and-political-transformation.md), [ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md), [glossary](../domain/glossary.md)
+
+Names and shapes below are proposals for design discussion. Items marked
+**[B]** are dictated by blueprint text. Nothing here is implemented.
+
+## 1. Standing rules
+
+1. The TypeScript simulation owns strategic truth.
+2. Rome II / DeI temporarily owns tactical battle resolution only.
+3. Jev/TheRev may reason about character state but never authoritatively mutate
+   world state. They live outside this repository; only knowledge-filtered
+   context crosses the boundary and every proposal returns through the legal
+   action gate (ADR-0012, ADR-0006).
+4. Domain code contains no Rome II / DeI keys, catalog schema, XML, Lua or
+   filesystem paths.
+5. DeI supplies historically grounded tactical vocabulary and representation; the
+   simulation supplies persistent campaign reality (**Approved**, ADR-0001).
+6. The campaign world owns location; the adapter owns translation to a tactical
+   battlefield; Rome II / DeI owns the battlefield representation (**Approved**,
+   ADR-0020). Geography analogue of rule 4: no Rome II / DeI map or battlefield
+   key enters the domain.
+7. Playable scope is a content decision. All factions in the world are simulated;
+   only a limited candidate set receives handcrafted playable packages
+   (**Approved**, ADR-0014, ADR-0013).
+8. The campaign owns the command hierarchy but issues **no** tactical orders
+   during a battle (**Approved**, ADR-0015).
+
+## 2. Kernel primitives
+
+| Concept | Role | Status |
+| --- | --- | --- |
+| `SimTime` | Finer-grained simulation clock; independent of the command period | **Approved** that it exists and is distinct; resolution **Unresolved** |
+| `CommandPeriod` | Approx. half-year player decision cadence, two per year, configurable | **Approved** (ADR-0003) |
+| Entity identity | Stable reference for characters, houses, factions, settlements, locations, formations, institutions, events | Scheme **Deferred** (ADR-0009) |
+| Ledger event | Append-only causal record for significant occurrences | **Approved** (ADR-0002) |
+| Snapshot | Durability unit for authoritative state | **Approved**; cadence **Unresolved** |
+| Campaign location | Authoritative geographic position of the simulation world | **Approved** that the campaign owns location (ADR-0020); coordinate system and representation **Unresolved** |
+
+## 3. Entity groups
+
+| Group | Proposed entities | Notes |
+| --- | --- | --- |
+| Kernel | `SimTime`, `CommandPeriod`, ids, deterministic ordering, seeded RNG streams | Ordering/RNG constraints **Proposed** (ADR-0008) |
+| Ledger | `HistoricalEvent` **[B §11]**: `id`, `date`, `type`, `participants[]`, `factions[]`, `locations[]`, `magnitude`, `causes[]`, `consequences[]`, `witnesses[]` | Append-only; causal traversal required |
+| Geography | `Location` (region, settlement site, sea, pass, river), adjacency edges, terrain/water/road references; real-world coordinates and terrain properties where the map requires them | Feeds movement, supply, trade, intelligence, battle. Must retain a path to real geography, not adjacency alone (ADR-0020) |
+| Settlement | `Settlement` (civic entity: population aggregate, production, buildings, garrisons, local authority, institutions) | Blueprint lists settlements under both Geography and their own system; separation **Assumption** |
+| Polity | `Faction` (government type, institutions, laws, treasury, culture, religion, territory), `GovernmentType` (data), `GovernmentConfiguration` (mutable in-force configuration) | `GovernmentType` is a data definition; `Faction.government` is **mutable state** (ADR-0018) |
+| Characters | `Character` (identity, psychology facets, traits/skills, offices, claims, wealth, prestige, influence, legitimacy, popularity, elite support, army loyalty, knowledge references, memories) | Field list **[B §4.1]** |
+| Kinship | `House`/`Family`, `KinshipEdge`, `Marriage`, `LineageBranch` | Branches carry player continuity **[B §2]** |
+| Social | `Relationship` (affection, trust, fear, respect, rivalry, obligation + memory references) | Multi-axis simultaneously **[B §4.1]**; storage shape **Unresolved** |
+| Authority | `Office`, `Title`, `MilitaryCommand`, `Claim` (character or house, with legitimacy basis) | Offices/commands belong to the world **[B §7]** |
+| Institutions | `Institution` **[B §5.2]** | Blueprint-given shape |
+| Military | `Army`, `CommandElement` (supreme/main command, vanguard, main body, rearguard, supply train, independent detachments), `Formation` (campaign truth), `Detachment` | Formation content **Approved** (ADR-0001); command hierarchy **Approved** (ADR-0015); **shared primitives, not Roman-specific structures** |
+| Information | `Observation`, `Report`, `Rumor` (lineage, mutations), `KnowledgeEntry` (belief), `Testimony` (cohort-sourced) | Truth/report/rumor/belief separation **[B §8]**; cohort testimony channel **Approved direction** (ADR-0017) |
+| Reputation | `Reputation` (subject, audience, standing) | Audience-dependent **[B §8, §13]** |
+| Economy | `PopulationAggregate`, `PopulationCohort` (mobile aggregated population carrying culture, religion, displacement cause and collective history), `Production`, `PriceIndex`, settlement-scoped `Unrest` | Cohorts **Approved direction** (ADR-0017); cohort schema **Proposal/Unresolved**; settlement granularity **[B §1.2 unresolved]** |
+| Political transformation | `TransformationAttempt`, `RegimeRecognition` (recognising/refusing actor, target, basis) | **Approved direction** (ADR-0018); vocabulary and thresholds **Unresolved** |
+
+### 3.1 Formation: the campaign/tactical boundary entity
+
+Per ADR-0001 (**Approved**), a `Formation` holds persistent campaign state:
+
+- formation identity, faction, culture, home region where appropriate;
+- manpower, experience, morale, fatigue, **cohesion**;
+- equipment state;
+- army membership, detachment membership, **command element membership**;
+- commander and subordinate commander references, plus their relationship links;
+- strategic position (location);
+- supply and loyalty state, **command stability**;
+- history (ledger references).
+
+`Cohesion` (**Approved concept**, ADR-0016) is organisational integrity and is
+distinct from morale, which is willingness to continue fighting. Cohesion
+granularity (formation / command element / army) is **Unresolved**.
+
+It deliberately does **not** hold DeI unit keys, tactical composition taxonomy, or
+catalog field names. At battle preparation, the adapter resolves the formation
+to DeI factions and unit keys inside `src/tactical/adapters/rome2-dei`, and
+`BattleState` carries only campaign truth plus formation references.
+
+> BattleState (domain) → Rome2DeIAdapter → resolution using extracted catalogs
+> → Rome II / DeI → BattleResult → simulation applies consequences
+
+The same formation may resolve to different DeI representation at different
+points in its history as campaign state changes. Mapping fidelity is
+**Unresolved**.
+
+### 3.2 Command hierarchy: campaign authority, no tactical orders
+
+Per ADR-0015 (**Approved**):
+
+```
+Army ──▶ CommandElement (supreme/main command, vanguard, main body,
+        │  rearguard, supply train, independent detachment)
+        └──▶ Commander (character)
+              └──▶ Detachment ──▶ Formation
+```
+
+- These are **shared military primitives**, not universally Roman structures.
+  Cultures and polities organise themselves differently with the same primitives.
+- The campaign determines, **before** the battle: who commands each force, which
+  formations belong to which command element, which forces arrive and when, and
+  **which participating forces are player-controlled versus AI-controlled**.
+- The campaign issues **no tactical orders** during the battle. There is no
+  "attack left", "hold the centre" or "support here" protocol, and no invented AI
+  tactical intent is inferred after the battle.
+- The control mapping is authoritative campaign fact; the adapter maps it onto
+  engine-side player/AI control. Whether Rome II / DeI supports mixed player/AI
+  allied control is **Research-dependent**.
+
+### 3.3 Post-battle organisational survival
+
+Per ADR-0016 (**Approved concept**), a battle result is not reduced to
+`start − casualties = remaining`. Organisational outcomes are derived
+campaign-side: organised retreat, disorganised retreat, scattered formations,
+desertion, capture, surrender, regrouping around surviving commanders, partial
+fragmentation, or complete disintegration. Candidate inputs include commander
+survival, subcommander survival, reputation, recent results, veteran composition,
+fatigue, supply, loyalty, encirclement, terrain and escape routes, retreat
+orderliness, contingent tensions, disease and political crisis.
+
+**No formulas, thresholds, decay or recovery rates are decided.** Whether the
+player may order a campaign-side retreat or disengagement is **Unresolved**.
+
+## 4. Relationships
+
+```
+House ──kinship/marriage──▶ House
+Character ──kinship/marriage──▶ Character
+Character ──social (multi-facet)──▶ Character
+Character/House ──holds──▶ Office | Title | MilitaryCommand
+Character/House ──claims──▶ Claim            (legitimacy basis recorded)
+Character ──commands──▶ CommandElement ──subordinateTo──▶ CommandElement
+CommandElement ──belongsTo──▶ Army ──contains──▶ Detachment ──positionedAt──▶ Location
+Detachment ──memberOf──▶ Formation           (ADR-0001)
+Faction ──governedBy──▶ GovernmentType      (data, culture/religion scoped)
+Faction ──hasGovernment──▶ GovernmentConfiguration  (MUTABLE state, ADR-0018)
+Faction ──attemptedTransformation──▶ TransformationAttempt ──target──▶ GovernmentType
+Faction ──recognisedBy / refusedBy──▶ Faction  (RegimeRecognition, ADR-0018)
+Faction ──treaty/war/alliance/trade/marriage──▶ Faction   (+ authority provenance)
+Settlement ──at──▶ Location
+Settlement ──hosts──▶ Institution
+Settlement ──garrisonedBy──▶ Detachment
+Settlement ◀──hosts── PopulationCohort        (aggregated movers, ADR-0017)
+PopulationCohort ──movesTo──▶ Location | Settlement
+PopulationCohort ──carries──▶ Testimony ──feeds──▶ KnowledgeEntry
+Observation ──reportedAs──▶ Report ──mayDistortInto──▶ Rumor ──believedAs──▶ KnowledgeEntry
+Reputation ──audience──▶ Faction | Settlement | Culture
+Any system change ──emits──▶ Domain event ──causes──▶ Domain event
+  ├─ classification: simulation | information | canonicalHistorical | playerNotification
+  └─ canonicalHistorical entries append to the causal ledger (ADR-0002)
+BattleEncounter ──at──▶ Location ──▶ geographic context ──▶ TacticalLocationContext
+  ──▶ BattlefieldResolver (adapter) ──▶ Rome II / DeI battlefield ──▶ BattleResult
+  └─ BattleState ──▶ BattleAdapter ──▶ BattleResult ──appliedAs──▶ canonicalHistorical event
+```
+
+Consequence chain required by ADR-0017 (**Approved direction**), and explicitly
+**not** a faction relation modifier:
+
+```
+Displacement ──▶ cohort movement ──▶ observation / testimony / reports
+              ──▶ knowledge ──▶ interpretation ──▶ political or diplomatic action
+```
+
+## 5. Aggregate boundaries (discussion only; ADR-0007 deferred)
+
+| Candidate aggregate | Contains | Known risk |
+| --- | --- | --- |
+| World/time | clock, period boundary, registry | Must not become a world manager |
+| Faction political | government, offices, claims, legitimacy/pressure terms | Needed cohesion for crisis detection; now also owns mutable `Faction.government` (ADR-0018) |
+| Character | facets, offices, claims, relationships it owns, memory refs | Large fan-out at maturity scale |
+| House/kinship | family graph, marriages, branches | Cross-house queries |
+| Army | army, command elements, commanders, orders, supply, position, cohesion | Prevents two writers of campaign movement |
+| Formation | campaign military state incl. cohesion, command element membership | Large fan-out at maturity scale; per-command-period updates |
+| Geography | locations, adjacency, coordinates, terrain properties | Mostly read model; spatial partitioning for cohorts and armies (ADR-0004) |
+| Settlement | civic state, aggregates, production, garrisons | Cross-system writes must go via events |
+| Population cohort | cohort size, origin, current location, culture/religion, displacement cause | Long-distance movement and multi-generation residence (**Unresolved**) |
+| Institution | founder, leader, teachers, students, prestige | Long-lived entities spanning many periods |
+| Knowledge | derived projections per actor | Derived; never authoritative |
+
+## 6. Cross-system mutation rule
+
+Systems do not write each other's state directly. Cross-system consequences are
+emitted as domain events (ADR-0002, ADR-0005), which are what the ledger records
+when significant, what knowledge propagation reacts to, and what the player-facing
+"why" explanation traverses.
+
+## 7. Open modelling questions
+
+- Storage shape for multi-axis relationships (facets versus separate edges).
+- Whether `Settlement` and `Location` are separate aggregates (**Assumption**).
+- Whether army loyalty is per-army, per-commander, or both.
+- How `Claim` legitimacy differs from `Office` legitimacy.
+- Whether reputation is stored or purely derived from ledger history.
+- Whether observations are immutable facts or re-observable events.
+- How culture itself changes over time (§6 treats culture as context).
+- **Unresolved:** cohesion granularity and storage shape; whether cohesion is an
+  aggregate value or an emergent property of command structure and morale
+  (ADR-0016).
+- **Unresolved:** `PopulationCohort` schema, size granularity, merge/split
+  behaviour, movement resolution, assimilation over generations, and promotion
+  criteria to `Character` (ADR-0017).
+- **Unresolved:** whether `GovernmentConfiguration` is a distinct entity or a
+  field set on `Faction`, and how hybrid political arrangements are represented
+  (ADR-0018).
+- **Unresolved:** canonical coordinate system and geometry for campaign
+  locations, and which geographic dimensions participate in tactical matching
+  (ADR-0020).
+- **Unresolved:** control-mapping granularity for allied forces — per tactical
+  army, per command element, or per formation (ADR-0015).

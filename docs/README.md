@@ -1,0 +1,145 @@
+# Documentation index
+
+Design documentation for the historical strategy game. This tree is
+**design documentation only**: no gameplay system in it has been implemented, and
+nothing here authorises building one.
+
+## Design baseline
+
+| Document | Purpose |
+| --- | --- |
+| [BLUEPRINT.md](BLUEPRINT.md) | **Game Systems Blueprint V1** — the original design source and design baseline from which all later architecture work was developed |
+
+The blueprint records **original game design intent**: what owns truth, how the
+major systems interact, what causes what, where cultural variation enters the
+simulation, and which boundaries must stay stable under decomposition. It is
+preserved as the historical provenance for every `blueprint §…` citation and
+every **[B]** marker in this tree.
+
+**Authority runs forward, not backward.** The blueprint does **not** override any
+approved ADR. Where an approved ADR narrows, elaborates or supersedes blueprint
+material, **the ADR is authoritative for the current architecture**, and the
+blueprint remains the record of the original intent. An ADR never retroactively
+rewrites what the blueprint said.
+
+Hierarchy, highest to lowest:
+
+1. **Blueprint** — original game design intent.
+2. **Architecture documents** (`architecture/`, `domain/`, `events/`,
+   `presentation/`) — system decomposition.
+3. **ADRs** — subsequently approved architectural decisions; authoritative
+   wherever they narrow, elaborate or supersede blueprint material.
+4. **Open decision register**
+   ([architecture/assumptions-and-open-decisions.md](architecture/assumptions-and-open-decisions.md))
+   — deliberately unresolved decisions.
+
+## Status legend
+
+Every recommendation in these documents is marked with one of:
+
+| Mark | Meaning |
+| --- | --- |
+| **Approved** | Approved design direction. Implementable as stated. |
+| **Proposal** | Architectural proposal. Requires approval before implementation. |
+| **Unresolved** | Gameplay mechanic or detail not decided. Must **not** be silently converted into an implementation decision. |
+| **Research-dependent** | Needs research or design work outside code before it can be specified. |
+
+**Approving a boundary does not approve the mechanics inside it.** Where a record
+is marked Approved, anything listed under its own *Unresolved* section remains
+open.
+
+## Architecture
+
+| Document | Purpose |
+| --- | --- |
+| [architecture/domain-model.md](architecture/domain-model.md) | Entities, relationships, aggregate boundaries, formation ↔ DeI resolution boundary, command hierarchy, cohorts, mutable government, campaign geography |
+| [architecture/system-dependency-graph.md](architecture/system-dependency-graph.md) | Who owns what, who reads what, corrected interleaving model, three geographic layers, testable invariants |
+| [architecture/simulation-scheduling-and-performance.md](architecture/simulation-scheduling-and-performance.md) | Alternatives, tradeoffs and proposal for bounded simulation work |
+| [architecture/event-taxonomy.md](architecture/event-taxonomy.md) | One envelope, four classifications, significance path, worked causal chains |
+| [architecture/legal-action-architecture.md](architecture/legal-action-architecture.md) | Proposal → validation → applied action, single gate for player/AI/Jev |
+| [architecture/vertical-slices-and-epics.md](architecture/vertical-slices-and-epics.md) | Dependency-ordered epics and vertical slice acceptance criteria |
+| [architecture/assumptions-and-open-decisions.md](architecture/assumptions-and-open-decisions.md) | Assumption register, unresolved decision register, research-dependent question register |
+
+## Domain reference
+
+| Document | Purpose |
+| --- | --- |
+| [domain/glossary.md](domain/glossary.md) | Shared vocabulary for design and code |
+| [events/event-catalogue-v0.md](events/event-catalogue-v0.md) | Event kind catalogue v0 with tier, emitter and persistence intent |
+
+## Presentation (parallel track)
+
+| Document | Purpose |
+| --- | --- |
+| [presentation/presentation-requirements.md](presentation/presentation-requirements.md) | Seed for the future Visual Design Bible; shared UI grammar, culturally specific expression. Does not block simulation architecture |
+
+## Architecture decision records
+
+| ADR | Title | Status |
+| --- | --- | --- |
+| [ADR-0001](adr/0001-campaign-military-representation-vs-dei-tactical.md) | Campaign military representation vs DeI tactical representation | **Approved** |
+| [ADR-0002](adr/0002-authoritative-state-causal-ledger-snapshots.md) | Authoritative mutable state plus causal ledger and snapshots | **Approved** |
+| [ADR-0003](adr/0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | **Approved** |
+| [ADR-0004](adr/0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked) |
+| [ADR-0005](adr/0005-event-taxonomy-and-historical-significance.md) | Event taxonomy and historical significance | **Approved** (architecture; formulas unlocked) |
+| [ADR-0006](adr/0006-legal-action-and-proposal-validation.md) | Legal action and proposal validation architecture | **Approved** (architecture; vocabulary unlocked) |
+| [ADR-0007](adr/0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred (AD-2) |
+| [ADR-0008](adr/0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) |
+| [ADR-0009](adr/0009-identity-model.md) | Identity model | Deferred |
+| [ADR-0010](adr/0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred |
+| [ADR-0011](adr/0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only, mechanics **Unresolved** |
+| [ADR-0012](adr/0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred |
+| [ADR-0013](adr/0013-content-data-cultures-religions-governments.md) | Content data for cultures, religions and government types | **Research-dependent** |
+| [ADR-0014](adr/0014-single-player-mvp-scope.md) | Single-player MVP scope | **Approved** |
+| [ADR-0015](adr/0015-campaign-command-hierarchy-and-tactical-control.md) | Campaign command hierarchy and tactical control boundary | **Approved** (engine capabilities research-dependent) |
+| [ADR-0016](adr/0016-military-cohesion-and-post-battle-survival.md) | Military cohesion and post-battle organisational survival | **Approved** (mechanics **Unresolved**) |
+| [ADR-0017](adr/0017-population-cohorts-migration-and-displacement.md) | Population cohorts, migration and displacement | **Approved** (schema **Proposal/Unresolved**) |
+| [ADR-0018](adr/0018-mutable-government-and-political-transformation.md) | Mutable government and political transformation | **Approved** (mechanics **Unresolved**) |
+| [ADR-0019](adr/0019-presentation-boundary-and-visual-design-track.md) | Presentation boundary and visual design track | **Approved** (renderer **Unresolved**) |
+| [ADR-0020](adr/0020-campaign-geography-and-tactical-battlefield-projection.md) | Campaign geography authority and tactical battlefield projection | **Approved** (resolver algorithm **Unresolved**) |
+
+## Session handoff records (non-authoritative)
+
+| Record | Purpose |
+| --- | --- |
+| [HANDOFF-2026-10-04.md](HANDOFF-2026-10-04.md) | Point-in-time session resume note: git state, verification results, and what was in progress on 2026-10-04 |
+
+A handoff record is **not** an architecture source. It carries no authority over
+any ADR, no authority over any status mark, and no authority to authorise
+implementation. Where a handoff disagrees with an ADR or with a document in
+`architecture/`, `domain/`, `events/`, `presentation/` or `adr/`, **the ADR and
+those documents win.** Handoff records are kept only so a later session can
+reconstruct why a change was made; they are expected to become stale.
+
+## Scope in one paragraph
+
+The MVP is **single-player only** (ADR-0014). The campaign simulation owns
+strategic truth *and* its own geography; Rome II / DeI temporarily owns only the
+tactical battlefield, reached through an adapter that translates campaign context
+into a battlefield representation (ADR-0001, ADR-0020). The campaign owns the
+command hierarchy but issues no tactical orders during a battle (ADR-0015).
+Cohesion, migration and government are authoritative campaign state, not
+presentation concerns (ADR-0016, ADR-0017, ADR-0018). Playable is a content
+designation; every faction in the world is simulated (ADR-0013, ADR-0014).
+Presentation runs on a parallel track and must never block the simulation
+architecture (ADR-0019). **Jev is implemented in and exposed through TheRev, not
+in this repository.** The game owns canonical state, knowledge filtering and the
+legal-action gate, and maintains only a game-side intelligence seam; TheRev owns
+providers, model runtimes and routing (ADR-0012). Multiplayer is outside MVP
+architecture (ADR-0014).
+
+## Standing constraints
+
+1. The TypeScript simulation owns strategic truth.
+2. Rome II / Divide et Impera temporarily owns tactical battle resolution only.
+3. Jev / TheRev may reason about character state but can never authoritatively
+   mutate world state.
+4. Domain code stays engine agnostic (no Rome II keys, XML, Lua, filesystem
+   paths, catalog schema).
+5. Background factions must remain genuinely simulated; optimisation may reduce
+   fidelity, never causal coherence.
+6. Playable scope is a content decision; simulation scope is the whole world.
+7. Domain code contains no Rome II / DeI unit keys, catalog field names, map keys
+   or battlefield identifiers.
+8. The game never contacts an AI provider directly, never receives unfiltered
+   world state, and never lets an AI-proposed action bypass validation.
