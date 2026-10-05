@@ -19,6 +19,14 @@ Tiers are the mechanism from the event taxonomy ADR: one envelope, four
 classifications. `conditional` means the emitter decides based on context
 (significance); no formula is defined.
 
+Every row below carries the envelope's shared rules: `id` is a **canonical
+identity** (ADR-0009 — unique, immutable, permanently referenceable, never
+reused, survives end of life) and `simTime` is **absolute, monotonic,
+fixed-point elapsed simulation time** whose difference to another `simTime` is
+the elapsed duration between them (ADR-0003). `simTime` is never an event count,
+scheduler sequence, frame count or fidelity density, and never carries
+same-instant ordering. Fixed-point **scale** is **Unresolved** (N-29).
+
 ## Kernel and time
 
 | Kind | Tier | Emitter | Ledger | Causal role | Status |
@@ -27,6 +35,12 @@ classifications. `conditional` means the emitter decides based on context
 | `period.closed` | simulation | clock | conditional | boundary synchronisation | proposed |
 | `time.season_changed` | simulation | calendar | conditional | seasonal context | proposed |
 | `time.paused` / `time.resumed` | simulation | clock | no | interaction state | proposed |
+| `time.frozen` / `time.thawed` | simulation | clock | no | campaign clock held at a fixed SimTime for an **interactive** external tactical handoff; real-world battle duration consumes zero campaign SimTime (ADR-0003 A10) | proposed |
+
+> `time.season_changed` and any future date display derive from
+> `SimTime + ScenarioCalendar`, an **immutable authoritative scenario dataset**.
+> The scalar always increases forward; era and BCE display direction never
+> reverse it (ADR-0003).
 
 ## Geography and movement
 
@@ -139,6 +153,10 @@ classifications. `conditional` means the emitter decides based on context
 
 ## Tactical boundary
 
+The rows below are the **interactive** path: the player takes part, the campaign
+clock is **frozen** at the encounter SimTime, and the handoff goes through the
+adapter (ADR-0003 A10).
+
 | Kind | Tier | Emitter | Ledger | Causal role | Status |
 | --- | --- | --- | --- | --- | --- |
 | `battle.prepared` | simulation | tactical | no | handshake with adapter | proposed |
@@ -153,6 +171,31 @@ classifications. `conditional` means the emitter decides based on context
 > tactical battle was staged, not something that happened in the world
 > (ADR-0020). Whether they are recorded at all is **Unresolved**.
 
+### Background battle path
+
+A **background battle** is an AI-versus-AI engagement resolved internally by
+HistoricalGame. There is no adapter stage and **no clock freeze**; the world
+continues under normal scheduling (ADR-0003 A11). It still emits the
+outcome-shaped historical events below, so the two paths converge on one
+campaign-side `BattleResult` boundary (ADR-0003 A12).
+
+| Kind | Tier | Emitter | Ledger | Causal role | Status |
+| --- | --- | --- | --- | --- | --- |
+| `battle.background_encountered` | canonicalHistorical | military | conditional | AI-vs-AI contact that HistoricalGame resolves itself | proposed |
+| `battle.background_resolved` | canonicalHistorical | military | yes | outcome of a background engagement | proposed |
+
+> The background path's internal formulas are **Unresolved** (N-34), and the
+> complete shared `BattleResult` schema is **Unresolved** (N-35). Whether
+> `battle.prepared` / `battle.launched` / `formation.mapped_to_tactical` /
+> `battlefield.resolved` / `battle.failed` exist for the background path is
+> **Unresolved** — the clock behaviour and authority split are decided, only the
+> event shape is open.
+>
+> On either path, the result is applied **as the first due work at the encounter
+> SimTime** while the clock is still frozen, and remaining work at that instant
+> executes against post-battle state (ADR-0003 A10). Whether battle consequences
+> consume any campaign SimTime is **Unresolved** (N-33).
+
 ## Education and institutions
 
 | Kind | Tier | Emitter | Ledger | Causal role | Status |
@@ -165,7 +208,7 @@ classifications. `conditional` means the emitter decides based on context
 
 | Kind | Causal role | Status |
 | --- | --- | --- |
-| `notify.army_engaged` | army faces an encounter; may pause | proposed |
+| `notify.army_engaged` | a **player-relevant** army faces an encounter; may pause | proposed |
 | `notify.report_arrived` | information reached the player | proposed |
 | `notify.ruler_died` | significant character death | proposed |
 | `notify.crisis_active` | internal crisis became active | proposed |
@@ -177,15 +220,28 @@ classifications. `conditional` means the emitter decides based on context
 
 ## Notes
 
+- **No event counts time.** Every `simTime` in this catalogue is an absolute,
+  monotonic, fixed-point measure of **elapsed simulation time**; the difference
+  between two `simTime` values is the elapsed duration between them. A
+  catalogue row count, an event's index, or a scheduler sequence must never be
+  used as a duration (ADR-0003 A1).
+- Work due at the **same** `simTime` is ordered by a separate deterministic
+  mechanism, not by the timestamp (ADR-0003 A5).
+- A **background AI battle** never produces `time.frozen` and never requires the
+  player to be notified: combat elsewhere in the world is ordinary simulation
+  (ADR-0003 A11).
 - Casualty/injury/death detail events are intentionally folded into
   `character.died` and battle consequences at this stage; the catalogue will be
   refined when E8 is designed.
 - The full list is expected to grow with each epic; it is a living document.
 - No significance formulas are defined. Classification is contextual and
   emitter-led until a `HistoricalSignificancePolicy` is designed.
-- Kind names added by the delta (ADR-0015/0016/0017/0018/0020) are **proposals**.
-  Names, granularity and exact tiering may change when the owning epic is
-  designed; the *causal chain* they participate in is what is approved.
+- Kind names added by the delta (ADR-0003/0015/0016/0017/0018/0020) are
+  **proposals**. Names, granularity and exact tiering may change when the owning
+  epic is designed; the *causal chain* they participate in is what is approved.
 - `cohort` in this catalogue means an **aggregated population cohort** (ADR-0017),
   not a military cohort formation. If the word becomes ambiguous, the population
   sense should be renamed.
+- Referenced `id` values are canonical identities (ADR-0009). A ledger reference
+  to a dead character, ended institution or disintegrated formation stays
+  resolvable forever, and is never rewritten because its target ended.

@@ -24,8 +24,14 @@ the persistence and notification policy.
 
 ```
 DomainEventEnvelope
-  id            stable identity
-  simTime       when it occurred (finer than the command period)
+  id            stable canonical identity (ADR-0009) — unique, immutable,
+                permanently referenceable, never reused, survives end of life
+  simTime       when it occurred: absolute, monotonic, fixed-point ELAPSED
+                simulation time; finer than the command period; a difference
+                between two values is the elapsed duration between them.
+                It is NOT an event count, scheduler sequence, frame count or
+                fidelity density, and it does NOT carry same-instant ordering
+                (ADR-0003)
   kind          catalogue discriminator, e.g. "observation.made"
   tier          simulation | information | canonicalHistorical | playerNotification
   actors[]      characters / factions / formations involved
@@ -51,6 +57,20 @@ Rules:
 - `simulation` and `information` events still carry `causes[]`, so a causal chain
   can be assembled in-window and later promoted to the ledger when it turns out
   to matter.
+- **Event `id` values are canonical identities (ADR-0009).** They are globally
+  unique, immutable, never reused, and remain permanently referenceable. A
+  ledger entry therefore never becomes unresolvable because a referenced entity
+  or event later ceased to be active/extant, and **no ledger reference is
+  rewritten merely because its target ended.**
+- **`simTime` is elapsed simulation time, never an event counter.** Two events'
+  SimTime difference is the elapsed duration between them. It must not encode how
+  many events were processed in between, nor the scheduler's sequence, nor
+  presentation frames, nor fidelity density (ADR-0003 A1).
+- **Ordering among events sharing one `simTime` is not carried in `simTime`.**
+  It is resolved by a separate deterministic scheduler ordering mechanism
+  (ADR-0003 A5). If same-instant ordering needs to be explainable later, the
+  ledger must capture it some other way, but it must not be smuggled into the
+  timestamp.
 - `information` events keep provenance chains (observation → report → rumor →
   belief) which is what makes knowledge honest and traceable.
 - **Cohort testimony (ADR-0017) is a first-class `information` source.**
@@ -165,6 +185,18 @@ canonicalHistorical: battle.encountered
       (organisational outcome computed campaign-side, ADR-0016)
 ```
 
+**This chain is the INTERACTIVE path only.** Per ADR-0003 A10, the campaign clock
+is **frozen** at the encounter SimTime across it, in-flight work is held, and the
+result is applied while still frozen.
+
+A **background AI-versus-AI battle** has no adapter stage at all. It is resolved
+by HistoricalGame's internal campaign battle simulation and emits the same
+*outcome-shaped* canonical events (`battle.encountered`, `battle.resolved`,
+then the organisational-outcome events) **without freezing the clock**
+(ADR-0003 A11). Whether `battle.prepared` / `battle.launched` exist for the
+background path is an event-shape question left to the owning epic; the authority
+and clock behaviour are already decided.
+
 ## 6. Representative causal chains (verified after the 2026-10-04 approvals)
 
 These four chains were re-checked against the approved architecture. In each, the
@@ -270,3 +302,12 @@ and player explanations (ADR-0002).
   ([ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md)).
 - Whether testimony from a cohort is a distinct `information` kind or an
   `Observation` variant with a cohort origin ([ADR-0017](../adr/0017-population-cohorts-migration-and-displacement.md)).
+- Whether `battle.prepared` / `battle.launched` exist for the **background**
+  (non-interactive) battle path, where there is no adapter handoff. The clock
+  behaviour and authority split are already decided (ADR-0003 A11); only the
+  event shape is open.
+- The complete shared `BattleResult` schema across both battle paths
+  (ADR-0003 A12; register **N-35**).
+- Whether same-instant ordering needs to be recorded in the ledger for later
+  explanation. It must **not** be encoded in `simTime` (ADR-0003 A5); whether a
+  separate field exists is open.

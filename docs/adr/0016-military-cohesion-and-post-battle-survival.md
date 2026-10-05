@@ -44,6 +44,23 @@ state.
    deserters, refugees and camp followers, stories of defeat, family casualties,
    political blame, recruitment problems, revenge pressure, and changes in
    commander reputation.
+9. **Amendment (2026-10-05): organisational survival applies on both battle
+   paths.** A battle may be resolved by HistoricalGame internally (a background
+   AI-versus-AI battle, no clock freeze) or by Rome II / DeI through the
+   interactive tactical handoff (campaign clock frozen at the encounter SimTime).
+   In both cases the outcome crosses the same `BattleResult` boundary and
+   **organisational survival is computed campaign-side from campaign state**,
+   never requested from the engine
+   ([ADR-0003](0003-strategic-command-periods-simtime-pause.md) A11/A12,
+   [ADR-0001](0001-campaign-military-representation-vs-dei-tactical.md)
+   decision 12). A background army disintegrating is therefore a first-class
+   historical occurrence, not a rounding artefact.
+10. **Amendment (2026-10-05): dissolution does not destroy identity.** An army
+    that disintegrates, scatters or is disbanded ceases to be an **active/extant**
+    entity but keeps a permanently referenceable canonical ID, so later ledger
+    entries, memories, reputations and chronicles keep resolving to it
+    ([ADR-0009](0009-identity-model.md) §3). Whether fragmentation produces a
+    *new* canonical ID remains **Unresolved** in this record — see Unresolved.
 
 ### Candidate inputs to organisational outcomes (not a formula)
 
@@ -82,3 +99,11 @@ tensions; unpaid troops; disease; political crisis.
   organisational outcomes.
 - **Unresolved:** how fragmented remnants map onto new formations, armies or
   settlements over time.
+- **Unresolved (identity, bounded by ADR-0009):** the canonical identity
+  principle **is** decided — identity survives continuation, a genuinely new
+  historical entity receives a new canonical ID, and ended entities stay
+  permanently referenceable ([ADR-0009](0009-identity-model.md) §3–§4). What
+  remains open is exactly which fragmentation, split, merge or reorganization is
+  continuation, survival, termination or creation. This record deliberately does
+  **not** create a universal merge/split identity rule; that decision belongs to
+  this mechanics design.

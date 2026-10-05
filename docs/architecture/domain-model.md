@@ -27,23 +27,45 @@ Names and shapes below are proposals for design discussion. Items marked
    (**Approved**, ADR-0014, ADR-0013).
 8. The campaign owns the command hierarchy but issues **no** tactical orders
    during a battle (**Approved**, ADR-0015).
+9. Every entity carries a **canonical identity** governed by ADR-0009:
+   globally unique, immutable, permanently referenceable, never reused,
+   independent of display names, mutable domain state, Rome II / DeI keys and
+   external catalog identifiers, and carrying no authoritative chronology.
+   Ending active existence does **not** erase or invalidate it
+   (**Approved**, ADR-0009).
+10. The historical calendar is **authoritative scenario data**; calendar dates
+    derive mechanically from `SimTime + immutable ScenarioCalendar`. SimTime is
+    **absolute and monotonic**, and display direction (including BCE) never
+    reverses it (**Approved**, ADR-0003 A3).
+11. SimTime is **elapsed** simulation time. It is not an event count, a scheduler
+    sequence, a fidelity density, a frame count or a causal-operation count.
+    Simulation is **due-work driven**; there is no fixed-step whole-world sweep
+    (**Approved**, ADR-0003 A1/A4).
+12. Only an **interactive external tactical handoff** freezes the campaign clock.
+    Background AI-versus-AI battles are resolved by HistoricalGame internally and
+    do **not** freeze the world (**Approved**, ADR-0003 A11).
 
 ## 2. Kernel primitives
 
 | Concept | Role | Status |
 | --- | --- | --- |
-| `SimTime` | Finer-grained simulation clock; independent of the command period | **Approved** that it exists and is distinct; resolution **Unresolved** |
-| `CommandPeriod` | Approx. half-year player decision cadence, two per year, configurable | **Approved** (ADR-0003) |
-| Entity identity | Stable reference for characters, houses, factions, settlements, locations, formations, institutions, events | Scheme **Deferred** (ADR-0009) |
+| `SimTime` | **Absolute, monotonic, fixed-point measure of elapsed simulation time**; independent of the command period; difference between two values is the elapsed duration between them | **Approved** (ADR-0003 A1–A2). Fixed-point **scale** **Unresolved** (**N-29**) |
+| `ScenarioCalendar` | Authoritative immutable scenario calendar data (epoch, era, year numbering direction, month sequence, month boundaries/lengths, units-per-calendar-unit); calendar dates derive mechanically from `SimTime + ScenarioCalendar` | **Approved direction** (ADR-0003 A3). Numeric conversion constant **Unresolved** (**N-29**) |
+| `CommandPeriod` | Approx. half-year strategic command/planning horizon, two per year, configurable; **month is the normal player-facing progression cadence within it** | **Approved** (ADR-0003 decision 1, A6) |
+| Canonical entity identity | Stable, globally unique, immutable, permanently referenceable, never reused, storage-independent, serialization-safe, save/load-stable reference for characters, houses, factions, settlements, locations, formations, institutions, events; carries no mutable or chronological meaning | Contract **Approved** (ADR-0009). Representation **Approved**: **RFC 4122 UUIDv5** (ADR-0009 §5a) |
+| Extant state | Whether an entity is currently an active/extant world entity. **Separate from identity**: ending existence never erases, recycles or invalidates canonical identity | **Approved** (ADR-0009 §3) |
+| Source identity (`sourceKey`) | Stable authored source identifier/key used to identify an authored source entity and as an input to canonical identity derivation. **Not** the canonical runtime ID, and **separately representable** from it | **Approved** as a distinct concept (ADR-0009 §2, §5a). Field name/shape **Unresolved** and non-blocking (**N-28r**) |
+| Same-instant ordering | Deterministic scheduler mechanism deciding what resolves first among work due at one SimTime. **Separate from SimTime**; independent of wall clock, hash order, presentation and fidelity tier | Properties **Approved** (ADR-0003 A5). Final key shape **Unresolved** (**N-30**) |
 | Ledger event | Append-only causal record for significant occurrences | **Approved** (ADR-0002) |
 | Snapshot | Durability unit for authoritative state | **Approved**; cadence **Unresolved** |
 | Campaign location | Authoritative geographic position of the simulation world | **Approved** that the campaign owns location (ADR-0020); coordinate system and representation **Unresolved** |
+| `BattleResult` | The single campaign-side outcome seam through which **both** battle resolution paths deliver a campaign-authoritative outcome: HistoricalGame-internal background battles, and the Rome II / DeI adapter | Boundary **Approved** (ADR-0003 A12, ADR-0001 decision 12). Complete schema **Unresolved** (**N-35**) |
 
 ## 3. Entity groups
 
 | Group | Proposed entities | Notes |
 | --- | --- | --- |
-| Kernel | `SimTime`, `CommandPeriod`, ids, deterministic ordering, seeded RNG streams | Ordering/RNG constraints **Proposed** (ADR-0008) |
+| Kernel | `SimTime` (absolute monotonic fixed-point elapsed time), `ScenarioCalendar`, `CommandPeriod`, canonical ids (ADR-0009), separate same-instant ordering, seeded RNG streams | SimTime/calendar semantics **Approved** (ADR-0003); id contract **Approved**, encoding open (ADR-0009); ordering/RNG constraints **Proposed** (ADR-0008) |
 | Ledger | `HistoricalEvent` **[B §11]**: `id`, `date`, `type`, `participants[]`, `factions[]`, `locations[]`, `magnitude`, `causes[]`, `consequences[]`, `witnesses[]` | Append-only; causal traversal required |
 | Geography | `Location` (region, settlement site, sea, pass, river), adjacency edges, terrain/water/road references; real-world coordinates and terrain properties where the map requires them | Feeds movement, supply, trade, intelligence, battle. Must retain a path to real geography, not adjacency alone (ADR-0020) |
 | Settlement | `Settlement` (civic entity: population aggregate, production, buildings, garrisons, local authority, institutions) | Blueprint lists settlements under both Geography and their own system; separation **Assumption** |
@@ -88,6 +110,13 @@ The same formation may resolve to different DeI representation at different
 points in its history as campaign state changes. Mapping fidelity is
 **Unresolved**.
 
+Every formation, army, command element and detachment holds a **canonical ID**
+per ADR-0009 (**Approved**): immutable, permanently referenceable, never reused,
+and independent of DeI keys and external catalog identifiers. Authored content
+may carry a stable `sourceKey` used as an input to derivation, but that is **not**
+the canonical runtime ID. Engine keys are resolved from canonical identity at the
+boundary and never become, replace or persist as domain identity.
+
 ### 3.2 Command hierarchy: campaign authority, no tactical orders
 
 Per ADR-0015 (**Approved**):
@@ -125,6 +154,58 @@ orderliness, contingent tensions, disease and political crisis.
 **No formulas, thresholds, decay or recovery rates are decided.** Whether the
 player may order a campaign-side retreat or disengagement is **Unresolved**.
 
+Organisational survival is computed campaign-side on **both** battle paths. A
+battle is resolved either by HistoricalGame internally (a background
+AI-versus-AI battle, with the world clock continuing) or by Rome II / DeI through
+the interactive handoff (with the clock **frozen** at the encounter SimTime). In
+both cases the outcome crosses the same `BattleResult` boundary and consequences
+are applied by the campaign, never requested from the engine (ADR-0003 A11/A12,
+ADR-0016 decision 9).
+
+An army that disintegrates, scatters or is disbanded ceases to be an
+**active/extant** entity but **keeps a permanently referenceable canonical ID**,
+so later ledger entries, memories, reputations and chronicles keep resolving to
+it (ADR-0009 §3). Whether a given fragmentation produces a *new* canonical ID is
+a **domain rule still Unresolved** (ADR-0009 §4, ADR-0016; register **N-36**).
+
+### 3.4 Battle resolution paths: background vs interactive
+
+Per ADR-0003 (**Approved**), a battle has two resolution paths that differ in
+clock behaviour but converge on one outcome seam:
+
+```
+BACKGROUND NON-INTERACTIVE BATTLE (AI vs AI, no handoff)
+  encounter at SimTime T
+    → HistoricalGame internal battle simulation uses authoritative campaign
+      military state (composition, strength, quality, commanders, formation,
+      morale, cohesion, fatigue, supply, terrain, positioning, reinforcement
+      state, operational circumstances, bounded deterministic/random factors)
+    → BattleResult
+    → campaign applies organisational survival and consequences (ADR-0016)
+    → world clock continues under normal scheduling; no freeze
+
+INTERACTIVE PLAYER TACTICAL BATTLE (external handoff)
+  encounter at SimTime T
+    → HistoricalGame freezes the shared campaign clock at T
+    → BattleState (campaign truth only, no DeI keys)
+    → Rome2DeIAdapter → Rome II / DeI resolves tactically
+    → BattleResult
+    → HistoricalGame applies BattleResult as first due work at T
+    → remaining due work at T executes against post-battle state
+    → campaign resumes from T
+```
+
+- Real-world tactical duration consumes **zero** campaign SimTime (ADR-0003 A10).
+- Arrival and reinforcement timing are campaign-side commitments expressed as
+  offsets from `T`, counted down after resume (ADR-0015 amendment 2026-10-05).
+- The **complete `BattleResult` schema is not frozen** (**N-35**) and the two
+  paths are **not** required to have identical internal mechanics. Rome II's
+  representation is never canonical.
+- Internal background battle formulas are **not designed** here (**N-34**).
+- **The freeze is bound to the interactive handoff, not to the existence of a
+  battle.** Because every faction is simulated regardless (ADR-0014), freezing
+  per battle would make the campaign stutter indefinitely.
+
 ## 4. Relationships
 
 ```
@@ -155,6 +236,17 @@ Any system change ──emits──▶ Domain event ──causes──▶ Domain
 BattleEncounter ──at──▶ Location ──▶ geographic context ──▶ TacticalLocationContext
   ──▶ BattlefieldResolver (adapter) ──▶ Rome II / DeI battlefield ──▶ BattleResult
   └─ BattleState ──▶ BattleAdapter ──▶ BattleResult ──appliedAs──▶ canonicalHistorical event
+```
+
+Battle outcome convergence (**Approved**, ADR-0003 A12 / ADR-0001 decision 12):
+
+```
+Background AI-vs-AI battle ──▶ HistoricalGame internal resolution ──┐
+                                                                  ├──▶ BattleResult
+Interactive handoff: BattleState ──▶ BattleAdapter ──▶ result ────┘        │
+                                                                          ▼
+                                        HistoricalGame applies authoritative consequences
+                                        and remains owner of persistent world state
 ```
 
 Consequence chain required by ADR-0017 (**Approved direction**), and explicitly
@@ -211,3 +303,18 @@ when significant, what knowledge propagation reacts to, and what the player-faci
   (ADR-0020).
 - **Unresolved:** control-mapping granularity for allied forces — per tactical
   army, per command element, or per formation (ADR-0015).
+- **Unresolved:** concrete representation of the `sourceKey` field itself, and
+  whether a runtime UUID dependency is added or RFC 4122 v5 derivation is
+  implemented directly. The canonical ID **type and derivation specification are
+  Approved** (ADR-0009 §5a); these are non-blocking implementation and content
+  details.
+- **Unresolved:** whether a specific fragmentation, split, merge, succession or
+  reorganization is continuation, survival, termination or creation. The general
+  principle is **Approved** (ADR-0009 §4); no universal merge/split rule was
+  created deliberately.
+- **Unresolved:** SimTime fixed-point scale and the numeric value of the
+  scenario calendar's units-per-calendar-unit constant (ADR-0003 A3).
+- **Unresolved:** the final shape of the same-instant ordering key
+  (ADR-0003 A5). Retroactive execution is **Resolved: no** (ADR-0003 A13).
+- **Unresolved:** internal formulas for HistoricalGame's background battle
+  resolution, and the complete shared `BattleResult` schema (ADR-0003 A11/A12).

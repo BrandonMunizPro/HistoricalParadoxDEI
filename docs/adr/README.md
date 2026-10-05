@@ -19,13 +19,13 @@ using the legend below. ADR-0000 (record format) is implicit in this file.
 | --- | --- | --- | --- |
 | [0001](0001-campaign-military-representation-vs-dei-tactical.md) | Campaign military representation vs DeI tactical representation | Approved design direction | 2026-10-04 |
 | [0002](0002-authoritative-state-causal-ledger-snapshots.md) | Authoritative mutable state plus causal ledger and snapshots | Approved design direction | 2026-10-04 |
-| [0003](0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | Approved design direction | 2026-10-04 |
-| [0004](0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked) | 2026-10-04 |
+| [0003](0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | Approved design direction (**time model, calendar contract and battle authority approved 2026-10-05**; scale and ordering-key shape unresolved) | 2026-10-04 (amended 2026-10-05) |
+| [0004](0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked; scheduler model resolved 2026-10-05) | 2026-10-04 (amended 2026-10-05) |
 | [0005](0005-event-taxonomy-and-historical-significance.md) | Event taxonomy and historical significance | **Approved** (architecture; formulas unlocked) | 2026-10-04 |
 | [0006](0006-legal-action-and-proposal-validation.md) | Legal action and proposal validation architecture | **Approved** (architecture; vocabulary unlocked) | 2026-10-04 |
 | [0007](0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred | 2026-10-04 |
 | [0008](0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) | 2026-10-04 |
-| [0009](0009-identity-model.md) | Identity model | Deferred | 2026-10-04 |
+| [0009](0009-identity-model.md) | Canonical identity model | **Approved** (identity contract and representation — RFC 4122 UUIDv5 — approved 2026-10-05; field naming/library unresolved) | 2026-10-04 (amended 2026-10-05) |
 | [0010](0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred | 2026-10-04 |
 | [0011](0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only; mechanics unresolved | 2026-10-04 |
 | [0012](0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred | 2026-10-04 |
@@ -38,24 +38,59 @@ using the legend below. ADR-0000 (record format) is implicit in this file.
 | [0019](0019-presentation-boundary-and-visual-design-track.md) | Presentation boundary and visual design track | **Approved** (renderer unresolved) | 2026-10-04 |
 | [0020](0020-campaign-geography-and-tactical-battlefield-projection.md) | Campaign geography authority and tactical battlefield projection | **Approved** (resolver algorithm unresolved) | 2026-10-04 |
 
-## Approval status of the architecture (2026-10-04)
+## Approval status of the architecture (2026-10-04, amended 2026-10-05)
 
 Approved as architectural boundaries: **0001, 0002, 0003, 0004, 0005, 0006,
-0008, 0014, 0015, 0016, 0017, 0018, 0019, 0020**, plus the ownership boundary of
-**0012**.
+0008, 0009, 0014, 0015, 0016, 0017, 0018, 0019, 0020**, plus the ownership
+boundary of **0012**.
+
+The 2026-10-05 amendment closed two previously open decisions:
+
+- **N-1** time model and battle authority (ADR-0003): SimTime is an **absolute,
+  monotonic, fixed-point measure of elapsed simulation time**; the scheduler
+  advances **directly to the next due SimTime**; deterministic same-instant
+  ordering is a **separate** mechanism; calendar dates derive mechanically from
+  immutable **scenario calendar** data; roughly half a year is the strategic
+  command horizon and the month is the normal player-facing cadence; only an
+  **interactive** tactical handoff **freezes** the clock, and background AI
+  battles do not; the clock **never moves backward** and the simulation **never
+  executes retroactively**, while past-tense reference to an earlier `occurredAt`
+  and later information arrival remain legitimate; and the time **mechanism** is
+  content-agnostic, so no historical travel or report rate is embedded in it
+  (ADR-0003, ADR-0004).
+- **AD-6** canonical identity (ADR-0009): globally unique in representation,
+  immutable, never reused, permanently referenceable, stable across save/load,
+  deterministic given scenario identity + stable source identifiers +
+  version/configuration + seed, and **independent of end of life**. The
+  representation is **RFC 4122 UUIDv5**, deterministic by construction.
 
 Explicitly **not** approved, and deliberately still open:
 
 - **AD-2** aggregate boundaries and concurrent action resolution (ADR-0007);
 - **AD-3** exact determinism depth (ADR-0008 fixes seams, not depth);
-- **AD-6** identity scheme (ADR-0009);
+- the **numeric fixed-point scale** of SimTime and the scenario calendar's
+  units-per-calendar-unit constant (ADR-0003 fixes the semantics, not the scale);
+  these are the **time-and-clock epic's** remaining blockers, since it cannot
+  perform SimTime arithmetic or map a date without them;
+- the final **same-instant ordering-key shape** (ADR-0003 A5), likewise owned by
+  the time-and-clock epic;
+- the `sourceKey` field naming, the UUID library, and re-import reconciliation
+  (ADR-0009 §5a fixes the specification, not these);
+- concrete **historical travel and report rates** (research-dependent, and
+  deliberately not a mechanism blocker — ADR-0003 A14), along with **scheduler
+  frequencies, thresholds and performance budgets** (tuning, not a mechanism
+  blocker);
 - **AD-9** persistence technology (ADR-0010);
 - **AD-10** TheRev SDK surface, transport and schemas (ADR-0012);
-- all gameplay mechanics, formulas and thresholds.
+- the **internal formulas** for background AI battle resolution, the complete
+  shared `BattleResult` schema, and all gameplay mechanics, formulas and
+  thresholds.
 
 **Approval of a boundary does not approve the mechanics inside it.** No ADR was
 approved by implication, and no unresolved mechanic was resolved by these
-approvals.
+approvals. Where a document asserts a mechanism rather than a contract, the
+smallest appropriate follow-up record must settle it before the epic that needs
+it begins.
 
 ## Scope decisions established by this set
 
@@ -63,7 +98,13 @@ approvals.
   multiplayer architecture is carried by any record.
 - **Authority chain:** campaign world → tactical adapter → Rome II / DeI
   battlefield (ADR-0015, ADR-0020). The campaign never asks the engine what map
-  it is standing on, and never issues invented tactical orders.
+  it is standing on, and never issues invented tactical orders. The adapter path
+  is used **only** for an interactive player battle; a background AI-versus-AI
+  battle is resolved inside HistoricalGame without freezing the campaign clock,
+  and both paths cross one campaign-side outcome seam (ADR-0003 A10–A12).
+- **Time model:** one shared absolute monotonic fixed-point **elapsed** SimTime,
+  a due-work scheduler that jumps between due times, and a separate deterministic
+  same-instant ordering mechanism (ADR-0003, ADR-0004).
 - **Simulation depth:** cohesion, migration cohorts and mutable government are
   authoritative campaign state, not presentation concerns (ADR-0016, ADR-0017,
   ADR-0018).
@@ -77,7 +118,8 @@ approvals.
 ## Standing constraints (apply to every ADR)
 
 1. The TypeScript simulation owns strategic truth.
-2. Rome II / Divide et Impera temporarily owns tactical battle resolution only.
+2. Rome II / Divide et Impera temporarily owns tactical battle resolution only,
+   and only during an interactive player handoff.
 3. Jev / TheRev may reason about character state but never authoritatively mutate
    world state.
 4. Domain code is engine agnostic.
@@ -90,6 +132,17 @@ approvals.
 8. Jev, TheRev and any AI provider never own canonical state, never receive
    unfiltered world state, and never bypass the legal-action gate (ADR-0012,
    ADR-0006).
+9. Time is elapsed simulation time only. No event count, scheduler sequence,
+   fidelity density or presentation frame may stand in for a duration, and the
+   campaign clock freezes only for an interactive tactical handoff (ADR-0003).
+10. A canonical identity is never erased, reused or reassigned; ended entities
+    stay permanently referenceable (ADR-0009). The representation is RFC 4122
+    UUIDv5, deterministic by construction.
+11. The simulation never executes retroactively: the clock never moves backward,
+    no new due work may target a SimTime earlier than the current one, and
+    reactions begin at or after the moment they became possible (ADR-0003 A13).
+12. The time mechanism carries no historical tuning; durations are derived from
+    domain inputs (ADR-0003 A14).
 
 ## Process
 

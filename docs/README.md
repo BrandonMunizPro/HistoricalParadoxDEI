@@ -79,13 +79,13 @@ open.
 | --- | --- | --- |
 | [ADR-0001](adr/0001-campaign-military-representation-vs-dei-tactical.md) | Campaign military representation vs DeI tactical representation | **Approved** |
 | [ADR-0002](adr/0002-authoritative-state-causal-ledger-snapshots.md) | Authoritative mutable state plus causal ledger and snapshots | **Approved** |
-| [ADR-0003](adr/0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | **Approved** |
-| [ADR-0004](adr/0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked) |
+| [ADR-0003](adr/0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | **Approved** (time model and battle authority **Approved** 2026-10-05; scale/ordering-key details **Unresolved**) |
+| [ADR-0004](adr/0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked; scheduler model resolved 2026-10-05) |
 | [ADR-0005](adr/0005-event-taxonomy-and-historical-significance.md) | Event taxonomy and historical significance | **Approved** (architecture; formulas unlocked) |
 | [ADR-0006](adr/0006-legal-action-and-proposal-validation.md) | Legal action and proposal validation architecture | **Approved** (architecture; vocabulary unlocked) |
 | [ADR-0007](adr/0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred (AD-2) |
 | [ADR-0008](adr/0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) |
-| [ADR-0009](adr/0009-identity-model.md) | Identity model | Deferred |
+| [ADR-0009](adr/0009-identity-model.md) | Canonical identity model | **Approved** (identity contract **Approved** 2026-10-05; representation **Approved** — RFC 4122 UUIDv5; field naming/library **Unresolved**) |
 | [ADR-0010](adr/0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred |
 | [ADR-0011](adr/0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only, mechanics **Unresolved** |
 | [ADR-0012](adr/0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred |
@@ -128,10 +128,44 @@ legal-action gate, and maintains only a game-side intelligence seam; TheRev owns
 providers, model runtimes and routing (ADR-0012). Multiplayer is outside MVP
 architecture (ADR-0014).
 
+## Time, identity and battles in one paragraph
+
+**Time** is a single shared **absolute, monotonic, fixed-point measure of elapsed
+simulation time**. The difference between two SimTimes is the elapsed duration
+between them; SimTime is never an event count, scheduler sequence or frame count.
+The scheduler advances **directly to the next due SimTime** — no whole-world
+sweep, no renderer-driven simulation. Deterministic ordering of work due at the
+same SimTime is a **separate** mechanism. Calendar dates derive mechanically from
+SimTime plus immutable **scenario calendar** data, so era and BCE display
+direction never reverse the clock. Roughly half a year is the strategic command
+horizon and the **month** is the normal player-facing cadence, while internal
+precision stays much finer and rendering interpolation is never authoritative
+(ADR-0003, ADR-0004). The clock **never moves backward**: no new due work may be
+scheduled for a SimTime earlier than the current one, so the simulation never
+executes retroactively. An earlier `occurredAt` on a historical fact, and
+information that arrives later, are legitimate — references to the past, not
+rewinds — so reactions always begin at or after the moment they became possible.
+The time **mechanism** is content-agnostic: no historical travel or report rate is
+embedded in it, because actual durations are derived from distance, route,
+terrain, movement method, unit state, courier method and weather (ADR-0003 A13,
+A14). **Identity** is canonical, globally unique in representation, immutable,
+never reused and permanently referenceable: ending an entity's active existence
+never erases or rewrites references to it. The representation is **RFC 4122
+UUIDv5**, deterministic by construction, derived from a fixed application
+namespace plus a stable name input; source identity stays separate and
+separately representable, and engine/catalog keys stay adapter-side
+(ADR-0009). **Battles** have two paths: an
+**interactive** player battle **freezes** the campaign clock at the encounter
+SimTime while the handoff happens, and a **background** AI-versus-AI battle is
+resolved inside HistoricalGame **without freezing the world**. Both cross one
+campaign-side outcome seam, and the campaign applies every consequence
+(ADR-0003, ADR-0001).
+
 ## Standing constraints
 
 1. The TypeScript simulation owns strategic truth.
-2. Rome II / Divide et Impera temporarily owns tactical battle resolution only.
+2. Rome II / Divide et Impera temporarily owns tactical battle resolution only,
+   and only for the interactive handoff.
 3. Jev / TheRev may reason about character state but can never authoritatively
    mutate world state.
 4. Domain code stays engine agnostic (no Rome II keys, XML, Lua, filesystem
@@ -143,3 +177,19 @@ architecture (ADR-0014).
    or battlefield identifiers.
 8. The game never contacts an AI provider directly, never receives unfiltered
    world state, and never lets an AI-proposed action bypass validation.
+9. Time is elapsed simulation time only. No event counter, scheduler sequence,
+   fidelity density or presentation frame may stand in for a duration.
+10. No system owns time; calendar dates derive from SimTime plus authoritative
+    scenario calendar data, and the SimTime scalar always moves forward.
+11. Scheduled work is a trigger that reads authoritative state when it executes,
+    never a precomputed outcome.
+12. Only the interactive tactical handoff freezes the clock. Background AI battles
+    never do, and real-world battle duration consumes zero campaign SimTime.
+13. A canonical identity is never erased, reused or reassigned. Ended entities stay
+    permanently referenceable and historical references are never rewritten
+    because their target ended. The representation is RFC 4122 UUIDv5.
+14. The simulation never executes retroactively. The clock never moves backward,
+    no new due work may target a SimTime earlier than the current one, and a
+    reaction begins at or after the SimTime at which it became possible.
+15. The time mechanism and historical tuning are separate. No historical travel,
+    courier or report rate may be hard-coded into the time primitive.

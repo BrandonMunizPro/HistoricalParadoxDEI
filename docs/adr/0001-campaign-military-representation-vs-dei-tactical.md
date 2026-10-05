@@ -59,6 +59,40 @@ dependent on one external engine's vocabulary and break domain purity.
    domain identity, Rome II / DeI map and battlefield keys do not become domain
    geography. Our campaign world owns location; the adapter owns translation. See
    [ADR-0020](0020-campaign-geography-and-tactical-battlefield-projection.md).
+10. **Amendment (2026-10-05): canonical identity is domain-owned.** Every
+    campaign formation, army, command element and detachment holds a **canonical
+    ID** governed by
+    [ADR-0009](0009-identity-model.md): globally unique, immutable,
+    permanently referenceable, never reused, independent of display names,
+    independent of mutable domain state, independent of Rome II / DeI keys and
+    of external catalog identifiers, and carrying no authoritative chronology.
+    Canonical identity is distinct from authored **source** identity; an authored
+    source key is content-side provenance and is not the runtime ID. Engine and
+    catalog keys are resolved from canonical identity **at the boundary** and
+    never become, replace or persist as domain identity.
+11. **Amendment (2026-10-05): identity survives end of life.** A formation,
+    army, command element or detachment ceasing to exist as an **active/extant**
+    world entity does not erase, recycle or invalidate its canonical ID. Identity
+    and extant state are separate concepts; the ID stays permanently
+    referenceable so ledger entries, memories and chronicles keep resolving.
+    Whether a specific fragmentation, split, merge or reorganization is
+    continuation or creation is **left to the owning epic** (ADR-0016).
+12. **Amendment (2026-10-05): one campaign-side battle outcome boundary.** A
+    battle may be resolved by either of two paths, and both must produce the
+    same conceptual campaign-side boundary:
+    - **background non-interactive battle** — resolved by HistoricalGame's own
+      campaign battle simulation; the world clock continues under normal
+      scheduling rules; or
+    - **interactive player tactical battle** — handed to Rome II / DeI through
+      the adapter, with the campaign clock **frozen** at the encounter SimTime
+      (ADR-0003 A10).
+    In both cases the result crosses the existing **`BattleResult`**
+    abstraction, which is sufficient for HistoricalGame to apply authoritative
+    consequences. HistoricalGame **remains owner of persistent world state**.
+    The complete `BattleResult` schema is **deliberately not frozen**, the two
+    resolution paths are **not** required to have identical internal mechanics,
+    and Rome II's representation is **never** canonical. See
+    [ADR-0003](0003-strategic-command-periods-simtime-pause.md) A11/A12.
 
 ## Consequences
 
@@ -70,6 +104,14 @@ dependent on one external engine's vocabulary and break domain purity.
   that does not exist yet.
 - The domain needs campaign-level concepts (manpower, experience, equipment
   state) but must resist the temptation to describe tactical composition.
+- Canonical identity is a separate, approved concern (ADR-0009) with its own
+  determinism guarantee and deliberately undecided encoding. The tactical
+  boundary must never be the place where a canonical ID is minted or renamed.
+- Because background battles resolve campaign-side and interactive battles
+  resolve adapter-side, `BattleResult` becomes the single seam through which all
+  battle consequences enter authoritative state. That keeps post-battle
+  organisational survival (ADR-0016) identical in shape whichever path resolved
+  the battle.
 - The purity test in `tests/domain-purity.test.ts` should eventually assert the
   absence of formation-mapping vocabulary in `src/domain`.
 
@@ -103,3 +145,12 @@ dependent on one external engine's vocabulary and break domain purity.
 - **Research-dependent:** Rome II / DeI support for terrain-, season- or
   weather-consistent battlefield selection from campaign geography (see
   [ADR-0020](0020-campaign-geography-and-tactical-battlefield-projection.md)).
+- **Unresolved:** the complete `BattleResult` schema, and the internal mechanics
+  of HistoricalGame's own background battle resolution. Only the shared
+  campaign-side boundary is approved (decision 12;
+  [ADR-0003](0003-strategic-command-periods-simtime-pause.md) A12).
+- **Unresolved:** per-domain rules for whether a specific fragmentation, split,
+  merge or reorganization of a formation, army or command element is continuation
+  or creation. The canonical identity principle is approved
+  ([ADR-0009](0009-identity-model.md) §4); the rules are not, and belong to
+  ADR-0016 mechanics design.

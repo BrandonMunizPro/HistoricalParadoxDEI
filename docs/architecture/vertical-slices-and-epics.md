@@ -7,9 +7,12 @@
 ## 1. Epic dependency order
 
 ```
-E0 Foundations hardening
+E0 Foundations hardening  (ADR-0009 identity contract + UUIDv5 representation,
+                           ADR-0003 SimTime semantics and invariants)
      │
-     ├── E1 SimTime, command periods, clock & pause  (ADR-0003)
+     ├── E1 SimTime scale, scenario calendar, command periods, clock, pause &
+     │        freeze, due-work scheduler, no-retroactive-execution, ordering
+     │        (ADR-0003; month = player-facing cadence)
      │        │
      │        └── E2 Causal ledger + significance gate  (ADR-0002/0005)
      │                 │
@@ -30,10 +33,11 @@ E0 Foundations hardening
      │        │        └── E13 Institutions, education, legacy
      │        │
      │        └── E6 Formations, armies, command hierarchy, detachments,
-     │            movement, encounters, cohesion  (ADR-0015/0016)
+     │            movement, encounters, cohesion, background battle
+     │            resolution  (ADR-0015/0016/0003 A11)
      │                 │
      │                 └── E7 Tactical battle round trip + geographic
-     │                          projection  (ADR-0001/0015/0020)
+     │                          projection  (ADR-0001/0015/0020/0003 A10)
      │                          │
      │                          └── E8 Battle becomes history (incl.
      │                               organisational survival, ADR-0016)
@@ -70,15 +74,15 @@ simulation explanation APIs and must never gate simulation architecture
 
 | Epic | Delivers | Key acceptance signal | Blocked on design |
 | --- | --- | --- | --- |
-| **E0** Foundations hardening | Branded ids, `SimTime` value object, seeded RNG + ordering seams, quality gates, purity test extended to forbid DeI mapping vocabulary and AI types in `src/domain` | `validate` green; purity test covers the new boundary | — |
-| **E1** Time and clock | `SimTime`, `CommandPeriod`, clock with pause/resume, interleaving harness | A scripted scenario interleaves movement → observation → report travel → reaction → encounter **inside one period** | intra-period resolution |
-| **E2** Causal ledger | `HistoricalEvent` per blueprint §11, append-only, causes/consequences, significance classification, causal trace queries | Trace from a civil-conflict onset back to contributing causes; significance gate keeps ledger proportional | significance policy detail |
-| **E3** Geography | Locations, adjacency, **coordinates and terrain properties**, spatial index port; migration path from adjacency-only toward real geography | Movement path cost is a pure function of graph + terrain; locality queries avoid all-vs-all; a location retains enough geographic facts to be projected to a battlefield | terrain effect formulas; canonical coordinate system; map data sourcing (**Research-dependent**) |
-| **E4** Characters and houses | Life history, multi-facet relationships, kinship graph, succession/claim reactions, memory references to ledger | A character has a family, education, relationships and a changing life history derived from events | trait/psychology ranges |
-| **E5** Knowledge and information | Observation → Report → Rumor → Belief with delay and mutation; **cohort testimony** as a source (ADR-0017) | An actor provably cannot act on a fact absent from its knowledge; displaced people carry eyewitness accounts with them | channel set at launch; deception model; testimony representation |
-| **E6** Armies and movement | Formations (ADR-0001), armies, **command hierarchy and command elements** (ADR-0015), **cohesion** (ADR-0016), detachments, movement, contact, encounter creation | An army with detachments and a command hierarchy moves through geography and creates observations without global pairwise checks; who commands and who is player-controlled is campaign fact | supply/fatigue formulas; control-mapping granularity |
-| **E7** Tactical round trip | Adapter implements all four stages; BattleState projection; formation → DeI resolution inside the adapter; **geographic projection via `BattlefieldResolver`** (ADR-0020); BattleResult ingested as canonical event | A `BattleState` built from a **known campaign location** launches a geographically appropriate Rome II/DeI battlefield and returns a `BattleResult`; no DeI key or battlefield identifier appears in domain; mixed player/AI allied control validated | mapping fidelity; resolver algorithm; first round-trip scenario; engine control capabilities (**Research-dependent**) |
-| **E8** Battle becomes history | Casualties, injury, death, prestige, occupation, memories applied as events; **cohesion change and organisational outcomes** (ADR-0016) | A tactical outcome changes characters, politics and knowledge with a full causal trace; an army may retreat, scatter, fragment or disintegrate, and the outcome is explained from campaign state | consequence magnitudes; organisational outcome formulas |
+| **E0** Foundations hardening | Branded canonical IDs (**RFC 4122 UUIDv5**, ADR-0009 §5a), `SimTime` abstraction and its **Approved** invariants — absolute, monotonic, fixed-point, elapsed-time semantics, difference-is-duration, no event-ordinal semantics, no scheduler ordering in SimTime, no JS `Date` as canonical historical time — plus the `ScenarioCalendar` seam, seeded RNG and **separate** same-instant ordering seams, quality gates, purity test extended to forbid DeI mapping vocabulary and AI types in `src/domain`. **Hard-codes no historical movement or report rate; the numeric scale is deferred to E1** | `validate` green; purity test covers the new boundary; a SimTime difference is elapsed duration, not an event count; canonical IDs are deterministic for identical run inputs; **no** historical rate appears in the time primitive | **None.** Identity contract and representation, and SimTime semantics, are all **Approved** (ADR-0009, ADR-0003 A1–A2, A14) |
+| **E1** Time and clock | `SimTime` arithmetic on the chosen **fixed-point scale**, `ScenarioCalendar` (epoch, era, BCE-compatible year numbering, month sequence/lengths, units-per-calendar-unit), `CommandPeriod`, clock with pause/resume **and freeze at a fixed SimTime**, due-work scheduler advancing directly between due times, **no-retroactive-execution enforcement** (**reject** — never silently clamp — a proposal to schedule into the past), the same-instant ordering mechanism, and the S13 litmus scenario | The S13 operational-manoeuvre scenario passes: main body plus independent rear guard, both sides continuing to move, scout observation, elapsed-duration report travel, post-information reaction, geography-affected routes, identical arrival and report timings across fidelity tiers, and **no new work scheduled into the past** | **N-29** (fixed-point scale + numeric conversion constant), **N-30** (same-instant ordering-key shape). **N-24** frequencies and **R-12** historical rates are **not** blockers — tuning and content (ADR-0003 A14) |
+| **E2** Causal ledger | `HistoricalEvent` per blueprint §11, append-only, causes/consequences, significance classification, causal trace queries | Trace from a civil-conflict onset back to contributing causes; significance gate keeps ledger proportional; references to entities that have ended still resolve (ADR-0009 §3) | significance policy detail |
+| **E3** Geography | Locations, adjacency, **coordinates and terrain properties**, spatial index port; migration path from adjacency-only toward real geography | Movement path cost is a pure function of graph + terrain; locality queries avoid all-vs-all; a location retains enough geographic facts to be projected to a battlefield; movement duration is expressed in elapsed SimTime, not month steps | terrain effect formulas; canonical coordinate system; map data sourcing (**Research-dependent**) |
+| **E4** Characters and houses | Life history, multi-facet relationships, kinship graph, succession/claim reactions, memory references to ledger | A character has a family, education, relationships and a changing life history derived from events; a **dead** character stays permanently referenceable | trait/psychology ranges |
+| **E5** Knowledge and information | Observation → Report → Rumor → Belief with delay and mutation; **cohort testimony** as a source (ADR-0017) | An actor provably cannot act on a fact absent from its knowledge; displaced people carry eyewitness accounts with them; report travel consumes **elapsed SimTime** and is not an event counter | channel set at launch; deception model; testimony representation |
+| **E6** Armies and movement | Formations (ADR-0001), armies, **command hierarchy and command elements** (ADR-0015), **cohesion** (ADR-0016), detachments, movement, contact, encounter creation, **rear guard / independent operational maneuver**, and **campaign-side resolution of background (non-interactive) engagements** | An army with detachments and a command hierarchy moves through geography and creates observations without global pairwise checks; who commands and who is player-controlled is campaign fact; an independent rear guard can move separately, observe, and have reports arrive later; a background AI-vs-AI engagement resolves campaign-side **without freezing the world clock** | supply/fatigue formulas; control-mapping granularity; **N-34** (background battle formulas) |
+| **E7** Tactical round trip | Adapter implements all four stages; BattleState projection; formation → DeI resolution inside the adapter; **geographic projection via `BattlefieldResolver`** (ADR-0020); BattleResult ingested as canonical event; **campaign clock freeze at the encounter SimTime with in-flight work held** | A `BattleState` built from a **known campaign location** launches a geographically appropriate Rome II/DeI battlefield and returns a `BattleResult`; the clock is frozen at encounter SimTime and in-flight commitments survive; no DeI key or battlefield identifier appears in domain; mixed player/AI allied control validated | mapping fidelity; resolver algorithm; first round-trip scenario; engine control capabilities (**Research-dependent**); **N-32** (save/load mid-battle); **N-35** (`BattleResult` schema) |
+| **E8** Battle becomes history | Casualties, injury, death, prestige, occupation, memories applied as events; **cohesion change and organisational outcomes** (ADR-0016) applied on **both** battle paths (ADR-0003 A12); ended entities keep permanently referenceable canonical IDs (ADR-0009 §3) | A tactical outcome changes characters, politics and knowledge with a full causal trace; an army may retreat, scatter, fragment or disintegrate, and the outcome is explained from campaign state; a background AI engagement produces the same kind of authoritative consequence; a disintegrated army remains referenceable afterwards | consequence magnitudes; organisational outcome formulas; **N-33** (battle-consequence SimTime), **N-34** (background battle formulas), **N-36** (fragmentation identity rules) |
 | **E9** Offices, legitimacy, claims | Offices/commands/claims as world entities; eligibility data-driven | Political pressure derives from ledger-recorded causes | legitimacy model |
 | **E10** Culture/religion/government | Data-driven roles, permissions, education channels, events; **possible government transitions per polity** (ADR-0018); **playable package scope** (ADR-0013/0014) | Two contrasting cultures express authority/education/events via the same primitives | culture-specific rule research; playable faction list |
 | **E11** Diplomacy, authority and recognition | Treaties, wars, alliances, trade, marriage with authority provenance; **regime recognition and refusal** (ADR-0018) | An agreement can fail for want of authority; foreign powers recognise or refuse a transformed government based on belief, not truth | treaty taxonomy; recognition rules |
@@ -120,6 +124,11 @@ dependency analysis may split or reorder them.
 ### S3 — Generated Tactical Battle (E7)
 - A `BattleState` (campaign formations, no DeI keys) launches Rome II/DeI and
   returns a `BattleResult`.
+- *(ADR-0003 A10)* The campaign clock **freezes** at the encounter SimTime;
+  in-flight commitments are **held**, neither processed nor cancelled;
+  `BattleResult` is applied as the first due work at that SimTime; remaining
+  work at that instant executes against post-battle state; then resume from the
+  same SimTime. Real-world battle duration consumes **zero** campaign SimTime.
 - Formation → DeI faction/unit resolution happens inside the adapter using the
   extracted catalogs.
 - Failure paths return a structured error, never partial world state.
@@ -183,6 +192,20 @@ dependency analysis may split or reorder them.
   only learns later, if at all.
 - Substantial management interfaces pause time; significant events can interrupt;
   resume continues the same calendar.
+- *(ADR-0003 A1/A2)* Elapsed durations between events are computed as
+  **SimTime differences** and are independent of how much unrelated background
+  work occurred between them.
+- *(ADR-0003 A4)* The scheduler jumps directly between due SimTimes. No daily,
+  hourly or minute whole-world sweep exists and presentation frame rate is never
+  a simulation driver.
+- *(ADR-0003 A5)* Work due at the same SimTime is resolved by a deterministic
+  ordering mechanism that is separate from SimTime and independent of fidelity
+  tier.
+- *(ADR-0003 A13)* **No retroactive execution.** The clock never moves backward
+  and no new work is scheduled into the past. An event occurring at T=500 whose
+  report arrives at T=620 produces a reaction at T=620 or later, never a rewind.
+- *(ADR-0003 A14)* The mechanism is content-agnostic: durations come from domain
+  inputs, and no historical travel or report rate is embedded in the primitive.
 
 ### S9 — Bounded Computation (E0, E4, E6, E12) *(addition from ADR-0004)*
 - A deterministic benchmark (fixed seed, fixed scenario) reports work items per
@@ -229,3 +252,41 @@ dependency analysis may split or reorder them.
   path** into authoritative state.
 - Simulation architecture is complete and testable with no renderer chosen and
   no UI implemented.
+
+### S13 — Operational Maneuver Litmus Test (E1, E6, E7) *(addition from ADR-0003/0009, 2026-10-05)*
+
+**The architecture acceptance test for the locked time and identity model.** A
+scripted scenario must demonstrate **all** of the following, with no fixed
+ticks, no whole-world sweeps, no monthly teleportation, no renderer authority,
+no Rome II campaign authority, and no event-count-based duration:
+
+- The player's **main body** approaches an enemy army.
+- A friendly **rear guard / detachment** moves **independently** around the
+  enemy, on its own commitment with its own start SimTime, path and duration.
+- **Both sides continue moving** according to actual commitments.
+- **Scouts observe** from actual positions, and **reports require elapsed
+  simulation duration** to reach a commander.
+- Commanders **react only after information arrives**, and those reactions may
+  **change future movement**.
+- **Terrain and geography affect routes** and duration.
+- The enemy may **escape, counter-manoeuvre, intercept, become partially
+  encircled, or become fully encircled** — all as consequences of commitment
+  outcomes, not scripted stage directions.
+- The player may receive a **significant interrupt** and return to control.
+- If **tactical contact occurs and the player enters the battle**: campaign
+  SimTime freezes → `BattleState` → Rome II / DeI → `BattleResult` → result
+  applied → campaign resumes. Meanwhile the rear guard's in-flight commitment
+  **survives** the freeze and completes at its own due SimTime after resume.
+- If **two AI armies elsewhere fight** during this same operational situation,
+  their battle is resolved **internally by HistoricalGame** under normal campaign
+  scheduling and **does not** trigger the player's tactical freeze merely because
+  combat occurred elsewhere.
+- Durations and **due times** are **independent of unrelated background event
+  density**: the same seed at a different fidelity tier produces the same arrival
+  and report timings (A1, A5). ADR-0004's allowance to cap work per instant and
+  defer overflow must not move a due time; it changes *when work is processed*,
+  not *when it is due*, and a deferred item still reads authoritative state at
+  execution (A9).
+- A unit that **disintegrates or is disbanded** stays **permanently
+  referenceable** afterwards, and no ledger reference to it was rewritten
+  (ADR-0009 §3).

@@ -45,16 +45,25 @@ point, not a state teleport.
 
 ```
 ┌───────────────────────────── KERNEL ──────────────────────────────┐
-│ SimTime (finer than CommandPeriod)   CommandPeriod (~half-year)    │
-│ deterministic ordering · seeded RNG streams · ids                 │
-│ clock supports pause (management UI, significant interruptions)    │
+│ SimTime: absolute, monotonic, fixed-point ELAPSED simulation time  │
+│   (difference between two values = elapsed duration; never an       │
+│    event count, scheduler sequence, fidelity density or frame count)│
+│ ScenarioCalendar: immutable authoritative scenario data (epoch,    │
+│   era, year numbering direction incl. BCE, month sequence/lengths,  │
+│   units-per-calendar-unit) → dates derive mechanically               │
+│ CommandPeriod (~half-year planning horizon; month = player cadence)│
+│ canonical ids (ADR-0009: unique, immutable, never reused,           │
+│   survive end of life) · seeded RNG streams                          │
+│ separate same-instant ordering (never encoded into SimTime)         │
+│ clock supports pause AND freeze at a fixed SimTime                  │
 └───────────────┬───────────────────────────────────────────────────┘
                 │ drives due work, never "runs the world"
+                │ advances directly between due times — no world sweep
 ┌───────────────▼───────────────────────────────────────────────────┐
 │ SCHEDULER (Proposal, ADR-0004)                                    │
-│ due-work queue · spatial index · foreground/background tiers       │
-│ cached derived projections · batched aggregate systems             │
-│ instrumentation + deterministic benchmarks                         │
+│ due-work queue (trigger, not precomputed outcome) · spatial index  │
+│ foreground/background tiers · cached derived projections · batched  │
+│ aggregate systems · instrumentation + deterministic benchmarks     │
 └───┬───────────────┬───────────────┬───────────────┬───────────────┘
     │               │               │               │
     │ needs work    │ needs work    │ needs work    │ needs work
@@ -120,6 +129,28 @@ point, not a state teleport.
 │   occupation, cohesion loss, organisational outcomes (ADR-0016),  │
 │   memories, political consequences                               │
 └──────────────────────────────────────────────────────────────────┘
+        ▲ INTERACTIVE path only: campaign clock FREEZES at encounter
+        │ SimTime T; in-flight work is HELD (not processed, not
+        │ cancelled); BattleResult applied as first due work at T
+        │ while still frozen; remaining work at T reads post-battle
+        │ state; then resume from T. Real-world battle duration
+        │ consumes ZERO campaign SimTime. (ADR-0003 A10)
+
+┌──────────────────────────────────────────────────────────────────┐
+│ BACKGROUND BATTLE SIMULATION (Approved 2026-10-05, ADR-0003 A11)  │
+│ AI-vs-AI battles resolved by HistoricalGame's own campaign battle │
+│ simulation from authoritative campaign military state.            │
+│ NO external handoff. NO clock freeze — the world continues under   │
+│ normal scheduling.                                                │
+└──────────────────────────────┬───────────────────────────────────┘
+                               │
+                 both paths ───┴───▶ ONE campaign-side outcome seam
+                                       BattleResult (ADR-0003 A12,
+                                       ADR-0001 decision 12)
+                                       HistoricalGame applies every
+                                       consequence and remains owner of
+                                       persistent world state.
+                                       Schema NOT frozen (N-35).
 
 Persistence (ADR-0010, deferred): authoritative state + causal ledger +
 snapshots behind repository ports; ORM not chosen. Single-player MVP means
@@ -216,3 +247,36 @@ thinks or talks about what happened.**
     campaign truth (ADR-0001, ADR-0020).
 16. No system anywhere owns time; all actors progress on one shared timeline
     (ADR-0003, ADR-0004).
+17. SimTime is elapsed simulation time only: the difference between two SimTimes
+    is the elapsed duration between them. SimTime is never an event count,
+    scheduler sequence, fidelity density, frame count or causal-operation count
+    (ADR-0003 A1).
+18. The scheduler advances directly to the earliest due SimTime. No daily, hourly
+    or minute whole-world sweep exists, and no system is driven by presentation
+    frame rate. Timestamp precision is not evaluation frequency (ADR-0003 A4).
+19. Deterministic same-instant ordering is resolved by a mechanism separate from
+    SimTime, and is independent of wall-clock timing, hash iteration order,
+    presentation and fidelity tier (ADR-0003 A5).
+20. Calendar dates derive from SimTime plus immutable scenario calendar data. The
+    SimTime scalar always increases forward; display direction, including BCE,
+    never reverses it, and no system treats JavaScript `Date` as canonical
+    historical time (ADR-0003 A3).
+21. Every entity keeps a permanently referenceable canonical ID after ceasing to
+    be active/extant. Identity is never erased, recycled or reused, and no
+    historical reference is rewritten because its target ended (ADR-0009 §3).
+22. Canonical ID assignment is deterministic given scenario identity, stable
+    source identifiers, version/configuration and seed, and never derives from
+    wall-clock time, ambient randomness, the database or mutable display data
+    (ADR-0009 §5).
+23. Only an interactive external tactical handoff freezes the campaign clock.
+    Background AI-versus-AI battles are resolved internally and do not freeze the
+    world; real-world tactical duration consumes zero campaign SimTime
+    (ADR-0003 A10/A11).
+24. Both battle resolution paths cross one campaign-side `BattleResult` boundary.
+    The campaign applies every consequence and remains owner of persistent world
+    state; Rome II's representation is never canonical (ADR-0003 A12).
+25. Scheduled work is a trigger with a due time that reads authoritative state at
+    execution; no path applies a precomputed outcome computed against superseded
+    state (ADR-0003 A9).
+26. Fidelity changes how much work is processed, never what SimTime means, when
+    work is due, or how same-instant work is ordered (ADR-0004).
