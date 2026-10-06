@@ -19,13 +19,13 @@ using the legend below. ADR-0000 (record format) is implicit in this file.
 | --- | --- | --- | --- |
 | [0001](0001-campaign-military-representation-vs-dei-tactical.md) | Campaign military representation vs DeI tactical representation | Approved design direction | 2026-10-04 |
 | [0002](0002-authoritative-state-causal-ledger-snapshots.md) | Authoritative mutable state plus causal ledger and snapshots | Approved design direction | 2026-10-04 |
-| [0003](0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | Approved design direction (**time model, calendar contract and battle authority approved 2026-10-05**; scale and ordering-key shape unresolved) | 2026-10-04 (amended 2026-10-05) |
+| [0003](0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | Approved design direction (**time model, calendar contract and battle authority approved 2026-10-05**; scale and ordering-key shape **approved 2026-10-06** — N-29/N-30) | 2026-10-04 (amended 2026-10-05, 2026-10-06) |
 | [0004](0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked; scheduler model resolved 2026-10-05) | 2026-10-04 (amended 2026-10-05) |
 | [0005](0005-event-taxonomy-and-historical-significance.md) | Event taxonomy and historical significance | **Approved** (architecture; formulas unlocked) | 2026-10-04 |
 | [0006](0006-legal-action-and-proposal-validation.md) | Legal action and proposal validation architecture | **Approved** (architecture; vocabulary unlocked) | 2026-10-04 |
 | [0007](0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred | 2026-10-04 |
 | [0008](0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) | 2026-10-04 |
-| [0009](0009-identity-model.md) | Canonical identity model | **Approved** (identity contract and representation — RFC 4122 UUIDv5 — approved 2026-10-05; field naming/library unresolved) | 2026-10-04 (amended 2026-10-05) |
+| [0009](0009-identity-model.md) | Canonical identity model | **Approved** (identity contract and representation — RFC 4122 UUIDv5 — approved 2026-10-05; field naming unresolved; UUID library resolved at VS-1 as dependency-free pure-TypeScript SHA-1) | 2026-10-04 (amended 2026-10-05) |
 | [0010](0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred | 2026-10-04 |
 | [0011](0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only; mechanics unresolved | 2026-10-04 |
 | [0012](0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred | 2026-10-04 |
@@ -64,16 +64,24 @@ The 2026-10-05 amendment closed two previously open decisions:
   version/configuration + seed, and **independent of end of life**. The
   representation is **RFC 4122 UUIDv5**, deterministic by construction.
 
+The **2026-10-06** ruling closed two more:
+
+- **N-29** SimTime fixed-point scale and the units-per-calendar-unit constant
+  (ADR-0003 A3 / amendment B1): **1 SimTime unit = 1 simulation hour**,
+  `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata;
+  calendar authored in days and month lengths; exact integer conversion;
+  serialization is the exact decimal integer string plus scale and calendar
+  metadata.
+- **N-30** same-instant ordering-key shape (ADR-0003 A5 / amendment B2):
+  **`dueSimTime → workClassRank → workIdentifier`**, lexicographic ascending,
+  append-only domain-owned rank enum with `BattleResult` as the first precedence
+  class, single pending set, no wave/generation, causality via
+  consequence-creation.
+
 Explicitly **not** approved, and deliberately still open:
 
 - **AD-2** aggregate boundaries and concurrent action resolution (ADR-0007);
 - **AD-3** exact determinism depth (ADR-0008 fixes seams, not depth);
-- the **numeric fixed-point scale** of SimTime and the scenario calendar's
-  units-per-calendar-unit constant (ADR-0003 fixes the semantics, not the scale);
-  these are the **time-and-clock epic's** remaining blockers, since it cannot
-  perform SimTime arithmetic or map a date without them;
-- the final **same-instant ordering-key shape** (ADR-0003 A5), likewise owned by
-  the time-and-clock epic;
 - the `sourceKey` field naming, the UUID library, and re-import reconciliation
   (ADR-0009 §5a fixes the specification, not these);
 - concrete **historical travel and report rates** (research-dependent, and

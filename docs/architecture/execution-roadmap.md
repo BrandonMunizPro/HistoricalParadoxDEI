@@ -10,9 +10,10 @@
 - **VS-1 / E0 Foundations is shipped** in commit
   `1546779cd619053cf015707f500b8737921bcd94` ("Implement E0 Foundations: canonical
   identity and SimTime").
-- **Immediate next decision gate: N-29 (SimTime fixed-point scale + calendar
-  conversion constant) and N-30 (same-instant ordering-key shape)** — required
-  before VS-2 implementation. They gate E1 only; they are not E0 blockers.
+- **Immediate next executable slice: VS-2 / E1 Time & Clock.** Its predecessor
+  gates, **N-29** (SimTime fixed-point scale + calendar conversion constant) and
+  **N-30** (same-instant ordering-key shape), were **decided 2026-10-06**
+  (ADR-0003 amendment B1/B2). They gated E1 only; they were never E0 blockers.
 - The roadmap orders approved work. It does not override any ADR or the
   BLUEPRINT; where sequencing or slicing references an ADR, the ADR remains the
   design authority.
@@ -29,7 +30,7 @@
    - `[X]` Experimental tactical proof-of-concept
    - `[R]` Research / data acquisition
    - `[F]` Deliberately deferred
-4. **Decision gates sit where the decision is needed, not at stage zero.** N-29 and N-30 gate E1; they are *not* E0 blockers. Nothing else is pulled forward.
+4. **Decision gates sit where the decision is needed, not at stage zero.** N-29 and N-30 gated E1 (they were *not* E0 blockers) and were decided 2026-10-06. Nothing else is pulled forward.
 5. **Research is pull-based.** `[R]` work is only triggered when its gate approaches. A negative research answer is a valid outcome: document the limitation and proceed. Research is never a standing prerequisite for unrelated work.
 6. **Approved architecture is a constraint, not a backlog.** No slice may introduce a SimTime scale into E0, clamp past-due work, encode ordering in SimTime, hard-code historical rates, put DeI vocabulary in `src/domain`, or conflate campaign geography / tactical field / unit position / adapter identifiers.
 7. **Geography never becomes a universal prerequisite.** (Section E gates this explicitly.)
@@ -39,12 +40,12 @@
 ## B. High-Level Execution Map
 
 ```
-CURRENT STATE: 1546779 — VS-1 / E0 Foundations SHIPPED. Next gate: N-29, N-30
-                → decision before Stage 2 / VS-2 implementation.
+CURRENT STATE: 1546779 — VS-1 / E0 Foundations SHIPPED; N-29, N-30 decided 2026-10-06.
+                Next: VS-2 / E1 implementation (no remaining design gates).
 
 Stage 1  [P] E0 Foundations                        VS-1  Identity + SimTime abstraction  [SHIPPED: 1546779]
               │
-Stage 2  [D] N-29, N-30 ──► [P] E1 Time & clock   VS-2  Clock-driven world (scheduler, freeze, rejection)
+Stage 2  [P] E1 Time & clock (N-29, N-30 approved)      VS-2  Clock-driven world (scheduler, freeze, rejection)
               │
 Stage 3  [D] AD-9 ──► [P] E2 Ledger + E17a thin persistence   VS-3  Ledger + snapshot
               │                      ║
@@ -90,13 +91,13 @@ PARALLEL TRACKS (never block the main chain):
 - **Status:** all acceptance criteria satisfied and verified 2026-10-06 (`npm run validate` green); delivered across
   `src/domain/identity/`, `src/domain/time/`, `src/domain/random/`, and the extended purity test, with no dependencies added. N-28r's library question resolved in favour of a dependency-free pure-TypeScript SHA-1 inside the domain (`src/domain/identity/sha1.ts`), because the purity rule forbids `node:crypto` imports there; the remaining N-28r items (source-key naming / re-import reconciliation) stay `[F]`.
 
-#### VS-2 — Clock-Driven World `E1` `[D] N-29, N-30 → [P]` — **NEXT** (gated)
+#### VS-2 — Clock-Driven World `E1` `[P]` — **NEXT**
 - **Possible after:** a scripted headless scenario advances by command periods with `pause/resume/freeze-at-SimTime`, dates derive correctly from `ScenarioCalendar` (including era/BCE direction), and same-instant work resolves deterministically.
 - **Systems:** simulation time, scheduler.
-- **Depends on:** VS-1; **gates: N-29** (fixed-point scale + conversion constant), **N-30** (ordering-key shape). N-24 (frequencies/thresholds) enters as configurable placeholders, not decisions.
+- **Depends on:** VS-1. **N-29** (fixed-point scale + conversion constant) and **N-30** (ordering-key shape) were **Approved 2026-10-06** (ADR-0003 amendment B1/B2): scale = 1 unit per simulation hour with `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration; ordering = `dueSimTime → workClassRank → workIdentifier`. N-24 (frequencies/thresholds) enters as configurable placeholders, not decisions.
 - **Acceptance:** scheduler advances *directly* between due SimTimes (no sweep — asserted); a past-due scheduling request is **rejected with an explicit error and never clamped** (test asserting rejection); shuffled insertion order of same-instant work yields byte-identical output order; two runs with fixed seed produce identical output; dates monotonic with SimTime; pause stores nothing that could rewind the clock.
 - **Excluded:** armies, geography, ledger, any historical rate, UI.
-- **Status:** blocked on the **N-29 / N-30 decision gate** (Section F). This is the immediate next executive action before any VS-2 implementation.
+- **Status:** N-29 / N-30 **decided 2026-10-06** (ADR-0003 amendment B1/B2). No design gates remain; VS-2 is the next executable slice.
 
 #### VS-3 — Ledger + Snapshot `E2 + E17a` `[D] AD-9 → [P]`
 - **Possible after:** events are append-only with causes/consequences, significance-gated queries answer "trace this civil-conflict onset back", and a snapshot can be saved, loaded, and resumed with a derived projection rebuilt.
@@ -198,8 +199,8 @@ PARALLEL TRACKS (never block the main chain):
 
 | Gate | Type | Blocks | Why it sits there |
 |---|---|---|---|
-| **N-29** fixed-point scale + calendar conversion | `[D]` | E1 (VS-2) | Nothing in E1 can be written without it; **not an E0 blocker**. **NEXT GATE before VS-2.** |
-| **N-30** same-instant ordering key | `[D]` | E1 (VS-2) | Minimum properties Approved; shape is small and bounded. **NEXT GATE before VS-2.** |
+| ~~**N-29**~~ fixed-point scale + calendar conversion | `[D]` — **CLOSED 2026-10-06** | E1 (VS-2) | Nothing in E1 could be written without it; it was **not an E0 blocker**. Decided: 1 SimTime unit = 1 simulation hour, `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata (ADR-0003 amendment B1) |
+| ~~**N-30**~~ same-instant ordering key | `[D]` — **CLOSED 2026-10-06** | E1 (VS-2) | Minimum properties Approved; shape was small and bounded. Decided: **`dueSimTime → workClassRank → workIdentifier`**, append-only ranks, `BattleResult` first, single pending set, no wave/generation (ADR-0003 amendment B2) |
 | **AD-9** persistence technology | `[D]` | E17a (VS-3) | Recommend ports + JSON now, ORM `[F]` to E17b |
 | **AD-2** aggregate boundaries / concurrent-action resolution | `[D]` | E4/E9/E14/E18 | Deliberately deferred; trigger = VS-4/VS-6 reveals real same-aggregate conflicts |
 | **AD-19** canonical coordinate system | `[D]` | E3-deep / E7 (G2–G3) | Not needed for G1; required when real data or projection lands |
@@ -262,7 +263,7 @@ is preserved below as the record of why it was chosen first.
 
 ## I. Stop Points — where I return to you
 
-1. **Now — before Stage 2:** N-29 scale choice + N-30 ordering-key shape — your decision, then implementation proceeds.
+1. ~~**Now — before Stage 2:** N-29 scale choice + N-30 ordering-key shape~~ — **decided 2026-10-06** (ADR-0003 amendment B1/B2); VS-2 implementation now proceeds. The next return point is item 2.
 2. **Before Stage 3's persistence work:** AD-9 recommendation (ports + JSON vs. alternative) needs your approval.
 3. **After each POC (T0, T1, T2, T3/T4):** experimental evidence review before the gated production work proceeds. T1 in particular: if projection cannot be proven, Stage 7 does not start.
 4. **After VS-7 (S13 litmus):** review the litmus evidence before treating the time/scheduling model as proven; this is the architecture's own acceptance test for ADR-0003.

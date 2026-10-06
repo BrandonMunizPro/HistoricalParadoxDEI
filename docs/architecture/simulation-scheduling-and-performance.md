@@ -189,8 +189,10 @@ principles:
     items are due at one SimTime, a **separate deterministic ordering mechanism**
     decides what resolves first. Its minimum properties are total,
     deterministic, stable, and independent of wall-clock timing, hash iteration
-    order, presentation and **fidelity tier**. The final key shape remains open
-    (**N-30**).
+    order, presentation and **fidelity tier**. The key shape is settled (**N-30**,
+    ADR-0003 amendment B2, 2026-10-06): **`dueSimTime → workClassRank →
+    workIdentifier`**, append-only domain-owned ranks, `BattleResult` first,
+    single pending set, no wave/generation.
 12. **Scheduled work is a trigger, not a precomputed outcome (ADR-0003 A9).**
     Work carries a due time and reads authoritative state **at execution**.
     Without this, work resumed at a given SimTime could apply values computed
@@ -239,8 +241,9 @@ world owns time — every faction and system progresses on the same timeline.
 **Changed by ADR-0003 (2026-10-05):** "tick resolution" is **no longer** in this
 list. The SimTime question is closed: absolute monotonic fixed-point elapsed
 SimTime, due-work driven, no fixed-step whole-world sweep, and same-instant
-ordering as a separate mechanism. What remains open is the **fixed-point scale**
-(**N-29**) and the **final ordering-key shape** (**N-30**), not the model.
+ordering as a separate mechanism. What remained open — the **fixed-point scale**
+(**N-29**) and the **final ordering-key shape** (**N-30**) — was closed on
+2026-10-06 by the ADR-0003 amendment (B1/B2), not the model.
 
 ## 4.3 Clock ownership during a tactical handoff (ADR-0003 A10/A11)
 
@@ -300,15 +303,15 @@ generic mechanism already provides it.
   index technology and promotion/demotion rules (**N-24**). **Tuning and
   measurement, not a mechanism blocker**: the scheduler writes against
   configurable intervals and placeholders (ADR-0003 A14).
-- The **fixed-point scale/precision** for SimTime and the numeric value of the
-  simulation-units-per-calendar-unit constant (**N-29**). The *semantics* are
-  closed; the values are not. **This is a genuine time-and-clock-epic blocker**,
-  because the epic cannot perform SimTime arithmetic or map a SimTime onto a
-  calendar position without them — there is no placeholder that is not simply the
-  value.
-- The **final shape of the same-instant ordering key** (**N-30**). Its minimum
-  properties are closed; its shape is not. **Also a genuine blocker**, because
-  resolving work due at one SimTime is itself part of the epic's deliverable.
+- **Resolved 2026-10-06 (ADR-0003 amendment B1/B2; register N-29, N-30):** the
+  **fixed-point scale/precision** for SimTime and the numeric value of the
+  simulation-units-per-calendar-unit constant — **1 SimTime unit = 1 simulation
+  hour**, `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata
+  — and the **final shape of the same-instant ordering key** —
+  **`dueSimTime → workClassRank → workIdentifier`**, append-only domain-owned
+  ranks, `BattleResult` first, single pending set, no wave/generation. These
+  were the genuine time-and-clock-epic blockers that gated E1; they are no
+  longer open.
 - Numeric performance targets — deferred until baselines exist.
 - Cohort movement resolution cost: bulk movement is cheap, but attrition,
   multi-settlement absorption and multi-generational residence may not be.

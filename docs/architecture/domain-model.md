@@ -49,13 +49,13 @@ Names and shapes below are proposals for design discussion. Items marked
 
 | Concept | Role | Status |
 | --- | --- | --- |
-| `SimTime` | **Absolute, monotonic, fixed-point measure of elapsed simulation time**; independent of the command period; difference between two values is the elapsed duration between them | **Approved** (ADR-0003 A1–A2). Fixed-point **scale** **Unresolved** (**N-29**) |
-| `ScenarioCalendar` | Authoritative immutable scenario calendar data (epoch, era, year numbering direction, month sequence, month boundaries/lengths, units-per-calendar-unit); calendar dates derive mechanically from `SimTime + ScenarioCalendar` | **Approved direction** (ADR-0003 A3). Numeric conversion constant **Unresolved** (**N-29**) |
+| `SimTime` | **Absolute, monotonic, fixed-point measure of elapsed simulation time**; independent of the command period; difference between two values is the elapsed duration between them | **Approved** (ADR-0003 A1–A2). Fixed-point **scale Approved** (**N-29**, ADR-0003 amendment B1, 2026-10-06): 1 unit = 1 simulation hour; `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration |
+| `ScenarioCalendar` | Authoritative immutable scenario calendar data (epoch, era, year numbering direction, month sequence, month boundaries/lengths, units-per-calendar-unit); calendar dates derive mechanically from `SimTime + ScenarioCalendar` | **Approved direction** (ADR-0003 A3). Conversion constant **Approved** (**N-29**, ADR-0003 amendment B1, 2026-10-06: `UnitsPerDay = 24`; authored in days/month lengths; exact integer conversion) |
 | `CommandPeriod` | Approx. half-year strategic command/planning horizon, two per year, configurable; **month is the normal player-facing progression cadence within it** | **Approved** (ADR-0003 decision 1, A6) |
 | Canonical entity identity | Stable, globally unique, immutable, permanently referenceable, never reused, storage-independent, serialization-safe, save/load-stable reference for characters, houses, factions, settlements, locations, formations, institutions, events; carries no mutable or chronological meaning | Contract **Approved** (ADR-0009). Representation **Approved**: **RFC 4122 UUIDv5** (ADR-0009 §5a) |
 | Extant state | Whether an entity is currently an active/extant world entity. **Separate from identity**: ending existence never erases, recycles or invalidates canonical identity | **Approved** (ADR-0009 §3) |
 | Source identity (`sourceKey`) | Stable authored source identifier/key used to identify an authored source entity and as an input to canonical identity derivation. **Not** the canonical runtime ID, and **separately representable** from it | **Approved** as a distinct concept (ADR-0009 §2, §5a). Field name/shape **Unresolved** and non-blocking (**N-28r**) |
-| Same-instant ordering | Deterministic scheduler mechanism deciding what resolves first among work due at one SimTime. **Separate from SimTime**; independent of wall clock, hash order, presentation and fidelity tier | Properties **Approved** (ADR-0003 A5). Final key shape **Unresolved** (**N-30**) |
+| Same-instant ordering | Deterministic scheduler mechanism deciding what resolves first among work due at one SimTime. **Separate from SimTime**; independent of wall clock, hash order, presentation and fidelity tier | **Approved** (ADR-0003 A5). Key shape **Approved** (**N-30**, ADR-0003 amendment B2, 2026-10-06): `dueSimTime → workClassRank → workIdentifier`, append-only ranks, `BattleResult` first, single pending set, no wave/generation |
 | Ledger event | Append-only causal record for significant occurrences | **Approved** (ADR-0002) |
 | Snapshot | Durability unit for authoritative state | **Approved**; cadence **Unresolved** |
 | Campaign location | Authoritative geographic position of the simulation world | **Approved** that the campaign owns location (ADR-0020); coordinate system and representation **Unresolved** |
@@ -312,9 +312,12 @@ when significant, what knowledge propagation reacts to, and what the player-faci
   reorganization is continuation, survival, termination or creation. The general
   principle is **Approved** (ADR-0009 §4); no universal merge/split rule was
   created deliberately.
-- **Unresolved:** SimTime fixed-point scale and the numeric value of the
-  scenario calendar's units-per-calendar-unit constant (ADR-0003 A3).
-- **Unresolved:** the final shape of the same-instant ordering key
-  (ADR-0003 A5). Retroactive execution is **Resolved: no** (ADR-0003 A13).
+- **Resolved 2026-10-06 (ADR-0003 amendment B1, N-29):** SimTime fixed-point
+  scale and the numeric value of the scenario calendar's
+  units-per-calendar-unit constant — **1 unit = 1 simulation hour**,
+  `UnitsPerDay = 24` as `ScenarioCalendar` calibration metadata.
+- **Resolved 2026-10-06 (ADR-0003 amendment B2, N-30):** the final shape of the
+  same-instant ordering key — **`dueSimTime → workClassRank → workIdentifier`**.
+  Retroactive execution is **Resolved: no** (ADR-0003 A13).
 - **Unresolved:** internal formulas for HistoricalGame's background battle
   resolution, and the complete shared `BattleResult` schema (ADR-0003 A11/A12).

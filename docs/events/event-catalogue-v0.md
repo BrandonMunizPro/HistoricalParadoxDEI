@@ -25,7 +25,9 @@ reused, survives end of life) and `simTime` is **absolute, monotonic,
 fixed-point elapsed simulation time** whose difference to another `simTime` is
 the elapsed duration between them (ADR-0003). `simTime` is never an event count,
 scheduler sequence, frame count or fidelity density, and never carries
-same-instant ordering. Fixed-point **scale** is **Unresolved** (N-29).
+same-instant ordering. The fixed-point **scale** is **Approved** (N-29,
+ADR-0003 amendment B1, 2026-10-06): **1 SimTime unit = 1 simulation hour**,
+`UnitsPerDay = 24` declared as `ScenarioCalendar` calibration.
 
 ## Kernel and time
 

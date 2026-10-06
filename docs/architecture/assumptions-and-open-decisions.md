@@ -101,11 +101,11 @@
 | **AD-6 — end-of-life referenceability** | **Resolved.** Identity and extant state are separate concepts. A dead character, disintegrated army or ended cohort keeps a permanently referenceable canonical ID; IDs are never recycled; historical references are never rewritten merely because the referenced entity ended (ADR-0009 §3) |
 | **AD-6 — merge/split identity** | **Principle resolved, per-domain rules deferred.** Continuation preserves identity; a genuinely new historical entity gets a new ID; ended entities stay referenceable. **No universal merge/split rule** — fragmentation, split, merge, succession, reorganization and transformation are decided in the epic owning the mechanic (ADR-0009 §4; ADR-0016; ADR-0017) |
 | **AD-6 — determinism guarantee** | **Resolved.** Same scenario identity, source datasets via stable source identifiers, version/configuration and seed ⇒ same canonical ID for the same authored or deterministically generated entity. No wall-clock, ambient randomness, database-generated identity or mutable display data; authored derivation keys off a stable source namespace/key, not mutable content; persisted, never regenerated on load (ADR-0009 §5; ADR-0008 A1) |
-| **N-1 — intra-period SimTime resolution** | **Resolved.** SimTime is an **absolute, monotonic, fixed-point measure of elapsed simulation time**; the defining property is that the difference between two SimTimes is the elapsed duration between them (ADR-0003 A1–A2). **Still open: the fixed-point scale and the numeric value of the units-per-calendar-unit constant** |
+| **N-1 — intra-period SimTime resolution** | **Resolved.** SimTime is an **absolute, monotonic, fixed-point measure of elapsed simulation time**; the defining property is that the difference between two SimTimes is the elapsed duration between them (ADR-0003 A1–A2). The fixed-point **scale** and units-per-calendar-unit value were later closed by **N-29** (2026-10-06, §2.1c) |
 | **N-1 — event-ordinal interpretation** | **Rejected and closed.** An intra-month ordinal / event counter is explicitly rejected: its unit is the event, so its magnitude depends on unrelated event density and fidelity tier and cannot express duration (ADR-0003 A1) |
-| **N-1 — elapsed time vs same-instant ordering** | **Resolved.** SimTime answers *when*; a separate deterministic ordering mechanism answers *what resolves first*, and is independent of wall clock, hash order, presentation and **fidelity tier**. **Still open: the final key shape** (ADR-0003 A5) |
+| **N-1 — elapsed time vs same-instant ordering** | **Resolved.** SimTime answers *when*; a separate deterministic ordering mechanism answers *what resolves first*, and is independent of wall clock, hash order, presentation and **fidelity tier**. The final key shape was later closed by **N-30** (2026-10-06, §2.1c) |
 | **N-1 — fixed-step vs due work** | **Resolved.** Due-work, event-driven. With work at T=100 and next work at T=527 the scheduler may advance directly; no daily/hourly/minute whole-world sweep and no renderer-driven simulation. Timestamp precision ≠ evaluation frequency (ADR-0003 A4; ADR-0004) |
-| **N-1 — calendar, epoch and dating** | **Direction resolved; values deferred.** The calendar is authoritative scenario data; dates derive mechanically from `SimTime + immutable ScenarioCalendar` supporting epoch, BCE, year numbering direction, month sequence and month boundaries/lengths. The scalar always increases forward, so BCE display never reverses SimTime. JS `Date` is not canonical and no Gregorian-only assumption is invented. **Still open: the scale and conversion-constant values** (ADR-0003 A3) |
+| **N-1 — calendar, epoch and dating** | **Direction resolved; values deferred.** The calendar is authoritative scenario data; dates derive mechanically from `SimTime + immutable ScenarioCalendar` supporting epoch, BCE, year numbering direction, month sequence and month boundaries/lengths. The scalar always increases forward, so BCE display never reverses SimTime. JS `Date` is not canonical and no Gregorian-only assumption is invented. The scale and conversion-constant values were later closed by **N-29** (2026-10-06, §2.1c) |
 | **N-1 — tactical in-flight world progression** | **Resolved for interactive tactical battles.** The clock freezes at the encounter SimTime; held work is neither processed nor cancelled; `BattleResult` is applied while frozen, before incompatible remaining work; remaining work executes against post-battle state; real-world battle duration consumes zero campaign SimTime (ADR-0003 A10). **Still open: save/load while a tactical battle is in flight** |
 | **N-1 — do background AI battles freeze the world?** | **Resolved: no.** Background AI-versus-AI battles are resolved by HistoricalGame internally and do not freeze the clock. The freeze is tied to an interactive external tactical handoff. A future player spectate/enter feature may use the same contract but is not designed (ADR-0003 A11) |
 | **N-1 — retroactive execution** | **Resolved: no retroactive execution.** The authoritative clock never moves backward; new due work may not be scheduled for a SimTime earlier than the current authoritative SimTime; processed history is never retroactively mutated. An earlier `occurredAt` on a historical fact or knowledge record, and later arrival of information, remain legitimate — those are references to the past, not retroactive execution. Reactions begin at or after the SimTime at which they became possible (**N-31 closed**, ADR-0003 A13, ADR-0004) |
@@ -123,6 +123,13 @@
 | **N-1 fixed-point scale ownership** | **Split approved.** The foundations epic implements the SimTime abstraction and its approved invariants — absolute, monotonic, fixed-point, elapsed-time semantics, difference-is-duration, no event-ordinal semantics, no scheduler ordering in SimTime, no JavaScript `Date` as canonical historical time — and **hard-codes no historical movement or report rate**. The time-and-clock epic chooses the concrete fixed-point scale and `ScenarioCalendar` conversion (ADR-0003 A2/A3/A14) |
 | **N-24 / R-12 classification** | **Reclassified from blockers to deferred tuning/content.** Neither is required to write the scheduler mechanism; see §3.1. Frequencies, thresholds, batch sizes and budgets are configurable and measurable later; historical travel and report rates are domain content derived from geography that does not yet exist (ADR-0003 A14) |
 
+## 2.1c Resolved decisions from the 2026-10-06 ruling (N-29 and N-30)
+
+| Prior | Resolution |
+| --- | --- |
+| **N-29 SimTime scale + calendar conversion** | **Resolved 2026-10-06** (ADR-0003 amendment B1). **1 SimTime unit = 1 simulation hour**; **`UnitsPerDay = 24`** declared as scenario/`ScenarioCalendar` calibration metadata; `ScenarioCalendar` authored naturally in epoch, era, year-numbering direction, month sequence and month lengths in days; scalar→calendar conversion uses **exact integer arithmetic**, month boundaries at day boundaries; SimTime carries **no calendar semantics**; hour resolution does **not** imply hourly ticks (still due-work/event-driven); canonical cross-language serialization = **exact decimal integer string** plus explicit scale and calendar metadata; floating point, Unix epoch, JS `Date`, `DateTime` and wall clock are **never authoritative SimTime** |
+| **N-30 same-instant ordering key** | **Resolved 2026-10-06** (ADR-0003 amendment B2). Scheduler total order = lexicographic ascending **dueSimTime → workClassRank → workIdentifier**; work entries carry **schedule-time-fixed values**; `workClassRank` is a small **domain-owned, append-only, never-renumbered ordered enum**; `BattleResult`/encounter resolution occupies the **first precedence class**; `workIdentifier` is deterministic, stable, unique, immutable and never derived from insertion order, mutable content, randomness, wall clock, iteration order or a runtime counter; **single pending set** — work due at T competes immediately with the remaining T work; **no wave/generation/eligibility cohort/dynamic ordinal**; causality via **consequence-creation** (a pre-scheduled same-instant dependency is a modelling error); class rank is the **only static semantic precedence axis**; cap-and-defer unchanged; contract **language-neutral**, reproducible across save/load, replay, tooling and future process/engine boundaries |
+
 ## 2.2 Explicitly deferred by the 2026-10-04 approval pass
 
 These were considered and intentionally left unresolved. They must not be treated
@@ -139,7 +146,7 @@ as decided:
 | All gameplay mechanics, formulas and thresholds | Approving a boundary never approves the mechanics inside it |
 | Internal campaign battle-resolution formulas | Background AI battles are now *authorised to exist* and resolve campaign-side (ADR-0003 A11); the mechanics remain undesigned |
 | Per-domain merge/split identity semantics | The general principle is **Approved** (ADR-0009 §4); deciding fragmentation/split/merge per domain belongs to ADR-0016/0017 mechanics design |
-| SimTime fixed-point scale and calendar conversion constant | Owned by the **time-and-clock epic**, not foundations. Semantics are **Approved** (ADR-0003 A2/A3); the numeric values are selected in E1 and are its only time blocker besides the ordering key |
+| SimTime fixed-point scale and calendar conversion constant | **Resolved 2026-10-06 (N-29)** — 1 unit = 1 simulation hour, `UnitsPerDay = 24` as `ScenarioCalendar` calibration metadata (ADR-0003 amendment B1). Was owned by the **time-and-clock epic**; no longer deferred |
 | Historical travel, courier and report rates | **Deferred content/research**, not a mechanism blocker. The authoritative campaign geography does not exist yet, so no value could responsibly be locked; the mechanism is designed to run without them (ADR-0003 A14, **R-12**) |
 | Scheduler frequencies, thresholds, batch sizes, budgets, tier rules | **Tuning and measurement**, not a mechanism blocker. The scheduler writes against configurable placeholders (ADR-0003 A14, **N-24**) |
 
@@ -193,8 +200,8 @@ as decided:
 | N-27 | TheRev SDK, transport, IPC mechanism, process boundary, request/response schema, streaming protocol, error protocol, capability negotiation | E16 | Deferred until integration work begins (ADR-0012) |
 | ~~N-28~~ | ~~Concrete canonical ID **encoding** and the `sourceKey` property name/shape~~ — **CLOSED 2026-10-05 as far as required to unblock E0**: representation is **RFC 4122 UUIDv5**, derived from a fixed application namespace plus a stable name input (ADR-0009 §5a). Non-blocking residuals remain in the row below | ~~E0, E4, E6, E12~~ | ADR-0009 — **Approved** |
 | N-28r | Non-blocking residuals from the N-28 ruling: the `sourceKey` field name/shape and number of provenance slots; whether a runtime UUID dependency is added or RFC 4122 v5 derivation is implemented directly; start-world regeneration / re-import reconciliation against existing canonical IDs | E4, E6, E12, E17a | Content-aggregate detail and tooling decisions; do not gate the foundations epic |
-| N-29 | SimTime fixed-point **scale/precision**, and the numeric value of the **simulation-units-per-calendar-unit** constant (a `ScenarioCalendar` property, not a global) | E1 | ADR-0003 A3 follow-up; semantics **Approved**, values not selected |
-| N-30 | Final shape of the **same-instant ordering key** for work due at one SimTime | E1, E6 | ADR-0003 A5 follow-up; minimum properties **Approved**, shape open |
+| ~~N-29~~ | ~~SimTime fixed-point **scale/precision**, and the numeric value of the **simulation-units-per-calendar-unit** constant (a `ScenarioCalendar` property, not a global)~~ — **CLOSED 2026-10-06**: 1 SimTime unit = 1 simulation hour; `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata; calendar authored in days/month lengths; exact integer conversion; month boundaries at day boundaries; serialization = exact decimal integer string + scale + calendar metadata (ADR-0003 amendment **B1**) | ~~E1~~ | ADR-0003 amendment 2026-10-06 — **Approved** |
+| ~~N-30~~ | ~~Final shape of the **same-instant ordering key** for work due at one SimTime~~ — **CLOSED 2026-10-06**: total order **dueSimTime → workClassRank → workIdentifier**; append-only domain-owned rank enum, `BattleResult` first precedence class; single pending set; no wave/generation; causality via consequence-creation (ADR-0003 amendment **B2**) | ~~E1, E6~~ | ADR-0003 amendment 2026-10-06 — **Approved** |
 | ~~N-31~~ | ~~Whether any decision may take retroactive effect / whether scheduling may target a SimTime earlier than the current one~~ — **CLOSED 2026-10-05: no retroactive execution.** The clock never moves backward, new due work may not be scheduled into the past, and processed history is never retroactively mutated. Past-tense reference to an earlier `occurredAt` and later information arrival remain legitimate (ADR-0003 A13, ADR-0004) | ~~E1~~ | ADR-0003 A13 — **Approved** |
 | N-32 | Save/load and clock resume while an **interactive tactical battle is in flight** (relaunch, restore, or abort-and-refund), plus save/load while paused generally | E7, E17a | ADR-0003 A10 follow-up; the freeze makes this a stable persistable state |
 | N-33 | Whether consequences of an instantaneous-in-campaign-time battle land at the **encounter SimTime** or at a post-resume time | E8 | Domain rule; affects "did the battle happen before the relief force finished moving" |
@@ -234,6 +241,9 @@ two remaining items: **N-28** (representation is now UUIDv5, ADR-0009 §5a) and
     Ordering cannot be left as an unspecified mechanism the epic is supposed to
     build. Its minimum properties are already approved, so this is a small,
     well-bounded choice.
+  - **Both N-29 and N-30 were closed by the 2026-10-06 ruling** (ADR-0003
+    amendment B1/B2). E1 no longer has any design blockers — see the table
+    below.
 - **Removed from E1: N-24 and R-12.** Both were classified as blockers only
   because the mechanism is what will eventually consume their values. Under
   ADR-0003 A14's mechanism-versus-content rule they are not:
@@ -252,10 +262,13 @@ two remaining items: **N-28** (representation is now UUIDv5, ADR-0009 §5a) and
 | Epic | Design blockers after the focused ruling |
 | --- | --- |
 | **E0** | **None** |
-| **E1** | **N-29** (fixed-point scale + `ScenarioCalendar` conversion constant), **N-30** (same-instant ordering-key shape) |
-| E6 | **N-30**, **N-36**, plus N-24 tuning as a *later* dependency, not a design gate |
+| **E1** | **None** — N-29 (fixed-point scale + `ScenarioCalendar` conversion constant) and N-30 (same-instant ordering-key shape) were both **closed 2026-10-06** (ADR-0003 amendment B1/B2) |
+| E6 | **N-36**, plus N-24 tuning as a *later* dependency, not a design gate |
 | E7 | **N-32** (save/load mid-battle), **N-35** (`BattleResult` schema), plus existing research-dependent items |
 | E8 | **N-33**, **N-34**, **N-35**, **N-36** |
+
+> **Updated 2026-10-06:** the rows above reflect the closing of N-29 and N-30.
+> E1 (VS-2, Clock-Driven World) is now the next executable slice in the roadmap.
 
 **Classification rule going forward.** An item blocks an epic only if the epic
 **cannot be written or tested without it**. Content tuning, balance values and
@@ -312,3 +325,7 @@ registered as such.
   - Rome II mixed allied control or reinforcement-direction capability
     (research-dependent, R-2/R-3/R-5);
   - any execution roadmap or sprint tracker.
+
+  — **Updated 2026-10-06:** the 2026-10-05 pass scope is unchanged, but **N-29**
+  and **N-30** were subsequently closed by explicit ruling and **are now
+  authorised** (ADR-0003 amendment B1/B2).

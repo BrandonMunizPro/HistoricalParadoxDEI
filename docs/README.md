@@ -80,13 +80,13 @@ open.
 | --- | --- | --- |
 | [ADR-0001](adr/0001-campaign-military-representation-vs-dei-tactical.md) | Campaign military representation vs DeI tactical representation | **Approved** |
 | [ADR-0002](adr/0002-authoritative-state-causal-ledger-snapshots.md) | Authoritative mutable state plus causal ledger and snapshots | **Approved** |
-| [ADR-0003](adr/0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | **Approved** (time model and battle authority **Approved** 2026-10-05; scale/ordering-key details **Unresolved**) |
+| [ADR-0003](adr/0003-strategic-command-periods-simtime-pause.md) | Strategic command periods, SimTime, simultaneous progression, pause | **Approved** (time model and battle authority **Approved** 2026-10-05; scale/ordering-key details **Approved** 2026-10-06 — N-29/N-30) |
 | [ADR-0004](adr/0004-simulation-scheduling-and-bounded-computation.md) | Simulation scheduling and bounded computation | **Approved** (architecture; details unlocked; scheduler model resolved 2026-10-05) |
 | [ADR-0005](adr/0005-event-taxonomy-and-historical-significance.md) | Event taxonomy and historical significance | **Approved** (architecture; formulas unlocked) |
 | [ADR-0006](adr/0006-legal-action-and-proposal-validation.md) | Legal action and proposal validation architecture | **Approved** (architecture; vocabulary unlocked) |
 | [ADR-0007](adr/0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred (AD-2) |
 | [ADR-0008](adr/0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) |
-| [ADR-0009](adr/0009-identity-model.md) | Canonical identity model | **Approved** (identity contract **Approved** 2026-10-05; representation **Approved** — RFC 4122 UUIDv5; field naming/library **Unresolved**) |
+| [ADR-0009](adr/0009-identity-model.md) | Canonical identity model | **Approved** (identity contract **Approved** 2026-10-05; representation **Approved** — RFC 4122 UUIDv5; field naming **Unresolved** (N-28r); UUID library resolved at VS-1 as dependency-free pure-TypeScript SHA-1) |
 | [ADR-0010](adr/0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred |
 | [ADR-0011](adr/0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only, mechanics **Unresolved** |
 | [ADR-0012](adr/0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred |

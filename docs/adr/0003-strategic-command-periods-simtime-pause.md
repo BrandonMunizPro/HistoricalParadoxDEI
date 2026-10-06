@@ -4,8 +4,10 @@
   absolute monotonic fixed-point SimTime, scenario calendar data, month as the
   player-facing cadence, same-instant ordering separation, the tactical clock
   freeze, and the rule that background AI battles do not freeze the world.
+  **Amended 2026-10-06** to close the fixed-point **scale** and the
+  same-instant **ordering-key shape** (register decisions **N-29**, **N-30**).
 - Date: 2026-10-04
-- Amended: 2026-10-05
+- Amended: 2026-10-05, 2026-10-06
 - Affects: turn/time model, scheduler, UI, AI, determinism, save/load
 - Related: [ADR-0004](0004-simulation-scheduling-and-bounded-computation.md), [ADR-0001](0001-campaign-military-representation-vs-dei-tactical.md), [ADR-0016](0016-military-cohesion-and-post-battle-survival.md), [../architecture/system-dependency-graph.md](../architecture/system-dependency-graph.md)
 
@@ -151,9 +153,10 @@ unblocks E1 are therefore:
 4. a fixed-point scale fine enough that movement and report-travel durations are
    expressible without forcing sub-month duration to quantise to whole months.
 
-The **numeric value** of that constant and of the scale remains **Unresolved**
-and is not selected here. Do not over-design the historical calendar system
-beyond what E1 requires.
+The **numeric value** of that constant and of the scale remained **Unresolved**
+and was not selected here. It was selected by the **2026-10-06 amendment (B1,
+N-29)**: see below. Do not over-design the historical calendar system beyond
+what E1 requires.
 
 ### A4. SimTime is not a fixed-step world tick
 
@@ -208,6 +211,9 @@ that shifted with fidelity would make the same seed produce different history at
 different tiers.
 
 Do **not** reintroduce event ordinals as elapsed time (§A1).
+
+The final key shape is now settled by the **2026-10-06 amendment (B2, N-30)**:
+see below.
 
 ### A6. Player-facing time cadence
 
@@ -466,6 +472,69 @@ mechanism is what will eventually consume the tuned value. Registration must
 distinguish **"the mechanism cannot be written without this"** from **"the
 mechanism works with a placeholder until this is researched."**
 
+## Amendment 2026-10-06: N-29 and N-30 closed — scale and ordering key
+
+**Amended by explicit ruling 2026-10-06** (assumptions register **N-29**,
+**N-30**). A3 deliberately left the fixed conversion constant and the fixed-point
+scale unselected; A5 deliberately left the same-instant ordering key shape open.
+Both are now closed.
+
+### B1. SimTime scale and calendar calibration (closes N-29)
+
+1. **1 SimTime unit = 1 simulation hour.** The fixed-point scalar counts
+   simulation hours.
+2. **`UnitsPerDay = 24` is declared as scenario/`ScenarioCalendar` calibration
+   metadata**, not an unexplained implementation constant, so a future scenario
+   may differ.
+3. **`ScenarioCalendar` is authored naturally in calendar terms** — epoch, era,
+   year-numbering direction, month sequence, month lengths in days.
+4. The scalar→historical-calendar conversion uses **exact integer arithmetic**.
+   Month boundaries fall at day boundaries.
+5. **SimTime carries no calendar semantics.** It is absolute, monotonic, elapsed
+   simulation time in the declared fixed base unit.
+6. **Hour resolution does not imply hourly ticks**, hourly world evaluation,
+   hourly presentation, or hourly gameplay cadence. Simulation remains
+   due-work / event-driven (A4).
+7. **Canonical cross-language serialized SimTime** is the **exact decimal
+   integer string** of the scalar, together with explicit scale and calendar
+   metadata.
+8. Floating point, the Unix epoch, JavaScript `Date`, `DateTime`, wall clock,
+   and equivalent runtime-specific time representations are **never
+   authoritative SimTime**.
+
+### B2. Same-instant ordering key (closes N-30)
+
+1. The scheduler **total order** is **lexicographic ascending** over
+   **dueSimTime → workClassRank → workIdentifier**.
+2. Every schedulable work entry carries **schedule-time-fixed values** for those
+   fields.
+3. **`workClassRank`** is a small **domain-owned ordered enum**: stable,
+   append-only, never renumbered once published.
+4. **`BattleResult` / encounter resolution occupies the required first
+   precedence class**, applying before the remaining work at the frozen encounter
+   SimTime through this generic mechanism.
+5. **`workIdentifier`** is deterministic, stable, unique, immutable, and never
+   derived from runtime insertion order, mutable content, ambient randomness,
+   wall-clock state, collection iteration order, or a runtime counter.
+6. There is a **single pending set**. Work created while processing T is inserted
+   at its own legal due time ≥ current SimTime; if it is due at T it immediately
+   competes with the remaining T work under the same static key.
+7. There is **no wave, generation, eligibility cohort, dynamic event ordinal, or
+   processing-history-based ordering dimension**.
+8. **Causality belongs to the domain model**: same-instant dependent work is
+   created as a consequence of its cause, not pre-scheduled with an assumed
+   ordering. A pre-scheduled same-instant dependency that relies on scheduler
+   ordering is a **modelling error**.
+9. **`workClassRank` is the only static semantic precedence axis.** No additional
+   priority dimension may be added without a future explicit architecture
+   decision.
+10. **Cap-and-defer operates under this deterministic order** per
+    [ADR-0004](0004-simulation-scheduling-and-bounded-computation.md); it does
+    not alter original due-time semantics and introduces no ordering information
+    into SimTime.
+11. The ordering contract is **language-neutral** and reproducible across
+    save/load, replay, developer tooling, and future process/engine boundaries.
+
 ## Consequences
 
 - The simulation needs a clock/arbiter with pause semantics, schedulable
@@ -532,14 +601,18 @@ mechanism works with a placeholder until this is researched."**
   historical **tuning**. Concrete historical travel and report rates are
   deferred content, not a property of SimTime and not a foundations-epic
   dependency (A14).
-- **Unresolved:** the fixed-point scale and the numeric value of the
-  simulation-units-per-calendar-unit constant (A3). It lives in
-  `ScenarioCalendar`; the value is not selected.
+- **Resolved by the 2026-10-06 amendment (N-29):** the fixed-point scale and the
+  numeric value of the simulation-units-per-calendar-unit constant (A3). Declared
+  as `ScenarioCalendar` calibration metadata: **1 SimTime unit = 1 simulation
+  hour**, `UnitsPerDay = 24`, calendar authored in days and month lengths (B1).
 - **Unresolved:** how movement time couples to command periods, in detail.
   Player cadence is settled (A6); the mechanics of movement during a period are
   not.
-- **Unresolved:** the final shape of the same-instant ordering key (A5). The
-  minimum properties are fixed; the shape is a scheduler decision.
+- **Resolved by the 2026-10-06 amendment (N-30):** the final shape of the
+  same-instant ordering key (A5). **dueSimTime → workClassRank →
+  workIdentifier**, lexicographic ascending; append-only domain-owned rank enum
+  with `BattleResult` as the first precedence class; single pending set; no
+  wave/generation; causality via consequence-creation (B2).
 - **Unresolved:** pause UX rules and which notifications auto-interrupt
   (including what significance is sufficient to interrupt, A6).
 - **Unresolved:** save/load while paused, and clock resume semantics. This now
