@@ -1,6 +1,7 @@
 # Vertical slices and epic ordering
 
 - Canonical version: [vertical-slices-and-epics.md](vertical-slices-and-epics.md)
+- Execution plan and current status: [execution-roadmap.md](execution-roadmap.md)
 
 Dependency-ordered epics E0–E18 (with persistence split into E17a and E17b) and
 vertical slices S1–S12. The slices added by the time and performance decisions

@@ -58,6 +58,7 @@ open.
 | [architecture/event-taxonomy.md](architecture/event-taxonomy.md) | One envelope, four classifications, significance path, worked causal chains |
 | [architecture/legal-action-architecture.md](architecture/legal-action-architecture.md) | Proposal → validation → applied action, single gate for player/AI/Jev |
 | [architecture/vertical-slices-and-epics.md](architecture/vertical-slices-and-epics.md) | Dependency-ordered epics and vertical slice acceptance criteria |
+| [architecture/execution-roadmap.md](architecture/execution-roadmap.md) | Approved execution roadmap and vertical slice plan: stages, VS-1…VS-10, tactical POC and geography tracks, decision gates, research, stop points |
 | [architecture/assumptions-and-open-decisions.md](architecture/assumptions-and-open-decisions.md) | Assumption register, unresolved decision register, research-dependent question register |
 
 ## Domain reference
