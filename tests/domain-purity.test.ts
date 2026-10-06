@@ -25,6 +25,21 @@ const forbiddenPatterns: readonly { label: string; pattern: RegExp }[] = [
   { label: 'pack file reference', pattern: /packfile|\.pack\b|packfile/i },
   { label: 'filesystem path', pattern: /[A-Za-z]:[\\/]|\/(?:home|usr|etc)\// },
   { label: 'research artefact path', pattern: /research[\\/]/ },
+  { label: 'tactical key mapping', pattern: /\b(?:unit|faction|region|settlement)_key\b/ },
+  { label: 'JavaScript date API', pattern: /\bnew Date\s*\(|\bDate\.(?:now|parse)\b/ },
+  {
+    label: 'ambient randomness or wall clock',
+    pattern: /\bMath\.random\b|\brandomUUID\b|\bperformance\.now\b/,
+  },
+  {
+    label: 'AI provider vocabulary',
+    pattern: /\b(?:openai|anthropic|ollama|langchain|huggingface|llm|gpt|claude)\b/i,
+  },
+  {
+    label: 'real-world rate vocabulary',
+    pattern:
+      /\b(?:miles?|kilometers?|leagues?|furlongs?|km\/h|mph)\b|\bper\s+(?:hour|day|week|month|year)\b/i,
+  },
 ];
 
 describe('domain purity', () => {
@@ -53,6 +68,44 @@ describe('domain purity', () => {
       expect(source).not.toMatch(/\bimport\s*\(/);
     }
 
+    expect(offenders).toEqual([]);
+  });
+
+  it('identity derivation has no wall-clock or ambient randomness entry points', () => {
+    // ADR-0009 5: canonical identity must not depend on wall-clock time,
+    // ambient randomness, database identity or mutable display data.
+    const identityRoot = join(domainRoot, 'identity');
+    const files = listTypeScriptFiles(identityRoot);
+    expect(files.length).toBeGreaterThan(0);
+    const forbidden =
+      /\bDate\.now\b|\bMath\.random\b|\bnew Date\b|\brandomUUID\b|\bperformance\.now\b|\bsetTimeout\b|\bsetInterval\b|\bcrypto\.random/;
+    const offenders = files
+      .filter((file) => forbidden.test(readFileSync(file, 'utf8')))
+      .map((file) => relative(repoRoot, file));
+    expect(offenders).toEqual([]);
+  });
+
+  it('time module declares no scale constant and no unit vocabulary', () => {
+    // N-29: the fixed-point scale and calendar conversion constant belong to
+    // E1. E0 must not smuggle a ticks-per-unit value, rate or unit word into
+    // the time primitives (ADR-0003 A2, A14).
+    const timeRoot = join(domainRoot, 'time');
+    const files = listTypeScriptFiles(timeRoot);
+    expect(files.length).toBeGreaterThan(0);
+    const offenders: string[] = [];
+    for (const file of files) {
+      const source = readFileSync(file, 'utf8');
+      const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');
+      // Numeric literals only: digits not bound to words or hyphens, so that
+      // an ADR citation inside an error message does not count as a scale.
+      if (/(?<![\w-])\d{2,}(?![\w-])/.test(code)) {
+        offenders.push(`${relative(repoRoot, file)}: multi-digit numeric literal`);
+      }
+      const unit = code.match(/\b(?:millisecond|second|minute|hour|day|week|month|year)s?\b/i);
+      if (unit) {
+        offenders.push(`${relative(repoRoot, file)}: unit vocabulary '${unit[0]}'`);
+      }
+    }
     expect(offenders).toEqual([]);
   });
 });
