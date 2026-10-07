@@ -106,13 +106,10 @@ describe('VS-2: a scripted world advances by command periods (E1)', () => {
       monthId(0),
       monthId(1),
       'battle-handoff',
-      'battle-result-apply',
-      'battle-echo',
-      monthId(2),
     ]);
     expect(simTimeScalar(clock.now())).toBe(1440);
     expect(clock.isFrozen()).toBe(true);
-    expect(scenario.pendingCount()).toBe(16);
+    expect(scenario.pendingCount()).toBe(19);
 
     const handoff = frozenSteps.find((step) => step.workIdentifier === 'battle-handoff');
     expect(handoff?.dueSimTime).toEqual(simTime(1440));
@@ -126,9 +123,11 @@ describe('VS-2: a scripted world advances by command periods (E1)', () => {
 
     scenario.unfreeze();
     const resumed = scenario.runUntilHeld();
-    expect(resumed.map((step) => step.workIdentifier)).toEqual(
-      Array.from({ length: 16 }, (_, index) => monthId(index + 3)),
-    );
+    expect(resumed.map((step) => step.workIdentifier)).toEqual([
+      'battle-result-apply',
+      'battle-echo',
+      ...Array.from({ length: 17 }, (_, index) => monthId(index + 2)),
+    ]);
     expect(scenario.pendingCount()).toBe(0);
     expect(simTimeScalar(clock.now())).toBe(18 * 720);
     expect(clock.isFrozen()).toBe(false);

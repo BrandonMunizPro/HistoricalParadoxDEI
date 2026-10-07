@@ -24,3 +24,21 @@ export enum WorkClassRank {
 export function workClassRankOrder(rank: WorkClassRank): number {
   return rank;
 }
+
+/**
+ * Runtime gate for the scheduling envelope (amendment B2/N-30, ADR-0008).
+ *
+ * Only declared, domain-owned ranks are part of the static axis. The rank is
+ * a number-typed enum, so at runtime any value could be passed; anything that
+ * is not one of the declared members would fall outside the append-only
+ * precedence axis and silently reorder history. The scheduler rejects such
+ * values **before mutating any state**.
+ */
+export function requireDeclaredWorkClassRank(rank: WorkClassRank): WorkClassRank {
+  if (rank !== WorkClassRank.battleResult && rank !== WorkClassRank.world) {
+    throw new RangeError(
+      `Work class rank must be a declared domain-owned member (battleResult or world), received ${String(rank)}: undeclared ranks are outside the static precedence axis (ADR-0003 amendment B2).`,
+    );
+  }
+  return rank;
+}

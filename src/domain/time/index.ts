@@ -5,8 +5,8 @@ export { createClock } from './clock.js';
 export type { Clock } from './clock.js';
 export { createDueWorkScheduler, PastDueSchedulingError } from './scheduler.js';
 export type { DueWorkScheduler, ScheduledWork } from './scheduler.js';
-export { WorkClassRank, workClassRankOrder } from './work-class-rank.js';
-export { workIdentifier, compareWorkIdentifiers } from './work-identifier.js';
+export { WorkClassRank, requireDeclaredWorkClassRank, workClassRankOrder } from './work-class-rank.js';
+export { compareWorkIdentifiers, hasUnpairedSurrogate, requireWellFormedIdentifier, workIdentifier } from './work-identifier.js';
 export type { WorkIdentifier } from './work-identifier.js';
 export {
   parseSimTimeStableString,

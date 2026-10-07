@@ -9,9 +9,10 @@
  * of insertion order — ADR-0003 A5, amendment B2/N-30).
  *
  * Pause and freeze are the simulation clock's capabilities (decision 7,
- * A10/A11): runUntilHeld stops when the scheduler holds (paused, or frozen
- * with the next work beyond the frozen instant) and resumes from the same
- * SimTime — handoff time is never consumed or rewritten.
+ * A10/A11): runUntilHeld stops when the scheduler holds (paused, or frozen —
+ * a generic hold of every due entry, regardless of class) and resumes from
+ * the same SimTime after the orchestration unfreezes; handoff time is never
+ * consumed or rewritten.
  */
 import type { CalendarDate, ScenarioCalendar } from '../domain/calendar/index.js';
 import { simTimeScalar } from '../domain/time/index.js';
