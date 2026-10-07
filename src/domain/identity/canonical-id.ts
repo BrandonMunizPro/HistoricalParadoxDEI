@@ -65,9 +65,14 @@ function stableNameFrom(parts: readonly string[]): string {
   return parts.map((part) => `${part.length}:${part}`).join('');
 }
 
-function requireNonEmpty(value: string, what: string): void {
+function requireIdentityInput(value: string, what: string): void {
   if (value.length === 0) {
     throw new RangeError(`Canonical identity ${what} must not be empty.`);
+  }
+  // Reject unpaired surrogates before UTF-8 encoding can replace them and alias
+  // distinct inputs. Valid strings retain their original length and contents.
+  if (/[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/.test(value)) {
+    throw new RangeError(`Canonical identity ${what} must contain well-formed Unicode.`);
   }
 }
 
@@ -106,8 +111,8 @@ export interface ProceduralIdentityInputs {
  * (ADR-0009 5).
  */
 export function deriveAuthoredCanonicalId(source: AuthoredSourceIdentity): CanonicalId {
-  requireNonEmpty(source.sourceNamespace, 'source namespace');
-  requireNonEmpty(source.sourceKey, 'source key');
+  requireIdentityInput(source.sourceNamespace, 'source namespace');
+  requireIdentityInput(source.sourceKey, 'source key');
   const stableName = stableNameFrom([AUTHORED_TAG, source.sourceNamespace, source.sourceKey]);
   return uuidV5(APPLICATION_NAMESPACE_UUID, stableName) as CanonicalId;
 }
@@ -118,9 +123,9 @@ export function deriveAuthoredCanonicalId(source: AuthoredSourceIdentity): Canon
  * identical canonical ID across equivalent runs (ADR-0009 5, ADR-0008).
  */
 export function deriveProceduralCanonicalId(inputs: ProceduralIdentityInputs): CanonicalId {
-  requireNonEmpty(inputs.scenarioIdentity, 'scenario identity');
-  requireNonEmpty(inputs.deterministicSeed, 'deterministic seed');
-  requireNonEmpty(inputs.creationRole, 'creation role');
+  requireIdentityInput(inputs.scenarioIdentity, 'scenario identity');
+  requireIdentityInput(inputs.deterministicSeed, 'deterministic seed');
+  requireIdentityInput(inputs.creationRole, 'creation role');
   if (!Number.isSafeInteger(inputs.creationIndex) || inputs.creationIndex < 0) {
     throw new RangeError(
       `Canonical identity creation index must be a non-negative safe integer, received ${inputs.creationIndex}.`,
@@ -142,6 +147,6 @@ export function deriveProceduralCanonicalId(inputs: ProceduralIdentityInputs): C
  * during load; this check exists to validate values read back from storage or
  * across boundaries (ADR-0009 5).
  */
-export function isCanonicalId(value: string): value is CanonicalId {
-  return CANONICAL_ID_PATTERN.test(value);
+export function isCanonicalId(value: unknown): value is CanonicalId {
+  return typeof value === 'string' && CANONICAL_ID_PATTERN.test(value);
 }

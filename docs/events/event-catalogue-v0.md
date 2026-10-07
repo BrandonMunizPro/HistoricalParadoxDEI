@@ -193,10 +193,12 @@ campaign-side `BattleResult` boundary (ADR-0003 A12).
 > **Unresolved** — the clock behaviour and authority split are decided, only the
 > event shape is open.
 >
-> On either path, the result is applied **as the first due work at the encounter
-> SimTime** while the clock is still frozen, and remaining work at that instant
-> executes against post-battle state (ADR-0003 A10). Whether battle consequences
-> consume any campaign SimTime is **Unresolved** (N-33).
+> On the **interactive handoff** path, the result is applied **as the first due
+> work at the encounter SimTime** while the clock is still frozen; remaining work
+> at that instant executes against post-battle state (ADR-0003 A10). On the
+> **background** path, the outcome enters normal campaign scheduling and the
+> clock continues; no freeze occurs (ADR-0003 A11). Battle-consequence timing
+> remains **Unresolved** (N-33); this does not change either path's clock contract.
 
 ## Education and institutions
 

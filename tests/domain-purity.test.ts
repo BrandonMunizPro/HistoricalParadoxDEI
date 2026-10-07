@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { dependencyViolations } from './helpers/architecture-dependencies.js';
 
 const repoRoot = join(import.meta.dirname, '..');
 const domainRoot = join(repoRoot, 'src', 'domain');
@@ -54,20 +55,17 @@ describe('domain purity', () => {
     expect(offenders).toEqual([]);
   });
 
-  it('imports nothing outside the domain layer', () => {
-    const offenders: string[] = [];
-
-    for (const file of domainFiles) {
-      const source = readFileSync(file, 'utf8');
-      const specifiers = [...source.matchAll(/from\s+'([^']+)'/g)].map((match) => match[1] ?? '');
-      const foreign = specifiers.filter((specifier) => !specifier.startsWith('./'));
-      if (foreign.length > 0) {
-        offenders.push(`${relative(repoRoot, file)}: ${foreign.join(', ')}`);
-      }
-      expect(source).not.toMatch(/\brequire\s*\(/);
-      expect(source).not.toMatch(/\bimport\s*\(/);
-    }
-
+  it.each([
+    { layer: 'domain', root: domainRoot, allowedRoots: [domainRoot] },
+    { layer: 'simulation', root: join(repoRoot, 'src', 'simulation'),
+      allowedRoots: [domainRoot, join(repoRoot, 'src', 'simulation')] },
+  ])('$layer dependencies stay within the approved layers', ({ root, allowedRoots }) => {
+    const files = listTypeScriptFiles(root);
+    expect(files.length).toBeGreaterThan(0);
+    const offenders = files.flatMap((file) =>
+      dependencyViolations(file, readFileSync(file, 'utf8'), allowedRoots)
+        .map((violation) => relative(repoRoot, file) + ': ' + violation),
+    );
     expect(offenders).toEqual([]);
   });
 

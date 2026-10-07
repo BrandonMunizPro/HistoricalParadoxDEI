@@ -65,7 +65,7 @@ Names and shapes below are proposals for design discussion. Items marked
 
 | Group | Proposed entities | Notes |
 | --- | --- | --- |
-| Kernel | `SimTime` (absolute monotonic fixed-point elapsed time), `ScenarioCalendar`, `CommandPeriod`, canonical ids (ADR-0009), separate same-instant ordering, seeded RNG streams | SimTime/calendar semantics **Approved** (ADR-0003); id contract **Approved**, encoding open (ADR-0009); ordering/RNG constraints **Proposed** (ADR-0008) |
+| Kernel | `SimTime` (absolute monotonic fixed-point elapsed time), `ScenarioCalendar`, `CommandPeriod`, canonical ids (ADR-0009), separate same-instant ordering, seeded RNG streams | SimTime/calendar semantics and scale **Approved** (ADR-0003 B1); identity contract and UUIDv5 representation **Approved** (ADR-0009 §5a); ordering key **Approved** (ADR-0003 B2); seeded RNG constraints **Approved**, determinism depth deferred as AD-3 (ADR-0008) |
 | Ledger | `HistoricalEvent` **[B §11]**: `id`, `date`, `type`, `participants[]`, `factions[]`, `locations[]`, `magnitude`, `causes[]`, `consequences[]`, `witnesses[]` | Append-only; causal traversal required |
 | Geography | `Location` (region, settlement site, sea, pass, river), adjacency edges, terrain/water/road references; real-world coordinates and terrain properties where the map requires them | Feeds movement, supply, trade, intelligence, battle. Must retain a path to real geography, not adjacency alone (ADR-0020) |
 | Settlement | `Settlement` (civic entity: population aggregate, production, buildings, garrisons, local authority, institutions) | Blueprint lists settlements under both Geography and their own system; separation **Assumption** |

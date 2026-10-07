@@ -40,7 +40,8 @@ combining:
 ### What this approval does **not** lock
 
 - the exact scheduler implementation;
-- tick / intra-period resolution;
+- tick / intra-period resolution (**subsequently resolved** by ADR-0003 A1–A4
+  and amendment B1; timestamp precision does not imply fixed-step simulation);
 - evaluation frequencies;
 - foreground/background thresholds;
 - spatial index technology;
@@ -142,10 +143,11 @@ with placeholder intervals until measurement and tuning exist.
   follow measurement.
 - **Unresolved:** foreground/background thresholds and promotion/demotion rules.
 - **Unresolved:** spatial index technology and batch sizes.
-- **Unresolved:** the final shape of the same-instant ordering key. Its minimum
-  properties are fixed by ADR-0003; the shape is not. Unlike the items above,
-  the ordering mechanism is itself part of the time-and-clock epic's deliverable,
-  so a concrete key is required to implement that epic.
+- **Resolved 2026-10-06:** the same-instant ordering key is **dueSimTime →
+  workClassRank → workIdentifier**, lexicographic ascending; ranks are
+  domain-owned and append-only, `BattleResult` has first precedence, and work
+  competes in a single pending set with no wave/generation (ADR-0003 amendment
+  B2, **N-30**). It is no longer an E1 design blocker.
 - **Unresolved (tuning and measurement, not a mechanism blocker):** spatial
   index technology, batch sizes, foreground/background thresholds,
   promotion/demotion rules, and numeric budgets. These require measurement and

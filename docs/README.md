@@ -24,11 +24,13 @@ rewrites what the blueprint said.
 
 Hierarchy, highest to lowest:
 
-1. **Blueprint** — original game design intent.
+1. **Approved ADRs** — authoritative wherever they narrow, elaborate or
+   supersede earlier material.
 2. **Architecture documents** (`architecture/`, `domain/`, `events/`,
-   `presentation/`) — system decomposition.
-3. **ADRs** — subsequently approved architectural decisions; authoritative
-   wherever they narrow, elaborate or supersede blueprint material.
+   `presentation/`) — system decomposition consistent with approved ADRs. The
+   approved execution roadmap governs sequencing, not architectural decisions.
+3. **Blueprint** — original game design intent and historical provenance; it
+   does not override approved ADRs.
 4. **Open decision register**
    ([architecture/assumptions-and-open-decisions.md](architecture/assumptions-and-open-decisions.md))
    — deliberately unresolved decisions.

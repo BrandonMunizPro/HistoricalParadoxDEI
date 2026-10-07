@@ -155,7 +155,7 @@ as decided:
 | ID | Decision | Blocks | Artefact needed |
 | --- | --- | --- | --- |
 | AD-2 | Aggregate boundaries and concurrent-action resolution | E4, E9, E14, E18 | ADR-0007 decision — **deliberately deferred 2026-10-04** |
-| AD-3 | Exact determinism depth (seams approved, depth not) | E1, E16 | ADR-0008 decision — **deliberately deferred 2026-10-04** |
+| AD-3 | Exact determinism depth (seams approved, depth not) | E16 / S9 benchmark | ADR-0008 decision — **deliberately deferred 2026-10-04**; not an E1 blocker (approved execution roadmap §F) |
 | ~~AD-6~~ | ~~Identity scheme~~ — **CLOSED 2026-10-05** as both contract and representation (ADR-0009): **RFC 4122 UUIDv5**, deterministic by construction (§5a). Non-blocking residuals: `sourceKey` field naming, UUID library, re-import reconciliation, carried below as **N-28r** | ~~all~~ | ADR-0009 — **Approved** |
 | AD-8 | Legitimacy / claims / pressure representation | E9, E14, E18 | ADR-0011 decision |
 | AD-9 | Persistence technology and snapshot policy | E17 | ADR-0010 decision |

@@ -2,11 +2,12 @@
  * Narrow read-only view of tactical reference data.
  *
  * Tactical catalogues hold a large amount of engine-specific structure. The
- * domain must never receive those structures directly, so everything the
- * simulation is allowed to ask for is expressed here as small summaries.
+ * campaign domain and simulation must never receive those structures or keys.
+ * These small summaries are for tactical adapter-side reference-data queries.
  *
  * Identifiers returned by this interface are opaque strings owned by the
- * tactical catalogue. They are never parsed or interpreted by domain code.
+ * tactical catalogue. They stay within the adapter/infrastructure boundary;
+ * they are never exposed to campaign domain or simulation code (ADR-0001).
  */
 export interface TacticalUnitSummary {
   /** Opaque catalogue identifier of a unit. */
@@ -26,7 +27,8 @@ export interface TacticalFactionSummary {
  * Read-only access to tactical reference data.
  *
  * Implementations belong in infrastructure (they may read the generated
- * research catalogues); consumers belong to the simulation.
+ * research catalogues); consumers belong to tactical adapters. The simulation
+ * depends only on domain contracts, never on this infrastructure interface.
  */
 export interface TacticalCatalogReader {
   findUnit(unitKey: string): Promise<TacticalUnitSummary | null>;

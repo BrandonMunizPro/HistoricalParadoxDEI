@@ -77,3 +77,20 @@ Required server state: `rpfm_server.exe` is v5.1.0 (portable from `Frodo45127/rp
 - No battle POC, no TypeScript adapter, no runtime/Lua deployment, no UI.
 
 If a future task needs exact field names per table, consult `extracted/_manifest.json` + each table JSON's `fields` (same schema as the rows) rather than re-running pack scans.
+
+## 8. Deferred review findings — prerequisites for T0 and tactical integration
+
+The following findings remain **deferred**, not remediated in the focused
+foundations pass. Resolve and verify both before relying on this pipeline for
+T0 or later tactical integration:
+
+- **Finding 4 — research-tool execution:** the repository declares ESM, but the
+  documented `.js` tools use CommonJS `require`/`module.exports`; documented
+  commands fail under the current package scope. `pfh_diag.js` also requires
+  `pfh_read.js`, which is absent from the tracked checkout. Restore clean-checkout
+  execution and verify the documented command entry points.
+- **Finding 5 — decoded-field alignment:** `rpfm_extract.js` falls back to raw
+  `definition.fields` when processed-field lookup fails and silently truncates
+  field/cell pairing. This violates §3’s processed-schema requirement and risks
+  corrupted output. Reject or quarantine unaligned shards and verify failure,
+  merged-field and row-length cases before trusting regenerated catalogs.

@@ -221,6 +221,59 @@ describe('canonical identity (ADR-0009 5a)', () => {
     }
   });
 
+  it.each(['\ud800', '\ud801', '\udfff', 'prefix\ud800', '\udc00suffix', '\ud800\ud800\udc00', '\ud800\udc00\udc00'])(
+    'rejects ill-formed Unicode in every identity input: %j',
+    (malformed) => {
+      for (const field of ['sourceNamespace', 'sourceKey'] as const) {
+        expect(() => deriveAuthoredCanonicalId({ ...AUTHORED_SOURCE, [field]: malformed }))
+          .toThrow('must contain well-formed Unicode');
+      }
+      for (const field of ['scenarioIdentity', 'deterministicSeed', 'creationRole'] as const) {
+        expect(() => deriveProceduralCanonicalId({ ...PROCEDURAL_INPUTS, [field]: malformed }))
+          .toThrow('must contain well-formed Unicode');
+      }
+    },
+  );
+
+  it('rejects distinct inputs that UTF-8 encoding would silently alias', () => {
+    expect(utf8('\ud800')).toEqual(utf8('\ud801'));
+    expect(utf8('\ud800')).toEqual(utf8('\ufffd'));
+    for (const sourceKey of ['\ud800', '\ud801']) {
+      expect(() => deriveAuthoredCanonicalId({ sourceNamespace: 'test', sourceKey }))
+        .toThrow(RangeError);
+    }
+    expect(deriveAuthoredCanonicalId({ sourceNamespace: 'test', sourceKey: '\ufffd' }))
+      .toBe('d01d1fea-e252-5194-8fa1-4dea3462278d');
+  });
+
+  it.each(['plain', '中文ΣΩ', '\ud800\udc00', '\udbff\udfff', '😀𐐀', '\ufffd', 'e\u0301', '\u00e9'])(
+    'preserves the original derivation for well-formed Unicode: %j',
+    (value) => {
+      const authoredParts = ['authored', value, value];
+      const proceduralParts = ['procedural', value, value, value, '0'];
+      const originalName = (parts: readonly string[]): string =>
+        parts.map((part) => `${part.length}:${part}`).join('');
+      expect(deriveAuthoredCanonicalId({ sourceNamespace: value, sourceKey: value }))
+        .toBe(referenceUuidV5(APPLICATION_NAMESPACE_UUID, originalName(authoredParts)));
+      expect(deriveProceduralCanonicalId({ scenarioIdentity: value, deterministicSeed: value, creationRole: value, creationIndex: 0 }))
+        .toBe(referenceUuidV5(APPLICATION_NAMESPACE_UUID, originalName(proceduralParts)));
+    },
+  );
+
+  it('rejects non-string boundary values without invoking coercion', () => {
+    const valid = deriveAuthoredCanonicalId(AUTHORED_SOURCE);
+    const values: readonly unknown[] = [
+      [valid], {}, { toString: () => valid },
+      { toString: () => { throw new Error('must not coerce'); } },
+      null, undefined, 0, 42, Number.NaN, new String(valid),
+    ];
+    for (const value of values) expect(isCanonicalId(value)).toBe(false);
+    const boundaryValue: unknown = valid;
+    if (!isCanonicalId(boundaryValue)) throw new Error('valid ID rejected');
+    const branded: CanonicalId = boundaryValue;
+    expect(branded).toBe(valid);
+  });
+
   it('validates canonical form: lowercase UUIDv5 only', () => {
     expect(isCanonicalId(deriveAuthoredCanonicalId(AUTHORED_SOURCE))).toBe(true);
     expect(isCanonicalId(deriveProceduralCanonicalId(PROCEDURAL_INPUTS))).toBe(true);

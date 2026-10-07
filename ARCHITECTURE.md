@@ -58,10 +58,11 @@ BattleAdapter  ──▶ BattlefieldResolver (adapter-side translation)
 3. Engines are pluggable: `src/tactical/adapters/*` implements domain interfaces,
    never the reverse. The simulation selects an adapter; it does not know which
    engine it is talking to.
-4. Tactical reference data (units, factions, battlefields, environments) is
-   reached through the narrow `TacticalCatalogReader` interface in
-   `src/infrastructure`. The large generated catalogue structures stay in
-   infrastructure and are never exposed to the domain.
+4. Tactical adapters reach reference data (units, factions, battlefields,
+   environments) through the narrow `TacticalCatalogReader` interface in
+   `src/infrastructure`. Catalogue structures and identifiers stay within the
+   adapter/infrastructure boundary; neither the domain nor the simulation
+   consumes this interface or its tactical keys (ADR-0001).
 5. Engines and catalogues are external, substitutable infrastructure. Nothing
    third-party (Rome II, DeI, RPFM) is vendored into this repository.
 6. Presentation is a consumer with no write path into authoritative state, and it

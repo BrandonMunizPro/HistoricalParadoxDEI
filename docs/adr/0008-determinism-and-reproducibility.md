@@ -81,10 +81,10 @@ Canonical ID generation must not depend on wall-clock time, ambient randomness,
 database-generated identity or mutable display data, and IDs are persisted and
 never regenerated on load.
 
-**Unaffected by this approval:** the concrete ID **encoding** remains deferred
-(ADR-0009).
+**Subsequently resolved 2026-10-05:** the concrete ID representation is
+**RFC 4122 UUIDv5** (ADR-0009 §5a); encoding is no longer deferred.
 
-### A2. SimTime's numeric semantics are fixed; the scale is not
+### A2. SimTime numeric semantics and subsequently approved scale
 
 Per [ADR-0003](0003-strategic-command-periods-simtime-pause.md) (**Approved**),
 SimTime is an **absolute, monotonic, fixed-point measure of elapsed simulation
@@ -93,11 +93,13 @@ time**. This *is* a numeric-representation decision, and it removes the earlier
 are not acceptable for the canonical clock, because exact reproducible ordering
 and duration arithmetic are required.
 
-Two things are deliberately **still open**:
+The **scale/precision** was subsequently **resolved 2026-10-06** by ADR-0003
+amendment B1 (**N-29**): **1 SimTime unit = 1 simulation hour**, with
+`UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata.
 
-- the **scale/precision** of the fixed-point representation;
-- numeric representation **outside** SimTime — aggregates, ledger magnitude,
-  simulation numbers generally — which is untouched by this amendment.
+Numeric representation **outside** SimTime — aggregates, ledger magnitude and
+simulation numbers generally — remains **Unresolved** and is untouched by
+those approvals.
 
 Because ordering among work due at one SimTime is a **separate mechanism**
 (ADR-0003), this approval's ordering requirements are unchanged and now also
@@ -126,12 +128,12 @@ work is processed must not change history.
 
 - **Unresolved (AD-3, deliberately kept open):** how strict determinism must be.
   The approval fixes the *seams*; it does not fix the *depth*.
-- **Unresolved:** the fixed-point **scale/precision** for SimTime, and numeric
-  representation outside SimTime (floats versus fixed point) and its effect on
-  reproducibility. SimTime's *semantics* are now fixed as absolute monotonic
-  fixed-point elapsed time (ADR-0003).
+- **Resolved 2026-10-06:** SimTime scale/precision (ADR-0003 amendment B1,
+  **N-29**). Numeric representation **outside** SimTime and its effect on
+  reproducibility remain **Unresolved**.
 - **Unresolved:** whether AI-proposed actions are recorded for exact replay, or
   replayed as recorded inputs.
 - **Resolved (ADR-0009, 2026-10-05):** canonical identity assignment is
   deterministic given scenario identity, stable source identifiers,
-  version/configuration and seed. Encoding remains deferred.
+  version/configuration and seed. Representation is **RFC 4122 UUIDv5**
+  (ADR-0009 §5a).
