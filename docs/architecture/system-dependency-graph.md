@@ -152,9 +152,10 @@ point, not a state teleport.
                                        persistent world state.
                                        Schema NOT frozen (N-35).
 
-Persistence (ADR-0010, deferred): authoritative state + causal ledger +
-snapshots behind repository ports; ORM not chosen. Single-player MVP means
-save/load and recovery only — no replication, locking or distributed
+Persistence (ADR-0010, approved 2026-10-07): authoritative state + causal ledger +
+snapshots behind repository ports; SQLite (better-sqlite3) behind Drizzle ORM,
+change-aware per-step mirroring, immutable verified save slots. Single-player MVP
+means save/load and recovery only — no replication, locking or distributed
 coordination (ADR-0014).
 
 Presentation (ADR-0019): a **consumer only**. It reads authoritative state and

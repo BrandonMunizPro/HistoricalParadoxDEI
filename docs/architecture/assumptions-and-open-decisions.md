@@ -130,6 +130,12 @@
 | **N-29 SimTime scale + calendar conversion** | **Resolved 2026-10-06** (ADR-0003 amendment B1). **1 SimTime unit = 1 simulation hour**; **`UnitsPerDay = 24`** declared as scenario/`ScenarioCalendar` calibration metadata; `ScenarioCalendar` authored naturally in epoch, era, year-numbering direction, month sequence and month lengths in days; scalar→calendar conversion uses **exact integer arithmetic**, month boundaries at day boundaries; SimTime carries **no calendar semantics**; hour resolution does **not** imply hourly ticks (still due-work/event-driven); canonical cross-language serialization = **exact decimal integer string** plus explicit scale and calendar metadata; floating point, Unix epoch, JS `Date`, `DateTime` and wall clock are **never authoritative SimTime** |
 | **N-30 same-instant ordering key** | **Resolved 2026-10-06** (ADR-0003 amendment B2). Scheduler total order = lexicographic ascending **dueSimTime → workClassRank → workIdentifier**; work entries carry **schedule-time-fixed values**; `workClassRank` is a small **domain-owned, append-only, never-renumbered ordered enum**; `BattleResult`/encounter resolution occupies the **first precedence class**; `workIdentifier` is deterministic, stable, unique, immutable and never derived from insertion order, mutable content, randomness, wall clock, iteration order or a runtime counter; **single pending set** — work due at T competes immediately with the remaining T work; **no wave/generation/eligibility cohort/dynamic ordinal**; causality via **consequence-creation** (a pre-scheduled same-instant dependency is a modelling error); class rank is the **only static semantic precedence axis**; cap-and-defer unchanged; contract **language-neutral**, reproducible across save/load, replay, tooling and future process/engine boundaries |
 
+## 2.1d Resolved decision from the 2026-10-07 ruling (AD-9 / VS-3)
+
+| Prior | Resolution |
+| --- | --- |
+| **AD-9 persistence technology** | **Resolved 2026-10-07** (ADR-0010 **Approved**). Domain persistence is defined by **pure technology-free ports** in `src/domain/persistence` (domain types only; no storage vocabulary, paths, `Date` or database values). Implementation lives behind them in `src/persistence`: **SQLite (better-sqlite3) driven through Drizzle ORM** — embedded, transactional, single-file, single-process (MVP scope, ADR-0014) — with a **schema-versioned** relational mirror of authoritative state (one row per entity), the scheduler's accepted pending-work envelope, and the append-only ledger. The simulation stays **authoritative in memory**; persistence is **change-aware** (one transaction per executed step records step content + pending-set mirror + current `SimTime`), never a whole-world rewrite. **Rome-II immutable saves**: a consistent engine copy (`VACUUM INTO`) is stamped, fully verified, then atomically renamed into the slot; `manual` never overwrites, `autosave` may; results are reported only after verification; loading starts a fresh continuation and never writes into a slot. Live `SimTime` may exceed the latest saved value. The scheduler is **never serialized as closures**: envelope + `workKind` registry key + JSON payload, reconstructed and re-validated through `scheduler.schedule()` on load. `SimTime` persists as its canonical decimal string (N-29). ORM/DB depth (retention, migration policy, why-query, crash auto-restore) stays `[F]` to E17b |
+
 ## 2.2 Explicitly deferred by the 2026-10-04 approval pass
 
 These were considered and intentionally left unresolved. They must not be treated
@@ -140,7 +146,7 @@ as decided:
 | AD-2 aggregate boundaries / concurrent action resolution | Approving the surrounding architecture is not the same as deciding consistency boundaries |
 | AD-3 exact determinism depth | ADR-0008 fixes the seams, not how strict determinism must be |
 | AD-6 **identity encoding** | **Resolved 2026-10-05** as RFC 4122 UUIDv5 (ADR-0009 §5a). Residual non-blocking items are in **N-28r** |
-| AD-9 persistence technology | Unaffected by these approvals |
+| ~~AD-9~~ persistence technology | **Resolved 2026-10-07** as approved ADR-0010 — pure domain ports + SQLite/Drizzle implementation, change-aware mirroring, immutable verified save slots |
 | AD-10 TheRev SDK, transport, IPC, schemas, streaming and error protocols | Integration work has not begun; premature to lock |
 | Name and shape of the game-side intelligence port | Deliberately unapproved; `CharacterIntelligencePort` is illustrative only |
 | All gameplay mechanics, formulas and thresholds | Approving a boundary never approves the mechanics inside it |
@@ -158,7 +164,7 @@ as decided:
 | AD-3 | Exact determinism depth (seams approved, depth not) | E16 / S9 benchmark | ADR-0008 decision — **deliberately deferred 2026-10-04**; not an E1 blocker (approved execution roadmap §F) |
 | ~~AD-6~~ | ~~Identity scheme~~ — **CLOSED 2026-10-05** as both contract and representation (ADR-0009): **RFC 4122 UUIDv5**, deterministic by construction (§5a). Non-blocking residuals: `sourceKey` field naming, UUID library, re-import reconciliation, carried below as **N-28r** | ~~all~~ | ADR-0009 — **Approved** |
 | AD-8 | Legitimacy / claims / pressure representation | E9, E14, E18 | ADR-0011 decision |
-| AD-9 | Persistence technology and snapshot policy | E17 | ADR-0010 decision |
+| ~~AD-9~~ | ~~Persistence technology and snapshot policy~~ — **CLOSED 2026-10-07** (ADR-0010 **Approved**): pure domain persistence ports; SQLite (better-sqlite3) behind Drizzle ORM; change-aware per-step mirroring; immutable verified save slots | ~~E17~~ | ADR-0010 — **Approved** |
 | AD-10 | TheRev SDK surface, transport, IPC, request/response and error schemas | E16 | ADR-0012 decision — deferred until integration begins |
 | AD-24 | Name and shape of the game-side intelligence seam | E16 | ADR-0012 follow-up |
 | AD-11 | Content data format for cultures/religions/governments, including government transition graphs | E10, E13, E18 | ADR-0013 decision |

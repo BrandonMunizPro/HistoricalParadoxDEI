@@ -10,10 +10,16 @@
 - **VS-1 / E0 Foundations is shipped** in commit
   `1546779cd619053cf015707f500b8737921bcd94` ("Implement E0 Foundations: canonical
   identity and SimTime").
-- **Immediate next executable slice: VS-2 / E1 Time & Clock.** Its predecessor
-  gates, **N-29** (SimTime fixed-point scale + calendar conversion constant) and
-  **N-30** (same-instant ordering-key shape), were **decided 2026-10-06**
-  (ADR-0003 amendment B1/B2). They gated E1 only; they were never E0 blockers.
+- **VS-2 / E1 Time & Clock is shipped.** Its predecessor gates, **N-29**
+  (SimTime fixed-point scale + calendar conversion constant) and **N-30**
+  (same-instant ordering-key shape), were **decided 2026-10-06** (ADR-0003
+  amendment B1/B2).
+- **Immediate next executable slice: VS-3 / E2 Ledger + E17a thin persistence.**
+  Its gate **AD-9** was **resolved 2026-10-07** (ADR-0010 Approved): pure domain
+  persistence ports + SQLite/Drizzle implementation behind them, change-aware
+  mirroring, and immutable verified save slots. The VS-3 implementation and
+  acceptance are complete and green (`npm run validate`); the slice ships on the
+  next commit approval.
 - The roadmap orders approved work. It does not override any ADR or the
   BLUEPRINT; where sequencing or slicing references an ADR, the ADR remains the
   design authority.
@@ -40,14 +46,14 @@
 ## B. High-Level Execution Map
 
 ```
-CURRENT STATE: 1546779 — VS-1 / E0 Foundations SHIPPED; N-29, N-30 decided 2026-10-06.
-                Next: VS-2 / E1 implementation (no remaining design gates).
+CURRENT STATE: VS-1 / E0 SHIPPED (1546779); VS-2 / E1 SHIPPED; AD-9 CLOSED 2026-10-07.
+                VS-3 / E2+E17a implemented and green; awaiting commit approval.
 
 Stage 1  [P] E0 Foundations                        VS-1  Identity + SimTime abstraction  [SHIPPED: 1546779]
               │
-Stage 2  [P] E1 Time & clock (N-29, N-30 approved)      VS-2  Clock-driven world (scheduler, freeze, rejection)
+Stage 2  [P] E1 Time & clock (N-29, N-30 approved)      VS-2  Clock-driven world (scheduler, freeze, rejection)  [SHIPPED]
               │
-Stage 3  [D] AD-9 ──► [P] E2 Ledger + E17a thin persistence   VS-3  Ledger + snapshot
+Stage 3  [P] E2 Ledger + E17a thin persistence (AD-9 CLOSED)   VS-3  Ledger + snapshot  [IMPLEMENTED, GREEN]
               │                      ║
               │                      ╚══ [X] T0 Tactical environment POC (parallel, independent)
               │
@@ -91,20 +97,21 @@ PARALLEL TRACKS (never block the main chain):
 - **Status:** all acceptance criteria satisfied and verified 2026-10-06 (`npm run validate` green); delivered across
   `src/domain/identity/`, `src/domain/time/`, `src/domain/random/`, and the extended purity test, with no dependencies added. N-28r's library question resolved in favour of a dependency-free pure-TypeScript SHA-1 inside the domain (`src/domain/identity/sha1.ts`), because the purity rule forbids `node:crypto` imports there; the remaining N-28r items (source-key naming / re-import reconciliation) stay `[F]`.
 
-#### VS-2 — Clock-Driven World `E1` `[P]` — **NEXT**
+#### VS-2 — Clock-Driven World `E1` `[P]` — **SHIPPED**
 - **Possible after:** a scripted headless scenario advances by command periods with `pause/resume/freeze-at-SimTime`, dates derive correctly from `ScenarioCalendar` (including era/BCE direction), and same-instant work resolves deterministically.
 - **Systems:** simulation time, scheduler.
 - **Depends on:** VS-1. **N-29** (fixed-point scale + conversion constant) and **N-30** (ordering-key shape) were **Approved 2026-10-06** (ADR-0003 amendment B1/B2): scale = 1 unit per simulation hour with `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration; ordering = `dueSimTime → workClassRank → workIdentifier`. N-24 (frequencies/thresholds) enters as configurable placeholders, not decisions.
 - **Acceptance:** scheduler advances *directly* between due SimTimes (no sweep — asserted); a past-due scheduling request is **rejected with an explicit error and never clamped** (test asserting rejection); shuffled insertion order of same-instant work yields byte-identical output order; two runs with fixed seed produce identical output; dates monotonic with SimTime; pause stores nothing that could rewind the clock.
 - **Excluded:** armies, geography, ledger, any historical rate, UI.
-- **Status:** N-29 / N-30 **decided 2026-10-06** (ADR-0003 amendment B1/B2). No design gates remain; VS-2 is the next executable slice.
+- **Status:** all acceptance criteria satisfied and verified (`vs2-clock-driven-world.test.ts`); delivered across `src/domain/time/` (scheduler, clock, SimTime serializer), `src/simulation/headless-scenario-run.ts`, and `tests/vs2-clock-driven-world.test.ts`.
 
-#### VS-3 — Ledger + Snapshot `E2 + E17a` `[D] AD-9 → [P]`
+#### VS-3 — Ledger + Snapshot `E2 + E17a` `[P]` — **implemented, green; ships on commit approval**
 - **Possible after:** events are append-only with causes/consequences, significance-gated queries answer "trace this civil-conflict onset back", and a snapshot can be saved, loaded, and resumed with a derived projection rebuilt.
 - **Systems:** historical event/consequence ledger, save/load (thin), persistence ports.
-- **Depends on:** VS-2 (ledger events carry SimTime); **gate: AD-9** — recommended resolution: repository ports + JSON snapshot + append-only JSONL ledger; ORM/DB explicitly `[F]` to E17b.
-- **Acceptance:** causal trace query returns a provenance chain; append-only enforced by test; save → load → continue yields the same subsequent state as an uninterrupted run; derived view rebuilt from state, not trusted from disk.
-- **Excluded:** crash recovery, retention/migration, "why" query API (E17b); in-flight battle save/load (**N-32** stays open, deliberately).
+- **Depends on:** VS-2 (ledger events carry SimTime). **Gate:** AD-9 — **resolved 2026-10-07** (ADR-0010 **Approved**): pure domain persistence ports + SQLite (better-sqlite3) behind Drizzle ORM, change-aware per-step mirroring, immutable verified save slots (`VACUUM INTO` → stamp → verify → atomic rename). ORM/DB depth otherwise `[F]` to E17b.
+- **Acceptance:** causal trace query returns a provenance chain; append-only enforced by test; save → load → continue yields the same subsequent state as an uninterrupted run (asserted as a **byte-identical `ScenarioTrace`** past the save point); derived view rebuilt from state, not trusted from disk.
+- **Excluded:** crash recovery, retention/migration policy, "why" query API (E17b); in-flight battle save/load (**N-32** stays open, deliberately).
+- **Status:** E2 content + E17a thin persistence delivered (`src/domain/ledger/`, `src/domain/persistence/` ports, `src/persistence/` SQLite implementation, `src/simulation/persistent-scenario-run.ts`, `tests/causal-trace.test.ts`, `tests/sqlite-persistence.test.ts`, `tests/vs3-persistence.test.ts`); `npm run validate` green; commit pending user approval per established rhythm.
 
 #### VS-4 — Living Character `S1: E4` `[P]`
 - **Possible after:** a character has family, multi-facet relationships, mentors/students, a life history derived from ledger events, memories referencing them, and death triggers successor/claim reaction events.
@@ -201,7 +208,7 @@ PARALLEL TRACKS (never block the main chain):
 |---|---|---|---|
 | ~~**N-29**~~ fixed-point scale + calendar conversion | `[D]` — **CLOSED 2026-10-06** | E1 (VS-2) | Nothing in E1 could be written without it; it was **not an E0 blocker**. Decided: 1 SimTime unit = 1 simulation hour, `UnitsPerDay = 24` declared as `ScenarioCalendar` calibration metadata (ADR-0003 amendment B1) |
 | ~~**N-30**~~ same-instant ordering key | `[D]` — **CLOSED 2026-10-06** | E1 (VS-2) | Minimum properties Approved; shape was small and bounded. Decided: **`dueSimTime → workClassRank → workIdentifier`**, append-only ranks, `BattleResult` first, single pending set, no wave/generation (ADR-0003 amendment B2) |
-| **AD-9** persistence technology | `[D]` | E17a (VS-3) | Recommend ports + JSON now, ORM `[F]` to E17b |
+| ~~**AD-9**~~ persistence technology | `[D]` — **CLOSED 2026-10-07** | E17a (VS-3) | Decided in VS-3 (ADR-0010 **Approved**): pure domain persistence ports; SQLite (better-sqlite3) behind Drizzle ORM with change-aware per-step mirroring; immutable verified save slots. ORM/DB depth `[F]` to E17b |
 | **AD-2** aggregate boundaries / concurrent-action resolution | `[D]` | E4/E9/E14/E18 | Deliberately deferred; trigger = VS-4/VS-6 reveals real same-aggregate conflicts |
 | **AD-19** canonical coordinate system | `[D]` | E3-deep / E7 (G2–G3) | Not needed for G1; required when real data or projection lands |
 | **AD-20** BattlefieldResolver algorithm | `[D]` | E7 (VS-9) | Informed by T3 evidence — deciding it earlier would be uninformed |
@@ -263,8 +270,8 @@ is preserved below as the record of why it was chosen first.
 
 ## I. Stop Points — where I return to you
 
-1. ~~**Now — before Stage 2:** N-29 scale choice + N-30 ordering-key shape~~ — **decided 2026-10-06** (ADR-0003 amendment B1/B2); VS-2 implementation now proceeds. The next return point is item 2.
-2. **Before Stage 3's persistence work:** AD-9 recommendation (ports + JSON vs. alternative) needs your approval.
+1. ~~**Now — before Stage 2:** N-29 scale choice + N-30 ordering-key shape~~ — **decided 2026-10-06** (ADR-0003 amendment B1/B2).
+2. ~~**Before Stage 3's persistence work:** AD-9 recommendation (ports + JSON vs. alternative) needs your approval~~ — **resolved 2026-10-07** (ADR-0010 **Approved**; decided as pure domain ports + SQLite/Drizzle + immutable verified slots). VS-3 implemented and green; result reported for commit approval.
 3. **After each POC (T0, T1, T2, T3/T4):** experimental evidence review before the gated production work proceeds. T1 in particular: if projection cannot be proven, Stage 7 does not start.
 4. **After VS-7 (S13 litmus):** review the litmus evidence before treating the time/scheduling model as proven; this is the architecture's own acceptance test for ADR-0003.
 5. **Before Stage 7:** AD-19 (coordinate system) and AD-20 (BattlefieldResolver) decisions; N-35 schema; N-32 resolve-or-document.

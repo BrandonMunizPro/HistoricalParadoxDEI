@@ -15,6 +15,7 @@ function listTypeScriptFiles(dir: string): string[] {
 }
 
 const domainFiles = listTypeScriptFiles(domainRoot);
+const simulationFiles = listTypeScriptFiles(join(repoRoot, 'src', 'simulation'));
 
 /** Engine-specific vocabulary that must never appear in the domain layer. */
 const forbiddenPatterns: readonly { label: string; pattern: RegExp }[] = [
@@ -105,5 +106,29 @@ describe('domain purity', () => {
       }
     }
     expect(offenders).toEqual([]);
+  });
+});
+
+describe('persistence isolation (AD-9, ADR-0010)', () => {
+  it.each([
+    { label: 'ORM and driver vocabulary', pattern: /\b(?:drizzle|sqlite|knex|prisma|typeorm)\b/i },
+    {
+      label: 'file system and process access',
+      pattern: /\bnode:fs\b|\bnode:path\b|\bprocess\.(?:cwd|env)\b/,
+    },
+    { label: 'unix database file paths', pattern: /\/(?:var|tmp|data)\/(?:lib|db|database)[\w./-]*\b/ },
+  ])('$label stays out of domain and simulation', ({ pattern }) => {
+    const offenders = [...domainFiles, ...simulationFiles]
+      .filter((file) => pattern.test(readFileSync(file, 'utf8')))
+      .map((file) => relative(repoRoot, file));
+    expect(offenders).toEqual([]);
+  });
+
+  it('domain persistence ports remain pure domain types and simulation never imports storage', () => {
+    // Handled by the layer-dependency test above for imports; this asserts the
+    // ports directory exists and is scanned like every other domain directory.
+    const portsRoot = join(domainRoot, 'persistence');
+    const ports = listTypeScriptFiles(portsRoot);
+    expect(ports.length).toBeGreaterThan(0);
   });
 });

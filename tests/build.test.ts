@@ -15,12 +15,15 @@ describe('project builds', () => {
         cwd: repoRoot,
         stdio: 'pipe',
       });
+      execFileSync(process.execPath, ['scripts/copy-migrations.mjs'], { cwd: repoRoot, stdio: 'pipe' });
+      execFileSync(process.execPath, ['scripts/build-smoke.mjs'], { cwd: repoRoot, stdio: 'pipe' });
 
       expect(existsSync(join(repoRoot, 'dist', 'domain', 'battles', 'battle-adapter.js'))).toBe(true);
       expect(
         existsSync(join(repoRoot, 'dist', 'tactical', 'adapters', 'rome2-dei', 'rome2-dei-adapter.js')),
       ).toBe(true);
       expect(existsSync(join(repoRoot, 'dist', 'infrastructure', 'index.js'))).toBe(true);
+      expect(existsSync(join(repoRoot, 'dist', 'persistence', 'migrations', 'meta', '_journal.json'))).toBe(true);
     },
     180_000,
   );

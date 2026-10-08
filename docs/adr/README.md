@@ -26,7 +26,7 @@ using the legend below. ADR-0000 (record format) is implicit in this file.
 | [0007](0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred | 2026-10-04 |
 | [0008](0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) | 2026-10-04 |
 | [0009](0009-identity-model.md) | Canonical identity model | **Approved** (identity contract and representation — RFC 4122 UUIDv5 — approved 2026-10-05; field naming unresolved; UUID library resolved at VS-1 as dependency-free pure-TypeScript SHA-1) | 2026-10-04 (amended 2026-10-05) |
-| [0010](0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred | 2026-10-04 |
+| [0010](0010-persistence-and-repository-ports.md) | Persistence and repository ports | Approved | 2026-10-07 |
 | [0011](0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only; mechanics unresolved | 2026-10-04 |
 | [0012](0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred | 2026-10-04 |
 | [0013](0013-content-data-cultures-religions-governments.md) | Content data for cultures, religions and government types | Research-dependent | 2026-10-04 |
@@ -88,7 +88,7 @@ Explicitly **not** approved, and deliberately still open:
   deliberately not a mechanism blocker — ADR-0003 A14), along with **scheduler
   frequencies, thresholds and performance budgets** (tuning, not a mechanism
   blocker);
-- **AD-9** persistence technology (ADR-0010);
+- ~~**AD-9**~~ persistence technology (ADR-0010) — **resolved 2026-10-07** (Approved);
 - **AD-10** TheRev SDK surface, transport and schemas (ADR-0012);
 - the **internal formulas** for background AI battle resolution, the complete
   shared `BattleResult` schema, and all gameplay mechanics, formulas and

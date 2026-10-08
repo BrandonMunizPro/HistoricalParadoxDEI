@@ -25,6 +25,13 @@ npm-debug.log*
 .env.*
 !.env.example
 
+# Persistence (VS-3/AD-9): runtime campaign databases and save slots are
+# generated at runtime and reproducible from the code; never tracked.
+*.db
+*.db-wal
+*.db-shm
+.runtime/
+
 # --- Research (research/rome2-dei) -------------------------------------------
 # Preserved interoperability research. The small, hand-written parts (HANDOFF.md
 # and the extraction/build scripts) ARE tracked; the generated and third-party

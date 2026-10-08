@@ -89,7 +89,7 @@ open.
 | [ADR-0007](adr/0007-aggregate-boundaries-and-concurrent-action.md) | Aggregate boundaries and concurrent action resolution | Deferred (AD-2) |
 | [ADR-0008](adr/0008-determinism-and-reproducibility.md) | Determinism and reproducibility | **Approved** (architecture; depth deferred as AD-3) |
 | [ADR-0009](adr/0009-identity-model.md) | Canonical identity model | **Approved** (identity contract **Approved** 2026-10-05; representation **Approved** — RFC 4122 UUIDv5; field naming **Unresolved** (N-28r); UUID library resolved at VS-1 as dependency-free pure-TypeScript SHA-1) |
-| [ADR-0010](adr/0010-persistence-and-repository-ports.md) | Persistence and repository ports | Deferred |
+| [ADR-0010](adr/0010-persistence-and-repository-ports.md) | Persistence and repository ports | Approved (2026-10-07) |
 | [ADR-0011](adr/0011-legitimacy-claims-and-internal-conflict.md) | Legitimacy, claims and internal conflict pressure | Architecture only, mechanics **Unresolved** |
 | [ADR-0012](adr/0012-therev-ai-sdk-boundary.md) | TheRev / Jev AI boundary | **Boundary approved**; SDK/transport deferred |
 | [ADR-0013](adr/0013-content-data-cultures-religions-governments.md) | Content data for cultures, religions and government types | **Research-dependent** |
