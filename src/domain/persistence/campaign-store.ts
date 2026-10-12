@@ -18,6 +18,7 @@
  * and never leak, and the concrete store implementation is the composition
  * root's choice, not this interface.
  */
+import type { CharacterRepository } from './character-repository.js';
 import type { LedgerStore } from './ledger-store.js';
 import type { ScenarioDescriptor } from './scenario-descriptor.js';
 import type { PendingWorkRepository } from './scheduled-work-repository.js';
@@ -25,6 +26,7 @@ import type { WorldStateRepository } from './world-state-repository.js';
 
 export interface CampaignStore {
   readonly world: WorldStateRepository;
+  readonly characters: CharacterRepository;
   readonly pendingWork: PendingWorkRepository;
   readonly ledger: LedgerStore;
   /**

@@ -21,6 +21,8 @@ import Database from 'better-sqlite3';
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import type { LedgerConsequenceLink, LedgerEvent } from '../domain/ledger/index.js';
 import { orderLedgerEventsForImport } from '../domain/ledger/index.js';
+import type { Character, Relationship } from '../domain/character/index.js';
+import { requireAcyclicParentGraph } from '../domain/character/index.js';
 import type {
   CampaignSnapshot,
   CheckpointSaveKind,
@@ -37,12 +39,14 @@ import {
 import { parseSimTimeStableString } from '../domain/time/index.js';
 import type { SimTime } from '../domain/time/index.js';
 import {
+  characterRowToCharacter,
   entityRowToWorldEntity,
   ledgerEventRowToLedgerEvent,
   ledgerLinkRowToLink,
   pendingWorkRowToPersisted,
   readAllRows,
   readMetaValue,
+  relationshipRowToRelationship,
   scenarioRowsToDescriptor,
 } from './conversions.js';
 import { SCHEMA_VERSION } from './schema.js';
@@ -155,6 +159,54 @@ export function createSqliteCheckpointStore(options: SqliteCheckpointStoreOption
     }
   }
 
+  function verifyCharacterCoherence(
+    slotId: CheckpointSlotId,
+    characters: readonly Character[],
+    relationships: readonly Relationship[],
+    events: readonly LedgerEvent[],
+  ): void {
+    const recordedEvents = new Set(events.map((event) => event.id));
+    for (const character of characters) {
+      for (const memory of character.memories) {
+        if (!recordedEvents.has(memory)) {
+          throw new CheckpointIntegrityError(
+            slotId,
+            `character '${String(character.id)}' remembers ledger event '${String(memory)}', which is not recorded in this save`,
+          );
+        }
+      }
+    }
+    const knownCharacters = new Set(characters.map((character) => character.id));
+    for (const character of characters) {
+      const successor = character.designatedSuccessor;
+      if (successor !== null && !knownCharacters.has(successor)) {
+        throw new CheckpointIntegrityError(
+          slotId,
+          `character '${String(character.id)}' designates '${String(successor)}' as successor, which is not a character in this save`,
+        );
+      }
+    }
+    for (const relationship of relationships) {
+      if (!knownCharacters.has(relationship.from)) {
+        throw new CheckpointIntegrityError(
+          slotId,
+          `a relationship originates from '${String(relationship.from)}', which is not a character in this save`,
+        );
+      }
+      if (!knownCharacters.has(relationship.to)) {
+        throw new CheckpointIntegrityError(
+          slotId,
+          `a relationship points to '${String(relationship.to)}', which is not a character in this save`,
+        );
+      }
+    }
+    try {
+      requireAcyclicParentGraph(relationships);
+    } catch (error) {
+      throw new CheckpointIntegrityError(slotId, messageOf(error));
+    }
+  }
+
   function readVerifiedSnapshot(slotId: CheckpointSlotId, databasePath: string): CampaignSnapshot {
     const handle = new Database(databasePath, { readonly: true, fileMustExist: true });
     try {
@@ -183,12 +235,17 @@ export function createSqliteCheckpointStore(options: SqliteCheckpointStoreOption
       const ledgerEvents = rows.ledgerEvents.map(ledgerEventRowToLedgerEvent);
       const ledgerConsequenceLinks = rows.ledgerLinks.map(ledgerLinkRowToLink);
       verifyLedgerCoherence(slotId, ledgerEvents, ledgerConsequenceLinks);
+      const characters = rows.characters.map(characterRowToCharacter);
+      const relationships = rows.relationships.map(relationshipRowToRelationship);
+      verifyCharacterCoherence(slotId, characters, relationships, ledgerEvents);
       return {
         scenario: scenarioRowsToDescriptor(rows.scenario, rows.months),
         savedAtSimTime,
         schemaVersion: SCHEMA_VERSION,
         saveKind,
         entities: rows.entities.map(entityRowToWorldEntity),
+        characters,
+        relationships,
         pendingWork: rows.pending.map(pendingWorkRowToPersisted),
         ledgerEvents,
         ledgerConsequenceLinks,

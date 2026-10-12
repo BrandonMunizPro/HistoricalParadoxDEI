@@ -14,12 +14,19 @@
   (SimTime fixed-point scale + calendar conversion constant) and **N-30**
   (same-instant ordering-key shape), were **decided 2026-10-06** (ADR-0003
   amendment B1/B2).
-- **Immediate next executable slice: VS-3 / E2 Ledger + E17a thin persistence.**
-  Its gate **AD-9** was **resolved 2026-10-07** (ADR-0010 Approved): pure domain
-  persistence ports + SQLite/Drizzle implementation behind them, change-aware
-  mirroring, and immutable verified save slots. The VS-3 implementation and
-  acceptance are complete and green (`npm run validate`); the slice ships on the
-  next commit approval.
+- **VS-3 / E2 Ledger + E17a thin persistence shipped** in commit
+  `3814d69` ("VS3: SQLite persistence, historical ledger, and deterministic
+  checkpoints; note deterministic campaign outlier"). Its gate **AD-9** was
+  **resolved 2026-10-07** (ADR-0010 Approved): pure domain persistence ports +
+  SQLite/Drizzle implementation behind them, change-aware mirroring, and
+  immutable verified save slots. The VS-3 implementation and acceptance are
+  complete and green (`npm run validate`); the deterministic campaign **outlier**
+  was noted in the VS-3 commit message (`3814d69`).
+- **VS-4 / E4 Living Character is shipped** (S1 acceptance; `[D] AD-2`
+  stays deferred unless real same-aggregate conflicts surface). Domain
+  character aggregate, relationships, kinship/mentorship derivations, life
+  history and memories, the death + `character.succession_reacted` reaction,
+  and character persistence round-trip are implemented and green.
 - The roadmap orders approved work. It does not override any ADR or the
   BLUEPRINT; where sequencing or slicing references an ADR, the ADR remains the
   design authority.
@@ -47,19 +54,19 @@
 
 ```
 CURRENT STATE: VS-1 / E0 SHIPPED (1546779); VS-2 / E1 SHIPPED; AD-9 CLOSED 2026-10-07.
-                VS-3 / E2+E17a implemented and green; awaiting commit approval.
+                VS-3 / E2+E17a SHIPPED (3814d69); VS-4 / E4 Living Character SHIPPED; VS-5 not started.
 
 Stage 1  [P] E0 Foundations                        VS-1  Identity + SimTime abstraction  [SHIPPED: 1546779]
               │
 Stage 2  [P] E1 Time & clock (N-29, N-30 approved)      VS-2  Clock-driven world (scheduler, freeze, rejection)  [SHIPPED]
               │
-Stage 3  [P] E2 Ledger + E17a thin persistence (AD-9 CLOSED)   VS-3  Ledger + snapshot  [IMPLEMENTED, GREEN]
+Stage 3  [P] E2 Ledger + E17a thin persistence (AD-9 CLOSED)   VS-3  [SHIPPED: 3814d69]
               │                      ║
               │                      ╚══ [X] T0 Tactical environment POC (parallel, independent)
               │
 Stage 4  [P] E4 Characters ──┐    [P] E3 Minimum authoritative geography (graph, no coordinates)
               │              │                ║
-              ├─ VS-4 Living Character          ╚══ [X] T1 First round-trip POC (needs G1 location)
+              ├─ VS-4 Living Character [SHIPPED] ╚══ [X] T1 First round-trip POC (needs G1 location)
               └─ VS-5 Minimum Geography (G1)
               │
 Stage 5  [X] T2 Mixed-control POC ──┐
@@ -105,20 +112,32 @@ PARALLEL TRACKS (never block the main chain):
 - **Excluded:** armies, geography, ledger, any historical rate, UI.
 - **Status:** all acceptance criteria satisfied and verified (`vs2-clock-driven-world.test.ts`); delivered across `src/domain/time/` (scheduler, clock, SimTime serializer), `src/simulation/headless-scenario-run.ts`, and `tests/vs2-clock-driven-world.test.ts`.
 
-#### VS-3 — Ledger + Snapshot `E2 + E17a` `[P]` — **implemented, green; ships on commit approval**
+#### VS-3 — Ledger + Snapshot `E2 + E17a` `[P]` — **SHIPPED** (commit `3814d69`)
 - **Possible after:** events are append-only with causes/consequences, significance-gated queries answer "trace this civil-conflict onset back", and a snapshot can be saved, loaded, and resumed with a derived projection rebuilt.
 - **Systems:** historical event/consequence ledger, save/load (thin), persistence ports.
 - **Depends on:** VS-2 (ledger events carry SimTime). **Gate:** AD-9 — **resolved 2026-10-07** (ADR-0010 **Approved**): pure domain persistence ports + SQLite (better-sqlite3) behind Drizzle ORM, change-aware per-step mirroring, immutable verified save slots (`VACUUM INTO` → stamp → verify → atomic rename). ORM/DB depth otherwise `[F]` to E17b.
 - **Acceptance:** causal trace query returns a provenance chain; append-only enforced by test; save → load → continue yields the same subsequent state as an uninterrupted run (asserted as a **byte-identical `ScenarioTrace`** past the save point); derived view rebuilt from state, not trusted from disk.
 - **Excluded:** crash recovery, retention/migration policy, "why" query API (E17b); in-flight battle save/load (**N-32** stays open, deliberately).
-- **Status:** E2 content + E17a thin persistence delivered (`src/domain/ledger/`, `src/domain/persistence/` ports, `src/persistence/` SQLite implementation, `src/simulation/persistent-scenario-run.ts`, `tests/causal-trace.test.ts`, `tests/sqlite-persistence.test.ts`, `tests/vs3-persistence.test.ts`); `npm run validate` green; commit pending user approval per established rhythm.
+- **Status:** E2 content + E17a thin persistence delivered (`src/domain/ledger/`, `src/domain/persistence/` ports, `src/persistence/` SQLite implementation, `src/simulation/persistent-scenario-run.ts`, `tests/causal-trace.test.ts`, `tests/sqlite-persistence.test.ts`, `tests/vs3-persistence.test.ts`); `npm run validate` green; shipped at `3814d69` with the deterministic campaign outlier noted in the commit message.
 
-#### VS-4 — Living Character `S1: E4` `[P]`
-- **Possible after:** a character has family, multi-facet relationships, mentors/students, a life history derived from ledger events, memories referencing them, and death triggers successor/claim reaction events.
+#### VS-4 — Living Character `S1: E4` `[P]` — **SHIPPED** (milestone checkpoint 2026-10-12)
+- **Possible after:** a character has family, multi-facet relationships, mentors/students, a life history derived from ledger events, memories referencing them, and death triggers a character-owned successor reaction event.
 - **Systems:** characters and houses, ledger, persistence round-trip.
 - **Depends on:** VS-3; **AD-2 review trigger** — if concurrent actions on one character in one SimTime surface real conflicts, stop and decide AD-2; otherwise it stays deferred.
 - **Acceptance:** existing S1 criteria; life history reconstructed from ledger alone; persistence round-trips a character without ledger replay.
 - **Excluded:** offices/claims (E9), culture (E10), institutions (E13), population cohorts (E12).
+- **Status:** shipped at the VS-4 milestone checkpoint, 2026-10-12, following independent **APPROVED FOR COMMIT** from BigPickle. This checkpoint commit records the approved implementation. VS-5 has not begun.
+- **Delivered:** immutable canonical character identity, birth/death state and permanent historical references; directed relationships with simultaneous facets; pure parents/children/siblings/spouses and mentors/students derivations; ledger-derived life history and event-reference memories. `CharacterRepository` on `CampaignStore`, SQLite schema version 2 (`0002_characters.sql`), character/relationship mirrors, verified snapshots, restore and deterministic continuation are implemented. Registered production character work uses stable character-derived identifiers and resolves authoritative state during execution. Death schedules its causally dependent same-instant reaction during execution; causality does not rely on identifier ordering.
+- **Persistence safeguards:** recorded death cannot be reversed or given a conflicting timestamp; identical writes remain accepted. Captured write values are validated and persisted without rereading caller-controlled accessors, including ledger consequence endpoints. Parent ancestry must be acyclic at writes and checkpoint verification. Published checkpoints verify memory-event, relationship-character and designated-successor references. Failed steps roll back persisted changes and invalidate the in-memory continuation. Fresh databases apply migrations and receive schema stamp 2. Older/unsupported databases and saves are deliberately rejected without automatic migration or repair. Compatibility inspection uses an owned main-file/WAL copy before connecting to the source, preserving unsupported database/WAL/SHM bytes; unresolved rollback journals fail closed.
+- **Verified:** `npm run validate` passes typecheck, lint, 19 test files / 325 tests, build and postbuild. Focused persistence regressions pass 4 files / 124 tests. Coverage includes changing-accessor attacks, irreversible death, direct/indirect ancestry cycles, malformed checkpoint references, unsupported committed-WAL preservation, supported version-2 WAL recovery, rollback/invalidation, and save/destroy/restore/continue compared with an uninterrupted oracle. Existing VS-3 scheduler, ledger and persistence guarantees remain covered.
+- **Deferred:** E9 offices, legal/political claims (`claim.asserted`), inheritance rules and authoritative office/property transfers remain excluded. `character.succession_reacted` records a reaction and an existing authoritative successor designation when present; it never chooses an heir or invents a claim. Full house/dynasty aggregates, trait/psychology ranges, culture, institutions, population cohorts and broader education mechanics are outside this S1 slice. AD-2 remains deferred until real same-aggregate conflicts require a decision. See [event catalogue](../events/event-catalogue-v0.md).
+
+##### Nonblocking VS-4 review notes
+
+1. **Residual preflight TOCTOU under the single-writer model:** copying and rechecking source bytes does not provide an atomic filesystem snapshot or a lock spanning the later writable open. Another process could change/replace the database or WAL after the last check. The supported model remains one writer with no concurrent external mutation during opening; detected changes fail closed. Stronger multi-process coordination remains persistence hardening work.
+2. **Interrupted database creation window:** fresh migrations and the application schema stamp are separate operations. Interruption after tables are created but before the stamp is written can leave an unidentifiable database that the next open refuses. VS-4 does not resume, delete or repair it. Atomic initialization/crash recovery belongs to E17b; preserve interrupted files for diagnosis and use a fresh path rather than treating them as a supported campaign.
+3. **E9 claims and inheritance remain excluded:** the E4 same-instant death reaction is causally recorded character history. Political/legal claim validation, inheritance choices and authoritative transfers remain future E9 work. Generic S1 successor/claim wording does not imply those political systems ship with VS-4.
+
 
 #### VS-5 — Minimum Authoritative Geography `E3 (G1) [P]`
 - **Possible after:** locations, adjacency, and terrain properties exist as authoritative pure-graph state; path cost is a pure function of graph + terrain; a spatial-index port exists behind an interface.

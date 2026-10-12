@@ -20,6 +20,7 @@
  */
 import type { LedgerConsequenceLink } from '../ledger/index.js';
 import type { LedgerEvent } from '../ledger/index.js';
+import type { Character, Relationship } from '../character/index.js';
 import { hasUnpairedSurrogate } from '../time/index.js';
 import type { SimTime } from '../time/index.js';
 import type { ScenarioDescriptor } from './scenario-descriptor.js';
@@ -157,6 +158,8 @@ export interface CampaignSnapshot {
   readonly schemaVersion: number;
   readonly saveKind: CheckpointSaveKind;
   readonly entities: readonly WorldEntity[];
+  readonly characters: readonly Character[];
+  readonly relationships: readonly Relationship[];
   readonly pendingWork: readonly PersistedWorkEntry[];
   readonly ledgerEvents: readonly LedgerEvent[];
   readonly ledgerConsequenceLinks: readonly LedgerConsequenceLink[];

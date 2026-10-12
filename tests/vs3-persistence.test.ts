@@ -24,7 +24,7 @@ import {
   workIdentifier,
 } from '../src/domain/time/index.js';
 import type { ScheduledWork } from '../src/domain/time/index.js';
-import { createSqlitePersistence } from '../src/persistence/index.js';
+import { createSqlitePersistence, SCHEMA_VERSION } from '../src/persistence/index.js';
 import type { EncodeWork } from '../src/simulation/persistent-scenario-run.js';
 import {
   createPersistentScenario,
@@ -277,7 +277,7 @@ describe('VS-3: save at a frozen stop point and continue after destroy-load (E2 
       encodeWork,
     });
 
-    expect(loaded.snapshot.schemaVersion).toBe(1);
+    expect(loaded.snapshot.schemaVersion).toBe(SCHEMA_VERSION);
     expect(loaded.snapshot.saveKind).toBe('manual');
     expect(loaded.continuation.clock.isFrozen()).toBe(false);
     expect(loaded.continuation.pendingCount()).toBe(11);
@@ -379,10 +379,10 @@ describe('VS-3: save at a frozen stop point and continue after destroy-load (E2 
   it('rejects a slot carrying a different schema version', () => {
     const dir = tempWorkspace('bad-version');
     const slotsDirectory = join(dir, 'slots');
-    const slot = checkpointSlotId('v2');
+    const slot = checkpointSlotId('wrong-version');
     const path = join(slotsDirectory, `${slot}.db`);
     craftSlot(path, [
-      ['schema_version', '2'],
+      ['schema_version', String(SCHEMA_VERSION + 1)],
       ['save_kind', 'manual'],
       ['current_sim_time', '0'],
     ]);
@@ -404,7 +404,7 @@ describe('VS-3: save at a frozen stop point and continue after destroy-load (E2 
     const slotsDirectory = join(dir, 'slots');
     const slot = checkpointSlotId('unstamped');
     craftSlot(join(slotsDirectory, `${slot}.db`), [
-      ['schema_version', '1'],
+      ['schema_version', String(SCHEMA_VERSION)],
       ['current_sim_time', '0'],
     ]);
 

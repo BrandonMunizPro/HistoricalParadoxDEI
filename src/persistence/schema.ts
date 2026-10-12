@@ -15,7 +15,7 @@
 import { integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 /** The one schema version this build can read and produce (AD-9). */
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export const META_SCHEMA_VERSION = 'schema_version';
 export const META_CURRENT_SIM_TIME = 'current_sim_time';
@@ -52,6 +52,24 @@ export const entityTable = sqliteTable('entity', {
   ended: integer('ended').notNull(),
 });
 
+export const characterTable = sqliteTable('character', {
+  id: text('id').primaryKey(),
+  bornSimTime: text('born_sim_time').notNull(),
+  diedSimTime: text('died_sim_time'),
+  designatedSuccessor: text('designated_successor'),
+  memories: text('memories').notNull(),
+});
+
+export const relationshipTable = sqliteTable(
+  'relationship',
+  {
+    fromId: text('from_id').notNull(),
+    toId: text('to_id').notNull(),
+    facets: text('facets').notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.fromId, table.toId] })],
+);
+
 export const pendingWorkTable = sqliteTable('pending_work', {
   workIdentifier: text('work_identifier').primaryKey(),
   classRank: integer('class_rank').notNull(),
@@ -85,6 +103,8 @@ export type MetaRow = typeof metaTable.$inferSelect;
 export type ScenarioRow = typeof scenarioTable.$inferSelect;
 export type CalendarMonthRow = typeof calendarMonthTable.$inferSelect;
 export type EntityRow = typeof entityTable.$inferSelect;
+export type CharacterRow = typeof characterTable.$inferSelect;
+export type RelationshipRow = typeof relationshipTable.$inferSelect;
 export type PendingWorkRow = typeof pendingWorkTable.$inferSelect;
 export type LedgerEventRow = typeof ledgerEventTable.$inferSelect;
 export type LedgerConsequenceRow = typeof ledgerConsequenceTable.$inferSelect;

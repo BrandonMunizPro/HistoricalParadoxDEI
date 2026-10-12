@@ -312,6 +312,12 @@ export function loadPersistentScenario<TWork, MonthId extends string>(
         options.campaign.world.markEntityEnded(entity.id);
       }
     }
+    for (const character of snapshot.characters) {
+      options.campaign.characters.putCharacter(character);
+    }
+    for (const relationship of snapshot.relationships) {
+      options.campaign.characters.putRelationship(relationship);
+    }
     for (const event of orderLedgerEventsForImport(snapshot.ledgerEvents)) {
       options.campaign.ledger.appendEvent(event);
     }

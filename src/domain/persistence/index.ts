@@ -13,6 +13,7 @@ export type {
   CheckpointStore,
 } from './checkpoint-store.js';
 export type { CampaignStore } from './campaign-store.js';
+export type { CharacterRepository } from './character-repository.js';
 export type {
   PersistedWorkEntry,
   PersistedWorkEntryInput,

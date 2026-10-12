@@ -13,7 +13,7 @@ import {
 import type { CampaignStore, CheckpointSlotId } from '../src/domain/persistence/index.js';
 import { createClock, simTime, workIdentifier, WorkClassRank } from '../src/domain/time/index.js';
 import type { ScheduledWork } from '../src/domain/time/index.js';
-import { createSqlitePersistence, createSqliteCheckpointStore, openSqliteCampaignDatabase } from '../src/persistence/index.js';
+import { createSqlitePersistence, createSqliteCheckpointStore, openSqliteCampaignDatabase, SCHEMA_VERSION } from '../src/persistence/index.js';
 import { createPersistentScenario, loadPersistentScenario } from '../src/simulation/persistent-scenario-run.js';
 
 const descriptor = createScenarioDescriptor({
@@ -199,10 +199,10 @@ describe('VS3 narrow boundary regressions', () => {
     expect(checkpoints.save(slot, kind).ok).toBe(true);
     const original = readFileSync(join(directory, 'slots', 'existing.db'));
     // The copy and stamp succeed, then verification refuses the staged version.
-    opened.sqlite.prepare("UPDATE meta SET value = '2' WHERE key = 'schema_version'").run();
+    opened.sqlite.prepare(`UPDATE meta SET value = '${SCHEMA_VERSION + 1}' WHERE key = 'schema_version'`).run();
     const failed = checkpoints.save(checkpointSlotId(kind === 'autosave' ? 'existing' : 'new'), kind);
     expect(failed.ok).toBe(false);
-    if (!failed.ok) expect(failed.reason).toMatch(/schema version 2/);
+    if (!failed.ok) expect(failed.reason).toMatch(new RegExp(`schema version ${SCHEMA_VERSION + 1}`));
     expect(readFileSync(join(directory, 'slots', 'existing.db'))).toEqual(original);
     expect(checkpoints.load(slot).savedAtSimTime).toBe(simTime(0));
     expect(readdirSync(join(directory, 'slots'))).toEqual(['existing.db']);
@@ -348,10 +348,10 @@ describe('VS3 narrow boundary regressions', () => {
     const directory = workspace();
     const path = join(directory, 'version.db');
     const first = openSqliteCampaignDatabase(path);
-    first.sqlite.prepare("UPDATE meta SET value = '2' WHERE key = 'schema_version'").run();
+    first.sqlite.prepare(`UPDATE meta SET value = '${SCHEMA_VERSION + 1}' WHERE key = 'schema_version'`).run();
     first.sqlite.close();
     const closes = vi.spyOn(Database.prototype, 'close');
-    expect(() => openSqliteCampaignDatabase(path)).toThrow(/schema version 2/);
+    expect(() => openSqliteCampaignDatabase(path)).toThrow(new RegExp(`schema version ${SCHEMA_VERSION + 1}`));
     expect(closes).toHaveBeenCalledTimes(1);
     expect(() => createSqlitePersistence({ databasePath: join(directory, 'composition.db'), slotsDirectory: '' })).toThrow(/slotsDirectory/);
     expect(closes).toHaveBeenCalledTimes(2);

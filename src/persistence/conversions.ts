@@ -16,6 +16,12 @@ import type { drizzle } from 'drizzle-orm/better-sqlite3';
 import { eq } from 'drizzle-orm';
 import { isCanonicalId } from '../domain/identity/index.js';
 import type { CanonicalId } from '../domain/identity/index.js';
+import {
+  createCharacter,
+  createRelationship,
+  recordDeath,
+} from '../domain/character/index.js';
+import type { Character, Relationship } from '../domain/character/index.js';
 import { createLedgerEvent, requireLedgerEventId } from '../domain/ledger/index.js';
 import type { LedgerConsequenceLink, LedgerEvent, LedgerEventId } from '../domain/ledger/index.js';
 import {
@@ -40,19 +46,23 @@ import {
 import type { WorldEntity } from '../domain/persistence/world-state-repository.js';
 import {
   calendarMonthTable,
+  characterTable,
   entityTable,
   ledgerConsequenceTable,
   ledgerEventTable,
   metaTable,
   pendingWorkTable,
+  relationshipTable,
   scenarioTable,
 } from './schema.js';
 import type {
   CalendarMonthRow,
+  CharacterRow,
   EntityRow,
   LedgerConsequenceRow,
   LedgerEventRow,
   PendingWorkRow,
+  RelationshipRow,
   ScenarioRow,
 } from './schema.js';
 
@@ -130,6 +140,82 @@ export function entityRowToWorldEntity(row: EntityRow): WorldEntity {
     scalarState,
     ended: row.ended === 1,
   };
+}
+
+// ---------------------------------------------------------------------------
+// characters and relationships
+// ---------------------------------------------------------------------------
+
+export function characterToRow(character: Character): CharacterRow {
+  const alive = createCharacter({
+    id: character.id,
+    bornAtSimTime: character.bornAtSimTime,
+    designatedSuccessor: character.designatedSuccessor,
+    memories: character.memories,
+  });
+  const diedAtSimTime = character.diedAtSimTime;
+  const owned = diedAtSimTime === null ? alive : recordDeath(alive, diedAtSimTime);
+  return {
+    id: owned.id,
+    bornSimTime: simTimeToStableString(owned.bornAtSimTime),
+    diedSimTime: owned.diedAtSimTime === null ? null : simTimeToStableString(owned.diedAtSimTime),
+    designatedSuccessor: owned.designatedSuccessor,
+    memories: encodeJson(owned.memories),
+  };
+}
+
+export function characterRowToCharacter(row: CharacterRow): Character {
+  if (!isCanonicalId(row.id)) {
+    throw new RangeError(
+      `A persisted character id '${row.id}' is not a canonical identity (ADR-0008).`,
+    );
+  }
+  let designatedSuccessor: CanonicalId | null = null;
+  if (row.designatedSuccessor !== null) {
+    if (!isCanonicalId(row.designatedSuccessor)) {
+      throw new RangeError(
+        `A persisted character designated successor '${row.designatedSuccessor}' is not a canonical identity (ADR-0008).`,
+      );
+    }
+    designatedSuccessor = row.designatedSuccessor;
+  }
+  const memories = decodeJson(row.memories, 'character memories');
+  if (!Array.isArray(memories)) {
+    throw new RangeError('A persisted character memories field is not an array (ADR-0008).');
+  }
+  const alive = createCharacter({
+    id: row.id,
+    bornAtSimTime: parseSimTimeStableString(row.bornSimTime),
+    designatedSuccessor,
+    memories: memories as string[],
+  });
+  if (row.diedSimTime === null) return alive;
+  return recordDeath(alive, parseSimTimeStableString(row.diedSimTime));
+}
+
+export function relationshipToRow(
+  relationship: Relationship,
+): RelationshipRow {
+  const owned = createRelationship(relationship);
+  return { fromId: owned.from, toId: owned.to, facets: encodeJson(owned.facets) };
+}
+
+export function relationshipRowToRelationship(row: RelationshipRow): Relationship {
+  if (!isCanonicalId(row.fromId)) {
+    throw new RangeError(
+      `A persisted relationship from '${row.fromId}' is not a canonical identity (ADR-0008).`,
+    );
+  }
+  if (!isCanonicalId(row.toId)) {
+    throw new RangeError(
+      `A persisted relationship to '${row.toId}' is not a canonical identity (ADR-0008).`,
+    );
+  }
+  const facets = decodeJson(row.facets, 'relationship facets');
+  if (!Array.isArray(facets)) {
+    throw new RangeError('A persisted relationship facets field is not an array (ADR-0008).');
+  }
+  return createRelationship({ from: row.fromId, to: row.toId, facets: facets as string[] });
 }
 
 // ---------------------------------------------------------------------------
@@ -315,6 +401,8 @@ export interface CheckpointRows {
   readonly scenario: ScenarioRow;
   readonly months: readonly CalendarMonthRow[];
   readonly entities: readonly EntityRow[];
+  readonly characters: readonly CharacterRow[];
+  readonly relationships: readonly RelationshipRow[];
   readonly pending: readonly PendingWorkRow[];
   readonly ledgerEvents: readonly LedgerEventRow[];
   readonly ledgerLinks: readonly LedgerConsequenceRow[];
@@ -330,6 +418,12 @@ export function readAllRows(db: DomainDatabase): CheckpointRows {
     scenario,
     months: db.select().from(calendarMonthTable).orderBy(calendarMonthTable.monthIndex).all(),
     entities: db.select().from(entityTable).orderBy(entityTable.id).all(),
+    characters: db.select().from(characterTable).orderBy(characterTable.id).all(),
+    relationships: db
+      .select()
+      .from(relationshipTable)
+      .orderBy(relationshipTable.fromId, relationshipTable.toId)
+      .all(),
     pending: db.select().from(pendingWorkTable).orderBy(pendingWorkTable.workIdentifier).all(),
     ledgerEvents: db.select().from(ledgerEventTable).orderBy(ledgerEventTable.id).all(),
     ledgerLinks: db

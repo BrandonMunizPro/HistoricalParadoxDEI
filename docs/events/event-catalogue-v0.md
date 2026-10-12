@@ -1,7 +1,11 @@
 # Event catalogue v0
 
 - Status: **Proposal**. A naming and classification skeleton to make the event
-  layer concrete enough to reason about. No event is implemented.
+  layer concrete enough to reason about. No event is implemented, with the
+  exception of the two character rows implemented by **VS-4** (S1):
+  `character.died` and the character-owned reaction
+  `character.succession_reacted` (see the note under "Characters, families and
+  institutions").
 - Related: [ADR-0002](../adr/0002-authoritative-state-causal-ledger-snapshots.md), [ADR-0005](../adr/0005-event-taxonomy-and-historical-significance.md), [ADR-0016](../adr/0016-military-cohesion-and-post-battle-survival.md), [ADR-0017](../adr/0017-population-cohorts-migration-and-displacement.md), [ADR-0018](../adr/0018-mutable-government-and-political-transformation.md), [ADR-0015](../adr/0015-campaign-command-hierarchy-and-tactical-control.md), [ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md), [event taxonomy analysis](../architecture/event-taxonomy.md)
 
 ## How to read this
@@ -111,13 +115,26 @@ ADR-0003 amendment B1, 2026-10-06): **1 SimTime unit = 1 simulation hour**,
 | Kind | Tier | Emitter | Ledger | Causal role | Status |
 | --- | --- | --- | --- | --- | --- |
 | `character.born` | canonicalHistorical | characters | yes | family, succession | proposed |
-| `character.died` | canonicalHistorical | characters | yes | succession, loyalty, relationships | proposed |
+| `character.died` | canonicalHistorical | characters | yes | successor reaction, loyalty, relationships | **implemented (VS-4)** |
+| `character.succession_reacted` | canonicalHistorical | characters | yes | records a character-owned reaction to a death | **implemented (VS-4)** |
 | `character.married` | canonicalHistorical | characters | conditional | alliance, legitimacy | proposed |
 | `character.office_changed` | canonicalHistorical | politics | conditional | power, legitimacy | proposed |
 | `character.prestige_changed` | canonicalHistorical | characters/politics | conditional | status, reactions | proposed |
 | `character.memory_formed` | information | characters | conditional | belief and future choices | proposed |
 | `institution.founded` | canonicalHistorical | institutions | yes | legacy, prestige | proposed |
 | `institution.leader_changed` | simulation | institutions | conditional | continuity | proposed |
+
+> **`character.died` vs `character.succession_reacted` vs `claim.asserted`.**
+> VS-4 emits `character.died` (the death) and `character.succession_reacted`
+> (the character-owned **reaction**: the death, the related characters it
+> concerns, and — only when some authoritative designation already exists — a
+> reference to that designated successor). The reaction is **not** a succession
+> decision: the character system never selects an eldest child, spouse or
+> nearest relative as heir, and if no authoritative designation exists the
+> reaction is recorded **without inventing one**. Asserting a legal or political
+> claim is `claim.asserted` (politics emitter; **E9**, excluded from VS-4). The
+> reaction is the raw ledger material a future E9 system consumes, not that
+> system.
 
 ## Politics, legitimacy and internal conflict
 
