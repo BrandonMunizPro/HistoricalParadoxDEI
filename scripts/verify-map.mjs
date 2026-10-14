@@ -22,6 +22,7 @@ try {
   await page.waitForFunction(() => window.__campaignMap?.ready, null, {
     timeout: 60000,
   });
+  await page.locator('#reset').click();
   await mkdir(evidenceDirectory, { recursive: true });
   await page.waitForTimeout(1500);
   await page.screenshot({ path: `${evidenceDirectory}/geographic.png` });
@@ -44,9 +45,10 @@ try {
   assert.equal(transfer.owner, 'Roman Republic');
   await page.screenshot({ path: `${evidenceDirectory}/control-transfer.png` });
   await page.locator('#geographic').click();
-  const roma = await page.evaluate(
-    () => window.__campaignMap.screenPositions.roma,
-  );
+  const roma = await page.evaluate(() => {
+    const s = window.__campaignMap.settlements.find((s) => s.key === 'roma');
+    return window.__campaignMap.projectForValidation(s.lon, s.lat);
+  });
   await page.mouse.click(roma.x, roma.y);
   assert.equal(await page.locator('#place-name').textContent(), 'Roma');
   await page.screenshot({ path: `${evidenceDirectory}/rome-raycast.png` });
@@ -100,9 +102,15 @@ try {
     23,
   );
   const regionalCount = await page.locator('.label:visible').count();
-  const newMarker=await page.evaluate(()=>window.__campaignMap.screenPositions.neapolis);
-  await page.mouse.click(newMarker.x,newMarker.y);
-  assert.equal(await page.locator('#place-name').textContent(),'Neapolis');
+  const newMarker = await page.evaluate(() => {
+    const s = window.__campaignMap.settlements.find(
+      (s) => s.key === 'neapolis',
+    );
+    const p = s.renderAnchor ?? s;
+    return window.__campaignMap.projectForValidation(p.lon, p.lat);
+  });
+  await page.mouse.click(newMarker.x, newMarker.y);
+  assert.equal(await page.locator('#place-name').textContent(), 'Neapolis');
   await page.evaluate(() =>
     window.__campaignMap.focusForValidation('neapolis', 95),
   );

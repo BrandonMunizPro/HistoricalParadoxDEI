@@ -9,24 +9,24 @@
     "url": "http://127.0.0.1:4173",
     "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Laptop GPU (0x00002520) Direct3D11 vs_5_0 ps_5_0, D3D11)"
   },
-  "readyMs": 2294,
+  "readyMs": 5775,
   "metrics": {
     "central": {
-      "fps": 143.9111938314278,
-      "heapBytes": 155015122,
-      "drawCalls": 147,
-      "triangles": 862315,
-      "geometries": 148,
-      "textures": 17,
+      "fps": 141.02332308804918,
+      "heapBytes": 239303083,
+      "drawCalls": 63,
+      "triangles": 869049,
+      "geometries": 200,
+      "textures": 18,
       "terrainLod": 0,
-      "meanFps": 143.62960459614735,
+      "meanFps": 141.5903474342201,
       "p95FrameMs": 7.100000000000364,
-      "sampleFrames": 510,
+      "sampleFrames": 487,
       "tiles": {
         "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
+          1,
+          1,
+          1
         ],
         "limit": 12,
         "resident": [
@@ -88,32 +88,37 @@
           },
           {
             "id": "N42E14",
-            "level": 2
+            "level": 1
           },
           {
             "id": "N41E15",
             "level": 1
           }
         ],
-        "heightBytes": 1597536
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
       }
     },
     "wide": {
-      "fps": 141.2375462839256,
-      "heapBytes": 142506641,
-      "drawCalls": 383,
-      "triangles": 304071,
-      "geometries": 396,
-      "textures": 17,
+      "fps": 123.40192794147802,
+      "heapBytes": 243424962,
+      "drawCalls": 93,
+      "triangles": 302958,
+      "geometries": 211,
+      "textures": 18,
       "terrainLod": 1,
-      "meanFps": 141.34275618374556,
-      "p95FrameMs": 7.100000000000364,
-      "sampleFrames": 496,
+      "meanFps": 128.09699525566683,
+      "p95FrameMs": 7.100000000002183,
+      "sampleFrames": 486,
       "tiles": {
         "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
+          1,
+          1,
+          1
         ],
         "limit": 12,
         "resident": [
@@ -182,199 +187,118 @@
             "level": 2
           }
         ],
-        "heightBytes": 1597536
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
       }
     },
     "overhead": {
-      "fps": 143.5560475663322,
-      "heapBytes": 153851647,
-      "drawCalls": 419,
-      "triangles": 304349,
-      "geometries": 457,
-      "textures": 17,
+      "fps": 40.81262470524212,
+      "heapBytes": 224699267,
+      "drawCalls": 121,
+      "triangles": 378302,
+      "geometries": 227,
+      "textures": 18,
       "terrainLod": 1,
-      "meanFps": 142.19765188646983,
-      "p95FrameMs": 7.100000000000364,
-      "sampleFrames": 499,
+      "meanFps": 52.524386322221,
+      "p95FrameMs": 208.29999999999927,
+      "sampleFrames": 196,
       "tiles": {
-        "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
-        ],
+        "controlColor": [],
         "limit": 12,
         "resident": [
-          "local-roma",
-          "local-capua",
-          "local-neapolis",
-          "local-norba",
-          "N41E14",
-          "N41E13",
-          "N41E12",
-          "N42E13",
-          "N40E13",
-          "N41E11",
-          "N42E12",
-          "N42E11"
+          "world-37-8",
+          "world-42-8",
+          "world-37-13",
+          "world-37-3",
+          "world-42-13",
+          "world-42-3",
+          "world-42-18",
+          "world-37-18",
+          "world-32-8",
+          "world-47-8",
+          "world-32-13",
+          "world-47-13"
         ],
         "pending": [],
         "failed": [],
         "lods": [
           {
-            "id": "local-roma",
-            "level": 2
+            "id": "world-37-8",
+            "level": 1
           },
           {
-            "id": "local-capua",
-            "level": 2
+            "id": "world-42-8",
+            "level": 1
           },
           {
-            "id": "local-neapolis",
-            "level": 2
+            "id": "world-37-13",
+            "level": 1
           },
           {
-            "id": "local-norba",
-            "level": 2
+            "id": "world-37-3",
+            "level": 1
           },
           {
-            "id": "N41E14",
-            "level": 2
+            "id": "world-42-13",
+            "level": 1
           },
           {
-            "id": "N41E13",
-            "level": 2
+            "id": "world-42-3",
+            "level": 1
           },
           {
-            "id": "N41E12",
-            "level": 2
+            "id": "world-42-18",
+            "level": 1
           },
           {
-            "id": "N42E13",
-            "level": 2
+            "id": "world-37-18",
+            "level": 1
           },
           {
-            "id": "N40E13",
-            "level": 2
+            "id": "world-32-8",
+            "level": 1
           },
           {
-            "id": "N41E11",
-            "level": 2
+            "id": "world-47-8",
+            "level": 1
           },
           {
-            "id": "N42E12",
-            "level": 2
+            "id": "world-32-13",
+            "level": 1
           },
           {
-            "id": "N42E11",
-            "level": 2
+            "id": "world-47-13",
+            "level": 1
           }
         ],
-        "heightBytes": 1597536
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
       }
     },
     "rome": {
-      "fps": 143.9119008884995,
-      "heapBytes": 145836247,
+      "fps": 143.91036991725966,
+      "heapBytes": 317961802,
       "drawCalls": 55,
       "triangles": 678256,
-      "geometries": 477,
-      "textures": 19,
-      "terrainLod": 0,
-      "meanFps": 143.90954257323963,
-      "p95FrameMs": 7.099999999998545,
-      "sampleFrames": 504,
-      "tiles": {
-        "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
-        ],
-        "limit": 12,
-        "resident": [
-          "local-roma",
-          "local-capua",
-          "local-neapolis",
-          "local-norba",
-          "N41E14",
-          "N41E13",
-          "N41E12",
-          "N42E13",
-          "N40E13",
-          "N41E11",
-          "N42E12",
-          "N42E11"
-        ],
-        "pending": [],
-        "failed": [],
-        "lods": [
-          {
-            "id": "local-roma",
-            "level": 0
-          },
-          {
-            "id": "local-capua",
-            "level": 0
-          },
-          {
-            "id": "local-neapolis",
-            "level": 0
-          },
-          {
-            "id": "local-norba",
-            "level": 0
-          },
-          {
-            "id": "N41E14",
-            "level": 0
-          },
-          {
-            "id": "N41E13",
-            "level": 0
-          },
-          {
-            "id": "N41E12",
-            "level": 0
-          },
-          {
-            "id": "N42E13",
-            "level": 0
-          },
-          {
-            "id": "N40E13",
-            "level": 0
-          },
-          {
-            "id": "N41E11",
-            "level": 0
-          },
-          {
-            "id": "N42E12",
-            "level": 0
-          },
-          {
-            "id": "N42E11",
-            "level": 0
-          }
-        ],
-        "heightBytes": 1597536
-      }
-    },
-    "neapolis": {
-      "fps": 143.90992187747096,
-      "heapBytes": 148484090,
-      "drawCalls": 68,
-      "triangles": 741780,
-      "geometries": 500,
-      "textures": 16,
+      "geometries": 235,
+      "textures": 12,
       "terrainLod": 0,
       "meanFps": 143.91353811149034,
       "p95FrameMs": 7.099999999998545,
       "sampleFrames": 506,
       "tiles": {
         "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
+          1,
+          1,
+          1
         ],
         "limit": 12,
         "resident": [
@@ -382,9 +306,101 @@
           "local-capua",
           "local-neapolis",
           "local-norba",
-          "N41E14",
-          "N41E13",
           "N41E12",
+          "N42E12",
+          "N41E13",
+          "N41E11",
+          "N42E13",
+          "N41E14",
+          "N42E11",
+          "N40E13"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    "neapolis": {
+      "fps": 143.57741493872945,
+      "heapBytes": 279267862,
+      "drawCalls": 69,
+      "triangles": 741780,
+      "geometries": 263,
+      "textures": 16,
+      "terrainLod": 0,
+      "meanFps": 143.62503910582754,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 505,
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E12",
+          "N41E13",
+          "N41E14",
           "N40E13",
           "N40E14",
           "N41E15",
@@ -411,7 +427,7 @@
             "level": 0
           },
           {
-            "id": "N41E14",
+            "id": "N41E12",
             "level": 0
           },
           {
@@ -419,7 +435,7 @@
             "level": 0
           },
           {
-            "id": "N41E12",
+            "id": "N41E14",
             "level": 0
           },
           {
@@ -443,25 +459,30 @@
             "level": 0
           }
         ],
-        "heightBytes": 1597536
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
       }
     },
     "norba": {
-      "fps": 133.28862436080152,
-      "heapBytes": 141850989,
-      "drawCalls": 46,
+      "fps": 125.74988463313346,
+      "heapBytes": 246890989,
+      "drawCalls": 48,
       "triangles": 731772,
-      "geometries": 535,
-      "textures": 17,
+      "geometries": 298,
+      "textures": 18,
       "terrainLod": 0,
-      "meanFps": 133.51207901288618,
+      "meanFps": 126.83958045369552,
       "p95FrameMs": 7.099999999998545,
-      "sampleFrames": 488,
+      "sampleFrames": 468,
       "tiles": {
         "controlColor": [
-          0.14395897090435028,
-          0.18795476853847504,
-          0.06528189033269882
+          1,
+          1,
+          1
         ],
         "limit": 12,
         "resident": [
@@ -469,9 +490,9 @@
           "local-capua",
           "local-neapolis",
           "local-norba",
-          "N41E14",
-          "N41E13",
           "N41E12",
+          "N41E13",
+          "N41E14",
           "N40E13",
           "N42E12",
           "N42E13",
@@ -498,7 +519,7 @@
             "level": 0
           },
           {
-            "id": "N41E14",
+            "id": "N41E12",
             "level": 0
           },
           {
@@ -506,7 +527,7 @@
             "level": 0
           },
           {
-            "id": "N41E12",
+            "id": "N41E14",
             "level": 0
           },
           {
@@ -530,13 +551,18 @@
             "level": 0
           }
         ],
-        "heightBytes": 1597536
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
       }
     }
   },
   "browserProcessMemory": {
-    "privateBytes": 1062670336,
-    "workingSetBytes": 1122058240,
+    "privateBytes": 1338089472,
+    "workingSetBytes": 1462976512,
     "processCount": 7
   },
   "assertions": [

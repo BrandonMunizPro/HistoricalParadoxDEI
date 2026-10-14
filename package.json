@@ -24,7 +24,13 @@
     "map:terrain": "node scripts/import-italy-terrain.mjs",
     "map:verify:italy": "node scripts/verify-italy-map.mjs",
     "map:validate:geography": "node scripts/validate-italy-geography.mjs",
-    "map:audit": "npm run build && node scripts/audit-campaign-geography.mjs"
+    "map:audit": "npm run build && node scripts/audit-campaign-geography.mjs",
+    "map:world": "node scripts/import-world-geography.mjs",
+    "map:verify:world": "node scripts/verify-world-map.mjs",
+    "map:validate:world": "node scripts/validate-world-geography.mjs",
+    "map:ecology": "node scripts/import-regional-ecology.mjs",
+    "map:verify:regional": "node scripts/verify-regional-terrain.mjs",
+    "map:validate:ecology": "node scripts/validate-regional-ecology.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "bounds": {
+    "west": -12,
+    "east": 75,
+    "south": 12,
+    "north": 62
+  },
+  "width": 3916,
+  "height": 2251,
+  "pixelConvention": "North-up WGS84 lattice; first and last texel centers are envelope corners; texture shader applies half-texel correction",
+  "sources": [
+    {
+      "name": "NE1_LR_LC.zip",
+      "url": "https://naturalearth.s3.amazonaws.com/10m_raster/NE1_LR_LC.zip",
+      "license": "Public domain",
+      "reference": "https://www.naturalearthdata.com/downloads/10m-raster-data/10m-natural-earth-1/",
+      "sha256": "dae6ad77c963976f44afb3a3916febf36f44c42da1690854b9fa1dac74694e54"
+    },
+    {
+      "name": "beck-2023-v1.zip",
+      "url": "https://ndownloader.figshare.com/files/45057352",
+      "license": "CC BY 4.0",
+      "reference": "https://doi.org/10.1038/s41597-023-02549-6",
+      "sha256": "d37b8d05b39b96e7cf6e9007b024c7d1ab301d6668409e3e792962a2408fc05d"
+    }
+  ],
+  "landCover": {
+    "product": "Natural Earth I unshaded land-cover coloring, 3.2.0",
+    "sourceWidth": 16200,
+    "sourceHeight": 8100,
+    "sourcePixelDegrees": 0.02222222222222,
+    "interpretation": "Satellite-derived cartographic RGB, not categorical land-cover observations or ancient vegetation",
+    "materialTransfer": "Global gamma 1.24, exposure 0.85; source yellow/green chroma interpreted as a vegetation-tint signal and blended at most 55% toward an olive material. No latitude bands, river buffers or hand-drawn biome masks. This artistic signal is not a measured vegetation fraction."
+  },
+  "climate": {
+    "product": "Beck et al. (2023) Koppen-Geiger, 1991-2020",
+    "archiveEntry": "1991_2020/koppen_geiger_0p00833333.tif",
+    "sourcePixelDegrees": 0.008333333333333333,
+    "resampling": "Nearest categorical sample to the shared material lattice",
+    "zero": "Ocean/no classification; never silently classified as desert",
+    "counts": {
+      "0": 1931971,
+      "2": 8922,
+      "3": 61215,
+      "4": 2728808,
+      "5": 551671,
+      "6": 291296,
+      "7": 635889,
+      "8": 244330,
+      "9": 41838,
+      "10": 2,
+      "11": 8469,
+      "12": 3376,
+      "13": 32,
+      "14": 110637,
+      "15": 359943,
+      "16": 2382,
+      "17": 48513,
+      "18": 78676,
+      "19": 19180,
+      "22": 182,
+      "23": 25,
+      "25": 111445,
+      "26": 1266501,
+      "27": 262026,
+      "29": 47097,
+      "30": 490
+    }
+  },
+  "outputs": {
+    "surface": {
+      "url": "/data/regional-ecology/surface.png",
+      "sha256": "98456ecbb04aad6ffea25bca71cdc3238c5b66195e0b6a57417a67c203df12d1"
+    },
+    "climate": {
+      "url": "/data/regional-ecology/climate.png",
+      "sha256": "7b5bb140dcb8fce26c4a81959dd9e9122e824e0416a4568fafec0c75a44bfcb0"
+    }
+  },
+  "probes": [
+    {
+      "name": "Sahara",
+      "lon": 20,
+      "lat": 25,
+      "sourceRgb": [
+        247,
+        246,
+        229
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        209,
+        208,
+        189
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Arabian interior",
+      "lon": 45,
+      "lat": 24,
+      "sourceRgb": [
+        225,
+        206,
+        191
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        185,
+        166,
+        152
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Nile valley",
+      "lon": 31.15,
+      "lat": 27.2,
+      "sourceRgb": [
+        241,
+        240,
+        193
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        138,
+        152,
+        103
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Western desert near Nile",
+      "lon": 29.5,
+      "lat": 27.2,
+      "sourceRgb": [
+        247,
+        244,
+        222
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        208,
+        204,
+        182
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Iberian interior",
+      "lon": -4,
+      "lat": 40,
+      "sourceRgb": [
+        234,
+        232,
+        193
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        156,
+        164,
+        121
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Greece",
+      "lon": 22,
+      "lat": 39,
+      "sourceRgb": [
+        212,
+        221,
+        184
+      ],
+      "climateCode": 8,
+      "materialRgb": [
+        135,
+        152,
+        109
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Anatolia",
+      "lon": 33.5,
+      "lat": 39,
+      "sourceRgb": [
+        239,
+        231,
+        203
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        200,
+        192,
+        163
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Temperate central Europe",
+      "lon": 9,
+      "lat": 48.5,
+      "sourceRgb": [
+        198,
+        213,
+        178
+      ],
+      "climateCode": 15,
+      "materialRgb": [
+        131,
+        150,
+        107
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Steppe",
+      "lon": 49,
+      "lat": 49,
+      "sourceRgb": [
+        231,
+        224,
+        190
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        186,
+        181,
+        146
+      ],
+      "historicalReconstruction": false
+    },
+    {
+      "name": "Alps",
+      "lon": 10.8,
+      "lat": 46.8,
+      "sourceRgb": [
+        242,
+        248,
+        249
+      ],
+      "climateCode": 29,
+      "materialRgb": [
+        203,
+        209,
+        210
+      ],
+      "historicalReconstruction": false
+    }
+  ],
+  "limitations": [
+    "Modern geographic approximation, not a reconstruction of 278 BCE",
+    "Natural Earth is generalized cartography derived from modern satellite vegetation; not measured ancient forest, crop or soil boundaries",
+    "Modern irrigation, agriculture, dams and reservoirs can influence Nile and other valley coloration",
+    "No artificial green buffers around rivers; visible fertile corridors must be present in the source raster",
+    "A ~2.47km latitude material lattice cannot resolve individual fields or narrow riparian strips",
+    "Climate classification is not equivalent to actual forest cover or a simulation biome; uncertainty is not a gameplay modifier"
+  ]
+}

@@ -1,0 +1,4041 @@
+{
+  "version": 1,
+  "status": "Implemented rendering coverage, not an approved historical campaign boundary",
+  "bounds": {
+    "west": -12,
+    "east": 75,
+    "south": 12,
+    "north": 62
+  },
+  "contextBounds": {
+    "west": -12,
+    "east": 75,
+    "south": 12,
+    "north": 62
+  },
+  "samplesPerEdge": 129,
+  "coordinateReference": "WGS84 geographic degrees; sampled elevation metres from the Mapzen mosaic; Italy source metadata remains in its own manifest",
+  "verticalExaggeration": 3,
+  "detailManifest": "/data/italy-terrain/manifest.json",
+  "detailAreas": [
+    {
+      "bounds": {
+        "west": 9,
+        "east": 20,
+        "south": 36,
+        "north": 46
+      },
+      "maximumCameraDistanceKm": 1400
+    }
+  ],
+  "tiles": [
+    {
+      "id": "world-12--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12--12.json",
+      "sha256": "1f12b64e7bd48c5d1165e5bba73946f5c1f4164148ae9e3d6d6bfb3ceb670be0"
+    },
+    {
+      "id": "world-12--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12--7.json",
+      "sha256": "9896e2308381d21ff3a3f91d2dbc472d695deab04bb1350cbc7d9ee14eb2f940"
+    },
+    {
+      "id": "world-12--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12--2.json",
+      "sha256": "01d077574a42740c44b8dc9b579699a8006ca20021e69358c26701dae8dab311"
+    },
+    {
+      "id": "world-12-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-3.json",
+      "sha256": "449a894087e5d748cf485cc3f5822ba27653f87dc6ea52b3f69d98e65132d999"
+    },
+    {
+      "id": "world-12-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-8.json",
+      "sha256": "557ea85875abe7de76fab132b0065ed2289bcb964adf0055f20b506b2eb3e120"
+    },
+    {
+      "id": "world-12-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-13.json",
+      "sha256": "a3834f33d9c0b445bde2d8265e5adfc583e021c9bdb1e243ddd01233393f3d20"
+    },
+    {
+      "id": "world-12-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-18.json",
+      "sha256": "6aee218ff0825a07dc171eb171cdbfb73bd620450ac55a858c0d9ef66d6c172e"
+    },
+    {
+      "id": "world-12-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-23.json",
+      "sha256": "986a3eb5797c2e45f168f4c2404c99f49f3fcd4a352466c68cadbc65dba26ad5"
+    },
+    {
+      "id": "world-12-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-28.json",
+      "sha256": "867f14a316fb0cd752305df41ca4e06a570566283af5df6501c32521423e3134"
+    },
+    {
+      "id": "world-12-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-33.json",
+      "sha256": "c514c9964be236f32dba511e7e6ad260df1351cca22d73df1d710e2f66bb9e9e"
+    },
+    {
+      "id": "world-12-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-38.json",
+      "sha256": "a6c9ff17b505276f1183cb896b1542f4c19c9bacdabcd06b33e439a8167e464c"
+    },
+    {
+      "id": "world-12-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-43.json",
+      "sha256": "953a257f01d6b6911bbf42f7e4e1e222af57a483096982b19ea274ca2cf6ac08"
+    },
+    {
+      "id": "world-12-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-48.json",
+      "sha256": "20252b8d645778ca6c2a4a2623f960b0a9d0f2fa25cb4cd502f97b6e2055a8ad"
+    },
+    {
+      "id": "world-12-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-53.json",
+      "sha256": "288a0b4d3d4a5ee3875faf454284f4766a200bd3f91fec6a89671e4f497c7fbd"
+    },
+    {
+      "id": "world-12-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 12,
+        "north": 17
+      },
+      "url": "/data/world-terrain/world-12-73.json",
+      "sha256": "ceb30a62f277c9673bb7cd358e59f4a5cbc1e538a59c11fd43fa54b6c23a8239"
+    },
+    {
+      "id": "world-17--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17--12.json",
+      "sha256": "a915a1b1c15df93f08cb5eef68e8837c07dc5d04ad7223f0f1c394bee9c568b4"
+    },
+    {
+      "id": "world-17--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17--7.json",
+      "sha256": "e0f58b61b64074a1bf67420d8d665de92ea2945fd8713439250489bfab54073e"
+    },
+    {
+      "id": "world-17--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17--2.json",
+      "sha256": "973bacd007fd86687ee77e3c8992cd71aa43e871a9db6817968451ee3497897a"
+    },
+    {
+      "id": "world-17-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-3.json",
+      "sha256": "17bd7460ed988faab740c072cd626630b791297ff5e980e3c168752a50f86d29"
+    },
+    {
+      "id": "world-17-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-8.json",
+      "sha256": "1cc2de291ac694e0ec6abfad8eb403935f5b92630631456846943d43b23e0281"
+    },
+    {
+      "id": "world-17-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-13.json",
+      "sha256": "9e010180214b280db91aff408d336410068dec80bec3e5495be28d32f7037368"
+    },
+    {
+      "id": "world-17-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-18.json",
+      "sha256": "20e5c9eae09b88923a969d9b8c333268a422e9b23b59e513da0d2be984cb00f8"
+    },
+    {
+      "id": "world-17-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-23.json",
+      "sha256": "da26f4d218dc531cb62a3ca5cb71359215406c174d94bbf2c9f11389e02fe1e1"
+    },
+    {
+      "id": "world-17-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-28.json",
+      "sha256": "3782925a2fd16c36b9b5bf56e2eede73311c96378e5031dab3ebcc04e71df2aa"
+    },
+    {
+      "id": "world-17-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-33.json",
+      "sha256": "cc514566c38996c0e28823096e63354c629b0ebce8120a271dec1f33bcac3317"
+    },
+    {
+      "id": "world-17-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-38.json",
+      "sha256": "9a69f13a9b810cfae84c00b09916f814a0164cff930d1b12ed2cec939ddefe5a"
+    },
+    {
+      "id": "world-17-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-43.json",
+      "sha256": "05e5ae2d073da20f7af55bd76d728d34ee489aea76747c01957d366a57f52c21"
+    },
+    {
+      "id": "world-17-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-48.json",
+      "sha256": "9382c2d952bf6dd118a88523fcba825dbc99027ae785cb96148cbb5aa774d34b"
+    },
+    {
+      "id": "world-17-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-53.json",
+      "sha256": "ba0749f5b47d473e201c919a84858becf875fa690bf1998d86db1777a6b4267e"
+    },
+    {
+      "id": "world-17-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-58.json",
+      "sha256": "cce1d8195ce3f16533a0b1e4bf6e30f54c53f262083219b40fb64e24f50c0a67"
+    },
+    {
+      "id": "world-17-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-68.json",
+      "sha256": "b8c8398694e83d48063a3e2b090f5a5fc6d00acff47ab5059aab533370dd5a7d"
+    },
+    {
+      "id": "world-17-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 17,
+        "north": 22
+      },
+      "url": "/data/world-terrain/world-17-73.json",
+      "sha256": "858e80794144a518851660744615d93f61b80ed08a83d2467eb60b528b51793a"
+    },
+    {
+      "id": "world-22--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22--12.json",
+      "sha256": "271974263c0a4ef009187737bd017a58b6c38bd603321591db2890424894b285"
+    },
+    {
+      "id": "world-22--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22--7.json",
+      "sha256": "857be2814a72c57103cbf5238eaef17e163becdd50630bc81d0dffdfb4bcbd6d"
+    },
+    {
+      "id": "world-22--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22--2.json",
+      "sha256": "4cbe28fc643d439c815527c752f2c880a95cb1c5f072084d959d81f66bb7ba16"
+    },
+    {
+      "id": "world-22-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-3.json",
+      "sha256": "93fb302b13b84b369d9697df7e15853c8d86190110a7d123cc5cb2c23bc1b09b"
+    },
+    {
+      "id": "world-22-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-8.json",
+      "sha256": "b5f47e6f2abb726705a8763079c7161cfe70b9f8af879d767cc9a67adb21824e"
+    },
+    {
+      "id": "world-22-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-13.json",
+      "sha256": "129f135824807df786f2d423bbc382f7e0391d2b06bc15ccac9de09bb9a0099c"
+    },
+    {
+      "id": "world-22-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-18.json",
+      "sha256": "63bcb8633eabddbf730ae471d9b1488d2062fd216c2b30fb39e562567b1fdd83"
+    },
+    {
+      "id": "world-22-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-23.json",
+      "sha256": "e18bf6803438ab30c40ea363f1708b4ecd7d16fff18fa18955859a1ab047a7c1"
+    },
+    {
+      "id": "world-22-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-28.json",
+      "sha256": "ac61989d26c0d7f8caa65891bc114e31061cc8ac439ba1225f6c1404be4ccf03"
+    },
+    {
+      "id": "world-22-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-33.json",
+      "sha256": "92dbf684718033e65b11cf97ac893a4b4d94be8550c04a96dd6104ce48718705"
+    },
+    {
+      "id": "world-22-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-38.json",
+      "sha256": "4c63e8e7ba26e5c942d005fd4ca271606d09c40b9839e4454946e59cc7d8665d"
+    },
+    {
+      "id": "world-22-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-43.json",
+      "sha256": "da09187d00de0480aad31cd70ec112636cd613684b0b2f9f8fea89210c8fca0b"
+    },
+    {
+      "id": "world-22-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-48.json",
+      "sha256": "ff5294d3c859d584db23ff036ffce74f970af5c8b68af0188117434cc2ac5334"
+    },
+    {
+      "id": "world-22-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-53.json",
+      "sha256": "3cad14b439ee261a9644abb34847db9749b15c9c4f43783cdfad85fc15ef4520"
+    },
+    {
+      "id": "world-22-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-58.json",
+      "sha256": "d1038267726a509b291045d24e126413efb32512797a9d305dba11228cb19c86"
+    },
+    {
+      "id": "world-22-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-63.json",
+      "sha256": "0c73d097c014b4c822bbe5fef9d96ca1326be756b38123f7b813e1da8a257de7"
+    },
+    {
+      "id": "world-22-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-68.json",
+      "sha256": "0bb4e8395badb22eabbd379a4bec0492ab4e7e592d3a7fc3cf08b86ecbfe262e"
+    },
+    {
+      "id": "world-22-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 22,
+        "north": 27
+      },
+      "url": "/data/world-terrain/world-22-73.json",
+      "sha256": "d72359353adbf2735d70ad28f8faad54d32087bb6791cdcb31f0a0ab907aecca"
+    },
+    {
+      "id": "world-27--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27--12.json",
+      "sha256": "8a67c014759b06321a18224011347a3ee5e455999c09f09e1f441e09fc432414"
+    },
+    {
+      "id": "world-27--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27--7.json",
+      "sha256": "4c5682467fa95cbdf8546bc77898979c1df339be13baa32ebe6bd4cef17cd0ad"
+    },
+    {
+      "id": "world-27--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27--2.json",
+      "sha256": "bedcb2147e56803a3790338f883f681873871325b445b4292ce43633bb4a1d58"
+    },
+    {
+      "id": "world-27-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-3.json",
+      "sha256": "6db6220776fe4cf3274aa7685a0f6e31830fefdd95f8d895e1e85bb9fedee807"
+    },
+    {
+      "id": "world-27-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-8.json",
+      "sha256": "fb232bb91e36d194262486d0f14d09f6b226609a64f8b88ceea69704a45032ec"
+    },
+    {
+      "id": "world-27-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-13.json",
+      "sha256": "e70f6984a65e56e7208b916c0033fb0fdc596f772ba899e1e08a7aaf9e927761"
+    },
+    {
+      "id": "world-27-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-18.json",
+      "sha256": "2211aadb7b85403ca3d9fc51bd961883da19566336264ba47cba72f194c3b895"
+    },
+    {
+      "id": "world-27-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-23.json",
+      "sha256": "5282834f29c084b25507bcead198a059b21bb98a3c298d792b47cb1118ced9b1"
+    },
+    {
+      "id": "world-27-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-28.json",
+      "sha256": "c6cb07bb9776c276e8f79f72c5d1a8f3401fa5db01e471a92fa18f573e8c3286"
+    },
+    {
+      "id": "world-27-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-33.json",
+      "sha256": "1d9a013613e25d3f648cf7d5f9e45776762f2bbae074c971326ba145ca278fc4"
+    },
+    {
+      "id": "world-27-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-38.json",
+      "sha256": "4c01f319bec992ea794169ce29535ba2b2d215ee450d3a3619a983efe500679d"
+    },
+    {
+      "id": "world-27-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-43.json",
+      "sha256": "45fb318ab53d303b9bbdb0099524ab506286ef502d62276b062bd2a6074ac374"
+    },
+    {
+      "id": "world-27-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-48.json",
+      "sha256": "077d006c434ed6f94c23c21d8f93b6681c2486c7df5ffcf7055ec975eb833a9b"
+    },
+    {
+      "id": "world-27-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-53.json",
+      "sha256": "3408db568c6a0c42a35662323532e6d9b6b77ac8b2cc66007a51474dabd1238e"
+    },
+    {
+      "id": "world-27-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-58.json",
+      "sha256": "da961a491d608b135a5c9011378c26565a4d48e420244c8ddb1b602857d3be84"
+    },
+    {
+      "id": "world-27-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-63.json",
+      "sha256": "cdd0c2e0c4c7acd9d65331586f9b9b660844b3e19a1cfd023a0d3633eca2d758"
+    },
+    {
+      "id": "world-27-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-68.json",
+      "sha256": "9a7e885450ac828a73796491175272f1ea90fa8405108d32254afe5d186f6bab"
+    },
+    {
+      "id": "world-27-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 27,
+        "north": 32
+      },
+      "url": "/data/world-terrain/world-27-73.json",
+      "sha256": "f8b77f44b95dc3fad9adbcf6eaefa6b0155ba106128ecb49268e6c64f1aa0c54"
+    },
+    {
+      "id": "world-32--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32--12.json",
+      "sha256": "fad3530c9126264ac2d11db22dbbf4329453bfa06aa660144a542edff96071fc"
+    },
+    {
+      "id": "world-32--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32--7.json",
+      "sha256": "b86bb81dc9f63c440c4cb621b0ea55822cab19e4e50c2e1ffb51fd3e1a9fc181"
+    },
+    {
+      "id": "world-32--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32--2.json",
+      "sha256": "93ba1af125c7b866e9a3810ed791c1a83a245331314f3446af9aa620fd3c78db"
+    },
+    {
+      "id": "world-32-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-3.json",
+      "sha256": "d1bef7b913a88c0a169c4dddd3d7749452a420856ff8535b4aca5ed4688175ed"
+    },
+    {
+      "id": "world-32-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-8.json",
+      "sha256": "fa27bafbafd87dfa2e75b300c05a117cac18d33b512e7ee5cf553749cecc34cd"
+    },
+    {
+      "id": "world-32-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-13.json",
+      "sha256": "40b85450e38c784c7efddf728e171028999ff4ee239b4ef215a2150dd3a4ef86"
+    },
+    {
+      "id": "world-32-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-18.json",
+      "sha256": "d75ad486345087cbb76d4942875d7487cf57b5deef8d342afabca4b2598b6679"
+    },
+    {
+      "id": "world-32-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-23.json",
+      "sha256": "a9f935009208fd404593c125e6de09fcef7ddf169bc1c160825148359d594e65"
+    },
+    {
+      "id": "world-32-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-28.json",
+      "sha256": "8088d863a3f173cd34ab83bc9228d68f00c976fa03840f2feeb2fad1814fe256"
+    },
+    {
+      "id": "world-32-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-33.json",
+      "sha256": "51203c555f3b76ff1036b57a60d559ff5882510ab2c65140c452ee753b289656"
+    },
+    {
+      "id": "world-32-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-38.json",
+      "sha256": "bc349ea0c98431b0f3050a645d429d64de43eb8f8d2ce73a193a720728a566e0"
+    },
+    {
+      "id": "world-32-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-43.json",
+      "sha256": "b1dfd59febca1120fdf3e37ab84b13e69bb9c62104da363c21d64484d96801ad"
+    },
+    {
+      "id": "world-32-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-48.json",
+      "sha256": "5b06db66457dcdf9a53f9a4b08b121c4e85967956bd36c09fb0b145bcc02037d"
+    },
+    {
+      "id": "world-32-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-53.json",
+      "sha256": "a993443db8501a61dd40e170ad96290d7e5b57ec8d4e071e5cd06af3dc459bfe"
+    },
+    {
+      "id": "world-32-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-58.json",
+      "sha256": "8cfb2465e931d3d1f22917c5e9e551b9a3f3c41db539c5054cc9c7c737c22e49"
+    },
+    {
+      "id": "world-32-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-63.json",
+      "sha256": "ef3e690d3d8dfb71e33a41b9d3a3c6d28e208176d0c8d55cb3f09bd2022fb129"
+    },
+    {
+      "id": "world-32-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-68.json",
+      "sha256": "ecb0a3923a9c42d6ba58b88d79aa111640851529e1297be34d20d4278d949a58"
+    },
+    {
+      "id": "world-32-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 32,
+        "north": 37
+      },
+      "url": "/data/world-terrain/world-32-73.json",
+      "sha256": "a96a9513b8494c4cc6c44ed0720ee9184e09dce069707fd6f351fea69bcf1a52"
+    },
+    {
+      "id": "world-37--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37--12.json",
+      "sha256": "5579ac32751ef4bdfb190a28ca16a5b2a259ee9bf33d2fbcc8a1c2ec2f6c5ec4"
+    },
+    {
+      "id": "world-37--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37--7.json",
+      "sha256": "0405b47a2831b1ccc99aec28500c324641971481e59b728eb302cf09c7352bd5"
+    },
+    {
+      "id": "world-37--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37--2.json",
+      "sha256": "c1fb4b6bb0a75cfec73ad8ef2fff1f003596b1f91bf3b6361236f149342b2e1f"
+    },
+    {
+      "id": "world-37-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-3.json",
+      "sha256": "1d53bde9c300557b972dd72fa27939d761585064adcb04f762366f092fc1cab7"
+    },
+    {
+      "id": "world-37-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-8.json",
+      "sha256": "ffb3d56c711c0887844c56727f01433b48b56e4ae9528bccba3e8d43ebd081a7"
+    },
+    {
+      "id": "world-37-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-13.json",
+      "sha256": "b35c5d9de98cea60be501b454158c046eacb6cc6d5887e47c9f618b57a16b205"
+    },
+    {
+      "id": "world-37-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-18.json",
+      "sha256": "536a3380892b309bfe28fec7877615c60a01c1371690d78349c59f2c9f60bfec"
+    },
+    {
+      "id": "world-37-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-23.json",
+      "sha256": "18d9b0ccebe8fdfe472a16d21d3a7f4b5247bec46d270731892e7176fa75eddd"
+    },
+    {
+      "id": "world-37-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-28.json",
+      "sha256": "78a96ba68f2a3f8f4e96d59616ddf2d7cffdfd637edb100bde333490ed5593cf"
+    },
+    {
+      "id": "world-37-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-33.json",
+      "sha256": "eb3ea271841747c687e4593dd2c30b38e44eb8373d6a4fa69cf0c4433d7ec454"
+    },
+    {
+      "id": "world-37-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-38.json",
+      "sha256": "d4bfe57c38eb24ff2928a41e3c35681adcb7b5fe3e0eccda89afa5c4bb535a03"
+    },
+    {
+      "id": "world-37-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-43.json",
+      "sha256": "263f7aea0747ee616467e5d0c3a0dc44e016fa8ce3fe90cd78017370ca4e3a85"
+    },
+    {
+      "id": "world-37-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-48.json",
+      "sha256": "5715dc2dcf2cd3ece0a8509b4fc099acfc11a8efe710ee3b3f0b2e667534c1d7"
+    },
+    {
+      "id": "world-37-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-53.json",
+      "sha256": "2482d63b3a38bd1064c1ee30a6767f72fca737c3bf63ca105896f2b56909ad88"
+    },
+    {
+      "id": "world-37-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-58.json",
+      "sha256": "71ff2cf0f269b79b31591b16b9e7f403706d1ae66b65e5739cf96c6aada8b763"
+    },
+    {
+      "id": "world-37-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-63.json",
+      "sha256": "f77dd2378009a5e213a9d1212126f009768c13a26920b8f69569eb6922cdc00c"
+    },
+    {
+      "id": "world-37-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-68.json",
+      "sha256": "ba06fa8d6d84e78eebf0d278c48ff8c779f95a850c3a2accf1ff896ca0ea246b"
+    },
+    {
+      "id": "world-37-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 37,
+        "north": 42
+      },
+      "url": "/data/world-terrain/world-37-73.json",
+      "sha256": "e66bbe7a15f9116992b20e51975612bdae8f4d8818d2386d40bc57eeb5469c17"
+    },
+    {
+      "id": "world-42--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42--12.json",
+      "sha256": "7803d8abf44f2aba58a3ae042de83829078457257cff7f6160d81efe8684f2ff"
+    },
+    {
+      "id": "world-42--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42--7.json",
+      "sha256": "5ca54a3754d1242da6ea67f9fa9192d246b6791029c32d172873ad98ac5712fe"
+    },
+    {
+      "id": "world-42--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42--2.json",
+      "sha256": "cfb03ae194c6b80d96f67c6e30936c96c1e40fdfa454e287e392cc968b5c3c1b"
+    },
+    {
+      "id": "world-42-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-3.json",
+      "sha256": "8a223aa26bdbed0a6088ab365e7d6e0cd2d1df6e946caa01ab38e02dcf937fac"
+    },
+    {
+      "id": "world-42-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-8.json",
+      "sha256": "7786d2cbd6ba103a2a5f183d7c088cb3cf5a947c1087114c44b1ecfcf2f053c0"
+    },
+    {
+      "id": "world-42-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-13.json",
+      "sha256": "44465e1b4124249260b5676dcb659a554bb656eb5333b5b28cc831769b4b0960"
+    },
+    {
+      "id": "world-42-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-18.json",
+      "sha256": "398abea249e72b59259cc806bb20e32153f84afdf9a540bb122d0ed26b8804c2"
+    },
+    {
+      "id": "world-42-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-23.json",
+      "sha256": "53d07a46a8ff8e4752610177e975e672e66f8df8da490114192658184760c9a0"
+    },
+    {
+      "id": "world-42-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-28.json",
+      "sha256": "c7141f8afcddb3bc73c5c0177a43063de319c1439d0beaed5ca7b4fbbd4797bc"
+    },
+    {
+      "id": "world-42-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-33.json",
+      "sha256": "14ef01bbbcdc0b43c26c0f16a501d1c981f7cafa0a9c933483ff6130a8efca70"
+    },
+    {
+      "id": "world-42-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-38.json",
+      "sha256": "a8f205b00e4be0b2a142ab972f2e50ee66d9ff9e12809376929f12238f0ee61c"
+    },
+    {
+      "id": "world-42-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-43.json",
+      "sha256": "9fa910fceee99e56a2accdb6e840424543bbd62150c03a9bf0c4d26037483946"
+    },
+    {
+      "id": "world-42-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-48.json",
+      "sha256": "ebedc44428e186bc4635df8be2f8da03b4428622f7c0c6872ff0758a9a3e8d40"
+    },
+    {
+      "id": "world-42-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-53.json",
+      "sha256": "f36a9d3b2a146bc9601b3312a663874d93998fd7645e7e660d5e181330838123"
+    },
+    {
+      "id": "world-42-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-58.json",
+      "sha256": "0f3d4322f38d9b197553322c2e458aee96ca10dfb1fa1bbe7cc6e8da87ee1b96"
+    },
+    {
+      "id": "world-42-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-63.json",
+      "sha256": "3b7daff3ec95cb2ab9a1529e60d45809709c55067a96f790725c5dfbdd0b82e7"
+    },
+    {
+      "id": "world-42-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-68.json",
+      "sha256": "36e10702396621fbd536b1234ee3dfd783d1a92406fe8afe5cfa558c31958de4"
+    },
+    {
+      "id": "world-42-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 42,
+        "north": 47
+      },
+      "url": "/data/world-terrain/world-42-73.json",
+      "sha256": "9cfab4d748d24e43fdb0076f6674aaeea4f4ac887293db2015af5fa8d420310b"
+    },
+    {
+      "id": "world-47--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47--12.json",
+      "sha256": "bdb062d21bae819deb91b930f5b83d2f3f463482c0ae522525cf0af4666bad56"
+    },
+    {
+      "id": "world-47--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47--7.json",
+      "sha256": "b76e1a8a2a79625c76169f0f705647d188744adccecfc54761d9424e58928218"
+    },
+    {
+      "id": "world-47--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47--2.json",
+      "sha256": "d03fded8d1195fe289beef658a5b7d5f3cc5b76acd5c3950175fe288e5da970d"
+    },
+    {
+      "id": "world-47-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-3.json",
+      "sha256": "ffd6e3a2eff22f974166032d34a49acbe233c96d284535b82780a0a1f8142156"
+    },
+    {
+      "id": "world-47-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-8.json",
+      "sha256": "1b9e214099229d21b9236c8da0023a226fb6a0f03c0b1e363c7d523a2b89a1cf"
+    },
+    {
+      "id": "world-47-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-13.json",
+      "sha256": "20fcfbc8cb8e2ca54152c8232fb2d19135a1cf6e5c0207aa7c06b7a43bacad2d"
+    },
+    {
+      "id": "world-47-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-18.json",
+      "sha256": "e76fd192b133b233910ee442ba48340a8cf0fe180bf77e23d218061a161d6e57"
+    },
+    {
+      "id": "world-47-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-23.json",
+      "sha256": "6ee39c38f43405d52b17e0d393b937417ee11150579fbd72399cf04de6a9c826"
+    },
+    {
+      "id": "world-47-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-28.json",
+      "sha256": "a5eecdd0aa60d1f0518232442875e964383e24451749c40dc1839706c8ca57a0"
+    },
+    {
+      "id": "world-47-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-33.json",
+      "sha256": "fce1fa9d87a952a41c3bd8c6c838d9c5c6f6dbea3bedaf4ebd24c48df589e5b2"
+    },
+    {
+      "id": "world-47-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-38.json",
+      "sha256": "940dd191a908d7ac7a1dc438f2e2b488474bd7a8760bdb5b2715994ec2d1b023"
+    },
+    {
+      "id": "world-47-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-43.json",
+      "sha256": "6d3183c3349ce3b65f98495af29fa511fc5ada0f63ada90c47e5bfb546e6244e"
+    },
+    {
+      "id": "world-47-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-48.json",
+      "sha256": "b8f0cfc3f977da327550c9d87fd87e5e8202df0e503d801762789db18b5ecdc5"
+    },
+    {
+      "id": "world-47-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-53.json",
+      "sha256": "b928cb28e8acd3a37cd09dc99f190b14d3f5b684d03eab40ddfb6bb330711af6"
+    },
+    {
+      "id": "world-47-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-58.json",
+      "sha256": "54bb3ed6ecf9dd3e944734808e6ecb6329525e7e1ec2eb94d8e3d47d30f3a2e1"
+    },
+    {
+      "id": "world-47-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-63.json",
+      "sha256": "084e21bc27f12133db2a006d1e12256cfb59ca238260dcde178680eb692aac9b"
+    },
+    {
+      "id": "world-47-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-68.json",
+      "sha256": "5f3b3224ec8091a222b0771efb9c09e203be38757a180f576d9df41e8cae6059"
+    },
+    {
+      "id": "world-47-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 47,
+        "north": 52
+      },
+      "url": "/data/world-terrain/world-47-73.json",
+      "sha256": "cc558ad18bf332cd7e66b3473fbe0b2970f799c924c04339c0eb7f6e844fc499"
+    },
+    {
+      "id": "world-52--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52--12.json",
+      "sha256": "bfde0e1a6ce8895af6d3523dd331a3a4b846d254399ae8afce86eab13aff1488"
+    },
+    {
+      "id": "world-52--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52--7.json",
+      "sha256": "33a2db4b8e5eff5d1d06f486adbbe9eb13e9b09a4cf01a6b8486084ad16df54b"
+    },
+    {
+      "id": "world-52--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52--2.json",
+      "sha256": "b8482c02c6c56889f5192c83e6e64f3d43e492299f3cc56436fbe84335005a30"
+    },
+    {
+      "id": "world-52-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-3.json",
+      "sha256": "6ee6c5a2754dda91af68cd525e0d1023daf919876dd11f44bc3625f2b79c9639"
+    },
+    {
+      "id": "world-52-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-8.json",
+      "sha256": "a6dc426aa71ffbf4c87bfeb9be488161b270794c14e45819112ed6b0c6f7866f"
+    },
+    {
+      "id": "world-52-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-13.json",
+      "sha256": "8438009feec6c811431d53ab51dcdc06efdad08b385093693317012dd4ef451b"
+    },
+    {
+      "id": "world-52-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-18.json",
+      "sha256": "b6b088f0f8cf1a70614e8b0e87186f3b0d010901ea9b821f002aa807408f3966"
+    },
+    {
+      "id": "world-52-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-23.json",
+      "sha256": "a24a69aaa7972d63e104e3c3a22f5df8b0f8f7958457ebed4adeeb0daa42dc62"
+    },
+    {
+      "id": "world-52-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-28.json",
+      "sha256": "e16f554bd0919637c69787c9fea733ea7a284fa92a7fc03f9fd3b79b05e10d13"
+    },
+    {
+      "id": "world-52-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-33.json",
+      "sha256": "16c40e2bfef29eb9e9e702b444175da03fb30b1a44e9fb41a300d777296281c4"
+    },
+    {
+      "id": "world-52-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-38.json",
+      "sha256": "acc7eb90b9814606905d9be23d3f758d411d3f63249d6e6f6b2aa69b8157e234"
+    },
+    {
+      "id": "world-52-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-43.json",
+      "sha256": "c722534f46aa4f4419c286cee42a4a821b496437be65f37af5e45531564d351d"
+    },
+    {
+      "id": "world-52-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-48.json",
+      "sha256": "8230f38d6c190bbaa9e3497cc82a93d51e98c9e8ef7bfabb5c7926c016f3c2dc"
+    },
+    {
+      "id": "world-52-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-53.json",
+      "sha256": "ea8677c650662f7018aeed922b95b14a7d85ac22346397d88b86e4cd66229e1c"
+    },
+    {
+      "id": "world-52-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-58.json",
+      "sha256": "4b59b6813106fcefbc7256aeec6262218ce80d459a4f289ffd335916eeb6eeaf"
+    },
+    {
+      "id": "world-52-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-63.json",
+      "sha256": "8872e7aa6c7e8e4b02d9d98b29ffb03817f469626744504864163dcc8238152f"
+    },
+    {
+      "id": "world-52-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-68.json",
+      "sha256": "8d8eb047a64ab9a4ed276e0bb0b41c4d012210972feb909f1126437aa6e1704f"
+    },
+    {
+      "id": "world-52-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 52,
+        "north": 57
+      },
+      "url": "/data/world-terrain/world-52-73.json",
+      "sha256": "833f5ee236350bfc44e8e9c7f6e72f341d9f0d647fdf6f6e24a7afe9ae71ba2c"
+    },
+    {
+      "id": "world-57--12",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57--12.json",
+      "sha256": "c719bcb79e8e2f7cc85ea1e628e6824d7f5a02a77d293530e8fe831e578e1206"
+    },
+    {
+      "id": "world-57--7",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57--7.json",
+      "sha256": "f85da7b67f05206ce1064ff081142784ce2d3cb781de03ec953a8d490a03d119"
+    },
+    {
+      "id": "world-57--2",
+      "kind": "world-regional",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57--2.json",
+      "sha256": "97e274964fb9b6f3e13bdc4b09f6f81894c6d4c642dc9f0f26667449cfdc938f"
+    },
+    {
+      "id": "world-57-3",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-3.json",
+      "sha256": "947d38315b179e736864e31cea356426e0ac8da0f383e37b6bdb356ded31545d"
+    },
+    {
+      "id": "world-57-8",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-8.json",
+      "sha256": "a540d41a5b13ab993289e0e88337a4e107f6d2d14adf3437c2c4ed7cd31dfb1c"
+    },
+    {
+      "id": "world-57-13",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-13.json",
+      "sha256": "9e2ecdf9097b23c08aae7c6da6a4fae6fbb708d2662b00b7d435665b91a1b8ef"
+    },
+    {
+      "id": "world-57-18",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-18.json",
+      "sha256": "e7c0ff30111fb9dba0ee2b6dcad1058618a981ecfb9e9fad14f42e833af1e3b0"
+    },
+    {
+      "id": "world-57-23",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-23.json",
+      "sha256": "61e8a42bec79d7bfe29fdb03adcb97837ec1843874c8b5553752afae2bc61a91"
+    },
+    {
+      "id": "world-57-28",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-28.json",
+      "sha256": "da86c2fc59642f62aaa60595fd7a1f690a2fa3e73880a4d0cb64a4b25810edd4"
+    },
+    {
+      "id": "world-57-33",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-33.json",
+      "sha256": "f202d9ca9cdd3f0ed69cc0feb82bd07e15228e9eff743396573473e63a9f64d2"
+    },
+    {
+      "id": "world-57-38",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-38.json",
+      "sha256": "98529b753b4db4ee8cef3d6e0a636cde8908331bcfe23d0f08c6f3349a19cd98"
+    },
+    {
+      "id": "world-57-43",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-43.json",
+      "sha256": "77d28db032f8d77dd6cac3a63e0e128b00dff91cc870e715b0d289faa7c0939b"
+    },
+    {
+      "id": "world-57-48",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-48.json",
+      "sha256": "f491a4c164d8deb407935db3f38e41702c62314c8fd7f030aeb084bd92eb6ac0"
+    },
+    {
+      "id": "world-57-53",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-53.json",
+      "sha256": "325bcb2e93ef806466c5bdb9ee5ee97bc44b652320c7fa130d4b46fc145f351f"
+    },
+    {
+      "id": "world-57-58",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-58.json",
+      "sha256": "ea63bae2f86ad6213589e6cadb81a3a447c024660e4bde5294caf59bb8d133f7"
+    },
+    {
+      "id": "world-57-63",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-63.json",
+      "sha256": "46f4f5179c58afabcb0614d1bf4a8447285378055594baa353043947af32dffd"
+    },
+    {
+      "id": "world-57-68",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-68.json",
+      "sha256": "0e41f578a060f874d1541bd7b62f3be3142a7d1f75ad9df7301011ca301e4868"
+    },
+    {
+      "id": "world-57-73",
+      "kind": "world-regional",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 57,
+        "north": 62
+      },
+      "url": "/data/world-terrain/world-57-73.json",
+      "sha256": "3f2bb2d20e44e72ee2a42b6c5f6d4471b5654c84473c83c253c16b1b88ab6892"
+    },
+    {
+      "id": "N36E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E9.json"
+    },
+    {
+      "id": "N36E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E10.json"
+    },
+    {
+      "id": "N36E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E11.json"
+    },
+    {
+      "id": "N36E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E12.json"
+    },
+    {
+      "id": "N36E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E14.json"
+    },
+    {
+      "id": "N36E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E15.json"
+    },
+    {
+      "id": "N37E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E9.json"
+    },
+    {
+      "id": "N37E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E10.json"
+    },
+    {
+      "id": "N37E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E11.json"
+    },
+    {
+      "id": "N37E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E12.json"
+    },
+    {
+      "id": "N37E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E13.json"
+    },
+    {
+      "id": "N37E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E14.json"
+    },
+    {
+      "id": "N37E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E15.json"
+    },
+    {
+      "id": "N37E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E16.json"
+    },
+    {
+      "id": "N38E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E9.json"
+    },
+    {
+      "id": "N38E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E12.json"
+    },
+    {
+      "id": "N38E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E13.json"
+    },
+    {
+      "id": "N38E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E14.json"
+    },
+    {
+      "id": "N38E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E15.json"
+    },
+    {
+      "id": "N38E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E16.json"
+    },
+    {
+      "id": "N38E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E17.json"
+    },
+    {
+      "id": "N39E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E9.json"
+    },
+    {
+      "id": "N39E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E15.json"
+    },
+    {
+      "id": "N39E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E16.json"
+    },
+    {
+      "id": "N39E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E17.json"
+    },
+    {
+      "id": "N39E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E18.json"
+    },
+    {
+      "id": "N39E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E19.json"
+    },
+    {
+      "id": "N40E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E9.json"
+    },
+    {
+      "id": "N40E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E13.json"
+    },
+    {
+      "id": "N40E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E14.json"
+    },
+    {
+      "id": "N40E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E15.json"
+    },
+    {
+      "id": "N40E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E16.json"
+    },
+    {
+      "id": "N40E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E17.json"
+    },
+    {
+      "id": "N40E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E18.json"
+    },
+    {
+      "id": "N40E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E19.json"
+    },
+    {
+      "id": "N41E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E9.json"
+    },
+    {
+      "id": "N41E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E11.json"
+    },
+    {
+      "id": "N41E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E12.json"
+    },
+    {
+      "id": "N41E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E13.json"
+    },
+    {
+      "id": "N41E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E14.json"
+    },
+    {
+      "id": "N41E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E15.json"
+    },
+    {
+      "id": "N41E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E16.json"
+    },
+    {
+      "id": "N41E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E17.json"
+    },
+    {
+      "id": "N41E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E19.json"
+    },
+    {
+      "id": "N42E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E9.json"
+    },
+    {
+      "id": "N42E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E10.json"
+    },
+    {
+      "id": "N42E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E11.json"
+    },
+    {
+      "id": "N42E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E12.json"
+    },
+    {
+      "id": "N42E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E13.json"
+    },
+    {
+      "id": "N42E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E14.json"
+    },
+    {
+      "id": "N42E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E15.json"
+    },
+    {
+      "id": "N42E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E17.json"
+    },
+    {
+      "id": "N42E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E18.json"
+    },
+    {
+      "id": "N42E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E19.json"
+    },
+    {
+      "id": "N43E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E10.json"
+    },
+    {
+      "id": "N43E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E11.json"
+    },
+    {
+      "id": "N43E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E12.json"
+    },
+    {
+      "id": "N43E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E13.json"
+    },
+    {
+      "id": "N43E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E15.json"
+    },
+    {
+      "id": "N43E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E16.json"
+    },
+    {
+      "id": "N43E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E17.json"
+    },
+    {
+      "id": "N43E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E18.json"
+    },
+    {
+      "id": "N43E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E19.json"
+    },
+    {
+      "id": "N44E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E9.json"
+    },
+    {
+      "id": "N44E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E10.json"
+    },
+    {
+      "id": "N44E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E11.json"
+    },
+    {
+      "id": "N44E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E12.json"
+    },
+    {
+      "id": "N44E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E13.json"
+    },
+    {
+      "id": "N44E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E14.json"
+    },
+    {
+      "id": "N44E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E15.json"
+    },
+    {
+      "id": "N44E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E16.json"
+    },
+    {
+      "id": "N44E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E17.json"
+    },
+    {
+      "id": "N44E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E18.json"
+    },
+    {
+      "id": "N44E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E19.json"
+    },
+    {
+      "id": "N45E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E9.json"
+    },
+    {
+      "id": "N45E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E10.json"
+    },
+    {
+      "id": "N45E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E11.json"
+    },
+    {
+      "id": "N45E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E12.json"
+    },
+    {
+      "id": "N45E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E13.json"
+    },
+    {
+      "id": "N45E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E14.json"
+    },
+    {
+      "id": "N45E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E15.json"
+    },
+    {
+      "id": "N45E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E16.json"
+    },
+    {
+      "id": "N45E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E17.json"
+    },
+    {
+      "id": "N45E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E18.json"
+    },
+    {
+      "id": "N45E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E19.json"
+    },
+    {
+      "id": "local-roma",
+      "kind": "city",
+      "bounds": {
+        "west": 12.461258,
+        "east": 12.521258,
+        "south": 41.864977,
+        "north": 41.914977
+      },
+      "url": "/data/italy-terrain/local-roma.json"
+    },
+    {
+      "id": "local-capua",
+      "kind": "city",
+      "bounds": {
+        "west": 14.22,
+        "east": 14.28,
+        "south": 41.061,
+        "north": 41.111
+      },
+      "url": "/data/italy-terrain/local-capua.json"
+    },
+    {
+      "id": "local-neapolis",
+      "kind": "city",
+      "bounds": {
+        "west": 14.227,
+        "east": 14.286999999999999,
+        "south": 40.827,
+        "north": 40.876999999999995
+      },
+      "url": "/data/italy-terrain/local-neapolis.json"
+    },
+    {
+      "id": "local-norba",
+      "kind": "city",
+      "bounds": {
+        "west": 12.930234822672942,
+        "east": 12.99023482267294,
+        "south": 41.566607341443024,
+        "north": 41.61660734144302
+      },
+      "url": "/data/italy-terrain/local-norba.json"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/tilezen/joerd/master/docs/attribution.md",
+      "sha256": "2ce4d3414b4592d17ad56a5af57feb480686ddcfb0a3e4ea0b566d28cde13567"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/17.png",
+      "sha256": "335fe6add29e82f476701b3b6c4fbcdc3c236dc7d778cd46359f30b66af8d034"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/18.png",
+      "sha256": "689f6697103ffbfe100d1071524c98de4fa826f745c9e6186277ff7416ea334f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/19.png",
+      "sha256": "ec3da09d3d53f267da64a2093e64c79c300be970ddc534e4b96b8088cb80485f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/20.png",
+      "sha256": "343e779a1d5ad9f19849ae1709ded267ca6fca2749e32be3d4c30ceb98e17f2c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/21.png",
+      "sha256": "0f8178effb2a9aca7e6c19459b88986283858857cc3bc970b68c250781461df5"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/22.png",
+      "sha256": "ce9cc7cb033dfa592a4cfea382d35bce6a1bed561cb0c198784879ab612bd436"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/23.png",
+      "sha256": "b8397bc79c537f5a27fc72ac9feb9a43b54bdae055e5eaac2b01975d547afc63"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/24.png",
+      "sha256": "04605f97eef0740e7909a2d9f93fd0a648eed5a09ef3ec3c0d94a6fdca394f5c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/25.png",
+      "sha256": "90b618023a4787f46df0dff7a09e7166d035c58fd6460a3e0402fe9c0d1eef54"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/26.png",
+      "sha256": "c56c8af70f084b6c71537cc22199b4fd9aa9fae1da78c7bd7456cfba941df11e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/27.png",
+      "sha256": "c488b3149b45dff80aaba65127d06d87b0da7bc084792e0a6dbc5c808047987c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/28.png",
+      "sha256": "94bcfc1c8e84185daac64a62d44f6d166c010703b0e26e37bbf3c2c0789cf6ca"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/29/29.png",
+      "sha256": "e0fc2056959b0e72b83f381d1c653f2a2cb23294448706314844efde705715fb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/17.png",
+      "sha256": "fe1e063b93c5c07ab6fcf0f0f044a1de7b37636234c563d20aca98cb414a24b7"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/18.png",
+      "sha256": "8bc5173124ea60d8babe48bfee2924e237456be53f1b6e5527078205e6bddc4b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/19.png",
+      "sha256": "e839d5c182eaf2c3630e5700909dbc66b85bcd3d91c85b5f1298007747363f54"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/20.png",
+      "sha256": "42b9debf641d72e0a6bf3a5d24ea72d187ff480e89af057d3e803fd1a4223c97"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/21.png",
+      "sha256": "d2d0828490f6d9b9719c63418c8a6908fc93ae716d0cbe08fb2b9425d9274b02"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/22.png",
+      "sha256": "88043253a1906e11ebd9191b540810d9939f337b026574df62092c791d36f4e3"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/23.png",
+      "sha256": "47dbfc800b6d91c26039452f2815a5ea7a2f2771e0d4f60a35f8686a0ff5aaee"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/24.png",
+      "sha256": "81c72357cb9ba4d6d5a8cf2db29142571b8da1c458826357ec9d2a803795846c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/25.png",
+      "sha256": "215b8af4a817e237b6bcbe14545a731c2ef45fbbd193bcdb6062e6ecdf0a16ff"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/26.png",
+      "sha256": "6864145c9755bf2ad5e9da350ba70c0372ec17d9c18354c90a2ad996e2a0f23c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/27.png",
+      "sha256": "d55160176468d91ab437a54af08840226278abab9daba8fbc81cb482257b3c91"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/28.png",
+      "sha256": "6c15ebcdafb5ad7aca7e28f06cd3432ecbfd1076cd8fb33c70b39baeaac39786"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/30/29.png",
+      "sha256": "d49fa20225c24ea1a8cd27ad91ef04ea6293633f655ec7a8ebe42dd69c5c36fe"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/17.png",
+      "sha256": "70f4c286d0eb74fa99cdca94dd4c3fb3aad948fa658973908b4a6eb3d73d3660"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/18.png",
+      "sha256": "1a99ecfc03b77c6abd2b144be9c7a5368ce4eff23d87a05febd565830a763b03"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/19.png",
+      "sha256": "dd83aaef7c65edb4a7cf5f99f19af3bff4ef2e9d4d3041a7e0e179e4cfcc44a8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/20.png",
+      "sha256": "9317035e9a8c9e5daae9c3487c798bf14d91e1558a211abc1ba44de33e05c087"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/21.png",
+      "sha256": "078d8582a54bda9b46ce5dab78a3c084a9b9b0dcfd21f3a035253eb51caa4ede"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/22.png",
+      "sha256": "a116550174e36ce91a45a74f40821b20da64c26212f14389d7b9566bcbc079db"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/23.png",
+      "sha256": "e315d1dc7d638e09dd63f740c42baa25b246bd1875891e29623523f3169690fb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/24.png",
+      "sha256": "93ceb1fc3a12e42c24447904da357a97266e788c348e6e352bdddbd42b44627b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/25.png",
+      "sha256": "9cff84e711943e7c2dd3fe32940320168c32909be54670f9e8d2040d2c5b4b19"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/26.png",
+      "sha256": "d75a7936907a52a2bc3dc9b06090295e36ea517a778b11ba90ffd7df59b664f3"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/27.png",
+      "sha256": "663eb2e554b5709d78895cfe39bb7a5186a0243e8fc64a41a1c955246a6a5d73"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/28.png",
+      "sha256": "4fa27d0f4691490ba78586e12d090d81957e0a6d030bad81ae3f3c2931060735"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/31/29.png",
+      "sha256": "0e1502078f0e46f7302e5d18b67428abcb7215cae08f4d103f511dce0a9021df"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/17.png",
+      "sha256": "f994436673554dda38896b7ca21c763c95625a597ec9b17d76fe240459bd2111"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/18.png",
+      "sha256": "468d7952231479c92db092cc6a71de5ba52e31f6d1a903f9e5bce899db8df95f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/19.png",
+      "sha256": "8d032161637ca5e65f6ea9d8de082a0c04bf1acc789485002c8ba50cbd2a12d8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/20.png",
+      "sha256": "2b3d7202feaa37601ee7abb2675a9c643c7a3c011e46494f42652c770ba11e24"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/21.png",
+      "sha256": "465bffe3f7a21ee3c00e380c8d900a1354b9095bd6f8d460af15017df933211d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/22.png",
+      "sha256": "c0730487bb0bda48b44406b60f66e2a8a4eb2157874977cae3d7c1389d2d99c0"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/23.png",
+      "sha256": "815800d14c65590fac8945308c04900a2cc3017e57d75620e713ae9d02c62ccb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/24.png",
+      "sha256": "6a8366c00fb8e6fce247610d0fe698ae48229469d297eea7a54d812ce82c2fff"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/25.png",
+      "sha256": "2358c86a5844a29c45c3ccd5a651c441d7166cf3193bea268390a41973fe9241"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/26.png",
+      "sha256": "9cddfa9b8b12126aca6002eb8f0084c57550b414f489a15d328f5d2858576913"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/27.png",
+      "sha256": "57d30a1252c4b7b57043257d06f8afc19ff811f168f1525ae992e8aee924157a"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/28.png",
+      "sha256": "37d9afccd80f4e5e5203f917190810f6b27aa7d3570940f1b62babda7757332e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/32/29.png",
+      "sha256": "a49c396edf0989e158c236ebbf4d977f1c8e870f1a2c45724bf7cfb8d3cd795d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/17.png",
+      "sha256": "20ab51ba85e46749508c934bb85aacf9ca4aa2ec54ee75ddd874b13394dc5d61"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/18.png",
+      "sha256": "100743b0ce8387d6db5e788110d724534b5c2a07b8ae3f28171650bdb95e111a"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/19.png",
+      "sha256": "057e4d918bad0d6430e51c6f67eb82c9b958ae43e2103aa965d64ba0c9b236b6"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/20.png",
+      "sha256": "93c887749fc63801c525ebdf49e2b95bf77d6ba69c4a80e69a3d60c7f8eff8db"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/21.png",
+      "sha256": "1d820e1851887a994ea402851a9219e9e3dfbb3839ffd8066609bef3c4d0a52e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/22.png",
+      "sha256": "16a7fd5a0dff2b0d4d8e4e392c3f18179dcac5be60ec5471e71c9515ab133dc5"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/23.png",
+      "sha256": "9f0797f605f309030c223efade44e574b43330c26ee9134f3f2ee7998cd74e7d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/24.png",
+      "sha256": "ce08defdfe2cae102fb56467f1c062ec42ef2633e93abab0415ab627ae386c05"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/25.png",
+      "sha256": "715abac62068d0e3f3fc8aa2abe61a22a503042952b2d349c764364c9096968b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/26.png",
+      "sha256": "a972f8798b55cbe9d93688d3c8ba040228e30fcc5dc447e6558dd574f474ae94"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/27.png",
+      "sha256": "e68764bf61802c62f1b7ad21d7bf11f42fa1d3d26053d42dedeb09b3a1fba02e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/28.png",
+      "sha256": "4fa91444812e7658ce88f4c946eb06e883f4de13e9c577100260460031a4331c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/33/29.png",
+      "sha256": "95cdf69e6a92c126fe8c281ad09a1b79290f68606c871f50b8da4d6240d72573"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/17.png",
+      "sha256": "fec6e7cad33a4806d76b4938e1d372aeb6cc300e11c956d75715de9f741b5799"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/18.png",
+      "sha256": "30a679d6b5e08ae1c6a98e6448e1689a2e23cdff085a9f50e9f89afe7a4bda96"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/19.png",
+      "sha256": "14891de3ef4177b082cf16bdc2005027048ec9409088eb0812917137409abec4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/20.png",
+      "sha256": "bfdc904d655eb42486b522bbf1886cf990bff140587eba1e2ff8bcdfc78f5911"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/21.png",
+      "sha256": "ec03bb4f5289feb2a7e5d8adc102c483f5cbba8511c25c8b7e619f2ce1c7dd4b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/22.png",
+      "sha256": "18e083640676512371d1bf02e4847f192d2c54846c2b939aee9a2f45955ab658"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/23.png",
+      "sha256": "1fb6e801054bc30e4184efbf7854af48df3a29da5fe471104d1744a485ba3eb9"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/24.png",
+      "sha256": "fad0c2cfa05c768a133d31797cd332fc4cf38eaedd1e21811bc44a68fe6ecf14"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/25.png",
+      "sha256": "01b40336a1dcb937606b6ac9887b8d29e3a40d7145f1fb4612e8bec314709dee"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/26.png",
+      "sha256": "ebc4f7e50822a4bf0543a96d8e19237da38a7b6b933fad163b59a790a30e44ff"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/27.png",
+      "sha256": "4297c1b6cf3dbf24a8b73a9a05e5c3c61b74b241b24d6b89e94770584905a76a"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/28.png",
+      "sha256": "bf37beb378b98f0a730142485c3679a9c9f40dd98cb145938847ee65ca2e3894"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/34/29.png",
+      "sha256": "0d6e7b2d29069815556ad002e34f91895a0a1fd38f48df5295e007bea1e8b23c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/17.png",
+      "sha256": "637c86218a7ff52037ea64b29c68c4e2b4ca76fe16921cb9513b0b903383219f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/18.png",
+      "sha256": "0c7b7d2a98733405d237cd1e1aa6a5adfe4c1158b2cb2a737812663f79335c75"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/19.png",
+      "sha256": "a52f4afb05057d4a7ddbf515deb951cd7ffc8836a8868c0c6bf8438aee058c64"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/20.png",
+      "sha256": "9ff9e8726df56e49ca514b9625481c665f928b9ad0e7f0c1c9e6096672d49ec9"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/21.png",
+      "sha256": "f7b256e0a881475437d33d1dfec3b5eb861fa4e2d50c10833a80488fbe42b2c4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/22.png",
+      "sha256": "9e6a0b15fe3424781813aae21c71470307ec57a4cbbeb8fe08a0f3e2bf60a015"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/23.png",
+      "sha256": "d0a07ea16f144b5780afc85ef285b0ad7ff51e53d94aa167e47b83f2a0787885"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/24.png",
+      "sha256": "b7f9cee4f1b53bb3170819c1a2ff168281241d9c7796e2be85e261895c965b2a"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/25.png",
+      "sha256": "601e128fe271a9f6d47732ebb4832dc089fae8801d1a3e46707e9bfeb7107e7e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/26.png",
+      "sha256": "8b26a9cc59bb69fe4514d43f505ed8a4447973c40828a59795999ba6b46dcbcf"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/27.png",
+      "sha256": "6fb27ebe731e4df362490da1dcc10fc2b14adf2e8bf0e15303a57e93a7248aa2"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/28.png",
+      "sha256": "c03598e02713d5a232d8c09c803583e7fe2612413591609a8d634a8797aa0738"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/35/29.png",
+      "sha256": "e9465426d8a6688535cbbfcc682d03fc200ea157fc916fa62a67b2ad77bfd526"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/17.png",
+      "sha256": "e05685c1787bf6a45c1994f3936f099fff2ed6976c789d3a7e6a9547d326df67"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/18.png",
+      "sha256": "ad2cee58e31fba9bf472e01d5fb5d649ed4559f1485b4d844a0bb0b52e396ec8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/19.png",
+      "sha256": "00aa25d41a2a1314f28058261db0770571444b1c2183059beac53ae2d0d5f7ac"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/20.png",
+      "sha256": "981e46adc7d3241e48e1f6f3ee8ce4ddf881f40852d4c1e80659da3e6bff41fb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/21.png",
+      "sha256": "232827790cdf30029c9b2b520c70b1a93f5436a2512e5a728b4e18d3bc4a1d64"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/22.png",
+      "sha256": "f1f6981378332397aef76858bdb36a52a65a82f5adac563c3774ed3a3cc73c85"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/23.png",
+      "sha256": "9b440903d49732a6a9642574349dff1eb890e87f5ef2d03f0af0924bc66fb456"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/24.png",
+      "sha256": "17171611d67d6fc5710d276aa635c20b7ff058361d8c391ee6f4da3cfaf99fdf"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/25.png",
+      "sha256": "58f8f9dece2b2d3a275b49b2779dcde1accef4e198d70df0bd845abb9db31430"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/26.png",
+      "sha256": "64df59a4a0e4320d8fd0bd6ab39501e7548354928efc8951e4d43fb52e53c2c2"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/27.png",
+      "sha256": "c72e55c73fe0569b65ee880937c79ff483717eebc05f4d8c9ed41a6e9047f994"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/28.png",
+      "sha256": "48ef3fde9fb89047719a7eab0726bc71e018a513cb0dd382aa45e4bd40dca04e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/36/29.png",
+      "sha256": "d03ea373ffd080825318140c583c1d10dabcca44760f48e7d75cf6573565b2ea"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/17.png",
+      "sha256": "0b1c9cde043a44597194edb7dbdb70c67443bb53e8f65fac4893e629d13eb683"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/18.png",
+      "sha256": "7aaa2ab9851b1c9572a158f93bb192910ab84f4d9cd11acba9b63cccbb9066f9"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/19.png",
+      "sha256": "924ae70dd8ea4d75b57cd173dbd29d8b44080a361ff01f6bfd563e03719fdf11"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/20.png",
+      "sha256": "a3d0c82ce5cc302eb46d270ae4f9fba51fbf400e51930faf358ec55ea530ced4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/21.png",
+      "sha256": "bd93555a02df27b8cfeb65344e6b88484dd60083dee003b285b224854c4caf1c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/22.png",
+      "sha256": "ca91e238bdf34734b2bad7cc82e15988de9192bd93e06048274c85b90f29369f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/23.png",
+      "sha256": "b9a3942dd0c6fd9a0edd54a3abcebed2625dc70cb2539a7c4b20e9659e61b030"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/24.png",
+      "sha256": "560917c204017dff5245665a46e3144be5a5b5e90c83457aecca1e6d09d6e270"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/25.png",
+      "sha256": "8cc779b52475caa85813245c3e350bbf856b99edc1b6ec0dab1e2e9521784709"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/26.png",
+      "sha256": "335dd4389c93d87c03c05bc00529f38374b620281bba8d74763eabed5fc303cd"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/27.png",
+      "sha256": "9a7c8c8d8b5bba68b8f430f90c37874878c5674f26b0cd11d1003403bf99a30d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/28.png",
+      "sha256": "d153dc9edb8326b8a495ef06baccd1ac810c18a4b267824ac95d77f97f395b2d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/37/29.png",
+      "sha256": "935eff1f01c73053cd4c499fc76a8c01fe0819d9930f78eeb097d9c70717c9bb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/17.png",
+      "sha256": "3da4e421cba01d73f8ff26fa3fbbaa2adb84451c05c6898e380b0fd871113a19"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/18.png",
+      "sha256": "25072804e6ead05221d3b0748f4e87bee1ab124300edcb3aa84cab2ccfb9b5da"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/19.png",
+      "sha256": "5cc676c7dd8fe790c87e738a0064c93b7bf0c311bd7cfc87ce445235f688afa0"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/20.png",
+      "sha256": "16500b7f4713bd48117c447adbf54236effbdeb532658a28af3d1c955f3cef74"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/21.png",
+      "sha256": "542756fe844135532277cd1709844294dfd6626a8d080414b176b20f0132f4e7"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/22.png",
+      "sha256": "ebb4b29b2f6b1375e599b37d69b531aa20af03c99db5889d079d05b7058f855c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/23.png",
+      "sha256": "67696fb655c4c411d43ca4c181ce0fc1dec0ef56adf28e16f533a40ca31bada9"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/24.png",
+      "sha256": "9ec164f140620136e4a69f58bf6dc85fac46809523b7b85ea224463697683557"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/25.png",
+      "sha256": "d549f60b121939d449eda2c096b738eaf1d4d34fa2667d9d7a6bb47c1b6726df"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/26.png",
+      "sha256": "4e605f627215a5526ade6c0940b9e81b974ccef7bb2b32a5a684b522d345c616"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/27.png",
+      "sha256": "650419931273ac025f0464a1c53d19d203dc4e378b41e125dcc6f1c260cfc324"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/28.png",
+      "sha256": "b16f289494bedeca5f7687984e7aff7dac21d885a124ecae288067d869f644e6"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/38/29.png",
+      "sha256": "9d3e60f6911b759737ea1adb23a82000d894b7f96cd94851ac97a9e55b2a0782"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/17.png",
+      "sha256": "14ed9e2c73d253efc7a9b239f372417d28fa6e39d9056b00d2cf3005ce0c5cf8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/18.png",
+      "sha256": "1617d1ec5fff786abc050fd64db8cb25d449ffe4c250812897fca65d89db9310"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/19.png",
+      "sha256": "f64c952785786682f78537d7a7baa2bbbab3e420574c3a59376daaf490b8f610"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/20.png",
+      "sha256": "821823dfb6e047b398d2e1fae935e542ca99a9f29ea32444ca363c6a34c5f3c5"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/21.png",
+      "sha256": "3deb2eb174a27c7d821737d950826b7f241965b7e1ba7fcfe50cc2424c715187"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/22.png",
+      "sha256": "9a331addb7ad0ac5292a00246447e03b981d1aa7d5bc28948f1864862b5f94ee"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/23.png",
+      "sha256": "fdaf7ce19dc0fc3f91a3ad7ff1fe0e6f153b82e78624d68e8ecd658f5d2bf230"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/24.png",
+      "sha256": "240f72ba1d33114039c99063bb6498822c2a91c1649ab8b93851f0d309628cb6"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/25.png",
+      "sha256": "bdb645260ad110d601362057a13c371022d5064229d320a6a7c7b0b191382f66"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/26.png",
+      "sha256": "fd4a41f9a786a885c8551d5b8161a474e8ac4c90d6835f812ef6b69dd10e8304"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/27.png",
+      "sha256": "59874ff42a406517762a968d5f5ccde073ebd5944453a1aacf532cb2f71337af"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/28.png",
+      "sha256": "bca5f8a3020819ac7403935ce6fa8954cea1d01a55f6c6f97803cbee297a15e1"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/39/29.png",
+      "sha256": "6d682cd3d669d4fc1e82811613e858a7f83c1daf70108601f0e4a1ee57f204e7"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/17.png",
+      "sha256": "64afff5bbcc80f74e13d9fdb2ecc8477afca6a64b4994ca5cce474723e580525"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/18.png",
+      "sha256": "cbc321b22cdb89d63584ce9fe94ab1915382a276bfbfa42dd0dfde2384627eed"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/19.png",
+      "sha256": "512f23d82500afce131229e2e23d7b920f7244b0eff57e64f21ff1e9e7f2cac7"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/20.png",
+      "sha256": "f3a348831d7f9b9c2dd0da0ab9073962d79211d034f90a2c0e5dd3d1209ab4f1"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/21.png",
+      "sha256": "05c7106c17fda32ab5c02362016fb39ec68f1a54fc783b1fdf13ec1d99028b47"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/22.png",
+      "sha256": "f643d02fbd07ff33c431ed58b37cdf92c350f17b87865a5b74a5174888764294"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/23.png",
+      "sha256": "fd3b15191f8664962e4d82819397dadf448c67f0c423e6e941442e72d4b41986"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/24.png",
+      "sha256": "858829c0749d7981259779cad8ba79f5c1abdaaf6145071eec6edf8504ba7f8d"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/25.png",
+      "sha256": "9be44ce56e228bfd6cad2284a903da108f1b13d27bdb2aa1b4088de5db80505f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/26.png",
+      "sha256": "9644f0d81381c78308a8fd895e962d1b79d5ea2709c32c36cff9fae869797ffc"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/27.png",
+      "sha256": "af3c975edbcb69a40c6b290a1d82c18657edef881b7929d46342bb48c75d7e38"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/28.png",
+      "sha256": "594aa6e72b1ef5334ffe0eae663454215ae2ec6f267dbfa8bb536cae0adefadc"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/40/29.png",
+      "sha256": "912a9c5bff4bbe56d4ae0f38b62c4f51ac646af9b00d5a8aab9895e9d6c7d581"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/17.png",
+      "sha256": "2ed1aa51a3b34107ae427b4eb551a0facade6abc4fa1a48eeacc8903226c5e73"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/18.png",
+      "sha256": "ed2464bdaf01c02228cd5dbcff6f5453cc8aa6034631958bc86b5a20eef98429"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/19.png",
+      "sha256": "75364bc0f1dcea6b224cf64fd44f0378ebbf8bf5c170a0aa49ceff8a2de89bb4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/20.png",
+      "sha256": "5958304327d76989d30efed8800bb5159ce699345b2a5970a20182ebce785b83"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/21.png",
+      "sha256": "3c87b5ea77847c925cb3d37ada51f4fdd731e4f6f245f38195cc5552bc44df43"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/22.png",
+      "sha256": "dc07595199ce0baeeed0659916bdf49dbc961d560a5d6ee3da5a646df8f69d0b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/23.png",
+      "sha256": "f3ccccc892ebc498b0cec4c3d97831a8236ab9a62e27443e11e33ea567638f50"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/24.png",
+      "sha256": "0c910d697f85a08dc5d1d42cb1c5cd1cad1b679977a968a95b1e8ae695049a1e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/25.png",
+      "sha256": "787e3fdf8f52b16e2f84f98222539aa4b469e696c873d9a715249ee5638fb72b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/26.png",
+      "sha256": "d245d54ec1a7a73d6b95ca96b92a0b3bfa4b30001556f42ed1584c473b296dc2"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/27.png",
+      "sha256": "ca2078af20e338b1c412cf6d15ecd222d1ae0139a6d47af6b58701c3b2393d42"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/28.png",
+      "sha256": "ff4604a0b8337b7ba2e53f28b95beed19517dab53368ac5cf3cb032e03cc0f6c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/41/29.png",
+      "sha256": "b4fda0a9a32281b082b096189cb94a9c5ee9f6b5b10e4ff4c7adcef82dc43fa4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/17.png",
+      "sha256": "fe369a412343c2ecc91c38559ad0d67e80f9b7b63544010955ce4100a1c943d5"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/18.png",
+      "sha256": "d3d948df50be25d7bd207f444c5a60c7367599e3132c2de28d2ce4d03e302f88"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/19.png",
+      "sha256": "5bd1cf7d2783fe315c10e2a776a299e985249349540cfc08a051d620d978e5c8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/20.png",
+      "sha256": "95d87d8cfbab742d900f9f30bd3781266bee7d5a291098aae18f013ddeb04775"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/21.png",
+      "sha256": "8bcf6dd4bf6dcab2ceabaca1a3b034854096e0bb9698f943786428d89d5b95ed"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/22.png",
+      "sha256": "e1cd1aa8fac97a237e62bf2e16b1bb6e63b41c2f269cda53bf863c84e4096c37"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/23.png",
+      "sha256": "033d80a8b47b00f078a5cdd960afd8714c1c2619016eac5727d84b9520519f26"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/24.png",
+      "sha256": "90f895ed71c04b17de073b7540b7bf7666f5eed11b9e84c516c30a1dea358adb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/25.png",
+      "sha256": "9c3afc1ba7c1be198e71c8aef6368d544e22380501cb7bc65bd78c466ad75882"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/26.png",
+      "sha256": "b6cf5048874395ee0cb1039bb78a3fc3d441e587aca82d20984f3c00929ae32f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/27.png",
+      "sha256": "afd3fad8a84555a650eb085be53730d91968514fe137ddb312921a7e215cadea"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/28.png",
+      "sha256": "6afc2ab16f4ead688e29f1c76ea4a1638f0b2016041ef555d749325e0dc632e4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/42/29.png",
+      "sha256": "accbf4cc5bf3e5f7d134f04436438e4879835f2ab64f78e0c6883d6a9c2788b3"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/17.png",
+      "sha256": "cea645cda3ab3afd6f4452f410565f5c273acf8ed1bc0073825344e51a5ac9f1"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/18.png",
+      "sha256": "9021a9a15ce768282c907a67959138c556f76e7e3ef4d41987dbfa46f1db8423"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/19.png",
+      "sha256": "52cc57ce714250cc93df9cb461cf66c43c17cf5011f5659dd96e9990e95c231c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/20.png",
+      "sha256": "91b6c8262a44327fa40b5524cf13f4058885249fe115b9e1f7c0eb763fbf46ab"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/21.png",
+      "sha256": "6d37c476033475a8ceee7dcd023d76cd0c5ae975c5a81b6e9a9fd17013a4f2c4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/22.png",
+      "sha256": "0054a843d0b535f5d7c49f90988083fc0d9d1adb567109511c8dcc088f037bd3"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/23.png",
+      "sha256": "904dcac41279356a114db10fdc419a2b59aee57346d1010877c31858ebb19acc"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/24.png",
+      "sha256": "4f3ca0e36e862d8021d8c9d3ff18374c1031565d9acc87a2c3e393d2a15fce83"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/25.png",
+      "sha256": "df4dac74cf7d69b3789bf22b439e4486b17ae1fd1ce2632c627e6524dffa168f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/26.png",
+      "sha256": "3c3324cfdd647abfdaeb41dd2af23434faec92f023bb979b95b4869b4d138b80"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/27.png",
+      "sha256": "01566d48fa131843e1995aa6b80f962b6fbdb3ee8b948d9e9ee5ed84449c875e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/28.png",
+      "sha256": "5d25f12b20401e5ec29af3b1a23a78b4be349cf37c30bbb844556d50d4a8c947"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/43/29.png",
+      "sha256": "6e69dcc9f91088e157bf8d06e84e2840d32b88e88e6b4661ca25edda647f7035"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/17.png",
+      "sha256": "b7405dd031fc181a3682e6242cee90ab070d775ed391cf4b01de568ab7ad0a78"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/18.png",
+      "sha256": "7b1577c3d94f6fa5f0151f0eb0aa0304f450ca924405ac588aee06074d4be878"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/19.png",
+      "sha256": "c43631ba3d3bcf719f814c02995cae75cdead2254f23359b627eb40721ba9e10"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/20.png",
+      "sha256": "19b2482ce23c4cd9a85c0b425c050c2e6927b00ad0fbdfa323d39fc60eecc2f8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/21.png",
+      "sha256": "cdc4f1288b458b39c4f8d27e6327f6732495a6c93475e8548ece37cd1fa53c57"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/22.png",
+      "sha256": "48f6a95d491097372481a0fa7c5d2121b8e4a79b59af50f2914a144ab8f02640"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/23.png",
+      "sha256": "4e35fc910942671c16cf4aed7c7871fa2b0fe0f83ab22a3e166e4cd5e2cb8ea2"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/24.png",
+      "sha256": "5fd62dbad0697ba7cfb6b286fc22099ec83ec7f124591c60dae6cd9a727fdd7f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/25.png",
+      "sha256": "abac43f8c038ac2ea5a29592a39663724e528085413d85c68905399992b605db"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/26.png",
+      "sha256": "671c76fc39fd13a676f7a91af4a8b13378299bc45ca4e16d4ee7608ff5363896"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/27.png",
+      "sha256": "556c744e7e45b7e9b0b9c0d45d68015583fb9246683c9e773dbb4bd18932c497"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/28.png",
+      "sha256": "ead11d24c32da5f47bfb26b74fbba573dc04e05592234ee693c062b6f53f7c19"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/44/29.png",
+      "sha256": "68c68ef6b8bee3ad036af2331d657c52fda7a3e3095b5215360a474ef50a04be"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/17.png",
+      "sha256": "9a025e6b5c9700f9753b7256cb765bb9768ba03cb00c7a3dbabad3345598a3db"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/18.png",
+      "sha256": "ca150dc60be6c8d022ef0e18c71bb8cd2c9e096547b74489ccd4412206279e23"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/19.png",
+      "sha256": "6f68d2a0c9551b6efc160ae0fa76f45103715a372d3c994140478a8a66922377"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/20.png",
+      "sha256": "f3f37dc5d68ac4b1fc7ee537128e2422558667b476c388a03165f5682ede331b"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/21.png",
+      "sha256": "54ff7e7a0facf1947414226858d1c5f05ba04e2ec04e611137ff060be6d8055e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/22.png",
+      "sha256": "51f898c5672b271afcbdf411143c3ddf1265ae6cd39d32f609d081bb9e58a821"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/23.png",
+      "sha256": "4e11d632cf6012b500fc9042f005162a032b093cfb381ff7da1acb3dba3e68e8"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/24.png",
+      "sha256": "2a3cae72a213819ff9df3662cf133d8733d0e20ff683f5a70b7087e3645cf9cc"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/25.png",
+      "sha256": "1659c18295be7f68bc3a8f9d89aeffc427cd192f7858e24204f8ddb610a7c5f4"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/26.png",
+      "sha256": "f1716c11bca8702ea33d0c6fc3f27006cc20200e42e7a23ae990efdad39bc200"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/27.png",
+      "sha256": "70cc0c3d1d9fff28d8170a8829a2228820df8754e677ab6a54a04172cde88c43"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/28.png",
+      "sha256": "bb33e53fa8d739c28ad546e53d95cd0f2d0113b611e59e7a926f566b0517410f"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/6/45/29.png",
+      "sha256": "7f223ef4bab9e9c58a18562f5a449163a8fcb38ac00005207e73e5e0f19618f2"
+    },
+    {
+      "url": "https://www.soest.hawaii.edu/pwessel/gshhg/gshhg-shp-2.3.7.zip",
+      "sha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41"
+    }
+  ],
+  "coverage": {
+    "context": "Entire envelope; no invented source gaps",
+    "regionalTiles": 176,
+    "regionalSpacingMetres": [
+      2000,
+      4400
+    ],
+    "contextSpacingMetres": [
+      9000,
+      19000
+    ],
+    "shoreMask": "4097 context samples; 513 samples per 5-degree region"
+  },
+  "limitations": [
+    "Modern physical geography; no reconstruction of ancient shorelines or river migration",
+    "Eastern campaign boundary requires historical scope agreement",
+    "Italy remains the only fine Copernicus/settlement detail area",
+    "Regional terrain is resampled Mapzen z6; not native-resolution full-world DEM"
+  ],
+  "sourceArchives": {
+    "gshhg": "https://www.soest.hawaii.edu/pwessel/gshhg/gshhg-shp-2.3.7.zip",
+    "attribution": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+  }
+}

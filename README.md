@@ -71,7 +71,15 @@ See also [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Working on the code
 
-The central Italy 3D campaign map prototype is runnable with `npm run map:dev`.
+The continuous campaign-world 3D map is runnable with `npm run map:dev`.
+The latest [regional terrain identity and continuous zoom report](docs/vs5/regional-terrain-identity.md)
+documents sourced ecological materials, the Nile/desert correction, LOD morphing,
+screenshots and performance. Use `npm run map:ecology` to regenerate its source bundle
+and `npm run map:verify:regional` to validate the production browser build.
+See the [full campaign geography foundation](docs/vs5/full-campaign-world-foundation.md)
+for implemented bounds, source coverage, streaming, regional screenshots and measured
+700-entity scalability with 1,000-entity growth headroom. Italy remains the detailed
+settlement prototype within this same world.
 See [VS5 implementation, sources, architecture and evidence](docs/vs5/central-italy-prototype.md).
 The [world-scope and Italian settlement atlas report](docs/vs5/world-scope-and-settlement-atlas.md)
 documents the current 36-candidate atlas and 23-site rendering expansion.

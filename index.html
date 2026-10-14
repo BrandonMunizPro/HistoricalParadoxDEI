@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/map/style.css" />
   </head>
   <body>
-    <main id="map" aria-label="Interactive central Italy campaign map"></main>
+    <main id="map" aria-label="Continuous geographic campaign world"></main>
     <header>
       <div class="sigil">SPQR</div>
       <div>
         <small>HISTORICALGAME / CAMPAIGN ATLAS</small>
-        <h1>Italia <span>278 BCE</span></h1>
+        <h1>Campaign world <span>278 BCE</span></h1>
       </div>
       <div class="modes">
         <button id="geographic" aria-pressed="true">Geography</button
@@ -20,7 +20,7 @@
       </div>
     </header>
     <aside>
-      <small>THE HEART OF THE PENINSULA</small>
+      <small>CAMPAIGN GEOGRAPHY</small>
       <h2 id="place-name">Central Italy</h2>
       <p id="description">
         From the banks of the Tiber to the plains of Campania. Select a
@@ -28,6 +28,27 @@
       </p>
       <dl id="details"></dl>
       <div id="settlements"></div>
+      <label for="world-view">Geographic camera</label>
+      <button id="world-overhead">Entire world · overhead</button>
+      <select id="world-view" aria-label="Geographic camera preset">
+        <option value="world">Entire campaign envelope</option>
+        <option value="iberia">Iberia</option>
+        <option value="italy">Italy</option>
+        <option value="greece">Greece</option>
+        <option value="northAfrica">North Africa</option>
+        <option value="egypt">Egypt</option>
+        <option value="anatolia">Anatolia</option>
+        <option value="mesopotamia">Mesopotamia</option>
+        <option value="east">Eastern edge</option>
+      </select>
+      <p class="note">
+        Rendering envelope: 12 W to 75 E, 12 N to 62 N. Historical campaign
+        margins remain provisional.
+      </p>
+      <label class="note"
+        ><input id="synthetic-markers" type="checkbox" /> Benchmark 700
+        synthetic markers (not historical sites)</label
+      >
       <div class="views">
         <button id="focus-roma">Rome · intermediate</button>
         <button id="focus-capua">Capua · intermediate</button>
@@ -36,8 +57,12 @@
         <button id="overhead">Overhead diagnostics</button>
         <button id="focus-norba">Norba · close</button>
       </div>
-      <button id="development-demo" disabled>Preview external development snapshot</button>
-      <p id="development-status" class="note">Visual fixture preview; no construction or economic rules.</p>
+      <button id="development-demo" disabled>
+        Preview external development snapshot
+      </button>
+      <p id="development-status" class="note">
+        Visual fixture preview; no construction or economic rules.
+      </p>
       <p class="note">
         Research prototype · modern elevation and coastline. Political
         influence, vegetation and route alignment are provisional.
@@ -45,9 +70,14 @@
       <details class="note">
         <summary>Geographic sources</summary>
         <p>
-          Copernicus GLO-30, GSHHG coastlines and WDBII rivers.
-          <a href="/data/italy-terrain/ATTRIBUTION.txt">Dataset notices</a>.
-          Mapzen; Europe terrain data produced using Copernicus data and
+          Natural Earth I land-cover materials, Beck et al. climate classes
+          (modern approximation);
+          <a href="/data/regional-ecology/ATTRIBUTION.txt"
+            >ecological source notices</a
+          >. Mapzen Terrarium world relief; Copernicus GLO-30 Italy detail;
+          GSHHG coastlines and WDBII rivers.
+          <a href="/data/world-terrain/Mapzen-ATTRIBUTION.md">Dataset notices</a
+          >. Mapzen; Europe terrain data produced using Copernicus data and
           information funded by the European Union — EU-DEM layers. GMTED2010
           and SRTM courtesy of USGS; ETOPO1 courtesy of NOAA.
         </p>

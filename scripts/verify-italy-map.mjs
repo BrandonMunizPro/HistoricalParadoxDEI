@@ -39,6 +39,7 @@ try {
     );
     await page.waitForTimeout(700);
   };
+  await page.locator('#reset').click();
   await settle();
   assert.equal(
     await page.evaluate(() => window.__campaignMap.settlements.length),

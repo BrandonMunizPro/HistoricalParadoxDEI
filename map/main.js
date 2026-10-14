@@ -1,4 +1,18 @@
 import * as THREE from 'three';
+import {
+  loadRegionalMaterial,
+  stationaryTransitionAttributes,
+} from './regional-material.js';
+import {
+  regularParentSample,
+  terrainMorphWeight,
+} from '../src/presentation/terrain-transition.ts';
+import {
+  REGION_VIEWS,
+  WORLD_RENDER_BOUNDS,
+  syntheticMarkerFixture,
+  GeographicMarkerIndex,
+} from '../src/presentation/world-navigation.ts';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { deriveAuthoredCanonicalId } from '../src/domain/identity/canonical-id.ts';
 import { validateGeographicGraph } from '../src/domain/geography/geography.ts';
@@ -17,15 +31,12 @@ import {
   settlementDetailBand,
 } from '../src/presentation/settlement-label-layout.ts';
 import { createTerrainTiles, sampleTile } from './terrain-tiles.js';
-import {
-  terrainAlbedo,
-  barycentricWeights,
-} from '../src/presentation/terrain-style.ts';
+import { barycentricWeights } from '../src/presentation/terrain-style.ts';
 import { createSettlementAssets } from './settlement-assets.js';
 
 const host = document.querySelector('#map');
 async function boot() {
-  const response = await fetch('/data/italy-terrain/context.json');
+  const response = await fetch('/data/world-terrain/context.json');
   if (!response.ok)
     throw new Error('Geographic dataset missing. Run npm run map:terrain.');
   const data = await response.json();
@@ -53,8 +64,9 @@ async function boot() {
     const p = projectLocalMapMetres({ lon, lat }, viewOrigin);
     return [p.east / 1000, -p.north / 1000];
   };
+  const ecologicalMaterial = await loadRegionalMaterial(viewOrigin);
   const tileManifest = await (
-    await fetch('/data/italy-terrain/manifest.json')
+    await fetch('/data/world-terrain/manifest.json')
   ).json();
   const cityTerrain = await Promise.all(
     [
@@ -77,7 +89,13 @@ async function boot() {
         lat >= t.bounds.south &&
         lat <= t.bounds.north,
     );
-    return tile ? sampleTile(tile, lon, lat) : sampleElevation(data, lon, lat);
+    return tile
+      ? sampleTile(tile, lon, lat)
+      : sampleElevation(
+          data,
+          Math.max(b.west, Math.min(b.east, lon)),
+          Math.max(b.south, Math.min(b.north, lat)),
+        );
   }
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#79999c');
@@ -99,13 +117,21 @@ async function boot() {
     42,
     innerWidth / innerHeight,
     0.002,
-    6000,
+    40000,
+  );
+  camera.setViewOffset(
+    innerWidth,
+    innerHeight,
+    -Math.min(155, innerWidth * 0.1),
+    -20,
+    innerWidth,
+    innerHeight,
   );
   camera.position.set(30, 275, 310);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.minDistance = 1.2;
-  controls.maxDistance = 2300;
+  controls.maxDistance = 30000;
   controls.maxPolarAngle = Math.PI * 0.45;
   controls.target.set(20, 0, 5);
   scene.add(new THREE.HemisphereLight('#dce7ee', '#273221', 1.15));
@@ -172,19 +198,7 @@ async function boot() {
     land.push(dry);
     const e = Math.max(0, elevations[i]);
     positions.setY(i, Math.max(0.002, (e / 1000) * 3));
-    const c = new THREE.Color();
-    const grain = (Math.sin(i * 12.9898) * 43758.5453) % 1;
-    c.setRGB(...terrainAlbedo(e), THREE.SRGBColorSpace);
-    c.multiplyScalar(1 + grain * 0.08);
-    if (dry) {
-      const east = elevations[Math.min(elevations.length - 1, i + 1)],
-        south = elevations[Math.min(elevations.length - 1, i + w)],
-        slope = (Math.abs(east - e) + Math.abs(south - e)) / 1200;
-      c.lerp(
-        new THREE.Color('#98937d'),
-        THREE.MathUtils.clamp((slope - 0.15) * 1.5, 0, 0.6),
-      );
-    }
+    const c = new THREE.Color(1, 1, 1);
     colors.push(c.r, c.g, c.b);
   }
   const textureCanvas = document.createElement('canvas');
@@ -217,6 +231,9 @@ async function boot() {
     vertexColors: true,
     map: terrainTexture,
     roughness: 0.95,
+    polygonOffset: true,
+    polygonOffsetFactor: 2,
+    polygonOffsetUnits: 2,
   });
   const terrainMesh = new THREE.Mesh(geometry, material);
   // Coarse context must not cast shadows onto a different-resolution surface.
@@ -261,6 +278,29 @@ async function boot() {
     new THREE.Float32BufferAttribute(coarseColors, 3),
   );
   coarseGeometry.computeVertexNormals();
+  stationaryTransitionAttributes(geometry, 450);
+  stationaryTransitionAttributes(coarseGeometry);
+  for (let row = 0; row < h; row++)
+    for (let col = 0; col < w; col++) {
+      const i = row * w + col,
+        sample = regularParentSample(w, 4, col, row);
+      for (let k = 0; k < 3; k++) {
+        geometry.attributes.parentPosition.array[i * 3 + k] = sample.ids.reduce(
+          (sum, id, j) =>
+            sum +
+            coarseGeometry.attributes.position.array[id * 3 + k] *
+              sample.weights[j],
+          0,
+        );
+        geometry.attributes.parentNormal.array[i * 3 + k] = sample.ids.reduce(
+          (sum, id, j) =>
+            sum +
+            coarseGeometry.attributes.normal.array[id * 3 + k] *
+              sample.weights[j],
+          0,
+        );
+      }
+    }
   const terrainLod = new THREE.LOD();
   terrainLod.addLevel(terrainMesh, 0);
   terrainLod.addLevel(new THREE.Mesh(coarseGeometry, material), 450, 0.05);
@@ -270,7 +310,13 @@ async function boot() {
     scene,
     tileMaterial,
     project,
-    (lon, lat) => sampleElevation(data, lon, lat),
+    // One-sided derivative at the coverage edge; never query fabricated terrain beyond it.
+    (lon, lat) =>
+      sampleElevation(
+        data,
+        Math.max(b.west, Math.min(b.east, lon)),
+        Math.max(b.south, Math.min(b.north, lat)),
+      ),
     tileManifest,
     material,
     data.coastMask,
@@ -302,10 +348,24 @@ async function boot() {
           grid.attributes.position.getZ(i),
         ]);
       const weights = barycentricWeights([x, z], a);
+      const morph =
+        grid === geometry
+          ? terrainMorphWeight(camera.position.length(), 450)
+          : 0;
       const blend = (attribute, k) =>
         ids.reduce(
           (sum, i, j) =>
-            sum + grid.attributes[attribute].array[i * 3 + k] * weights[j],
+            sum +
+            (grid.attributes[attribute].array[i * 3 + k] * (1 - morph) +
+              grid.attributes[
+                attribute === 'position'
+                  ? 'parentPosition'
+                  : attribute === 'normal'
+                    ? 'parentNormal'
+                    : attribute
+              ].array[i * 3 + k] *
+                morph) *
+              weights[j],
           0,
         );
       return {
@@ -314,7 +374,9 @@ async function boot() {
         color: [0, 1, 2].map((k) => blend('color', k)),
       };
     },
-    () => terrainLod.getCurrentLevel(),
+    () =>
+      `${terrainLod.getCurrentLevel()}:${Math.floor(terrainMorphWeight(camera.position.length(), 450) * 4)}`,
+    ecologicalMaterial.decorate,
   );
   const waterTime = { value: 0 };
   const seaDepthPixels = new Uint8Array(w * h);
@@ -338,7 +400,7 @@ async function boot() {
   seaDepthTexture.minFilter = seaDepthTexture.magFilter = THREE.LinearFilter;
   seaDepthTexture.needsUpdate = true;
   const water = new THREE.Mesh(
-    new THREE.PlaneGeometry(10000, 10000),
+    new THREE.PlaneGeometry(50000, 50000),
     new THREE.MeshPhysicalMaterial({
       color: '#214f62',
       roughness: 0.3,
@@ -381,10 +443,48 @@ async function boot() {
       );
     shader.fragmentShader = shader.fragmentShader.replace(
       '#include <color_fragment>',
-      '#include <color_fragment>\nfloat rho=max(length(mapWaterPosition),0.00001);float cc=rho/6371.0088;float p0=mapGeoOrigin.y;float lat=asin(cos(cc)*sin(p0)+mapWaterPosition.y*sin(cc)*cos(p0)/rho);float lon=mapGeoOrigin.x+atan(mapWaterPosition.x*sin(cc),rho*cos(p0)*cos(cc)-mapWaterPosition.y*sin(p0)*sin(cc));vec2 geo=vec2(lon,lat)*57.295779513;vec2 seaUV=(geo-mapGeoBounds.xy)/(mapGeoBounds.zw-mapGeoBounds.xy);float depth=texture2D(mapSeaDepth,clamp(seaUV,0.0,1.0)).r;diffuseColor.rgb=mix(mapShallow,mapDeep,smoothstep(0.0,0.28,depth));',
+      '#include <color_fragment>\nfloat rho=max(length(mapWaterPosition),0.00001);float cc=rho/6371.0088;float p0=mapGeoOrigin.y;float lat=asin(cos(cc)*sin(p0)+mapWaterPosition.y*sin(cc)*cos(p0)/rho);float lon=mapGeoOrigin.x+atan(mapWaterPosition.x*sin(cc),rho*cos(p0)*cos(cc)-mapWaterPosition.y*sin(p0)*sin(cc));vec2 geo=vec2(lon,lat)*57.295779513;vec2 seaUV=(geo-mapGeoBounds.xy)/(mapGeoBounds.zw-mapGeoBounds.xy);float depth=texture2D(mapSeaDepth,clamp(seaUV,0.0,1.0)).r;bool outside=any(lessThan(seaUV,vec2(0.0)))||any(greaterThan(seaUV,vec2(1.0)));diffuseColor.rgb=outside?vec3(0.045,0.063,0.068):mix(mapShallow,mapDeep,smoothstep(0.0,0.28,depth));',
     );
   };
   scene.add(water);
+  const coverageEdge = [];
+  for (const [a, c] of [
+    [
+      [b.west, b.south],
+      [b.east, b.south],
+    ],
+    [
+      [b.east, b.south],
+      [b.east, b.north],
+    ],
+    [
+      [b.east, b.north],
+      [b.west, b.north],
+    ],
+    [
+      [b.west, b.north],
+      [b.west, b.south],
+    ],
+  ])
+    for (let i = 0; i <= 128; i++) {
+      const t = i / 128,
+        [x, z] = project(a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t);
+      coverageEdge.push(new THREE.Vector3(x, 30, z));
+    }
+  const coverageLine = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints(coverageEdge),
+    new THREE.LineDashedMaterial({
+      color: '#c3b485',
+      dashSize: 20,
+      gapSize: 14,
+      transparent: true,
+      opacity: 0.65,
+    }),
+  );
+  coverageLine.computeLineDistances();
+  scene.add(coverageLine);
+  const riverSegments = [];
+  let collectingRivers = true;
   function line(coords, color, yOffset = 0.003, dashed = false) {
     const dense = [];
     for (let i = 0; i < coords.length - 1; i++) {
@@ -421,6 +521,11 @@ async function boot() {
       );
     });
     if (points.length < 2) return;
+    if (collectingRivers) {
+      for (let i = 1; i < points.length; i++)
+        riverSegments.push(...points[i - 1].toArray(), ...points[i].toArray());
+      return;
+    }
     const g = new THREE.BufferGeometry().setFromPoints(points);
     const m = dashed
       ? new THREE.LineDashedMaterial({ color, dashSize: 1.2, gapSize: 0.7 })
@@ -444,6 +549,22 @@ async function boot() {
         '#83bdc5',
       );
   }
+  collectingRivers = false;
+  const riverGeometry = new THREE.BufferGeometry();
+  riverGeometry.setAttribute(
+    'position',
+    new THREE.Float32BufferAttribute(riverSegments, 3),
+  );
+  scene.add(
+    new THREE.LineSegments(
+      riverGeometry,
+      new THREE.LineBasicMaterial({
+        color: '#72aeb6',
+        transparent: true,
+        opacity: 0.8,
+      }),
+    ),
+  );
   for (const f of data.features.lakes) {
     const ps =
       f.geometry.type === 'MultiPolygon'
@@ -748,7 +869,7 @@ async function boot() {
         near ? c.g : colors[i * 3 + 1],
         near ? c.b : colors[i * 3 + 2],
       );
-      if (!land[i]) continue;
+      if (!land[i] || !near) continue;
       for (const j of [i + 1, i + w]) {
         if (j >= positions.count || !land[j] || (j === i + 1 && j % w === 0))
           continue;
@@ -880,6 +1001,7 @@ async function boot() {
       .querySelector(`#${name}`)
       .addEventListener('click', () => setMode(name));
   document.querySelector('#reset').addEventListener('click', () => {
+    cameraTransition = null;
     camera.position.set(30, 275, 310);
     controls.target.set(20, 0, 5);
   });
@@ -919,10 +1041,183 @@ async function boot() {
   });
   addEventListener('resize', () => {
     camera.aspect = innerWidth / innerHeight;
+    camera.setViewOffset(
+      innerWidth,
+      innerHeight,
+      -Math.min(155, innerWidth * 0.1),
+      -20,
+      innerWidth,
+      innerHeight,
+    );
     camera.updateProjectionMatrix();
     renderer.setSize(innerWidth, innerHeight);
   });
+  let cameraTransition = null;
+  const sceneIdentity = scene.uuid;
+  function navigateWorld(key, animated = true) {
+    window.__campaignMap.setDiagnostic?.(false);
+    let target, position;
+    if (key === 'world') {
+      const points = [];
+      for (let i = 0; i <= 100; i++) {
+        const t = i / 100;
+        for (const [lon, lat] of [
+          [b.west + t * (b.east - b.west), b.south],
+          [b.west + t * (b.east - b.west), b.north],
+          [b.west, b.south + t * (b.north - b.south)],
+          [b.east, b.south + t * (b.north - b.south)],
+        ])
+          points.push(project(lon, lat));
+      }
+      const xs = points.map((p) => p[0]),
+        zs = points.map((p) => p[1]);
+      const left = Math.min(...xs),
+        right = Math.max(...xs),
+        top = Math.min(...zs),
+        bottom = Math.max(...zs);
+      const distance =
+        Math.max(
+          (bottom - top) / 2 / Math.tan(THREE.MathUtils.degToRad(21)),
+          (right - left) /
+            2 /
+            Math.tan(THREE.MathUtils.degToRad(21)) /
+            camera.aspect,
+        ) * 1.48;
+      target = new THREE.Vector3((left + right) / 2, 0, (top + bottom) / 2);
+      position = target.clone().add(new THREE.Vector3(0, distance, 0.01));
+    } else {
+      const view = REGION_VIEWS[key];
+      if (!view) throw new Error('Unknown geographic view');
+      const [x, z] = project(view.lon, view.lat);
+      target = new THREE.Vector3(x, 0, z);
+      position = target.clone().add(new THREE.Vector3(0, view.distance, 0.01));
+    }
+    cameraTransition = animated
+      ? {
+          start: performance.now(),
+          from: camera.position.clone(),
+          fromTarget: controls.target.clone(),
+          target,
+          position,
+        }
+      : null;
+    if (!animated) {
+      camera.position.copy(position);
+      controls.target.copy(target);
+      controls.update();
+    }
+    window.__campaignMap.viewPreset = key;
+    document.querySelector('#world-view').value = key;
+    const names = {
+      world: 'Campaign envelope',
+      iberia: 'Iberia',
+      italy: 'Italy',
+      greece: 'Greece',
+      egypt: 'Egypt',
+      anatolia: 'Anatolia',
+      mesopotamia: 'Mesopotamia',
+      east: 'Eastern coverage edge',
+      northAfrica: 'North Africa',
+    };
+    document.querySelector('#place-name').textContent = names[key];
+    document.querySelector('#description').textContent =
+      'Geographic camera view. Modern source relief and hydrography; historical settlement research outside Italy is pending. The dashed line marks data coverage, not ancient territory.';
+    document.querySelector('#details').replaceChildren();
+  }
+  let syntheticCount = 700;
+  let syntheticIndex = new GeographicMarkerIndex(
+    syntheticMarkerFixture(syntheticCount),
+  );
+  const syntheticMesh = new THREE.InstancedMesh(
+    new THREE.ConeGeometry(1, 2, 4),
+    new THREE.MeshBasicMaterial({ color: '#ef58db' }),
+    1000,
+  );
+  syntheticMesh.visible = false;
+  syntheticMesh.frustumCulled = false;
+  scene.add(syntheticMesh);
+  const syntheticMatrix = new THREE.Matrix4();
+  function updateSynthetic() {
+    if (!syntheticMesh.visible) return;
+    const p = unprojectLocalMapMetres(
+      controls.target.x * 1000,
+      -controls.target.z * 1000,
+      viewOrigin,
+    );
+    const distance = camera.position.distanceTo(controls.target),
+      span = distance / 70;
+    const visible = syntheticIndex.query(
+      distance > 6000
+        ? WORLD_RENDER_BOUNDS
+        : {
+            west: p.lon - span,
+            east: p.lon + span,
+            south: p.lat - span,
+            north: p.lat + span,
+          },
+    );
+    const scale = Math.max(0.06, distance / 550);
+    visible.forEach((m, i) => {
+      const [x, z] = project(m.lon, m.lat);
+      syntheticMatrix.makeScale(scale, scale, scale);
+      syntheticMatrix.setPosition(
+        x,
+        (Math.max(0, elevation(m.lon, m.lat)) / 1000) * 3 + scale,
+        z,
+      );
+      syntheticMesh.setMatrixAt(i, syntheticMatrix);
+    });
+    syntheticMesh.count = visible.length;
+    syntheticMesh.instanceMatrix.needsUpdate = true;
+    window.__campaignMap.synthetic = {
+      enabled: true,
+      total: syntheticCount,
+      visible: visible.length,
+      authoritative: false,
+    };
+  }
   window.__campaignMap = {
+    sceneIdentity,
+    ecologyForValidation: ecologicalMaterial.sample,
+    ecologyMetadata: {
+      bounds: ecologicalMaterial.manifest.bounds,
+      textureBytesEstimate: ecologicalMaterial.textureBytes,
+      period: '1991-2020',
+      historicalReconstruction: false,
+    },
+    bounds: b,
+    navigateForValidation: navigateWorld,
+    zoomForValidation(distance) {
+      if (
+        !Number.isFinite(distance) ||
+        distance < controls.minDistance ||
+        distance > controls.maxDistance
+      )
+        throw new RangeError('Camera distance outside navigation limits');
+      cameraTransition = null;
+      camera.position
+        .sub(controls.target)
+        .normalize()
+        .multiplyScalar(distance)
+        .add(controls.target);
+      controls.update();
+    },
+    synthetic: { enabled: false, total: 0, visible: 0, authoritative: false },
+    setSyntheticForValidation(enabled, count = 700) {
+      if (![700, 1000].includes(count))
+        throw new RangeError('Benchmark supports 700 or 1000 fixtures');
+      syntheticCount = count;
+      syntheticIndex = new GeographicMarkerIndex(syntheticMarkerFixture(count));
+      syntheticMesh.visible = enabled;
+      if (enabled) updateSynthetic();
+      else
+        window.__campaignMap.synthetic = {
+          enabled: false,
+          total: syntheticCount,
+          visible: 0,
+          authoritative: false,
+        };
+    },
     ready: true,
     mode,
     selectedId: null,
@@ -953,11 +1248,13 @@ async function boot() {
     },
     architecturalSelections: settlementAssets.selections(),
     overheadForValidation() {
+      cameraTransition = null;
       controls.target.set(-70, 0, 10);
       camera.position.set(-70, 1900, 10.01);
       camera.up.set(0, 1, 0);
     },
     focusForValidation(key, distance = 95) {
+      cameraTransition = null;
       window.__campaignMap.setDiagnostic?.(false);
       const s = settlements.find((s) => s.key === key),
         p = s.renderAnchor ?? s,
@@ -975,6 +1272,7 @@ async function boot() {
       select(s);
     },
     wideForValidation() {
+      cameraTransition = null;
       window.__campaignMap.setDiagnostic?.(false);
       controls.target.set(30, 0, 60);
       camera.position.set(30, 850, 880);
@@ -1115,7 +1413,42 @@ async function boot() {
     lastStats = previous;
   const shadowTarget = new THREE.Vector3(Infinity, Infinity, Infinity);
   const measureContext = document.createElement('canvas').getContext('2d');
+  document
+    .querySelector('#world-view')
+    .addEventListener('change', (e) => navigateWorld(e.target.value));
+  document
+    .querySelector('#world-overhead')
+    .addEventListener('click', () => navigateWorld('world'));
+  document
+    .querySelector('#synthetic-markers')
+    .addEventListener('change', (e) =>
+      window.__campaignMap.setSyntheticForValidation(e.target.checked),
+    );
+  controls.addEventListener('start', () => {
+    cameraTransition = null;
+  });
+  navigateWorld('world', false);
   function animate(now) {
+    if (cameraTransition) {
+      const t = Math.min(1, (now - cameraTransition.start) / 1200),
+        v = t * t * (3 - 2 * t);
+      camera.position.lerpVectors(
+        cameraTransition.from,
+        cameraTransition.position,
+        v,
+      );
+      controls.target.lerpVectors(
+        cameraTransition.fromTarget,
+        cameraTransition.target,
+        v,
+      );
+      if (t === 1) cameraTransition = null;
+    }
+    updateSynthetic();
+    scene.fog.density = Math.min(
+      0.00012,
+      0.12 / Math.max(1, camera.position.distanceTo(controls.target)),
+    );
     requestAnimationFrame(animate);
     controls.update();
     diagnosticSvg.style.display = diagnosticGroup.visible ? 'block' : 'none';

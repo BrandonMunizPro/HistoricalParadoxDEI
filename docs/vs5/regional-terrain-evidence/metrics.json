@@ -1,0 +1,1972 @@
+{
+  "environment": {
+    "platform": "win32",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "ramBytes": 16931676160,
+    "browser": "155.0.8059.40",
+    "viewport": "1440x1000",
+    "headless": true,
+    "url": "http://127.0.0.1:4173",
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Laptop GPU (0x00002520) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "readyMs": 2895,
+  "metrics": {
+    "world": {
+      "fps": 143.8990735265129,
+      "heapBytes": 207102096,
+      "drawCalls": 186,
+      "triangles": 293315,
+      "geometries": 187,
+      "textures": 6,
+      "terrainLod": 1,
+      "meanFps": 143.91119383142785,
+      "p95FrameMs": 7.100000000000364,
+      "sampleFrames": 433,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "iberia": {
+      "fps": 143.9187282475778,
+      "heapBytes": 242072137,
+      "drawCalls": 20,
+      "triangles": 426325,
+      "geometries": 200,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.91119383142785,
+      "p95FrameMs": 7.100000000000364,
+      "sampleFrames": 433,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-37--2",
+          "world-42-3",
+          "world-37-3",
+          "world-37--7",
+          "world-37--12",
+          "world-42--7",
+          "world-42--2",
+          "world-32--7",
+          "world-32--2",
+          "world-42--12",
+          "world-32--12",
+          "world-32-3"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37--2",
+            "level": 0
+          },
+          {
+            "id": "world-42-3",
+            "level": 0
+          },
+          {
+            "id": "world-37-3",
+            "level": 0
+          },
+          {
+            "id": "world-37--7",
+            "level": 0
+          },
+          {
+            "id": "world-37--12",
+            "level": 0
+          },
+          {
+            "id": "world-42--7",
+            "level": 0
+          },
+          {
+            "id": "world-42--2",
+            "level": 0
+          },
+          {
+            "id": "world-32--7",
+            "level": 0
+          },
+          {
+            "id": "world-32--2",
+            "level": 0
+          },
+          {
+            "id": "world-42--12",
+            "level": 0
+          },
+          {
+            "id": "world-32--12",
+            "level": 0
+          },
+          {
+            "id": "world-32-3",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "italy": {
+      "fps": 143.90836263457422,
+      "heapBytes": 274429503,
+      "drawCalls": 90,
+      "triangles": 302795,
+      "geometries": 199,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.91119383142785,
+      "p95FrameMs": 7.100000000002183,
+      "sampleFrames": 433,
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E13",
+          "N41E12",
+          "N41E14",
+          "N40E13",
+          "N42E14",
+          "N42E12",
+          "N42E13",
+          "N40E14"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 2
+          },
+          {
+            "id": "local-capua",
+            "level": 2
+          },
+          {
+            "id": "local-neapolis",
+            "level": 2
+          },
+          {
+            "id": "local-norba",
+            "level": 2
+          },
+          {
+            "id": "N41E13",
+            "level": 2
+          },
+          {
+            "id": "N41E12",
+            "level": 2
+          },
+          {
+            "id": "N41E14",
+            "level": 2
+          },
+          {
+            "id": "N40E13",
+            "level": 2
+          },
+          {
+            "id": "N42E14",
+            "level": 2
+          },
+          {
+            "id": "N42E12",
+            "level": 2
+          },
+          {
+            "id": "N42E13",
+            "level": 2
+          },
+          {
+            "id": "N40E14",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "greece": {
+      "fps": 143.9068161040191,
+      "heapBytes": 255916037,
+      "drawCalls": 29,
+      "triangles": 661791,
+      "geometries": 199,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.9087472644073,
+      "p95FrameMs": 7.100000000002183,
+      "sampleFrames": 434,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-37-13",
+          "world-37-18",
+          "world-37-23",
+          "world-32-23",
+          "world-32-18",
+          "world-42-23",
+          "world-42-18",
+          "world-37-28",
+          "world-32-28",
+          "world-32-13",
+          "world-42-13",
+          "world-42-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-13",
+            "level": 0
+          },
+          {
+            "id": "world-37-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-18",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "egypt": {
+      "fps": 143.19038219989233,
+      "heapBytes": 260605972,
+      "drawCalls": 18,
+      "triangles": 260293,
+      "geometries": 200,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.24171624181588,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 431,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-27-18",
+          "world-27-23",
+          "world-27-28",
+          "world-27-33",
+          "world-32-33",
+          "world-22-23",
+          "world-22-33",
+          "world-22-28",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 0
+          },
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "anatolia": {
+      "fps": 143.91220320265055,
+      "heapBytes": 242828193,
+      "drawCalls": 21,
+      "triangles": 428709,
+      "geometries": 201,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.92076048660513,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 433,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-32-33",
+          "world-37-28",
+          "world-32-38",
+          "world-37-23",
+          "world-37-33",
+          "world-37-38",
+          "world-42-33",
+          "world-42-28",
+          "world-42-38",
+          "world-42-23"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-37-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-42-33",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          },
+          {
+            "id": "world-42-38",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "mesopotamia": {
+      "fps": 143.9157065147558,
+      "heapBytes": 249493966,
+      "drawCalls": 25,
+      "triangles": 429949,
+      "geometries": 200,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.91365180891486,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 432,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-33",
+          "world-32-38",
+          "world-37-38",
+          "world-27-33",
+          "world-37-43",
+          "world-32-43",
+          "world-27-38",
+          "world-27-43",
+          "world-32-48",
+          "world-27-48",
+          "world-22-43",
+          "world-37-48"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-43",
+            "level": 0
+          },
+          {
+            "id": "world-27-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-48",
+            "level": 0
+          },
+          {
+            "id": "world-27-48",
+            "level": 0
+          },
+          {
+            "id": "world-22-43",
+            "level": 0
+          },
+          {
+            "id": "world-37-48",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "east": {
+      "fps": 143.9143334583776,
+      "heapBytes": 256400420,
+      "drawCalls": 20,
+      "triangles": 358258,
+      "geometries": 199,
+      "textures": 18,
+      "terrainLod": 1,
+      "meanFps": 143.90874726440768,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 434,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-58",
+          "world-32-63",
+          "world-32-68",
+          "world-37-63",
+          "world-37-68",
+          "world-32-73",
+          "world-27-73",
+          "world-37-73",
+          "world-27-68",
+          "world-27-63",
+          "world-42-68",
+          "world-37-58"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-58",
+            "level": 0
+          },
+          {
+            "id": "world-32-63",
+            "level": 0
+          },
+          {
+            "id": "world-32-68",
+            "level": 0
+          },
+          {
+            "id": "world-37-63",
+            "level": 0
+          },
+          {
+            "id": "world-37-68",
+            "level": 0
+          },
+          {
+            "id": "world-32-73",
+            "level": 0
+          },
+          {
+            "id": "world-27-73",
+            "level": 0
+          },
+          {
+            "id": "world-37-73",
+            "level": 0
+          },
+          {
+            "id": "world-27-68",
+            "level": 0
+          },
+          {
+            "id": "world-27-63",
+            "level": 1
+          },
+          {
+            "id": "world-42-68",
+            "level": 1
+          },
+          {
+            "id": "world-37-58",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 0,
+        "visible": 0,
+        "authoritative": false
+      }
+    },
+    "synthetic700": {
+      "fps": 142.63751281175274,
+      "heapBytes": 234871879,
+      "drawCalls": 187,
+      "triangles": 298915,
+      "geometries": 188,
+      "textures": 6,
+      "terrainLod": 1,
+      "meanFps": 142.9277128272679,
+      "p95FrameMs": 7.100000000005821,
+      "sampleFrames": 434,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": true,
+        "total": 700,
+        "visible": 700,
+        "authoritative": false
+      }
+    },
+    "synthetic1000": {
+      "fps": 143.90671339983837,
+      "heapBytes": 244560119,
+      "drawCalls": 187,
+      "triangles": 301315,
+      "geometries": 188,
+      "textures": 6,
+      "terrainLod": 1,
+      "meanFps": 143.90885772344208,
+      "p95FrameMs": 7.100000000005821,
+      "sampleFrames": 432,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": true,
+        "total": 1000,
+        "visible": 1000,
+        "authoritative": false
+      }
+    },
+    "local": {
+      "fps": 143.90326975476822,
+      "heapBytes": 243184300,
+      "drawCalls": 55,
+      "triangles": 678256,
+      "geometries": 209,
+      "textures": 12,
+      "terrainLod": 0,
+      "meanFps": 143.90641098075668,
+      "p95FrameMs": 7.100000000005821,
+      "sampleFrames": 433,
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E12",
+          "N42E12",
+          "N41E13",
+          "N41E11",
+          "N42E13",
+          "N41E14",
+          "N42E11",
+          "N40E13"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "synthetic": {
+        "enabled": false,
+        "total": 700,
+        "visible": 0,
+        "authoritative": false
+      }
+    }
+  },
+  "navigation": [
+    {
+      "key": "iberia",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "iberia",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-37--2",
+          "world-42-3",
+          "world-37-3",
+          "world-37--7",
+          "world-37--12",
+          "world-42--7",
+          "world-42--2",
+          "world-32--7",
+          "world-32--2",
+          "world-42--12",
+          "world-32--12",
+          "world-32-3"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37--2",
+            "level": 0
+          },
+          {
+            "id": "world-42-3",
+            "level": 0
+          },
+          {
+            "id": "world-37-3",
+            "level": 0
+          },
+          {
+            "id": "world-37--7",
+            "level": 0
+          },
+          {
+            "id": "world-37--12",
+            "level": 0
+          },
+          {
+            "id": "world-42--7",
+            "level": 0
+          },
+          {
+            "id": "world-42--2",
+            "level": 0
+          },
+          {
+            "id": "world-32--7",
+            "level": 0
+          },
+          {
+            "id": "world-32--2",
+            "level": 0
+          },
+          {
+            "id": "world-42--12",
+            "level": 0
+          },
+          {
+            "id": "world-32--12",
+            "level": 0
+          },
+          {
+            "id": "world-32-3",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "italy",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "italy",
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E13",
+          "N41E12",
+          "N41E14",
+          "N40E13",
+          "N42E14",
+          "N42E12",
+          "N42E13",
+          "N40E14"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 2
+          },
+          {
+            "id": "local-capua",
+            "level": 2
+          },
+          {
+            "id": "local-neapolis",
+            "level": 2
+          },
+          {
+            "id": "local-norba",
+            "level": 2
+          },
+          {
+            "id": "N41E13",
+            "level": 2
+          },
+          {
+            "id": "N41E12",
+            "level": 2
+          },
+          {
+            "id": "N41E14",
+            "level": 2
+          },
+          {
+            "id": "N40E13",
+            "level": 2
+          },
+          {
+            "id": "N42E14",
+            "level": 2
+          },
+          {
+            "id": "N42E12",
+            "level": 2
+          },
+          {
+            "id": "N42E13",
+            "level": 2
+          },
+          {
+            "id": "N40E14",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "greece",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "greece",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-37-13",
+          "world-37-18",
+          "world-37-23",
+          "world-32-23",
+          "world-32-18",
+          "world-42-23",
+          "world-42-18",
+          "world-37-28",
+          "world-32-28",
+          "world-32-13",
+          "world-42-13",
+          "world-42-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-13",
+            "level": 0
+          },
+          {
+            "id": "world-37-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-18",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "egypt",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "egypt",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-27-18",
+          "world-27-23",
+          "world-27-28",
+          "world-27-33",
+          "world-32-33",
+          "world-22-23",
+          "world-22-33",
+          "world-22-28",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 0
+          },
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "anatolia",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "anatolia",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-32-33",
+          "world-37-28",
+          "world-32-38",
+          "world-37-23",
+          "world-37-33",
+          "world-37-38",
+          "world-42-33",
+          "world-42-28",
+          "world-42-38",
+          "world-42-23"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-37-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-42-33",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          },
+          {
+            "id": "world-42-38",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "mesopotamia",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "mesopotamia",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-33",
+          "world-32-38",
+          "world-37-38",
+          "world-27-33",
+          "world-37-43",
+          "world-32-43",
+          "world-27-38",
+          "world-27-43",
+          "world-32-48",
+          "world-27-48",
+          "world-22-43",
+          "world-37-48"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-43",
+            "level": 0
+          },
+          {
+            "id": "world-27-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-48",
+            "level": 0
+          },
+          {
+            "id": "world-27-48",
+            "level": 0
+          },
+          {
+            "id": "world-22-43",
+            "level": 0
+          },
+          {
+            "id": "world-37-48",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    },
+    {
+      "key": "east",
+      "scene": "e876522d-aed3-4ad7-ae80-ca56f1dbcd54",
+      "preset": "east",
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-32-58",
+          "world-32-63",
+          "world-32-68",
+          "world-37-63",
+          "world-37-68",
+          "world-32-73",
+          "world-27-73",
+          "world-37-73",
+          "world-27-68",
+          "world-27-63",
+          "world-42-68",
+          "world-37-58"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-58",
+            "level": 0
+          },
+          {
+            "id": "world-32-63",
+            "level": 0
+          },
+          {
+            "id": "world-32-68",
+            "level": 0
+          },
+          {
+            "id": "world-37-63",
+            "level": 0
+          },
+          {
+            "id": "world-37-68",
+            "level": 0
+          },
+          {
+            "id": "world-32-73",
+            "level": 0
+          },
+          {
+            "id": "world-27-73",
+            "level": 0
+          },
+          {
+            "id": "world-37-73",
+            "level": 0
+          },
+          {
+            "id": "world-27-68",
+            "level": 0
+          },
+          {
+            "id": "world-27-63",
+            "level": 1
+          },
+          {
+            "id": "world-42-68",
+            "level": 1
+          },
+          {
+            "id": "world-37-58",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      }
+    }
+  ],
+  "edgeProjection": [
+    {
+      "x": 393.34543367109967,
+      "y": 823.7272452773196,
+      "lon": -12,
+      "lat": 12
+    },
+    {
+      "x": 546.1563728223164,
+      "y": 286.8438573724167,
+      "lon": -12,
+      "lat": 62
+    },
+    {
+      "x": 393.34543367109967,
+      "y": 823.7272452773196,
+      "lon": -12,
+      "lat": 12
+    },
+    {
+      "x": 1334.61727605607,
+      "y": 651.507642621832,
+      "lon": 75,
+      "lat": 12
+    },
+    {
+      "x": 441.246258171152,
+      "y": 834.4417863269857,
+      "lon": -7.6499999999999995,
+      "lat": 12
+    },
+    {
+      "x": 567.7492772204608,
+      "y": 293.74764004364147,
+      "lon": -7.6499999999999995,
+      "lat": 62
+    },
+    {
+      "x": 398.4666377928248,
+      "y": 796.1613425218712,
+      "lon": -12,
+      "lat": 14.5
+    },
+    {
+      "x": 1321.029641397687,
+      "y": 623.822388890901,
+      "lon": 75,
+      "lat": 14.5
+    },
+    {
+      "x": 489.4658957712522,
+      "y": 843.1180107284484,
+      "lon": -3.299999999999999,
+      "lat": 12
+    },
+    {
+      "x": 589.9061998908564,
+      "y": 299.48278801170414,
+      "lon": -3.299999999999999,
+      "lat": 62
+    },
+    {
+      "x": 403.8366848125738,
+      "y": 768.6878558718375,
+      "lon": -12,
+      "lat": 17
+    },
+    {
+      "x": 1306.7520802705926,
+      "y": 596.5646072290598,
+      "lon": 75,
+      "lat": 17
+    },
+    {
+      "x": 537.9420800687993,
+      "y": 849.7720685635591,
+      "lon": 1.049999999999999,
+      "lat": 12
+    },
+    {
+      "x": 612.260672712432,
+      "y": 303.82090255749483,
+      "lon": 1.049999999999999,
+      "lat": 62
+    },
+    {
+      "x": 409.4950488830048,
+      "y": 741.2793831608155,
+      "lon": -12,
+      "lat": 19.5
+    },
+    {
+      "x": 1291.8442722145617,
+      "y": 569.7472656561642,
+      "lon": 75,
+      "lat": 19.5
+    },
+    {
+      "x": 586.5846136198894,
+      "y": 854.4457490575344,
+      "lon": 5.400000000000002,
+      "lat": 12
+    },
+    {
+      "x": 634.8894376096621,
+      "y": 306.8817427937719,
+      "lon": 5.400000000000002,
+      "lat": 62
+    },
+    {
+      "x": 415.4270825314063,
+      "y": 713.9417590594061,
+      "lon": -12,
+      "lat": 22
+    },
+    {
+      "x": 1276.3292242433986,
+      "y": 543.3733015746011,
+      "lon": 75,
+      "lat": 22
+    },
+    {
+      "x": 635.3451122235203,
+      "y": 857.1382652555467,
+      "lon": 9.75,
+      "lat": 12
+    },
+    {
+      "x": 657.6472481506561,
+      "y": 308.60411588345676,
+      "lon": 9.75,
+      "lat": 62
+    },
+    {
+      "x": 421.65604625292923,
+      "y": 686.6646183244882,
+      "lon": -12,
+      "lat": 24.5
+    },
+    {
+      "x": 1260.2947680848733,
+      "y": 517.4451045824007,
+      "lon": 75,
+      "lat": 24.5
+    },
+    {
+      "x": 684.1668212963746,
+      "y": 857.8455804761451,
+      "lon": 14.099999999999998,
+      "lat": 12
+    },
+    {
+      "x": 680.5842867300233,
+      "y": 309.1270512811261,
+      "lon": 14.099999999999998,
+      "lat": 62
+    },
+    {
+      "x": 428.1394383003307,
+      "y": 659.4650795378216,
+      "lon": -12,
+      "lat": 27
+    },
+    {
+      "x": 1243.6759844086826,
+      "y": 491.9583501395345,
+      "lon": 75,
+      "lat": 27
+    },
+    {
+      "x": 732.9704390013659,
+      "y": 856.6009809504678,
+      "lon": 18.45,
+      "lat": 12
+    },
+    {
+      "x": 703.4811112071696,
+      "y": 308.31801182674843,
+      "lon": 18.45,
+      "lat": 62
+    },
+    {
+      "x": 435.0801683341706,
+      "y": 632.2873906484243,
+      "lon": -12,
+      "lat": 29.5
+    },
+    {
+      "x": 1226.5113002738424,
+      "y": 466.91612129873744,
+      "lon": 75,
+      "lat": 29.5
+    },
+    {
+      "x": 781.7077645674445,
+      "y": 853.3784678558452,
+      "lon": 22.800000000000004,
+      "lat": 12
+    },
+    {
+      "x": 726.2523079171826,
+      "y": 306.16467207614926,
+      "lon": 22.800000000000004,
+      "lat": 62
+    },
+    {
+      "x": 442.23754515280746,
+      "y": 605.2147559960703,
+      "lon": -12,
+      "lat": 32
+    },
+    {
+      "x": 1208.8439107012332,
+      "y": 442.31460311356415,
+      "lon": 75,
+      "lat": 32
+    },
+    {
+      "x": 830.3163643014285,
+      "y": 848.1518546692661,
+      "lon": 27.15,
+      "lat": 12
+    },
+    {
+      "x": 748.853376560145,
+      "y": 302.7216897378574,
+      "lon": 27.15,
+      "lat": 62
+    },
+    {
+      "x": 449.62641334722264,
+      "y": 578.2381319706934,
+      "lon": -12,
+      "lat": 34.5
+    },
+    {
+      "x": 1190.9033609597236,
+      "y": 418.08271403384765,
+      "lon": 75,
+      "lat": 34.5
+    },
+    {
+      "x": 878.7247678686928,
+      "y": 840.9492334678046,
+      "lon": 31.5,
+      "lat": 12
+    },
+    {
+      "x": 771.1869624635389,
+      "y": 297.9761533538391,
+      "lon": 31.5,
+      "lat": 62
+    },
+    {
+      "x": 457.2118936573519,
+      "y": 551.3564496347425,
+      "lon": -12,
+      "lat": 37
+    },
+    {
+      "x": 1172.3261263133832,
+      "y": 394.30763462818464,
+      "lon": 75,
+      "lat": 37
+    },
+    {
+      "x": 926.8689713076442,
+      "y": 831.7141714207397,
+      "lon": 35.85,
+      "lat": 12
+    },
+    {
+      "x": 793.1720403660094,
+      "y": 291.94595495048634,
+      "lon": 35.85,
+      "lat": 62
+    },
+    {
+      "x": 464.8841334687362,
+      "y": 524.5607490640853,
+      "lon": -12,
+      "lat": 39.5
+    },
+    {
+      "x": 1152.9769120168542,
+      "y": 371.1046880811586,
+      "lon": 75,
+      "lat": 39.5
+    },
+    {
+      "x": 974.6814298644668,
+      "y": 820.4458930173759,
+      "lon": 40.199999999999996,
+      "lat": 12
+    },
+    {
+      "x": 814.7162737121187,
+      "y": 284.6221331512631,
+      "lon": 40.199999999999996,
+      "lat": 62
+    },
+    {
+      "x": 472.92509165872474,
+      "y": 497.8341237836558,
+      "lon": -12,
+      "lat": 42
+    },
+    {
+      "x": 1133.349765369436,
+      "y": 348.2699875437094,
+      "lon": 75,
+      "lat": 42
+    },
+    {
+      "x": 1022.0096160428396,
+      "y": 806.9598448235103,
+      "lon": 44.550000000000004,
+      "lat": 12
+    },
+    {
+      "x": 835.7389034583695,
+      "y": 276.04383798798926,
+      "lon": 44.550000000000004,
+      "lat": 62
+    },
+    {
+      "x": 481.29743635318397,
+      "y": 471.19657937283637,
+      "lon": -12,
+      "lat": 44.5
+    },
+    {
+      "x": 1113.1525241911772,
+      "y": 325.9705861935962,
+      "lon": 75,
+      "lat": 44.5
+    },
+    {
+      "x": 1068.8480596944937,
+      "y": 791.4307615396335,
+      "lon": 48.9,
+      "lat": 12
+    },
+    {
+      "x": 856.1467655888453,
+      "y": 266.20312193833905,
+      "lon": 48.9,
+      "lat": 62
+    },
+    {
+      "x": 489.8278164003973,
+      "y": 444.6319702871619,
+      "lon": -12,
+      "lat": 47
+    },
+    {
+      "x": 1092.6279125134006,
+      "y": 304.04503314416894,
+      "lon": 75,
+      "lat": 47
+    },
+    {
+      "x": 1115.2590630117454,
+      "y": 773.9267374790353,
+      "lon": 53.25,
+      "lat": 12
+    },
+    {
+      "x": 875.8518317730051,
+      "y": 255.1264708078516,
+      "lon": 53.25,
+      "lat": 62
+    },
+    {
+      "x": 498.32153637974295,
+      "y": 418.06639175122217,
+      "lon": -12,
+      "lat": 49.5
+    },
+    {
+      "x": 1071.67831192086,
+      "y": 282.5581542400781,
+      "lon": 75,
+      "lat": 49.5
+    },
+    {
+      "x": 1160.6989585206475,
+      "y": 753.9304449556425,
+      "lon": 57.60000000000001,
+      "lat": 12
+    },
+    {
+      "x": 894.7629525426837,
+      "y": 242.83631455282477,
+      "lon": 57.60000000000001,
+      "lat": 62
+    },
+    {
+      "x": 507.34461274152517,
+      "y": 391.6345503196954,
+      "lon": -12,
+      "lat": 52
+    },
+    {
+      "x": 1050.2630568025238,
+      "y": 261.5730928477623,
+      "lon": 75,
+      "lat": 52
+    },
+    {
+      "x": 1205.474204918204,
+      "y": 731.8097053717869,
+      "lon": 61.95,
+      "lat": 12
+    },
+    {
+      "x": 912.7858467818986,
+      "y": 229.36872946354546,
+      "lon": 61.95,
+      "lat": 62
+    },
+    {
+      "x": 516.834980568975,
+      "y": 365.37735604040535,
+      "lon": -12,
+      "lat": 54.5
+    },
+    {
+      "x": 1028.4516816044131,
+      "y": 241.02235913505166,
+      "lon": 75,
+      "lat": 54.5
+    },
+    {
+      "x": 1249.4351153344853,
+      "y": 707.4195916805368,
+      "lon": 66.3,
+      "lat": 12
+    },
+    {
+      "x": 929.8273337199577,
+      "y": 214.7439450710184,
+      "lon": 66.3,
+      "lat": 62
+    },
+    {
+      "x": 526.3302178658148,
+      "y": 339.1059910585329,
+      "lon": -12,
+      "lat": 57
+    },
+    {
+      "x": 1006.2322634435732,
+      "y": 220.93044613097223,
+      "lon": 75,
+      "lat": 57
+    },
+    {
+      "x": 1292.4749723594794,
+      "y": 680.6702573168958,
+      "lon": 70.64999999999999,
+      "lat": 12
+    },
+    {
+      "x": 945.7950033070921,
+      "y": 198.98760773202108,
+      "lon": 70.64999999999999,
+      "lat": 62
+    },
+    {
+      "x": 536.09940302619,
+      "y": 312.9229326581815,
+      "lon": -12,
+      "lat": 59.5
+    },
+    {
+      "x": 983.6087531588898,
+      "y": 201.30751150348985,
+      "lon": 75,
+      "lat": 59.5
+    },
+    {
+      "x": 1334.61727605607,
+      "y": 651.507642621832,
+      "lon": 75,
+      "lat": 12
+    },
+    {
+      "x": 960.5892711323221,
+      "y": 182.15649048174265,
+      "lon": 75,
+      "lat": 62
+    },
+    {
+      "x": 546.1563728223164,
+      "y": 286.8438573724167,
+      "lon": -12,
+      "lat": 62
+    },
+    {
+      "x": 960.5892711323221,
+      "y": 182.15649048174265,
+      "lon": 75,
+      "lat": 62
+    }
+  ],
+  "browserProcessMemory": {
+    "privateBytes": 1305812992,
+    "workingSetBytes": 1456406528,
+    "processCount": 7
+  },
+  "assertions": [
+    "Entire envelope fits unobstructed overhead viewport",
+    "Seven animated regional presets in one scene",
+    "At most twelve resident tiles and no failed geographic requests",
+    "Eastern tiles evicted on return west; detail unloaded at world scale",
+    "23 settlement identities, coordinates, development integration and simulation control preserved",
+    "700 synthetic markers plus 1000 growth headroom; one instanced draw; no authoritative data added",
+    "Existing local settlement visualization and political mode render",
+    "No uncaught errors or missing geographic assets"
+  ],
+  "limitations": [
+    "Three-second idle headless samples, not long-duration camera or gameplay benchmark",
+    "JS heap and process memory exclude a reliable measurement of GPU VRAM",
+    "Synthetic evenly distributed entities include water; they are performance fixtures, never historical sites",
+    "Only Italy has fine regional and city terrain; remaining world is coarse real-source relief",
+    "Modern coasts and rivers are not reconstructed 278 BCE geography"
+  ]
+}

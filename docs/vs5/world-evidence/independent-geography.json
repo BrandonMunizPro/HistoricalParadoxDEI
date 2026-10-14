@@ -1,0 +1,243 @@
+{
+  "source": "https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_land.zip",
+  "sourceSha256": "e547d749445eaa0964aba76738090ec88f5e63c4585122170f98c67a7ea922dc",
+  "contextSha256": "e4aac9204f9a30e35e7bbf914c5a98c29e061d42fb016e6b09e275581cda35da",
+  "referenceVersion": "Natural Earth 5.1.1, 1:10 million land polygons",
+  "license": "Public domain: https://www.naturalearthdata.com/about/terms-of-use/",
+  "samples": [
+    {
+      "name": "Iberian interior",
+      "lon": -4,
+      "lat": 40,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Britain",
+      "lon": -2,
+      "lat": 54,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Ireland",
+      "lon": -8,
+      "lat": 53,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Gaul",
+      "lon": 2,
+      "lat": 47,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Germania",
+      "lon": 10,
+      "lat": 52,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Italy",
+      "lon": 13,
+      "lat": 42,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Sicily",
+      "lon": 14,
+      "lat": 37.5,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Sardinia",
+      "lon": 9,
+      "lat": 40,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Corsica",
+      "lon": 9,
+      "lat": 42,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Balkans",
+      "lon": 21,
+      "lat": 43,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Greece",
+      "lon": 22,
+      "lat": 39,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "North Africa",
+      "lon": 10,
+      "lat": 33,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Egypt",
+      "lon": 30,
+      "lat": 27,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Anatolia",
+      "lon": 33,
+      "lat": 39,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Levant",
+      "lon": 36,
+      "lat": 33,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Mesopotamia",
+      "lon": 44,
+      "lat": 33,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Bactrian vicinity",
+      "lon": 67,
+      "lat": 37,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Eastern extent",
+      "lon": 74,
+      "lat": 32,
+      "referenceLand": true,
+      "renderedLand": true
+    },
+    {
+      "name": "Atlantic",
+      "lon": -11,
+      "lat": 45,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Bay of Biscay",
+      "lon": -6,
+      "lat": 45,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Tyrrhenian Sea",
+      "lon": 11,
+      "lat": 39,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Ionian Sea",
+      "lon": 18,
+      "lat": 36,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Aegean Sea",
+      "lon": 25,
+      "lat": 38,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Black Sea",
+      "lon": 33,
+      "lat": 43,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Red Sea",
+      "lon": 37,
+      "lat": 22,
+      "referenceLand": false,
+      "renderedLand": false
+    },
+    {
+      "name": "Persian Gulf",
+      "lon": 51,
+      "lat": 27,
+      "referenceLand": false,
+      "renderedLand": false
+    }
+  ],
+  "grid": {
+    "stableCompared": 1024,
+    "coastalExcluded": 43,
+    "inlandWaterExcluded": [
+      {
+        "lon": 15,
+        "lat": 13,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 59,
+        "lat": 45,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 61,
+        "lat": 45,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 7,
+        "lat": 47,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 49,
+        "lat": 55,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 13,
+        "lat": 59,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 31,
+        "lat": 61,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      },
+      {
+        "lon": 69,
+        "lat": 61,
+        "reason": "Natural Earth land includes inland water cut out by the separate GSHHG lake layer"
+      }
+    ],
+    "mismatches": []
+  },
+  "limitations": [
+    "Modern independent cartographic check, not a 278 BCE shoreline reconstruction",
+    "Sparse grid and broad landmarks do not establish sub-kilometre coordinate accuracy",
+    "Natural Earth land and GSHHG lake semantics differ; inland-water exclusions are enumerated explicitly"
+  ]
+}
