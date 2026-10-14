@@ -5,7 +5,17 @@ export interface TerrainTopology {
 }
 
 /** Keep every boundary sample, even when a tile's interior uses a coarser LOD. */
+const topologyCache = new Map<string, TerrainTopology>();
 export function terrainTopology(size: number, stride: number): TerrainTopology {
+  const steps = terrainTopologySteps(size, stride);
+  let next = steps.next();
+  while (!next.done) next = steps.next();
+  return next.value;
+}
+export function* terrainTopologySteps(
+  size: number,
+  stride: number,
+): Generator<void, TerrainTopology> {
   if (
     !Number.isSafeInteger(size) ||
     size < 3 ||
@@ -15,6 +25,9 @@ export function terrainTopology(size: number, stride: number): TerrainTopology {
   ) {
     throw new RangeError('LOD stride must divide the tile edge');
   }
+  const key = size + ':' + stride,
+    previous = topologyCache.get(key);
+  if (previous) return previous;
   const vertices: [number, number][] = [],
     indices: number[] = [],
     lookup = new Map<string, number>();
@@ -29,6 +42,7 @@ export function terrainTopology(size: number, stride: number): TerrainTopology {
   };
   for (let y = 0; y < size - 1; y += stride)
     for (let x = 0; x < size - 1; x += stride) {
+      if ((y * (size - 1) + x) % 512 === 0) yield;
       const ring: [number, number][] = [[x, y]];
       const topStep = y === 0 ? 1 : stride,
         rightStep = x + stride === size - 1 ? 1 : stride;
@@ -54,5 +68,9 @@ export function terrainTopology(size: number, stride: number): TerrainTopology {
           );
       }
     }
-  return { vertices, indices };
+  const result = { vertices, indices };
+  topologyCache.set(key, result);
+  if (topologyCache.size > 16)
+    topologyCache.delete(topologyCache.keys().next().value!);
+  return result;
 }

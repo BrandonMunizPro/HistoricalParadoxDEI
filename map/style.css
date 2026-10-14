@@ -219,3 +219,7 @@ aside {
     display: none;
   }
 }
+
+#camera-settings label { display:block; margin:8px 0; }
+#camera-settings input[type="range"] { width:100%; accent-color:#cbb579; }
+#camera-settings select { max-width:100%; }

@@ -1,0 +1,9 @@
+{
+  "status": "Physical terrain sampling scopes, not historical or political regions",
+  "regions": [
+    {"id":"greece","bounds":{"west":21,"east":28,"south":35,"north":41},"maximumCameraDistanceKm":700,"windows":[{"id":"argolid-coast","lon":22.8,"lat":37.56,"span":0.0625}]},
+    {"id":"egypt","bounds":{"west":29,"east":34,"south":24,"north":32},"maximumCameraDistanceKm":700,"windows":[{"id":"nile-escarpment","lon":32.57,"lat":25.74,"span":0.0625}]}
+  ],
+  "futureRegions": ["iberia","anatolia","northAfrica","mesopotamia"],
+  "limitations": ["Windows are terrain diagnostics, not settlement additions","Modern DSM and coastline; ancient terrain corrections remain research dependent"]
+}

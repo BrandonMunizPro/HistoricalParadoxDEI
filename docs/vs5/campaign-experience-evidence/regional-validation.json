@@ -1,0 +1,1330 @@
+{
+  "sourceManifest": {
+    "version": 1,
+    "bounds": {
+      "west": -12,
+      "east": 75,
+      "south": 12,
+      "north": 62
+    },
+    "width": 3916,
+    "height": 2251,
+    "pixelConvention": "North-up WGS84 lattice; first and last texel centers are envelope corners; texture shader applies half-texel correction",
+    "sources": [
+      {
+        "name": "NE1_LR_LC.zip",
+        "url": "https://naturalearth.s3.amazonaws.com/10m_raster/NE1_LR_LC.zip",
+        "license": "Public domain",
+        "reference": "https://www.naturalearthdata.com/downloads/10m-raster-data/10m-natural-earth-1/",
+        "sha256": "dae6ad77c963976f44afb3a3916febf36f44c42da1690854b9fa1dac74694e54"
+      },
+      {
+        "name": "beck-2023-v1.zip",
+        "url": "https://ndownloader.figshare.com/files/45057352",
+        "license": "CC BY 4.0",
+        "reference": "https://doi.org/10.1038/s41597-023-02549-6",
+        "sha256": "d37b8d05b39b96e7cf6e9007b024c7d1ab301d6668409e3e792962a2408fc05d"
+      }
+    ],
+    "landCover": {
+      "product": "Natural Earth I unshaded land-cover coloring, 3.2.0",
+      "sourceWidth": 16200,
+      "sourceHeight": 8100,
+      "sourcePixelDegrees": 0.02222222222222,
+      "interpretation": "Satellite-derived cartographic RGB, not categorical land-cover observations or ancient vegetation",
+      "materialTransfer": "Global gamma 1.24, exposure 0.85; source yellow/green chroma interpreted as a vegetation-tint signal and blended at most 55% toward an olive material. No latitude bands, river buffers or hand-drawn biome masks. This artistic signal is not a measured vegetation fraction."
+    },
+    "climate": {
+      "product": "Beck et al. (2023) Koppen-Geiger, 1991-2020",
+      "archiveEntry": "1991_2020/koppen_geiger_0p00833333.tif",
+      "sourcePixelDegrees": 0.008333333333333333,
+      "resampling": "Nearest categorical sample to the shared material lattice",
+      "zero": "Ocean/no classification; never silently classified as desert",
+      "counts": {
+        "0": 1931971,
+        "2": 8922,
+        "3": 61215,
+        "4": 2728808,
+        "5": 551671,
+        "6": 291296,
+        "7": 635889,
+        "8": 244330,
+        "9": 41838,
+        "10": 2,
+        "11": 8469,
+        "12": 3376,
+        "13": 32,
+        "14": 110637,
+        "15": 359943,
+        "16": 2382,
+        "17": 48513,
+        "18": 78676,
+        "19": 19180,
+        "22": 182,
+        "23": 25,
+        "25": 111445,
+        "26": 1266501,
+        "27": 262026,
+        "29": 47097,
+        "30": 490
+      }
+    },
+    "outputs": {
+      "surface": {
+        "url": "/data/regional-ecology/surface.png",
+        "sha256": "98456ecbb04aad6ffea25bca71cdc3238c5b66195e0b6a57417a67c203df12d1"
+      },
+      "climate": {
+        "url": "/data/regional-ecology/climate.png",
+        "sha256": "7b5bb140dcb8fce26c4a81959dd9e9122e824e0416a4568fafec0c75a44bfcb0"
+      }
+    },
+    "probes": [
+      {
+        "name": "Sahara",
+        "lon": 20,
+        "lat": 25,
+        "sourceRgb": [
+          247,
+          246,
+          229
+        ],
+        "climateCode": 4,
+        "materialRgb": [
+          209,
+          208,
+          189
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Arabian interior",
+        "lon": 45,
+        "lat": 24,
+        "sourceRgb": [
+          225,
+          206,
+          191
+        ],
+        "climateCode": 4,
+        "materialRgb": [
+          185,
+          166,
+          152
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Nile valley",
+        "lon": 31.15,
+        "lat": 27.2,
+        "sourceRgb": [
+          241,
+          240,
+          193
+        ],
+        "climateCode": 4,
+        "materialRgb": [
+          138,
+          152,
+          103
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Western desert near Nile",
+        "lon": 29.5,
+        "lat": 27.2,
+        "sourceRgb": [
+          247,
+          244,
+          222
+        ],
+        "climateCode": 4,
+        "materialRgb": [
+          208,
+          204,
+          182
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Iberian interior",
+        "lon": -4,
+        "lat": 40,
+        "sourceRgb": [
+          234,
+          232,
+          193
+        ],
+        "climateCode": 7,
+        "materialRgb": [
+          156,
+          164,
+          121
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Greece",
+        "lon": 22,
+        "lat": 39,
+        "sourceRgb": [
+          212,
+          221,
+          184
+        ],
+        "climateCode": 8,
+        "materialRgb": [
+          135,
+          152,
+          109
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Anatolia",
+        "lon": 33.5,
+        "lat": 39,
+        "sourceRgb": [
+          239,
+          231,
+          203
+        ],
+        "climateCode": 7,
+        "materialRgb": [
+          200,
+          192,
+          163
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Temperate central Europe",
+        "lon": 9,
+        "lat": 48.5,
+        "sourceRgb": [
+          198,
+          213,
+          178
+        ],
+        "climateCode": 15,
+        "materialRgb": [
+          131,
+          150,
+          107
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Steppe",
+        "lon": 49,
+        "lat": 49,
+        "sourceRgb": [
+          231,
+          224,
+          190
+        ],
+        "climateCode": 7,
+        "materialRgb": [
+          186,
+          181,
+          146
+        ],
+        "historicalReconstruction": false
+      },
+      {
+        "name": "Alps",
+        "lon": 10.8,
+        "lat": 46.8,
+        "sourceRgb": [
+          242,
+          248,
+          249
+        ],
+        "climateCode": 29,
+        "materialRgb": [
+          203,
+          209,
+          210
+        ],
+        "historicalReconstruction": false
+      }
+    ],
+    "limitations": [
+      "Modern geographic approximation, not a reconstruction of 278 BCE",
+      "Natural Earth is generalized cartography derived from modern satellite vegetation; not measured ancient forest, crop or soil boundaries",
+      "Modern irrigation, agriculture, dams and reservoirs can influence Nile and other valley coloration",
+      "No artificial green buffers around rivers; visible fertile corridors must be present in the source raster",
+      "A ~2.47km latitude material lattice cannot resolve individual fields or narrow riparian strips",
+      "Climate classification is not equivalent to actual forest cover or a simulation biome; uncertainty is not a gameplay modifier"
+    ]
+  },
+  "probes": [
+    {
+      "name": "Sahara",
+      "lon": 20,
+      "lat": 25,
+      "sourceRgb": [
+        247,
+        246,
+        229
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        209,
+        208,
+        189
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 4,
+        "family": "desert",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Arabian interior",
+      "lon": 45,
+      "lat": 24,
+      "sourceRgb": [
+        225,
+        206,
+        191
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        185,
+        166,
+        152
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 4,
+        "family": "desert",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Nile valley",
+      "lon": 31.15,
+      "lat": 27.2,
+      "sourceRgb": [
+        241,
+        240,
+        193
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        138,
+        152,
+        103
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 4,
+        "family": "desert",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Western desert near Nile",
+      "lon": 29.5,
+      "lat": 27.2,
+      "sourceRgb": [
+        247,
+        244,
+        222
+      ],
+      "climateCode": 4,
+      "materialRgb": [
+        208,
+        204,
+        182
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 4,
+        "family": "desert",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Iberian interior",
+      "lon": -4,
+      "lat": 40,
+      "sourceRgb": [
+        234,
+        232,
+        193
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        156,
+        164,
+        121
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 7,
+        "family": "steppe",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Greece",
+      "lon": 22,
+      "lat": 39,
+      "sourceRgb": [
+        212,
+        221,
+        184
+      ],
+      "climateCode": 8,
+      "materialRgb": [
+        135,
+        152,
+        109
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 8,
+        "family": "mediterranean",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Anatolia",
+      "lon": 33.5,
+      "lat": 39,
+      "sourceRgb": [
+        239,
+        231,
+        203
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        200,
+        192,
+        163
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 7,
+        "family": "steppe",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Temperate central Europe",
+      "lon": 9,
+      "lat": 48.5,
+      "sourceRgb": [
+        198,
+        213,
+        178
+      ],
+      "climateCode": 15,
+      "materialRgb": [
+        131,
+        150,
+        107
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 15,
+        "family": "temperate",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Steppe",
+      "lon": 49,
+      "lat": 49,
+      "sourceRgb": [
+        231,
+        224,
+        190
+      ],
+      "climateCode": 7,
+      "materialRgb": [
+        186,
+        181,
+        146
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 7,
+        "family": "steppe",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    },
+    {
+      "name": "Alps",
+      "lon": 10.8,
+      "lat": 46.8,
+      "sourceRgb": [
+        242,
+        248,
+        249
+      ],
+      "climateCode": 29,
+      "materialRgb": [
+        203,
+        209,
+        210
+      ],
+      "historicalReconstruction": false,
+      "rendered": {
+        "code": 29,
+        "family": "polar",
+        "period": "1991-2020",
+        "historicalReconstruction": false
+      }
+    }
+  ],
+  "northAfrica": {
+    "fps": 143.55400696864112,
+    "heapBytes": 255107520,
+    "drawCalls": 20,
+    "triangles": 375731,
+    "geometries": 199,
+    "textures": 18,
+    "terrainLod": 1,
+    "meanFps": 143.56452095310888,
+    "p95FrameMs": 7.100000000000364,
+    "maxFrameMs": 13.899999999999636,
+    "tiles": {
+      "controlColor": [],
+      "limit": 12,
+      "resident": [
+        "world-27-13",
+        "world-27-8",
+        "world-22-13",
+        "world-22-8",
+        "world-27-3",
+        "world-32-8",
+        "world-32-13",
+        "world-22-3",
+        "world-32-3",
+        "world-27-18",
+        "world-22-18",
+        "world-17-8"
+      ],
+      "pending": [],
+      "failed": [],
+      "lods": [
+        {
+          "id": "world-27-13",
+          "level": 1
+        },
+        {
+          "id": "world-27-8",
+          "level": 1
+        },
+        {
+          "id": "world-22-13",
+          "level": 1
+        },
+        {
+          "id": "world-22-8",
+          "level": 1
+        },
+        {
+          "id": "world-27-3",
+          "level": 1
+        },
+        {
+          "id": "world-32-8",
+          "level": 1
+        },
+        {
+          "id": "world-32-13",
+          "level": 1
+        },
+        {
+          "id": "world-22-3",
+          "level": 1
+        },
+        {
+          "id": "world-32-3",
+          "level": 1
+        },
+        {
+          "id": "world-27-18",
+          "level": 1
+        },
+        {
+          "id": "world-22-18",
+          "level": 1
+        },
+        {
+          "id": "world-17-8",
+          "level": 1
+        }
+      ],
+      "heightBytes": 1597536,
+      "transitions": {
+        "morphing": "GPU parent-triangle position and normal interpolation",
+        "minimumReveal": 1,
+        "revealing": 0
+      }
+    }
+  },
+  "rome": {
+    "fps": 143.90406395736176,
+    "heapBytes": 312019589,
+    "drawCalls": 55,
+    "triangles": 678256,
+    "geometries": 208,
+    "textures": 12,
+    "terrainLod": 0,
+    "meanFps": 143.9087472644073,
+    "p95FrameMs": 7.099999999998545,
+    "maxFrameMs": 7.19999999999709,
+    "tiles": {
+      "controlColor": [
+        1,
+        1,
+        1
+      ],
+      "limit": 12,
+      "resident": [
+        "local-roma",
+        "local-capua",
+        "local-neapolis",
+        "local-norba",
+        "N41E12",
+        "N42E12",
+        "N41E11",
+        "N41E13",
+        "N41E14",
+        "N42E11",
+        "N42E13",
+        "N40E13"
+      ],
+      "pending": [],
+      "failed": [],
+      "lods": [
+        {
+          "id": "local-roma",
+          "level": 0
+        },
+        {
+          "id": "local-capua",
+          "level": 0
+        },
+        {
+          "id": "local-neapolis",
+          "level": 0
+        },
+        {
+          "id": "local-norba",
+          "level": 0
+        },
+        {
+          "id": "N41E12",
+          "level": 0
+        },
+        {
+          "id": "N42E12",
+          "level": 0
+        },
+        {
+          "id": "N41E11",
+          "level": 0
+        },
+        {
+          "id": "N41E13",
+          "level": 0
+        },
+        {
+          "id": "N41E14",
+          "level": 0
+        },
+        {
+          "id": "N42E11",
+          "level": 0
+        },
+        {
+          "id": "N42E13",
+          "level": 0
+        },
+        {
+          "id": "N40E13",
+          "level": 0
+        }
+      ],
+      "heightBytes": 1597536,
+      "transitions": {
+        "morphing": "GPU parent-triangle position and normal interpolation",
+        "minimumReveal": 1,
+        "revealing": 0
+      }
+    }
+  },
+  "zoom": [
+    {
+      "distance": 6499.999999999999,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 5800,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-27-23",
+          "world-22-28",
+          "world-22-23",
+          "world-27-33",
+          "world-22-33",
+          "world-32-28",
+          "world-32-33",
+          "world-32-23"
+        ],
+        "pending": [
+          "world-17-28",
+          "world-27-18",
+          "world-27-38"
+        ],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 2
+          },
+          {
+            "id": "world-27-23",
+            "level": 2
+          },
+          {
+            "id": "world-22-28",
+            "level": 2
+          },
+          {
+            "id": "world-22-23",
+            "level": 2
+          },
+          {
+            "id": "world-27-33",
+            "level": 2
+          },
+          {
+            "id": "world-22-33",
+            "level": 2
+          },
+          {
+            "id": "world-32-28",
+            "level": 2
+          },
+          {
+            "id": "world-32-33",
+            "level": 2
+          },
+          {
+            "id": "world-32-23",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1198152,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 0,
+          "revealing": 4
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 2599.999999999999,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-27-23",
+          "world-22-28",
+          "world-22-23",
+          "world-27-33",
+          "world-22-33",
+          "world-32-28",
+          "world-32-33",
+          "world-32-23",
+          "world-27-18",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-28",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 2050,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-27-23",
+          "world-22-28",
+          "world-22-23",
+          "world-27-33",
+          "world-22-33",
+          "world-32-28",
+          "world-32-33",
+          "world-32-23",
+          "world-27-18",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-28",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 1950,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-27-23",
+          "world-22-28",
+          "world-22-23",
+          "world-27-33",
+          "world-22-33",
+          "world-32-28",
+          "world-32-33",
+          "world-32-23",
+          "world-27-18",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-28",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-32-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 1000,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-27-23",
+          "world-22-28",
+          "world-22-23",
+          "world-27-33",
+          "world-22-33",
+          "world-32-28",
+          "world-32-33",
+          "world-32-23",
+          "world-27-18",
+          "world-27-38",
+          "world-17-28"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-23",
+            "level": 0
+          },
+          {
+            "id": "world-22-28",
+            "level": 0
+          },
+          {
+            "id": "world-22-23",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-22-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-27-18",
+            "level": 0
+          },
+          {
+            "id": "world-27-38",
+            "level": 0
+          },
+          {
+            "id": "world-17-28",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 500,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "detail-egypt-N28E30",
+          "detail-egypt-N27E30",
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N27E31",
+          "detail-egypt-N27E29",
+          "detail-egypt-N28E29",
+          "detail-egypt-N28E31",
+          "detail-egypt-N29E30",
+          "detail-egypt-N29E29",
+          "detail-egypt-N26E30"
+        ],
+        "pending": [
+          "detail-egypt-N26E29",
+          "detail-egypt-N26E31"
+        ],
+        "failed": [],
+        "lods": [
+          {
+            "id": "detail-egypt-N28E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N27E30",
+            "level": 1
+          },
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E31",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E29",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N28E29",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N28E31",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E30",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E29",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N26E30",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1331280,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 0,
+          "revealing": 4
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 430,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "detail-egypt-N28E30",
+          "detail-egypt-N27E30",
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N27E31",
+          "detail-egypt-N27E29",
+          "detail-egypt-N28E29",
+          "detail-egypt-N28E31",
+          "detail-egypt-N29E30",
+          "detail-egypt-N29E29",
+          "detail-egypt-N26E30",
+          "detail-egypt-N26E29",
+          "detail-egypt-N26E31"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "detail-egypt-N28E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N27E30",
+            "level": 1
+          },
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E31",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N27E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N28E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N28E31",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N29E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N29E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E31",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    },
+    {
+      "distance": 389.99999999999994,
+      "tiles": {
+        "controlColor": [],
+        "limit": 12,
+        "resident": [
+          "detail-egypt-N28E30",
+          "detail-egypt-N27E30",
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N27E31",
+          "detail-egypt-N27E29",
+          "detail-egypt-N28E29",
+          "detail-egypt-N28E31",
+          "detail-egypt-N29E30",
+          "detail-egypt-N29E29",
+          "detail-egypt-N26E30",
+          "detail-egypt-N26E29",
+          "detail-egypt-N26E31"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "detail-egypt-N28E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N27E30",
+            "level": 1
+          },
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E31",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N27E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N28E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N28E31",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N29E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N29E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E30",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E29",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N26E31",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "scene": "f3ad0d24-ee0f-4265-a0a4-1c3bf88a77de"
+    }
+  ],
+  "assertions": [
+    "Source climate probes match resampled runtime classes",
+    "Modern evidence is explicitly not historical reconstruction",
+    "North Africa, Nile and Rome captured in the same geographic world",
+    "World-to-regional-to-local zoom stays in one scene with bounded streaming",
+    "GPU morph/reveal attributes render without shader errors",
+    "All 23 settlement coordinates, identities and political read models unchanged"
+  ],
+  "limitations": [
+    "LOD mathematics and browser continuity are validated; residual source-resolution differences and family eviction pops remain",
+    "Synthetic marker performance does not measure hundreds of detailed cities",
+    "Natural Earth RGB is generalized cartography; vegetation tint is an artistic transfer, not a crop or canopy fraction"
+  ]
+}

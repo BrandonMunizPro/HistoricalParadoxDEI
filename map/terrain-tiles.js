@@ -1,11 +1,14 @@
+import { FrameWorkQueue } from '../src/presentation/frame-work-queue.ts';
+import { streamProfile } from './stream-profile.js';
 import * as THREE from 'three';
 import { terrainDetailFamily } from '../src/presentation/world-navigation.ts';
 import { unprojectLocalMapMetres } from '../src/infrastructure/world-geography.ts';
 import { smoothTerrainReveal } from '../src/presentation/regional-ecology.ts';
-import { parentTerrainSamples } from '../src/presentation/terrain-transition.ts';
+import { parentTerrainSamplesSteps } from '../src/presentation/terrain-transition.ts';
 import { stationaryTransitionAttributes } from './regional-material.js';
+import { barycentricWeights } from '../src/presentation/terrain-style.ts';
 
-import { terrainTopology } from '../src/presentation/terrain-topology.ts';
+import { terrainTopologySteps } from '../src/presentation/terrain-topology.ts';
 import { validateTerrainTile } from '../src/infrastructure/terrain-tile.ts';
 
 export function sampleTile(tile, lon, lat) {
@@ -40,7 +43,33 @@ export function createTerrainTiles(
   contextSurface,
   contextLod,
   decorateMaterial,
+  prepareGpu,
 ) {
+  const workQueue = new FrameWorkQueue();
+  let coverQueued = false;
+  function queueCover() {
+    if (coverQueued) return;
+    coverQueued = true;
+    void workQueue
+      .run(
+        (function* () {
+          try {
+            yield* cover();
+          } finally {
+            coverQueued = false;
+          }
+        })(),
+      )
+      .catch((error) => {
+        window.__terrainError = String(error);
+      });
+  }
+  const inactive = new Map();
+  function dispose(entry) {
+    for (const { object } of entry.lod.levels) object.geometry.dispose();
+    entry.texture.dispose();
+    entry.material.dispose();
+  }
   const resident = new Map(),
     pending = new Set(),
     failed = new Set();
@@ -98,10 +127,25 @@ export function createTerrainTiles(
   };
   contextMaterial.needsUpdate = true;
   const bounds = manifest.contextBounds;
-  function cover() {
+  function* cover(...args) {
+    const iterator = coverWork(...args);
+    while (true) {
+      const next = streamProfile.measure(
+        'cover',
+        () => iterator.next(),
+        args[0]?.id ?? args[0]?.data?.id ?? '',
+      );
+      if (next.done) return next.value;
+      yield;
+    }
+  }
+  function* coverWork() {
     let i = 0,
       j = 0;
-    for (const entry of resident.values()) {
+    const entries = [...resident.values()].sort(
+      (a, b) => Number(a.data.kind === 'city') - Number(b.data.kind === 'city'),
+    );
+    for (const entry of entries) {
       const t = entry.data,
         b = t.bounds;
       coverage.value[i++].set(
@@ -110,14 +154,128 @@ export function createTerrainTiles(
         (b.east - bounds.west) / (bounds.east - bounds.west),
         (b.north - bounds.south) / (bounds.north - bounds.south),
       );
-      if (t.kind === 'city')
+      if (t.kind === 'city') {
         cityCoverage.value[j++].set(b.west, b.south, b.east, b.north);
-      else blendContextEdge(entry);
+        yield* blendWindow(entry);
+      } else yield* blendContextEdge(entry);
     }
     coverageCount.value = i;
     cityCount.value = j;
   }
-  function blendContextEdge(entry) {
+  function* blendWindow(...args) {
+    const iterator = blendWindowWork(...args);
+    while (true) {
+      const next = streamProfile.measure(
+        'blendWindow',
+        () => iterator.next(),
+        args[0]?.id ?? args[0]?.data?.id ?? '',
+      );
+      if (next.done) return next.value;
+      yield;
+    }
+  }
+  function* blendWindowWork(entry) {
+    const b = entry.data.bounds,
+      parent = [...resident.values()].find(
+        (e) =>
+          e.data.kind !== 'city' &&
+          e.data.kind !== 'world-regional' &&
+          e.data.bounds.west <= b.west &&
+          e.data.bounds.east >= b.east &&
+          e.data.bounds.south <= b.south &&
+          e.data.bounds.north >= b.north,
+      );
+    const signature = parent
+      ? parent.data.id + ':' + parent.edgeSignature
+      : 'context:' + contextLod();
+    if (entry.windowParent === signature) return;
+    entry.windowParent = signature;
+    let lookup;
+    if (parent) {
+      const fine = parent.lod.levels[0].object.geometry,
+        n = parent.data.width;
+      lookup = new Uint32Array(n * n);
+      for (let i = 0; i < fine.attributes.position.count; i++)
+        lookup[
+          Math.round(fine.attributes.coastUv.getY(i) * (n - 1)) * n +
+            Math.round(fine.attributes.coastUv.getX(i) * (n - 1))
+        ] = i;
+    }
+    function surface(lon, lat) {
+      if (!parent) return contextSurface(lon, lat);
+      const t = parent.data,
+        n = t.width,
+        g = parent.lod.levels[0].object.geometry,
+        u = ((lon - t.bounds.west) / (t.bounds.east - t.bounds.west)) * (n - 1),
+        v =
+          ((t.bounds.north - lat) / (t.bounds.north - t.bounds.south)) *
+          (n - 1),
+        c = Math.min(n - 2, Math.floor(u)),
+        r = Math.min(n - 2, Math.floor(v)),
+        fx = u - c,
+        fy = v - r;
+      const indices = (
+        fx >= fy
+          ? [r * n + c, (r + 1) * n + c + 1, r * n + c + 1]
+          : [r * n + c, (r + 1) * n + c, (r + 1) * n + c + 1]
+      ).map((i) => lookup[i]);
+      const triangle = indices.map((i) => [
+        g.attributes.position.getX(i) + parent.lod.position.x,
+        g.attributes.position.getZ(i) + parent.lod.position.z,
+      ]);
+      const weights = barycentricWeights(project(lon, lat), triangle),
+        blend = (a, k) =>
+          indices.reduce(
+            (s, i, j) => s + g.attributes[a].array[i * 3 + k] * weights[j],
+            0,
+          );
+      return {
+        height: blend('position', 1),
+        normal: [0, 1, 2].map((k) => blend('normal', k)),
+      };
+    }
+    for (const { object } of entry.lod.levels) {
+      const g = object.geometry;
+      for (let i = 0; i < g.attributes.position.count; i++) {
+        if (i % 256 === 0) yield;
+        const x = g.attributes.coastUv.getX(i),
+          y = g.attributes.coastUv.getY(i),
+          edge = Math.min(x, y, 1 - x, 1 - y),
+          t = Math.min(1, edge * 8),
+          blend = t * t * (3 - 2 * t);
+        if (blend === 1) continue;
+        const s = surface(
+          b.west + x * (b.east - b.west),
+          b.north - y * (b.north - b.south),
+        );
+        g.attributes.position.setY(
+          i,
+          s.height * (1 - blend) + g.userData.originalHeights[i] * blend,
+        );
+        for (let k = 0; k < 3; k++)
+          g.attributes.normal.array[i * 3 + k] =
+            s.normal[k] * (1 - blend) +
+            g.userData.originalNormals[i * 3 + k] * blend;
+      }
+      g.attributes.position.needsUpdate = true;
+      g.attributes.normal.needsUpdate = true;
+      g.computeBoundingSphere();
+    }
+    yield* refreshTransitions(entry);
+  }
+  function* blendContextEdge(...args) {
+    const iterator = blendContextEdgeWork(...args);
+    while (true) {
+      const next = streamProfile.measure(
+        'blendContextEdge',
+        () => iterator.next(),
+        args[0]?.id ?? args[0]?.data?.id ?? '',
+      );
+      if (next.done) return next.value;
+      yield;
+    }
+  }
+  function* blendContextEdgeWork(entry) {
     const b = entry.data.bounds,
       neighbors = [false, false, false, false];
     for (const { data: t } of resident.values()) {
@@ -140,6 +298,7 @@ export function createTerrainTiles(
         uv = g.attributes.coastUv,
         p = g.attributes.position;
       for (let i = 0; i < p.count; i++) {
+        if (i % 256 === 0) yield;
         const x = uv.getX(i),
           y = uv.getY(i),
           edge = Math.min(
@@ -179,10 +338,22 @@ export function createTerrainTiles(
       g.attributes.normal.needsUpdate = true;
       g.computeBoundingSphere();
     }
-    refreshTransitions(entry);
+    yield* refreshTransitions(entry);
     paint(entry);
   }
-  function refreshTransitions(entry) {
+  function* refreshTransitions(...args) {
+    const iterator = refreshTransitionsWork(...args);
+    while (true) {
+      const next = streamProfile.measure(
+        'refreshTransitions',
+        () => iterator.next(),
+        args[0]?.id ?? args[0]?.data?.id ?? '',
+      );
+      if (next.done) return next.value;
+      yield;
+    }
+  }
+  function* refreshTransitionsWork(entry) {
     const n = entry.data.width,
       fine = entry.lod.levels[0].object.geometry,
       lookup = new Uint32Array(n * n);
@@ -194,7 +365,9 @@ export function createTerrainTiles(
     for (let level = 0; level < entry.lod.levels.length; level++) {
       const g = entry.lod.levels[level].object.geometry,
         parent =
-          level < 2 ? parentTerrainSamples(n, level === 0 ? 2 : 4) : null;
+          level < 2
+            ? yield* parentTerrainSamplesSteps(n, level === 0 ? 2 : 4)
+            : null;
       const next =
         level === 0
           ? entry.data.kind === 'world-regional'
@@ -206,6 +379,7 @@ export function createTerrainTiles(
               : 550
             : 1e12;
       for (let i = 0; i < g.attributes.position.count; i++) {
+        if (i % 256 === 0) yield;
         const x = Math.round(g.attributes.coastUv.getX(i) * (n - 1)),
           y = Math.round(g.attributes.coastUv.getY(i) * (n - 1));
         const sample = parent?.[y * n + x];
@@ -251,14 +425,28 @@ export function createTerrainTiles(
         g.attributes[key].needsUpdate = true;
     }
   }
-  function geometry(t, stride) {
-    const { vertices, indices } = terrainTopology(t.width, stride),
-      p = [],
+  function* geometry(...args) {
+    const iterator = geometryWork(...args);
+    while (true) {
+      const next = streamProfile.measure(
+        'geometry',
+        () => iterator.next(),
+        args[0]?.id ?? args[0]?.data?.id ?? '',
+      );
+      if (next.done) return next.value;
+      yield;
+    }
+  }
+  function* geometryWork(t, stride) {
+    const { vertices, indices } = yield* terrainTopologySteps(t.width, stride);
+    const p = [],
       colors = [],
       uv = [],
       normals = [],
       coastUv = [];
+    let vertexIndex = 0;
     for (const [c, r] of vertices) {
+      if (vertexIndex++ % 256 === 0) yield;
       const lon =
           t.bounds.west + (c / (t.width - 1)) * (t.bounds.east - t.bounds.west),
         lat =
@@ -352,94 +540,166 @@ export function createTerrainTiles(
   async function load(descriptor) {
     pending.add(descriptor.id);
     try {
+      const cached = inactive.get(descriptor.id);
+      if (cached) {
+        inactive.delete(descriptor.id);
+        await workQueue.run(
+          (function* () {
+            if (!wanted.has(descriptor.id)) {
+              dispose(cached);
+              return;
+            }
+            cached.born = performance.now();
+            cached.edgeSignature = '';
+            cached.windowParent = '';
+            resident.set(descriptor.id, cached);
+            group.add(cached.lod);
+            paint(cached);
+            yield* cover();
+          })(),
+        );
+        streamProfile.record('cache-hit', 0, descriptor.id);
+        return;
+      }
+      const loadStart = performance.now();
       const response = await fetch(descriptor.url);
+      streamProfile.record(
+        'network',
+        performance.now() - loadStart,
+        descriptor.id,
+      );
       if (!response.ok) throw Error(`Terrain ${response.status}`);
+      const decodeStart = performance.now();
       const data = await response.json();
+      streamProfile.record(
+        'decode',
+        performance.now() - decodeStart,
+        descriptor.id,
+      );
+      const buildStart = performance.now();
       validateTerrainTile(data);
       if (!wanted.has(descriptor.id)) return;
-      const packed = atob(data.coastMask.bits),
-        size = data.coastMask.size,
-        mask = new Uint8Array(size * size);
-      for (let i = 0; i < mask.length; i++)
-        mask[i] = packed.charCodeAt(i >> 3) & (1 << (i % 8)) ? 255 : 0;
-      const texture = new THREE.DataTexture(mask, size, size, THREE.RedFormat);
-      texture.minFilter = texture.magFilter = THREE.LinearFilter;
-      texture.needsUpdate = true;
-      const tileMaterial = material.clone();
-      // Small underlaps close clipping precision cracks; depth bias gives detailed terrain priority.
-      tileMaterial.polygonOffset = data.kind !== 'city';
-      tileMaterial.polygonOffsetFactor = 1;
-      tileMaterial.polygonOffsetUnits = 1;
-      tileMaterial.customProgramCacheKey = () =>
-        `coast-${data.kind === 'city' ? 'city' : 'regional'}`;
-      const reveal = { value: 0 };
-      tileMaterial.onBeforeCompile = (shader) => {
-        decorateMaterial(shader, reveal);
-        shader.uniforms.shoreMask = { value: texture };
-        shader.uniforms.cityCoverage = cityCoverage;
-        shader.uniforms.cityCount = cityCount;
-        shader.uniforms.tileBounds = {
-          value: new THREE.Vector4(
-            data.bounds.west,
-            data.bounds.south,
-            data.bounds.east,
-            data.bounds.north,
-          ),
-        };
-        shader.vertexShader = shader.vertexShader
-          .replace(
-            '#include <common>',
-            '#include <common>\nattribute vec2 coastUv; varying vec2 shoreUv;',
-          )
-          .replace(
-            '#include <begin_vertex>',
-            '#include <begin_vertex>\nshoreUv=coastUv;',
+      const entry = await workQueue.run(
+        (function* () {
+          const packed = atob(data.coastMask.bits),
+            size = data.coastMask.size,
+            mask = new Uint8Array(size * size);
+          for (let i = 0; i < mask.length; i++)
+            mask[i] = packed.charCodeAt(i >> 3) & (1 << (i % 8)) ? 255 : 0;
+          const texture = new THREE.DataTexture(
+            mask,
+            size,
+            size,
+            THREE.RedFormat,
           );
-        shader.fragmentShader = shader.fragmentShader
-          .replace(
-            '#include <common>',
-            '#include <common>\nvarying vec2 shoreUv; uniform sampler2D shoreMask; uniform vec4 cityCoverage[12];uniform int cityCount;uniform vec4 tileBounds;',
-          )
-          .replace(
-            '#include <clipping_planes_fragment>',
-            '#include <clipping_planes_fragment>\nif(texture2D(shoreMask,shoreUv).r<0.5)discard;' +
-              (data.kind === 'city'
-                ? ''
-                : '\nvec2 geo=mix(tileBounds.xw,tileBounds.zy,shoreUv);for(int i=0;i<12;i++){if(i>=cityCount)break;vec4 b=cityCoverage[i];if(geo.x>b.x+.00003&&geo.x<b.z-.00003&&geo.y>b.y+.00003&&geo.y<b.w-.00003)discard;}'),
+          texture.minFilter = texture.magFilter = THREE.LinearFilter;
+          texture.needsUpdate = true;
+          const tileMaterial = material.clone();
+          // Small underlaps close clipping precision cracks; depth bias gives detailed terrain priority.
+          tileMaterial.polygonOffset = data.kind !== 'city';
+          tileMaterial.polygonOffsetFactor = 1;
+          tileMaterial.polygonOffsetUnits = 1;
+          tileMaterial.customProgramCacheKey = () =>
+            `coast-${data.kind === 'city' ? 'city' : 'regional'}`;
+          const reveal = { value: 0 };
+          tileMaterial.onBeforeCompile = (shader) => {
+            decorateMaterial(shader, reveal);
+            shader.uniforms.shoreMask = { value: texture };
+            shader.uniforms.cityCoverage = cityCoverage;
+            shader.uniforms.cityCount = cityCount;
+            shader.uniforms.tileBounds = {
+              value: new THREE.Vector4(
+                data.bounds.west,
+                data.bounds.south,
+                data.bounds.east,
+                data.bounds.north,
+              ),
+            };
+            shader.vertexShader = shader.vertexShader
+              .replace(
+                '#include <common>',
+                '#include <common>\nattribute vec2 coastUv; varying vec2 shoreUv;',
+              )
+              .replace(
+                '#include <begin_vertex>',
+                '#include <begin_vertex>\nshoreUv=coastUv;',
+              );
+            shader.fragmentShader = shader.fragmentShader
+              .replace(
+                '#include <common>',
+                '#include <common>\nvarying vec2 shoreUv; uniform sampler2D shoreMask; uniform vec4 cityCoverage[12];uniform int cityCount;uniform vec4 tileBounds;',
+              )
+              .replace(
+                '#include <clipping_planes_fragment>',
+                '#include <clipping_planes_fragment>\nif(texture2D(shoreMask,shoreUv).r<0.5)discard;' +
+                  (data.kind === 'city'
+                    ? ''
+                    : '\nvec2 geo=mix(tileBounds.xw,tileBounds.zy,shoreUv);for(int i=0;i<12;i++){if(i>=cityCount)break;vec4 b=cityCoverage[i];if(geo.x>b.x+.00003&&geo.x<b.z-.00003&&geo.y>b.y+.00003&&geo.y<b.w-.00003)discard;}'),
+              );
+          };
+          const lod = new THREE.LOD();
+          for (const [stride, distance] of [
+            [1, 0],
+            [2, data.kind === 'world-regional' ? 2000 : 260],
+            [4, data.kind === 'world-regional' ? 6000 : 550],
+          ]) {
+            const mesh = new THREE.Mesh(
+              yield* geometry(data, stride),
+              tileMaterial,
+            );
+            mesh.receiveShadow = true;
+            stationaryTransitionAttributes(mesh.geometry);
+            lod.addLevel(mesh, distance, 0.08);
+          }
+          // LOD distance is measured from the tile center, not the origin of the world.
+          const [cx, cz] = project(
+            (data.bounds.west + data.bounds.east) / 2,
+            (data.bounds.north + data.bounds.south) / 2,
           );
-      };
-      const lod = new THREE.LOD();
-      for (const [stride, distance] of [
-        [1, 0],
-        [2, data.kind === 'world-regional' ? 2000 : 260],
-        [4, data.kind === 'world-regional' ? 6000 : 550],
-      ]) {
-        const mesh = new THREE.Mesh(geometry(data, stride), tileMaterial);
-        mesh.receiveShadow = true;
-        stationaryTransitionAttributes(mesh.geometry);
-        lod.addLevel(mesh, distance, 0.08);
-      }
-      // LOD distance is measured from the tile center, not the origin of the world.
-      const [cx, cz] = project(
-        (data.bounds.west + data.bounds.east) / 2,
-        (data.bounds.north + data.bounds.south) / 2,
+          for (const level of lod.levels)
+            level.object.geometry.translate(-cx, 0, -cz);
+          lod.position.set(cx, 0, cz);
+
+          const entry = {
+            data,
+            lod,
+            texture,
+            material: tileMaterial,
+            reveal,
+            born: performance.now(),
+          };
+          yield* refreshTransitions(entry);
+          return entry;
+        })(),
       );
-      for (const level of lod.levels)
-        level.object.geometry.translate(-cx, 0, -cz);
-      lod.position.set(cx, 0, cz);
-      group.add(lod);
-      const entry = {
-        data,
-        lod,
-        texture,
-        material: tileMaterial,
-        reveal,
-        born: performance.now(),
-      };
-      refreshTransitions(entry);
-      resident.set(data.id, entry);
-      paint(entry);
-      cover();
+      if (!wanted.has(descriptor.id)) {
+        dispose(entry);
+        return;
+      }
+      await prepareGpu(entry.lod, entry.texture);
+      await workQueue.run(
+        (function* () {
+          if (!wanted.has(descriptor.id)) {
+            dispose(entry);
+            return;
+          }
+          entry.born = performance.now();
+          group.add(entry.lod);
+          resident.set(data.id, entry);
+          paint(entry);
+          yield* cover();
+        })(),
+      );
+      streamProfile.record(
+        'build-activate',
+        performance.now() - buildStart,
+        descriptor.id,
+      );
+      streamProfile.record(
+        'tile-total',
+        performance.now() - loadStart,
+        descriptor.id,
+      );
     } catch (error) {
       failed.add(descriptor.id);
       window.__terrainError = String(error);
@@ -449,6 +709,7 @@ export function createTerrainTiles(
   }
   return {
     update(camera, target, now) {
+      streamProfile.measure('preparation-slice', () => workQueue.pump(3));
       for (const entry of resident.values()) {
         entry.reveal.value = smoothTerrainReveal(now - entry.born);
         entry.lod.update(camera);
@@ -472,7 +733,8 @@ export function createTerrainTiles(
             ? false
             : family === 'world'
               ? t.kind === 'world-regional'
-              : t.kind !== 'world-regional',
+              : t.kind !== 'world-regional' &&
+                (t.detailArea ?? 'italy') === family,
         )
         .map((t) => {
           const [x, z] = project(
@@ -491,15 +753,18 @@ export function createTerrainTiles(
       for (const [id, entry] of resident)
         if (!wanted.has(id)) {
           group.remove(entry.lod);
-          for (const { object } of entry.lod.levels) object.geometry.dispose();
-          entry.texture.dispose();
-          entry.material.dispose();
+          inactive.set(id, entry);
+          while (inactive.size > 4) {
+            const oldest = inactive.keys().next().value;
+            dispose(inactive.get(oldest));
+            inactive.delete(oldest);
+          }
           resident.delete(id);
           evicted = true;
         }
       if (evicted || lastContextLod !== contextLod()) {
         lastContextLod = contextLod();
-        cover();
+        queueCover();
       }
       for (const { t } of sorted)
         if (
@@ -513,14 +778,24 @@ export function createTerrainTiles(
       for (const { lod } of resident.values()) lod.update(camera);
     },
     sample(lon, lat) {
+      let best = null,
+        area = Infinity;
       for (const { data } of resident.values())
         if (
           lon >= data.bounds.west &&
           lon <= data.bounds.east &&
           lat >= data.bounds.south &&
           lat <= data.bounds.north
-        )
-          return sampleTile(data, lon, lat);
+        ) {
+          const a =
+            (data.bounds.east - data.bounds.west) *
+            (data.bounds.north - data.bounds.south);
+          if (a < area) {
+            area = a;
+            best = data;
+          }
+        }
+      if (best) return sampleTile(best, lon, lat);
       return elevation(lon, lat);
     },
     applyCoverage(otherMaterial) {
@@ -542,6 +817,9 @@ export function createTerrainTiles(
               3,
             ) ?? [],
         ),
+        cached: [...inactive.keys()],
+        cacheLimit: 4,
+        preparationJobs: workQueue.size,
         limit,
         resident: [...resident.keys()],
         pending: [...pending],

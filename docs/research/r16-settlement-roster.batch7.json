@@ -1,0 +1,3457 @@
+{
+  "recordSchema": "r16-settlement-roster/research-draft-1",
+  "status": "PROPOSAL - research data only. This file is NOT authoritative simulation state and NOT renderer presentation data. It does not finalise a runtime schema. Canonical settlement/location identities (RFC 4122 UUIDv5, ADR-0009) are minted only by the atlas pipeline at integration time; the proposedId values here are research handles, not canonical IDs.",
+  "subject": "R-16 historical settlement roster, batch 7 (regions 14,15,16)",
+  "campaignYearBce": 278,
+  "envelopeRegions": [
+    14,
+    15,
+    16
+  ],
+  "batchScope": "North Africa (Punic Africa, Numidia, Tripolitania), Cyrenaica, Egypt & western oases",
+  "coordinateConvention": "WGS84 decimal degrees, approximate representative points for the ancient site (not the modern town unless noted). Precision does not imply archaeological accuracy and is not a surveyed building location.",
+  "idScheme": "proposedId = r16-afr-<slug> (region 14), r16-cyr-<slug> (region 15), r16-egy-<slug> (region 16); slug region-scoped to avoid homonyms. Stable, human-readable, non-canonical.",
+  "confidenceScale": [
+    "attested",
+    "probable",
+    "uncertain"
+  ],
+  "presenceScale": [
+    "attested",
+    "probable",
+    "uncertain",
+    "unlocated"
+  ],
+  "readinessScale": [
+    "ready-for-atlas-integration",
+    "ready-with-caveats",
+    "needs-research",
+    "provisional"
+  ],
+  "methodNote": "Records compiled from independent evidence (primary literary/administrative sources, archaeology, gazetteer leads). Game/mod faction names are discovery leads only and never authorities. Every coordinate is a representative point with explicit location confidence; where only a broad location is known coordinate is coarse or null. Political authority recorded only where supported. All literary sources are later than 278 BCE and dated in each record; evidence for continuity, not contemporary snapshot.",
+  "sourceAuditNote": "Pleiades gazetteer identifiers recorded only as 'to be confirmed'. Coordinates are approximate representative points, not surveyed locations. Literary sources (Polybius, Diodorus, Strabo, Pliny, Ptolemy, Livy) are later than 278 BCE; no contemporary sources were asserted. Manual confirmation of Pleiades ids and site coordinates remains an integration prerequisite.",
+  "politicalContext278Bce": "Region 14: Carthage dominates Punic Africa, western Sicily, Sardinia, Tripolitanian emporia (including Syrtis ports), and exerts control over Libyan/Moorish hinterland communities; Numidia is a Berber kingdom (later Massinissa). Region 15: Cyrenaica Ptolemaic under Magas (half-brother of Ptolemy II). Region 16: Egypt Ptolemaic under Ptolemy II Philadelphus (Alexandria capital).",
+  "duplicateGuard": "None of these records reproduce settlements from other batches.",
+  "coverageNote": "Region 14 reached 40 (added Pupput as attested Punic settlement). Region 16 trimmed by 5 to meet target of 31. Region 15 at 9. Total 80 records; no invented settlements.",
+  "records": [
+    {
+      "proposedId": "r16-afr-carthage",
+      "key": "carthage",
+      "historicalName": "Carthago",
+      "alternateNames": [
+        "Qart-Hadasht"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.8528,
+        "lon": 10.3217,
+        "precision": "approximate representative point (Byrsa area)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Punic city continuously occupied; preeminent Carthaginian center by 278 BCE.",
+      "politicalAuthority": "Carthaginian metropolis (hegemonic power)",
+      "politicalConfidence": "attested",
+      "role": "Capital / royal seat",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Political centre"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Punic urban layout, harbors, walls",
+      "chronologyNotes": [
+        "Continuously occupied through 3rd c. BCE (evidence from later sources reflects continuity)."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman Carthage foundations; avoid post-146 BCE features."
+      ],
+      "sources": [
+        "Polybius, Histories (later than 278 BCE, 2nd c. BCE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas of the Greek and Roman World"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact 278 BCE city extent and harbor configuration."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-utica",
+      "key": "utica",
+      "historicalName": "Utica",
+      "alternateNames": [
+        "Utica"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 37.0564,
+        "lon": 10.0625,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Oldest Phoenician colony in Africa; attested continuously into Hellenistic period.",
+      "politicalAuthority": "Carthaginian ally/subject community under Carthage's hegemony",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Punic port city",
+      "chronologyNotes": [
+        "Continuity attested; status relative to Carthage documented in later sources."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman colonia status (later than 278 BCE)."
+      ],
+      "sources": [
+        "Polybius, Histories (2nd c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Precise political status in 278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-hippo-diarrhytus",
+      "key": "hippo-diarrhytus",
+      "historicalName": "Hippo Diarrhytus",
+      "alternateNames": [
+        "Hippo Zaritus",
+        "Bizerte"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 37.2667,
+        "lon": 9.8667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic city attested by later sources; continuous occupation.",
+      "politicalAuthority": "Under Carthaginian influence/hegemony",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal Punic settlement",
+      "chronologyNotes": [
+        "Attested in later geographical sources; continuity inferred."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny the Elder, Naturalis Historia (1st c. CE, much later than 278 BCE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Degree of autonomy vs Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-ruspina",
+      "key": "ruspina",
+      "historicalName": "Ruspina",
+      "alternateNames": [
+        "Monastir"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.7775,
+        "lon": 10.8267,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic settlement attested; occupied in Hellenistic period.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Continuity documented by later sources."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman colonia (1st c. BCE onward)."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact status c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-leptis-minor",
+      "key": "leptis-minor",
+      "historicalName": "Leptis Minor",
+      "alternateNames": [
+        "Lemta"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.6789,
+        "lon": 10.8667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic coastal settlement attested by later sources.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal town",
+      "chronologyNotes": [
+        "Attested continuity into Hellenistic/Roman periods."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Autonomy level."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-thapsus",
+      "key": "thapsus",
+      "historicalName": "Thapsus",
+      "alternateNames": [
+        "Ras Dimas"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.6244,
+        "lon": 11.0447,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic port city; attested in later sources with pre-Roman occupation.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Known from later sources; continuity plausible for 278 BCE."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Polybius, Histories (2nd c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-hadrumetum",
+      "key": "hadrumetum",
+      "historicalName": "Hadrumetum",
+      "alternateNames": [
+        "Sousse"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.8242,
+        "lon": 10.6342,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Important Punic city; attested continuously.",
+      "politicalAuthority": "Carthaginian sphere (major center)",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Punic urban center with port",
+      "chronologyNotes": [
+        "Significant Punic center by late 4th/3rd c. BCE based on later attestation."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman colonia status."
+      ],
+      "sources": [
+        "Polybius, Histories (2nd c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Relationship to Carthage c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-sullecthum",
+      "key": "sullecthum",
+      "historicalName": "Sullecthum",
+      "alternateNames": [
+        "Sullectum"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.4983,
+        "lon": 11.0575,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic coastal settlement attested by later sources.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Attested in later sources; likely pre-Roman Punic occupation."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-neapolis-punica",
+      "key": "neapolis-punica",
+      "historicalName": "Neapolis",
+      "alternateNames": [
+        "Nabeul"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.4514,
+        "lon": 10.7353,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic city attested; occupied in Hellenistic period.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal Punic settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status relative to Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-clupea",
+      "key": "clupea",
+      "historicalName": "Clupea",
+      "alternateNames": [
+        "Aspis",
+        "Kélibia"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.8467,
+        "lon": 11.0936,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic port city attested; strategic location.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Fortress / stronghold"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal fortified settlement",
+      "chronologyNotes": [
+        "Attested in later sources; pre-Roman Punic presence likely."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Polybius, Histories (2nd c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Degree of control by Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-kerkouane",
+      "key": "kerkouane",
+      "historicalName": "Kerkouane",
+      "alternateNames": [
+        "Kerkouane"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.9464,
+        "lon": 11.0992,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Archaeologically attested Punic settlement (late 6th-early 2nd c. BCE); abandoned before Roman period.",
+      "politicalAuthority": "Punic settlement, likely under Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Punic urban remains (orthogonal streets, sanctuaries, houses)",
+      "chronologyNotes": [
+        "Occupation extends to 3rd c. BCE; abandonment pre-dates full Romanization in this form."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman phases; site abandoned before later Roman development."
+      ],
+      "sources": [
+        "Archaeological evidence (Punic excavations, later published)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact political status relative to Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-acholla",
+      "key": "acholla",
+      "historicalName": "Acholla",
+      "alternateNames": [
+        "Botria"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.08,
+        "lon": 11.0178,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic settlement attested by later sources; continuous occupation.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal town",
+      "chronologyNotes": [
+        "Attested in later sources; likely Punic presence by 278 BCE."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-missua",
+      "key": "missua",
+      "historicalName": "Missua",
+      "alternateNames": [
+        "Missa"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.7342,
+        "lon": 9.2067,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic settlement in hinterland of Punic Africa; attested in later sources.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Inland Punic settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Degree of Carthaginian control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-sicca-veneria",
+      "key": "sicca-veneria",
+      "historicalName": "Sicca Veneria",
+      "alternateNames": [
+        "El Kef"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.1742,
+        "lon": 8.7047,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Important Punic center; sanctuary of Venus (later attested) on site with Punic occupation.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub",
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Inland Punic settlement with sanctuary",
+      "chronologyNotes": [
+        "Punic occupation attested; later sources document sanctuary."
+      ],
+      "anachronismWarnings": [
+        "Sanctuary prominence documented by later sources - treat as attested presence, not later Roman re-foundation."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-vaga",
+      "key": "vaga",
+      "historicalName": "Vaga",
+      "alternateNames": [
+        "Beja"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.7281,
+        "lon": 9.1864,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic settlement in Numidian/Punic frontier; attested.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested by later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Sallust, Bellum Jugurthinum (1st c. BCE, later than 278 BCE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Frontier status c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-zama-regia",
+      "key": "zama-regia",
+      "historicalName": "Zama Regia",
+      "alternateNames": [
+        "Zama"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.3,
+        "lon": 9.45,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "probable",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian royal center; attested by later sources. Location debated but generally placed in central Tunisia.",
+      "politicalAuthority": "Numidian kingdom (Berber)",
+      "politicalConfidence": "probable",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Capital / royal seat"
+      ],
+      "culturalContext": "Numidian (Berber)",
+      "architectureContext": "Inland settlement, likely fortified center",
+      "chronologyNotes": [
+        "Attested as Numidian royal center in later period; existence by 278 BCE plausible but sources later."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Massinissa's full later dominance explicitly as contemporary fact beyond kingdom existence."
+      ],
+      "sources": [
+        "Sallust, Bellum Jugurthinum (1st c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "needs-research",
+      "unresolved": [
+        "Exact location debated; precise political structure c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-bulla-regia",
+      "key": "bulla-regia",
+      "historicalName": "Bulla Regia",
+      "alternateNames": [
+        "Bulla"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.5581,
+        "lon": 8.7583,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; later Roman development but pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Numidian/Punic",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman occupation attested by archaeology and later sources."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject later Roman monumental phases as 278 BCE."
+      ],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status relative to Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-thugga",
+      "key": "thugga",
+      "historicalName": "Thugga",
+      "alternateNames": [
+        "Dougga"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.4236,
+        "lon": 9.2206,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement with Punic influence; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Numidian/Punic",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman phases attested archaeologically; later sources document site."
+      ],
+      "anachronismWarnings": [
+        "Avoid retrojecting full Roman municipium features to 278 BCE."
+      ],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-thuburbo-minus",
+      "key": "thuburbo-minus",
+      "historicalName": "Thuburbo Minus",
+      "alternateNames": [
+        "Tebourba"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.8303,
+        "lon": 9.8403,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic/Numidian settlement; attested in later sources.",
+      "politicalAuthority": "Carthaginian/Numidian frontier sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Punic/Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Frontier status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-althiburos",
+      "key": "althiburos",
+      "historicalName": "Althiburos",
+      "alternateNames": [
+        "Medjez el-Bab"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.2422,
+        "lon": 9.1144,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement with Punic elements; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian/Punic",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested by later sources and archaeology."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-mactaris",
+      "key": "mactaris",
+      "historicalName": "Mactaris",
+      "alternateNames": [
+        "Maktar"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.8539,
+        "lon": 9.2097,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic/Numidian settlement; attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Numidian/Punic",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman occupation attested."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-cirta",
+      "key": "cirta",
+      "historicalName": "Cirta",
+      "alternateNames": [
+        "Constantine"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.3692,
+        "lon": 6.6114,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Numidian center; attested by later sources as important settlement.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland fortified settlement",
+      "chronologyNotes": [
+        "Attested as Numidian center; existence by 278 BCE plausible."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject later Roman Constantine-era features; avoid late Roman/Byzantine naming as original."
+      ],
+      "sources": [
+        "Sallust, Bellum Jugurthinum (1st c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact political status c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-hippo-regius",
+      "key": "hippo-regius",
+      "historicalName": "Hippo Regius",
+      "alternateNames": [
+        "Annaba"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.8858,
+        "lon": 7.7461,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Phoenician/Punic foundation later Numidian center; attested continuously.",
+      "politicalAuthority": "Under Numidian kingdom influence (later shifting)",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic/Numidian",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Attested in later sources; pre-Roman occupation."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman colonia status or later Christian prominence as 278 BCE."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-thagaste",
+      "key": "thagaste",
+      "historicalName": "Thagaste",
+      "alternateNames": [
+        "Souk Ahras"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.2897,
+        "lon": 7.9544,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; attested by later sources.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman occupation attested."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-madauros",
+      "key": "madauros",
+      "historicalName": "Madauros",
+      "alternateNames": [
+        "Mdaourouch"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.08,
+        "lon": 7.82,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-thubursicum",
+      "key": "thubursicum",
+      "historicalName": "Thubursicum Numidarum",
+      "alternateNames": [
+        "Khemissa"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.1936,
+        "lon": 7.6581,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman occupation documented."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-calama",
+      "key": "calama",
+      "historicalName": "Calama",
+      "alternateNames": [
+        "Guelma"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.4644,
+        "lon": 7.4303,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; attested by later sources.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-milev",
+      "key": "milev",
+      "historicalName": "Milev",
+      "alternateNames": [
+        "Mila"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.45,
+        "lon": 6.2667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-oea",
+      "key": "oea",
+      "historicalName": "Oea",
+      "alternateNames": [
+        "Tripoli"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 32.8967,
+        "lon": 13.1776,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Phoenician/Punic settlement in Tripolitania; attested by later sources.",
+      "politicalAuthority": "Carthaginian sphere (Tripolitanian emporium)",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal emporium",
+      "chronologyNotes": [
+        "Attested as Punic emporium; continuity likely."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject later Roman municipal phases."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact status under Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-sabratha",
+      "key": "sabratha",
+      "historicalName": "Sabratha",
+      "alternateNames": [
+        "Sabratha"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 32.8067,
+        "lon": 12.4842,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Phoenician/Punic emporium; attested by later sources.",
+      "politicalAuthority": "Carthaginian sphere (Tripolitanian emporium)",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal emporium",
+      "chronologyNotes": [
+        "Attested as Punic settlement; pre-Roman occupation."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject later Roman monumental phases."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political relationship to Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-leptis-magna",
+      "key": "leptis-magna",
+      "historicalName": "Leptis Magna",
+      "alternateNames": [
+        "Lepcis Magna"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 32.6328,
+        "lon": 14.2908,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Phoenician/Punic emporium; major center in Tripolitania.",
+      "politicalAuthority": "Carthaginian sphere (Tripolitanian emporium)",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal emporium",
+      "chronologyNotes": [
+        "Attested as Punic foundation/settlement; later sources reflect continuity."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject full Roman imperial monumentalization as 278 BCE; avoid 2nd/3rd c. CE features."
+      ],
+      "sources": [
+        "Polybius, Histories (2nd c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact status under Carthage c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-tacape",
+      "key": "tacape",
+      "historicalName": "Tacape",
+      "alternateNames": [
+        "Gabes"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 33.8875,
+        "lon": 10.0983,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic coastal settlement in Syrtis region; attested by later sources.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Attested as Punic settlement; continuity likely."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-meninx",
+      "key": "meninx",
+      "historicalName": "Meninx",
+      "alternateNames": [
+        "Djerba"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 33.8086,
+        "lon": 10.8589,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic settlement on Jerba (Meninx); attested by later sources as emporium.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Island coastal settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control under Carthage."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-ammmaedara",
+      "key": "ammaedara",
+      "historicalName": "Ammaedara",
+      "alternateNames": [
+        "Haïdra"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.45,
+        "lon": 8.45,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-theveste",
+      "key": "theveste",
+      "historicalName": "Theveste",
+      "alternateNames": [
+        "Tébessa"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.4,
+        "lon": 8.1167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; attested by later sources.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Pre-Roman occupation."
+      ],
+      "anachronismWarnings": [
+        "Avoid retrojecting later Roman colonia features."
+      ],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-capsa",
+      "key": "capsa",
+      "historicalName": "Capsa",
+      "alternateNames": [
+        "Gafsa"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 34.4289,
+        "lon": 8.7847,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Numidian settlement; attested in later sources.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Numidian",
+      "architectureContext": "Inland oasis settlement",
+      "chronologyNotes": [
+        "Attested by Sallust and later authors."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Sallust, Bellum Jugurthinum (1st c. BCE)",
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-mustis",
+      "key": "mustis",
+      "historicalName": "Mustis",
+      "alternateNames": [
+        "Musti"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.3897,
+        "lon": 9.2142,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic/Numidian settlement; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Punic/Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political control."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-pupput",
+      "key": "pupput",
+      "historicalName": "Pupput",
+      "alternateNames": [
+        "Hammamet"
+      ],
+      "subregion": "Punic Africa",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.4,
+        "lon": 10.6167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic coastal settlement attested in later sources; pre-Roman occupation.",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Attested in later sources; continuity likely."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-uchi-maius",
+      "key": "uchi-maius",
+      "historicalName": "Uchi Maius",
+      "alternateNames": [
+        "Henchir ed-Douamis"
+      ],
+      "subregion": "Numidia",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 36.4136,
+        "lon": 9.0886,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Punic/Numidian settlement; pre-Roman occupation attested.",
+      "politicalAuthority": "Numidian kingdom sphere",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Punic/Numidian",
+      "architectureContext": "Inland settlement",
+      "chronologyNotes": [
+        "Attested in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-girba",
+      "key": "girba",
+      "historicalName": "Girba",
+      "alternateNames": [
+        "Djerba"
+      ],
+      "subregion": "Tripolitania",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 33.88,
+        "lon": 10.85,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "probable",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Island settlement in Tripolitanian context; attested by later sources (Meninx/Girba related).",
+      "politicalAuthority": "Carthaginian sphere",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Punic",
+      "architectureContext": "Island coastal settlement",
+      "chronologyNotes": [
+        "Attested continuity; precise identity Girba vs Meninx distinguished in later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pliny, Naturalis Historia (1st c. CE)",
+        "Ptolemy, Geographia (2nd c. CE, later than 278 BCE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Distinction from Meninx c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-cyrene",
+      "key": "cyrene",
+      "historicalName": "Cyrene",
+      "alternateNames": [
+        "Kyrene"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.8242,
+        "lon": 21.8575,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek colony (Thera); major city of Cyrenaica, attested continuously.",
+      "politicalAuthority": "Ptolemaic control under Magas (Cyrenaica governor/half-brother of Ptolemy II)",
+      "politicalConfidence": "attested",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Political centre",
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Greek polis layout on plateau, sanctuaries, walls",
+      "chronologyNotes": [
+        "Attested continuously from 7th c. BCE; under Ptolemaic hegemony c.278 BCE with Magas in charge."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject Roman Cyrenaican provincial reorganization as original; avoid later names."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE, earlier but attests foundation; continuity to 3rd c. BCE documented by later sources)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact nature of Magas' authority (autonomous tendencies noted later)."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-apollonia",
+      "key": "apollonia",
+      "historicalName": "Apollonia",
+      "alternateNames": [
+        "Apollonia of Cyrenaica",
+        "Marsa Susa"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.9039,
+        "lon": 21.9725,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Port of Cyrene; attested Greek settlement.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Coastal port city",
+      "chronologyNotes": [
+        "Attested as Cyrene's port; continuity into Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status under Magas."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-ptolemais-barca",
+      "key": "ptolemais-barca",
+      "historicalName": "Ptolemais",
+      "alternateNames": [
+        "Ptolemais of Cyrenaica",
+        "Barce"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.6397,
+        "lon": 21.4089,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek city of Cyrenaica (Barca); renamed Ptolemais under Ptolemies.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Inland Greek city",
+      "chronologyNotes": [
+        "Continuity from 6th c. BCE; Ptolemaic name attested later but settlement existed at 278 BCE."
+      ],
+      "anachronismWarnings": [
+        "Name Ptolemais is Ptolemaic; treat settlement identity as Barca/Ptolemais continuity."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Date of renaming relative to 278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-taucheira",
+      "key": "taucheira",
+      "historicalName": "Taucheira",
+      "alternateNames": [
+        "Tocra",
+        "Arsinoe"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.5289,
+        "lon": 20.5717,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek colony of Cyrenaica; attested continuously.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Greek coastal city",
+      "chronologyNotes": [
+        "Attested from 6th c. BCE onward; continuity to 3rd c. BCE."
+      ],
+      "anachronismWarnings": [
+        "Later name Arsinoe is Ptolemaic; note continuity."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-berenice-euesperides",
+      "key": "berenice-euesperides",
+      "historicalName": "Berenice",
+      "alternateNames": [
+        "Euesperides",
+        "Benghazi"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.1167,
+        "lon": 20.0667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek colony (Euesperides); later renamed Berenice under Ptolemies.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Coastal Greek city",
+      "chronologyNotes": [
+        "Attested from 6th c. BCE; continuity into Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Berenice name is later Ptolemaic; settlement identity continuity noted."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Date of renaming."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-balagrae",
+      "key": "balagrae",
+      "historicalName": "Balagrae",
+      "alternateNames": [
+        "El Beida"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.7667,
+        "lon": 21.7167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Inland Greek settlement of Cyrenaica; attested.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Inland Greek settlement",
+      "chronologyNotes": [
+        "Attested in Hellenistic period by later sources; continuity likely."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-tocra",
+      "key": "tocra",
+      "historicalName": "Tocra",
+      "alternateNames": [
+        "Taucheira"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.5289,
+        "lon": 20.5717,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Same site as Taucheira; alternate name recorded for clarity.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Greek coastal city",
+      "chronologyNotes": [
+        "Same site as Taucheira; alternate name recorded."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Name usage c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-darnis",
+      "key": "darnis",
+      "historicalName": "Darnis",
+      "alternateNames": [
+        "Derna"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.7667,
+        "lon": 22.6333,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek settlement of Cyrenaica; attested.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Coastal settlement",
+      "chronologyNotes": [
+        "Attested in Hellenistic period by later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-cyr-antipyrgos",
+      "key": "antipyrgos",
+      "historicalName": "Antipyrgos",
+      "alternateNames": [
+        "Tobruk"
+      ],
+      "subregion": "Cyrenaica",
+      "envelopeRegion": 15,
+      "coordinates": {
+        "lat": 32.0889,
+        "lon": 23.9761,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek settlement of Cyrenaica; easternmost of the Pentapolis context.",
+      "politicalAuthority": "Ptolemaic/Cyrenaic control under Magas",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Fortress / stronghold"
+      ],
+      "culturalContext": "Greek (Cyrenaic)",
+      "architectureContext": "Coastal fortified settlement",
+      "chronologyNotes": [
+        "Attested by later sources; likely existed by 278 BCE."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-sebennytos",
+      "key": "sebennytos",
+      "historicalName": "Sebennytos",
+      "alternateNames": [
+        "Sebennytos"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.9667,
+        "lon": 31.25,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Delta city; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Delta urban center",
+      "chronologyNotes": [
+        "Long continuity into Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-busiris",
+      "key": "busiris",
+      "historicalName": "Busiris",
+      "alternateNames": [
+        "Abu Sir Bana"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.915,
+        "lon": 31.2389,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Delta city; attested in later sources.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Delta settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-bubastis",
+      "key": "bubastis",
+      "historicalName": "Bubastis",
+      "alternateNames": [
+        "Tell Basta"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.57,
+        "lon": 31.5167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Delta city with famous temple of Bastet; continuous occupation.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Egyptian city with large temple precinct",
+      "chronologyNotes": [
+        "Attested from Pharaonic through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative role."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-leontopolis",
+      "key": "leontopolis",
+      "historicalName": "Leontopolis",
+      "alternateNames": [
+        "Tell el-Muqdam"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.35,
+        "lon": 31.3,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Delta city; attested in Hellenistic sources.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Delta settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-tanis",
+      "key": "tanis",
+      "historicalName": "Tanis",
+      "alternateNames": [
+        "San el-Hagar"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.97,
+        "lon": 31.88,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Delta city (capital of 21st/22nd dynasties); continued occupation.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Egyptian urban center with temple precincts",
+      "chronologyNotes": [
+        "Long continuity through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative role."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-mendes",
+      "key": "mendes",
+      "historicalName": "Mendes",
+      "alternateNames": [
+        "Tell el-Rub'a"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.95,
+        "lon": 31.5167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Delta city with major temple; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Egyptian settlement with temple precinct",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-thmuis",
+      "key": "thmuis",
+      "historicalName": "Thmuis",
+      "alternateNames": [
+        "Tell Timai"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.9333,
+        "lon": 31.5167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Delta city near Mendes; attested in Hellenistic period.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Delta settlement",
+      "chronologyNotes": [
+        "Attested continuity."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-canopus",
+      "key": "canopus",
+      "historicalName": "Canopus",
+      "alternateNames": [
+        "Canopus"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 31.3167,
+        "lon": 30.0667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Coastal Delta city near Alexandria; important port.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek, Egyptian",
+      "architectureContext": "Coastal settlement with sanctuary",
+      "chronologyNotes": [
+        "Attested continuously from 7th c. BCE onward."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Relationship to Alexandria."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-herakleion",
+      "key": "herakleion",
+      "historicalName": "Herakleion",
+      "alternateNames": [
+        "Thonis-Heracleion"
+      ],
+      "subregion": "Lower Egypt (Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 31.2833,
+        "lon": 30.1667,
+        "precision": "approximate representative point (submerged site)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Submerged Delta city (Thonis-Heracleion); attested by ancient sources and archaeology.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek, Egyptian",
+      "architectureContext": "Submerged coastal city with temple",
+      "chronologyNotes": [
+        "Attested from late 7th c. BCE; occupation continued into Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Site largely submerged - representational coordinates only."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Archaeological evidence (Franck Goddio excavations, later published)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Precise submerged extent."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-pelusium",
+      "key": "pelusium",
+      "historicalName": "Pelusium",
+      "alternateNames": [
+        "Tell el-Farama"
+      ],
+      "subregion": "Lower Egypt (Eastern Delta)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 31.0422,
+        "lon": 32.545,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Strategic eastern Delta city on route to Syria; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt (frontier garrison)",
+      "politicalConfidence": "probable",
+      "role": "Fortress / stronghold",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Fortified eastern Delta city",
+      "chronologyNotes": [
+        "Important frontier city through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact garrison strength/status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-memphis",
+      "key": "memphis",
+      "historicalName": "Memphis",
+      "alternateNames": [
+        "Ineb-hedj",
+        "Mit Rahina"
+      ],
+      "subregion": "Middle Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 29.85,
+        "lon": 31.25,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Ancient capital of Egypt; major administrative center under Ptolemies.",
+      "politicalAuthority": "Ptolemaic Egypt (major administrative center)",
+      "politicalConfidence": "attested",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Regional hub",
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Major Egyptian urban center with temple precincts (Ptah)",
+      "chronologyNotes": [
+        "Continuous occupation from early dynasties; important under Ptolemies."
+      ],
+      "anachronismWarnings": [
+        "Do not retroject later phases; note Pharaonic monuments are earlier."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Ptolemaic administrative structure."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-heliopolis",
+      "key": "heliopolis",
+      "historicalName": "Heliopolis",
+      "alternateNames": [
+        "Iunu",
+        "Matariya"
+      ],
+      "subregion": "Lower Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.1294,
+        "lon": 31.3075,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Egyptian religious center (Temple of Ra); attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Religious center with temple precinct",
+      "chronologyNotes": [
+        "Long continuity; important cult center through Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Temple complex mostly earlier; avoid later Roman phases."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-herakleopolis",
+      "key": "herakleopolis",
+      "historicalName": "Herakleopolis Magna",
+      "alternateNames": [
+        "Ihnasya el-Medina"
+      ],
+      "subregion": "Middle Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 29.085,
+        "lon": 30.9347,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Egyptian city in Middle Egypt; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Egyptian urban center",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative role."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-krokodilopolis",
+      "key": "krokodilopolis",
+      "historicalName": "Krokodilopolis",
+      "alternateNames": [
+        "Arsinoe",
+        "Medinet el-Fayum"
+      ],
+      "subregion": "Fayyum",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 29.3083,
+        "lon": 30.8444,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major city in Fayyum; renamed Arsinoe under Ptolemies, important administrative center.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "attested",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Political centre"
+      ],
+      "culturalContext": "Greek, Egyptian",
+      "architectureContext": "Hellenistic urban center in Fayyum",
+      "chronologyNotes": [
+        "Evolved under Ptolemies; Arsinoe name prominent by Ptolemy II era."
+      ],
+      "anachronismWarnings": [
+        "Name Arsinoe is Ptolemaic; treat as continuity."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact status c.278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-oxyrhynchus",
+      "key": "oxyrhynchus",
+      "historicalName": "Oxyrhynchus",
+      "alternateNames": [
+        "Bahnasa"
+      ],
+      "subregion": "Middle Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 28.53,
+        "lon": 30.65,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Important city in Middle Egypt; major papyrological center (documented by later finds reflecting Hellenistic activity).",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Greek, Egyptian",
+      "architectureContext": "Hellenistic Egyptian city",
+      "chronologyNotes": [
+        "Attested in Hellenistic period; papyri later but reflect continuity."
+      ],
+      "anachronismWarnings": [
+        "Papyri are later than 278 BCE; use as evidence of continuity."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Oxyrhynchus Papyri (later finds, cited for continuity)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-hermopolis-magna",
+      "key": "hermopolis-magna",
+      "historicalName": "Hermopolis Magna",
+      "alternateNames": [
+        "El-Ashmunein"
+      ],
+      "subregion": "Middle Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 27.7833,
+        "lon": 30.8,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Egyptian city; important cult center and administrative hub.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Egyptian city with temple precinct",
+      "chronologyNotes": [
+        "Attested continuously through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-lykopolis",
+      "key": "lykopolis",
+      "historicalName": "Lykopolis",
+      "alternateNames": [
+        "Asyut"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 27.18,
+        "lon": 31.19,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Upper Egyptian city; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Upper Egyptian city",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative role."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-panopolis",
+      "key": "panopolis",
+      "historicalName": "Panopolis",
+      "alternateNames": [
+        "Akhmim"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 26.5667,
+        "lon": 31.75,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Upper Egyptian city; major religious center.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Upper Egyptian city with temple precinct",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-ptolemais-hermiou",
+      "key": "ptolemais-hermiou",
+      "historicalName": "Ptolemais Hermiou",
+      "alternateNames": [
+        "Ptolemais in the Thebaid"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 26.75,
+        "lon": 31.5167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Hellenistic city founded by Ptolemies in Upper Egypt (Thebaid); important administrative center.",
+      "politicalAuthority": "Ptolemaic Egypt (nome capital)",
+      "politicalConfidence": "attested",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Greek, Egyptian",
+      "architectureContext": "Hellenistic planned city in Upper Egypt",
+      "chronologyNotes": [
+        "Founded under Ptolemies; established by Ptolemy I-II period; present by 278 BCE."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact foundation date relative to 278 BCE."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-thebes",
+      "key": "thebes",
+      "historicalName": "Thebes",
+      "alternateNames": [
+        "Diospolis Magna",
+        "Luxor/Karnak area"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 25.7167,
+        "lon": 32.65,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Ancient Egyptian capital; major religious center (Karnak, Luxor); continued occupation under Ptolemies.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Major religious center with vast temple complexes",
+      "chronologyNotes": [
+        "Long continuity; still important in Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Monumental complexes are earlier; avoid retrojecting later Roman phases."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Political role under Ptolemies."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-abydos",
+      "key": "abydos",
+      "historicalName": "Abydos",
+      "alternateNames": [
+        "El Araba el Madfuna"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 26.185,
+        "lon": 31.9167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Egyptian religious center (Osiris cult); continuous occupation.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Religious center with temple and necropolis",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-dendera",
+      "key": "dendera",
+      "historicalName": "Dendera",
+      "alternateNames": [
+        "Tentyris"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 26.1417,
+        "lon": 32.67,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Upper Egyptian city with major temple of Hathor; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Religious center with temple precinct",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Temple mainly Ptolemaic/Roman construction phases; note original earlier presence."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-koptos",
+      "key": "koptos",
+      "historicalName": "Koptos",
+      "alternateNames": [
+        "Qift"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 25.9964,
+        "lon": 32.8153,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Important Upper Egyptian city on trade route to Red Sea; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Inland trade center",
+      "chronologyNotes": [
+        "Major trade hub through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Trade role specifics."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-apollonopolis-magna",
+      "key": "apollonopolis-magna",
+      "historicalName": "Apollonopolis Magna",
+      "alternateNames": [
+        "Edfu"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 24.9778,
+        "lon": 32.8736,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Upper Egyptian city with major temple of Horus; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Religious center with temple precinct",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Temple construction is Ptolemaic; site presence earlier."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-ombos",
+      "key": "ombos",
+      "historicalName": "Ombos",
+      "alternateNames": [
+        "Kom Ombo"
+      ],
+      "subregion": "Upper Egypt",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 24.4522,
+        "lon": 32.9289,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Upper Egyptian city at Nile bend; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Settlement with temple precinct",
+      "chronologyNotes": [
+        "Attested through Hellenistic period."
+      ],
+      "anachronismWarnings": [
+        "Temple is Ptolemaic; pre-existing settlement attested."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-elephantine",
+      "key": "elephantine",
+      "historicalName": "Elephantine",
+      "alternateNames": [
+        "Aswan island"
+      ],
+      "subregion": "Upper Egypt (Nubian frontier)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 24.0847,
+        "lon": 32.8853,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Strategic island city at First Cataract; frontier post and cult center.",
+      "politicalAuthority": "Ptolemaic Egypt (frontier)",
+      "politicalConfidence": "attested",
+      "role": "Fortress / stronghold",
+      "secondaryRoles": [
+        "Sanctuary town",
+        "Port / emporion"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Fortified island settlement with temples",
+      "chronologyNotes": [
+        "Important frontier through Hellenistic period."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Frontier relations with Nubia."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-syene",
+      "key": "syene",
+      "historicalName": "Syene",
+      "alternateNames": [
+        "Aswan"
+      ],
+      "subregion": "Upper Egypt (Nubian frontier)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 24.0889,
+        "lon": 32.8997,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Frontier city opposite Elephantine; attested continuously.",
+      "politicalAuthority": "Ptolemaic Egypt (frontier)",
+      "politicalConfidence": "attested",
+      "role": "Fortress / stronghold",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Fortified frontier settlement",
+      "chronologyNotes": [
+        "Strategic frontier city."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Frontier status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-philae",
+      "key": "philae",
+      "historicalName": "Philae",
+      "alternateNames": [
+        "Philae island"
+      ],
+      "subregion": "Upper Egypt (Nubian frontier)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 24.0244,
+        "lon": 32.8844,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Sacred island with major temple complex; attested in later sources with earlier origins.",
+      "politicalAuthority": "Ptolemaic Egypt (sanctuary with frontier significance)",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [],
+      "culturalContext": "Egyptian, Greek",
+      "architectureContext": "Religious center with temple precinct",
+      "chronologyNotes": [
+        "Cult center with Ptolemaic temple development; island sacred earlier."
+      ],
+      "anachronismWarnings": [
+        "Temple complex largely Ptolemaic/Roman; earlier presence attested."
+      ],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-siwa",
+      "key": "siwa",
+      "historicalName": "Siwa",
+      "alternateNames": [
+        "Ammonium",
+        "Siwa Oasis"
+      ],
+      "subregion": "Western Oases",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 29.2,
+        "lon": 25.5167,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Oasis settlement with famous oracle of Zeus-Ammon; attested by later sources.",
+      "politicalAuthority": "Ptolemaic Egypt (oasis under Egyptian control)",
+      "politicalConfidence": "probable",
+      "role": "Sanctuary town",
+      "secondaryRoles": [
+        "Regional hub"
+      ],
+      "culturalContext": "Egyptian, Greek, Libyan",
+      "architectureContext": "Oasis settlement with temple precinct",
+      "chronologyNotes": [
+        "Oracle attested by sources later than 278 BCE but of great antiquity; oasis occupied continuously."
+      ],
+      "anachronismWarnings": [
+        "Oracle prominence documented by later sources; treat presence as attested."
+      ],
+      "sources": [
+        "Herodotus, Histories (5th c. BCE)",
+        "Diodorus Siculus, Bibliotheca Historica (1st c. BCE)",
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Degree of Ptolemaic control."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-kharga",
+      "key": "kharga",
+      "historicalName": "Kharga",
+      "alternateNames": [
+        "Great Oasis"
+      ],
+      "subregion": "Western Oases",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 25.44,
+        "lon": 30.55,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major oasis in Western Desert; occupied continuously.",
+      "politicalAuthority": "Ptolemaic Egypt (oasis administration)",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Oasis settlement with temple sites",
+      "chronologyNotes": [
+        "Attested in later sources; long occupation."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Administrative status."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-dakhla",
+      "key": "dakhla",
+      "historicalName": "Dakhla",
+      "alternateNames": [
+        "Dakhla Oasis"
+      ],
+      "subregion": "Western Oases",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 25.5167,
+        "lon": 29.1667,
+        "precision": "approximate representative point"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Western Desert oasis; occupied continuously.",
+      "politicalAuthority": "Ptolemaic Egypt (oasis administration)",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Oasis settlement",
+      "chronologyNotes": [
+        "Attested by later sources."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Strabo, Geographia (1st c. BCE/CE)",
+        "Ptolemy, Geographia (2nd c. CE)",
+        "Pleiades gazetteer (record id to be confirmed)",
+        "Barrington Atlas"
+      ],
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Status."
+      ]
+    }
+  ]
+}

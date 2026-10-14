@@ -1,4 +1,4 @@
-import { terrainTopology } from './terrain-topology.js';
+import { terrainTopologySteps } from './terrain-topology.js';
 import { barycentricWeights } from './terrain-style.js';
 
 export interface ParentSample {
@@ -11,15 +11,25 @@ export function parentTerrainSamples(
   size: number,
   stride: number,
 ): readonly ParentSample[] {
+  const steps = parentTerrainSamplesSteps(size, stride);
+  let next = steps.next();
+  while (!next.done) next = steps.next();
+  return next.value;
+}
+export function* parentTerrainSamplesSteps(
+  size: number,
+  stride: number,
+): Generator<void, readonly ParentSample[]> {
   const key = `${size}:${stride}`,
     previous = cached.get(key);
   if (previous) return previous;
-  const topology = terrainTopology(size, stride),
-    result: Array<ParentSample | undefined> = Array.from(
-      { length: size * size },
-      () => undefined,
-    );
+  const topology = yield* terrainTopologySteps(size, stride);
+  const result: Array<ParentSample | undefined> = Array.from(
+    { length: size * size },
+    () => undefined,
+  );
   for (let i = 0; i < topology.indices.length; i += 3) {
+    if (i % 768 === 0) yield;
     const vertices = [
       topology.vertices[topology.indices[i]!]!,
       topology.vertices[topology.indices[i + 1]!]!,
@@ -43,6 +53,7 @@ export function parentTerrainSamples(
     throw new RangeError('Incomplete parent surface');
   const complete = result as ParentSample[];
   cached.set(key, complete);
+  if (cached.size > 16) cached.delete(cached.keys().next().value!);
   return complete;
 }
 

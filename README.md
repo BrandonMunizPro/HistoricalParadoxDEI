@@ -110,3 +110,7 @@ The generated research output (`research/rome2-dei/extracted/`,
 Git**. They are reproducible from the tracked tooling and are kept local. No
 Rome II, DeI or RPFM assets or binaries belong in this repository. See
 `.gitignore` and `ARCHITECTURE.md`.
+
+The [campaign camera and regional detail report](docs/vs5/campaign-map-experience.md) documents configurable navigation, sourced Greece/Egypt detail, browser evidence and remaining coverage limits.
+
+The [streaming smoothness report](docs/vs5/streaming-smoothness.md) includes repeatable camera-path profiling, bounded incremental terrain preparation, responsiveness evidence and remaining stalls.

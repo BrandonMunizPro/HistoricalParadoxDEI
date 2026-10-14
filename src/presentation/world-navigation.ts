@@ -9,6 +9,8 @@ export const WORLD_RENDER_BOUNDS: Bounds = {
   north: 62,
 };
 export const REGION_VIEWS = {
+  greeceDetail: { lon: 22.8, lat: 37.56, distance: 8, local: true },
+  egyptDetail: { lon: 32.57, lat: 25.74, distance: 9, local: true },
   northAfrica: { lon: 12, lat: 28, distance: 2600 },
   iberia: { lon: -4, lat: 40, distance: 1500 },
   italy: { lon: 13.5, lat: 41.5, distance: 1350 },
@@ -32,16 +34,19 @@ export function terrainDetailFamily(
   lon: number,
   lat: number,
   distance: number,
-  detailAreas: readonly { bounds: Bounds; maximumCameraDistanceKm: number }[],
-): 'world' | 'italy' | 'context' {
+  detailAreas: readonly {
+    id?: string;
+    bounds: Bounds;
+    maximumCameraDistanceKm: number;
+  }[],
+): string {
   if (distance > 6000) return 'context';
-  return detailAreas.some(
+  const area = detailAreas.find(
     (a) =>
       containsCoordinate(a.bounds, lon, lat) &&
       distance < a.maximumCameraDistanceKm,
-  )
-    ? 'italy'
-    : 'world';
+  );
+  return area ? (area.id ?? 'italy') : 'world';
 }
 
 export interface SyntheticMarker {

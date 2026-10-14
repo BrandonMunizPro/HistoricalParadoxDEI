@@ -1,4 +1,6 @@
+import { streamProfile } from './stream-profile.js';
 import * as THREE from 'three';
+import { createCampaignControls } from './campaign-controls.js';
 import {
   loadRegionalMaterial,
   stationaryTransitionAttributes,
@@ -68,6 +70,21 @@ async function boot() {
   const tileManifest = await (
     await fetch('/data/world-terrain/manifest.json')
   ).json();
+  const detailResponse = await fetch('/data/regional-details/manifest.json');
+  if (!detailResponse.ok)
+    throw Error('Regional detail catalog missing; run npm run map:details');
+  const regionalDetail = await detailResponse.json();
+  tileManifest.detailAreas = [
+    ...tileManifest.detailAreas,
+    ...regionalDetail.areas,
+  ];
+  tileManifest.tiles = [...tileManifest.tiles, ...regionalDetail.tiles];
+  const detailHydrology = await (
+    await fetch(regionalDetail.hydrology.url)
+  ).json();
+  data.features.rivers_lake_centerlines.push(
+    ...detailHydrology.features.filter((f) => f.properties.level !== 5),
+  );
   const cityTerrain = await Promise.all(
     [
       'local-roma',
@@ -306,6 +323,27 @@ async function boot() {
   terrainLod.addLevel(new THREE.Mesh(coarseGeometry, material), 450, 0.05);
   scene.add(terrainLod);
   const tileMaterial = material.clone();
+  async function prepareTerrainGpu(lod, texture) {
+    const start = performance.now();
+    if (texture)
+      streamProfile.measure('texture-upload', () =>
+        renderer.initTexture(texture),
+      );
+    for (const shadows of [false, true]) {
+      const previous = renderer.shadowMap.enabled;
+      let promise;
+      try {
+        renderer.shadowMap.enabled = shadows;
+        promise = streamProfile.measure('shader-submit', () =>
+          renderer.compileAsync(lod, camera, scene),
+        );
+      } finally {
+        renderer.shadowMap.enabled = previous;
+      }
+      await promise;
+    }
+    streamProfile.record('shader-texture-ready', performance.now() - start);
+  }
   const terrainTiles = createTerrainTiles(
     scene,
     tileMaterial,
@@ -377,6 +415,7 @@ async function boot() {
     () =>
       `${terrainLod.getCurrentLevel()}:${Math.floor(terrainMorphWeight(camera.position.length(), 450) * 4)}`,
     ecologicalMaterial.decorate,
+    prepareTerrainGpu,
   );
   const waterTime = { value: 0 };
   const seaDepthPixels = new Uint8Array(w * h);
@@ -483,7 +522,17 @@ async function boot() {
   );
   coverageLine.computeLineDistances();
   scene.add(coverageLine);
-  const riverSegments = [];
+  const riverSegments = [],
+    detailRiverVertices = [];
+  const inDetail = (lon, lat) =>
+    regionalDetail.areas.some(
+      (a) =>
+        lon >= a.bounds.west &&
+        lon <= a.bounds.east &&
+        lat >= a.bounds.south &&
+        lat <= a.bounds.north,
+    );
+  let drapedSignature = '';
   let collectingRivers = true;
   function line(coords, color, yOffset = 0.003, dashed = false) {
     const dense = [];
@@ -502,7 +551,12 @@ async function boot() {
         steps = Math.max(
           1,
           Math.ceil(
-            Math.hypot(c[0] - a[0], c[1] - a[1]) * (nearCity ? 5000 : 120),
+            Math.hypot(c[0] - a[0], c[1] - a[1]) *
+              (nearCity
+                ? 5000
+                : inDetail((a[0] + c[0]) / 2, (a[1] + c[1]) / 2)
+                  ? 1200
+                  : 120),
           ),
         );
       for (let j = 0; j < steps; j++)
@@ -523,7 +577,15 @@ async function boot() {
     if (points.length < 2) return;
     if (collectingRivers) {
       for (let i = 1; i < points.length; i++)
-        riverSegments.push(...points[i - 1].toArray(), ...points[i].toArray());
+        for (const index of [i - 1, i]) {
+          if (inDetail(...dense[index]))
+            detailRiverVertices.push({
+              index: riverSegments.length / 3,
+              lon: dense[index][0],
+              lat: dense[index][1],
+            });
+          riverSegments.push(...points[index].toArray());
+        }
       return;
     }
     const g = new THREE.BufferGeometry().setFromPoints(points);
@@ -1002,6 +1064,7 @@ async function boot() {
       .addEventListener('click', () => setMode(name));
   document.querySelector('#reset').addEventListener('click', () => {
     cameraTransition = null;
+    cameraInput?.stop();
     camera.position.set(30, 275, 310);
     controls.target.set(20, 0, 5);
   });
@@ -1020,10 +1083,15 @@ async function boot() {
   const raycaster = new THREE.Raycaster();
   let down;
   renderer.domElement.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
     down = [e.clientX, e.clientY];
   });
   renderer.domElement.addEventListener('pointerup', (e) => {
-    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5)
+    if (
+      e.button !== 0 ||
+      !down ||
+      Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5
+    )
       return;
     raycaster.setFromCamera(
       new THREE.Vector2(
@@ -1052,9 +1120,11 @@ async function boot() {
     camera.updateProjectionMatrix();
     renderer.setSize(innerWidth, innerHeight);
   });
+  let cameraInput = null;
   let cameraTransition = null;
   const sceneIdentity = scene.uuid;
   function navigateWorld(key, animated = true) {
+    cameraInput?.stop();
     window.__campaignMap.setDiagnostic?.(false);
     let target, position;
     if (key === 'world') {
@@ -1090,7 +1160,17 @@ async function boot() {
       if (!view) throw new Error('Unknown geographic view');
       const [x, z] = project(view.lon, view.lat);
       target = new THREE.Vector3(x, 0, z);
-      position = target.clone().add(new THREE.Vector3(0, view.distance, 0.01));
+      position = target
+        .clone()
+        .add(
+          view.local
+            ? new THREE.Vector3(
+                view.distance * 0.2,
+                view.distance * 0.72,
+                view.distance * 0.66,
+              )
+            : new THREE.Vector3(0, view.distance, 0.01),
+        );
     }
     cameraTransition = animated
       ? {
@@ -1118,6 +1198,8 @@ async function boot() {
       mesopotamia: 'Mesopotamia',
       east: 'Eastern coverage edge',
       northAfrica: 'North Africa',
+      greeceDetail: 'Argolid coastal terrain',
+      egyptDetail: 'Nile valley and escarpment',
     };
     document.querySelector('#place-name').textContent = names[key];
     document.querySelector('#description').textContent =
@@ -1218,7 +1300,7 @@ async function boot() {
           authoritative: false,
         };
     },
-    ready: true,
+    ready: false,
     mode,
     selectedId: null,
     selectedRegionId: null,
@@ -1248,12 +1330,14 @@ async function boot() {
     },
     architecturalSelections: settlementAssets.selections(),
     overheadForValidation() {
+      cameraInput?.stop();
       cameraTransition = null;
       controls.target.set(-70, 0, 10);
       camera.position.set(-70, 1900, 10.01);
       camera.up.set(0, 1, 0);
     },
     focusForValidation(key, distance = 95) {
+      cameraInput?.stop();
       cameraTransition = null;
       window.__campaignMap.setDiagnostic?.(false);
       const s = settlements.find((s) => s.key === key),
@@ -1272,6 +1356,7 @@ async function boot() {
       select(s);
     },
     wideForValidation() {
+      cameraInput?.stop();
       cameraTransition = null;
       window.__campaignMap.setDiagnostic?.(false);
       controls.target.set(30, 0, 60);
@@ -1427,6 +1512,35 @@ async function boot() {
   controls.addEventListener('start', () => {
     cameraTransition = null;
   });
+  cameraInput = createCampaignControls(
+    camera,
+    controls,
+    renderer.domElement,
+    b,
+    viewOrigin,
+    (lon, lat) => {
+      const cached = cityTerrain.find(
+        (t) =>
+          lon >= t.bounds.west &&
+          lon <= t.bounds.east &&
+          lat >= t.bounds.south &&
+          lat <= t.bounds.north,
+      );
+      return (
+        (Math.max(
+          0,
+          cached ? sampleTile(cached, lon, lat) : terrainTiles.sample(lon, lat),
+        ) /
+          1000) *
+        3
+      );
+    },
+    () => {
+      cameraTransition = null;
+    },
+    () => navigateWorld('world'),
+  );
+  window.__campaignMap.cameraForValidation = () => cameraInput.snapshot();
   navigateWorld('world', false);
   function animate(now) {
     if (cameraTransition) {
@@ -1444,6 +1558,13 @@ async function boot() {
       );
       if (t === 1) cameraTransition = null;
     }
+    streamProfile.measure('camera-input', () =>
+      cameraInput.update(
+        Math.max(0, Math.min(0.05, (now - previous) / 1000)),
+        now,
+        !!cameraTransition,
+      ),
+    );
     updateSynthetic();
     scene.fog.density = Math.min(
       0.00012,
@@ -1506,9 +1627,26 @@ async function boot() {
       sun.shadow.normalBias = 0.0002;
       renderer.shadowMap.needsUpdate = true;
     }
-    terrainTiles.update(camera, controls.target, now);
+    streamProfile.measure('stream-update', () =>
+      terrainTiles.update(camera, controls.target, now),
+    );
     window.__campaignMap.tiles = terrainTiles.diagnostics();
-    renderer.render(scene, camera);
+    const td = window.__campaignMap.tiles,
+      signature = td.resident.join(',');
+    if (td.pending.length === 0 && signature !== drapedSignature) {
+      drapedSignature = signature;
+      streamProfile.measure('river-drape', () => {
+        for (const v of detailRiverVertices)
+          riverGeometry.attributes.position.setY(
+            v.index,
+            Math.max(0, terrainTiles.sample(v.lon, v.lat)) * 0.003 + 0.003,
+          );
+        riverGeometry.attributes.position.needsUpdate = true;
+      });
+    }
+    streamProfile.measure('render-submit', () =>
+      renderer.render(scene, camera),
+    );
     const dt = now - previous;
     previous = now;
     const frames = window.__campaignMap.frames;
@@ -1577,6 +1715,8 @@ async function boot() {
         `${fps.toFixed(0)} FPS · ${renderer.info.render.calls} draws · ${heap ? (heap / 1048576).toFixed(0) + ' MB JS heap' : 'heap unavailable'}`;
     }
   }
+  await prepareTerrainGpu(scene, ecologicalMaterial.texture);
+  window.__campaignMap.ready = true;
   requestAnimationFrame(animate);
 }
 boot().catch((error) => {

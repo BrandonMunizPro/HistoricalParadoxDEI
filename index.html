@@ -28,6 +28,80 @@
       </p>
       <dl id="details"></dl>
       <div id="settlements"></div>
+      <details id="camera-settings" class="note">
+        <summary>Camera controls and settings</summary>
+        <p>
+          WASD / arrows: pan relative to view. Shift: faster. Q/E: rotate. R/F
+          or V/C: tilt. Wheel or Z/X: smooth zoom. Home: full-world strategic
+          view. Left drag: orbit; right drag: pan. Middle drag: selected scheme.
+          Left click: select. Click map to resume keys after using a control.
+        </p>
+        <label
+          >Movement
+          <input
+            data-camera="movement"
+            type="range"
+            min="0.2"
+            max="3"
+            step="0.1"
+            aria-label="Camera movement sensitivity"
+        /></label>
+        <label
+          >Rotation
+          <input
+            data-camera="rotation"
+            type="range"
+            min="0.2"
+            max="3"
+            step="0.1"
+            aria-label="Camera rotation sensitivity"
+        /></label>
+        <label
+          >Zoom
+          <input
+            data-camera="zoom"
+            type="range"
+            min="0.2"
+            max="3"
+            step="0.1"
+            aria-label="Camera zoom sensitivity"
+        /></label>
+        <label
+          ><input data-camera="edgeScroll" type="checkbox" /> Edge
+          scrolling</label
+        >
+        <label
+          >Edge zone
+          <input
+            data-camera="edgeWidth"
+            type="range"
+            min="4"
+            max="60"
+            step="1"
+            aria-label="Edge scrolling width"
+        /></label>
+        <label
+          >Edge delay (ms)
+          <input
+            data-camera="edgeDelayMs"
+            type="range"
+            min="0"
+            max="1000"
+            step="20"
+            aria-label="Edge scrolling delay"
+        /></label>
+        <label
+          >Middle drag
+          <select data-camera="middleDrag" aria-label="Middle mouse scheme">
+            <option value="pan">Pan</option>
+            <option value="rotate">Orbit / rotate</option>
+          </select></label
+        >
+        <label
+          ><input data-camera="cursorZoom" type="checkbox" /> Zoom toward
+          cursor</label
+        >
+      </details>
       <label for="world-view">Geographic camera</label>
       <button id="world-overhead">Entire world · overhead</button>
       <select id="world-view" aria-label="Geographic camera preset">
@@ -35,8 +109,10 @@
         <option value="iberia">Iberia</option>
         <option value="italy">Italy</option>
         <option value="greece">Greece</option>
+        <option value="greeceDetail">Greece: coastal terrain detail</option>
         <option value="northAfrica">North Africa</option>
         <option value="egypt">Egypt</option>
+        <option value="egyptDetail">Egypt: Nile terrain detail</option>
         <option value="anatolia">Anatolia</option>
         <option value="mesopotamia">Mesopotamia</option>
         <option value="east">Eastern edge</option>
@@ -89,7 +165,7 @@
       </details>
     </aside>
     <footer>
-      <span>Drag to orbit · right drag to pan · scroll to zoom</span
+      <span>WASD pan / Q-E rotate / wheel zoom / Home strategic / controls in sidebar</span
       ><button id="reset">Reset view</button
       ><span id="stats">Loading geographic data…</span>
     </footer>

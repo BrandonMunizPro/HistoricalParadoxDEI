@@ -1,0 +1,1532 @@
+{
+  "version": 1,
+  "coordinateReference": "WGS84 degrees; Copernicus DSM metres EGM2008",
+  "scope": "Modern physical detail only; not ancient settlements or administrative geography",
+  "areas": [
+    {
+      "id": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 28,
+        "south": 35,
+        "north": 41
+      },
+      "maximumCameraDistanceKm": 700
+    },
+    {
+      "id": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 34,
+        "south": 24,
+        "north": 32
+      },
+      "maximumCameraDistanceKm": 700
+    }
+  ],
+  "regionalSpacingMetres": [
+    650,
+    870
+  ],
+  "windowSpacingMetres": [
+    42,
+    55
+  ],
+  "coastlineSource": "GSHHG 2.3.7 full-resolution L1 coastline; same source archive/license as world, finer generalization",
+  "coastSampling": "513 bits per edge; vector generalization/accuracy is not improved by fine rasterization",
+  "tiles": [
+    {
+      "id": "detail-egypt-N24E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 24,
+        "north": 25
+      },
+      "url": "/data/regional-details/detail-egypt-N24E29.json",
+      "sha256": "6b35e334cc1ed4c9bf02de1b43f8cadb0fb099c037f986a0e2c48d85baf2439d"
+    },
+    {
+      "id": "detail-egypt-N24E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 24,
+        "north": 25
+      },
+      "url": "/data/regional-details/detail-egypt-N24E30.json",
+      "sha256": "de5de3d6e2ad952cbe896f277e5b5bc374693672044cee892c01f87f2d94cdbe"
+    },
+    {
+      "id": "detail-egypt-N24E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 24,
+        "north": 25
+      },
+      "url": "/data/regional-details/detail-egypt-N24E31.json",
+      "sha256": "138e0d9bdb5c7266308e3eba1199ef0837a559a8b2e01b68abf0e1bc2140aad2"
+    },
+    {
+      "id": "detail-egypt-N24E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 24,
+        "north": 25
+      },
+      "url": "/data/regional-details/detail-egypt-N24E32.json",
+      "sha256": "d2ffb8074d9df506559b9e229bc3ddb4a43b4f492e7ce3f174fa551e972996c8"
+    },
+    {
+      "id": "detail-egypt-N24E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 24,
+        "north": 25
+      },
+      "url": "/data/regional-details/detail-egypt-N24E33.json",
+      "sha256": "510466b2607c3feaa1e2b97df4fbde16288f99a0f0c19ba716bd5ff2f262b62b"
+    },
+    {
+      "id": "detail-egypt-N25E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 25,
+        "north": 26
+      },
+      "url": "/data/regional-details/detail-egypt-N25E29.json",
+      "sha256": "976dd594479cb30ded0ecf68d307bb640ad426f28ebe850b253c52303cfb50f2"
+    },
+    {
+      "id": "detail-egypt-N25E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 25,
+        "north": 26
+      },
+      "url": "/data/regional-details/detail-egypt-N25E30.json",
+      "sha256": "22accb40fbcac5792d1383b66e417bbd8df7086cc50fd20f0387b45aac90a28d"
+    },
+    {
+      "id": "detail-egypt-N25E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 25,
+        "north": 26
+      },
+      "url": "/data/regional-details/detail-egypt-N25E31.json",
+      "sha256": "f4091d85349c8b13c2c73c1b22ba8df13afc5b9507dccfc6c9dbb49aaa792305"
+    },
+    {
+      "id": "detail-egypt-N25E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 25,
+        "north": 26
+      },
+      "url": "/data/regional-details/detail-egypt-N25E32.json",
+      "sha256": "a70b3b3d3e6677a56cf6584fa5c8eddfb72fb9c98d82186b474303fbff494164"
+    },
+    {
+      "id": "detail-egypt-N25E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 25,
+        "north": 26
+      },
+      "url": "/data/regional-details/detail-egypt-N25E33.json",
+      "sha256": "8036093f9b907a75ffafeb19d15e1b4502cb56dc14efc0f7cb7c4f5d5631228b"
+    },
+    {
+      "id": "detail-egypt-N26E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 26,
+        "north": 27
+      },
+      "url": "/data/regional-details/detail-egypt-N26E29.json",
+      "sha256": "3cbd39e0ff8c4985f1a2b3c66340daa6311371b340051a206a8a645077ec6c70"
+    },
+    {
+      "id": "detail-egypt-N26E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 26,
+        "north": 27
+      },
+      "url": "/data/regional-details/detail-egypt-N26E30.json",
+      "sha256": "1dda83dacf1d17d8b74635041b1cd23ba2b31c8fd4b2ff3493210a160aae0546"
+    },
+    {
+      "id": "detail-egypt-N26E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 26,
+        "north": 27
+      },
+      "url": "/data/regional-details/detail-egypt-N26E31.json",
+      "sha256": "7ebab3fb445dde3595d9f49619c92734612563bacfd19b0a69bfa7b6d05853d9"
+    },
+    {
+      "id": "detail-egypt-N26E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 26,
+        "north": 27
+      },
+      "url": "/data/regional-details/detail-egypt-N26E32.json",
+      "sha256": "958b9c945d0c75eacdb75d5e1a7c128ae216cd2c725101448b25570436cdfa14"
+    },
+    {
+      "id": "detail-egypt-N26E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 26,
+        "north": 27
+      },
+      "url": "/data/regional-details/detail-egypt-N26E33.json",
+      "sha256": "0dbe7c2a0dae5806d023d0f1965473f0cf30ed3c938e2924fdc0ccc158caad27"
+    },
+    {
+      "id": "detail-egypt-N27E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 27,
+        "north": 28
+      },
+      "url": "/data/regional-details/detail-egypt-N27E29.json",
+      "sha256": "f97145be747715eacaa73c01ef508f94f0eee1eddec157e2fd93570f11a24e51"
+    },
+    {
+      "id": "detail-egypt-N27E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 27,
+        "north": 28
+      },
+      "url": "/data/regional-details/detail-egypt-N27E30.json",
+      "sha256": "8df1f512ebdf9e0e818c356d245e9cd7f1332bb99239c5782b4345256b46eece"
+    },
+    {
+      "id": "detail-egypt-N27E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 27,
+        "north": 28
+      },
+      "url": "/data/regional-details/detail-egypt-N27E31.json",
+      "sha256": "89ef89215664f9a6112261cc4896e2129d74b1476eb49f6bde7bf29ed3a624f6"
+    },
+    {
+      "id": "detail-egypt-N27E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 27,
+        "north": 28
+      },
+      "url": "/data/regional-details/detail-egypt-N27E32.json",
+      "sha256": "15aba03e4d6f35ee5af91f6e653c80f7ec8da38fdf4a69d8108d5dcae0610287"
+    },
+    {
+      "id": "detail-egypt-N27E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 27,
+        "north": 28
+      },
+      "url": "/data/regional-details/detail-egypt-N27E33.json",
+      "sha256": "cd06f22986d6134cce0242f845897ada58afd024b9faf5cfd5742e0c5c246f68"
+    },
+    {
+      "id": "detail-egypt-N28E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 28,
+        "north": 29
+      },
+      "url": "/data/regional-details/detail-egypt-N28E29.json",
+      "sha256": "c0a48c226f2475af7ec242d904cbb00537dd6606741049a05c5618cdaa59a10a"
+    },
+    {
+      "id": "detail-egypt-N28E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 28,
+        "north": 29
+      },
+      "url": "/data/regional-details/detail-egypt-N28E30.json",
+      "sha256": "0d0236b67d2e5e842ed132f8746b25ec5fc683c1b7ee589dd130d79b4b5d3f6e"
+    },
+    {
+      "id": "detail-egypt-N28E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 28,
+        "north": 29
+      },
+      "url": "/data/regional-details/detail-egypt-N28E31.json",
+      "sha256": "3a6b4fb0fa01c8009ca230b07451277d0d35d45fcd8460ad5d008d857b9fce83"
+    },
+    {
+      "id": "detail-egypt-N28E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 28,
+        "north": 29
+      },
+      "url": "/data/regional-details/detail-egypt-N28E32.json",
+      "sha256": "b287cfa85f228c66a183275e70ba097c1e30712a0edbe8e8a29b3e95c8428487"
+    },
+    {
+      "id": "detail-egypt-N28E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 28,
+        "north": 29
+      },
+      "url": "/data/regional-details/detail-egypt-N28E33.json",
+      "sha256": "fa6d428b3eb39d7df856c4f0b3d4f8204a6242a32e6bffe56900fb1d7fa57409"
+    },
+    {
+      "id": "detail-egypt-N29E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 29,
+        "north": 30
+      },
+      "url": "/data/regional-details/detail-egypt-N29E29.json",
+      "sha256": "ef1308d6bc85d058721698d72d38fcd363db88ded78da9b435b9a44dfd48e6b2"
+    },
+    {
+      "id": "detail-egypt-N29E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 29,
+        "north": 30
+      },
+      "url": "/data/regional-details/detail-egypt-N29E30.json",
+      "sha256": "e0dfe7e0492b09a91bb0fa2c59d3d067ebd1cd39de4556ebffbc383611e437bb"
+    },
+    {
+      "id": "detail-egypt-N29E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 29,
+        "north": 30
+      },
+      "url": "/data/regional-details/detail-egypt-N29E31.json",
+      "sha256": "d7e3435c88bc386161f0fb17176aae5ebbd298209abbb4f7831dceed5cc3dca7"
+    },
+    {
+      "id": "detail-egypt-N29E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 29,
+        "north": 30
+      },
+      "url": "/data/regional-details/detail-egypt-N29E32.json",
+      "sha256": "00f207561a04b55bef0eb83e167a130c2aaa02cc7af83cb433768aa6e418dc13"
+    },
+    {
+      "id": "detail-egypt-N29E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 29,
+        "north": 30
+      },
+      "url": "/data/regional-details/detail-egypt-N29E33.json",
+      "sha256": "832693d9a08a7e02e368016d4adcb9db0db31ff959fd11aa6909c1c6804ba482"
+    },
+    {
+      "id": "detail-egypt-N30E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 30,
+        "north": 31
+      },
+      "url": "/data/regional-details/detail-egypt-N30E29.json",
+      "sha256": "877a0e4211ac7dacb475282bb0a2d21b8b4f988a59e73b4f11b5a33c9c3d8617"
+    },
+    {
+      "id": "detail-egypt-N30E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 30,
+        "north": 31
+      },
+      "url": "/data/regional-details/detail-egypt-N30E30.json",
+      "sha256": "fd84b94a2027230c9230a322171a76cc64d97aa5c00d2ba3712b239380b448c9"
+    },
+    {
+      "id": "detail-egypt-N30E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 30,
+        "north": 31
+      },
+      "url": "/data/regional-details/detail-egypt-N30E31.json",
+      "sha256": "2dccf2e9f7305c225b45e95fc69e3fe3e2fc0140a7d4f2df55783455ec4386aa"
+    },
+    {
+      "id": "detail-egypt-N30E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 30,
+        "north": 31
+      },
+      "url": "/data/regional-details/detail-egypt-N30E32.json",
+      "sha256": "59cfb62c5ee57d3b5d6460bae6b444286b20e5e020527c08d42753ff43f05b23"
+    },
+    {
+      "id": "detail-egypt-N30E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 30,
+        "north": 31
+      },
+      "url": "/data/regional-details/detail-egypt-N30E33.json",
+      "sha256": "7f85c3ea898227ac8c22db7b7c87a3b0e1a0f613f77ee6b0d9982400cebec7cd"
+    },
+    {
+      "id": "detail-egypt-N31E29",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 29,
+        "east": 30,
+        "south": 31,
+        "north": 32
+      },
+      "url": "/data/regional-details/detail-egypt-N31E29.json",
+      "sha256": "1f51e5f5b2d95006fd1146e16bf69279184b55d70b9252c38cafa1c828d8000c"
+    },
+    {
+      "id": "detail-egypt-N31E30",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 30,
+        "east": 31,
+        "south": 31,
+        "north": 32
+      },
+      "url": "/data/regional-details/detail-egypt-N31E30.json",
+      "sha256": "20ee38bb9f313009738e79fb9bf36b799360c2f417b8a78e46b87f65d280eea0"
+    },
+    {
+      "id": "detail-egypt-N31E31",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 31,
+        "east": 32,
+        "south": 31,
+        "north": 32
+      },
+      "url": "/data/regional-details/detail-egypt-N31E31.json",
+      "sha256": "635ca30f4416119eb1a853e7b2340d8fc3703abb9f8e5bcac786243aef5ac865"
+    },
+    {
+      "id": "detail-egypt-N31E32",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32,
+        "east": 33,
+        "south": 31,
+        "north": 32
+      },
+      "url": "/data/regional-details/detail-egypt-N31E32.json",
+      "sha256": "c5766c78ae8f7c496b26f0017155175623b901d322df76a564ef750c2f70c412"
+    },
+    {
+      "id": "detail-egypt-N31E33",
+      "kind": "regional",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 33,
+        "east": 34,
+        "south": 31,
+        "north": 32
+      },
+      "url": "/data/regional-details/detail-egypt-N31E33.json",
+      "sha256": "265064b5e22ab43c0984449e72da36fb6bf1efcc2a19d84e8949eaf488847db1"
+    },
+    {
+      "id": "detail-greece-N35E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 35,
+        "north": 36
+      },
+      "url": "/data/regional-details/detail-greece-N35E23.json",
+      "sha256": "6b5f35e69520a87088aafe095f3bf79475b69bc83321eb2cf52656183258ab76"
+    },
+    {
+      "id": "detail-greece-N35E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 35,
+        "north": 36
+      },
+      "url": "/data/regional-details/detail-greece-N35E24.json",
+      "sha256": "e7d1ee84eb44a6c8d4298171fa416cdc9c95aba0df7dd5642f23741d5830c631"
+    },
+    {
+      "id": "detail-greece-N35E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 35,
+        "north": 36
+      },
+      "url": "/data/regional-details/detail-greece-N35E25.json",
+      "sha256": "82df8aa8153442e17d7eabf010116d5f6d2e794a4e234042fee06a4aa900c09f"
+    },
+    {
+      "id": "detail-greece-N35E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 35,
+        "north": 36
+      },
+      "url": "/data/regional-details/detail-greece-N35E26.json",
+      "sha256": "57aedafcb4a7486c2e19ff19950a049e854c42cc1be7afe26de29e58c17cf087"
+    },
+    {
+      "id": "detail-greece-N35E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 35,
+        "north": 36
+      },
+      "url": "/data/regional-details/detail-greece-N35E27.json",
+      "sha256": "43a30689de9191e41150f3546630a46dd530dd3a5c6396f2b161046374cf7c59"
+    },
+    {
+      "id": "detail-greece-N36E21",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 22,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E21.json",
+      "sha256": "77ada69cd66bd7101271e729a965a15ec22ebdda6af3c03fafbac08d4a260ef6"
+    },
+    {
+      "id": "detail-greece-N36E22",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22,
+        "east": 23,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E22.json",
+      "sha256": "4ffd26490209f982a75b56929e399a5b709d2432ef62ee73ac3f18b785eb082f"
+    },
+    {
+      "id": "detail-greece-N36E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E23.json",
+      "sha256": "e35ea787ef0f35db9ee566d434a03ba30c69cfde4688ec6359ef0fdf5dd686bd"
+    },
+    {
+      "id": "detail-greece-N36E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E24.json",
+      "sha256": "22020f44b3935bb43d8c1dfdd7165f3f5a592decc535a9ebe2a680e70820433b"
+    },
+    {
+      "id": "detail-greece-N36E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E25.json",
+      "sha256": "6a7ce588256a7e2cf7a1a2fcb8fba7f96f454262100d0480098f3e4116c46c4f"
+    },
+    {
+      "id": "detail-greece-N36E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E26.json",
+      "sha256": "9ae9744ae08b3ccb25098f2e9088ebee37dbe4a8de89d78e26b5a4af1e2a8501"
+    },
+    {
+      "id": "detail-greece-N36E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/regional-details/detail-greece-N36E27.json",
+      "sha256": "2238cefddfc3233a84d58fb34b59dc8a11675ef26328219df15db4d34c59ef6c"
+    },
+    {
+      "id": "detail-greece-N37E21",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 22,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E21.json",
+      "sha256": "695e028925e68c76ef0685fb4352c07862e7e04339348b30f0e7f53ab3c8b03b"
+    },
+    {
+      "id": "detail-greece-N37E22",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22,
+        "east": 23,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E22.json",
+      "sha256": "7cf88c2e59b630ad9897102f7c096ab081efed83e56a58294223c5142373867e"
+    },
+    {
+      "id": "detail-greece-N37E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E23.json",
+      "sha256": "8f00ff95780bb229c8ec79b371e4a447a1bf88248bbb12eff2ae2747f811751c"
+    },
+    {
+      "id": "detail-greece-N37E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E24.json",
+      "sha256": "6970f6251a3427bf130d11a19ee707d2e6337b41c11b256b829c9a8f605ca980"
+    },
+    {
+      "id": "detail-greece-N37E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E25.json",
+      "sha256": "7964cfc7c98bab19b0b90703626b126ab2cfd071187470eb2e2435a1a19da3fb"
+    },
+    {
+      "id": "detail-greece-N37E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E26.json",
+      "sha256": "02c445a7ab1e7dc77115413d32d635fb3aaef41f254f7187fbaa7b36853bac3d"
+    },
+    {
+      "id": "detail-greece-N37E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/regional-details/detail-greece-N37E27.json",
+      "sha256": "aa2c8f866b2e5930360f28d340e4c4b9f6c7a11d7d75afb0fbad4419e5a1d459"
+    },
+    {
+      "id": "detail-greece-N38E21",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 22,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E21.json",
+      "sha256": "4d8042ea3717019e9c39177a665e456e9395b3a7a09b5d2e3697608e920dc5c1"
+    },
+    {
+      "id": "detail-greece-N38E22",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22,
+        "east": 23,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E22.json",
+      "sha256": "5761ce6447f3804d88c53d51d5c46d95d04b553e7ba908773a71ddc9e36d4b91"
+    },
+    {
+      "id": "detail-greece-N38E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E23.json",
+      "sha256": "44b50de262839e997022463dc87f0cd656b18b95e5830491d092696adb535d12"
+    },
+    {
+      "id": "detail-greece-N38E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E24.json",
+      "sha256": "2b82686c6f22ee93d995e541e097a90f0b8b3834f87084e227611eeda23b8c97"
+    },
+    {
+      "id": "detail-greece-N38E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E25.json",
+      "sha256": "9ca18cfd8d22e64ba6668c8d8ac0985820850a4400aa87a3f3a9dec021ef9ed3"
+    },
+    {
+      "id": "detail-greece-N38E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E26.json",
+      "sha256": "085a893b9e9a69222b5fa806c3b5d9c8dd82112d6c9af3fffc77e2818d1218c0"
+    },
+    {
+      "id": "detail-greece-N38E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/regional-details/detail-greece-N38E27.json",
+      "sha256": "d9a7da5929b85150747e425c7f7f2bd367a7bfde3e99901c3421b00f73382304"
+    },
+    {
+      "id": "detail-greece-N39E21",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 22,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E21.json",
+      "sha256": "c80227807a060262bc394ee372a6e528d34641742e0073125a9132a070c81d92"
+    },
+    {
+      "id": "detail-greece-N39E22",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22,
+        "east": 23,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E22.json",
+      "sha256": "fc4a936bdd9115c9477b22d593f92e7972347387ea36f391a6556957c0698fa2"
+    },
+    {
+      "id": "detail-greece-N39E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E23.json",
+      "sha256": "3e0b38a2aeaf13634bcc282322b49c6a1459b2cbf86f9d0b8fbf2a9469c98664"
+    },
+    {
+      "id": "detail-greece-N39E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E24.json",
+      "sha256": "e969c9fecef65607df80b2eb70bfe081aada068b0abb957566c88d5f08edfbab"
+    },
+    {
+      "id": "detail-greece-N39E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E25.json",
+      "sha256": "7ef9e7e0d004e230f345327db16d67d08b957950450dbfa015701efe7b8ca69d"
+    },
+    {
+      "id": "detail-greece-N39E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E26.json",
+      "sha256": "d5b178894f1674049b3c47d5936fd1313d7a72184dea8f39fa016d3ba9adec2f"
+    },
+    {
+      "id": "detail-greece-N39E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/regional-details/detail-greece-N39E27.json",
+      "sha256": "78c9c7caa82ea55b4166f8160b1805ec0459619c7b22f4f641b4b268b61f980b"
+    },
+    {
+      "id": "detail-greece-N40E21",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 21,
+        "east": 22,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E21.json",
+      "sha256": "5e2a1f1ae51c142feef2648a43b25bee0b86d010b673f6b062dcf677b46c3ea9"
+    },
+    {
+      "id": "detail-greece-N40E22",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22,
+        "east": 23,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E22.json",
+      "sha256": "7a7e6fbdcd28f4f2f0e2209ebe590594460a2c44938bff55f8f4d02b72f5972a"
+    },
+    {
+      "id": "detail-greece-N40E23",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 23,
+        "east": 24,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E23.json",
+      "sha256": "703809c65a27670b4fe2f917d2056453954ede4bd30415943ec8d01759b291c2"
+    },
+    {
+      "id": "detail-greece-N40E24",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 24,
+        "east": 25,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E24.json",
+      "sha256": "55c8c59dd40d0af09ecc822375cc7f8f4821748d2cb8af35977ef3bf460e862b"
+    },
+    {
+      "id": "detail-greece-N40E25",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 25,
+        "east": 26,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E25.json",
+      "sha256": "678bc5a787f60cb280f833fabb77be8c3da8dc2ac8313c7f50ef00d4596aa484"
+    },
+    {
+      "id": "detail-greece-N40E26",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 26,
+        "east": 27,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E26.json",
+      "sha256": "cd2b71cbaf61e9e263de550e4b9610392c890c057941929cc168bff5cbab6f02"
+    },
+    {
+      "id": "detail-greece-N40E27",
+      "kind": "regional",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 27,
+        "east": 28,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/regional-details/detail-greece-N40E27.json",
+      "sha256": "0c1a672559d66dab8d7a6a5b0e3eae317c857e1f6c7de1913365f772121bb6fb"
+    },
+    {
+      "id": "window-greece-argolid-coast",
+      "kind": "city",
+      "detailArea": "greece",
+      "bounds": {
+        "west": 22.76875,
+        "east": 22.83125,
+        "south": 37.52875,
+        "north": 37.59125
+      },
+      "url": "/data/regional-details/window-greece-argolid-coast.json",
+      "sha256": "147aa18833121362f80a2f039b66f41fd608c8b0cf9cb08c36cda9f67c39badb"
+    },
+    {
+      "id": "window-egypt-nile-escarpment",
+      "kind": "city",
+      "detailArea": "egypt",
+      "bounds": {
+        "west": 32.53875,
+        "east": 32.60125,
+        "south": 25.70875,
+        "north": 25.77125
+      },
+      "url": "/data/regional-details/window-egypt-nile-escarpment.json",
+      "sha256": "f3ef30f110440242c0b3ddb49f2eca8a909694536b5f4415111ad66250810a12"
+    }
+  ],
+  "sources": [
+    {
+      "id": "detail-egypt-N24E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E029_00_DEM/Copernicus_DSM_COG_10_N24_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "4b27d5de6cd7cab03bda284c6be78d9bea8e5d3eeb78e82c148e7b0b7286764c"
+    },
+    {
+      "id": "detail-egypt-N24E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E030_00_DEM/Copernicus_DSM_COG_10_N24_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "e673727ed8d1475979a19b49d9072f2a9d4e74d000ba1df566304fef7a70b1c9"
+    },
+    {
+      "id": "detail-egypt-N24E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E031_00_DEM/Copernicus_DSM_COG_10_N24_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "5fd1a535a25cc62665364310a377fd8b39361c956f68e54555394e0a09078864"
+    },
+    {
+      "id": "detail-egypt-N24E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E032_00_DEM/Copernicus_DSM_COG_10_N24_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "825979683fffadde4c90cb0d6ae1a4661391171c0c35b8e3912ea93953f12cde"
+    },
+    {
+      "id": "detail-egypt-N24E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E033_00_DEM/Copernicus_DSM_COG_10_N24_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "da40389b2976e5f5c96a800a5bc178474bb1950b90173a7c88d0a25f6b0c7114"
+    },
+    {
+      "id": "detail-egypt-N25E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E029_00_DEM/Copernicus_DSM_COG_10_N25_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "a07703c937bc3210a01ac0dcadf45da1afd14d48b4e931e6bf8c1376eab8ac3d"
+    },
+    {
+      "id": "detail-egypt-N25E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E030_00_DEM/Copernicus_DSM_COG_10_N25_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "da67a8211c1c6bda81d46835879b7041047d5b1a842fae8b83fe4059104da557"
+    },
+    {
+      "id": "detail-egypt-N25E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E031_00_DEM/Copernicus_DSM_COG_10_N25_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "a33a4915718e151f2ba27a0c93145d6744fd2a648ce731bd1cc23fe43d10ec66"
+    },
+    {
+      "id": "detail-egypt-N25E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E032_00_DEM/Copernicus_DSM_COG_10_N25_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "2569a453a665e3261b096805283bf1be2ba392dcc5ddefc538bdd75b7d2ce6e1"
+    },
+    {
+      "id": "detail-egypt-N25E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E033_00_DEM/Copernicus_DSM_COG_10_N25_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "b690e2f071b837b0cd17a9b4b9e7009687c7cdcc6dbdfa0bd8dce91d26ea14cd"
+    },
+    {
+      "id": "detail-egypt-N26E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E029_00_DEM/Copernicus_DSM_COG_10_N26_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "46a25d67852f59143fcc20dfcd422d68153d3e54c6a7d9bb2e5673e9a57a20e5"
+    },
+    {
+      "id": "detail-egypt-N26E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E030_00_DEM/Copernicus_DSM_COG_10_N26_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "4df9b6c54b37bd8a457eb8d62941250db56236feee2f0ffa925d3a8a1f77398a"
+    },
+    {
+      "id": "detail-egypt-N26E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E031_00_DEM/Copernicus_DSM_COG_10_N26_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "0da8a9caf0aaa026a3966edebcc248fb2fbc04b953923b714bb8da2dd8e470cd"
+    },
+    {
+      "id": "detail-egypt-N26E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E032_00_DEM/Copernicus_DSM_COG_10_N26_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "b7275d797942db2b2f9829ff490dc9e71a7c00b513045bc88f0d215cb27d1e28"
+    },
+    {
+      "id": "detail-egypt-N26E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E033_00_DEM/Copernicus_DSM_COG_10_N26_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "95b542141da929a2df5feb45d49220fa273de043730c2df8edf8303271623eae"
+    },
+    {
+      "id": "detail-egypt-N27E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E029_00_DEM/Copernicus_DSM_COG_10_N27_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "e86abc788324f7af06f2b1aad87174abb06fd143eef7a1a47c2267d4c7f0b916"
+    },
+    {
+      "id": "detail-egypt-N27E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E030_00_DEM/Copernicus_DSM_COG_10_N27_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "010507ad4099eb5eace0b90effad139a93852a7291d88e04b4c9178c6a1e78ec"
+    },
+    {
+      "id": "detail-egypt-N27E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E031_00_DEM/Copernicus_DSM_COG_10_N27_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "ea6839fb2038ede69ab6e3576d81d1a1884e2ca38b65db42e4cb4773a8bbf9f4"
+    },
+    {
+      "id": "detail-egypt-N27E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E032_00_DEM/Copernicus_DSM_COG_10_N27_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "62f8403a398472b5e4b46cbcb22b29232043c189edd23f9b710f38b97ee6f353"
+    },
+    {
+      "id": "detail-egypt-N27E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E033_00_DEM/Copernicus_DSM_COG_10_N27_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "dec3b7a44aac2fd00f101ec4608e2b96fecf308ef055c9948aea3cd6dd245b30"
+    },
+    {
+      "id": "detail-egypt-N28E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E029_00_DEM/Copernicus_DSM_COG_10_N28_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "d93c733d4a837606c0d46a768590ab18ba2f1df3187fee98eb357a7a24f372b5"
+    },
+    {
+      "id": "detail-egypt-N28E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E030_00_DEM/Copernicus_DSM_COG_10_N28_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "c6cce41426dcc4d2a195baaea9560725a2a928bdcd3e9b3eecedd0ca0f2be29b"
+    },
+    {
+      "id": "detail-egypt-N28E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E031_00_DEM/Copernicus_DSM_COG_10_N28_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "33e03367c18a0157422e32317d116067d434aa6ad53597b20f9b0a6112f8bc9c"
+    },
+    {
+      "id": "detail-egypt-N28E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E032_00_DEM/Copernicus_DSM_COG_10_N28_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "19c7e1340fa9eb3fe02a4c171e863a95b98a7a6937e1fa1d992bf4e62e0daf9a"
+    },
+    {
+      "id": "detail-egypt-N28E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E033_00_DEM/Copernicus_DSM_COG_10_N28_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "74014fcb429c45a49fbbe67de9207a2e3d2094b8fafba0ef20f17e1c41ad419f"
+    },
+    {
+      "id": "detail-egypt-N29E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N29_00_E029_00_DEM/Copernicus_DSM_COG_10_N29_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "2b0444ec533001e7306573e6bd7576ddc091e0f8bda26765e6fce28010beae61"
+    },
+    {
+      "id": "detail-egypt-N29E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N29_00_E030_00_DEM/Copernicus_DSM_COG_10_N29_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "f5d89fca543c77fbaf30ddfb99cfd2b05d5fd6417f102cb957d425180db653da"
+    },
+    {
+      "id": "detail-egypt-N29E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N29_00_E031_00_DEM/Copernicus_DSM_COG_10_N29_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "07999d2e0bed28dca8a24038152ad01350672385af915427c28b008cc3adb18b"
+    },
+    {
+      "id": "detail-egypt-N29E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N29_00_E032_00_DEM/Copernicus_DSM_COG_10_N29_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "21e67a519e177dea656eaa4de2e9a5baeff431d82800835bfd6314527ae202d1"
+    },
+    {
+      "id": "detail-egypt-N29E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N29_00_E033_00_DEM/Copernicus_DSM_COG_10_N29_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "a464bd07fe01003aa3a939092fafe6a9fc9f02d5509f1d8ab0225488e29a780f"
+    },
+    {
+      "id": "detail-egypt-N30E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E029_00_DEM/Copernicus_DSM_COG_10_N30_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "3893493b6ca85b1ab57c0bec2d5d6235f389c69fabc79d50ec7a72c473f51418"
+    },
+    {
+      "id": "detail-egypt-N30E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E030_00_DEM/Copernicus_DSM_COG_10_N30_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "a645606593cbaf6096f255d0bf6f787d4b922de67312439171f567a918b0d8d1"
+    },
+    {
+      "id": "detail-egypt-N30E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E031_00_DEM/Copernicus_DSM_COG_10_N30_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "57abd4a3f84ef29533b3f3efba1e9065d90a3cf23d380649c4fb20175be8b7bc"
+    },
+    {
+      "id": "detail-egypt-N30E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E032_00_DEM/Copernicus_DSM_COG_10_N30_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "c72e2196662745c83e31bdd80219987bacb387efb1a8d5250946ad5159c7f486"
+    },
+    {
+      "id": "detail-egypt-N30E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E033_00_DEM/Copernicus_DSM_COG_10_N30_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "3bd32058cb39c7708228e964516f4b518d38dd9a299ec1c64719dbbabc02c53e"
+    },
+    {
+      "id": "detail-egypt-N31E29",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N31_00_E029_00_DEM/Copernicus_DSM_COG_10_N31_00_E029_00_DEM.tif",
+      "sampledWindowSha256": "a1ee3e8eaf95e2644f1e0b47f4346d3262828e2d7a6f3571527999476de81a16"
+    },
+    {
+      "id": "detail-egypt-N31E30",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N31_00_E030_00_DEM/Copernicus_DSM_COG_10_N31_00_E030_00_DEM.tif",
+      "sampledWindowSha256": "97fc188d6c2bfe2f6dd84b22d81966df04ad975e26d5d8aede4380205e24d75b"
+    },
+    {
+      "id": "detail-egypt-N31E31",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N31_00_E031_00_DEM/Copernicus_DSM_COG_10_N31_00_E031_00_DEM.tif",
+      "sampledWindowSha256": "3c94cbfe7b79d20a8c1b661192ae925559f431d28dabe44520dd620f17f1fc1b"
+    },
+    {
+      "id": "detail-egypt-N31E32",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N31_00_E032_00_DEM/Copernicus_DSM_COG_10_N31_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "e93dd92b6b7860e01bd215bc67681ef60d01253bb8868157dafa0dc3acdd2b30"
+    },
+    {
+      "id": "detail-egypt-N31E33",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N31_00_E033_00_DEM/Copernicus_DSM_COG_10_N31_00_E033_00_DEM.tif",
+      "sampledWindowSha256": "890917ad8cc9c9633a20ae74ebc44381196eba3338d96b8a4826cc71121a438d"
+    },
+    {
+      "id": "detail-greece-N35E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E023_00_DEM/Copernicus_DSM_COG_10_N35_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "2f1c7519c3d7339cb8060ce5113e1de943321a58be871fb0112f07ff610ae217"
+    },
+    {
+      "id": "detail-greece-N35E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E024_00_DEM/Copernicus_DSM_COG_10_N35_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "95b6f9fb8d59ed138ad20258df1ae93da94abcedfba5bc78cba983b099c47479"
+    },
+    {
+      "id": "detail-greece-N35E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E025_00_DEM/Copernicus_DSM_COG_10_N35_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "8e31c9b8b5404e3cf1727d153c46662a9a229e6b6bc127c1dfd04002a883c822"
+    },
+    {
+      "id": "detail-greece-N35E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E026_00_DEM/Copernicus_DSM_COG_10_N35_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "6c5201569105e0539c32baf3f33f35dbcbae2f2d4df7d18609481473a12b9edd"
+    },
+    {
+      "id": "detail-greece-N35E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E027_00_DEM/Copernicus_DSM_COG_10_N35_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "0df1ac0e4f37a4d679f392fc6d92af028111916af030771a8d5f9ec384cfab97"
+    },
+    {
+      "id": "detail-greece-N36E21",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E021_00_DEM/Copernicus_DSM_COG_10_N36_00_E021_00_DEM.tif",
+      "sampledWindowSha256": "873f54d97c37cc6bd82ff08c1e04be85a1f0de9991980989a37fd6f210df53ef"
+    },
+    {
+      "id": "detail-greece-N36E22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E022_00_DEM/Copernicus_DSM_COG_10_N36_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "f699790ee86e60b439119378b107320d1f12d0c82620b8e63fe8559d19f6d4ac"
+    },
+    {
+      "id": "detail-greece-N36E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E023_00_DEM/Copernicus_DSM_COG_10_N36_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "98f5d69f3ca3af8120661aab351b9cc1321a9857d882e527b18abac9b0e78f84"
+    },
+    {
+      "id": "detail-greece-N36E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E024_00_DEM/Copernicus_DSM_COG_10_N36_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "2e727c4cd734536bfddbc93dea9a9fb585222cb9be86868d985f08963bc3a038"
+    },
+    {
+      "id": "detail-greece-N36E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E025_00_DEM/Copernicus_DSM_COG_10_N36_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "140f06d5ff6c9a5f3d127bd6bf502e69bedcc3fcddd9636df337c0b0a89e2afb"
+    },
+    {
+      "id": "detail-greece-N36E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E026_00_DEM/Copernicus_DSM_COG_10_N36_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "481dff1b2605425d3a549bd47cf46f12efdbf99f10efaa4facfa579b11bb56cf"
+    },
+    {
+      "id": "detail-greece-N36E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E027_00_DEM/Copernicus_DSM_COG_10_N36_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "560dc9a2ce7049f644dfed53396e2e911ed1530df00ce68f8607f11f3a0adccc"
+    },
+    {
+      "id": "detail-greece-N37E21",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E021_00_DEM/Copernicus_DSM_COG_10_N37_00_E021_00_DEM.tif",
+      "sampledWindowSha256": "dff03871804d584a53907e2620703caa184e19e724b4f3ec540e9f79f55dc824"
+    },
+    {
+      "id": "detail-greece-N37E22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E022_00_DEM/Copernicus_DSM_COG_10_N37_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "002bce25f43786492e61b375c3e34efc693440b965fd183f498b1b78bb3ff918"
+    },
+    {
+      "id": "detail-greece-N37E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E023_00_DEM/Copernicus_DSM_COG_10_N37_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "5d17bfe16b7e47fec53f3d94fc16a4199c5fbb9af73e7aa6f89d0fd09792511b"
+    },
+    {
+      "id": "detail-greece-N37E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E024_00_DEM/Copernicus_DSM_COG_10_N37_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "008d34299f34516cfd4085c496addd99e7bd048b328632d4377a53710efb4b70"
+    },
+    {
+      "id": "detail-greece-N37E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E025_00_DEM/Copernicus_DSM_COG_10_N37_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "f371d4488b17829504c2cd66badaa26abe8dfa52adb344935703d711e639c590"
+    },
+    {
+      "id": "detail-greece-N37E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E026_00_DEM/Copernicus_DSM_COG_10_N37_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "8594a0a48fac49efc74dbc86c3b47e65199c54852b791bc9415dfc2a1f7fb4a2"
+    },
+    {
+      "id": "detail-greece-N37E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E027_00_DEM/Copernicus_DSM_COG_10_N37_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "a613efb579b90a29e6404f3c48b325bad3a8b372ad18dc587c8bdb9377a6432b"
+    },
+    {
+      "id": "detail-greece-N38E21",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E021_00_DEM/Copernicus_DSM_COG_10_N38_00_E021_00_DEM.tif",
+      "sampledWindowSha256": "bd94bde1f402295bff21ab5db2b69eda27a8406882570e831534ab001b7288ff"
+    },
+    {
+      "id": "detail-greece-N38E22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E022_00_DEM/Copernicus_DSM_COG_10_N38_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "1419e0be3e81f04f310b7dd39076e21751c53ec0e95d2a246691ffca7423a723"
+    },
+    {
+      "id": "detail-greece-N38E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E023_00_DEM/Copernicus_DSM_COG_10_N38_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "ea1744f4e0b3797184771747075c12cfd0beb7596df5c81be8ba78ba185c73d7"
+    },
+    {
+      "id": "detail-greece-N38E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E024_00_DEM/Copernicus_DSM_COG_10_N38_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "e0ca8692a195c9f24d6486343c3d817d23999d4a3d826bae6c2199979369beef"
+    },
+    {
+      "id": "detail-greece-N38E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E025_00_DEM/Copernicus_DSM_COG_10_N38_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "2290131d323e441fbb7b662878cc699c8632c5e8ea7895138f7ce90350d87c45"
+    },
+    {
+      "id": "detail-greece-N38E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E026_00_DEM/Copernicus_DSM_COG_10_N38_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "c591edf0d46c66815db354ef2483080e43e8d7f160b90ad99827208656f66645"
+    },
+    {
+      "id": "detail-greece-N38E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E027_00_DEM/Copernicus_DSM_COG_10_N38_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "a4d15c9be3d988e198cf86037291e4f8c17677a7063aee4d990b4c284c584501"
+    },
+    {
+      "id": "detail-greece-N39E21",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E021_00_DEM/Copernicus_DSM_COG_10_N39_00_E021_00_DEM.tif",
+      "sampledWindowSha256": "bc2e27afe283ba9ef71a262cdaf49ea667c2fac0adc9f450c7d6f26e319f1a18"
+    },
+    {
+      "id": "detail-greece-N39E22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E022_00_DEM/Copernicus_DSM_COG_10_N39_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "025f4a20e5699b49b1f60784c8b55bcff9bcd663aa4e793c320a5ef4e49c61d8"
+    },
+    {
+      "id": "detail-greece-N39E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E023_00_DEM/Copernicus_DSM_COG_10_N39_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "7557484de72e6192ee4a0252b8c1e3bd5f10b256f9e407cf76300fcc30adf86b"
+    },
+    {
+      "id": "detail-greece-N39E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E024_00_DEM/Copernicus_DSM_COG_10_N39_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "be7a11ea594c061dda9255f3822ac72e0846997357b025c7bed044b81f134cde"
+    },
+    {
+      "id": "detail-greece-N39E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E025_00_DEM/Copernicus_DSM_COG_10_N39_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "7329b26c2044068369f68e3394687e2a20387ade4a5fd9d96f63ff7c1c7d9e36"
+    },
+    {
+      "id": "detail-greece-N39E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E026_00_DEM/Copernicus_DSM_COG_10_N39_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "b567d0943da1adedd277a6988fca15ae7fbac8e26bc730ba541e89f569b166e6"
+    },
+    {
+      "id": "detail-greece-N39E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E027_00_DEM/Copernicus_DSM_COG_10_N39_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "259a31469302154b895883f65aed2539fb76d67c20035efb82dab5c9c5cbc911"
+    },
+    {
+      "id": "detail-greece-N40E21",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E021_00_DEM/Copernicus_DSM_COG_10_N40_00_E021_00_DEM.tif",
+      "sampledWindowSha256": "a40650a0620732a84852b818af311df2e747d2d0da15db0b95de70334d3bf42a"
+    },
+    {
+      "id": "detail-greece-N40E22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E022_00_DEM/Copernicus_DSM_COG_10_N40_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "29ecedb5a2ae839ad9be5bf89435b7c8eac71e28311ffbe3878ebc7417cef07e"
+    },
+    {
+      "id": "detail-greece-N40E23",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E023_00_DEM/Copernicus_DSM_COG_10_N40_00_E023_00_DEM.tif",
+      "sampledWindowSha256": "b145e84f4a507dbfbbbe621a5bb8a2e4824c35ba452df45fd6465ca696f6d252"
+    },
+    {
+      "id": "detail-greece-N40E24",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E024_00_DEM/Copernicus_DSM_COG_10_N40_00_E024_00_DEM.tif",
+      "sampledWindowSha256": "c67d35ec2b94c495fd16b3e5ef86df592eea15f5b168772457c6c36c9818f2f1"
+    },
+    {
+      "id": "detail-greece-N40E25",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E025_00_DEM/Copernicus_DSM_COG_10_N40_00_E025_00_DEM.tif",
+      "sampledWindowSha256": "244225d78e345d8ddbc453ca5ac68701ae826833e5fcadee464ca1bf9ec5292c"
+    },
+    {
+      "id": "detail-greece-N40E26",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E026_00_DEM/Copernicus_DSM_COG_10_N40_00_E026_00_DEM.tif",
+      "sampledWindowSha256": "066f0650656c2764557543458986a6775a57e7be9725e7794ed77f0976c1eb6b"
+    },
+    {
+      "id": "detail-greece-N40E27",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E027_00_DEM/Copernicus_DSM_COG_10_N40_00_E027_00_DEM.tif",
+      "sampledWindowSha256": "259f6f605affe6acaabcf1ed044daa8696608705cc1e08a28ab813e72416e92a"
+    },
+    {
+      "id": "window-egypt-nile-escarpment",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E032_00_DEM/Copernicus_DSM_COG_10_N25_00_E032_00_DEM.tif",
+      "sampledWindowSha256": "0e87d9bada720754ee36a129d405a1da252cbbe9a8353071ac37dec35b346340"
+    },
+    {
+      "id": "window-greece-argolid-coast",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E022_00_DEM/Copernicus_DSM_COG_10_N37_00_E022_00_DEM.tif",
+      "sampledWindowSha256": "37afbfd3d212d556e68679a8fc85c0fa9150a0e12f981996c660b0119f81183a"
+    }
+  ],
+  "gaps": [],
+  "hydrology": {
+    "url": "/data/regional-details/hydrology.json",
+    "segments": 65,
+    "sourceArchive": "https://www.soest.hawaii.edu/pwessel/gshhg/gshhg-shp-2.3.7.zip",
+    "sourceSha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41",
+    "historicalReconstruction": false
+  },
+  "existingFineHydrologySegments": 149,
+  "limitations": [
+    "Modern DSM includes modern surface features; not a 278 BCE reconstruction",
+    "Ecological material resolution remains about 2.47km latitude",
+    "Existing world rivers plus GSHHG WDBII classes 3-5; ancient courses and water engineering remain research dependent",
+    "Only listed bounds and local windows have this new sampling; other regions remain coarse until imported"
+  ]
+}

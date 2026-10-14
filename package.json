@@ -30,7 +30,12 @@
     "map:validate:world": "node scripts/validate-world-geography.mjs",
     "map:ecology": "node scripts/import-regional-ecology.mjs",
     "map:verify:regional": "node scripts/verify-regional-terrain.mjs",
-    "map:validate:ecology": "node scripts/validate-regional-ecology.mjs"
+    "map:validate:ecology": "node scripts/validate-regional-ecology.mjs",
+    "map:details": "node scripts/import-regional-details.mjs",
+    "map:verify:controls": "node scripts/verify-campaign-controls.mjs",
+    "map:verify:detail": "node scripts/verify-campaign-detail.mjs",
+    "map:profile:streaming": "node scripts/profile-terrain-streaming.mjs",
+    "map:verify:streaming": "node scripts/verify-streaming.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

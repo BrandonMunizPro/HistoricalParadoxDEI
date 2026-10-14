@@ -315,6 +315,7 @@ registered as such.
 | R-18 | What **messenger/courier evidence** is attested at or near 278 BCE (relay systems, dispatch practices, interception and "delayed order" incidents)? | **E5**, **E20** (proposed), **AD-32** | research |
 | R-19 | What attested **recruitment, levy and Area-of-Recruitment** systems (who may raise/obligate which troops, and by region) existed per polity at 278 BCE, to ground an **institutional** recruitment model rather than a build action? | E10, E13, R-1 | research |
 | R-20 | What **settlement architecture, morphology, building forms, materials and their 278 BCE chronology** are attested per culture/region (streets, fortifications, civic/religious/domestic/maritime forms), to ground a **development-driven visual-identity matrix** and a **procedural component catalog** with evidence classes and anachronism guards? | E12, E3, PT1, **AD-34** | research + art-direction |
+| R-21 | Which **specific settlements** existed at 278 BCE, where, and under what political relationship — an evidence-backed **settlement roster** (proposed IDs, per-site existence/identity/location/political confidence, chronology/anachronism guards, integration-readiness) growing toward the ~700 managed settlements? | E3, E12, E13, **AD-33**, R-20 | research |
 
 > **R-16 in progress (2026-10-14).** Expanded into a **world political-institutions
 > program** (scope comparable to *Rome II*'s grand campaign). In
@@ -331,6 +332,26 @@ registered as such.
 > (C1–C13, N1–N7, RV0–RV3), audited across all seven sheets in
 > [`research/r16-sheet-consistency-review.md`](../research/r16-sheet-consistency-review.md).
 > **Research changes no decision status: AD-25 stays OPEN.**
+>
+> **Settlement roster build-out complete (2026-10-14, R-21, AD-33).** An
+> evidence-backed settlement roster for 278 BCE now covers **all 19 envelope
+> regions**: **658 researched candidates in nine batches** (batch 1 central
+> Mediterranean; batch 2–3 Greece/Aegean/Crete + western Anatolia/Black Sea;
+> batch 4 Balkans/Thrace + Cisalpine Gaul; batch 5 Iberia + Transalpine Gaul;
+> batch 6 Levant/Mesopotamia/Iran; batch 7 North Africa/Cyrenaica/Egypt; batch 8
+> Central Asia/NW India/Arabia/Kush/Caucasus; batch 9 Britain/Germania), which with
+> the 35 atlas candidates reaches the **~693 mid target**. Master roster in
+> [`research/r16-settlement-roster.md`](../research/r16-settlement-roster.md) with
+> machine-readable per-settlement records in
+> [`research/r16-settlement-roster.batch1.json`](../research/r16-settlement-roster.batch1.json)
+> … `batch9.json`. The master roster adds a source-and-confidence audit, a
+> duplicate-guard against the 23-site atlas, anachronism checks, the full regional
+> coverage tracker, an integration-readiness summary and a verification/integration
+> plan. Records carry proposed (non-canonical) IDs, separate
+> existence/identity/location/political confidence, chronology/anachronism guards
+> and integration-readiness; they do **not** modify the authoritative atlas and
+> **AD-33 stays OPEN**. The next prerequisite is a Pleiades-id/coordinate
+> verification pass before any promotion.
 
 ## 5. Explicit non-goals for this documentation pass
 
