@@ -94,6 +94,7 @@ simulation explanation APIs and must never gate simulation architecture
 | **E17a** Persistence thin slice | Repository ports, snapshot + ledger store, derived-projection rebuild | Load a snapshot and continue; rebuild a derived view from state | ORM choice |
 | **E17b** Persistence hardening | Recovery, projection rebuilds, "why" query API | Crash recovery and explanation queries work | retention/migration |
 | **E18** Mutable government and political transformation | Transformation as a validated legal action; institutional resistance; hybrid arrangements; recognition consequences; **succession durability test** (ADR-0018/0011) | A faction's government changes only through a validated attempt with institutional and foreign responses; a personally dependent order can visibly fail at the leader's death | transformation vocabulary; eligibility data; recognition rules; durability modelling |
+| **E19** Economic authority and financial audit *(Proposal 2026-10-14)* | Accounts (personal / household / state / provincial / institutional), assets, an **append-only financial transaction ledger** linked to the causal ledger (ADR-0002/0010), spending authority **derived from offices**, and **audit / corruption as a derived discrepancy** rather than a scripted event | A treasury balance is reconstructible from transactions; a spending action is refused without the capability that authorises it; a corrupt skim is *derived* as an unexplained gap; integer amounts, no float drift | **AD-26** (schema, currency model); **AD-25** (spending authority); **R-15** (evidence). See [`economic-authority-architecture.md`](economic-authority-architecture.md) |
 | **PT1** Presentation *(parallel track)* | Presentation requirements seed; Visual Design Bible; shared UI grammar with culturally specific expression | Presentation reads simulation state and explanation APIs with **no write path**; simulation architecture is not blocked by presentation work | renderer; art pipeline; Visual Design Bible ownership |
 
 ## 3. Vertical slices and acceptance criteria
@@ -290,3 +291,51 @@ no Rome II campaign authority, and no event-count-based duration:
 - A unit that **disintegrates or is disbanded** stays **permanently
   referenceable** afterwards, and no ledger reference to it was rewritten
   (ADR-0009 §3).
+
+### S14 — Consequential Interaction (E4, E9, E14) *(Proposal 2026-10-14)*
+
+**Status: Proposal.** Adds a slice, it does not alter any approved slice. The
+mechanism behind the character-interaction/event expansion
+([`character-interaction-and-event-architecture.md`](character-interaction-and-event-architecture.md)).
+Depends on the delivered VS-4 character aggregate and the political office layer.
+
+- An interaction (command, persuade, accuse, patronise, pardon, rival, bribe,
+  honour) is **submitted as a proposal through the single legal-action gate**
+  (ADR-0006); it has **no bespoke mutation path**.
+- A character **reacts only to what it knows** (E5), filtered through **traits,
+  memories, relationships and legitimacy** — not to omniscient truth.
+- Event **eligibility is a pure predicate over authoritative state, evaluated at
+  execution time** by a scheduled trigger (standing constraint 11, ADR-0003 A5),
+  never a precomputed outcome.
+- Every accepted option's consequences flow **through the owning systems** (money
+  through the financial ledger, office through the political layer, relationship
+  through the relationship aggregate), and each appends a canonical ledger event
+  with causes and consequences (ADR-0002).
+- Dialogue text is **presentation only**; the presentation layer may not invent
+  options, and the deterministic template path renders the same interaction with
+  no model present.
+- **Gates:** **AD-28** (traits), **AD-29** (eligibility/consequence + dialogue
+  boundary). **Not a geography or E0–E8 blocker.**
+
+### S15 — Historical Start World, 278 BCE (E4, E10) *(Proposal 2026-10-14)*
+
+**Status: Proposal.** Adds a content slice for the proposed 278 BCE start
+([`../domain/campaign-start-and-historical-timeline.md`](../domain/campaign-start-and-historical-timeline.md)).
+It must **not** be built before geography (G1/VS-5) exists and the timeline model
+is decided.
+
+- A start-world places documented people who were alive in 278 BCE as **authored
+  entries** with year-precision or **range** ages and source notes.
+- People not yet born are **conditional historical entries**: a scheduled trigger
+  that **reads authoritative state** at due time and instantiates the person only
+  if the preconditions hold (parents alive and linked, house not extinct, polity
+  still exists, no divergence flag); otherwise it **suppresses** the entry and
+  records a divergence event.
+- **No blind generation:** the timeline never fabricates descendants of an
+  extinct line; house succession remains E4's business.
+- Authored death dates are **expectations, not forced outcomes**; divergence is
+  recorded and queryable.
+- Regenerating or re-importing the start-world keeps canonical IDs stable
+  (ADR-0009; **N-37**).
+- **Gates:** **AD-27** (timeline content model), **R-13** (start-world data),
+  **R-16** (per-polity institutions). **Not a geography or E0–E8 blocker.**

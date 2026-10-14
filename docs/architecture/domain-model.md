@@ -1,7 +1,7 @@
 # Domain relationship model
 
 - Status: **Proposal**. Contains approved parts (marked) and unresolved parts.
-- Related: [ADR-0001](../adr/0001-campaign-military-representation-vs-dei-tactical.md), [ADR-0002](../adr/0002-authoritative-state-causal-ledger-snapshots.md), [ADR-0003](../adr/0003-strategic-command-periods-simtime-pause.md), [ADR-0015](../adr/0015-campaign-command-hierarchy-and-tactical-control.md), [ADR-0016](../adr/0016-military-cohesion-and-post-battle-survival.md), [ADR-0017](../adr/0017-population-cohorts-migration-and-displacement.md), [ADR-0018](../adr/0018-mutable-government-and-political-transformation.md), [ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md), [glossary](../domain/glossary.md)
+- Related: [ADR-0001](../adr/0001-campaign-military-representation-vs-dei-tactical.md), [ADR-0002](../adr/0002-authoritative-state-causal-ledger-snapshots.md), [ADR-0003](../adr/0003-strategic-command-periods-simtime-pause.md), [ADR-0015](../adr/0015-campaign-command-hierarchy-and-tactical-control.md), [ADR-0016](../adr/0016-military-cohesion-and-post-battle-survival.md), [ADR-0017](../adr/0017-population-cohorts-migration-and-displacement.md), [ADR-0018](../adr/0018-mutable-government-and-political-transformation.md), [ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md), [military-architecture.md](military-architecture.md), [glossary](../domain/glossary.md)
 
 Names and shapes below are proposals for design discussion. Items marked
 **[B]** are dictated by blueprint text. Nothing here is implemented.

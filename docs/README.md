@@ -62,12 +62,42 @@ open.
 | [architecture/vertical-slices-and-epics.md](architecture/vertical-slices-and-epics.md) | Dependency-ordered epics and vertical slice acceptance criteria |
 | [architecture/execution-roadmap.md](architecture/execution-roadmap.md) | Approved execution roadmap and vertical slice plan: stages, VS-1…VS-10, tactical POC and geography tracks, decision gates, research, stop points |
 | [architecture/assumptions-and-open-decisions.md](architecture/assumptions-and-open-decisions.md) | Assumption register, unresolved decision register, research-dependent question register |
+| [architecture/political-office-and-government-architecture.md](architecture/political-office-and-government-architecture.md) | **Proposal (2026-10-14)** — office/government decomposition: role definition vs. holding vs. derived authority, role kinds, per-polity expression (Rome/Carthage/Ptolemaic) |
+| [architecture/economic-authority-architecture.md](architecture/economic-authority-architecture.md) | **Proposal (2026-10-14)** — ownership vs. control vs. flows, treasuries, financial transaction ledger, spending authority, audit/corruption as derived discrepancy (new epic E19) |
+| [architecture/character-interaction-and-event-architecture.md](architecture/character-interaction-and-event-architecture.md) | **Proposal (2026-10-14)** — traits/psychology (AD-28), self vs. reputation vs. legitimacy, interaction via the legal-action gate, event eligibility/consequence evaluation, dialogue boundary (AD-29) |
+| [architecture/geography-integration-requirements.md](architecture/geography-integration-requirements.md) | **Proposal (2026-10-14)** — simulation-side requirements and interfaces for the Codex/VS-5 geography track; identity vs. ownership separation |
+| [architecture/military-architecture.md](architecture/military-architecture.md) | **Proposal (2026-10-14)** — consolidates the Approved military architecture (ADR-0001/0015/0016/0020) and proposes the continuous geographic zoom army-presentation model (strategic marker ↔ close-range formations); presentation derives from simulation and zoom never changes state |
+| [architecture/intersettlement-infrastructure-and-information-transmission-architecture.md](architecture/intersettlement-infrastructure-and-information-transmission-architecture.md) | **Proposal (2026-10-14)** — authoritative infrastructure state (roads, bridges, passes, ferries, ports, river transport) and physical information transmission (observers, messengers, delivery, reliability, interception, delayed orders); one network serves military, economic, political and informational movement (AD-31, AD-32) |
+
+## Research plans
+
+| Document | Purpose |
+| --- | --- |
+| [architecture/start-world-research-plan.md](architecture/start-world-research-plan.md) | **Proposal (2026-10-14)** — research plan for R-13 – R-16 (278 BCE start-world dataset, per-polity institutions, economy/treasury evidence, art consistency); priority order, outputs and uncertainty handling |
+| [research/political-institution-research-template.md](research/political-institution-research-template.md) | **Proposal (2026-10-14)** — reusable R-16 political-institution research template (confidence labels, office tables, mapping to RoleDefinition/RoleHolding/Authority) |
+| [research/r16-world-political-institutions-program.md](research/r16-world-political-institutions-program.md) | **Proposal (2026-10-14)** — R-16 world program (discovery→verification→taxonomy method, entity classes A–F, ten research areas, priority tiers) |
+| [research/r16-candidate-entity-inventory.md](research/r16-candidate-entity-inventory.md) | **Proposal (2026-10-14)** — geo-grouped candidate entity inventory for 278 BCE (every map entity classified, anachronism register, open gaps) |
+| [research/r16-regional-coverage-matrix.md](research/r16-regional-coverage-matrix.md) | **Proposal (2026-10-14)** — coverage matrix (entities × ten research areas) and ordered backlog |
+| [research/r16-institutional-taxonomy.md](research/r16-institutional-taxonomy.md) | **Proposal (2026-10-14)** — proposed government families (F1–F7), role-kind usage, subordinate-community tiers (proposals to AD-25) |
+| [research/r16-rome-278bce.md](research/r16-rome-278bce.md) | **Research sheet (2026-10-14)** — Roman institutions at 278 BCE |
+| [research/r16-carthage-278bce.md](research/r16-carthage-278bce.md) | **Research sheet (2026-10-14)** — Carthaginian institutions at 278 BCE |
+| [research/r16-ptolemaic-egypt-278bce.md](research/r16-ptolemaic-egypt-278bce.md) | **Research sheet (2026-10-14)** — Ptolemaic institutions at 278 BCE |
+| [research/r16-seleucid-278bce.md](research/r16-seleucid-278bce.md) | **Research sheet (2026-10-14)** — Seleucid institutions at 278 BCE (Antiochus I; personal monarchy) |
+| [research/r16-macedon-278bce.md](research/r16-macedon-278bce.md) | **Research sheet (2026-10-14)** — Macedon at 278 BCE (kingship in contest; army assembly) |
+| [research/r16-epirus-278bce.md](research/r16-epirus-278bce.md) | **Research sheet (2026-10-14)** — Epirus at 278 BCE (Epirote League + Aiakid kingship) |
+| [research/r16-syracuse-278bce.md](research/r16-syracuse-278bce.md) | **Research sheet (2026-10-14)** — Syracuse at 278 BCE (civic *polis* + crisis command) |
+| [research/r16-aetolian-league-278bce.md](research/r16-aetolian-league-278bce.md) | **Research sheet (2026-10-14)** — Aetolian League at 278 BCE (F3 federal league; no king) |
+| [research/r16-maurya-278bce.md](research/r16-maurya-278bce.md) | **Research sheet (2026-10-14)** — Maurya at 278 BCE (F2 royal monarchy; Bindusara reign) |
+| [research/r16-model-challenges-addendum-20261014.md](research/r16-model-challenges-addendum-20261014.md) | **Proposal (2026-10-14)** — cross-sheet model-challenges addendum (T1–T6); concludes the taxonomy is sufficient (no extension, no deeper revision) |
+| [research/r16-model-challenges.md](research/r16-model-challenges.md) | **Proposal (2026-10-14)** — consolidated R-16 model challenges (C1–C13, N1–N7, RV0–RV3) as proposals to AD-25 (no architecture change) |
+| [research/r16-sheet-consistency-review.md](research/r16-sheet-consistency-review.md) | **Proposal (2026-10-14)** — seven-sheet consistency review against the taxonomy; architecture challenges (RV0–RV3) that should influence AD-25 |
 
 ## Domain reference
 
 | Document | Purpose |
 | --- | --- |
 | [domain/glossary.md](domain/glossary.md) | Shared vocabulary for design and code |
+| [domain/campaign-start-and-historical-timeline.md](domain/campaign-start-and-historical-timeline.md) | **Proposal (2026-10-14)** — proposed 278 BCE campaign start, verified starting facts with confidence, historical-character entrance policy, conditional lineage, alternate-history divergence |
 | [events/event-catalogue-v0.md](events/event-catalogue-v0.md) | Event kind catalogue v0 with tier, emitter and persistence intent |
 
 ## Presentation (parallel track)
@@ -75,6 +105,7 @@ open.
 | Document | Purpose |
 | --- | --- |
 | [presentation/presentation-requirements.md](presentation/presentation-requirements.md) | Seed for the future Visual Design Bible; shared UI grammar, culturally specific expression. Does not block simulation architecture |
+| [presentation/artwork-production-roadmap.md](presentation/artwork-production-roadmap.md) | **Proposal (2026-10-14)** — artwork production plan: prerequisite standard, style tokens, reference pipeline, portrait identity, emblems, events, settlements, asset metadata |
 
 ## Architecture decision records
 

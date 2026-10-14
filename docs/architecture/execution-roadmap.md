@@ -31,6 +31,15 @@
   BLUEPRINT; where sequencing or slicing references an ADR, the ADR remains the
   design authority.
 
+**VS5 implementation update, 2026-10-14:** G1 domain graph, terrain-aware route
+costs and adjacency locality queries are implemented alongside a requested bounded
+central Italy visual prototype. See [implementation and measured evidence](../vs5/central-italy-prototype.md).
+This begins the requested PT1/G2 experiment earlier than the original sequencing;
+imported WGS84 data and renderer units do not close AD-19 or AD-20. VS5 is not yet
+marked shipped; historical reconstruction, campaign persistence integration and
+production visual acceptance remain outstanding. Older "not started" references
+below describe the preceding milestone checkpoint.
+
 ---
 
 ## A. Roadmap Principles and Dependency Rules
@@ -302,5 +311,129 @@ is preserved below as the record of why it was chosen first.
 No contradiction found. Two tensions were examined and are *sequencing notes*, not defects:
 - **S13 names E7**, but the litmus needs no tactical engine for its time/scheduling claims → staged as core-now/full-after-VS-9, with **unchanged criteria and both runs mandatory**.
 - **E3's epic row mentions "coordinates"** while **AD-19 (canonical coordinate system) is deferred** → G1 satisfies E3 via location + adjacency + terrain properties with opaque IDs, which is precisely the approved migration path. AD-19 triggers at G2/G3, not before.
+
+---
+
+## J. Expansion status board and future work (2026-10-14)
+
+**Status: Proposal (2026-10-14).** Sections A–I above remain **Approved** and
+unchanged. This section records the *current* state of the world, and proposes
+(where new work should sit) without authorising implementation of anything
+listed as "future". Nothing here overrides any ADR or the sections above.
+
+### J.1 Status board
+
+| Track | State |
+| --- | --- |
+| **VS-1 / E0** Foundations | **Shipped** (`1546779`) |
+| **VS-2 / E1** Time & Clock | **Shipped** |
+| **VS-3 / E2 + E17a** Ledger + persistence | **Shipped** (`3814d69`) |
+| **VS-4 / E4** Living Character | **Shipped** (`3aec257`) |
+| **VS-5 / E3 G1** Geography | **Functioning prototype delivered (Codex, uncommitted)** — central-Italy G1 graph + bounded presentation experiment (`docs/vs5/central-italy-prototype.md`); contract-conforming (see `geography-integration-requirements.md` §10); `npm run validate` green; AD-19/AD-20 remain open |
+| VS-6…VS-8, T0–T4 POCs, Stage 7/8, VS-9/VS-10 | Not started |
+| Political office / government layer (E9/E10/E18) | **Proposed decomposition** — see `political-office-and-government-architecture.md` |
+| Economic authority / audit (new epic E19) | **Proposed** — see `economic-authority-architecture.md` |
+| Character development expansion (S14) | **Proposed** — see `character-interaction-and-event-architecture.md` |
+| Historical start-world (278 BCE, S15) | **Proposed** — see `domain/campaign-start-and-historical-timeline.md` |
+| Artwork production (PT1) | **Proposed roadmap** — see `presentation/artwork-production-roadmap.md` |
+| Geography integration contract (for Codex/VS-5) | **Proposed + coordination response** — see `geography-integration-requirements.md` (§10) |
+| Military architecture + army presentation model | **Proposed** — see `military-architecture.md` (consolidates ADR-0001/0015/0016/0020; continuous geographic zoom replaces a separate army-management scene) |
+| Start-world research plan (R-13 – R-16) | **Proposed** — see `start-world-research-plan.md`; priority R-16 → R-13 |
+
+### J.2 Where the new work sits (dependency-driven, no timelines)
+
+The expansion adds **one new epic** and **two proposed slices**, and slots into
+the existing stage structure without restructuring it:
+
+- **E19 Economic authority and financial audit** (new epic, **Proposal**). Depends
+  on E12 (economy mechanisms), E9 (offices/spending authority), E13
+  (institutions hold funds) and **AD-25/AD-26**. Sequenced in **Stage 9** alongside
+  the other political epics; it must not block E0–E8 or the geography track.
+- **S14 Consequential Interaction** (proposed slice, E4 + E9 + E14). The
+  mechanism behind the "character interaction/events" expansion; gated on
+  **AD-28** (traits) and **AD-29** (eligibility/consequence evaluation).
+- **S15 Historical Start World (278 BCE)** (proposed slice, E4 + E10). The
+  start-world generation for the proposed 278 BCE campaign; gated on **AD-27**
+  (timeline content model) and **R-13** (start-world data).
+- **Artwork production (PT1)** runs **in parallel, never blocking** (ADR-0019);
+  its own gate is the Visual Design Bible (see the artwork roadmap §1).
+- **Military architecture + army presentation model** ([`military-architecture.md`](military-architecture.md),
+  **Proposal**) is a **presentation-track** concern. It sits with the geography
+  track's **G4 — Rendering, map UI, semantic zoom** (Stage 10 / parallel PT1),
+  gated by the Visual Design Bible (**AD-18**) and proposed as **AD-30**. It
+  **never blocks** E0–E9 or the geography track, and it is **explicitly not part
+  of VS-5**: the current VS-5 geography work owns G1 and a bounded presentation
+  experiment, not the army presentation model.
+
+**Rule (unchanged from §A).** New work is *dependency-ordered, not
+time-estimated*. The rows above say *where*, not *when*.
+
+### J.3 New register entries opened by the expansion
+
+| ID | Item | Blocks |
+| --- | --- | --- |
+| **AD-25** | Office model shape (role definition / holding / derived authority; role-kind vocabulary; collegiality, veto, term expiry) | E9, E10, E18 |
+| **AD-26** | Economic authority schema (accounts/assets/transactions; single vs multi-currency; audit-query vocabulary) | E19, E12 economy tuning |
+| **AD-27** | Historical timeline content model (conditional historical entries; birth scheduling; death policy — recommendation (c) hybrid) | E4, E10, S15 |
+| **AD-28** | Trait/psychology facet representation, ranges, transition function (consolidates the unnamed E4 "trait/psychology ranges" blocker) | E4 expansion, S14 |
+| **AD-29** | Event eligibility/consequence evaluation shape; dialogue/interaction presentation boundary | S14, S7, E16 |
+| **AD-30** | Army presentation model: continuous geographic zoom (strategic marker ↔ close-range formations), simulation-state → presentation-state mapping, fidelity/LOD | PT1 presentation (never blocks the simulation) |
+| **R-13** | 278 BCE start-world dataset (families, magistrates, treaties, dynasties, holdings; the `needs-research` character class) | E4, E10, S15, AD-27 |
+| **R-14** | Art-asset consistency and age-progression methodology; surviving-likeness evidence per historical figure | PT1 |
+| **R-15** | Ancient economy/treasury evidence per polity at 278 BCE | E19 content, E12 values |
+| **R-16** | Per-polity political institutions at 278 BCE, with anachronism checks (Roman magistracies, Carthaginian suffetes/gerousia, Ptolemaic court, Epirote league) | E9, E10, AD-25 |
+
+**Update 2026-10-14:** **AD-25 – AD-29** had their architectural *direction*
+approved, with refinements incorporated into their proposal documents; they
+**remain OPEN** until ruled closed. Research is now planned in
+[`start-world-research-plan.md`](start-world-research-plan.md), prioritising
+**R-16** (political institutions) then **R-13** (start-world dataset).
+
+### J.4 Dependencies, risks and open decisions (report to you)
+
+**Dependencies**
+- The **political office model (AD-25)** is the load-bearing decision: spending
+  authority (economic), knowledge access (intelligence) and interaction
+  capabilities all derive from it.
+- The **start-world (S15)** depends on **geography (G1/VS-5)** for locations and
+  on **AD-27** for how historical entries behave; it must not be built before
+  both.
+- **E19** depends on **E12** and **AD-25/AD-26**; sequencing it earlier would
+  violate the "economy values are content, mechanisms are architecture"
+  classification rule.
+
+**Risks**
+- **Anachronism.** The 278 BCE start invites later-Roman imports (denarius,
+  codified cursus honorum, permanent provinces, medieval heraldry). Mitigated by
+  explicit anachronism guards in the start-world and artwork documents; content
+  must be checked against **R-16/R-15** before authoring.
+- **Presentation leaking into the domain.** VS-5's in-progress tree adds a `three`
+  (renderer) dependency and a `campaign-map-state.ts`. ADR-0019 records the
+  renderer as **Unresolved**, and the presentation track must never become a
+  second source of geographic truth or put renderer types into `src/domain/`.
+  Recorded here so it is a decision, not a silent drift (see
+  `geography-integration-requirements.md` §7).
+- **Uncertain historical data.** Birth dates (Hannibal, Hamilcar), Gallic-war
+  years (284/283) and Carthaginian institutions are uncertain. The timeline model
+  treats uncertainty as **first-class** (ranges, `needs-research`, conditional
+  entries) rather than inventing canon; the risk is being forced to a false
+  precision, which R-13 must resist.
+- **Scope creep into the political layer.** E9/E10/E18 have open mechanics; the
+  proposed decomposition must not be mistaken for approved mechanics (AD-25/AD-26
+  gate it).
+
+**Open decisions to be resolved by you before implementation**
+- **AD-25, AD-26, AD-27, AD-28, AD-29** (above) — none may be silently resolved
+  during implementation.
+- **Renderer choice** (ADR-0019) is still **Unresolved** and is now a live
+  question given VS-5's `three` dependency.
+
+### J.5 Contradiction check (this expansion)
+
+No contradiction with Sections A–I or any ADR. One tension was examined and is a
+**sequencing note**, not a defect: the expansion adds an epic and slices **after**
+the current roadmap's Stage 6 boundary, which is consistent with §J.2's rule
+that geography and the E0–E8 sequence are never blocked by later political or
+content work. E19 is a new epic row, not a rewrite of an existing one.
 
 ---

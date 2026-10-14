@@ -239,6 +239,54 @@ campaign-side `BattleResult` boundary (ADR-0003 A12).
 | `notify.government_changed` | a faction's government changed, or an attempt failed (ADR-0018) | proposed |
 | `notify.regime_unrecognised` | a foreign power refused recognition (ADR-0018) | proposed |
 
+## Expansion candidate kinds *(Proposal 2026-10-14)*
+
+**Status: Proposal.** These kinds are candidates opened by the political,
+economic, interaction and timeline proposals. **Names, granularity and tiering
+are illustrative and not approved**; they are listed so the causal chains they
+participate in can be reviewed before any owning epic is designed. Tier and
+ledger intent are shown as *expected*, not decided.
+
+### Political office and legitimacy
+
+| Kind | Expected tier | Expected ledger | Causal role | Status |
+| --- | --- | --- | --- | --- |
+| `office.granted` | canonicalHistorical | yes | a character receives a role holding, with granting authority and provenance | proposed |
+| `office.ended` | canonicalHistorical | conditional | term expiry, resignation, deposition or death ends a holding (holding stays referenceable) | proposed |
+| `office.contested` | canonicalHistorical | conditional | a claim disputes a holding; derived authority is reduced/contested (ADR-0011) | proposed |
+| `capability.refused` | simulation | conditional | a proposed action was refused at the legal-action gate, with the reason | proposed |
+
+### Economic authority and audit
+
+| Kind | Expected tier | Expected ledger | Causal role | Status |
+| --- | --- | --- | --- | --- |
+| `finance.transaction_applied` | simulation | conditional | an authorised value transfer between accounts (the financial ledger) | proposed |
+| `finance.transaction_rejected` | simulation | conditional | a proposed transfer refused for want of spending authority | proposed |
+| `finance.audit_discrepancy` | canonicalHistorical | yes | a **derived** unexplained gap / circularity / disproportion (corruption signature) | proposed |
+| `finance.treasury_exhausted` | simulation | conditional | an authorised outflow failed because the account could not cover it | proposed |
+
+### Character interaction
+
+| Kind | Expected tier | Expected ledger | Causal role | Status |
+| --- | --- | --- | --- | --- |
+| `interaction.resolved` | simulation | conditional | a validated interaction applied with its consequences | proposed |
+| `trait.shifted` | simulation | conditional | an interaction moved a trait facet, with its cause | proposed |
+
+### Historical timeline divergence
+
+| Kind | Expected tier | Expected ledger | Causal role | Status |
+| --- | --- | --- | --- | --- |
+| `timeline.lineage_suppressed` | canonicalHistorical | yes | a conditional historical entry could not happen (house extinct, parent dead, polity gone) and was suppressed | proposed |
+
+> Every kind above, if accepted, must obey the same rules as the rest of this
+> catalogue: **no event counts time**, eligibility is evaluated at execution
+> against authoritative state, consequences flow through the owning systems, and
+> dialogue/presentation never mutates state. See
+> [`../architecture/political-office-and-government-architecture.md`](../architecture/political-office-and-government-architecture.md),
+> [`../architecture/economic-authority-architecture.md`](../architecture/economic-authority-architecture.md),
+> [`../architecture/character-interaction-and-event-architecture.md`](../architecture/character-interaction-and-event-architecture.md)
+> and [`../domain/campaign-start-and-historical-timeline.md`](../domain/campaign-start-and-historical-timeline.md).
+
 ## Notes
 
 - **No event counts time.** Every `simTime` in this catalogue is an absolute,

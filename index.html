@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HistoricalGame · Italia</title>
+    <link rel="stylesheet" href="/map/style.css" />
+  </head>
+  <body>
+    <main id="map" aria-label="Interactive central Italy campaign map"></main>
+    <header>
+      <div class="sigil">SPQR</div>
+      <div>
+        <small>HISTORICALGAME / CAMPAIGN ATLAS</small>
+        <h1>Italia <span>278 BCE</span></h1>
+      </div>
+      <div class="modes">
+        <button id="geographic" aria-pressed="true">Geography</button
+        ><button id="political" aria-pressed="false">Political</button>
+      </div>
+    </header>
+    <aside>
+      <small>THE HEART OF THE PENINSULA</small>
+      <h2 id="place-name">Central Italy</h2>
+      <p id="description">
+        From the banks of the Tiber to the plains of Campania. Select a
+        settlement to inspect its geographic record.
+      </p>
+      <dl id="details"></dl>
+      <div id="settlements"></div>
+      <div class="views">
+        <button id="focus-roma">Rome · intermediate</button>
+        <button id="focus-capua">Capua · intermediate</button>
+        <button id="focus-neapolis">Neapolis · close</button>
+        <button id="wide">Italian peninsula</button>
+        <button id="overhead">Overhead diagnostics</button>
+        <button id="focus-norba">Norba · close</button>
+      </div>
+      <button id="development-demo" disabled>Preview external development snapshot</button>
+      <p id="development-status" class="note">Visual fixture preview; no construction or economic rules.</p>
+      <p class="note">
+        Research prototype · modern elevation and coastline. Political
+        influence, vegetation and route alignment are provisional.
+      </p>
+      <details class="note">
+        <summary>Geographic sources</summary>
+        <p>
+          Copernicus GLO-30, GSHHG coastlines and WDBII rivers.
+          <a href="/data/italy-terrain/ATTRIBUTION.txt">Dataset notices</a>.
+          Mapzen; Europe terrain data produced using Copernicus data and
+          information funded by the European Union — EU-DEM layers. GMTED2010
+          and SRTM courtesy of USGS; ETOPO1 courtesy of NOAA.
+        </p>
+        <p>
+          Pleiades creators and contributors,
+          <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+          <a href="/data/central-italy.json">Place records and contributors</a>.
+        </p>
+      </details>
+    </aside>
+    <footer>
+      <span>Drag to orbit · right drag to pan · scroll to zoom</span
+      ><button id="reset">Reset view</button
+      ><span id="stats">Loading geographic data…</span>
+    </footer>
+    <div id="labels"></div>
+    <script type="module" src="/map/main.js"></script>
+  </body>
+</html>

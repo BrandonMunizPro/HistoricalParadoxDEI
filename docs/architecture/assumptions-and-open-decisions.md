@@ -177,6 +177,14 @@ as decided:
 | AD-18 | Visual Design Bible ownership, scope and sequencing; renderer; art pipeline | PT1 | Presentation design track |
 | AD-19 | Canonical campaign coordinate system, geometry representation, and the adjacency → real-geography migration path | E3, E7 | ADR-0020 design |
 | AD-20 | `BattlefieldResolver` algorithm and which geographic dimensions participate in matching | E7 | ADR-0020 design |
+| AD-25 | Office model: role definition vs. role holding vs. derived authority; role-kind vocabulary; representation of collegiality, veto and term expiry — **and the separation of legal authority from informal influence, economic leverage and coercive power** | E9, E10, E18 | [`political-office-and-government-architecture.md`](political-office-and-government-architecture.md) — **Proposal 2026-10-14**; **direction approved 2026-10-14, refinement (§4.1) incorporated, remains OPEN** |
+| AD-26 | Economic authority schema: accounts, assets, transactions, audit queries; single vs. multi-currency model — **with ownership, control and spending authorization represented separately** | E19, E12 | [`economic-authority-architecture.md`](economic-authority-architecture.md) — **Proposal 2026-10-14**; **direction approved 2026-10-14, refinement (§2, §10.1) incorporated, remains OPEN** |
+| AD-27 | Historical timeline content model: conditional historical entries, birth scheduling, and the death policy (recommended (c) hybrid), plus divergence events — **birth no longer requires the original polity to survive; authored death dates never override simulation outcomes** | E4, E10, S15 | [`../domain/campaign-start-and-historical-timeline.md`](../domain/campaign-start-and-historical-timeline.md) — **Proposal 2026-10-14**; **direction approved 2026-10-14, refinements (§4, §4.1, §5) incorporated, remains OPEN** |
+| AD-28 | Trait/psychology facet representation, ranges and transition function (consolidates the previously unnamed E4 "trait/psychology ranges" blocker) — **deterministic integers, recorded transitions, and dispositions kept separate from relational loyalty/reputation/legitimacy** | E4, S14 | [`character-interaction-and-event-architecture.md`](character-interaction-and-event-architecture.md) — **Proposal 2026-10-14**; **direction approved 2026-10-14, refinement (§2, §3) incorporated, remains OPEN** |
+| AD-29 | Event eligibility/consequence evaluation shape, and the dialogue/interaction presentation boundary (what is simulation vs. presentation) — **deterministic evaluator, legal-action gate, presentation-only dialogue** | S7, S14, E16 | [`character-interaction-and-event-architecture.md`](character-interaction-and-event-architecture.md) — **Proposal 2026-10-14**; **direction approved 2026-10-14, reaffirmed (§5, §6), remains OPEN** |
+| AD-30 | Army presentation model: the continuous geographic zoom (strategic marker ↔ close-range formation presentation), the mapping from authoritative military state to presentation states (marching/encamped/deployed/retreating), and presentation fidelity/LOD and selection→zoom interaction | PT1 presentation | [`military-architecture.md`](military-architecture.md) — **Proposal 2026-10-14, OPEN** (does not block the simulation; renderer stays **Unresolved**, ADR-0019) |
+| AD-31 | Infrastructure and route-quality model: representation of road segments and nodes (bridges/fords/ferries/passes/ports/river links); the route quality-class spectrum and condition/deterioration model; ownership vs. control vs. maintenance authority; and construction/upgrade/maintenance/damage as simulation changes | **E20** (proposed), E3, E6 | [`intersettlement-infrastructure-and-information-transmission-architecture.md`](intersettlement-infrastructure-and-information-transmission-architecture.md) — **Proposal 2026-10-14, OPEN** (does not block the simulation; does not change VS-5) |
+| AD-32 | Information transmission model: messenger entities, delivery scheduling over the infrastructure network, reliability/mutation, interception, delayed orders and deception | **E5** (extension), **E20** | [`intersettlement-infrastructure-and-information-transmission-architecture.md`](intersettlement-infrastructure-and-information-transmission-architecture.md) — **Proposal 2026-10-14, OPEN** (extends E5; blocks full E5/E20 information work only) |
 | ~~N-1~~ | ~~Intra-period SimTime resolution (event-driven vs fixed-step vs hybrid)~~ — **CLOSED 2026-10-05**: absolute monotonic fixed-point SimTime, due-work event-driven, no fixed world sweep (ADR-0003 A1–A6). Residual items carried below as **N-29**, **N-30**, **N-31** | ~~E1, E4~~ (plus **E0**, see §3.1) | ADR-0003 — **Approved** |
 | N-2 | Formation → DeI mapping fidelity (experience/equipment influence) | E7 | Adapter mapping design (ADR-0001 unresolved) |
 | N-3 | Significance policy details and contextual elevation | E2, E14, E18 | Event taxonomy ADR-0005 decision |
@@ -297,6 +305,28 @@ registered as such.
 | R-10 | What are plausible government transformations per polity and period? | E18 | research |
 | R-11 | Are the handoff's catalog caveats (`attribute_group` 0/4313 resolved; disjoint campaign/battle ground-type namespaces) blockers for V1? | E3, E7 | research |
 | R-12 | What historical travel speeds, courier and messenger rates, and report-transmission durations should ground movement and information-travel durations? | E1, E6, E12 | research |
+| R-13 | What is the attested **278 BCE start-world dataset** (families, magistrates, priestly officers, treaties in force, dynasties, territorial holdings), which parts are reconstructed, and which are content gaps to be generated? Includes the `needs-research` character class (e.g. Hamilcar Barca's birth). | E4, E10, S15, **AD-27** | research + content |
+| R-14 | What basis exists for **consistent art across a subject's ages**, and what surviving-likeness evidence exists per historical figure? | PT1 | art-direction research |
+| R-15 | What is the attested **ancient economy/treasury evidence** per polity at 278 BCE (revenue sources, tithe systems, minting, military pay, temple treasuries)? | E12, **E19** | research |
+| R-16 | What are the documented **political institutions per polity at 278 BCE**, with anachronism checks (Roman magistracies, Carthaginian suffetes/gerousia/Hundred-and-Four, Ptolemaic court, Epirote league, Syracusan constitution)? | E9, E10, **AD-25** | research |
+| R-17 | What **infrastructure evidence** is attested at 278 BCE per region (road networks and quality, bridges, fords, ferries, passes, ports and river-transport practices, with seasonality)? | **E20** (proposed), E3, E12 | research |
+| R-18 | What **messenger/courier evidence** is attested at or near 278 BCE (relay systems, dispatch practices, interception and "delayed order" incidents)? | **E5**, **E20** (proposed), **AD-32** | research |
+
+> **R-16 in progress (2026-10-14).** Expanded into a **world political-institutions
+> program** (scope comparable to *Rome II*'s grand campaign). In
+> [`research/`](../research/): a reusable institution-research template, a program
+> doc (`r16-world-political-institutions-program.md`), a candidate-entity
+> inventory (`r16-candidate-entity-inventory.md`), a coverage matrix
+> (`r16-regional-coverage-matrix.md`) and a proposed taxonomy
+> (`r16-institutional-taxonomy.md`); plus **seven detailed per-polity sheets** —
+> Rome, Carthage and Ptolemaic Egypt (first pass, now **retrofitted** with the
+> citizenship / subordinate-community sections J.1 and J.2) and the four T1 sheets
+> (Seleucid, Macedon, Epirus, Syracuse). Model challenges are consolidated as
+> proposals to AD-25 in
+> [`research/r16-model-challenges.md`](../research/r16-model-challenges.md)
+> (C1–C13, N1–N7, RV0–RV3), audited across all seven sheets in
+> [`research/r16-sheet-consistency-review.md`](../research/r16-sheet-consistency-review.md).
+> **Research changes no decision status: AD-25 stays OPEN.**
 
 ## 5. Explicit non-goals for this documentation pass
 

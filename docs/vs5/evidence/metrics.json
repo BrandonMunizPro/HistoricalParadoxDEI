@@ -1,0 +1,46 @@
+{
+  "environment": {
+    "platform": "win32",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "ramBytes": 16931676160,
+    "browser": "155.0.8059.40",
+    "viewport": "1440x1000",
+    "headless": true,
+    "url": "http://127.0.0.1:4173"
+  },
+  "metrics": {
+    "fps": 143.90559792775937,
+    "heapBytes": 130064561,
+    "drawCalls": 15,
+    "triangles": 561745,
+    "geometries": 25,
+    "textures": 2,
+    "terrainLod": 0,
+    "p95FrameMs": 7.100000000000364,
+    "sampleFrames": 480,
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Laptop GPU (0x00002520) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "mode": "geographic",
+    "selectedId": null,
+    "samples": 263169,
+    "trees": 3272
+  },
+  "browserProcessMemory": {
+    "processCount": 7,
+    "privateBytes": 666136576,
+    "workingSetBytes": 808501248,
+    "method": "CDP-owned Chrome process IDs; Windows Get-Process PrivateMemorySize64 and WorkingSet64. Working-set sum can double-count shared pages; GPU VRAM is excluded."
+  },
+  "assertions": [
+    "map loaded",
+    "Capua panel selection",
+    "political mode active",
+    "simulation ownership transfer updated overlay and preserved Capua identity",
+    "geographic mode restored",
+    "Roma selected by terrain marker raycast",
+    "region selected by terrain raycast",
+    "zoom changed camera distance and reset restored it",
+    "distant terrain LOD reduces triangle count",
+    "no uncaught browser errors"
+  ],
+  "limitations": "JS heap is not total process/GPU memory; headless FPS is not a production hardware benchmark."
+}

@@ -34,19 +34,22 @@ Repository for a historical strategy game.
   read-only extraction of Rome II / DeI database tables, the resulting catalogues,
   and the tooling needed to reproduce them. See
   [`research/rome2-dei/HANDOFF.md`](research/rome2-dei/HANDOFF.md).
-- Game systems, mechanics and the roadmap are **still being designed**. This
-  repository currently contains engineering foundations only.
+- VS1–VS4 provide the identity, time, ledger, persistence and living-character
+  foundations. VS5 now includes a central Italy geography and 3D map prototype;
+  later simulation systems and production map fidelity remain in development.
 
 ## Layout
 
 ```
 src/
   domain/battles/      Engine-agnostic battle types + BattleAdapter interface
-  simulation/          Authoritative campaign simulation (not implemented yet)
+  simulation/          Authoritative headless drivers and campaign read models
   tactical/adapters/   Battle engine adapters (Rome2DeIAdapter shell)
   infrastructure/      Catalogue access boundary (interface + shell)
   shared/              Small cross-cutting helpers
 tests/                 TypeScript tests (vitest)
+map/                   Three.js central Italy presentation prototype
+public/data/           Reproducible geographic bundle
 docs/                  Design documentation (see docs/README.md)
 research/rome2-dei/    Preserved Rome II / DeI interoperability research
 ```
@@ -67,6 +70,19 @@ decisions, and nothing in `docs/` authorises building a gameplay system yet.
 See also [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Working on the code
+
+The central Italy 3D campaign map prototype is runnable with `npm run map:dev`.
+See [VS5 implementation, sources, architecture and evidence](docs/vs5/central-italy-prototype.md).
+The [world-scope and Italian settlement atlas report](docs/vs5/world-scope-and-settlement-atlas.md)
+documents the current 36-candidate atlas and 23-site rendering expansion.
+The latest [Italian geography calibration, sources, reconstruction limits and screenshots](docs/vs5/italy-geographic-calibration.md)
+documents streamed peninsula terrain and the Rome, Capua and Neapolis visual pass.
+The newer [geographic fidelity and development-driven architecture report](docs/vs5/geographic-fidelity-and-development-visuals.md)
+includes overhead diagnostics, the bathymetry fix, Norba, and the external structure-snapshot prototype.
+Use `npm run map:terrain` to reproduce that terrain and `npm run map:verify:italy`
+to validate the production browser build.
+Use `npm run map:build` for its separate browser build; the TypeScript simulation
+remains authoritative and existing milestone validation still uses `npm run validate`.
 
 Requires Node.js 22 or newer.
 

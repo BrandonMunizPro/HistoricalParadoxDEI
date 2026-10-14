@@ -1,0 +1,32 @@
+{
+  "epoch": "278 BCE",
+  "status": "Procedural visual reconstruction; not surveyed footprints or simulation data",
+  "profiles": [
+    {
+      "key": "roma",
+      "culture": "Republican Latin/Italic",
+      "verified": ["Fourth-century defensive circuit predates the campaign", "Archaic/Republican temples predate Imperial rebuilding"],
+      "reconstructed": ["Irregular neighborhoods", "Partial defensive stretches, without named gates", "Unnamed Italic temple archetype", "Courtyard houses, paths and low-slope fields"],
+      "excluded": ["Colosseum", "Aurelian walls", "Imperial fora", "Imperial palaces", "Claimed excavated building footprints"],
+      "sources": ["https://museovirtualedellemura.romasitounesco.it/en/mura-serviane-english-version/", "https://pure.au.dk/ws/files/283891126/j.jua.5.126596.pdf"]
+    },
+    {
+      "key": "capua",
+      "culture": "Campanian/Italic",
+      "verified": ["Ancient Capua is at Santa Maria Capua Vetere, not the later city of Capua", "Etruscan, Samnite and Republican phases"],
+      "reconstructed": ["Dense irregular low-rise courtyard development", "Local paths and agricultural plots"],
+      "excluded": ["Surviving Imperial amphitheater", "Second-century CE Mithraeum", "Unsupported complete walls, gates and named sanctuary plans"],
+      "sources": ["https://reggiadicaserta.cultura.gov.it/en/discover-the-complex/the-archaeological-circuit-of-ancient-capua/"]
+    },
+    {
+      "key": "neapolis",
+      "culture": "Greek/Campanian",
+      "renderAnchor": {"lon":14.257,"lat":40.852,"uncertaintyMetres":1000},
+      "anchorStatus": "Provisional Greek historic-core presentation anchor; wider Pleiades Naples/Parthenope representative coordinate is retained in the atlas, not overwritten",
+      "verified": ["Greek rectangular street pattern", "Greek defensive walls", "Maritime setting"],
+      "reconstructed": ["Greek courtyard blocks", "Partial defenses", "Unnamed Greek sanctuary archetype", "Schematic streets and fields"],
+      "excluded": ["Claimed exact harbor basin or mole", "Later Roman theater", "Medieval castles", "Named temple footprints"],
+      "sources": ["https://whc.unesco.org/en/list/726/", "https://unesco.cultura.gov.it/en/projects/historic-centre-of-naples/"]
+    }
+  ]
+}

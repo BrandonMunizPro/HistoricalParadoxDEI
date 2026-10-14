@@ -1,0 +1,1540 @@
+{
+  "version": 2,
+  "coordinateReference": "WGS84 longitude/latitude degrees; Copernicus elevations in metres above EGM2008",
+  "sampling": "Pixel-center raster resampled to geographic vertex lattice; shared degree edges averaged; city windows blend to regional samples in the outer 16 cells",
+  "regionalSpacingMetres": [
+    650,
+    870
+  ],
+  "citySpacingMetres": [
+    39,
+    52
+  ],
+  "coastMaskSpacing": "513 samples per degree; 2049 samples across context extent",
+  "verticalExaggeration": 3,
+  "contextBounds": {
+    "west": -5,
+    "east": 30,
+    "south": 30,
+    "north": 55
+  },
+  "tileBounds": {
+    "west": 9,
+    "east": 20,
+    "south": 36,
+    "north": 46
+  },
+  "samplesPerEdge": 129,
+  "bathymetry": {
+    "source": "Mapzen Terrarium z5; preserved separately before land-only Copernicus sampling",
+    "usage": "Stylized water color only; not ancient navigation depth"
+  },
+  "tiles": [
+    {
+      "id": "N36E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E9.json"
+    },
+    {
+      "id": "N36E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E10.json"
+    },
+    {
+      "id": "N36E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E11.json"
+    },
+    {
+      "id": "N36E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E12.json"
+    },
+    {
+      "id": "N36E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E14.json"
+    },
+    {
+      "id": "N36E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 36,
+        "north": 37
+      },
+      "url": "/data/italy-terrain/N36E15.json"
+    },
+    {
+      "id": "N37E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E9.json"
+    },
+    {
+      "id": "N37E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E10.json"
+    },
+    {
+      "id": "N37E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E11.json"
+    },
+    {
+      "id": "N37E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E12.json"
+    },
+    {
+      "id": "N37E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E13.json"
+    },
+    {
+      "id": "N37E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E14.json"
+    },
+    {
+      "id": "N37E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E15.json"
+    },
+    {
+      "id": "N37E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 37,
+        "north": 38
+      },
+      "url": "/data/italy-terrain/N37E16.json"
+    },
+    {
+      "id": "N38E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E9.json"
+    },
+    {
+      "id": "N38E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E12.json"
+    },
+    {
+      "id": "N38E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E13.json"
+    },
+    {
+      "id": "N38E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E14.json"
+    },
+    {
+      "id": "N38E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E15.json"
+    },
+    {
+      "id": "N38E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E16.json"
+    },
+    {
+      "id": "N38E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 38,
+        "north": 39
+      },
+      "url": "/data/italy-terrain/N38E17.json"
+    },
+    {
+      "id": "N39E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E9.json"
+    },
+    {
+      "id": "N39E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E15.json"
+    },
+    {
+      "id": "N39E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E16.json"
+    },
+    {
+      "id": "N39E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E17.json"
+    },
+    {
+      "id": "N39E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E18.json"
+    },
+    {
+      "id": "N39E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 39,
+        "north": 40
+      },
+      "url": "/data/italy-terrain/N39E19.json"
+    },
+    {
+      "id": "N40E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E9.json"
+    },
+    {
+      "id": "N40E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E13.json"
+    },
+    {
+      "id": "N40E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E14.json"
+    },
+    {
+      "id": "N40E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E15.json"
+    },
+    {
+      "id": "N40E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E16.json"
+    },
+    {
+      "id": "N40E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E17.json"
+    },
+    {
+      "id": "N40E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E18.json"
+    },
+    {
+      "id": "N40E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 40,
+        "north": 41
+      },
+      "url": "/data/italy-terrain/N40E19.json"
+    },
+    {
+      "id": "N41E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E9.json"
+    },
+    {
+      "id": "N41E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E11.json"
+    },
+    {
+      "id": "N41E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E12.json"
+    },
+    {
+      "id": "N41E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E13.json"
+    },
+    {
+      "id": "N41E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E14.json"
+    },
+    {
+      "id": "N41E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E15.json"
+    },
+    {
+      "id": "N41E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E16.json"
+    },
+    {
+      "id": "N41E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E17.json"
+    },
+    {
+      "id": "N41E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 41,
+        "north": 42
+      },
+      "url": "/data/italy-terrain/N41E19.json"
+    },
+    {
+      "id": "N42E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E9.json"
+    },
+    {
+      "id": "N42E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E10.json"
+    },
+    {
+      "id": "N42E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E11.json"
+    },
+    {
+      "id": "N42E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E12.json"
+    },
+    {
+      "id": "N42E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E13.json"
+    },
+    {
+      "id": "N42E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E14.json"
+    },
+    {
+      "id": "N42E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E15.json"
+    },
+    {
+      "id": "N42E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E17.json"
+    },
+    {
+      "id": "N42E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E18.json"
+    },
+    {
+      "id": "N42E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 42,
+        "north": 43
+      },
+      "url": "/data/italy-terrain/N42E19.json"
+    },
+    {
+      "id": "N43E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E10.json"
+    },
+    {
+      "id": "N43E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E11.json"
+    },
+    {
+      "id": "N43E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E12.json"
+    },
+    {
+      "id": "N43E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E13.json"
+    },
+    {
+      "id": "N43E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E15.json"
+    },
+    {
+      "id": "N43E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E16.json"
+    },
+    {
+      "id": "N43E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E17.json"
+    },
+    {
+      "id": "N43E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E18.json"
+    },
+    {
+      "id": "N43E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 43,
+        "north": 44
+      },
+      "url": "/data/italy-terrain/N43E19.json"
+    },
+    {
+      "id": "N44E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E9.json"
+    },
+    {
+      "id": "N44E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E10.json"
+    },
+    {
+      "id": "N44E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E11.json"
+    },
+    {
+      "id": "N44E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E12.json"
+    },
+    {
+      "id": "N44E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E13.json"
+    },
+    {
+      "id": "N44E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E14.json"
+    },
+    {
+      "id": "N44E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E15.json"
+    },
+    {
+      "id": "N44E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E16.json"
+    },
+    {
+      "id": "N44E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E17.json"
+    },
+    {
+      "id": "N44E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E18.json"
+    },
+    {
+      "id": "N44E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 44,
+        "north": 45
+      },
+      "url": "/data/italy-terrain/N44E19.json"
+    },
+    {
+      "id": "N45E9",
+      "kind": "regional",
+      "bounds": {
+        "west": 9,
+        "east": 10,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E9.json"
+    },
+    {
+      "id": "N45E10",
+      "kind": "regional",
+      "bounds": {
+        "west": 10,
+        "east": 11,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E10.json"
+    },
+    {
+      "id": "N45E11",
+      "kind": "regional",
+      "bounds": {
+        "west": 11,
+        "east": 12,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E11.json"
+    },
+    {
+      "id": "N45E12",
+      "kind": "regional",
+      "bounds": {
+        "west": 12,
+        "east": 13,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E12.json"
+    },
+    {
+      "id": "N45E13",
+      "kind": "regional",
+      "bounds": {
+        "west": 13,
+        "east": 14,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E13.json"
+    },
+    {
+      "id": "N45E14",
+      "kind": "regional",
+      "bounds": {
+        "west": 14,
+        "east": 15,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E14.json"
+    },
+    {
+      "id": "N45E15",
+      "kind": "regional",
+      "bounds": {
+        "west": 15,
+        "east": 16,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E15.json"
+    },
+    {
+      "id": "N45E16",
+      "kind": "regional",
+      "bounds": {
+        "west": 16,
+        "east": 17,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E16.json"
+    },
+    {
+      "id": "N45E17",
+      "kind": "regional",
+      "bounds": {
+        "west": 17,
+        "east": 18,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E17.json"
+    },
+    {
+      "id": "N45E18",
+      "kind": "regional",
+      "bounds": {
+        "west": 18,
+        "east": 19,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E18.json"
+    },
+    {
+      "id": "N45E19",
+      "kind": "regional",
+      "bounds": {
+        "west": 19,
+        "east": 20,
+        "south": 45,
+        "north": 46
+      },
+      "url": "/data/italy-terrain/N45E19.json"
+    },
+    {
+      "id": "local-roma",
+      "kind": "city",
+      "bounds": {
+        "west": 12.461258,
+        "east": 12.521258,
+        "south": 41.864977,
+        "north": 41.914977
+      },
+      "url": "/data/italy-terrain/local-roma.json"
+    },
+    {
+      "id": "local-capua",
+      "kind": "city",
+      "bounds": {
+        "west": 14.22,
+        "east": 14.28,
+        "south": 41.061,
+        "north": 41.111
+      },
+      "url": "/data/italy-terrain/local-capua.json"
+    },
+    {
+      "id": "local-neapolis",
+      "kind": "city",
+      "bounds": {
+        "west": 14.227,
+        "east": 14.286999999999999,
+        "south": 40.827,
+        "north": 40.876999999999995
+      },
+      "url": "/data/italy-terrain/local-neapolis.json"
+    },
+    {
+      "id": "local-norba",
+      "kind": "city",
+      "bounds": {
+        "west": 12.930234822672942,
+        "east": 12.99023482267294,
+        "south": 41.566607341443024,
+        "north": 41.61660734144302
+      },
+      "url": "/data/italy-terrain/local-norba.json"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/15/10.png",
+      "sha256": "9b661bb849997f0e07d9a0cb865d13487080922c80196cc59f1d434cfa889e5c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/16/10.png",
+      "sha256": "074643ffe3e245c5c59580f5dab16723e9cc01ea5dc46e3a55adba6be060c788"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/17/10.png",
+      "sha256": "f8aeedef358c0636dabcf09a7ec22b65bb27cbef9dbe24a6d935eb5acf0fbd67"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/18/10.png",
+      "sha256": "a22a906aa41f88c790a8d7d5bf0c4c8ce3f2696e32fbf2820863ed62f0ba4891"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/15/11.png",
+      "sha256": "5881f5a357b94e401e8cf8900d79b840a01b7535cd22a3db45d9b4de324a44c6"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/16/11.png",
+      "sha256": "08bd81fcdfa625ce4e207063949420054024d8881a4dd72dee1297cbd83ff4bb"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/17/11.png",
+      "sha256": "0898fa7319fa284b5626510d6ab7fabf033ded3feaad74166402a39da96d4e25"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/18/11.png",
+      "sha256": "623e755f9809f7637deb945ac663ba04b328bc28c84c9ada4eb44aafa8434041"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/15/12.png",
+      "sha256": "dbb1ebb7c4c0e2f1a0c8bb51fceda9dab9bb6a007377d5e8a0d88a18ce08ee38"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/16/12.png",
+      "sha256": "02a1df88ce7b28989cee2a94ff02b094474437b3c0967a0b22072534bbeea68c"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/17/12.png",
+      "sha256": "d84d1ea89076e1117f7cff3a3a6ef2af3a9c1828018ea45c679c3a6a59adc3ec"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/18/12.png",
+      "sha256": "0ef6a8421496aaad54e6f9783ce698281cbd1d97800c4833b59b501b15c9cf9e"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/15/13.png",
+      "sha256": "3bf066427fccf02d14c840f6960f1d159161b6886a22d4131c5f16712713c450"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/16/13.png",
+      "sha256": "d767b70ebc9c9d1a7dd1c704cab0f34f86f0c70b92719bb65ad47cbfb52f7d47"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/17/13.png",
+      "sha256": "b0ec570143ec25367d49644415ac2c33b80b088aa4f298a109929fe1f5b9a253"
+    },
+    {
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/5/18/13.png",
+      "sha256": "ee7a3720ea5d798d1bee38c48d6cb51b58da8b59aa0021cec63cd0c502213841"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E009_00_DEM/Copernicus_DSM_COG_10_N36_00_E009_00_DEM.tif",
+      "derivedSha256": "4d20806621072b4e8d7b6972a945c55d3faf8f6f519330813d2ed53872cec580",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E010_00_DEM/Copernicus_DSM_COG_10_N36_00_E010_00_DEM.tif",
+      "derivedSha256": "9bede6f040ee0d771ef9a10c197e716fb3f47bcb49deb922b326d3895cdbf11d",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E011_00_DEM/Copernicus_DSM_COG_10_N36_00_E011_00_DEM.tif",
+      "derivedSha256": "f9cbc8b4249f9b2d919287240c3f8e3e452feee39554f7dd6edb6c2823962b41",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E012_00_DEM/Copernicus_DSM_COG_10_N36_00_E012_00_DEM.tif",
+      "derivedSha256": "f37ac31e79982b182f9cb518e08432ee18e2151ad76d3c4c78caefee74171048",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E014_00_DEM/Copernicus_DSM_COG_10_N36_00_E014_00_DEM.tif",
+      "derivedSha256": "c3743c799291287e53d1da705d29203d4dbee0e7c36c0a596d8e8c2eadee3c8c",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E015_00_DEM/Copernicus_DSM_COG_10_N36_00_E015_00_DEM.tif",
+      "derivedSha256": "d6af9bb6e0769961e17b5b7c8b0da9a871593210ea1540cce8d5c4fa32117657",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E009_00_DEM/Copernicus_DSM_COG_10_N37_00_E009_00_DEM.tif",
+      "derivedSha256": "1fe7acbffa876fa46b95300915f500bfb7b12f31e49d951c48f76b1fb5865b7e",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E010_00_DEM/Copernicus_DSM_COG_10_N37_00_E010_00_DEM.tif",
+      "derivedSha256": "f91fcb732b26b02afeb6aec055536f1dbe24bfe03f83d5200b7fac685c2aa99a",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E011_00_DEM/Copernicus_DSM_COG_10_N37_00_E011_00_DEM.tif",
+      "derivedSha256": "e2ec1a666f378fe5d554e43a15c01726187b44418665bd8561d633af99bbc335",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E012_00_DEM/Copernicus_DSM_COG_10_N37_00_E012_00_DEM.tif",
+      "derivedSha256": "9a7f4e3d885863ead2f595b72a03ecc0e9aa4b7f6c85bd374c0cd744a62c2a83",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E013_00_DEM/Copernicus_DSM_COG_10_N37_00_E013_00_DEM.tif",
+      "derivedSha256": "3c68607389de6723a3bbfd7821954d8a845c5e49a28d17c061055c842c01c54f",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E014_00_DEM/Copernicus_DSM_COG_10_N37_00_E014_00_DEM.tif",
+      "derivedSha256": "3b716c59bf1b69b1336272e90e6750f9cd2d4eca9f6ee0b9f35c08e2ca3d4bb1",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E015_00_DEM/Copernicus_DSM_COG_10_N37_00_E015_00_DEM.tif",
+      "derivedSha256": "ffa17db4fd4a04580caf90f85282817e6c09ddb50fe979bc1624e6c30fb6f4f7",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E016_00_DEM/Copernicus_DSM_COG_10_N37_00_E016_00_DEM.tif",
+      "derivedSha256": "cc5f130a3c5c0f34f8074c2ff09eb9e94ef96b57309e51e4370e00eda4288c4e",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E009_00_DEM/Copernicus_DSM_COG_10_N38_00_E009_00_DEM.tif",
+      "derivedSha256": "c0cbbe7320a6bd9ff144e4c01206904109727007b6335af936ba5432af148b7e",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E012_00_DEM/Copernicus_DSM_COG_10_N38_00_E012_00_DEM.tif",
+      "derivedSha256": "03802828d83062ebef6ea24a95d09183d22517cf0fc25f76ea55f67dc30eb172",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E013_00_DEM/Copernicus_DSM_COG_10_N38_00_E013_00_DEM.tif",
+      "derivedSha256": "cc2d0b087f0cffafa860a30b90d9f3790ad196a7298b3e70b84fe26d971061e6",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E014_00_DEM/Copernicus_DSM_COG_10_N38_00_E014_00_DEM.tif",
+      "derivedSha256": "30772b012dc5f3ec4e83793607ef8db7a3a7835e4a3fe1020838d27371729184",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E015_00_DEM/Copernicus_DSM_COG_10_N38_00_E015_00_DEM.tif",
+      "derivedSha256": "4d981b4668e0f7977a59baa6e4dbe81779d608c59d6c5afa87f8893fa122de66",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E016_00_DEM/Copernicus_DSM_COG_10_N38_00_E016_00_DEM.tif",
+      "derivedSha256": "9e64e628b72e4e4eb1e4fa870800c21e732f00f8f652cc983396c9356e4e69e8",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E017_00_DEM/Copernicus_DSM_COG_10_N38_00_E017_00_DEM.tif",
+      "derivedSha256": "8c477769f9c0cc7ecd875c9331c0697e59bfa5d6499957a2fa42728d1a193941",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E009_00_DEM/Copernicus_DSM_COG_10_N39_00_E009_00_DEM.tif",
+      "derivedSha256": "095b7dacd1093a80d0487f4aab11c367e7f5a8d62791b9716cd0c06d33663e5c",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E015_00_DEM/Copernicus_DSM_COG_10_N39_00_E015_00_DEM.tif",
+      "derivedSha256": "d2a3f6bd69ca8815f8d659638165dc92f82c1d033ff7ac962361177fbae2d0a8",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E016_00_DEM/Copernicus_DSM_COG_10_N39_00_E016_00_DEM.tif",
+      "derivedSha256": "7c10652ba59585f61913e937dc9bccacc83f14f5b94acb5309aabd09d6dbf8b3",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E017_00_DEM/Copernicus_DSM_COG_10_N39_00_E017_00_DEM.tif",
+      "derivedSha256": "8d5a2d3ae8488d43914d9b650181f22191b210bb9696b7d7b8f9024c7703c57c",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E018_00_DEM/Copernicus_DSM_COG_10_N39_00_E018_00_DEM.tif",
+      "derivedSha256": "95f48c82bcf7c9c0cf31583edef8292e33a5771ea50b70ce6818ba70c860f26f",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E019_00_DEM/Copernicus_DSM_COG_10_N39_00_E019_00_DEM.tif",
+      "derivedSha256": "c657c4bbbc153ce81a6f6703fb9a840d3f4a2a6f97ddc1adfdb8e4ab7eabc480",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E009_00_DEM/Copernicus_DSM_COG_10_N40_00_E009_00_DEM.tif",
+      "derivedSha256": "fd44682acd817fff9d3856eb735725b944b4774a301ee323be46783fd9cd88bf",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E013_00_DEM/Copernicus_DSM_COG_10_N40_00_E013_00_DEM.tif",
+      "derivedSha256": "6817c3403fd5c19cfa851a5313e69c1a38d38510b46e9f6e36d603f347136005",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E014_00_DEM/Copernicus_DSM_COG_10_N40_00_E014_00_DEM.tif",
+      "derivedSha256": "2d2f60ccf535e7c9836fc790f9e361b369bc5ec8201521c031b5c0d7e9465048",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E015_00_DEM/Copernicus_DSM_COG_10_N40_00_E015_00_DEM.tif",
+      "derivedSha256": "a5f684e8d2d72c496113615eb4063b583ae214d1d757045f015c65a495198f9e",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E016_00_DEM/Copernicus_DSM_COG_10_N40_00_E016_00_DEM.tif",
+      "derivedSha256": "9edbbccdb05af0e3e07b21e435243cf0d5699336040e8c2cbe66bb6a11980cb4",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E017_00_DEM/Copernicus_DSM_COG_10_N40_00_E017_00_DEM.tif",
+      "derivedSha256": "a3b30f53574d81c4db19c72c2cb03b4c53e6fdd69032ec9e7cc5b0b422f9d139",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E018_00_DEM/Copernicus_DSM_COG_10_N40_00_E018_00_DEM.tif",
+      "derivedSha256": "e498166ad3d4c994cf7f2d3378a177dabd2236997439eeb1da362d2f6dcded3c",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E019_00_DEM/Copernicus_DSM_COG_10_N40_00_E019_00_DEM.tif",
+      "derivedSha256": "46a36f39f0eb028707cad45cfaa9a3c6f84826d8376d0c6ffb36119a4eac068a",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E009_00_DEM/Copernicus_DSM_COG_10_N41_00_E009_00_DEM.tif",
+      "derivedSha256": "630cef80e0c4c49e6b6780982e3501c3dd5c041d2c7447b3c8855d1a704c8c76",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E011_00_DEM/Copernicus_DSM_COG_10_N41_00_E011_00_DEM.tif",
+      "derivedSha256": "2f6a910ce7cb411ed87952767a0f1934babbc6541c96358c96b3aa19b653c7d4",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E012_00_DEM/Copernicus_DSM_COG_10_N41_00_E012_00_DEM.tif",
+      "derivedSha256": "32b419149ff82251854b34325983534b34ab98fe66c75a218ec0760845191413",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E013_00_DEM/Copernicus_DSM_COG_10_N41_00_E013_00_DEM.tif",
+      "derivedSha256": "c0e757f48bdc75e44cffca681b85a44ef37c53e2d219717a0cf8b20e0d62d255",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E014_00_DEM/Copernicus_DSM_COG_10_N41_00_E014_00_DEM.tif",
+      "derivedSha256": "c21c72918e832568e6abf7ebadc6cf66c8af8d06bdcd1244cbc1bd05ca127d68",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E015_00_DEM/Copernicus_DSM_COG_10_N41_00_E015_00_DEM.tif",
+      "derivedSha256": "47bd45dce4276aee1dc2ff22f1458ecac1ba380b1251f229ef395dce402d7a4d",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E016_00_DEM/Copernicus_DSM_COG_10_N41_00_E016_00_DEM.tif",
+      "derivedSha256": "9c2c95361149479bbd35e07e1055aa41c601a6f9a578703b264ef84a380ca5d6",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E017_00_DEM/Copernicus_DSM_COG_10_N41_00_E017_00_DEM.tif",
+      "derivedSha256": "0d544946fbf37526d95b2c8b16412573f0e36686778060a9fc3745f5b2fbcfab",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E019_00_DEM/Copernicus_DSM_COG_10_N41_00_E019_00_DEM.tif",
+      "derivedSha256": "6c8c52ff8b35323422f9e742e289cb788ef2804bb7979f77b7b8834070feb866",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E009_00_DEM/Copernicus_DSM_COG_10_N42_00_E009_00_DEM.tif",
+      "derivedSha256": "4680ac1a7943e7cb0fb18ff52479448c8373159ab3b5e0dd0e8ffbd752e4bb3a",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E010_00_DEM/Copernicus_DSM_COG_10_N42_00_E010_00_DEM.tif",
+      "derivedSha256": "139394f7c9f531cabff0da249d050c0f25a95c436c40b28e82eee7f1c29836a4",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E011_00_DEM/Copernicus_DSM_COG_10_N42_00_E011_00_DEM.tif",
+      "derivedSha256": "2a0ce7630d38c3450579c07e0ae9e1a25a7b46fe94948510daca246e97edaeb6",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E012_00_DEM/Copernicus_DSM_COG_10_N42_00_E012_00_DEM.tif",
+      "derivedSha256": "1ca1b025de8ae183da64daebf5a02c9f7c0d05f4749a683d3b71c32599ef7075",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E013_00_DEM/Copernicus_DSM_COG_10_N42_00_E013_00_DEM.tif",
+      "derivedSha256": "d9f04009ec9238537dbcd630e309f9e2a1eeb82cf455a04b38a9318abb9faf75",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E014_00_DEM/Copernicus_DSM_COG_10_N42_00_E014_00_DEM.tif",
+      "derivedSha256": "1074401917f71de81a7009a7432ff6082d65dfea62e13e2f8c59761296c646f1",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E015_00_DEM/Copernicus_DSM_COG_10_N42_00_E015_00_DEM.tif",
+      "derivedSha256": "c30bb3b2b006328751f87a59ec2883877bb14f5e3c3291301c4fd373b386ee48",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E017_00_DEM/Copernicus_DSM_COG_10_N42_00_E017_00_DEM.tif",
+      "derivedSha256": "a5cddbd8b07eb5cab827e41c2d5d9140c2f5a7931156cf2b2394941b7596ece6",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E018_00_DEM/Copernicus_DSM_COG_10_N42_00_E018_00_DEM.tif",
+      "derivedSha256": "ed6b685a65bcf508394355a6855503ddb98f715fa92e33b8def8f98ed6afef1a",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E019_00_DEM/Copernicus_DSM_COG_10_N42_00_E019_00_DEM.tif",
+      "derivedSha256": "b53701fa0d635993024859b7a5423fda6839b5034cd42938d3ddd103b838e356",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E010_00_DEM/Copernicus_DSM_COG_10_N43_00_E010_00_DEM.tif",
+      "derivedSha256": "48569cb1de1df03e2e4f5a91178147a522bf1e045118241677c3a84b813f866c",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E011_00_DEM/Copernicus_DSM_COG_10_N43_00_E011_00_DEM.tif",
+      "derivedSha256": "6b1d1cc477f9e91ab117a19d1eb9d903945d8aa2703f4321750d8de85492a553",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E012_00_DEM/Copernicus_DSM_COG_10_N43_00_E012_00_DEM.tif",
+      "derivedSha256": "7f6000f24c31b5421ca2ce26bc037d443e00036ae017ad68fd9a26f43ff0672f",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E013_00_DEM/Copernicus_DSM_COG_10_N43_00_E013_00_DEM.tif",
+      "derivedSha256": "5d63e2995b90ea4dd5624d4ab0216f21464759c137df8ee8e44473413ac5b044",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E015_00_DEM/Copernicus_DSM_COG_10_N43_00_E015_00_DEM.tif",
+      "derivedSha256": "d101d6d5676fd50dea392353efba69839417cb4f9e25a9f37890465fc45dac62",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E016_00_DEM/Copernicus_DSM_COG_10_N43_00_E016_00_DEM.tif",
+      "derivedSha256": "4ce9bccc16daab74299942159893bfa5fadf2c7497d58350dde4ef38f0edf568",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E017_00_DEM/Copernicus_DSM_COG_10_N43_00_E017_00_DEM.tif",
+      "derivedSha256": "3bf2d6b1f02c7c4c5c4ef0c1a89252b800a84b92fd21df0de9cad28c2bfb9ff0",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E018_00_DEM/Copernicus_DSM_COG_10_N43_00_E018_00_DEM.tif",
+      "derivedSha256": "edde938dbc36439663a340266867b09234b348350a1967ad8bb3ce56e19cbf68",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E019_00_DEM/Copernicus_DSM_COG_10_N43_00_E019_00_DEM.tif",
+      "derivedSha256": "b2b50c536e4929aa0c8e5121835b18433862eb8a3f17f994f34ef34cd3981292",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E009_00_DEM/Copernicus_DSM_COG_10_N44_00_E009_00_DEM.tif",
+      "derivedSha256": "9e93df67514ed87ca6d3d357c58aca973c8478177b19879f250283e3d21834b7",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E010_00_DEM/Copernicus_DSM_COG_10_N44_00_E010_00_DEM.tif",
+      "derivedSha256": "16e9460d08251459b61e74256de7e076221068e5ec0d8885c0ec07db046819d2",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E011_00_DEM/Copernicus_DSM_COG_10_N44_00_E011_00_DEM.tif",
+      "derivedSha256": "fcf5bbcd40e3497bdeda7eea211bfc799743958ed6d8456cc7a01b4d99689ac3",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E012_00_DEM/Copernicus_DSM_COG_10_N44_00_E012_00_DEM.tif",
+      "derivedSha256": "c132cec14c5d1fd3cfbdcf0a1e590a1d4a311a3085cc5bef99e08b9bc486feae",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E013_00_DEM/Copernicus_DSM_COG_10_N44_00_E013_00_DEM.tif",
+      "derivedSha256": "6585e040e834686935bdbe22d7a035ee4f08ad789cd58d0da1abbbe394173bc0",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E014_00_DEM/Copernicus_DSM_COG_10_N44_00_E014_00_DEM.tif",
+      "derivedSha256": "3524a98f989f4ee5ef81c79bbacc13691f9ef230c40317821a3c713520e1d480",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E015_00_DEM/Copernicus_DSM_COG_10_N44_00_E015_00_DEM.tif",
+      "derivedSha256": "ec02f127a99a3f34a81faeadb742bafa283a2ab929b8a70d0f6e984bdb52f376",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E016_00_DEM/Copernicus_DSM_COG_10_N44_00_E016_00_DEM.tif",
+      "derivedSha256": "3a8596d12b1b9c4dddfd0bcc0dd4df36cb334ddc5f542c720be99ca41ad409c2",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E017_00_DEM/Copernicus_DSM_COG_10_N44_00_E017_00_DEM.tif",
+      "derivedSha256": "b475a66f0604c7b4a0815567768d7974af1d3059cade00d3a17e4ad3e7cd54b9",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E018_00_DEM/Copernicus_DSM_COG_10_N44_00_E018_00_DEM.tif",
+      "derivedSha256": "c54144ea83cd0c5f8c7f8ba4c6e507808ab59f08f19e0ca8349a17c11b1ecf5e",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E019_00_DEM/Copernicus_DSM_COG_10_N44_00_E019_00_DEM.tif",
+      "derivedSha256": "48391bfaddd3daff2a29c8559d4283140b784aa1b97903d2be1ca85c10712333",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E009_00_DEM/Copernicus_DSM_COG_10_N45_00_E009_00_DEM.tif",
+      "derivedSha256": "a598cbe85a298fc9d0a7703421bc2aa028babef2785e8d12b8317e135390a6bd",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E010_00_DEM/Copernicus_DSM_COG_10_N45_00_E010_00_DEM.tif",
+      "derivedSha256": "4a57317ee71af3884f9eff1423978eba49607c9279ffe266a1a332a33fb39677",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E011_00_DEM/Copernicus_DSM_COG_10_N45_00_E011_00_DEM.tif",
+      "derivedSha256": "957509bb13b89650a0cdc9eb69a780b5969356d050ea33eb61045ae7451a93c4",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E012_00_DEM/Copernicus_DSM_COG_10_N45_00_E012_00_DEM.tif",
+      "derivedSha256": "57dbbbccb4497b736dda3268a114266d959d3d50a21decdb7f18e428feb9e62a",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E013_00_DEM/Copernicus_DSM_COG_10_N45_00_E013_00_DEM.tif",
+      "derivedSha256": "870cc9505fe1aeb390346d24c6ea035351259eef11407dddeb61792625dc1f20",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E014_00_DEM/Copernicus_DSM_COG_10_N45_00_E014_00_DEM.tif",
+      "derivedSha256": "3b1dfd930aa0e6f12373a785612628ce295df7ec43c3b4261edb1075bd16db95",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E015_00_DEM/Copernicus_DSM_COG_10_N45_00_E015_00_DEM.tif",
+      "derivedSha256": "873e1a3f77a38fcb3b91f068566b50723550a800119b83eaa5d94bb138a994be",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E016_00_DEM/Copernicus_DSM_COG_10_N45_00_E016_00_DEM.tif",
+      "derivedSha256": "dcb615f94f34ff25b24ebd3d79a5947340910fe6385aa9728b07c4e4c7429c91",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E017_00_DEM/Copernicus_DSM_COG_10_N45_00_E017_00_DEM.tif",
+      "derivedSha256": "671900e9b7746ae3c691ebabb15c947aee9903c652987e6be53daf6f56b7c3f5",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E018_00_DEM/Copernicus_DSM_COG_10_N45_00_E018_00_DEM.tif",
+      "derivedSha256": "f9de90dc42a993b0d784c5edfa2c1ad86ffd495bbefc462478f3e953172dcac4",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E019_00_DEM/Copernicus_DSM_COG_10_N45_00_E019_00_DEM.tif",
+      "derivedSha256": "b8bbc633466924cca84c326f81299d5bdfdf57998050f68392c26094a5c7cf98",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E012_00_DEM/Copernicus_DSM_COG_10_N41_00_E012_00_DEM.tif",
+      "derivedSha256": "3409ed725dc2079e496253a89725da7704dd7af25aadf4c6f02509033c0875ad",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E014_00_DEM/Copernicus_DSM_COG_10_N41_00_E014_00_DEM.tif",
+      "derivedSha256": "a841fadc1d3c5d76486345905e7ecdb2714d2441355b99e4c93fe6ad87ef7fd8",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E014_00_DEM/Copernicus_DSM_COG_10_N40_00_E014_00_DEM.tif",
+      "derivedSha256": "619441521d4403bccffe322a6895d29bb771584329edf484e7db7dc31ee8baf1",
+      "samples": 16641
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E012_00_DEM/Copernicus_DSM_COG_10_N41_00_E012_00_DEM.tif",
+      "derivedSha256": "3f02b0f48a01f0196299fcc78599c4b7cf188fb2a1af4bdf6b6bcb5167bf7b9f",
+      "samples": 16641
+    }
+  ],
+  "coastline": {
+    "url": "https://www.soest.hawaii.edu/pwessel/gshhg/",
+    "version": "2.3.7",
+    "resolution": "high",
+    "sha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41",
+    "license": "LGPL-3.0-or-later; bundled notices; source archive URL in report"
+  },
+  "rivers": {
+    "url": "https://www.soest.hawaii.edu/pwessel/gshhg/",
+    "resolution": "WDBII high-resolution classes 1-5; modern, incomplete"
+  },
+  "limitations": [
+    "Modern DSM and shorelines, not reconstructed 278 BCE topography",
+    "129 samples per degree (~650–870 m); context ~4–7 km",
+    "World envelope remains provisional"
+  ]
+}

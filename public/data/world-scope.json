@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "proposed-real-geographic-envelope",
+  "bounds": { "west": -12, "east": 75, "south": 12, "north": 62 },
+  "coordinateReference": "WGS84 longitude/latitude interchange metadata; not closure of AD-19",
+  "originalRomeIICrop": null,
+  "originalCropConfidence": "No authoritative georeferenced engine extent found; these bounds are a project proposal, not measured screenshot edges.",
+  "anchors": [
+    { "name": "Atlantic Iberia / Olisipo vicinity", "lon": -9.136, "lat": 38.707, "source": "https://pleiades.stoa.org/places/256338" },
+    { "name": "Northern Britain", "lon": -3.1, "lat": 58.6 },
+    { "name": "Germania and southern Scandinavian approaches", "lon": 9.9, "lat": 57.7 },
+    { "name": "North African Atlantic coast", "lon": -9.8, "lat": 30.4 },
+    { "name": "Meroe/Nile southern reach", "lon": 33.712, "lat": 16.937, "source": "https://pleiades.stoa.org/places/805630" },
+    { "name": "Southern Arabian coast / Adane", "lon": 45.039, "lat": 12.772, "source": "https://pleiades.stoa.org/places/39269" },
+    { "name": "Bactra/Balkh", "lon": 66.901, "lat": 36.768, "source": "https://pleiades.stoa.org/places/961886" },
+    { "name": "Alexandria/Kapisa eastern reach", "lon": 69.310, "lat": 34.993, "source": "https://pleiades.stoa.org/places/59668" }
+  ],
+  "anchorPrecision": "Rounded geographic coverage checks, not settlement placements or territorial claims",
+  "sources": [
+    "https://r2encv2.totalwar.com/en/regions/",
+    "https://r2encv2.totalwar.com/en/faction/rom_baktria/index.html",
+    "https://r2encv2.totalwar.com/en/faction/rom_lusitani/index.html"
+  ]
+}

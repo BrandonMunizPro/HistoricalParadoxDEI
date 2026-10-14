@@ -1,0 +1,97 @@
+{
+  "coordinates": [
+    {
+      "key": "roma",
+      "atlas": {
+        "lat": 41.8899769864849,
+        "lon": 12.491258174554883
+      },
+      "reference": {
+        "name": "Rome",
+        "lat": 41.89193,
+        "lon": 12.51133,
+        "url": "https://www.geonames.org/3169070/"
+      },
+      "offsetMetres": 1676,
+      "toleranceMetres": 2500,
+      "interpretation": "Independent modern locality check only; not validation of the 278 BCE urban footprint."
+    },
+    {
+      "key": "capua",
+      "atlas": {
+        "lat": 41.0860925,
+        "lon": 14.250207
+      },
+      "reference": {
+        "name": "Santa Maria Capua Vetere",
+        "lat": 41.08156,
+        "lon": 14.25342,
+        "url": "https://www.geonames.org/3167561/"
+      },
+      "offsetMetres": 571,
+      "toleranceMetres": 1500,
+      "interpretation": "Independent modern locality check only; not validation of the 278 BCE urban footprint."
+    },
+    {
+      "key": "neapolis",
+      "atlas": {
+        "lat": 40.839995,
+        "lon": 14.25287
+      },
+      "reference": {
+        "name": "Naples",
+        "lat": 40.85216,
+        "lon": 14.26811,
+        "url": "https://www.geonames.org/3172394/"
+      },
+      "offsetMetres": 1864,
+      "toleranceMetres": 3500,
+      "interpretation": "Independent modern locality check only; not validation of the 278 BCE urban footprint."
+    }
+  ],
+  "elevation": [
+    {
+      "name": "Gran Sasso",
+      "lon": 13.565,
+      "lat": 42.469,
+      "copernicusMetres": 2515.6,
+      "mapzenMetres": 2829,
+      "differenceMetres": -313,
+      "toleranceMetres": 600,
+      "referenceSha256": "72b1238d6156797c6b1baad2e7d88f34d150c63f58e3bf0ad150c72797ec212f",
+      "interpretation": "Separate elevation product at different sampling resolution; shared source lineage possible. Not a surveyed spot-height comparison."
+    },
+    {
+      "name": "Campanian plain",
+      "lon": 14.25,
+      "lat": 41.086,
+      "copernicusMetres": 33.3,
+      "mapzenMetres": 38,
+      "differenceMetres": -5,
+      "toleranceMetres": 600,
+      "referenceSha256": "dd47fd69546af6f816c14cbb6178e6d29eb2e4930282a63641f6363f3cf5c03f",
+      "interpretation": "Separate elevation product at different sampling resolution; shared source lineage possible. Not a surveyed spot-height comparison."
+    },
+    {
+      "name": "Alban hills",
+      "lon": 12.71,
+      "lat": 41.73,
+      "copernicusMetres": 475.3,
+      "mapzenMetres": 442,
+      "differenceMetres": 33,
+      "toleranceMetres": 600,
+      "referenceSha256": "45375fc8d8ad8f67ebfe5ffd9a309fe75e62bd0002b0b5174fc71e452d807bed",
+      "interpretation": "Separate elevation product at different sampling resolution; shared source lineage possible. Not a surveyed spot-height comparison."
+    }
+  ],
+  "reference": {
+    "url": "https://download.geonames.org/export/dump/IT.zip",
+    "sha256": "5f0bf142001679143ce4e19a78805aae5e46d686616e5942548bef714f4ebdaf",
+    "license": "GeoNames CC BY 4.0",
+    "checked": "2026-10-14"
+  },
+  "limitations": [
+    "No precise Rome II boundary calibration possible without georeferenced reference",
+    "Ancient town footprints, river migrations and shorelines remain research-dependent"
+  ]
+}

@@ -54,6 +54,19 @@ The rendered campaign map is a **presentation of authoritative simulation
 geography**, not a second source of truth, and is conceptually separate from the
 tactical battlefield projection ([ADR-0020](../adr/0020-campaign-geography-and-tactical-battlefield-projection.md)).
 
+## Army presentation on the campaign map
+
+The proposed model is a **continuous geographic zoom** rather than a separate
+army-management scene: at strategic zoom an army is a general's portrait, standard
+and compact information; selecting it moves the camera to the army's actual
+geographic coordinates and the army becomes a visible organisation of formations
+with **subordinate commanders attached to their actual formations**, arranged to
+reflect its simulation state. Zooming out reverses the transition. All of it
+derives from authoritative military state, and zooming never changes that state.
+See [../architecture/military-architecture.md](../architecture/military-architecture.md)
+(**Proposal**). This seed document does not lock the interaction; the renderer and
+Visual Design Bible remain **Unresolved** (ADR-0019).
+
 ## Simulation requirements presentation creates
 
 Because of the perceivability design law, presentation depends on the simulation

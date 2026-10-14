@@ -1,0 +1,127 @@
+{
+  "origin": {
+    "lon": 13.5,
+    "lat": 41.5
+  },
+  "sourceBounds": {
+    "west": -5,
+    "east": 30,
+    "south": 30,
+    "north": 55
+  },
+  "projection": "Spherical azimuthal equidistant; GPU X=east km, Z=-north km",
+  "checks": [
+    {
+      "name": "Roma",
+      "lon": 12.491258174554883,
+      "lat": 41.8899769864849,
+      "source": "https://pleiades.stoa.org/places/423025",
+      "roundtripErrorMetres": 1.470410840633252e-9,
+      "projectedEastMetres": -83499.1275755057,
+      "projectedNorthMetres": 43851.83432673883,
+      "contextMaskLand": true,
+      "precision": "Pleiades representative point, not urban boundary"
+    },
+    {
+      "name": "Neapolis atlas point",
+      "lon": 14.25287,
+      "lat": 40.839995,
+      "source": "https://pleiades.stoa.org/places/433014",
+      "roundtripErrorMetres": 2.660392324390157e-9,
+      "projectedEastMetres": 63334.58558886474,
+      "projectedNorthMetres": -73114.77872591939,
+      "contextMaskLand": false,
+      "precision": "Pleiades representative point, not urban boundary"
+    },
+    {
+      "name": "Ancient Capua",
+      "lon": 14.250207,
+      "lat": 41.0860925,
+      "source": "https://pleiades.stoa.org/places/432754",
+      "roundtripErrorMetres": 3.950612821958659e-9,
+      "projectedEastMetres": 62874.824954904376,
+      "projectedNorthMetres": -45752.462967324034,
+      "contextMaskLand": true,
+      "precision": "Pleiades representative point, not urban boundary"
+    },
+    {
+      "name": "Ostia",
+      "lon": 12.289357418323796,
+      "lat": 41.753575752221614,
+      "source": "https://pleiades.stoa.org/places/422995",
+      "roundtripErrorMetres": 5.894185662801545e-10,
+      "projectedEastMetres": -100423.81372899978,
+      "projectedNorthMetres": 28900.589587234484,
+      "contextMaskLand": true,
+      "precision": "Rounded locality check, not a replacement coordinate"
+    },
+    {
+      "name": "Gran Sasso / Apennines",
+      "lon": 13.565,
+      "lat": 42.469,
+      "source": "data/geography/italy-validation.json",
+      "roundtripErrorMetres": 4.516724091052628e-9,
+      "projectedEastMetres": 5331.699620615001,
+      "projectedNorthMetres": 107750.0494848022,
+      "contextMaskLand": true,
+      "precision": "Existing separate elevation-product QA point"
+    },
+    {
+      "name": "Sicily interior",
+      "lon": 13.93457,
+      "lat": 37.62304,
+      "source": "https://www.geonames.org/advanced-search.html?country=IT",
+      "roundtripErrorMetres": 1.0078923127105003e-9,
+      "projectedEastMetres": 38302.27054792838,
+      "projectedNorthMetres": -431005.08334692573,
+      "contextMaskLand": true,
+      "precision": "GeoNames island representative point"
+    },
+    {
+      "name": "Sardinia interior",
+      "lon": 9,
+      "lat": 40,
+      "source": "https://www.geonames.org/advanced-search.html?country=IT",
+      "roundtripErrorMetres": 7.900885651219831e-10,
+      "projectedEastMetres": -383187.4378905764,
+      "projectedNorthMetres": -156914.9772506169,
+      "contextMaskLand": true,
+      "precision": "GeoNames island representative point"
+    },
+    {
+      "name": "Corsica / Cargese",
+      "lon": 8.595861,
+      "lat": 42.136293,
+      "source": "https://www.geonames.org/search.html?country=FR&q=Korsika",
+      "roundtripErrorMetres": 1.171781966259681e-9,
+      "projectedEastMetres": -404168.41816376103,
+      "projectedNorthMetres": 82269.03048331941,
+      "contextMaskLand": true,
+      "precision": "Modern coastal locality; approximately coast-adjacent"
+    },
+    {
+      "name": "Tiber corridor",
+      "lon": 12.477,
+      "lat": 41.9,
+      "source": "https://www.soest.hawaii.edu/pwessel/gshhg/",
+      "roundtripErrorMetres": 2.204686334857276e-9,
+      "projectedEastMetres": -84666.04603534738,
+      "projectedNorthMetres": 44980.200325598074,
+      "contextMaskLand": true,
+      "precision": "Rounded river corridor check, not a surveyed channel vertex"
+    }
+  ],
+  "settlementCoordinatesUnchanged": true,
+  "causes": {
+    "perspective": "Previous oblique camera foreshortens north/south distances; overhead diagnostic removes that effect",
+    "projection": "Roundtrip verified; distances from the origin are preserved; transverse distortion remains at large distances",
+    "terrain": "Coarse backdrop and 650-870 m regional samples smooth peaks; DSM includes modern vegetation and buildings",
+    "water": "GSHHG masks describe modern shoreline; no ancient shoreline reconstruction",
+    "placement": "Atlas coordinates retained. Neapolis presentation anchor is separately recorded, not a replacement coordinate"
+  },
+  "limitations": [
+    "Mask lookup is a coarse diagnostic, especially at coastal localities",
+    "Tiber corridor is not a surveyed channel control point",
+    "No exact Rome II envelope calibration without georeferenced campaign reference"
+  ]
+}

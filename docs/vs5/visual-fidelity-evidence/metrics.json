@@ -1,0 +1,561 @@
+{
+  "environment": {
+    "platform": "win32",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "ramBytes": 16931676160,
+    "browser": "155.0.8059.40",
+    "viewport": "1440x1000",
+    "headless": true,
+    "url": "http://127.0.0.1:4173",
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Laptop GPU (0x00002520) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "readyMs": 2294,
+  "metrics": {
+    "central": {
+      "fps": 143.9111938314278,
+      "heapBytes": 155015122,
+      "drawCalls": 147,
+      "triangles": 862315,
+      "geometries": 148,
+      "textures": 17,
+      "terrainLod": 0,
+      "meanFps": 143.62960459614735,
+      "p95FrameMs": 7.100000000000364,
+      "sampleFrames": 510,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N42E13",
+          "N40E13",
+          "N40E14",
+          "N42E14",
+          "N41E15"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 1
+          },
+          {
+            "id": "local-capua",
+            "level": 1
+          },
+          {
+            "id": "local-neapolis",
+            "level": 1
+          },
+          {
+            "id": "local-norba",
+            "level": 1
+          },
+          {
+            "id": "N41E14",
+            "level": 1
+          },
+          {
+            "id": "N41E13",
+            "level": 1
+          },
+          {
+            "id": "N41E12",
+            "level": 1
+          },
+          {
+            "id": "N42E13",
+            "level": 1
+          },
+          {
+            "id": "N40E13",
+            "level": 1
+          },
+          {
+            "id": "N40E14",
+            "level": 1
+          },
+          {
+            "id": "N42E14",
+            "level": 2
+          },
+          {
+            "id": "N41E15",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    },
+    "wide": {
+      "fps": 141.2375462839256,
+      "heapBytes": 142506641,
+      "drawCalls": 383,
+      "triangles": 304071,
+      "geometries": 396,
+      "textures": 17,
+      "terrainLod": 1,
+      "meanFps": 141.34275618374556,
+      "p95FrameMs": 7.100000000000364,
+      "sampleFrames": 496,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N42E13",
+          "N40E13",
+          "N40E14",
+          "N41E15",
+          "N40E15"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 2
+          },
+          {
+            "id": "local-capua",
+            "level": 2
+          },
+          {
+            "id": "local-neapolis",
+            "level": 2
+          },
+          {
+            "id": "local-norba",
+            "level": 2
+          },
+          {
+            "id": "N41E14",
+            "level": 2
+          },
+          {
+            "id": "N41E13",
+            "level": 2
+          },
+          {
+            "id": "N41E12",
+            "level": 2
+          },
+          {
+            "id": "N42E13",
+            "level": 2
+          },
+          {
+            "id": "N40E13",
+            "level": 2
+          },
+          {
+            "id": "N40E14",
+            "level": 2
+          },
+          {
+            "id": "N41E15",
+            "level": 2
+          },
+          {
+            "id": "N40E15",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    },
+    "overhead": {
+      "fps": 143.5560475663322,
+      "heapBytes": 153851647,
+      "drawCalls": 419,
+      "triangles": 304349,
+      "geometries": 457,
+      "textures": 17,
+      "terrainLod": 1,
+      "meanFps": 142.19765188646983,
+      "p95FrameMs": 7.100000000000364,
+      "sampleFrames": 499,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N42E13",
+          "N40E13",
+          "N41E11",
+          "N42E12",
+          "N42E11"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 2
+          },
+          {
+            "id": "local-capua",
+            "level": 2
+          },
+          {
+            "id": "local-neapolis",
+            "level": 2
+          },
+          {
+            "id": "local-norba",
+            "level": 2
+          },
+          {
+            "id": "N41E14",
+            "level": 2
+          },
+          {
+            "id": "N41E13",
+            "level": 2
+          },
+          {
+            "id": "N41E12",
+            "level": 2
+          },
+          {
+            "id": "N42E13",
+            "level": 2
+          },
+          {
+            "id": "N40E13",
+            "level": 2
+          },
+          {
+            "id": "N41E11",
+            "level": 2
+          },
+          {
+            "id": "N42E12",
+            "level": 2
+          },
+          {
+            "id": "N42E11",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    },
+    "rome": {
+      "fps": 143.9119008884995,
+      "heapBytes": 145836247,
+      "drawCalls": 55,
+      "triangles": 678256,
+      "geometries": 477,
+      "textures": 19,
+      "terrainLod": 0,
+      "meanFps": 143.90954257323963,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 504,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N42E13",
+          "N40E13",
+          "N41E11",
+          "N42E12",
+          "N42E11"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    },
+    "neapolis": {
+      "fps": 143.90992187747096,
+      "heapBytes": 148484090,
+      "drawCalls": 68,
+      "triangles": 741780,
+      "geometries": 500,
+      "textures": 16,
+      "terrainLod": 0,
+      "meanFps": 143.91353811149034,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 506,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N40E13",
+          "N40E14",
+          "N41E15",
+          "N40E15",
+          "N39E15"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          },
+          {
+            "id": "N40E14",
+            "level": 0
+          },
+          {
+            "id": "N41E15",
+            "level": 0
+          },
+          {
+            "id": "N40E15",
+            "level": 0
+          },
+          {
+            "id": "N39E15",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    },
+    "norba": {
+      "fps": 133.28862436080152,
+      "heapBytes": 141850989,
+      "drawCalls": 46,
+      "triangles": 731772,
+      "geometries": 535,
+      "textures": 17,
+      "terrainLod": 0,
+      "meanFps": 133.51207901288618,
+      "p95FrameMs": 7.099999999998545,
+      "sampleFrames": 488,
+      "tiles": {
+        "controlColor": [
+          0.14395897090435028,
+          0.18795476853847504,
+          0.06528189033269882
+        ],
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E14",
+          "N41E13",
+          "N41E12",
+          "N40E13",
+          "N42E12",
+          "N42E13",
+          "N41E11",
+          "N42E11"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536
+      }
+    }
+  },
+  "browserProcessMemory": {
+    "privateBytes": 1062670336,
+    "workingSetBytes": 1122058240,
+    "processCount": 7
+  },
+  "assertions": [
+    "23 stable atlas identities",
+    "12 resident tiles maximum including four city windows",
+    "Tile loading and eviction after pan",
+    "Mixed terrain LOD in peninsula view",
+    "Rome, Capua and Neapolis focus controls",
+    "Neapolis selected by canvas raycast",
+    "Geographic and political modes",
+    "Simulation control transfer preserves Capua identity",
+    "No label collisions",
+    "Overhead coordinate diagnostic and Norba close view",
+    "External development snapshot changes visible asset selection and preserves identity",
+    "No missing geographic assets or uncaught browser errors"
+  ],
+  "limitations": [
+    "Short headless idle-view samples, not a campaign stress test",
+    "JS heap excludes GPU memory; process working sets may double-count shared pages",
+    "Original concept artwork and georeferenced Rome II extent were not available for direct image matching"
+  ]
+}
