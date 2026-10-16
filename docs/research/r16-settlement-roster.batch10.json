@@ -1,0 +1,1328 @@
+{
+  "recordSchema": "r16-settlement-roster/research-draft-1",
+  "status": "PROPOSAL - research data only. This file is NOT authoritative simulation state and NOT renderer presentation data. It does not finalise a runtime schema. Canonical settlement/location identities (RFC 4122 UUIDv5, ADR-0009) are minted only by the atlas pipeline at integration time; the proposedId values here are research handles, not canonical IDs.",
+  "subject": "R-16 historical settlement roster, gap-fill batch (batch 10)",
+  "campaignYearBce": 278,
+  "envelopeRegions": [
+    1,
+    8,
+    9,
+    10,
+    14,
+    16,
+    19
+  ],
+  "batchScope": "Gap-fill: the major settlements absent from batches 1–9 — Sicily’s principal Greek cities, Cilicia, Ptolemaic Cyprus, Seleucid Syria (the tetrapolis and Antioch), the Euphrates frontier, Mauretania Tingitana, the Nile Delta, and the North Pontic colonies.",
+  "coordinateConvention": "WGS84 decimal degrees, approximate representative points for the ancient site (not the modern town unless noted). Precision does not imply archaeological accuracy and is not a surveyed building location. Coordinates here are taken from the Pleiades gazetteer representative point.",
+  "idScheme": "proposedId = r16-<region>-<slug>; the slug (key) is region-scoped to avoid homonyms (e.g. Olbia in Scythia vs. Olbia in Gaul). Stable, human-readable, non-canonical.",
+  "confidenceScale": [
+    "attested",
+    "probable",
+    "uncertain"
+  ],
+  "presenceScale": [
+    "attested",
+    "probable",
+    "uncertain",
+    "unlocated"
+  ],
+  "readinessScale": [
+    "ready-for-atlas-integration",
+    "ready-with-caveats",
+    "needs-research",
+    "provisional"
+  ],
+  "pleiadesResolutionNote": "Unlike batches 1–9, this batch resolves each site to a Pleiades gazetteer identifier. Each record carries additive fields: pleiadesId (string), pleiadesSource (canonical URL) and pleiadesMatch (the matched Pleiades title). Resolution was performed 2026-10-15 via Wikidata (property P1584 = Pleiades ID) cross-checked against the Pleiades JSON API (/places/<id>/json). Coordinates are the Pleiades representative point. These fields are research enrichment and are not a substitute for the approval step: the promotion pipeline still requires reviewer-supplied verification.",
+  "methodNote": "Records are compiled from independent evidence (primary literary/administrative sources, archaeology and the Pleiades gazetteer for identity and coordinates). Game/mod faction names are discovery leads only and never authorities. Every coordinate is a representative point with an explicit location confidence. Political authority is recorded only where supported; otherwise it is left unclaimed. All literary sources (Polybius, Livy, Diodorus, Strabo, Herodotus, Pausanias, Ptolemy) postdate 278 BCE and are evidence for continuity, not contemporary snapshots.",
+  "coverageNote": "Cyprus (5 records) is assigned to envelope region 9 (Levant & the eastern Mediterranean) because at 278 the island was a Ptolemaic possession adjacent to Coele-Syria; it may be re-mapped under region 8 (Anatolia) if the envelope boundary is refined. The North Pontic colonies (region 19) use the r16-cau prefix shared with the Caucasus/Bosporan envelope.",
+  "duplicateGuard": "None of these records reproduces the 23 active atlas settlements, the 12 deferred atlas candidates, or the 658 candidates of batches 1–9. Keys olbia-borysthenes and soli-cilicia are disambiguated against region 3 (Gallic Olbia) and any eastern Soli.",
+  "records": [
+    {
+      "proposedId": "r16-ita-syracuse",
+      "key": "syracuse",
+      "historicalName": "Syracuse",
+      "alternateNames": [
+        "Syrakousai (Greek)",
+        "Syracusae (Latin)",
+        "Siracusa"
+      ],
+      "subregion": "Sicily",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 37.070079,
+        "lon": 15.283336,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "The foremost Greek city of Sicily, founded by Corinth (734 BCE); its unbroken urban sequence on Ortygia and the mainland (Achradina–Neapolis–Tyche–Epipolae) makes it the dominant power of the island. In 278 BCE it was the principal base of Pyrrhus of Epirus during his Sicilian campaign (278–276).",
+      "politicalAuthority": "Greek polis (tyrannical/royal). Pyrrhus of Epirus held the city in 278; Hieron rose to power after his withdrawal and was king by c. 270.",
+      "politicalConfidence": "probable",
+      "role": "Capital / royal seat",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Political centre"
+      ],
+      "culturalContext": "Greek (Siceliote/Dorian)",
+      "architectureContext": "Walled Greek city centred on Ortygia, with the great harbour, the Epipolae plateau fortifications (Euryalus), the theatre and the Fountain of Arethusa; the circuit is among the largest of the Greek world.",
+      "chronologyNotes": [
+        "Pyrrhus' Sicilian campaign 278–276; Hieron's ascendancy and kingdom follow.",
+        "Roman alliance from 263 (outside the campaign window)."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman provincial city or the 212 BCE sack.",
+        "Do not import the later Roman amphitheatre into the campaign-era silhouette."
+      ],
+      "sources": [
+        "Pleiades gazetteer 462503 — https://pleiades.stoa.org/places/462503 (CC BY 3.0)",
+        "Polybius, Histories 1",
+        "Diodorus Siculus, Bibliotheca historica 22–23",
+        "Strabo, Geographia 6.2"
+      ],
+      "pleiadesId": "462503",
+      "pleiadesSource": "https://pleiades.stoa.org/places/462503",
+      "pleiadesMatch": "Syracusae/Syrakousai",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Exact constitutional position under Pyrrhus at 278 (garrison vs. allied city)."
+      ]
+    },
+    {
+      "proposedId": "r16-ita-messana",
+      "key": "messana",
+      "historicalName": "Messana",
+      "alternateNames": [
+        "Zancle (earlier Greek name)",
+        "Messene (Greek)",
+        "Messina"
+      ],
+      "subregion": "Sicily",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 38.192251,
+        "lon": 15.556634,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek colony (Zancle, founded by Chalcis c. 730 BCE) commanding the Strait of Messina; seized c. 288–283 by Mamertine (Oscan) mercenaries. In 278 Pyrrhus expelled the Mamertines from the city before his withdrawal from Sicily.",
+      "politicalAuthority": "Greek polis (Zancle/Messana); occupied by the Mamertines from c. 288 and retaken by Pyrrhus in 278.",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Fortress / stronghold"
+      ],
+      "culturalContext": "Greek/Siceliote with an Oscan (Mamertine) garrison",
+      "architectureContext": "Harbour city on the Sicilian side of the strait opposite Rhegium, with a citadel commanding the crossing.",
+      "chronologyNotes": [
+        "Mamertine seizure c. 288–283; Pyrrhus took the city in 278; the Mamertines recovered it by 276."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman allied/colony status that only follows in 264."
+      ],
+      "sources": [
+        "Pleiades gazetteer 462538 — https://pleiades.stoa.org/places/462538 (CC BY 3.0)",
+        "Polybius, Histories 1.6–12",
+        "Strabo, Geographia 6.2"
+      ],
+      "pleiadesId": "462538",
+      "pleiadesSource": "https://pleiades.stoa.org/places/462538",
+      "pleiadesMatch": "Zancle/Messana",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Precise control at the campaign date (Pyrrhic vs. Mamertine occupation)."
+      ]
+    },
+    {
+      "proposedId": "r16-ita-leontini",
+      "key": "leontini",
+      "historicalName": "Leontini",
+      "alternateNames": [
+        "Leontinoi (Greek)",
+        "Lentini"
+      ],
+      "subregion": "Sicily",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 37.285478,
+        "lon": 14.998115,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek city founded by Naxos in 729 BCE in the Catania plain; reduced by Hippocrates of Gela (498) and thereafter a Syracusan dependency, documented by a continuous archaeological sequence.",
+      "politicalAuthority": "Greek polis within the Syracusan/Pyrrhic orbit in 278.",
+      "politicalConfidence": "probable",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (Siceliote/Chalcidian origin)",
+      "architectureContext": "Inland city on a hill above the Catania plain, with fortifications and an important sanctuary of Demeter.",
+      "chronologyNotes": [],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 462279 — https://pleiades.stoa.org/places/462279 (CC BY 3.0)",
+        "Diodorus Siculus, Bibliotheca historica 13–14",
+        "Polybius, Histories 1"
+      ],
+      "pleiadesId": "462279",
+      "pleiadesSource": "https://pleiades.stoa.org/places/462279",
+      "pleiadesMatch": "Leontini",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Degree of autonomy vs. Syracusan direction at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-ita-selinous",
+      "key": "selinous",
+      "historicalName": "Selinous",
+      "alternateNames": [
+        "Selinus (Latin)",
+        "Selinunte"
+      ],
+      "subregion": "Sicily",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 37.588282,
+        "lon": 12.824893,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "probable",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek colonial city on the south coast, founded by Megara Hyblaia (7th c. BCE); destroyed by Carthage in 409 BCE and refounded in reduced form. In the 3rd c. a modest town/harbour rather than the great Archaic city.",
+      "politicalAuthority": "Greek (Dorian) settlement; within the Carthaginian/Punic sphere in the 3rd c.",
+      "politicalConfidence": "uncertain",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [
+        "Port / emporion"
+      ],
+      "culturalContext": "Greek (Dorian)",
+      "architectureContext": "The Archaic Doric temple group and a regular urban grid, largely ruined; the campaign-era settlement is the reduced, partially reoccupied core by the harbour.",
+      "chronologyNotes": [
+        "Destroyed 409; reduced reoccupation through the 4th–3rd c.",
+        "Western Sicily under Punic control at 278."
+      ],
+      "anachronismWarnings": [
+        "Do not show the 5th-century monumental city as the 278 settlement."
+      ],
+      "sources": [
+        "Pleiades gazetteer 462489 — https://pleiades.stoa.org/places/462489 (CC BY 3.0)",
+        "Diodorus Siculus, Bibliotheca historica 13",
+        "Thucydides, History of the Peloponnesian War 6"
+      ],
+      "pleiadesId": "462489",
+      "pleiadesSource": "https://pleiades.stoa.org/places/462489",
+      "pleiadesMatch": "Selinus",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Size and status of the 278 settlement (small town vs. garrison)."
+      ]
+    },
+    {
+      "proposedId": "r16-ita-camarina",
+      "key": "camarina",
+      "historicalName": "Camarina",
+      "alternateNames": [
+        "Kamarina (Greek)"
+      ],
+      "subregion": "Sicily",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 36.871878,
+        "lon": 14.448323,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek city on the south coast, founded by Syracuse (599 BCE), destroyed (552), refounded by Gela (461), razed by Carthage (405) and reoccupied after Timoleon (c. 339); a modest Greek town in the Syracusan sphere in 278.",
+      "politicalAuthority": "Greek polis, Syracusan orbit.",
+      "politicalConfidence": "uncertain",
+      "role": "Town / polis / civitas",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (Siceliote)",
+      "architectureContext": "Low coastal city behind dunes, with a small harbour and a shrine of Athena.",
+      "chronologyNotes": [
+        "Razed 405; Timoleontic reoccupation c. 339; Punic pressure in the 3rd c."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 462126 — https://pleiades.stoa.org/places/462126 (CC BY 3.0)",
+        "Diodorus Siculus, Bibliotheca historica 13–16"
+      ],
+      "pleiadesId": "462126",
+      "pleiadesSource": "https://pleiades.stoa.org/places/462126",
+      "pleiadesMatch": "Camarina",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Population and status of the 278 town."
+      ]
+    },
+    {
+      "proposedId": "r16-ita-pisae",
+      "key": "pisae",
+      "historicalName": "Pisae",
+      "alternateNames": [
+        "Pisa"
+      ],
+      "subregion": "Etruria / Ligurian coast",
+      "envelopeRegion": 1,
+      "coordinates": {
+        "lat": 43.719417,
+        "lon": 10.400106,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "probable",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "A settlement on the Tyrrhenian seaboard at the Arno mouth, of likely Etruscan/Ligurian origin, described as an early mercantile centre; a Roman colony is founded only in 89/180 BCE, so in 278 it is a native port settlement.",
+      "politicalAuthority": "Etruscan/Ligurian community, outside direct Roman civic control in 278.",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Etruscan/Ligurian",
+      "architectureContext": "Harbour settlement at the Arno mouth on the Tyrrhenian seaboard; the Roman colonial re-plan is later.",
+      "chronologyNotes": [
+        "Roman colony from 180 BCE (and a Latin colony earlier); outside the campaign window."
+      ],
+      "anachronismWarnings": [
+        "Do not show the 180 BCE Roman colonia as the campaign-era city."
+      ],
+      "sources": [
+        "Pleiades gazetteer 403253 — https://pleiades.stoa.org/places/403253 (CC BY 3.0)",
+        "Strabo, Geographia 5.2",
+        "Pliny, Naturalis historia 3"
+      ],
+      "pleiadesId": "403253",
+      "pleiadesSource": "https://pleiades.stoa.org/places/403253",
+      "pleiadesMatch": "Pisae",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Precise 278 settlement extent and its relation to the Etruscan/Ligurian communities."
+      ]
+    },
+    {
+      "proposedId": "r16-ana-tarsus",
+      "key": "tarsus",
+      "historicalName": "Tarsus",
+      "alternateNames": [
+        "Tarsos (Greek)",
+        "Antiochia ad Cydnum (later)",
+        "Tarsus"
+      ],
+      "subregion": "Cilicia Pedias",
+      "envelopeRegion": 8,
+      "coordinates": {
+        "lat": 36.914043,
+        "lon": 34.896467,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "The principal city of Cilicia Pedias on the Cydnus, occupied from the Neolithic tell of Gözlükule; a Seleucid regional centre in 278 (Cilicia passed to Antiochus I on the death of Seleucus I in 281).",
+      "politicalAuthority": "Seleucid-controlled city (Cilicia under Antiochus I) in 278.",
+      "politicalConfidence": "probable",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Regional hub"
+      ],
+      "culturalContext": "Anatolian/North-Syrian with a Greek civic overlay",
+      "architectureContext": "Tell-based settlement on the Cydnus commanding the Cilician plain and the routes through the Syrian Gates; the river-port function is central.",
+      "chronologyNotes": [
+        "Seleucid since c. 300 BCE; Cilicia to Antiochus I from 281."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the later Roman/early Christian city of St Paul's era."
+      ],
+      "sources": [
+        "Pleiades gazetteer 648789 — https://pleiades.stoa.org/places/648789 (CC BY 3.0)",
+        "Strabo, Geographia 14.5",
+        "Xenophon, Anabasis 1"
+      ],
+      "pleiadesId": "648789",
+      "pleiadesSource": "https://pleiades.stoa.org/places/648789",
+      "pleiadesMatch": "Tarsus/Antiochia ad Cydnum",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Balance of Greek civic institutions vs. native population at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-ana-anazarbus",
+      "key": "anazarbus",
+      "historicalName": "Anazarbus",
+      "alternateNames": [
+        "Anazarbos (Greek)",
+        "Caesarea ad Anazarbum (later)",
+        "Justinopolis (later)"
+      ],
+      "subregion": "Cilicia Pedias (east)",
+      "envelopeRegion": 8,
+      "coordinates": {
+        "lat": 37.256021,
+        "lon": 35.898447,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Ancient city of eastern Cilicia on the Pyramus, with multi-period remains at Dilekkaya; a local centre under Seleucid Cilicia in the 3rd c. BCE.",
+      "politicalAuthority": "Seleucid Cilicia (Antiochus I).",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [],
+      "culturalContext": "Anatolian/Greek",
+      "architectureContext": "Hilltop site on the Pyramus controlling the route north into Cappadocia and the eastern Cilician plain.",
+      "chronologyNotes": [
+        "The city's monumental florescence is Roman/Byzantine; the Hellenistic settlement is known mainly from later testimony."
+      ],
+      "anachronismWarnings": [
+        "Do not import the Roman 'Caesarea' / Byzantine monumentality."
+      ],
+      "sources": [
+        "Pleiades gazetteer 658378 — https://pleiades.stoa.org/places/658378 (CC BY 3.0)",
+        "Strabo, Geographia 14.5"
+      ],
+      "pleiadesId": "658378",
+      "pleiadesSource": "https://pleiades.stoa.org/places/658378",
+      "pleiadesMatch": "Anazarbos/Caesarea/Ioustin(ian)oupolis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Scale of the Hellenistic settlement at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-ana-soli-cilicia",
+      "key": "soli-cilicia",
+      "historicalName": "Soli",
+      "alternateNames": [
+        "Soloi (Greek)",
+        "Pompeiopolis (later)"
+      ],
+      "subregion": "Cilicia (coast)",
+      "envelopeRegion": 8,
+      "coordinates": {
+        "lat": 36.740056,
+        "lon": 34.539222,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek coastal city of western Cilicia, founded (by tradition) from Rhodes and Argos; a functioning port in the Hellenistic period, later refounded as Pompeiopolis.",
+      "politicalAuthority": "Greek polis of Cilicia under Seleucid hegemony (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (Cilician)",
+      "architectureContext": "Coastal city with a harbour on the Cilician coast west of the Cydnus.",
+      "chronologyNotes": [
+        "Refounded as Pompeiopolis only in 67/66 BCE (post-campaign)."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman Pompeiopolis colonnade as campaign-era."
+      ],
+      "sources": [
+        "Pleiades gazetteer 648781 — https://pleiades.stoa.org/places/648781 (CC BY 3.0)",
+        "Strabo, Geographia 14.5"
+      ],
+      "pleiadesId": "648781",
+      "pleiadesSource": "https://pleiades.stoa.org/places/648781",
+      "pleiadesMatch": "Soloi/Pompeiopolis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Seleucid vs. local dynastic control at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-lev-paphos",
+      "key": "paphos",
+      "historicalName": "Nea Paphos",
+      "alternateNames": [
+        "Paphos",
+        "Palaipaphos (Old Paphos, at Kouklia)",
+        "Baffa"
+      ],
+      "subregion": "Cyprus",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 34.757212,
+        "lon": 32.406593,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Cyprus was a Ptolemaic possession at 278; Nea Paphos (founded c. 320 BCE) served as the Ptolemaic administrative capital, while Old Paphos (Palaipaphos) remained the ancient sanctuary of Aphrodite.",
+      "politicalAuthority": "Ptolemaic royal administration (Ptolemy II Philadelphus).",
+      "politicalConfidence": "attested",
+      "role": "Capital / royal seat",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek/Cypriot with Phoenician and indigenous elements",
+      "architectureContext": "Coastal city on a promontory with a harbour and grid, beside the inland sanctuary of Aphrodite at Palaipaphos.",
+      "chronologyNotes": [
+        "Nea Paphos founded c. 320; Ptolemaic capital in the 3rd c."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the later Roman provincial city or the 'Tombs of the Kings' as contemporary."
+      ],
+      "sources": [
+        "Pleiades gazetteer 707586 — https://pleiades.stoa.org/places/707586 (CC BY 3.0)",
+        "Strabo, Geographia 14.6"
+      ],
+      "pleiadesId": "707586",
+      "pleiadesSource": "https://pleiades.stoa.org/places/707586",
+      "pleiadesMatch": "(Nea) Paphos",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Relative weight of Nea Paphos vs. Palaipaphos in 278."
+      ]
+    },
+    {
+      "proposedId": "r16-lev-salamis-cyprus",
+      "key": "salamis-cyprus",
+      "historicalName": "Salamis",
+      "alternateNames": [
+        "Salamis (Cyprus)",
+        "Konstantia (later)",
+        "Constantia"
+      ],
+      "subregion": "Cyprus",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 35.179581,
+        "lon": 33.902857,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Major Greek city on the east coast of Cyprus and a former royal seat, under Ptolemaic rule at 278.",
+      "politicalAuthority": "Ptolemaic (Ptolemy II).",
+      "politicalConfidence": "attested",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Political centre"
+      ],
+      "culturalContext": "Greek/Cypriot",
+      "architectureContext": "Harbour city on the east coast north-west of modern Ammochostos (Famagusta), with a large coastal settlement.",
+      "chronologyNotes": [
+        "Former kingdom absorbed by Ptolemy I c. 294; Ptolemaic thereafter."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman/Byzantine 'Constantia'."
+      ],
+      "sources": [
+        "Pleiades gazetteer 707617 — https://pleiades.stoa.org/places/707617 (CC BY 3.0)",
+        "Strabo, Geographia 14.6"
+      ],
+      "pleiadesId": "707617",
+      "pleiadesSource": "https://pleiades.stoa.org/places/707617",
+      "pleiadesMatch": "Salamis/Konstantia",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-kition",
+      "key": "kition",
+      "historicalName": "Kition",
+      "alternateNames": [
+        "Citium (Latin)",
+        "Larnaca (modern)"
+      ],
+      "subregion": "Cyprus",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 34.921182,
+        "lon": 33.631981,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Phoenician-founded city on the south coast of Cyprus with a major harbour; a Phoenician kingdom later absorbed into the Ptolemaic realm.",
+      "politicalAuthority": "Ptolemaic (Ptolemy II).",
+      "politicalConfidence": "attested",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Phoenician/Cypriot with a Greek presence",
+      "architectureContext": "Coastal city at modern Larnaca, with enclosed harbour works and sanctuaries.",
+      "chronologyNotes": [
+        "Phoenician dynasty ended under Ptolemaic annexation (c. 312–294); Ptolemaic in 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 707534 — https://pleiades.stoa.org/places/707534 (CC BY 3.0)",
+        "Strabo, Geographia 14.6"
+      ],
+      "pleiadesId": "707534",
+      "pleiadesSource": "https://pleiades.stoa.org/places/707534",
+      "pleiadesMatch": "Kition",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-amathus",
+      "key": "amathus",
+      "historicalName": "Amathus",
+      "alternateNames": [
+        "Amathous (Greek)"
+      ],
+      "subregion": "Cyprus",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 34.712264,
+        "lon": 33.137081,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Former royal city of Cyprus on the south coast, the last of the Cypriot kingdoms to come under Ptolemaic control (c. 294); a Ptolemaic city at 278.",
+      "politicalAuthority": "Ptolemaic (Ptolemy II).",
+      "politicalConfidence": "attested",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek/Cypriot with strong indigenous (Eteocypriot) continuity",
+      "architectureContext": "Coastal acropolis city with a harbour and the sanctuary of Aphrodite/Ariadne.",
+      "chronologyNotes": [
+        "Kingdom ended c. 294; Ptolemaic at 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 707462 — https://pleiades.stoa.org/places/707462 (CC BY 3.0)",
+        "Strabo, Geographia 14.6"
+      ],
+      "pleiadesId": "707462",
+      "pleiadesSource": "https://pleiades.stoa.org/places/707462",
+      "pleiadesMatch": "Amathous",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-kourion",
+      "key": "kourion",
+      "historicalName": "Kourion",
+      "alternateNames": [
+        "Curium (Latin)"
+      ],
+      "subregion": "Cyprus",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 34.665429,
+        "lon": 32.88586,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Ancient settlement on the south coast of Cyprus with a long occupation and the extramural sanctuary of Apollo Hylates; under Ptolemaic rule at 278.",
+      "politicalAuthority": "Ptolemaic (Ptolemy II).",
+      "politicalConfidence": "attested",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Greek/Cypriot",
+      "architectureContext": "Coastal bluff settlement above Episkopi, with the nearby sanctuary of Apollo Hylates.",
+      "chronologyNotes": [],
+      "anachronismWarnings": [
+        "Do not depict the later Roman city downslope (the 3rd-c. CE earthquake phase)."
+      ],
+      "sources": [
+        "Pleiades gazetteer 707549 — https://pleiades.stoa.org/places/707549 (CC BY 3.0)",
+        "Strabo, Geographia 14.6"
+      ],
+      "pleiadesId": "707549",
+      "pleiadesSource": "https://pleiades.stoa.org/places/707549",
+      "pleiadesMatch": "Kourion",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-antioch",
+      "key": "antioch",
+      "historicalName": "Antioch on the Orontes",
+      "alternateNames": [
+        "Antiochia (Greek)",
+        "Antakya (modern)",
+        "Theoupolis (later)"
+      ],
+      "subregion": "Seleucid Syria (Coele-Syria)",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 36.222551,
+        "lon": 36.183214,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Founded c. 300 BCE by Seleucus I Nicator as the Seleucid capital on the Orontes; in 278 it is the principal royal seat of Antiochus I Soter and one of the largest cities of the Mediterranean world.",
+      "politicalAuthority": "Seleucid royal capital (Antiochus I Soter).",
+      "politicalConfidence": "attested",
+      "role": "Capital / royal seat",
+      "secondaryRoles": [
+        "Political centre",
+        "Regional hub"
+      ],
+      "culturalContext": "Greek/Macedonian colonial city with Syrian and Jewish communities",
+      "architectureContext": "Planned Seleucid foundation between the Orontes and Mount Silpius, with an acropolis and walls; the downstream naval port of Seleucia Pieria serves the capital.",
+      "chronologyNotes": [
+        "Founded c. 300; capital of the Seleucid empire at 278."
+      ],
+      "anachronismWarnings": [
+        "Do not import the later Roman 'Theoupolis'/Antioch of the empire."
+      ],
+      "sources": [
+        "Pleiades gazetteer 658381 — https://pleiades.stoa.org/places/658381 (CC BY 3.0)",
+        "Strabo, Geographia 16.2",
+        "Libanius, Oratio 11 (Antiochicus; later)"
+      ],
+      "pleiadesId": "658381",
+      "pleiadesSource": "https://pleiades.stoa.org/places/658381",
+      "pleiadesMatch": "Antiochia/Theoupolis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Urban extent at 278 (the city expanded across the 3rd c.)."
+      ]
+    },
+    {
+      "proposedId": "r16-lev-apamea",
+      "key": "apamea",
+      "historicalName": "Apamea",
+      "alternateNames": [
+        "Pella (earlier Seleucid settlement)",
+        "Apamea on the Orontes"
+      ],
+      "subregion": "Seleucid Syria",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 35.421377,
+        "lon": 36.402413,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Seleucid foundation (Seleucus I, c. 300 BCE; on an earlier site named Pella) on the Orontes, one of the four cities of the Seleucid tetrapolis and a major military settlement.",
+      "politicalAuthority": "Seleucid tetrapolis city (Antiochus I).",
+      "politicalConfidence": "attested",
+      "role": "Political centre",
+      "secondaryRoles": [
+        "Fortress / stronghold"
+      ],
+      "culturalContext": "Greek/Macedonian with a Syrian population",
+      "architectureContext": "Walled city on the Orontes with a citadel; an important cavalry/military colony controlling the Orontes valley.",
+      "chronologyNotes": [
+        "Founded c. 300; tetrapolis member at 278."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the later Roman colonia or the long colonnaded street as campaign-era."
+      ],
+      "sources": [
+        "Pleiades gazetteer 668335 — https://pleiades.stoa.org/places/668335 (CC BY 3.0)",
+        "Strabo, Geographia 16.2"
+      ],
+      "pleiadesId": "668335",
+      "pleiadesSource": "https://pleiades.stoa.org/places/668335",
+      "pleiadesMatch": "Pella/Apamea",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-laodicea-ad-mare",
+      "key": "laodicea-ad-mare",
+      "historicalName": "Laodicea ad Mare",
+      "alternateNames": [
+        "Laodicea (Greek)",
+        "Latakia (modern)"
+      ],
+      "subregion": "Seleucid Syria",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 35.518923,
+        "lon": 35.77663,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Seleucid coastal foundation (named for Laodice), one of the four cities of the Seleucid tetrapolis and a major port of northern Syria.",
+      "politicalAuthority": "Seleucid city (Antiochus I).",
+      "politicalConfidence": "attested",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek with a Phoenician/Syrian substrate",
+      "architectureContext": "Coastal grid city (modern Latakia) with a harbour on the Syrian coast.",
+      "chronologyNotes": [
+        "Founded c. 300; tetrapolis member at 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 668290 — https://pleiades.stoa.org/places/668290 (CC BY 3.0)",
+        "Strabo, Geographia 16.2"
+      ],
+      "pleiadesId": "668290",
+      "pleiadesSource": "https://pleiades.stoa.org/places/668290",
+      "pleiadesMatch": "Laodicea",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-seleucia-pieria",
+      "key": "seleucia-pieria",
+      "historicalName": "Seleucia Pieria",
+      "alternateNames": [
+        "Seleukeia Pieria (Greek)",
+        "Hydatos Potamoi (earlier)",
+        "Seleucia"
+      ],
+      "subregion": "Seleucid Syria",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 36.121264,
+        "lon": 35.928597,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "The fortified port of Antioch, founded by Seleucus I c. 300 BCE at the mouth of the Orontes; one of the Seleucid tetrapolis and the principal naval base of the region.",
+      "politicalAuthority": "Seleucid (Antiochus I).",
+      "politicalConfidence": "attested",
+      "role": "Port / emporion",
+      "secondaryRoles": [
+        "Fortress / stronghold"
+      ],
+      "culturalContext": "Greek/Macedonian port with a Syrian hinterland",
+      "architectureContext": "Fortified coastal city with a harbour at the Orontes outlet; the naval stronghold of the Seleucid west.",
+      "chronologyNotes": [
+        "Founded c. 300; tetrapolis member at 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 658483 — https://pleiades.stoa.org/places/658483 (CC BY 3.0)",
+        "Strabo, Geographia 16.2"
+      ],
+      "pleiadesId": "658483",
+      "pleiadesSource": "https://pleiades.stoa.org/places/658483",
+      "pleiadesMatch": "Hydatos Potamoi/Seleukeia Pieria",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": []
+    },
+    {
+      "proposedId": "r16-lev-cyrrhus",
+      "key": "cyrrhus",
+      "historicalName": "Cyrrhus",
+      "alternateNames": [
+        "Cyrrus (Latin)",
+        "Cyrrhestica (district)",
+        "Hagioupolis (later)"
+      ],
+      "subregion": "Seleucid Syria (Cyrrhestica)",
+      "envelopeRegion": 9,
+      "coordinates": {
+        "lat": 36.745069,
+        "lon": 36.959713,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Seleucid foundation in northern Syria (Seleucus I or Antiochus I); a fortress and the namesake of the Cyrrhestica district, guarding the route toward the Euphrates and Cilicia.",
+      "politicalAuthority": "Seleucid (probable).",
+      "politicalConfidence": "probable",
+      "role": "Fortress / stronghold",
+      "secondaryRoles": [],
+      "culturalContext": "Greek/Macedonian with a Syrian population",
+      "architectureContext": "Fortified inland settlement of northern Syria; the region’s later monumental phase is Roman/Byzantine.",
+      "chronologyNotes": [
+        "District seat and Roman monumentality are post-278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 658446 — https://pleiades.stoa.org/places/658446 (CC BY 3.0)",
+        "Strabo, Geographia 16.2"
+      ],
+      "pleiadesId": "658446",
+      "pleiadesSource": "https://pleiades.stoa.org/places/658446",
+      "pleiadesMatch": "Cyrrus/Hagioupolis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Founder (Seleucus I vs. Antiochus I) and the 278 settlement size."
+      ]
+    },
+    {
+      "proposedId": "r16-mes-dura-europos",
+      "key": "dura-europos",
+      "historicalName": "Dura-Europos",
+      "alternateNames": [
+        "D(o)ura (Greek)",
+        "Europos",
+        "Dura"
+      ],
+      "subregion": "Middle Euphrates",
+      "envelopeRegion": 10,
+      "coordinates": {
+        "lat": 34.747885,
+        "lon": 40.729854,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "A Hellenistic foundation (c. 300 BCE, attributed to Seleucus I/Nikanor) on the Euphrates bluff; a Seleucid frontier settlement controlling a river crossing on the route to Syria.",
+      "politicalAuthority": "Seleucid frontier foundation (probable).",
+      "politicalConfidence": "probable",
+      "role": "Fortress / stronghold",
+      "secondaryRoles": [
+        "Town / polis / civitas"
+      ],
+      "culturalContext": "Greek/Macedonian military colony with a local Semitic population",
+      "architectureContext": "Planned Hellenistic fortress-town on a cliff above the Euphrates, with a citadel and a grid plan.",
+      "chronologyNotes": [
+        "Hellenistic foundation c. 300; Parthian and Roman phases follow after 113 BCE."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the later Parthian/Roman defences or the 3rd-c. CE synagogue and church."
+      ],
+      "sources": [
+        "Pleiades gazetteer 893990 — https://pleiades.stoa.org/places/893990 (CC BY 3.0)",
+        "Isidore of Charax, Parthian Stations (later)"
+      ],
+      "pleiadesId": "893990",
+      "pleiadesSource": "https://pleiades.stoa.org/places/893990",
+      "pleiadesMatch": "D(o)ura/Europos",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Founder and exact foundation chronology."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-tingis",
+      "key": "tingis",
+      "historicalName": "Tingis",
+      "alternateNames": [
+        "Tingi (Latin)",
+        "Tangier (modern)"
+      ],
+      "subregion": "Mauretania Tingitana",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.787546,
+        "lon": -5.810233,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Carthaginian colony of the early 5th c. BCE at the Pillars of Heracles (modern Tangier), a commercial centre controlling the Strait of Gibraltar; in the late 3rd c. it lay within the Mauretanian sphere.",
+      "politicalAuthority": "Carthaginian-derived trading settlement; Mauretanian sphere (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Punic/Mauretanian",
+      "architectureContext": "Coastal settlement on the African shore of the strait, with a harbour and an elevated urban core (the later Roman Tingis).",
+      "chronologyNotes": [
+        "Founded early 5th c.; Mauretanian (Bocchan) sphere at 278."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman colonia (1st c. BCE onward)."
+      ],
+      "sources": [
+        "Pleiades gazetteer 275736 — https://pleiades.stoa.org/places/275736 (CC BY 3.0)",
+        "Strabo, Geographia 17.3"
+      ],
+      "pleiadesId": "275736",
+      "pleiadesSource": "https://pleiades.stoa.org/places/275736",
+      "pleiadesMatch": "Tingi",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Degree of Carthaginian vs. Mauretanian control at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-volubilis",
+      "key": "volubilis",
+      "historicalName": "Volubilis",
+      "alternateNames": [
+        "Oualili (Amazigh)"
+      ],
+      "subregion": "Mauretania (interior)",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 34.072875,
+        "lon": -5.554869,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "probable",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "A Mauretanian urban settlement with Punic-Libyan (pre-Roman) phases beneath the later Roman city; a local centre in the interior at 278.",
+      "politicalAuthority": "Mauretanian kingdom (probable).",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [],
+      "culturalContext": "Mauretanian/Punic/Libyan",
+      "architectureContext": "The later Roman city (arch, capitol, basilica) overlies the pre-Roman core at the foot of the Jebel Zerhoun.",
+      "chronologyNotes": [
+        "Roman colonia and monumentality are post-278."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman imperial city."
+      ],
+      "sources": [
+        "Pleiades gazetteer 275740 — https://pleiades.stoa.org/places/275740 (CC BY 3.0)"
+      ],
+      "pleiadesId": "275740",
+      "pleiadesSource": "https://pleiades.stoa.org/places/275740",
+      "pleiadesMatch": "Volubilis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Scale of the pre-Roman settlement at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-afr-lixus",
+      "key": "lixus",
+      "historicalName": "Lixus",
+      "alternateNames": [
+        "Lixos (Greek)",
+        "Larache (near, modern)"
+      ],
+      "subregion": "Mauretania (Atlantic coast)",
+      "envelopeRegion": 14,
+      "coordinates": {
+        "lat": 35.20024,
+        "lon": -6.109952,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "probable",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Ancient Phoenician/Atlantic settlement on the Loukkos estuary (traditionally predating Gades), a Punic trading post in the Mauretanian sphere at 278.",
+      "politicalAuthority": "Punic/Mauretanian (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Phoenician/Punic/Mauretanian",
+      "architectureContext": "Atlantic port on the Loukkos with a tell/terrace overlooking the river mouth.",
+      "chronologyNotes": [
+        "Phoenician origins (8th c.?); Roman phases are later."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the Roman amphitheatre/settlement."
+      ],
+      "sources": [
+        "Pleiades gazetteer 275666 — https://pleiades.stoa.org/places/275666 (CC BY 3.0)",
+        "Strabo, Geographia 17.3"
+      ],
+      "pleiadesId": "275666",
+      "pleiadesSource": "https://pleiades.stoa.org/places/275666",
+      "pleiadesMatch": "Lixus",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Foundation date and 278 extent."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-alexandria",
+      "key": "alexandria",
+      "historicalName": "Alexandria",
+      "alternateNames": [
+        "Alexandreia (Greek)",
+        "al-Iskandariyya (modern)"
+      ],
+      "subregion": "Nile Delta (Lower Egypt)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 31.201435,
+        "lon": 29.909773,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Founded by Alexander the Great in 332/331 BCE and made the Ptolemaic capital; in 278, under Ptolemy II Philadelphus, it was the seat of the Ptolemaic kingdom and the largest city of the Mediterranean world, with the Museion/Library and the recently completed Pharos (c. 280).",
+      "politicalAuthority": "Ptolemaic royal capital (Ptolemy II Philadelphus).",
+      "politicalConfidence": "attested",
+      "role": "Capital / royal seat",
+      "secondaryRoles": [
+        "Port / emporion",
+        "Political centre"
+      ],
+      "culturalContext": "Greek/Macedonian colonial city with large Egyptian, Jewish and other populations",
+      "architectureContext": "Grid-planned Hellenistic capital between the sea and Lake Mareotis, with the Pharos lighthouse, the royal palaces (Bruchion), the Museion/Library and the Heptastadion linking to Pharos island.",
+      "chronologyNotes": [
+        "Capital from 320/305 under Ptolemy I; at 278 under Ptolemy II."
+      ],
+      "anachronismWarnings": [
+        "Do not depict Roman/Byzantine phases (Caesar's fire 48 BCE; later walls and monuments)."
+      ],
+      "sources": [
+        "Pleiades gazetteer 727070 — https://pleiades.stoa.org/places/727070 (CC BY 3.0)",
+        "Strabo, Geographia 17.1"
+      ],
+      "pleiadesId": "727070",
+      "pleiadesSource": "https://pleiades.stoa.org/places/727070",
+      "pleiadesMatch": "Alexandria",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-for-atlas-integration",
+      "unresolved": [
+        "Detail of the early Ptolemaic city plan beneath the modern city."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-naucratis",
+      "key": "naucratis",
+      "historicalName": "Naucratis",
+      "alternateNames": [
+        "Naukratis (Greek)"
+      ],
+      "subregion": "Nile Delta (Canopic branch)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.900508,
+        "lon": 30.591928,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "The Greek trading emporion of the Egyptian Delta, founded in the 7th c. BCE on the Canopic branch; a Greek city under Ptolemaic rule at 278.",
+      "politicalAuthority": "Ptolemaic (probable); a Greek polis in Egypt.",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (in Egypt)",
+      "architectureContext": "Delta emporion with Greek sanctuaries (Hellenion) and a river harbour; partly obliterated by modern cultivation.",
+      "chronologyNotes": [
+        "Greek emporion from the 7th c.; Ptolemaic at 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 727169 — https://pleiades.stoa.org/places/727169 (CC BY 3.0)",
+        "Herodotus, Historiae 2",
+        "Strabo, Geographia 17.1"
+      ],
+      "pleiadesId": "727169",
+      "pleiadesSource": "https://pleiades.stoa.org/places/727169",
+      "pleiadesMatch": "Naucratis",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact extent of the Hellenistic town (site partly destroyed)."
+      ]
+    },
+    {
+      "proposedId": "r16-egy-sais",
+      "key": "sais",
+      "historicalName": "Sais",
+      "alternateNames": [
+        "Sa (ancient Egyptian)",
+        "Sais"
+      ],
+      "subregion": "Nile Delta (Western)",
+      "envelopeRegion": 16,
+      "coordinates": {
+        "lat": 30.96715,
+        "lon": 30.774367,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "An ancient Egyptian town and cult centre of Neith in the western Delta, capital of the 26th-Dynasty kings; a regional Egyptian town under Ptolemaic rule at 278.",
+      "politicalAuthority": "Ptolemaic (probable).",
+      "politicalConfidence": "probable",
+      "role": "Regional hub",
+      "secondaryRoles": [
+        "Sanctuary town"
+      ],
+      "culturalContext": "Egyptian",
+      "architectureContext": "Delta town with the temple of Neith; the great Late Period monumentality predates the campaign.",
+      "chronologyNotes": [
+        "26th-Dynasty capital; Ptolemaic by 278."
+      ],
+      "anachronismWarnings": [],
+      "sources": [
+        "Pleiades gazetteer 727217 — https://pleiades.stoa.org/places/727217 (CC BY 3.0)",
+        "Herodotus, Historiae 2"
+      ],
+      "pleiadesId": "727217",
+      "pleiadesSource": "https://pleiades.stoa.org/places/727217",
+      "pleiadesMatch": "Sais",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Scale of the Ptolemaic-period town."
+      ]
+    },
+    {
+      "proposedId": "r16-cau-olbia-borysthenes",
+      "key": "olbia-borysthenes",
+      "historicalName": "Olbia",
+      "alternateNames": [
+        "Borysthenes (Hdt.)",
+        "Olbia Pontica",
+        "Olbia (Borysthenes)"
+      ],
+      "subregion": "North Pontic (Scythia)",
+      "envelopeRegion": 19,
+      "coordinates": {
+        "lat": 46.692386,
+        "lon": 31.905857,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Milesian Greek colony at the junction of the Hypanis/Bug and the Borysthenes/Dnieper (modern Parutyne), the principal Greek emporion of the north-west Black Sea, trading with the Scythian hinterland.",
+      "politicalAuthority": "Independent Greek polis; relations with the Scythian kingdom (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (North Pontic)",
+      "architectureContext": "Walled coastal polis with a harbour and chora, under Scythian/Sarmatian pressure in the 3rd c. BCE.",
+      "chronologyNotes": [
+        "Commercial decline and steppe pressure through the 3rd c.; the city survived."
+      ],
+      "anachronismWarnings": [
+        "Do not depict the later Roman garrison phase."
+      ],
+      "sources": [
+        "Pleiades gazetteer 226546 — https://pleiades.stoa.org/places/226546 (CC BY 3.0)",
+        "Herodotus, Historiae 4"
+      ],
+      "pleiadesId": "226546",
+      "pleiadesSource": "https://pleiades.stoa.org/places/226546",
+      "pleiadesMatch": "Borysthenes/Olbia",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Precise relationship with the Scythian kingdom at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-cau-tyras",
+      "key": "tyras",
+      "historicalName": "Tyras",
+      "alternateNames": [
+        "Tyras (Greek)",
+        "Bilhorod-Dnistrovskyi (modern)"
+      ],
+      "subregion": "North Pontic",
+      "envelopeRegion": 19,
+      "coordinates": {
+        "lat": 46.200756,
+        "lon": 30.350134,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Milesian colony on the estuary of the Tyras/Dniester (modern Bilhorod-Dnistrovskyi), a trading city of the North Pontic Greek network.",
+      "politicalAuthority": "Greek polis (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek (North Pontic)",
+      "architectureContext": "Coastal/estuary settlement with a harbour on the Dniester liman.",
+      "chronologyNotes": [],
+      "anachronismWarnings": [
+        "Do not depict the later Roman/Byzantine fortress (Cetatea Albă)."
+      ],
+      "sources": [
+        "Pleiades gazetteer 226800 — https://pleiades.stoa.org/places/226800 (CC BY 3.0)",
+        "Herodotus, Historiae 4"
+      ],
+      "pleiadesId": "226800",
+      "pleiadesSource": "https://pleiades.stoa.org/places/226800",
+      "pleiadesMatch": "Tyras/Ophioussa",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Chronology of the walled town at 278."
+      ]
+    },
+    {
+      "proposedId": "r16-cau-tanais",
+      "key": "tanais",
+      "historicalName": "Tanais",
+      "alternateNames": [
+        "Tanais (Greek)"
+      ],
+      "subregion": "North Pontic (Don delta)",
+      "envelopeRegion": 19,
+      "coordinates": {
+        "lat": 47.268688,
+        "lon": 39.335671,
+        "precision": "approximate representative point (Pleiades reprPoint)"
+      },
+      "presence278Bce": "attested",
+      "locationConfidence": "attested",
+      "identityConfidence": "attested",
+      "existenceEvidence": "Greek trading city founded in the early/mid-3rd c. BCE (c. 300–250) by Bosporan Greeks with local (Meotian/Sarmatian) involvement at the mouth of the Tanais/Don, the frontier emporion between the Greek world and the steppe.",
+      "politicalAuthority": "Bosporan Greek foundation with local tribal involvement (probable).",
+      "politicalConfidence": "probable",
+      "role": "Port / emporion",
+      "secondaryRoles": [],
+      "culturalContext": "Greek with steppe-nomad interaction",
+      "architectureContext": "New emporion on the Don delta; the settlement is barely established at the campaign date.",
+      "chronologyNotes": [
+        "Founded in the 3rd c. BCE; very new or incipient at 278 — presence flagged."
+      ],
+      "anachronismWarnings": [
+        "Do not overstate the settlement's maturity at 278."
+      ],
+      "sources": [
+        "Pleiades gazetteer 825397 — https://pleiades.stoa.org/places/825397 (CC BY 3.0)",
+        "Strabo, Geographia 11.2"
+      ],
+      "pleiadesId": "825397",
+      "pleiadesSource": "https://pleiades.stoa.org/places/825397",
+      "pleiadesMatch": "Tanais",
+      "discoveryReference": null,
+      "integrationReadiness": "ready-with-caveats",
+      "unresolved": [
+        "Exact foundation date relative to 278."
+      ]
+    }
+  ]
+}
