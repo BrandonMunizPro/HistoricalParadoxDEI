@@ -1,3 +1,4 @@
+import { TERRAIN_HEIGHT_SCALE } from '../src/presentation/terrain-presentation.ts';
 import { FrameWorkQueue } from '../src/presentation/frame-work-queue.ts';
 import { streamProfile } from './stream-profile.js';
 import * as THREE from 'three';
@@ -6,7 +7,10 @@ import { unprojectLocalMapMetres } from '../src/infrastructure/world-geography.t
 import { smoothTerrainReveal } from '../src/presentation/regional-ecology.ts';
 import { parentTerrainSamplesSteps } from '../src/presentation/terrain-transition.ts';
 import { stationaryTransitionAttributes } from './regional-material.js';
+import { sourceTerrainHeight } from '../src/presentation/inland-water.ts';
 import { barycentricWeights } from '../src/presentation/terrain-style.ts';
+import { terrainCoverageInset, projectedTriangleHeight } from '../src/presentation/terrain-surface.ts';
+import { terrainMorphWeight } from '../src/presentation/terrain-transition.ts';
 
 import { terrainTopologySteps } from '../src/presentation/terrain-topology.ts';
 import { validateTerrainTile } from '../src/infrastructure/terrain-tile.ts';
@@ -44,6 +48,7 @@ export function createTerrainTiles(
   contextLod,
   decorateMaterial,
   prepareGpu,
+  inlandWater,
 ) {
   const workQueue = new FrameWorkQueue();
   let coverQueued = false;
@@ -80,11 +85,17 @@ export function createTerrainTiles(
     value: Array.from({ length: limit }, () => new THREE.Vector4(0, 0, 0, 0)),
   };
   const coverageCount = { value: 0 };
+  const coverageInsets = {value:Array.from({length:limit},()=>new THREE.Vector2())};
   const packedContext = atob(contextCoastMask.bits),
     contextPixels = new Uint8Array(contextCoastMask.size ** 2);
   for (let i = 0; i < contextPixels.length; i++)
     contextPixels[i] =
       packedContext.charCodeAt(i >> 3) & (1 << (i % 8)) ? 255 : 0;
+  inlandWater.maskLand(
+    contextPixels,
+    manifest.contextBounds,
+    contextCoastMask.size,
+  );
   const contextShore = new THREE.DataTexture(
     contextPixels,
     contextCoastMask.size,
@@ -97,10 +108,12 @@ export function createTerrainTiles(
       value: Array.from({ length: 12 }, () => new THREE.Vector4(0, 0, 0, 0)),
     },
     cityCount = { value: 0 };
+  const cityInsets={value:Array.from({length:12},()=>new THREE.Vector2())};
   contextMaterial.onBeforeCompile = (shader) => {
     decorateMaterial(shader);
     shader.uniforms.tileCoverage = coverage;
     shader.uniforms.tileCoverageCount = coverageCount;
+    shader.uniforms.tileCoverageInsets = coverageInsets;
     shader.uniforms.contextShore = { value: contextShore };
     const cb = manifest.contextBounds;
     shader.uniforms.contextGeoBounds = {
@@ -118,13 +131,15 @@ export function createTerrainTiles(
     shader.fragmentShader = shader.fragmentShader
       .replace(
         '#include <common>',
-        '#include <common>\nvarying vec2 contextCoordinate; uniform vec4 tileCoverage[12]; uniform int tileCoverageCount; uniform sampler2D contextShore; uniform vec4 contextGeoBounds;',
+        '#include <common>\nvarying vec2 contextCoordinate; uniform vec4 tileCoverage[12]; uniform vec2 tileCoverageInsets[12]; uniform int tileCoverageCount; uniform sampler2D contextShore; uniform vec4 contextGeoBounds;',
       )
       .replace(
         '#include <clipping_planes_fragment>',
-        '#include <clipping_planes_fragment>\nvec2 coverageUv=(regionalGeographicDegrees()-contextGeoBounds.xy)/(contextGeoBounds.zw-contextGeoBounds.xy);if(texture2D(contextShore,vec2(coverageUv.x,1.0-coverageUv.y)).r<0.5)discard;for(int i=0;i<12;i++){if(i>=tileCoverageCount)break;vec4 b=tileCoverage[i];vec2 inset=vec2(.00005)/(contextGeoBounds.zw-contextGeoBounds.xy);if(coverageUv.x>b.x+inset.x&&coverageUv.x<b.z-inset.x&&coverageUv.y>b.y+inset.y&&coverageUv.y<b.w-inset.y)discard;}',
+        '#include <clipping_planes_fragment>\nvec2 coverageUv=(regionalGeographicDegrees()-contextGeoBounds.xy)/(contextGeoBounds.zw-contextGeoBounds.xy);vec2 maskSize=vec2(textureSize(contextShore,0));vec2 maskUv=(vec2(coverageUv.x,1.0-coverageUv.y)*(maskSize-1.0)+.5)/maskSize;diffuseColor.a*=texture2D(contextShore,maskUv).r;for(int i=0;i<12;i++){if(i>=tileCoverageCount)break;vec4 b=tileCoverage[i];vec2 inset=tileCoverageInsets[i]/(contextGeoBounds.zw-contextGeoBounds.xy);if(coverageUv.x>b.x+inset.x&&coverageUv.x<b.z-inset.x&&coverageUv.y>b.y+inset.y&&coverageUv.y<b.w-inset.y)discard;}',
       );
   };
+  contextMaterial.alphaToCoverage = true;
+  contextMaterial.alphaTest = 0.5;
   contextMaterial.needsUpdate = true;
   const bounds = manifest.contextBounds;
   function* cover(...args) {
@@ -148,6 +163,7 @@ export function createTerrainTiles(
     for (const entry of entries) {
       const t = entry.data,
         b = t.bounds;
+      coverageInsets.value[i].set(...entry.clipInset);
       coverage.value[i++].set(
         (b.west - bounds.west) / (bounds.east - bounds.west),
         (b.south - bounds.south) / (bounds.north - bounds.south),
@@ -155,6 +171,7 @@ export function createTerrainTiles(
         (b.north - bounds.south) / (bounds.north - bounds.south),
       );
       if (t.kind === 'city') {
+        cityInsets.value[j].set(...entry.clipInset);
         cityCoverage.value[j++].set(b.west, b.south, b.east, b.north);
         yield* blendWindow(entry);
       } else yield* blendContextEdge(entry);
@@ -190,6 +207,7 @@ export function createTerrainTiles(
       : 'context:' + contextLod();
     if (entry.windowParent === signature) return;
     entry.windowParent = signature;
+    entry.revealParentId = parent?.data.id ?? null;
     let lookup;
     if (parent) {
       const fine = parent.lod.levels[0].object.geometry,
@@ -234,6 +252,14 @@ export function createTerrainTiles(
         normal: [0, 1, 2].map((k) => blend('normal', k)),
       };
     }
+    const midpoint = {
+      lon: (b.west + b.east) / 2,
+      lat: (b.south + b.north) / 2,
+    };
+    entry.revealDiagnostic = {
+      previousGlobalHeight: contextSurface(midpoint.lon, midpoint.lat).height,
+      parentHeight: surface(midpoint.lon, midpoint.lat).height,
+    };
     for (const { object } of entry.lod.levels) {
       const g = object.geometry;
       for (let i = 0; i < g.attributes.position.count; i++) {
@@ -243,11 +269,16 @@ export function createTerrainTiles(
           edge = Math.min(x, y, 1 - x, 1 - y),
           t = Math.min(1, edge * 8),
           blend = t * t * (3 - 2 * t);
-        if (blend === 1) continue;
         const s = surface(
           b.west + x * (b.east - b.west),
           b.north - y * (b.north - b.south),
         );
+        g.attributes.contextHeight.setX(i, s.height);
+        if (x === 0.5 && y === 0.5)
+          entry.revealDiagnostic.appliedCenterHeight =
+            g.attributes.contextHeight.getX(i);
+        g.attributes.contextNormal.setXYZ(i, ...s.normal);
+        if (blend === 1) continue;
         g.attributes.position.setY(
           i,
           s.height * (1 - blend) + g.userData.originalHeights[i] * blend,
@@ -259,6 +290,9 @@ export function createTerrainTiles(
       }
       g.attributes.position.needsUpdate = true;
       g.attributes.normal.needsUpdate = true;
+      g.attributes.contextHeight.needsUpdate = true;
+      g.attributes.contextNormal.needsUpdate = true;
+      g.userData.revealPrepared = true;
       g.computeBoundingSphere();
     }
     yield* refreshTransitions(entry);
@@ -454,7 +488,7 @@ export function createTerrainTiles(
           (r / (t.height - 1)) * (t.bounds.north - t.bounds.south),
         [x, z] = project(lon, lat);
       const e = sampleTile(t, lon, lat);
-      p.push(x, Math.max(0.002, (e / 1000) * 3), z);
+      p.push(x, sourceTerrainHeight(e), z);
       uv.push(x / 250, -z / 250);
       coastUv.push(c / (t.width - 1), r / (t.height - 1));
       const color = new THREE.Color().setRGB(1, 1, 1, THREE.SRGBColorSpace);
@@ -462,10 +496,10 @@ export function createTerrainTiles(
       // Shared geographic derivative avoids normal seams; coarse context derivative is deliberate.
       const dx =
         ((elevation(lon + 0.006, lat) - elevation(lon - 0.006, lat)) / 1000) *
-        3;
+        TERRAIN_HEIGHT_SCALE;
       const dz =
         ((elevation(lon, lat - 0.006) - elevation(lon, lat + 0.006)) / 1000) *
-        3;
+        TERRAIN_HEIGHT_SCALE;
       const epsilon = Math.min(
         0.003,
         ((t.bounds.east - t.bounds.west) / (t.width - 1)) * 0.5,
@@ -475,12 +509,12 @@ export function createTerrainTiles(
         ((sampleTile(t, lon + epsilon, lat) -
           sampleTile(t, lon - epsilon, lat)) /
           1000) *
-        3;
+        TERRAIN_HEIGHT_SCALE;
       const fineDz =
         ((sampleTile(t, lon, lat - epsilon) -
           sampleTile(t, lon, lat + epsilon)) /
           1000) *
-        3;
+        TERRAIN_HEIGHT_SCALE;
       const edge = Math.min(c, r, t.width - 1 - c, t.height - 1 - r),
         blend = Math.min(1, edge / 4),
         eastStep =
@@ -502,6 +536,18 @@ export function createTerrainTiles(
     g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
     g.setAttribute('coastUv', new THREE.Float32BufferAttribute(coastUv, 2));
     g.setIndex(indices);
+    // Small spatial buckets avoid raycasting every triangle for every marker.
+    const buckets = new Map();
+    for(let i=0;i<indices.length;i+=3) {
+      if(i%1536===0) yield;
+      const ids=indices.slice(i,i+3);
+      const x=Math.floor(Math.min(...ids.map(id=>vertices[id][0]))/stride);
+      const y=Math.floor(Math.min(...ids.map(id=>vertices[id][1]))/stride);
+      const key=`${x}:${y}`, list=buckets.get(key) ?? [];
+      list.push(ids);buckets.set(key,list);
+    }
+    g.userData.surfaceBuckets=buckets;
+    g.userData.stride=stride;
     g.computeBoundingSphere();
     g.userData.originalColors = colors.slice();
     g.userData.baseColors = colors.slice();
@@ -586,6 +632,7 @@ export function createTerrainTiles(
             mask = new Uint8Array(size * size);
           for (let i = 0; i < mask.length; i++)
             mask[i] = packed.charCodeAt(i >> 3) & (1 << (i % 8)) ? 255 : 0;
+          inlandWater.maskLand(mask, data.bounds, size);
           const texture = new THREE.DataTexture(
             mask,
             size,
@@ -595,6 +642,8 @@ export function createTerrainTiles(
           texture.minFilter = texture.magFilter = THREE.LinearFilter;
           texture.needsUpdate = true;
           const tileMaterial = material.clone();
+          tileMaterial.alphaToCoverage = true;
+          tileMaterial.alphaTest = 0.5;
           // Small underlaps close clipping precision cracks; depth bias gives detailed terrain priority.
           tileMaterial.polygonOffset = data.kind !== 'city';
           tileMaterial.polygonOffsetFactor = 1;
@@ -607,6 +656,7 @@ export function createTerrainTiles(
             shader.uniforms.shoreMask = { value: texture };
             shader.uniforms.cityCoverage = cityCoverage;
             shader.uniforms.cityCount = cityCount;
+            shader.uniforms.cityInsets = cityInsets;
             shader.uniforms.tileBounds = {
               value: new THREE.Vector4(
                 data.bounds.west,
@@ -627,14 +677,14 @@ export function createTerrainTiles(
             shader.fragmentShader = shader.fragmentShader
               .replace(
                 '#include <common>',
-                '#include <common>\nvarying vec2 shoreUv; uniform sampler2D shoreMask; uniform vec4 cityCoverage[12];uniform int cityCount;uniform vec4 tileBounds;',
+                '#include <common>\nvarying vec2 shoreUv; uniform sampler2D shoreMask; uniform vec4 cityCoverage[12];uniform vec2 cityInsets[12];uniform int cityCount;uniform vec4 tileBounds;',
               )
               .replace(
                 '#include <clipping_planes_fragment>',
-                '#include <clipping_planes_fragment>\nif(texture2D(shoreMask,shoreUv).r<0.5)discard;' +
+                '#include <clipping_planes_fragment>\nvec2 maskSize=vec2(textureSize(shoreMask,0));vec2 geographicUv=(regionalGeographicDegrees()-tileBounds.xw)/(tileBounds.zy-tileBounds.xw);diffuseColor.a*=texture2D(shoreMask,(geographicUv*(maskSize-1.0)+.5)/maskSize).r;' +
                   (data.kind === 'city'
                     ? ''
-                    : '\nvec2 geo=mix(tileBounds.xw,tileBounds.zy,shoreUv);for(int i=0;i<12;i++){if(i>=cityCount)break;vec4 b=cityCoverage[i];if(geo.x>b.x+.00003&&geo.x<b.z-.00003&&geo.y>b.y+.00003&&geo.y<b.w-.00003)discard;}'),
+                    : '\nvec2 geo=regionalGeographicDegrees();for(int i=0;i<12;i++){if(i>=cityCount)break;vec4 b=cityCoverage[i];vec2 inset=cityInsets[i];if(geo.x>b.x+inset.x&&geo.x<b.z-inset.x&&geo.y>b.y+inset.y&&geo.y<b.w-inset.y)discard;}'),
               );
           };
           const lod = new THREE.LOD();
@@ -667,6 +717,7 @@ export function createTerrainTiles(
             material: tileMaterial,
             reveal,
             born: performance.now(),
+            clipInset: terrainCoverageInset(data.bounds,data.width,{lon:13.5,lat:41.5}),
           };
           yield* refreshTransitions(entry);
           return entry;
@@ -707,8 +758,45 @@ export function createTerrainTiles(
       pending.delete(descriptor.id);
     }
   }
+  let activeCamera = null;
+  function surfaceHeight(lon, lat) {
+    const lakeHeight=inlandWater.surfaceHeight(lon,lat);
+    if(lakeHeight!==undefined) return lakeHeight;
+    const entries=[...resident.values()].filter(({data:t})=>lon>=t.bounds.west&&lon<=t.bounds.east&&lat>=t.bounds.south&&lat<=t.bounds.north)
+      .sort((a,b)=>(a.data.bounds.east-a.data.bounds.west)*(a.data.bounds.north-a.data.bounds.south)-(b.data.bounds.east-b.data.bounds.west)*(b.data.bounds.north-b.data.bounds.south));
+    const [px,pz]=project(lon,lat);
+    for(const e of entries) {
+      const g=e.lod.levels[e.lod.getCurrentLevel()].object.geometry, b=e.data.bounds;
+      const size=e.data.coastMask.size;
+      const mx=Math.max(0,Math.min(size-1,Math.round((lon-b.west)/(b.east-b.west)*(size-1))));
+      const my=Math.max(0,Math.min(size-1,Math.round((b.north-lat)/(b.north-b.south)*(size-1))));
+      if(!e.texture.image.data[my*size+mx]) return 0;
+      const stride=g.userData.stride;
+      const col=Math.min(e.data.width-2,Math.floor((lon-b.west)/(b.east-b.west)*(e.data.width-1)));
+      const row=Math.min(e.data.height-2,Math.floor((b.north-lat)/(b.north-b.south)*(e.data.height-1)));
+      const cx=Math.floor(col/stride),cy=Math.floor(row/stride),triangles=[];
+      for(let y=cy-1;y<=cy+1;y++) for(let x=cx-1;x<=cx+1;x++)
+        triangles.push(...(g.userData.surfaceBuckets.get(`${x}:${y}`) ?? []));
+      const morph=activeCamera ? terrainMorphWeight(activeCamera.position.distanceTo(e.lod.position),g.attributes.lodThreshold.getX(0)) : 0;
+      const height=projectedTriangleHeight([px-e.lod.position.x,pz-e.lod.position.z],triangles,id=>{
+        const a=g.attributes;
+        const x=THREE.MathUtils.lerp(a.position.getX(id),a.parentPosition.getX(id),morph);
+        const y=THREE.MathUtils.lerp(a.position.getY(id),a.parentPosition.getY(id),morph);
+        const z=THREE.MathUtils.lerp(a.position.getZ(id),a.parentPosition.getZ(id),morph);
+        return [x,THREE.MathUtils.lerp(a.contextHeight.getX(id),y,e.reveal.value),z];
+      });
+      if(height!==undefined) return height;
+    }
+    const size=contextCoastMask.size;
+    const mx=Math.max(0,Math.min(size-1,Math.round((lon-bounds.west)/(bounds.east-bounds.west)*(size-1))));
+    const my=Math.max(0,Math.min(size-1,Math.round((bounds.north-lat)/(bounds.north-bounds.south)*(size-1))));
+    return contextPixels[my*size+mx] ? contextSurface(lon,lat).height : 0;
+  }
   return {
+    surfaceHeight,
+    setVisible(visible) { group.visible=visible; },
     update(camera, target, now) {
+      activeCamera=camera;
       streamProfile.measure('preparation-slice', () => workQueue.pump(3));
       for (const entry of resident.values()) {
         entry.reveal.value = smoothTerrainReveal(now - entry.born);
@@ -817,6 +905,13 @@ export function createTerrainTiles(
               3,
             ) ?? [],
         ),
+        revealParents: [...resident.values()]
+          .filter((e) => e.data.kind === 'city')
+          .map((e) => ({
+            id: e.data.id,
+            parentId: e.revealParentId ?? null,
+            diagnostic: e.revealDiagnostic ?? null,
+          })),
         cached: [...inactive.keys()],
         cacheLimit: 4,
         preparationJobs: workQueue.size,

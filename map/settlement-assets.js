@@ -1,3 +1,4 @@
+import { TERRAIN_HEIGHT_SCALE } from '../src/presentation/terrain-presentation.ts';
 import * as THREE from 'three';
 import { createArchitecturalModules } from './architectural-modules.js';
 
@@ -97,7 +98,8 @@ export function createSettlementAssets(
     const special = ['roma', 'capua', 'neapolis', 'norba'].includes(s.key);
     const radius = s.tier === 1 ? 0.8 : s.tier === 2 ? 0.55 : 0.3;
     const y =
-      terrainAt(x, z) ?? Math.max(0.002, (elevation(s.lon, s.lat) / 1000) * 3);
+      terrainAt(x, z) ??
+      Math.max(0.002, (elevation(s.lon, s.lat) / 1000) * TERRAIN_HEIGHT_SCALE);
     const group = new THREE.Group();
     group.position.set(x, y, z);
     detail.add(group);
@@ -367,6 +369,7 @@ export function createSettlementAssets(
       }
       mesh.castShadow = true;
       mesh.receiveShadow = true;
+      mesh.userData.smallVegetation = kind === 'crown' || kind === 'trunk';
       group.add(mesh);
     }
     const proxy = new THREE.Group();
@@ -439,6 +442,10 @@ export function createSettlementAssets(
         );
         c.group.visible = distance < 80 && d < 100;
         c.proxy.visible = !c.group.visible;
+        // Fifteen-metre crowns become isolated black pixels at intermediate zoom.
+        // Retain schematic local vegetation only while its silhouette is readable.
+        for (const child of c.group.children)
+          if (child.userData.smallVegetation) child.visible = d < 4;
       }
     },
   };

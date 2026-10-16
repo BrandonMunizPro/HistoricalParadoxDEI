@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="data:," />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>HistoricalGame · Italia</title>
     <link rel="stylesheet" href="/map/style.css" />
@@ -27,6 +28,16 @@
         settlement to inspect its geographic record.
       </p>
       <dl id="details"></dl>
+      <div class="map-layers" aria-label="Map layers">
+        <label><input id="authoritative-settlements" type="checkbox" checked /> Playable / approved sites</label>
+        <label><input id="research-markers" type="checkbox" checked /> Historical locations</label>
+        <label><input id="living-world" type="checkbox" checked /> Clouds and wildlife</label>
+        <p id="research-status" aria-live="polite">Loading historical locations…</p>
+        <p class="map-legend"><span class="legend-approved">●</span> Approved site <span class="legend-reference">◆</span> Research location<br />Dashed = disputed · numbers = nearby locations</p>
+      </div>
+      <label for="settlement-search">Find a settlement</label>
+      <input id="settlement-search" type="search" placeholder="Name or historical alias" autocomplete="off" aria-controls="settlement-search-results" />
+      <div id="settlement-search-results" aria-live="polite"></div>
       <div id="settlements"></div>
       <details id="camera-settings" class="note">
         <summary>Camera controls and settings</summary>
@@ -105,6 +116,7 @@
       <label for="world-view">Geographic camera</label>
       <button id="world-overhead">Entire world · overhead</button>
       <select id="world-view" aria-label="Geographic camera preset">
+        <option value="mediterranean">Mediterranean campaign</option>
         <option value="world">Entire campaign envelope</option>
         <option value="iberia">Iberia</option>
         <option value="italy">Italy</option>
@@ -121,6 +133,7 @@
         Rendering envelope: 12 W to 75 E, 12 N to 62 N. Historical campaign
         margins remain provisional.
       </p>
+      <p class="note">Historical locations are geographic research references, not additional playable settlements. Click a marker to inspect its names and uncertainty. Research identifications are not verified for 278 BCE.</p>
       <label class="note"
         ><input id="synthetic-markers" type="checkbox" /> Benchmark 700
         synthetic markers (not historical sites)</label

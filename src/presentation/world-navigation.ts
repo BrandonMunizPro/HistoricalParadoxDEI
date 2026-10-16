@@ -9,6 +9,7 @@ export const WORLD_RENDER_BOUNDS: Bounds = {
   north: 62,
 };
 export const REGION_VIEWS = {
+  mediterranean: { lon: 13, lat: 37, distance: 5200 },
   greeceDetail: { lon: 22.8, lat: 37.56, distance: 8, local: true },
   egyptDetail: { lon: 32.57, lat: 25.74, distance: 9, local: true },
   northAfrica: { lon: 12, lat: 28, distance: 2600 },

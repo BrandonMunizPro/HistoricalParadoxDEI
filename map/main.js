@@ -1,4 +1,15 @@
+import { TERRAIN_HEIGHT_SCALE } from '../src/presentation/terrain-presentation.ts';
+import {
+  canopyOpacity,
+  envelopeHaze,
+} from '../src/presentation/terrain-presentation.ts';
 import { streamProfile } from './stream-profile.js';
+import { createResearchLayer } from './research-layer.js';
+import { approvedMapSites } from '../src/presentation/approved-map-sites.ts';
+import { createApprovedSiteMarkers } from './approved-site-markers.js';
+import { loadInlandWater } from './inland-water.js';
+import { createLivingWorld } from './living-world.js';
+import { sourceTerrainHeight } from '../src/presentation/inland-water.ts';
 import * as THREE from 'three';
 import { createCampaignControls } from './campaign-controls.js';
 import {
@@ -43,6 +54,7 @@ async function boot() {
     throw new Error('Geographic dataset missing. Run npm run map:terrain.');
   const data = await response.json();
   validateGeographicDataset(data);
+  const inlandWater = await loadInlandWater(data);
   const atlas = await (await fetch('/data/settlement-atlas.json')).json();
   const presentation = await (
     await fetch('/data/settlement-presentation.json')
@@ -54,8 +66,18 @@ async function boot() {
     await fetch('/data/geographic-diagnostics.json')
   ).json();
   validateSettlementAtlas(atlas.records);
+  const approvedResponse = await fetch('/data/approved-settlements.json');
+  if (!approvedResponse.ok)
+    throw Error('Approved geographic registry unavailable');
+  const approvedRegistry = await approvedResponse.json();
+  const approvedSites = approvedMapSites(
+    approvedRegistry.records,
+    atlas.records,
+  );
   const atlasByKey = new Map(
-    atlas.records.map((record) => [record.key, record]),
+    [...atlas.records, ...approvedRegistry.records.map((r) => r.atlas)].map(
+      (record) => [record.key, record],
+    ),
   );
   const { bounds: b, width: w, height: h, elevations } = data;
   const viewOrigin = {
@@ -116,7 +138,7 @@ async function boot() {
   }
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#79999c');
-  scene.fog = new THREE.FogExp2('#83948d', 0.00012);
+  scene.fog = new THREE.FogExp2('#79999c', 0.00012);
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     logarithmicDepthBuffer: true,
@@ -124,9 +146,9 @@ async function boot() {
   renderer.setSize(innerWidth, innerHeight);
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.02;
+  renderer.toneMappingExposure = 0.9;
   renderer.shadowMap.enabled = false;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.shadowMap.autoUpdate = false;
   renderer.shadowMap.needsUpdate = true;
   host.appendChild(renderer.domElement);
@@ -152,7 +174,7 @@ async function boot() {
   controls.maxPolarAngle = Math.PI * 0.45;
   controls.target.set(20, 0, 5);
   scene.add(new THREE.HemisphereLight('#dce7ee', '#273221', 1.15));
-  const sun = new THREE.DirectionalLight('#fff0d6', 2.2);
+  const sun = new THREE.DirectionalLight('#fff6e8', 1.65);
   sun.position.set(-150, 200, -120);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
@@ -213,8 +235,7 @@ async function boot() {
     positions.setZ(i, projected[1]);
     geometry.attributes.uv.setXY(i, projected[0] / 250, -projected[1] / 250);
     land.push(dry);
-    const e = Math.max(0, elevations[i]);
-    positions.setY(i, Math.max(0.002, (e / 1000) * 3));
+    positions.setY(i, sourceTerrainHeight(elevations[i]));
     const c = new THREE.Color(1, 1, 1);
     colors.push(c.r, c.g, c.b);
   }
@@ -224,12 +245,8 @@ async function boot() {
   const ctx = textureCanvas.getContext('2d');
   const pixels = ctx.createImageData(512, 512);
   for (let i = 0; i < 512 * 512; i++) {
-    const x = i % 512,
-      y = Math.floor(i / 512),
-      grain = Math.sin(i * 127.1) * 43758.5453;
-    const patch =
-      Math.sin(x * 0.047 + Math.sin(y * 0.023) * 2.1) * 0.6 +
-      Math.cos(y * 0.061 + x * 0.019) * 0.4;
+    const grain = Math.sin(i * 127.1) * 43758.5453;
+    const patch = 0;
     const v = THREE.MathUtils.clamp(
       220 + (grain - Math.floor(grain)) * 28 + patch * 15,
       0,
@@ -416,6 +433,7 @@ async function boot() {
       `${terrainLod.getCurrentLevel()}:${Math.floor(terrainMorphWeight(camera.position.length(), 450) * 4)}`,
     ecologicalMaterial.decorate,
     prepareTerrainGpu,
+    inlandWater,
   );
   const waterTime = { value: 0 };
   const seaDepthPixels = new Uint8Array(w * h);
@@ -442,12 +460,15 @@ async function boot() {
     new THREE.PlaneGeometry(50000, 50000),
     new THREE.MeshPhysicalMaterial({
       color: '#214f62',
-      roughness: 0.3,
-      metalness: 0.2,
+      roughness: 0.95,
+      metalness: 0,
+      depthWrite: false,
     }),
   );
   water.rotation.x = -Math.PI / 2;
   water.position.y = 0;
+  // Background water must not occlude signed below-sea terrain or inland surfaces.
+  water.renderOrder = -10;
   water.material.onBeforeCompile = (shader) => {
     shader.uniforms['mapTime'] = waterTime;
     shader.uniforms['mapSeaDepth'] = { value: seaDepthTexture };
@@ -460,8 +481,8 @@ async function boot() {
     shader.uniforms.mapGeoBounds = {
       value: new THREE.Vector4(b.west, b.south, b.east, b.north),
     };
-    shader.uniforms['mapShallow'] = { value: new THREE.Color('#538b91') };
-    shader.uniforms['mapDeep'] = { value: new THREE.Color('#325f77') };
+    shader.uniforms['mapShallow'] = { value: new THREE.Color('#477b83') };
+    shader.uniforms['mapDeep'] = { value: new THREE.Color('#20495f') };
     shader.vertexShader = shader.vertexShader
       .replace(
         '#include <common>',
@@ -482,10 +503,14 @@ async function boot() {
       );
     shader.fragmentShader = shader.fragmentShader.replace(
       '#include <color_fragment>',
-      '#include <color_fragment>\nfloat rho=max(length(mapWaterPosition),0.00001);float cc=rho/6371.0088;float p0=mapGeoOrigin.y;float lat=asin(cos(cc)*sin(p0)+mapWaterPosition.y*sin(cc)*cos(p0)/rho);float lon=mapGeoOrigin.x+atan(mapWaterPosition.x*sin(cc),rho*cos(p0)*cos(cc)-mapWaterPosition.y*sin(p0)*sin(cc));vec2 geo=vec2(lon,lat)*57.295779513;vec2 seaUV=(geo-mapGeoBounds.xy)/(mapGeoBounds.zw-mapGeoBounds.xy);float depth=texture2D(mapSeaDepth,clamp(seaUV,0.0,1.0)).r;bool outside=any(lessThan(seaUV,vec2(0.0)))||any(greaterThan(seaUV,vec2(1.0)));diffuseColor.rgb=outside?vec3(0.045,0.063,0.068):mix(mapShallow,mapDeep,smoothstep(0.0,0.28,depth));',
+      '#include <color_fragment>\nfloat rho=max(length(mapWaterPosition),0.00001);float cc=rho/6371.0088;float p0=mapGeoOrigin.y;float lat=asin(cos(cc)*sin(p0)+mapWaterPosition.y*sin(cc)*cos(p0)/rho);float lon=mapGeoOrigin.x+atan(mapWaterPosition.x*sin(cc),rho*cos(p0)*cos(cc)-mapWaterPosition.y*sin(p0)*sin(cc));vec2 geo=vec2(lon,lat)*57.295779513;vec2 seaUV=(geo-mapGeoBounds.xy)/(mapGeoBounds.zw-mapGeoBounds.xy);float depth=texture2D(mapSeaDepth,clamp(seaUV,0.0,1.0)).r;bool outside=any(lessThan(seaUV,vec2(0.0)))||any(greaterThan(seaUV,vec2(1.0)));diffuseColor.rgb=outside?vec3(0.045,0.063,0.068):mix(mapShallow,mapDeep,smoothstep(0.0,0.5,depth));',
     );
   };
   scene.add(water);
+  const livingWorld=createLivingWorld(scene,viewOrigin,
+    (lon,lat)=>terrainTiles.surfaceHeight(lon,lat),
+    (lon,lat)=>lon>=b.west&&lon<=b.east&&lat>=b.south&&lat<=b.north&&isLand(lon,lat)&&!inlandWater.contains(lon,lat)&&!['desert','polar','unclassified'].includes(ecologicalMaterial.sample(lon,lat).family),
+    ecologicalMaterial.atmosphere);
   const coverageEdge = [];
   for (const [a, c] of [
     [
@@ -522,6 +547,7 @@ async function boot() {
   );
   coverageLine.computeLineDistances();
   scene.add(coverageLine);
+  coverageLine.visible = false;
   const riverSegments = [],
     detailRiverVertices = [];
   const inDetail = (lon, lat) =>
@@ -570,7 +596,8 @@ async function boot() {
       const [x, z] = project(lon, lat);
       return new THREE.Vector3(
         x,
-        (Math.max(0, elevation(lon, lat)) / 1000) * 3 + yOffset,
+        (Math.max(0, elevation(lon, lat)) / 1000) * TERRAIN_HEIGHT_SCALE +
+          yOffset,
         z,
       );
     });
@@ -617,48 +644,24 @@ async function boot() {
     'position',
     new THREE.Float32BufferAttribute(riverSegments, 3),
   );
+  const riverMaterial=new THREE.LineBasicMaterial({color:'#72aeb6',transparent:true,opacity:0.8});
   scene.add(
     new THREE.LineSegments(
       riverGeometry,
-      new THREE.LineBasicMaterial({
-        color: '#72aeb6',
-        transparent: true,
-        opacity: 0.8,
-      }),
+      riverMaterial,
     ),
   );
-  for (const f of data.features.lakes) {
-    const ps =
-      f.geometry.type === 'MultiPolygon'
-        ? f.geometry.coordinates
-        : [f.geometry.coordinates];
-    for (const p of ps) {
-      const shape = new THREE.Shape(
-        p[0].map(([lon, lat]) => {
-          const [x, z] = project(lon, lat);
-          return new THREE.Vector2(x, -z);
-        }),
-      );
-      const lake = new THREE.Mesh(
-        new THREE.ShapeGeometry(shape),
-        new THREE.MeshStandardMaterial({ color: '#4d8a96', roughness: 0.3 }),
-      );
-      lake.rotation.x = -Math.PI / 2;
-      const center = p[0][0];
-      lake.position.y = (Math.max(0, elevation(...center)) / 1000) * 3 + 0.003;
-      scene.add(lake);
-    }
-  }
+  const inlandWaterGroup=inlandWater.addToScene(scene, project);
   // Deterministic decorative coverage, explicitly not historical forest evidence.
   const trees = new THREE.InstancedMesh(
     new THREE.ConeGeometry(0.22, 0.18, 7),
-    new THREE.MeshStandardMaterial({ color: '#354f35', roughness: 1 }),
+    new THREE.MeshStandardMaterial({ color: '#647452', roughness: 1 }),
     5000,
   );
   const matrix = new THREE.Matrix4();
   const broadleaf = new THREE.InstancedMesh(
     new THREE.IcosahedronGeometry(0.2, 1),
-    new THREE.MeshStandardMaterial({ color: '#52613b', roughness: 1 }),
+    new THREE.MeshStandardMaterial({ color: '#718057', roughness: 1 }),
     2000,
   );
   const trunks = new THREE.InstancedMesh(
@@ -679,7 +682,7 @@ async function boot() {
       e = elevation(lon, lat),
       cluster = Math.sin(x * 0.07 + Math.cos(z * 0.08)) * Math.cos(z * 0.06);
     if (!isLand(lon, lat) || e < 160 || e > 1550 || cluster < 0.2) continue;
-    const y = Math.max(0.002, (e / 1000) * 3),
+    const y = Math.max(0.002, (e / 1000) * TERRAIN_HEIGHT_SCALE),
       scale = 0.3 + random(i + 44) * 0.7;
     matrix.makeScale(scale, scale, scale);
     matrix.setPosition(x, y + 0.08 * scale, z);
@@ -700,6 +703,10 @@ async function boot() {
   trees.count = treeCount;
   broadleaf.count = trunks.count = broadleafCount;
   trees.castShadow = broadleaf.castShadow = true;
+  for (const mesh of [trees, broadleaf, trunks]) {
+    mesh.material.transparent = true;
+    mesh.material.depthWrite = false;
+  }
   scene.add(trees, broadleaf, trunks);
   const settlements = data.settlements.map((s) => ({
     ...s,
@@ -730,6 +737,9 @@ async function boot() {
           ? 'hill'
           : 'plain',
   }));
+  // Only the original authored locations belong to the prototype movement graph.
+  // Registry sites have no invented region membership or route adjacency.
+  const mapSettlements = [...settlements, ...approvedSites];
   const connections = [
     ['roma', 'ostia'],
     ['roma', 'tibur'],
@@ -801,7 +811,10 @@ async function boot() {
         !isLand(p.lon, p.lat)
       )
         return null;
-      return Math.max(0.002, (elevation(p.lon, p.lat) / 1000) * 3);
+      return Math.max(
+        0.002,
+        (elevation(p.lon, p.lat) / 1000) * TERRAIN_HEIGHT_SCALE,
+      );
     },
     new Map(
       visualFixtures.records.map((f) => {
@@ -833,6 +846,48 @@ async function boot() {
     ),
   );
   scene.add(settlementAssets.detail, settlementAssets.far);
+  const approvedMarkers = createApprovedSiteMarkers(
+    scene,
+    approvedSites,
+    project,
+    (lon, lat) => terrainTiles.surfaceHeight(lon, lat),
+  );
+  const researchLayer = await createResearchLayer(
+    project,
+    (lon, lat) => terrainTiles.surfaceHeight(lon, lat),
+    new Set(approvedSites.map((s) => s.candidateId)),
+    {
+      sites: mapSettlements.map(s=>({...s, alternateNames:atlasByKey.get(s.key)?.alternateNames ?? []})),
+      focus: (lon,lat,distance)=>focusGeographicLocation(lon,lat,distance),
+      select: key=>{
+        const s=mapSettlements.find(s=>s.key===key);
+        focusGeographicLocation(s.lon,s.lat,70);
+        select(s);
+      },
+      inspect: location=>{
+        selected=null;
+        window.__campaignMap.selectedId=null;
+        window.__campaignMap.selectedRegionId=null;
+        document.querySelector('#development-demo').disabled=true;
+        document.querySelector('#place-name').textContent=location.name;
+        document.querySelector('#description').textContent=location.note;
+        const dl=document.querySelector('#details');
+        dl.replaceChildren();
+        for(const [key,value] of [
+          ['Status',`Research reference · ${location.uncertainty}`],
+          ['Position',`${location.lat.toFixed(5)}° latitude · ${location.lon.toFixed(5)}° longitude`],
+          ['References',location.referenceIds.join(', ')],
+          ['Sources',location.sources.join('\n')],
+        ]) {
+          const dt=document.createElement('dt'),dd=document.createElement('dd');
+          dt.textContent=key;dd.textContent=value;dl.append(dt,dd);
+        }
+      },
+    },
+  );
+  const authoritativeToggle = document.querySelector(
+    '#authoritative-settlements',
+  );
   for (const { s, x, y, z, radius } of settlementAssets.anchors) {
     const hit = new THREE.Mesh(
       new THREE.SphereGeometry(radius + 0.6, 8, 8),
@@ -853,6 +908,23 @@ async function boot() {
     button.textContent = s.name;
     button.dataset.key = s.key;
     button.addEventListener('click', () => select(s));
+    document.querySelector('#settlements').appendChild(button);
+  }
+  for (const { s, point } of approvedMarkers.anchors) {
+    const label = document.createElement('div');
+    label.className = 'label neutral-site';
+    label.textContent = s.name;
+    label.dataset.key = s.key;
+    label.dataset.tier = String(s.tier);
+    document.querySelector('#labels').appendChild(label);
+    labels.push({ s, label, point });
+    const button = document.createElement('button');
+    button.textContent = s.name;
+    button.dataset.key = s.key;
+    button.title = `Approved geographic site; control not assigned. ${atlasByKey.get(s.key).evidence}`;
+    button.addEventListener('click', () =>
+      window.__campaignMap.focusForValidation(s.key, 30),
+    );
     document.querySelector('#settlements').appendChild(button);
   }
   // Influence cells are presentation estimates, never authoritative historical borders.
@@ -909,7 +981,7 @@ async function boot() {
         nearest = s;
       }
     }
-    return nearest ? owner(nearest).color : null;
+    return nearest ? (owner(nearest)?.color ?? null) : null;
   }
   let boundary;
   function refreshPolitical() {
@@ -919,7 +991,7 @@ async function boot() {
       const faction = state.factions.find(
         (f) => f.id === state.settlementControl.get(nearestIds[i]),
       );
-      const c = new THREE.Color(faction.color);
+      const c = new THREE.Color(faction?.color ?? '#ffffff');
       const near = settlements.some((s) => {
         const p = projectedSettlements.get(s.id);
         return (
@@ -994,7 +1066,10 @@ async function boot() {
     const dl = document.querySelector('#details');
     dl.replaceChildren();
     for (const [key, value] of [
-      ['Control (scenario fixture)', owner(s).name],
+      [
+        s.geographicOnly ? 'Political control' : 'Control (scenario fixture)',
+        owner(s)?.name ?? 'Not assigned',
+      ],
       [
         'Atlas classification',
         `${record.category} · tier ${record.suggestedTier} · ${record.presence278Bce} in 278 BCE`,
@@ -1002,9 +1077,17 @@ async function boot() {
       ['Atlas position', `${s.lat.toFixed(4)}° N · ${s.lon.toFixed(4)}° E`],
       ['Elevation sample', `${Math.round(elevation(s.lon, s.lat))} m`],
       ['Gazetteer', s.source],
+      ...(s.geographicOnly
+        ? [
+            ['Location basis', record.coordinateEvidence.precision],
+            ['Culture (research metadata)', record.culturalContext],
+          ]
+        : []),
       [
         'Visual reconstruction',
-        'Schematic architecture and development; not an excavated 278 BCE plan.',
+        s.geographicOnly
+          ? 'Neutral geographic marker; no city plan or development state supplied.'
+          : 'Schematic architecture and development; not an excavated 278 BCE plan.',
       ],
       ...(s.gazetteerCoordinate
         ? [
@@ -1082,6 +1165,16 @@ async function boot() {
       );
   const raycaster = new THREE.Raycaster();
   let down;
+  let hoveredSettlement=null,lastHover=0;
+  renderer.domElement.addEventListener('pointermove',e=>{
+    if(e.buttons||performance.now()-lastHover<40) return;
+    lastHover=performance.now();
+    raycaster.setFromCamera(new THREE.Vector2(e.clientX/innerWidth*2-1,1-e.clientY/innerHeight*2),camera);
+    const hit=authoritativeToggle.checked ? approvedMarkers.pick(raycaster) : null;
+    hoveredSettlement=hit?.settlement.id ?? null;
+    renderer.domElement.style.cursor=hit?'pointer':'';
+  });
+  renderer.domElement.addEventListener('pointerleave',()=>{hoveredSettlement=null;renderer.domElement.style.cursor='';});
   renderer.domElement.addEventListener('pointerdown', (e) => {
     if (e.button !== 0) return;
     down = [e.clientX, e.clientY];
@@ -1100,8 +1193,15 @@ async function boot() {
       ),
       camera,
     );
-    const hit = raycaster.intersectObjects(markerMeshes)[0];
-    if (hit) select(hit.object.userData.settlement);
+    const hit = authoritativeToggle.checked
+      ? raycaster.intersectObjects(markerMeshes)[0]
+      : null;
+    const approvedHit = authoritativeToggle.checked
+      ? approvedMarkers.pick(raycaster)
+      : null;
+    if (approvedHit && (!hit || approvedHit.distance < hit.distance))
+      select(approvedHit.settlement);
+    else if (hit) select(hit.object.userData.settlement);
     else {
       const terrainHit = raycaster.intersectObject(terrainMesh)[0];
       if (terrainHit) selectRegion(terrainHit.point);
@@ -1123,6 +1223,19 @@ async function boot() {
   let cameraInput = null;
   let cameraTransition = null;
   const sceneIdentity = scene.uuid;
+  function focusGeographicLocation(lon, lat, distance = 100, animated = true) {
+    if(!Number.isFinite(lon)||!Number.isFinite(lat)||!Number.isFinite(distance)||distance<=0||lon<b.west||lon>b.east||lat<b.south||lat>b.north)
+      throw new RangeError('Location outside geographic coverage');
+    cameraInput?.stop();
+    window.__campaignMap.setDiagnostic?.(false);
+    const [x,z]=project(lon,lat);
+    const target=new THREE.Vector3(x,terrainTiles.surfaceHeight(lon,lat),z);
+    const offset=camera.position.clone().sub(controls.target).normalize()
+      .multiplyScalar(THREE.MathUtils.clamp(distance,controls.minDistance,controls.maxDistance));
+    const position=target.clone().add(offset);
+    cameraTransition=animated ? {start:performance.now(),from:camera.position.clone(),fromTarget:controls.target.clone(),target,position} : null;
+    if(!animated) { controls.target.copy(target);camera.position.copy(position);controls.update(); }
+  }
   function navigateWorld(key, animated = true) {
     cameraInput?.stop();
     window.__campaignMap.setDiagnostic?.(false);
@@ -1189,6 +1302,7 @@ async function boot() {
     window.__campaignMap.viewPreset = key;
     document.querySelector('#world-view').value = key;
     const names = {
+      mediterranean: 'Mediterranean world',
       world: 'Campaign envelope',
       iberia: 'Iberia',
       italy: 'Italy',
@@ -1202,8 +1316,9 @@ async function boot() {
       egyptDetail: 'Nile valley and escarpment',
     };
     document.querySelector('#place-name').textContent = names[key];
-    document.querySelector('#description').textContent =
-      'Geographic camera view. Modern source relief and hydrography; historical settlement research outside Italy is pending. The dashed line marks data coverage, not ancient territory.';
+    document.querySelector('#description').textContent = key === 'mediterranean'
+      ? 'Explore the coasts, mountains and historical places of the ancient world. Select a named marker or a group of nearby locations to inspect the research.'
+      : 'Geographic camera view. Modern source relief and hydrography; geographic references carry no inferred political control.';
     document.querySelector('#details').replaceChildren();
   }
   let syntheticCount = 700;
@@ -1244,7 +1359,8 @@ async function boot() {
       syntheticMatrix.makeScale(scale, scale, scale);
       syntheticMatrix.setPosition(
         x,
-        (Math.max(0, elevation(m.lon, m.lat)) / 1000) * 3 + scale,
+        (Math.max(0, elevation(m.lon, m.lat)) / 1000) * TERRAIN_HEIGHT_SCALE +
+          scale,
         z,
       );
       syntheticMesh.setMatrixAt(i, syntheticMatrix);
@@ -1301,6 +1417,26 @@ async function boot() {
         };
     },
     ready: false,
+    presentationForValidation() {
+      return {
+        canopyOpacity: trees.material.opacity,
+        canopyVisible: trees.visible,
+        horizonFade: ecologicalMaterial.horizonFade.value,
+        // Compatibility diagnostic weight, not an applied boundary shader fade.
+        boundaryHazeApplied: false,
+        coverageLineVisible: coverageLine.visible,
+      };
+    },
+    researchForValidation: () => researchLayer.diagnostics(),
+    focusGeographicForValidation: focusGeographicLocation,
+    waterForValidation: () => inlandWater.diagnostics(),
+    livingWorldForValidation: () => livingWorld.diagnostics(),
+    layersForValidation({terrain=true,lakes=true,ocean=true}={}) {
+      terrainLod.visible=terrain;
+      terrainTiles.setVisible(terrain);
+      inlandWaterGroup.visible=lakes;
+      water.visible=ocean;
+    },
     mode,
     selectedId: null,
     selectedRegionId: null,
@@ -1310,7 +1446,10 @@ async function boot() {
     buildingCount: settlementAssets.buildingCount,
     frames: [],
     metrics: {},
-    settlements: settlements.map((s) => ({
+    approvedRegistryCount: approvedSites.length,
+    approvedSitesForValidation: approvedSites,
+    prototypeSettlementCount: settlements.length,
+    settlements: mapSettlements.map((s) => ({
       key: s.key,
       id: s.id,
       lon: s.lon,
@@ -1340,12 +1479,15 @@ async function boot() {
       cameraInput?.stop();
       cameraTransition = null;
       window.__campaignMap.setDiagnostic?.(false);
-      const s = settlements.find((s) => s.key === key),
+      const s = mapSettlements.find((s) => s.key === key),
         p = s.renderAnchor ?? s,
         [x, z] = project(p.lon, p.lat);
       controls.target.set(
         x,
-        Math.max(0.002, (elevation(p.lon, p.lat) / 1000) * 3),
+        Math.max(
+          0.002,
+          (elevation(p.lon, p.lat) / 1000) * TERRAIN_HEIGHT_SCALE,
+        ),
         z,
       );
       camera.position.set(
@@ -1366,7 +1508,7 @@ async function boot() {
       const [x, z] = project(lon, lat);
       const p = new THREE.Vector3(
         x,
-        (elevation(lon, lat) / 1000) * 3,
+        (elevation(lon, lat) / 1000) * TERRAIN_HEIGHT_SCALE,
         z,
       ).project(camera);
       return {
@@ -1375,7 +1517,11 @@ async function boot() {
       };
     },
     transferForValidation(key) {
-      const s = settlements.find((s) => s.key === key);
+      const s = mapSettlements.find((s) => s.key === key);
+      if (!s || s.geographicOnly)
+        throw new RangeError(
+          'No political control state for geographic-only site',
+        );
       state = transferSettlementControl(state, s.id, romanId);
       refreshPolitical();
       terrainTiles.setPolitical(mode === 'political', politicalColorAt);
@@ -1464,6 +1610,7 @@ async function boot() {
   }));
   window.__campaignMap.setDiagnostic = (enabled) => {
     diagnosticGroup.visible = enabled;
+    coverageLine.visible = enabled;
     window.__campaignMap.diagnostic = enabled;
   };
   document.querySelector('#overhead').addEventListener('click', () => {
@@ -1518,30 +1665,14 @@ async function boot() {
     renderer.domElement,
     b,
     viewOrigin,
-    (lon, lat) => {
-      const cached = cityTerrain.find(
-        (t) =>
-          lon >= t.bounds.west &&
-          lon <= t.bounds.east &&
-          lat >= t.bounds.south &&
-          lat <= t.bounds.north,
-      );
-      return (
-        (Math.max(
-          0,
-          cached ? sampleTile(cached, lon, lat) : terrainTiles.sample(lon, lat),
-        ) /
-          1000) *
-        3
-      );
-    },
+    (lon, lat) => terrainTiles.surfaceHeight(lon, lat),
     () => {
       cameraTransition = null;
     },
     () => navigateWorld('world'),
   );
   window.__campaignMap.cameraForValidation = () => cameraInput.snapshot();
-  navigateWorld('world', false);
+  navigateWorld('mediterranean', false);
   function animate(now) {
     if (cameraTransition) {
       const t = Math.min(1, (now - cameraTransition.start) / 1200),
@@ -1588,7 +1719,7 @@ async function boot() {
       d.leader.setAttribute('x2', x + dx);
       d.leader.setAttribute('y2', y + dy);
     }
-    waterTime.value = now / 1000;
+    waterTime.value = livingWorld.update(camera,controls.target,Math.max(0,(now-previous)/1000),camera.position.distanceTo(controls.target));
     window.__campaignMap.cameraDistance = camera.position.distanceTo(
       controls.target,
     );
@@ -1600,10 +1731,20 @@ async function boot() {
     camera.updateProjectionMatrix();
     const band = settlementDetailBand(window.__campaignMap.cameraDistance);
     settlementAssets.update(camera, window.__campaignMap.cameraDistance);
-    trees.visible =
-      broadleaf.visible =
-      trunks.visible =
-        window.__campaignMap.cameraDistance > 30;
+    settlementAssets.detail.visible = authoritativeToggle.checked;
+    settlementAssets.far.visible = authoritativeToggle.checked;
+    approvedMarkers.update(camera, innerHeight, authoritativeToggle.checked,selected,hoveredSettlement);
+    // At strategic scale rivers are cartographic lines. This avoids broken
+    // strokes when a subpixel source channel crosses a coarser DEM triangle.
+    riverMaterial.depthTest=window.__campaignMap.cameraDistance<40;
+    const canopy = canopyOpacity(window.__campaignMap.cameraDistance);
+    ecologicalMaterial.horizonFade.value = envelopeHaze(
+      controls.getPolarAngle(),
+    );
+    for (const mesh of [trees, broadleaf, trunks]) {
+      mesh.visible = canopy > 0;
+      mesh.material.opacity = canopy;
+    }
     const close = window.__campaignMap.cameraDistance < 40;
     if (renderer.shadowMap.enabled !== close) {
       renderer.shadowMap.enabled = close;
@@ -1639,7 +1780,7 @@ async function boot() {
         for (const v of detailRiverVertices)
           riverGeometry.attributes.position.setY(
             v.index,
-            Math.max(0, terrainTiles.sample(v.lon, v.lat)) * 0.003 + 0.003,
+            sourceTerrainHeight(terrainTiles.sample(v.lon, v.lat)) + 0.003,
           );
         riverGeometry.attributes.position.needsUpdate = true;
       });
@@ -1676,13 +1817,22 @@ async function boot() {
           width,
           height,
         });
-      window.__campaignMap.screenPositions[s.key] = { x: sx, y: sy + 10 };
+      window.__campaignMap.screenPositions[s.key] = {
+        x: sx,
+        y: sy + (s.geographicOnly ? 0 : 10),
+      };
     }
     const blockers = [
       document.querySelector('header'),
       document.querySelector('aside'),
       document.querySelector('footer'),
     ].map((element) => element.getBoundingClientRect());
+    researchLayer.update(
+      camera,
+      now,
+      [...blockers, ...candidates.map(c=>({left:c.x-4,right:c.x+c.width+4,top:c.y-4,bottom:c.y+c.height+18}))],
+      window.__campaignMap.cameraDistance,
+    );
     const visible = new Set(
       layoutSettlementLabels(
         candidates,
@@ -1693,7 +1843,11 @@ async function boot() {
     );
     for (const { s, label } of labels)
       label.style.display =
-        !diagnosticGroup.visible && visible.has(s.id) ? 'block' : 'none';
+        authoritativeToggle.checked &&
+        !diagnosticGroup.visible &&
+        visible.has(s.id)
+          ? 'block'
+          : 'none';
     window.__campaignMap.visibleLabels = candidates.filter((candidate) =>
       visible.has(candidate.id),
     );
@@ -1716,6 +1870,16 @@ async function boot() {
     }
   }
   await prepareTerrainGpu(scene, ecologicalMaterial.texture);
+  // Warm the shadow/depth programs once during loading, before interactive readiness.
+  const warmTarget = new THREE.WebGLRenderTarget(32, 32),
+    shadowBefore = renderer.shadowMap.enabled;
+  renderer.setRenderTarget(warmTarget);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.needsUpdate = true;
+  renderer.render(scene, camera);
+  renderer.setRenderTarget(null);
+  renderer.shadowMap.enabled = shadowBefore;
+  warmTarget.dispose();
   window.__campaignMap.ready = true;
   requestAnimationFrame(animate);
 }
@@ -1723,3 +1887,4 @@ boot().catch((error) => {
   document.querySelector('#stats').textContent = error.message;
   document.querySelector('#description').textContent = error.message;
 });
+

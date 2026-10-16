@@ -36,7 +36,12 @@ export async function loadRegionalMaterial(origin) {
     };
   }
   const b = manifest.bounds;
+  const horizonFade = { value: 0 };
+  const atmosphere = {time:{value:0},strength:{value:0}};
   function decorate(shader, reveal = { value: 1 }) {
+    shader.uniforms.atmosphereTime=atmosphere.time;
+    shader.uniforms.atmosphereStrength=atmosphere.strength;
+    shader.uniforms.geographicHorizonFade = horizonFade;
     shader.uniforms.ecologicalSurface = { value: surface };
     shader.uniforms.ecologicalBounds = {
       value: new THREE.Vector4(b.west, b.south, b.east, b.north),
@@ -62,6 +67,8 @@ attribute float contextHeight;
 attribute vec3 contextNormal;
 uniform float terrainReveal;
 varying vec3 ecologicalWorld;
+varying float ecologicalSlope;
+varying vec3 ecologicalTerrainNormal;
 float regionalMorphWeight(){
   float lodDistance=distance(cameraPosition,(modelMatrix*vec4(0.0,0.0,0.0,1.0)).xyz);
   return smoothstep(lodThreshold*.76,lodThreshold*.92,lodDistance);
@@ -86,6 +93,8 @@ transformed.y=mix(contextHeight,transformed.y,terrainReveal);
         '#include <project_vertex>',
         `#include <project_vertex>
 ecologicalWorld=(modelMatrix*vec4(transformed,1.0)).xyz;
+ecologicalSlope=1.0-clamp(mix(contextNormal,mix(normal,parentNormal,regionalMorphWeight()),terrainReveal).y,0.0,1.0);
+ecologicalTerrainNormal=normalize(mix(contextNormal,mix(normal,parentNormal,regionalMorphWeight()),terrainReveal));
 `,
       );
     shader.fragmentShader = shader.fragmentShader
@@ -93,10 +102,15 @@ ecologicalWorld=(modelMatrix*vec4(transformed,1.0)).xyz;
         '#include <common>',
         `#include <common>
 uniform sampler2D ecologicalSurface;
+uniform float atmosphereTime;
+uniform float atmosphereStrength;
+uniform float geographicHorizonFade;
 uniform vec4 ecologicalBounds;
 uniform vec2 ecologicalSize;
 uniform vec2 ecologicalOrigin;
 varying vec3 ecologicalWorld;
+varying float ecologicalSlope;
+varying vec3 ecologicalTerrainNormal;
 vec2 regionalGeographicDegrees(){
   vec2 en=vec2(ecologicalWorld.x,-ecologicalWorld.z);
   float rho=max(length(en),.000001),arc=rho/6371.0088;
@@ -113,12 +127,33 @@ vec2 uv=(regionalGeographicDegrees()-ecologicalBounds.xy)/(ecologicalBounds.zw-e
 uv=(clamp(uv,0.0,1.0)*(ecologicalSize-1.0)+.5)/ecologicalSize;
 vec3 sourceColor=texture2D(ecologicalSurface,uv).rgb;
 // Display rock on steep/elevated terrain; source geography supplies all lowland color.
-float exposed=smoothstep(5.1,11.4,ecologicalWorld.y)*.32;
+float exposed=max(smoothstep(2.55,5.7,ecologicalWorld.y)*.32,smoothstep(.18,.65,ecologicalSlope)*.22);
 diffuseColor.rgb*=mix(sourceColor,vec3(.43,.41,.35),exposed);
+// A gentle relief accent improves overhead readability without lifting the mesh.
+vec3 reliefNormal=normalize(ecologicalTerrainNormal*vec3(4.0,1.0,4.0));
+float reliefLight=dot(reliefNormal,normalize(vec3(-.6,.8,-.35)));
+diffuseColor.rgb*=clamp(.76+reliefLight*.38,.62,1.12);
+// Broad, very low contrast moving shadows. Geography and alpha stay untouched.
+vec2 cloudPoint=ecologicalWorld.xz*.018+vec2(atmosphereTime*.0015,atmosphereTime*.0007);
+float cloudField=sin(cloudPoint.x+sin(cloudPoint.y*.7))*.28+sin(cloudPoint.y*1.3-cloudPoint.x*.4)*.22+.5;
+diffuseColor.rgb*=1.0-smoothstep(.62,.95,cloudField)*atmosphereStrength*.10;
+`,
+      )
+      .replace(
+        '#include <fog_fragment>',
+        `#include <fog_fragment>
+#ifdef USE_FOG
+vec2 geographic=regionalGeographicDegrees();
+float boundaryDistance=min(min(geographic.x-ecologicalBounds.x,ecologicalBounds.z-geographic.x),min(geographic.y-ecologicalBounds.y,ecologicalBounds.w-geographic.y));
+// Keep standard distance fog only. The former extra two-degree geographic
+// margin changed color with camera tilt, rather than with atmospheric distance.
+#endif
 `,
       );
   }
   return {
+    horizonFade,
+    atmosphere,
     manifest,
     sample,
     decorate,
