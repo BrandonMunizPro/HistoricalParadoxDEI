@@ -1,0 +1,2453 @@
+{
+  "views": [
+    {
+      "name": "mediterranean",
+      "camera": {
+        "target": {
+          "lon": 19,
+          "lat": 37,
+          "x": 488.6250756431913,
+          "y": 0,
+          "z": 485.28641120189803
+        },
+        "position": [
+          488.6250756431913,
+          6499.999999996749,
+          485.2929114908185
+        ],
+        "distance": 6499.999999999999,
+        "azimuth": 0,
+        "polar": 0.000001000044449303342,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 66.89882697956348,
+        "heapBytes": 208469078,
+        "drawCalls": 147,
+        "triangles": 52678,
+        "geometries": 262,
+        "textures": 9,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "egypt",
+      "camera": {
+        "target": {
+          "lon": 30.5,
+          "lat": 28.000000000000007,
+          "x": 1676.3753699861331,
+          "y": 0.11676944867242611,
+          "z": 1349.944657337189
+        },
+        "position": [
+          1676.3753699861331,
+          1800.1167694477715,
+          1349.9464574171977
+        ],
+        "distance": 1799.9999999999993,
+        "azimuth": 0,
+        "polar": 0.000001000044449303342,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-27-28",
+          "world-22-28",
+          "world-27-23",
+          "world-22-33",
+          "world-27-33",
+          "world-22-23",
+          "world-32-28",
+          "world-32-23",
+          "world-32-33",
+          "world-17-28",
+          "world-27-18",
+          "world-27-38"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-32-28",
+            "level": 1
+          },
+          {
+            "id": "world-32-23",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-17-28",
+            "level": 1
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.43086632243256,
+        "heapBytes": 288296445,
+        "drawCalls": 18,
+        "triangles": 165095,
+        "geometries": 274,
+        "textures": 21,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "nile-delta",
+      "camera": {
+        "target": {
+          "lon": 31,
+          "lat": 30.699999999999992,
+          "x": 1673.9031952811613,
+          "y": 0.014461819158698088,
+          "z": 1042.3679426165422
+        },
+        "position": [
+          1673.9031952811613,
+          500.0144618189087,
+          1042.3684428052652
+        ],
+        "distance": 500.00000000000017,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.43474253116900397,
+              "parentHeight": 0.43474253116900397,
+              "appliedCenterHeight": 0.4347425401210785
+            }
+          }
+        ],
+        "cached": [
+          "world-32-33",
+          "world-17-28",
+          "world-27-18",
+          "world-27-38"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "detail-egypt-N30E31",
+          "detail-egypt-N30E30",
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N29E31",
+          "detail-egypt-N31E30",
+          "detail-egypt-N31E31",
+          "detail-egypt-N29E30",
+          "detail-egypt-N30E29",
+          "detail-egypt-N30E32",
+          "detail-egypt-N31E29",
+          "detail-egypt-N31E32",
+          "detail-egypt-N29E32"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "detail-egypt-N30E31",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N30E30",
+            "level": 1
+          },
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E31",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N31E30",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N31E31",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E30",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N30E29",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N30E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N31E29",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N31E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E32",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.91250119927088,
+        "heapBytes": 327843674,
+        "drawCalls": 15,
+        "triangles": 74818,
+        "geometries": 278,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "red-sea",
+      "camera": {
+        "target": {
+          "lon": 33.89999999999998,
+          "lat": 27.700000000000006,
+          "x": 2013.762207251883,
+          "y": 0,
+          "z": 1316.337113060094
+        },
+        "position": [
+          2013.762207251883,
+          499.99999999974983,
+          1316.337613248817
+        ],
+        "distance": 500,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.43474253116900397,
+              "parentHeight": 0.43474253116900397,
+              "appliedCenterHeight": 0.4347425401210785
+            }
+          }
+        ],
+        "cached": [
+          "detail-egypt-N30E29",
+          "detail-egypt-N30E32",
+          "detail-egypt-N31E29",
+          "detail-egypt-N31E32"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N29E32",
+          "detail-egypt-N27E33",
+          "detail-egypt-N28E33",
+          "detail-egypt-N26E33",
+          "detail-egypt-N28E32",
+          "detail-egypt-N27E32",
+          "detail-egypt-N26E32",
+          "detail-egypt-N27E31",
+          "detail-egypt-N29E33",
+          "detail-egypt-N25E33",
+          "detail-egypt-N28E31"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E33",
+            "level": 1
+          },
+          {
+            "id": "detail-egypt-N28E33",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N26E33",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N28E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N26E32",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N27E31",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N29E33",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N25E33",
+            "level": 2
+          },
+          {
+            "id": "detail-egypt-N28E31",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.43086632243256,
+        "heapBytes": 340454005,
+        "drawCalls": 15,
+        "triangles": 68546,
+        "geometries": 277,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "armenia",
+      "camera": {
+        "target": {
+          "lon": 44.60000000000002,
+          "lat": 40.00000000000001,
+          "x": 2592.9017279014374,
+          "y": 2.550861205192812,
+          "z": -306.55373504419725
+        },
+        "position": [
+          2592.9017279014374,
+          752.5508612048177,
+          -306.5529847611128
+        ],
+        "distance": 750.0000000000001,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "detail-egypt-N27E31",
+          "detail-egypt-N29E33",
+          "detail-egypt-N25E33",
+          "detail-egypt-N28E31"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-43",
+          "world-37-38",
+          "world-37-48",
+          "world-42-43",
+          "world-32-43",
+          "world-42-38",
+          "world-42-48",
+          "world-32-38",
+          "world-37-33",
+          "world-32-48",
+          "world-42-33",
+          "world-37-53"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-43",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-48",
+            "level": 0
+          },
+          {
+            "id": "world-42-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-43",
+            "level": 0
+          },
+          {
+            "id": "world-42-38",
+            "level": 0
+          },
+          {
+            "id": "world-42-48",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-37-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-48",
+            "level": 0
+          },
+          {
+            "id": "world-42-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-53",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.6712801111059,
+        "heapBytes": 334083970,
+        "drawCalls": 19,
+        "triangles": 364438,
+        "geometries": 276,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "caspian",
+      "camera": {
+        "target": {
+          "lon": 51,
+          "lat": 41,
+          "x": 3046.697730515993,
+          "y": -0.041999999999999996,
+          "z": -627.4225069754908
+        },
+        "position": [
+          3046.697730515993,
+          1799.9579999990995,
+          -627.420706296088
+        ],
+        "distance": 1800,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "world-42-38",
+          "world-32-38",
+          "world-37-33",
+          "world-42-33"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-43",
+          "world-37-38",
+          "world-37-48",
+          "world-42-43",
+          "world-32-43",
+          "world-42-48",
+          "world-32-48",
+          "world-37-53",
+          "world-32-53",
+          "world-37-58",
+          "world-42-53",
+          "world-42-58"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-43",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 1
+          },
+          {
+            "id": "world-37-48",
+            "level": 0
+          },
+          {
+            "id": "world-42-43",
+            "level": 0
+          },
+          {
+            "id": "world-32-43",
+            "level": 1
+          },
+          {
+            "id": "world-42-48",
+            "level": 0
+          },
+          {
+            "id": "world-32-48",
+            "level": 0
+          },
+          {
+            "id": "world-37-53",
+            "level": 0
+          },
+          {
+            "id": "world-32-53",
+            "level": 1
+          },
+          {
+            "id": "world-37-58",
+            "level": 1
+          },
+          {
+            "id": "world-42-53",
+            "level": 1
+          },
+          {
+            "id": "world-42-58",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.9090494807282,
+        "heapBytes": 371984984,
+        "drawCalls": 29,
+        "triangles": 290402,
+        "geometries": 283,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "black-sea",
+      "camera": {
+        "target": {
+          "lon": 34,
+          "lat": 43.00000000000001,
+          "x": 1651.1026892659677,
+          "y": 0,
+          "z": -366.5858080117941
+        },
+        "position": [
+          1651.1026892659677,
+          2099.999999998949,
+          -366.5837069861116
+        ],
+        "distance": 2100,
+        "azimuth": 0,
+        "polar": 0.0000010004884202239048,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "world-32-53",
+          "world-37-58",
+          "world-42-53",
+          "world-42-58"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-38",
+          "world-42-43",
+          "world-42-33",
+          "world-37-33",
+          "world-42-28",
+          "world-42-38",
+          "world-42-23",
+          "world-37-28",
+          "world-47-28",
+          "world-37-23",
+          "world-47-33",
+          "world-47-38"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-38",
+            "level": 1
+          },
+          {
+            "id": "world-42-43",
+            "level": 1
+          },
+          {
+            "id": "world-42-33",
+            "level": 1
+          },
+          {
+            "id": "world-37-33",
+            "level": 1
+          },
+          {
+            "id": "world-42-28",
+            "level": 1
+          },
+          {
+            "id": "world-42-38",
+            "level": 1
+          },
+          {
+            "id": "world-42-23",
+            "level": 1
+          },
+          {
+            "id": "world-37-28",
+            "level": 1
+          },
+          {
+            "id": "world-47-28",
+            "level": 1
+          },
+          {
+            "id": "world-37-23",
+            "level": 1
+          },
+          {
+            "id": "world-47-33",
+            "level": 1
+          },
+          {
+            "id": "world-47-38",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.91250119927082,
+        "heapBytes": 428080390,
+        "drawCalls": 43,
+        "triangles": 146512,
+        "geometries": 280,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "sicily",
+      "camera": {
+        "target": {
+          "lon": 14,
+          "lat": 37.5,
+          "x": 44.14411745764512,
+          "y": 0.7884252855052375,
+          "z": 444.656047734915
+        },
+        "position": [
+          44.14411745764512,
+          600.788425285205,
+          444.65664796138253
+        ],
+        "distance": 600,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "revealParents": [
+          {
+            "id": "local-roma",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.22406427826488315,
+              "parentHeight": 0.22406427826488315,
+              "appliedCenterHeight": 0.22406427562236786
+            }
+          },
+          {
+            "id": "local-capua",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.3781140274780009,
+              "parentHeight": 0.3781140274780009,
+              "appliedCenterHeight": 0.3781140148639679
+            }
+          },
+          {
+            "id": "local-neapolis",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": -0.23491826323915113,
+              "parentHeight": -0.23491826323915113,
+              "appliedCenterHeight": -0.2349182665348053
+            }
+          },
+          {
+            "id": "local-norba",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.14806128321757056,
+              "parentHeight": 0.14806128321757056,
+              "appliedCenterHeight": 0.14806129038333893
+            }
+          }
+        ],
+        "cached": [
+          "world-47-28",
+          "world-37-23",
+          "world-47-33",
+          "world-47-38"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N37E13",
+          "N37E14",
+          "N38E13",
+          "N38E14",
+          "N36E14",
+          "N37E12",
+          "N37E15",
+          "N38E12"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 2
+          },
+          {
+            "id": "local-capua",
+            "level": 2
+          },
+          {
+            "id": "local-neapolis",
+            "level": 2
+          },
+          {
+            "id": "local-norba",
+            "level": 2
+          },
+          {
+            "id": "N37E13",
+            "level": 2
+          },
+          {
+            "id": "N37E14",
+            "level": 2
+          },
+          {
+            "id": "N38E13",
+            "level": 2
+          },
+          {
+            "id": "N38E14",
+            "level": 2
+          },
+          {
+            "id": "N36E14",
+            "level": 2
+          },
+          {
+            "id": "N37E12",
+            "level": 2
+          },
+          {
+            "id": "N37E15",
+            "level": 2
+          },
+          {
+            "id": "N38E12",
+            "level": 2
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.19467315815857,
+        "heapBytes": 331383068,
+        "drawCalls": 17,
+        "triangles": 54295,
+        "geometries": 274,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "greece-aegean",
+      "camera": {
+        "target": {
+          "lon": 24,
+          "lat": 38,
+          "x": 918.4991438073234,
+          "y": 0.17437322542203737,
+          "z": 334.54710672497
+        },
+        "position": [
+          918.4991438073234,
+          1000.1743732249217,
+          334.54810710241594
+        ],
+        "distance": 1000,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "N36E14",
+          "N37E12",
+          "N37E15",
+          "N38E12"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-23",
+          "world-32-23",
+          "world-37-18",
+          "world-37-28",
+          "world-32-18",
+          "world-32-28",
+          "world-42-23",
+          "world-37-13",
+          "world-42-18",
+          "world-32-13",
+          "world-42-28",
+          "world-27-23"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-37-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          },
+          {
+            "id": "world-37-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-23",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.90904948072807,
+        "heapBytes": 445591691,
+        "drawCalls": 21,
+        "triangles": 360545,
+        "geometries": 276,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "cyprus",
+      "camera": {
+        "target": {
+          "lon": 33.200000000000045,
+          "lat": 35,
+          "x": 1784.4960126515316,
+          "y": 0.431056713639848,
+          "z": 526.2660031202936
+        },
+        "position": [
+          1784.4960126515316,
+          370.4310567134548,
+          526.2663732599486
+        ],
+        "distance": 370.00000000000006,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "world-37-13",
+          "world-42-18",
+          "world-32-13",
+          "world-42-28"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-23",
+          "world-32-23",
+          "world-37-28",
+          "world-32-28",
+          "world-27-23",
+          "world-32-33",
+          "world-37-33",
+          "world-27-33",
+          "world-32-38",
+          "world-27-28",
+          "world-37-38",
+          "world-27-38"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-33",
+            "level": 0
+          },
+          {
+            "id": "world-37-33",
+            "level": 0
+          },
+          {
+            "id": "world-27-33",
+            "level": 0
+          },
+          {
+            "id": "world-32-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-37-38",
+            "level": 0
+          },
+          {
+            "id": "world-27-38",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.43429513996801,
+        "heapBytes": 324581963,
+        "drawCalls": 8,
+        "triangles": 163866,
+        "geometries": 270,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    },
+    {
+      "name": "nile-local",
+      "camera": {
+        "target": {
+          "lon": 32.569999999999936,
+          "lat": 25.73999999999997,
+          "x": 1923.0847082397063,
+          "y": 0.37665508644665063,
+          "z": 1560.7452020934763
+        },
+        "position": [
+          1923.0847082397063,
+          9.376655086442145,
+          1560.7452110968734
+        ],
+        "distance": 8.999999999999998,
+        "azimuth": 0,
+        "polar": 0.0000010003774459658713,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "parentId": "detail-egypt-N25E32",
+            "diagnostic": {
+              "previousGlobalHeight": 0.43474253116900397,
+              "parentHeight": 0.3741326201918356,
+              "appliedCenterHeight": 0.3741326332092285
+            }
+          }
+        ],
+        "cached": [
+          "world-32-38",
+          "world-27-28",
+          "world-37-38",
+          "world-27-38"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N26E32",
+          "detail-egypt-N25E32",
+          "detail-egypt-N25E33",
+          "detail-egypt-N26E33",
+          "detail-egypt-N25E31",
+          "detail-egypt-N26E31",
+          "detail-egypt-N24E33",
+          "detail-egypt-N24E32",
+          "detail-egypt-N24E31",
+          "detail-egypt-N27E32",
+          "detail-egypt-N25E30"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N27E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E30",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "metrics": {
+        "fps": 143.91250119927068,
+        "heapBytes": 454707427,
+        "drawCalls": 7,
+        "triangles": 131098,
+        "geometries": 266,
+        "textures": 25,
+        "terrainLod": 1
+      }
+    }
+  ],
+  "errors": [],
+  "assertions": [
+    "35 selectable sites and 23 original control records preserved",
+    "All 13 priority names searchable",
+    "Research inspection is explicitly provisional and never changes control",
+    "Research markers and streaming remain bounded",
+    "All requested geographic views load without asset failures"
+  ],
+  "research": {
+    "enabled": true,
+    "available": 660,
+    "excluded": [
+      {
+        "id": "r16-ibe-tartessos",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-gal-rhodanousia",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-cas-aornos-bactria",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-ind-pataliputra",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-vaishali",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-rajagriha",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-kaushambi",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-sravasti",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-ujjain",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-mathura",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-vidisha",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-hastinapura",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-ayodhya",
+        "reason": "Outside current rendering coverage"
+      }
+    ],
+    "duplicates": [
+      {
+        "id": "r16-cas-alexandria-aria",
+        "primary": "research:r16-irn-alexandria-aria",
+        "reason": "Identical name and representative coordinates; reference handles retained"
+      },
+      {
+        "id": "r16-ind-alexandria-arachosia",
+        "primary": "research:r16-irn-alexandria-arachosia",
+        "reason": "Identical name and representative coordinates; reference handles retained"
+      }
+    ],
+    "possibleDuplicates": [
+      {
+        "ids": [
+          "research:r16-gre-pella",
+          "research:r16-bal-pella"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-aigai",
+          "research:r16-bal-aigai"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-thessalonica",
+          "research:r16-bal-thessalonica"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-amphipolis",
+          "research:r16-bal-amphipolis"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-pydna",
+          "research:r16-bal-pydna"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-cassandreia",
+          "research:r16-bal-cassandreia"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-abdera",
+          "research:r16-bal-abdera"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-maroneia",
+          "research:r16-bal-maroneia"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-ainos",
+          "research:r16-bal-ainos"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-dion",
+          "research:r16-bal-dion"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gal-octodurus",
+          "research:r16-grm-octodurus"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cyr-taucheira",
+          "research:r16-cyr-tocra"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cas-bactra",
+          "research:r16-cas-zariaspa"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cas-cyropolis",
+          "research:r16-cas-alexandria-eschate"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-nub-napata",
+          "research:r16-nub-jebel-barkal"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      }
+    ],
+    "visible": 1,
+    "represented": 1,
+    "authoritative": false,
+    "suppressedPromoted": 12
+  },
+  "environment": {
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "browser": "155.0.8059.79",
+    "viewport": "1440x1000",
+    "memory": "JavaScript heap only; GPU memory not measured"
+  },
+  "performance": [
+    {
+      "name": "registry-world",
+      "enabled": false,
+      "metrics": {
+        "fps": 143.90691977954668,
+        "heapBytes": 368961549,
+        "drawCalls": 147,
+        "triangles": 52678,
+        "geometries": 269,
+        "textures": 13,
+        "terrainLod": 1
+      },
+      "research": {
+        "enabled": true,
+        "available": 660,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "duplicates": [
+          {
+            "id": "r16-cas-alexandria-aria",
+            "primary": "research:r16-irn-alexandria-aria",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          },
+          {
+            "id": "r16-ind-alexandria-arachosia",
+            "primary": "research:r16-irn-alexandria-arachosia",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          }
+        ],
+        "possibleDuplicates": [
+          {
+            "ids": [
+              "research:r16-gre-pella",
+              "research:r16-bal-pella"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-aigai",
+              "research:r16-bal-aigai"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-thessalonica",
+              "research:r16-bal-thessalonica"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-amphipolis",
+              "research:r16-bal-amphipolis"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-pydna",
+              "research:r16-bal-pydna"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-cassandreia",
+              "research:r16-bal-cassandreia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-abdera",
+              "research:r16-bal-abdera"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-maroneia",
+              "research:r16-bal-maroneia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-ainos",
+              "research:r16-bal-ainos"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-dion",
+              "research:r16-bal-dion"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gal-octodurus",
+              "research:r16-grm-octodurus"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cyr-taucheira",
+              "research:r16-cyr-tocra"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-bactra",
+              "research:r16-cas-zariaspa"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-cyropolis",
+              "research:r16-cas-alexandria-eschate"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-nub-napata",
+              "research:r16-nub-jebel-barkal"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          }
+        ],
+        "visible": 96,
+        "represented": 588,
+        "authoritative": false,
+        "suppressedPromoted": 12
+      },
+      "atmosphere": {
+        "enabled": false,
+        "reducedMotion": false,
+        "birdsVisible": false,
+        "birdCount": 0,
+        "cloudShadowStrength": 0,
+        "time": 58.51830000000016
+      },
+      "p95FrameMs": 7.099999999998545,
+      "meanFps": 143.91351924926198
+    },
+    {
+      "name": "registry-world",
+      "enabled": true,
+      "metrics": {
+        "fps": 143.9157566302652,
+        "heapBytes": 355631009,
+        "drawCalls": 147,
+        "triangles": 52678,
+        "geometries": 269,
+        "textures": 13,
+        "terrainLod": 1
+      },
+      "research": {
+        "enabled": true,
+        "available": 660,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "duplicates": [
+          {
+            "id": "r16-cas-alexandria-aria",
+            "primary": "research:r16-irn-alexandria-aria",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          },
+          {
+            "id": "r16-ind-alexandria-arachosia",
+            "primary": "research:r16-irn-alexandria-arachosia",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          }
+        ],
+        "possibleDuplicates": [
+          {
+            "ids": [
+              "research:r16-gre-pella",
+              "research:r16-bal-pella"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-aigai",
+              "research:r16-bal-aigai"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-thessalonica",
+              "research:r16-bal-thessalonica"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-amphipolis",
+              "research:r16-bal-amphipolis"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-pydna",
+              "research:r16-bal-pydna"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-cassandreia",
+              "research:r16-bal-cassandreia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-abdera",
+              "research:r16-bal-abdera"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-maroneia",
+              "research:r16-bal-maroneia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-ainos",
+              "research:r16-bal-ainos"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-dion",
+              "research:r16-bal-dion"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gal-octodurus",
+              "research:r16-grm-octodurus"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cyr-taucheira",
+              "research:r16-cyr-tocra"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-bactra",
+              "research:r16-cas-zariaspa"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-cyropolis",
+              "research:r16-cas-alexandria-eschate"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-nub-napata",
+              "research:r16-nub-jebel-barkal"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          }
+        ],
+        "visible": 96,
+        "represented": 588,
+        "authoritative": false,
+        "suppressedPromoted": 12
+      },
+      "atmosphere": {
+        "enabled": true,
+        "reducedMotion": false,
+        "birdsVisible": false,
+        "birdCount": 0,
+        "cloudShadowStrength": 0,
+        "time": 61.54100000000007
+      },
+      "p95FrameMs": 7.099999999998545,
+      "meanFps": 143.91351924926235
+    },
+    {
+      "name": "registry-greece",
+      "enabled": false,
+      "metrics": {
+        "fps": 143.9097967459578,
+        "heapBytes": 324734148,
+        "drawCalls": 21,
+        "triangles": 360545,
+        "geometries": 279,
+        "textures": 25,
+        "terrainLod": 1
+      },
+      "research": {
+        "enabled": true,
+        "available": 660,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "duplicates": [
+          {
+            "id": "r16-cas-alexandria-aria",
+            "primary": "research:r16-irn-alexandria-aria",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          },
+          {
+            "id": "r16-ind-alexandria-arachosia",
+            "primary": "research:r16-irn-alexandria-arachosia",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          }
+        ],
+        "possibleDuplicates": [
+          {
+            "ids": [
+              "research:r16-gre-pella",
+              "research:r16-bal-pella"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-aigai",
+              "research:r16-bal-aigai"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-thessalonica",
+              "research:r16-bal-thessalonica"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-amphipolis",
+              "research:r16-bal-amphipolis"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-pydna",
+              "research:r16-bal-pydna"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-cassandreia",
+              "research:r16-bal-cassandreia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-abdera",
+              "research:r16-bal-abdera"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-maroneia",
+              "research:r16-bal-maroneia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-ainos",
+              "research:r16-bal-ainos"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-dion",
+              "research:r16-bal-dion"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gal-octodurus",
+              "research:r16-grm-octodurus"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cyr-taucheira",
+              "research:r16-cyr-tocra"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-bactra",
+              "research:r16-cas-zariaspa"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-cyropolis",
+              "research:r16-cas-alexandria-eschate"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-nub-napata",
+              "research:r16-nub-jebel-barkal"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          }
+        ],
+        "visible": 75,
+        "represented": 147,
+        "authoritative": false,
+        "suppressedPromoted": 12
+      },
+      "atmosphere": {
+        "enabled": false,
+        "reducedMotion": false,
+        "birdsVisible": false,
+        "birdCount": 0,
+        "cloudShadowStrength": 0,
+        "time": 66.06459999999966
+      },
+      "p95FrameMs": 7.100000000005821,
+      "meanFps": 143.9136518089152
+    },
+    {
+      "name": "registry-greece",
+      "enabled": true,
+      "metrics": {
+        "fps": 143.576230532752,
+        "heapBytes": 318263375,
+        "drawCalls": 21,
+        "triangles": 360545,
+        "geometries": 279,
+        "textures": 25,
+        "terrainLod": 1
+      },
+      "research": {
+        "enabled": true,
+        "available": 660,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "duplicates": [
+          {
+            "id": "r16-cas-alexandria-aria",
+            "primary": "research:r16-irn-alexandria-aria",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          },
+          {
+            "id": "r16-ind-alexandria-arachosia",
+            "primary": "research:r16-irn-alexandria-arachosia",
+            "reason": "Identical name and representative coordinates; reference handles retained"
+          }
+        ],
+        "possibleDuplicates": [
+          {
+            "ids": [
+              "research:r16-gre-pella",
+              "research:r16-bal-pella"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-aigai",
+              "research:r16-bal-aigai"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-thessalonica",
+              "research:r16-bal-thessalonica"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-amphipolis",
+              "research:r16-bal-amphipolis"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-pydna",
+              "research:r16-bal-pydna"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-cassandreia",
+              "research:r16-bal-cassandreia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-abdera",
+              "research:r16-bal-abdera"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-maroneia",
+              "research:r16-bal-maroneia"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-ainos",
+              "research:r16-bal-ainos"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gre-dion",
+              "research:r16-bal-dion"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-gal-octodurus",
+              "research:r16-grm-octodurus"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cyr-taucheira",
+              "research:r16-cyr-tocra"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-bactra",
+              "research:r16-cas-zariaspa"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-cas-cyropolis",
+              "research:r16-cas-alexandria-eschate"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          },
+          {
+            "ids": [
+              "research:r16-nub-napata",
+              "research:r16-nub-jebel-barkal"
+            ],
+            "reason": "Nearby or co-located references; distinct records retained pending identity review"
+          }
+        ],
+        "visible": 75,
+        "represented": 147,
+        "authoritative": false,
+        "suppressedPromoted": 12
+      },
+      "atmosphere": {
+        "enabled": true,
+        "reducedMotion": false,
+        "birdsVisible": false,
+        "birdCount": 0,
+        "cloudShadowStrength": 0.045,
+        "time": 69.0802999999993
+      },
+      "p95FrameMs": 7.100000000005821,
+      "meanFps": 143.5740636112868
+    }
+  ],
+  "atmosphere": {
+    "birds": {
+      "enabled": true,
+      "reducedMotion": false,
+      "birdsVisible": true,
+      "birdCount": 12,
+      "cloudShadowStrength": 0,
+      "time": 74.6460999999985
+    },
+    "stopped": {
+      "enabled": false,
+      "reducedMotion": true,
+      "birdsVisible": false,
+      "birdCount": 0,
+      "cloudShadowStrength": 0,
+      "time": 74.88939999999849
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "status": "Prepared, not approved or promoted",
+  "candidateCount": 12,
+  "structuralIssues": [],
+  "pendingGuardIssues": [
+    {
+      "candidateId": "r16-ita-tarquinii",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-caere",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-arretium",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-populonia",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-volaterrae",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-iguvium",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-ancona",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-tusculum",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-velitrae",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-alba-fucens",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-akragas",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    },
+    {
+      "candidateId": "r16-ita-catana",
+      "code": "unapproved",
+      "message": "Explicit independent approval is required"
+    }
+  ],
+  "negativeGuards": [
+    "stale hash rejected",
+    "duplicate canonical identity rejected",
+    "chronology outside 278 BCE rejected",
+    "unknown initial ownership retained"
+  ],
+  "checks": [
+    {
+      "candidateId": "r16-ita-tarquinii",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 11.791453958606889,
+        "lat": 42.25725410452191
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/413332",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/423118UTar",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Legal status (socius vs subject) in 278 BCE is not fully resolved.",
+        "Ancient shoreline and the extent of the Graviscae port are reconstructed."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-caere",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 12.107778468896973,
+        "lat": 42.00248696534444
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/422859",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/420121UAgy",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Legal status in 278 BCE (civitas sine suffragio) is attested only from 353 BCE and may be evolving."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-arretium",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 11.863048,
+        "lat": 43.471274
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/413032",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/435119UArr",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": []
+    },
+    {
+      "candidateId": "r16-ita-populonia",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 10.489646524702335,
+        "lat": 42.98824389753146
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/403212",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/430105UPop",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Ancient coastline and the harbour installations are partly submerged/reconstructed."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-volaterrae",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 10.8600625,
+        "lat": 43.401604000000006
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/403292",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/434109UVol",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": []
+    },
+    {
+      "candidateId": "r16-ita-iguvium",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 12.573438,
+        "lat": 43.355464
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/413174",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/434126UIgu",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Precise legal/military status of Iguvium at 278 BCE is not securely attested in the surviving record."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-ancona",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 13.516072666666666,
+        "lat": 43.618992666666664
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/413014",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/436135PAnc",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Founding date (traditionally 387 BCE) and the degree of Greek vs Picentine control at 278 BCE are debated."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-tusculum",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 12.707207283463395,
+        "lat": 41.79807670079089
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/423108",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/418127UTus",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": []
+    },
+    {
+      "candidateId": "r16-ita-velitrae",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 12.77721,
+        "lat": 41.687426
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/423117",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/417128UVel",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "The precise colonial status of Velitrae at 278 BCE is not fully resolved."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-alba-fucens",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 13.411179118219938,
+        "lat": 42.07990437219554
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/413005",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/421134UAlb",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": []
+    },
+    {
+      "candidateId": "r16-ita-akragas",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 13.585475,
+        "lat": 37.290594
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/462086",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/373136PAkr",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Political control in 278 BCE (Carthaginian vs Syracusan vs Pyrrhic) is uncertain; existence and location are secure."
+      ]
+    },
+    {
+      "candidateId": "r16-ita-catana",
+      "hashMatchesCurrentAndAudit": true,
+      "canonicalIdsMatch": true,
+      "reviewedCoordinates": {
+        "lon": 15.088142,
+        "lat": 37.502959
+      },
+      "coordinateSource": {
+        "source": "https://pleiades.stoa.org/places/462270",
+        "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+        "accuracyMetres": null
+      },
+      "occupationIntervalContains278": true,
+      "topostext": "https://topostext.org/place/375151PCat",
+      "ownership": "Unknown: initialControl stays null; political prose is not ownership",
+      "caveats": [
+        "Political control in 278 BCE (Syracusan vs independent) is not fully resolved; existence and location are secure."
+      ]
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "docs/vs6/verification/pilot-verification.json",
+      "sha256": "9e29d15f8001f4ccf8e3401402788de5cdd67015463c721b265d7b2309353589",
+      "unchanged": true
+    },
+    {
+      "path": "docs/vs6/verification/pilot-verification.md",
+      "sha256": "6bdfcc8f785eb816dda739a2222d546ef62a6e9334849b94e1c8d395760481f7",
+      "unchanged": true
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch1.json",
+      "sha256": "0d50f97de12dc8d7db993d4b7d70011b894bf48b7b20c319fea872d8a88250e3",
+      "unchanged": true
+    },
+    {
+      "path": "data/settlement-integration/reviews.json",
+      "sha256": "ca74b1f2a79822333d958517610e027d7f981772080cc6651bd1881a1b6e37db",
+      "unchanged": true
+    },
+    {
+      "path": "public/data/approved-settlements.json",
+      "sha256": "239193bd446cbe5712d69a97ac880aea942fa4d89c55db3a479559f93f701a02",
+      "unchanged": true
+    },
+    {
+      "path": "public/data/settlement-atlas.json",
+      "sha256": "8b0e6a7cb25d68ae1e66dee43f4811b1abacc06d1b8d082b3574e1190a61cb8e",
+      "unchanged": true
+    }
+  ],
+  "activeReviewCount": 0,
+  "publishedCount": 0,
+  "limits": [
+    "Pleiades live JSON unavailable in this session; packet-reported representative points retained with provenance",
+    "Broad period attestation supports but does not alone establish exact-year continuous occupation",
+    "Political prose is not approved controller state"
+  ]
+}

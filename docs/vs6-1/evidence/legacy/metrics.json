@@ -1,0 +1,52 @@
+{
+  "environment": {
+    "platform": "win32",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "ramBytes": 16931676160,
+    "browser": "155.0.8059.40",
+    "viewport": "1440x1000",
+    "headless": true,
+    "url": "http://127.0.0.1:4173"
+  },
+  "metrics": {
+    "fps": 142.9626629178679,
+    "heapBytes": 284059894,
+    "drawCalls": 56,
+    "triangles": 606675,
+    "geometries": 299,
+    "textures": 20,
+    "terrainLod": 0,
+    "p95FrameMs": 7.100000000002183,
+    "sampleFrames": 480,
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Laptop GPU (0x00002520) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "mode": "geographic",
+    "selectedId": "64b04c62-5e8b-54fc-9f4e-eb468e4447aa",
+    "samples": 263169,
+    "trees": 4537,
+    "settlements": 23,
+    "atlasCandidates": 36,
+    "buildings": 2135
+  },
+  "browserProcessMemory": {
+    "processCount": 7,
+    "privateBytes": 1411919872,
+    "workingSetBytes": 1488842752,
+    "method": "CDP-owned Chrome process IDs; Windows Get-Process PrivateMemorySize64 and WorkingSet64. Working-set sum can double-count shared pages; GPU VRAM is excluded."
+  },
+  "assertions": [
+    "map loaded",
+    "Capua panel selection",
+    "political mode active",
+    "simulation ownership transfer updated overlay and preserved Capua identity",
+    "geographic mode restored",
+    "Roma selected by terrain marker raycast",
+    "region selected by terrain raycast",
+    "zoom changed camera distance and reset restored it",
+    "distant terrain LOD reduces triangle count",
+    "regional labels: 13; local zoom exposes smaller sites",
+    "Neapolis selected by marker raycast; probable Nemi sanctuary inspected at local zoom",
+    "visible label rectangles do not overlap",
+    "no uncaught browser errors"
+  ],
+  "limitations": "JS heap is not total process/GPU memory; headless FPS is not a production hardware benchmark."
+}

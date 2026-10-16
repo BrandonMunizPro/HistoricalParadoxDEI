@@ -1,0 +1,225 @@
+{
+  "sourceRecords": 687,
+  "batches": 10,
+  "sourceCoordinateRecords": 684,
+  "uniqueResearchHandles": 687,
+  "approvedRegistry": 12,
+  "suppressedPromoted": 12,
+  "displayableResearchLocations": 660,
+  "disputed": 86,
+  "excluded": [
+    {
+      "id": "r16-ibe-tartessos",
+      "reason": "Missing coordinate components"
+    },
+    {
+      "id": "r16-gal-rhodanousia",
+      "reason": "Missing coordinate components"
+    },
+    {
+      "id": "r16-cas-aornos-bactria",
+      "reason": "Missing coordinate components"
+    },
+    {
+      "id": "r16-ind-pataliputra",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-vaishali",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-rajagriha",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-kaushambi",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-sravasti",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-ujjain",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-mathura",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-vidisha",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-hastinapura",
+      "reason": "Outside current rendering coverage"
+    },
+    {
+      "id": "r16-ind-ayodhya",
+      "reason": "Outside current rendering coverage"
+    }
+  ],
+  "duplicates": [
+    {
+      "id": "r16-cas-alexandria-aria",
+      "primary": "research:r16-irn-alexandria-aria",
+      "reason": "Identical name and representative coordinates; reference handles retained"
+    },
+    {
+      "id": "r16-ind-alexandria-arachosia",
+      "primary": "research:r16-irn-alexandria-arachosia",
+      "reason": "Identical name and representative coordinates; reference handles retained"
+    }
+  ],
+  "possibleDuplicates": [
+    {
+      "ids": [
+        "research:r16-gre-pella",
+        "research:r16-bal-pella"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-aigai",
+        "research:r16-bal-aigai"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-thessalonica",
+        "research:r16-bal-thessalonica"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-amphipolis",
+        "research:r16-bal-amphipolis"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-pydna",
+        "research:r16-bal-pydna"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-cassandreia",
+        "research:r16-bal-cassandreia"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-abdera",
+        "research:r16-bal-abdera"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-maroneia",
+        "research:r16-bal-maroneia"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-ainos",
+        "research:r16-bal-ainos"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gre-dion",
+        "research:r16-bal-dion"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-gal-octodurus",
+        "research:r16-grm-octodurus"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-cyr-taucheira",
+        "research:r16-cyr-tocra"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-cas-bactra",
+        "research:r16-cas-zariaspa"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-cas-cyropolis",
+        "research:r16-cas-alexandria-eschate"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    },
+    {
+      "ids": [
+        "research:r16-nub-napata",
+        "research:r16-nub-jebel-barkal"
+      ],
+      "reason": "Nearby or co-located references; distinct records retained pending identity review"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/research/r16-settlement-roster.batch1.json",
+      "sha256": "0d50f97de12dc8d7db993d4b7d70011b894bf48b7b20c319fea872d8a88250e3"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch2.json",
+      "sha256": "7e4b139ae17dda76e6d4eef518b1f6b7027ea81a82cb23c5ffbc7aeb570de68a"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch3.json",
+      "sha256": "6830f403ab27eb5c70283798ddf056bf00bd923c8afedb6becd7adcc12592364"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch4.json",
+      "sha256": "7fa45a2b1ebbee216bcc5cc47605da6bef56330f828f3e32852e6e93e1c0cf61"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch5.json",
+      "sha256": "052a94962774f10ebc139d52ae859f47d06dbce3dddea7dd800612f6efeb35b3"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch6.json",
+      "sha256": "09d2a82d72c628a89fed35c87d69811a749f7e65609350d1dc00f4555cf5f746"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch7.json",
+      "sha256": "fea7a0e9c2b38eafa39d3ac9fabfb05b3df8e2fb283d91b4b4c1a5bfffe93c88"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch8.json",
+      "sha256": "f0a72948d1fa7a45d62bdade686a18fc39e1ebd2ec4246f7724de150dc01dad9"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch9.json",
+      "sha256": "7908c48daf33b21543f4dc47d16ed74825e21fae066118194539ce805d2a3f7d"
+    },
+    {
+      "path": "docs/research/r16-settlement-roster.batch10.json",
+      "sha256": "e7672a912ab4a2cd3874b11db0c4ddda008b5952617643695848924696ad79c5"
+    }
+  ]
+}

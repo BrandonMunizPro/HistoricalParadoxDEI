@@ -1,0 +1,25 @@
+{
+  "description": "Same fixed Greece local camera, manually confirmed open-water crop; bright-neutral pixel count is a glare diagnostic only, not visual acceptance",
+  "crop": {
+    "x": 360,
+    "y": 600,
+    "width": 300,
+    "height": 280
+  },
+  "samples": [
+    {
+      "name": "before",
+      "path": "docs/vs6-1/evidence/before/greeceDetail.png",
+      "pixels": 84000,
+      "brightNeutral": 53797,
+      "meanChannel": 203.48479365078327
+    },
+    {
+      "name": "after",
+      "path": "docs/vs6-1/evidence/presentation/greeceDetail.png",
+      "pixels": 84000,
+      "brightNeutral": 0,
+      "meanChannel": 52.47151984125876
+    }
+  ]
+}

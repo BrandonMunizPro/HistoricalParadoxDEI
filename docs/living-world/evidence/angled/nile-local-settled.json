@@ -1,0 +1,124 @@
+{
+  "camera": {
+    "target": {
+      "lon": 32.57000000000005,
+      "lat": 25.74,
+      "x": 1923.0847082397117,
+      "y": 0.3766550864378702,
+      "z": 1560.7452020934716
+    },
+    "position": [
+      1923.0847082397117,
+      8.291087459826556,
+      1565.030264544248
+    ],
+    "distance": 8.999999999999828,
+    "azimuth": 0,
+    "polar": 0.49623499999996373,
+    "settings": {
+      "movement": 1,
+      "rotation": 1,
+      "zoom": 1,
+      "edgeScroll": true,
+      "edgeWidth": 20,
+      "edgeDelayMs": 180,
+      "middleDrag": "pan",
+      "cursorZoom": true
+    },
+    "velocity": {
+      "x": 0,
+      "forward": 0
+    },
+    "zooming": false
+  },
+  "tiles": {
+    "controlColor": [],
+    "revealParents": [
+      {
+        "id": "window-egypt-nile-escarpment",
+        "parentId": "detail-egypt-N25E32",
+        "diagnostic": {
+          "previousGlobalHeight": 0.43474253116900397,
+          "parentHeight": 0.3741326201918356,
+          "appliedCenterHeight": 0.3741326332092285
+        }
+      }
+    ],
+    "cached": [],
+    "cacheLimit": 4,
+    "preparationJobs": 0,
+    "limit": 12,
+    "resident": [
+      "detail-egypt-N26E32",
+      "detail-egypt-N25E32",
+      "window-egypt-nile-escarpment",
+      "detail-egypt-N25E33",
+      "detail-egypt-N26E33",
+      "detail-egypt-N25E31",
+      "detail-egypt-N24E32",
+      "detail-egypt-N26E31",
+      "detail-egypt-N24E33",
+      "detail-egypt-N24E31",
+      "detail-egypt-N27E32",
+      "detail-egypt-N25E30"
+    ],
+    "pending": [],
+    "failed": [],
+    "lods": [
+      {
+        "id": "detail-egypt-N26E32",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N25E32",
+        "level": 0
+      },
+      {
+        "id": "window-egypt-nile-escarpment",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N25E33",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N26E33",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N25E31",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N24E32",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N26E31",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N24E33",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N24E31",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N27E32",
+        "level": 0
+      },
+      {
+        "id": "detail-egypt-N25E30",
+        "level": 0
+      }
+    ],
+    "heightBytes": 1597536,
+    "transitions": {
+      "morphing": "GPU parent-triangle position and normal interpolation",
+      "minimumReveal": 1,
+      "revealing": 0
+    }
+  }
+}

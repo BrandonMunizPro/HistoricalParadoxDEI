@@ -1,0 +1,548 @@
+{
+  "captures": [
+    {
+      "name": "world",
+      "camera": {
+        "target": {
+          "lon": 36.12756376585912,
+          "lat": 40.54715631815277,
+          "x": 1890.3524329081247,
+          "y": 0,
+          "z": -143.0782005190374
+        },
+        "position": [
+          1890.3524329081247,
+          13198.621230991357,
+          -143.06499984594203
+        ],
+        "distance": 13198.621230997958,
+        "azimuth": 0,
+        "polar": 0.0000010001554605096898,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "presentation": {
+        "canopyOpacity": 0,
+        "canopyVisible": false,
+        "horizonFade": 0,
+        "coverageLineVisible": false
+      },
+      "metrics": {
+        "fps": 64.68276249306807,
+        "heapBytes": 292915049,
+        "drawCalls": 182,
+        "triangles": 57797,
+        "geometries": 259,
+        "textures": 8,
+        "terrainLod": 1
+      },
+      "settlements": 23
+    },
+    {
+      "name": "greeceDetail",
+      "camera": {
+        "target": {
+          "lon": 22.799999999999955,
+          "lat": 37.560000000000024,
+          "x": 818.9407961700584,
+          "y": 2.873166729461874e-29,
+          "z": 395.11614490170183
+        },
+        "position": [
+          820.5407961700583,
+          5.760000000000215,
+          400.3961449017018
+        ],
+        "distance": 7.97596389159341,
+        "azimuth": 0.2942345651111734,
+        "polar": 0.7638623301983832,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [
+          {
+            "id": "window-greece-argolid-coast",
+            "parentId": "detail-greece-N37E22",
+            "diagnostic": {
+              "previousGlobalHeight": 1.179905666396443,
+              "parentHeight": 0.06041949659775124,
+              "appliedCenterHeight": 0.06041949614882469
+            }
+          }
+        ],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "window-greece-argolid-coast",
+          "detail-greece-N37E23",
+          "detail-greece-N37E22",
+          "detail-greece-N37E21",
+          "detail-greece-N38E22",
+          "detail-greece-N36E22",
+          "detail-greece-N38E23",
+          "detail-greece-N36E23",
+          "detail-greece-N37E24",
+          "detail-greece-N36E21",
+          "detail-greece-N38E21",
+          "detail-greece-N38E24"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "window-greece-argolid-coast",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N37E23",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N37E22",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N37E21",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N38E22",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N36E22",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N38E23",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N36E23",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N37E24",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N36E21",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N38E21",
+            "level": 0
+          },
+          {
+            "id": "detail-greece-N38E24",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "presentation": {
+        "canopyOpacity": 0.12344260724888191,
+        "canopyVisible": true,
+        "horizonFade": 0,
+        "coverageLineVisible": false
+      },
+      "metrics": {
+        "fps": 143.43086632243262,
+        "heapBytes": 254053958,
+        "drawCalls": 12,
+        "triangles": 464896,
+        "geometries": 265,
+        "textures": 20,
+        "terrainLod": 1
+      },
+      "settlements": 23
+    },
+    {
+      "name": "egyptDetail",
+      "camera": {
+        "target": {
+          "lon": 32.57000000000005,
+          "lat": 25.739999999999956,
+          "x": 1923.0847082397117,
+          "y": 0.7532999999918473,
+          "z": 1560.7452020934763
+        },
+        "position": [
+          1924.8847082397115,
+          7.233299999991846,
+          1566.6852020934766
+        ],
+        "distance": 8.972959378042583,
+        "azimuth": 0.29423456511113255,
+        "polar": 0.7638623301984221,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "parentId": "detail-egypt-N25E32",
+            "diagnostic": {
+              "previousGlobalHeight": 0.8694850623380079,
+              "parentHeight": 0.7482652403836711,
+              "appliedCenterHeight": 0.748265266418457
+            }
+          }
+        ],
+        "cached": [
+          "detail-greece-N37E22",
+          "detail-greece-N36E22",
+          "detail-greece-N36E23",
+          "detail-greece-N37E24"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "window-egypt-nile-escarpment",
+          "detail-egypt-N25E32",
+          "detail-egypt-N26E32",
+          "detail-egypt-N25E33",
+          "detail-egypt-N25E31",
+          "detail-egypt-N26E33",
+          "detail-egypt-N26E31",
+          "detail-egypt-N24E32",
+          "detail-egypt-N24E33",
+          "detail-egypt-N24E31",
+          "detail-egypt-N27E32",
+          "detail-egypt-N25E30"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "window-egypt-nile-escarpment",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N26E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E33",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N24E31",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N27E32",
+            "level": 0
+          },
+          {
+            "id": "detail-egypt-N25E30",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "presentation": {
+        "canopyOpacity": 0.2552623225372696,
+        "canopyVisible": true,
+        "horizonFade": 0,
+        "coverageLineVisible": false
+      },
+      "metrics": {
+        "fps": 142.95585046818033,
+        "heapBytes": 247827812,
+        "drawCalls": 8,
+        "triangles": 196610,
+        "geometries": 276,
+        "textures": 24,
+        "terrainLod": 1
+      },
+      "settlements": 23
+    },
+    {
+      "name": "rome",
+      "camera": {
+        "target": {
+          "lon": 12.4912581745549,
+          "lat": 41.8899769864849,
+          "x": -83.4991275755057,
+          "y": 0.07050138758583874,
+          "z": -43.85183432673955
+        },
+        "position": [
+          -81.6991275755057,
+          4.390501387585834,
+          -39.65183432673955
+        ],
+        "distance": 6.2882748031554705,
+        "azimuth": 0.4048917862850826,
+        "polar": 0.8134536695517238,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 0
+        },
+        "zooming": false
+      },
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "revealParents": [
+          {
+            "id": "local-capua",
+            "parentId": "N41E14",
+            "diagnostic": {
+              "previousGlobalHeight": 0.33318487410111963,
+              "parentHeight": 0.15384997055671287,
+              "appliedCenterHeight": 0.15384997427463531
+            }
+          },
+          {
+            "id": "local-roma",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.1332251520897249,
+              "parentHeight": 0.11276306158603214,
+              "appliedCenterHeight": 0.11276306211948395
+            }
+          },
+          {
+            "id": "local-neapolis",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.07657280620545734,
+              "parentHeight": 0.07657280620545734,
+              "appliedCenterHeight": 0.07657280564308167
+            }
+          },
+          {
+            "id": "local-norba",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.9985634776823094,
+              "parentHeight": 1.230401924353294,
+              "appliedCenterHeight": 1.230401873588562
+            }
+          }
+        ],
+        "cached": [
+          "detail-egypt-N24E33",
+          "detail-egypt-N24E31",
+          "detail-egypt-N27E32",
+          "detail-egypt-N25E30"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "local-capua",
+          "local-roma",
+          "local-neapolis",
+          "local-norba",
+          "N41E12",
+          "N42E12",
+          "N41E11",
+          "N41E13",
+          "N42E11",
+          "N42E13",
+          "N41E14",
+          "N40E13"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N40E13",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "presentation": {
+        "canopyOpacity": 0.003012141486220477,
+        "canopyVisible": true,
+        "horizonFade": 0,
+        "coverageLineVisible": false
+      },
+      "metrics": {
+        "fps": 142.72121788772597,
+        "heapBytes": 340390243,
+        "drawCalls": 57,
+        "triangles": 913774,
+        "geometries": 264,
+        "textures": 24,
+        "terrainLod": 0
+      },
+      "settlements": 23
+    }
+  ],
+  "errors": [],
+  "approvedPilot": 0,
+  "assertions": [
+    "Source-parent reveal equality",
+    "Bounded residency/cache",
+    "No strategic vegetation dots",
+    "Low-angle haze active",
+    "Envelope diagnostic opt-in",
+    "23 original settlements retained",
+    "No unapproved historical promotion"
+  ]
+}

@@ -1,0 +1,1115 @@
+{
+  "url": "http://127.0.0.1:4173",
+  "browser": "155.0.8059.79",
+  "errors": [],
+  "assertions": [
+    "Fresh launch, no navigation or search: hundreds of plotted references, named map groups, clouds and small birds",
+    "Map group opens a list; choosing a reference inspects it without search or simulation mutation",
+    "Both layers toggle; reduced motion stops the shared clock and atmospheric effects"
+  ],
+  "initial": {
+    "camera": {
+      "target": {
+        "lon": 13,
+        "lat": 36.99999999999999,
+        "x": -44.447625610109625,
+        "y": 0,
+        "z": 500.2531564147774
+      },
+      "position": [
+        -44.447625610109625,
+        5200,
+        500.263156317491
+      ],
+      "distance": 5200.000000009615,
+      "azimuth": 0,
+      "polar": 0.000001923058214154615,
+      "settings": {
+        "movement": 1,
+        "rotation": 1,
+        "zoom": 1,
+        "edgeScroll": true,
+        "edgeWidth": 20,
+        "edgeDelayMs": 180,
+        "middleDrag": "pan",
+        "cursorZoom": true
+      },
+      "velocity": {
+        "x": 0,
+        "forward": 0
+      },
+      "zooming": false
+    },
+    "preset": "mediterranean",
+    "research": {
+      "enabled": true,
+      "available": 660,
+      "excluded": [
+        {
+          "id": "r16-ibe-tartessos",
+          "reason": "Missing coordinate components"
+        },
+        {
+          "id": "r16-gal-rhodanousia",
+          "reason": "Missing coordinate components"
+        },
+        {
+          "id": "r16-cas-aornos-bactria",
+          "reason": "Missing coordinate components"
+        },
+        {
+          "id": "r16-ind-pataliputra",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-vaishali",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-rajagriha",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-kaushambi",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-sravasti",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-ujjain",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-mathura",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-vidisha",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-hastinapura",
+          "reason": "Outside current rendering coverage"
+        },
+        {
+          "id": "r16-ind-ayodhya",
+          "reason": "Outside current rendering coverage"
+        }
+      ],
+      "duplicates": [
+        {
+          "id": "r16-cas-alexandria-aria",
+          "primary": "research:r16-irn-alexandria-aria",
+          "reason": "Identical name and representative coordinates; reference handles retained"
+        },
+        {
+          "id": "r16-ind-alexandria-arachosia",
+          "primary": "research:r16-irn-alexandria-arachosia",
+          "reason": "Identical name and representative coordinates; reference handles retained"
+        }
+      ],
+      "possibleDuplicates": [
+        {
+          "ids": [
+            "research:r16-gre-pella",
+            "research:r16-bal-pella"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-aigai",
+            "research:r16-bal-aigai"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-thessalonica",
+            "research:r16-bal-thessalonica"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-amphipolis",
+            "research:r16-bal-amphipolis"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-pydna",
+            "research:r16-bal-pydna"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-cassandreia",
+            "research:r16-bal-cassandreia"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-abdera",
+            "research:r16-bal-abdera"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-maroneia",
+            "research:r16-bal-maroneia"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-ainos",
+            "research:r16-bal-ainos"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gre-dion",
+            "research:r16-bal-dion"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-gal-octodurus",
+            "research:r16-grm-octodurus"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-cyr-taucheira",
+            "research:r16-cyr-tocra"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-cas-bactra",
+            "research:r16-cas-zariaspa"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-cas-cyropolis",
+            "research:r16-cas-alexandria-eschate"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        },
+        {
+          "ids": [
+            "research:r16-nub-napata",
+            "research:r16-nub-jebel-barkal"
+          ],
+          "reason": "Nearby or co-located references; distinct records retained pending identity review"
+        }
+      ],
+      "visible": 113,
+      "represented": 501,
+      "instantiated": 660,
+      "visiblePoints": 501,
+      "visibleNames": 36,
+      "authoritative": false,
+      "suppressedPromoted": 12
+    },
+    "atmosphere": {
+      "enabled": true,
+      "reducedMotion": false,
+      "birdsVisible": true,
+      "birdCount": 12,
+      "birdSpanPixels": 6.4,
+      "cloudsVisible": 7,
+      "cloudOpacity": 0.42,
+      "cloudShadowStrength": 0.1,
+      "time": 5.389399999999979
+    },
+    "sites": [
+      {
+        "key": "roma",
+        "id": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+        "lon": 12.491258174554883,
+        "lat": 41.8899769864849,
+        "renderAnchor": null
+      },
+      {
+        "key": "capua",
+        "id": "699df490-1857-5816-b121-d46c4aca70ca",
+        "lon": 14.250207,
+        "lat": 41.0860925,
+        "renderAnchor": null
+      },
+      {
+        "key": "tibur",
+        "id": "a010bb15-5903-5ba6-ad4f-162f7035d969",
+        "lon": 12.79818,
+        "lat": 41.963602,
+        "renderAnchor": null
+      },
+      {
+        "key": "praeneste",
+        "id": "37d58a00-21f3-5746-a448-331e5202b3bd",
+        "lon": 12.892307500000001,
+        "lat": 41.8394835,
+        "renderAnchor": null
+      },
+      {
+        "key": "norba",
+        "id": "f94d9469-e8a9-53d2-a241-6675cef447b6",
+        "lon": 12.960234822672941,
+        "lat": 41.59160734144302,
+        "renderAnchor": null
+      },
+      {
+        "key": "tarracina",
+        "id": "c6bcb753-9e3f-5202-be07-5d7d2872eeef",
+        "lon": 13.24885,
+        "lat": 41.291169,
+        "renderAnchor": null
+      },
+      {
+        "key": "ostia",
+        "id": "2b6511b3-a6b3-50d2-b158-ceeee25cdbde",
+        "lon": 12.289357418323796,
+        "lat": 41.753575752221614,
+        "renderAnchor": null
+      },
+      {
+        "key": "antium",
+        "id": "ea2eea45-d672-5be6-a987-3a5c348960f9",
+        "lon": 12.628995,
+        "lat": 41.44795,
+        "renderAnchor": null
+      },
+      {
+        "key": "lanuvium",
+        "id": "f169c260-233a-52c7-b0a1-ebe4735a858e",
+        "lon": 12.697593,
+        "lat": 41.674703,
+        "renderAnchor": null
+      },
+      {
+        "key": "aricia",
+        "id": "828bcd83-58e1-591b-932f-61a8c972f2c4",
+        "lon": 12.673347150000001,
+        "lat": 41.721399649999995,
+        "renderAnchor": null
+      },
+      {
+        "key": "anagnia",
+        "id": "06a7450a-440b-56af-b879-ea09480c661d",
+        "lon": 13.158962,
+        "lat": 41.742213,
+        "renderAnchor": null
+      },
+      {
+        "key": "fregellae",
+        "id": "ab6d44ff-689e-519c-8b89-416808830d78",
+        "lon": 13.538889,
+        "lat": 41.536667,
+        "renderAnchor": null
+      },
+      {
+        "key": "arpinum",
+        "id": "5809be14-179a-51d3-8b1e-d569aa8fe9e7",
+        "lon": 13.609876,
+        "lat": 41.648422,
+        "renderAnchor": null
+      },
+      {
+        "key": "setia",
+        "id": "f95dc494-f04e-5898-8415-164ef697694a",
+        "lon": 13.0592171,
+        "lat": 41.4984145,
+        "renderAnchor": null
+      },
+      {
+        "key": "formiae",
+        "id": "e54b4840-388e-5c57-bc5e-0a581d3cd0bb",
+        "lon": 13.6035325,
+        "lat": 41.2560395,
+        "renderAnchor": null
+      },
+      {
+        "key": "minturnae",
+        "id": "aab183f4-75f4-5d27-a09b-5d06bcd93ac8",
+        "lon": 13.768417570220754,
+        "lat": 41.24215298964928,
+        "renderAnchor": null
+      },
+      {
+        "key": "cumae",
+        "id": "af06c253-e4d5-5b3b-bbaf-2b8a4df7ff06",
+        "lon": 14.0563813,
+        "lat": 40.847949650000004,
+        "renderAnchor": null
+      },
+      {
+        "key": "neapolis",
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "lon": 14.25287,
+        "lat": 40.839995,
+        "renderAnchor": {
+          "lon": 14.257,
+          "lat": 40.852,
+          "uncertaintyMetres": 1000
+        }
+      },
+      {
+        "key": "nola",
+        "id": "ee242177-e1d0-5e3a-996b-187abfb73612",
+        "lon": 14.524545,
+        "lat": 40.926823,
+        "renderAnchor": null
+      },
+      {
+        "key": "pompeii",
+        "id": "5716a175-ec5f-502a-b6da-b62fe8eb2af5",
+        "lon": 14.485429,
+        "lat": 40.74941,
+        "renderAnchor": null
+      },
+      {
+        "key": "maleventum",
+        "id": "6c3f0947-7245-511f-8e20-73a35c74c6be",
+        "lon": 14.781161,
+        "lat": 41.130437,
+        "renderAnchor": null
+      },
+      {
+        "key": "poseidonia",
+        "id": "b2e0e474-b5f8-540c-8fb3-3dfce075d009",
+        "lon": 15.005078600555327,
+        "lat": 40.420848339395185,
+        "renderAnchor": null
+      },
+      {
+        "key": "diana-nemi",
+        "id": "64b04c62-5e8b-54fc-9f4e-eb468e4447aa",
+        "lon": 12.710045680425932,
+        "lat": 41.72408904220152,
+        "renderAnchor": null
+      },
+      {
+        "key": "tarquinii",
+        "id": "93ed3b26-73e3-5eca-a6b2-d3f3caf69ae6",
+        "lon": 11.791453958606889,
+        "lat": 42.25725410452191,
+        "renderAnchor": null
+      },
+      {
+        "key": "caere",
+        "id": "c88792f8-54aa-5811-ba08-3d87e3af9804",
+        "lon": 12.107778468896973,
+        "lat": 42.00248696534444,
+        "renderAnchor": null
+      },
+      {
+        "key": "arretium",
+        "id": "d36f8e5a-ab72-58ca-8a94-13117a9e837b",
+        "lon": 11.863048,
+        "lat": 43.471274,
+        "renderAnchor": null
+      },
+      {
+        "key": "populonia",
+        "id": "2a56b827-77c3-5531-acc7-d5ff98fbdfd2",
+        "lon": 10.489646524702335,
+        "lat": 42.98824389753146,
+        "renderAnchor": null
+      },
+      {
+        "key": "volaterrae",
+        "id": "0669b78a-5aba-571a-901c-d0a50ac5c0a1",
+        "lon": 10.8600625,
+        "lat": 43.401604000000006,
+        "renderAnchor": null
+      },
+      {
+        "key": "iguvium",
+        "id": "49af1cc1-9af8-55e7-9cc5-73f140f7dc4c",
+        "lon": 12.573438,
+        "lat": 43.355464,
+        "renderAnchor": null
+      },
+      {
+        "key": "ancona",
+        "id": "46f7b909-7171-57cb-a5df-7b9037feecf8",
+        "lon": 13.516072666666666,
+        "lat": 43.618992666666664,
+        "renderAnchor": null
+      },
+      {
+        "key": "tusculum",
+        "id": "8d38cd10-e143-5335-a0aa-3e365aaa5ef5",
+        "lon": 12.707207283463395,
+        "lat": 41.79807670079089,
+        "renderAnchor": null
+      },
+      {
+        "key": "velitrae",
+        "id": "a3dba05d-c9c7-5174-ba0c-90d12db9932a",
+        "lon": 12.77721,
+        "lat": 41.687426,
+        "renderAnchor": null
+      },
+      {
+        "key": "alba-fucens",
+        "id": "3c5c62e2-89d5-5fef-a97f-17c4ccb4d01d",
+        "lon": 13.411179118219938,
+        "lat": 42.07990437219554,
+        "renderAnchor": null
+      },
+      {
+        "key": "akragas",
+        "id": "5c5f9130-5076-5a71-b63a-4a51353c70d9",
+        "lon": 13.585475,
+        "lat": 37.290594,
+        "renderAnchor": null
+      },
+      {
+        "key": "catana",
+        "id": "6b4ee85f-28a3-53fb-8ee3-198c1f39af25",
+        "lon": 15.088142,
+        "lat": 37.502959,
+        "renderAnchor": null
+      }
+    ],
+    "control": [
+      [
+        "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+        "7fe1cdd5-8a20-53ec-8eb0-e5277677086f"
+      ],
+      [
+        "699df490-1857-5816-b121-d46c4aca70ca",
+        "bc14be53-6292-5593-83aa-cb9a8d635acc"
+      ],
+      [
+        "a010bb15-5903-5ba6-ad4f-162f7035d969",
+        "bc14be53-6292-5593-83aa-cb9a8d635acc"
+      ],
+      [
+        "37d58a00-21f3-5746-a448-331e5202b3bd",
+        "bc14be53-6292-5593-83aa-cb9a8d635acc"
+      ],
+      [
+        "f94d9469-e8a9-53d2-a241-6675cef447b6",
+        "7fe1cdd5-8a20-53ec-8eb0-e5277677086f"
+      ],
+      [
+        "c6bcb753-9e3f-5202-be07-5d7d2872eeef",
+        "7fe1cdd5-8a20-53ec-8eb0-e5277677086f"
+      ],
+      [
+        "2b6511b3-a6b3-50d2-b158-ceeee25cdbde",
+        "7fe1cdd5-8a20-53ec-8eb0-e5277677086f"
+      ],
+      [
+        "ea2eea45-d672-5be6-a987-3a5c348960f9",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "f169c260-233a-52c7-b0a1-ebe4735a858e",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "828bcd83-58e1-591b-932f-61a8c972f2c4",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "06a7450a-440b-56af-b879-ea09480c661d",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "ab6d44ff-689e-519c-8b89-416808830d78",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "5809be14-179a-51d3-8b1e-d569aa8fe9e7",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "f95dc494-f04e-5898-8415-164ef697694a",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "e54b4840-388e-5c57-bc5e-0a581d3cd0bb",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "aab183f4-75f4-5d27-a09b-5d06bcd93ac8",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "af06c253-e4d5-5b3b-bbaf-2b8a4df7ff06",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "ee242177-e1d0-5e3a-996b-187abfb73612",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "5716a175-ec5f-502a-b6da-b62fe8eb2af5",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "6c3f0947-7245-511f-8e20-73a35c74c6be",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "b2e0e474-b5f8-540c-8fb3-3dfce075d009",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ],
+      [
+        "64b04c62-5e8b-54fc-9f4e-eb468e4447aa",
+        "951ae517-eec7-5cdd-878a-423043972d14"
+      ]
+    ],
+    "scripts": [
+      "http://127.0.0.1:4173/assets/index-CE9pTKDa.js"
+    ],
+    "pathPoints": 501,
+    "buttons": [
+      {
+        "count": 34,
+        "ids": "research:r16-gre-aegina|research:r16-gre-aigeira|research:r16-gre-amphissa|research:r16-gre-argos|research:r16-gre-athens|research:r16-gre-carystos|research:r16-gre-chalcis|research:r16-gre-corinth|research:r16-gre-delphi|research:r16-gre-elatea|research:r16-gre-eleusis|research:r16-gre-epidaurus|research:r16-gre-eretria|research:r16-gre-hermione|research:r16-gre-histiaea|research:r16-gre-hyampolis|research:r16-gre-lebadeia|research:r16-gre-mantinea|research:r16-gre-megalopolis|research:r16-gre-megara|research:r16-gre-nemea|research:r16-gre-opus|research:r16-gre-orchomenos-arcadia|research:r16-gre-orchomenos-boeotia|research:r16-gre-phlius|research:r16-gre-piraeus|research:r16-gre-plataea|research:r16-gre-rhamnous|research:r16-gre-sicyon|research:r16-gre-tanagra|research:r16-gre-tegea|research:r16-gre-thebes|research:r16-gre-thespiae|research:r16-gre-troezen"
+      },
+      {
+        "count": 23,
+        "ids": "research:r16-ana-abydos|research:r16-ana-aigai-aeolis|research:r16-ana-antandros|research:r16-ana-assos|research:r16-ana-dardanos|research:r16-ana-ilion|research:r16-ana-kebren|research:r16-ana-lampsacus|research:r16-ana-myrina|research:r16-ana-nymphaion|research:r16-ana-parion|research:r16-ana-pergamon|research:r16-ana-poimanenon|research:r16-ana-prokonnesos|research:r16-ana-skepsis|research:r16-bal-ainos|research:r16-bal-doriskos|research:r16-bal-maroneia|research:r16-bal-sestos|research:r16-gre-ainos|research:r16-gre-maroneia|research:r16-gre-mytilene|research:r16-gre-samothrace"
+      },
+      {
+        "count": 23,
+        "ids": "research:r16-bal-abdera|research:r16-bal-akanthos|research:r16-bal-amphipolis|research:r16-bal-cassandreia|research:r16-bal-dion|research:r16-bal-pella|research:r16-bal-philippi|research:r16-bal-pydna|research:r16-bal-thessalonica|research:r16-bal-torone|research:r16-gre-abdera|research:r16-gre-amphipolis|research:r16-gre-cassandreia|research:r16-gre-demetrias|research:r16-gre-dion|research:r16-gre-larissa|research:r16-gre-pella|research:r16-gre-pharsalos|research:r16-gre-pherae|research:r16-gre-pydna|research:r16-gre-scotussa|research:r16-gre-thasos|research:r16-gre-thessalonica"
+      },
+      {
+        "count": 19,
+        "ids": "research:r16-lev-abila|research:r16-lev-achzib|research:r16-lev-akko|research:r16-lev-ashdod|research:r16-lev-ashkelon|research:r16-lev-beth-horon|research:r16-lev-dor|research:r16-lev-gadara|research:r16-lev-hebron|research:r16-lev-hippos|research:r16-lev-jericho|research:r16-lev-jerusalem|research:r16-lev-joppa|research:r16-lev-maresha|research:r16-lev-pella|research:r16-lev-samaria|research:r16-lev-scythopolis|research:r16-lev-shechem|research:r16-lev-tyre"
+      },
+      {
+        "count": 18,
+        "ids": "research:r16-ana-clazomenae|research:r16-ana-colophon|research:r16-ana-cyme|research:r16-ana-erythrae|research:r16-ana-larisa-aeolis|research:r16-ana-lebedos|research:r16-ana-neonteichos|research:r16-ana-notion|research:r16-ana-phocaea|research:r16-ana-smyrna|research:r16-ana-temnos|research:r16-ana-teos|research:r16-gre-chios|research:r16-gre-delos|research:r16-gre-naxos|research:r16-gre-paros|research:r16-gre-samos|research:r16-gre-tenos"
+      },
+      {
+        "count": 15,
+        "ids": "research:r16-afr-althiburos|research:r16-afr-ammmaedara|research:r16-afr-bulla-regia|research:r16-afr-calama|research:r16-afr-hippo-regius|research:r16-afr-mactaris|research:r16-afr-madauros|research:r16-afr-missua|research:r16-afr-mustis|research:r16-afr-sicca-veneria|research:r16-afr-thagaste|research:r16-afr-thubursicum|research:r16-afr-thugga|research:r16-afr-uchi-maius|research:r16-afr-vaga"
+      },
+      {
+        "count": 15,
+        "ids": "research:r16-ana-alinda|research:r16-ana-ephesus|research:r16-ana-halikarnassos|research:r16-ana-hypaipa|research:r16-ana-iasos|research:r16-ana-kaunos|research:r16-ana-labraunda|research:r16-ana-magnesia-ad-sipylum|research:r16-ana-magnesia-maeander|research:r16-ana-miletus|research:r16-ana-mylasa|research:r16-ana-priene|research:r16-ana-sardis|research:r16-ana-telmessos|research:r16-gre-kos"
+      },
+      {
+        "count": 13,
+        "ids": "research:r16-afr-carthage|research:r16-afr-clupea|research:r16-afr-hadrumetum|research:r16-afr-hippo-diarrhytus|research:r16-afr-kerkouane|research:r16-afr-leptis-minor|research:r16-afr-neapolis-punica|research:r16-afr-pupput|research:r16-afr-ruspina|research:r16-afr-thapsus|research:r16-afr-thuburbo-minus|research:r16-afr-utica|research:r16-afr-zama-regia"
+      },
+      {
+        "count": 12,
+        "ids": "research:r16-gre-aegium|research:r16-gre-ambracia|research:r16-gre-calydon|research:r16-gre-dyme|research:r16-gre-elis|research:r16-gre-naupactus|research:r16-gre-olympia|research:r16-gre-patrae|research:r16-gre-pleuron|research:r16-gre-psophis|research:r16-gre-stratos|research:r16-gre-thermon"
+      },
+      {
+        "count": 11,
+        "ids": "research:r16-bal-aigai|research:r16-bal-antipatrea|research:r16-bal-beroia|research:r16-bal-edessa|research:r16-gre-aigai|research:r16-gre-bouthroton|research:r16-gre-corcyra|research:r16-gre-crannon|research:r16-gre-dodona|research:r16-gre-gomphi|research:r16-gre-phoinike"
+      },
+      {
+        "count": 11,
+        "ids": "research:r16-lev-antaradus|research:r16-lev-aradus|research:r16-lev-baalbek|research:r16-lev-berytus|research:r16-lev-byblos|research:r16-lev-kadesh|research:r16-lev-marathus|research:r16-lev-riblah|research:r16-lev-sarepta|research:r16-lev-sidon|research:r16-lev-tripolis"
+      },
+      {
+        "count": 9,
+        "ids": "research:r16-ana-apollonia-rhyndakos|research:r16-ana-cyzicus|research:r16-ana-daskyleion|research:r16-ana-kios|research:r16-ana-kotyaion|research:r16-ana-miletopolis|research:r16-ana-nikaia|research:r16-ana-saittai|research:r16-ana-thyateira"
+      },
+      {
+        "count": 9,
+        "ids": "research:r16-cau-gorgippia|research:r16-cau-hermonassa|research:r16-cau-kimmerikon|research:r16-cau-myrmekion|research:r16-cau-nymphaeum|research:r16-cau-panticapaeum|research:r16-cau-phanagoria|research:r16-cau-theodosia|research:r16-cau-tyritake"
+      },
+      {
+        "count": 9,
+        "ids": "research:r16-egy-bubastis|research:r16-egy-busiris|research:r16-egy-heliopolis|research:r16-egy-leontopolis|research:r16-egy-mendes|research:r16-egy-pelusium|research:r16-egy-sebennytos|research:r16-egy-tanis|research:r16-egy-thmuis"
+      },
+      {
+        "count": 8,
+        "ids": "research:r16-gal-agathe|research:r16-gal-apta|research:r16-gal-arausio|research:r16-gal-arelate|research:r16-gal-avennio|research:r16-gal-cabellio|research:r16-gal-nemausus|research:r16-gal-vasio"
+      },
+      {
+        "count": 8,
+        "ids": "research:r16-gre-eleutherna|research:r16-gre-gortyn|research:r16-gre-hierapytna|research:r16-gre-itanos|research:r16-gre-knossos|research:r16-gre-lyttos|research:r16-gre-phaistos|research:r16-gre-praisos"
+      },
+      {
+        "count": 7,
+        "ids": "research:r16-ana-anazarbus|research:r16-ana-tarsus|research:r16-lev-antioch|research:r16-lev-apamea|research:r16-lev-cyrrhus|research:r16-lev-laodicea-ad-mare|research:r16-lev-seleucia-pieria"
+      },
+      {
+        "count": 7,
+        "ids": "research:r16-bal-apollonia-illyria|research:r16-bal-byllis|research:r16-bal-dimale|research:r16-bal-epidamnos|research:r16-bal-oricum|research:r16-ita-hydruntum|research:r16-ita-manduria"
+      },
+      {
+        "count": 6,
+        "ids": "research:r16-ana-aspendos|research:r16-ana-kelainai|research:r16-ana-perge|research:r16-ana-phaselis|research:r16-ana-side|research:r16-ana-sillyon"
+      },
+      {
+        "count": 6,
+        "ids": "research:r16-egy-apollonopolis-magna|research:r16-egy-elephantine|research:r16-egy-ombos|research:r16-egy-philae|research:r16-egy-syene|research:r16-egy-thebes"
+      },
+      {
+        "count": 6,
+        "ids": "research:r16-ibe-abdera|research:r16-ibe-acci|research:r16-ibe-baria|research:r16-ibe-basti|research:r16-ibe-mastia|research:r16-ibe-tutugi"
+      },
+      {
+        "count": 6,
+        "ids": "research:r16-ibe-carmo|research:r16-ibe-carteia|research:r16-ibe-castulo|research:r16-ibe-corduba|research:r16-ibe-malaca|research:r16-ibe-sexi"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-afr-acholla|research:r16-afr-girba|research:r16-afr-meninx|research:r16-afr-sullecthum|research:r16-afr-tacape"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-bal-apollonia-pontica|research:r16-bal-bisanthe|research:r16-bal-kabyle|research:r16-bal-kypsela|research:r16-bal-mesembria"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-bal-epetion|research:r16-bal-issa|research:r16-bal-pharos|research:r16-bal-salona|research:r16-bal-tragurion"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-bal-lissos|research:r16-bal-narona|research:r16-bal-olcinium|research:r16-bal-rhizon|research:r16-bal-scodra"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-egy-abydos|research:r16-egy-hermopolis-magna|research:r16-egy-lykopolis|research:r16-egy-panopolis|research:r16-egy-ptolemais-hermiou"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-egy-alexandria|research:r16-egy-canopus|research:r16-egy-herakleion|research:r16-egy-naucratis|research:r16-egy-sais"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-gal-aventicum|research:r16-gal-genava|research:r16-gal-octodurus|research:r16-grm-axima|research:r16-grm-octodurus"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-gal-illiberis|research:r16-gal-ruscino|research:r16-ibe-emporiae|research:r16-ibe-rhode|research:r16-ibe-tarraco"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-ita-brixia|research:r16-ita-genua|research:r16-ita-mantua|research:r16-ita-mediolanum|research:r16-ita-verona"
+      },
+      {
+        "count": 5,
+        "ids": "research:r16-lev-amathus|research:r16-lev-kition|research:r16-lev-kourion|research:r16-lev-paphos|research:r16-lev-salamis-cyprus"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ana-amastris|research:r16-ana-bithynion|research:r16-ana-heraclea-pontica|research:r16-ana-tios"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ana-ancyra|research:r16-ana-dorylaion|research:r16-ana-gordion|research:r16-ana-pessinus"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ana-knidos|research:r16-ana-patara|research:r16-ana-xanthos|research:r16-gre-rhodes"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-cau-chersonesos-taurica|research:r16-cau-kerkinitis|research:r16-cau-neapolis-scythia|research:r16-cau-ust-alma"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-cyr-apollonia|research:r16-cyr-balagrae|research:r16-cyr-cyrene|research:r16-cyr-darnis"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-cyr-berenice-euesperides|research:r16-cyr-ptolemais-barca|research:r16-cyr-taucheira|research:r16-cyr-tocra"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-egy-herakleopolis|research:r16-egy-krokodilopolis|research:r16-egy-memphis|research:r16-egy-oxyrhynchus"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-gal-bibracte|research:r16-gal-cabillonum|research:r16-gal-gergovia|research:r16-gal-vienna"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-gal-condate|research:r16-gal-darioritum|research:r16-gal-fanum-martis|research:r16-gal-vorgium"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-gre-gytheion|research:r16-gre-kydonia|research:r16-gre-melos|research:r16-gre-sparta"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ibe-clunia|research:r16-ibe-numantia|research:r16-ibe-termes|research:r16-ibe-uxama"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ibe-dianium|research:r16-ibe-edeta|research:r16-ibe-saetabi|research:r16-ibe-saguntum"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-ita-consentia|research:r16-ita-hipponium|research:r16-ita-pandosia|research:r16-ita-petelia"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-lev-bostra|research:r16-lev-heshbon|research:r16-lev-medeba|research:r16-lev-philadelphia"
+      },
+      {
+        "count": 4,
+        "ids": "research:r16-mes-edessa|research:r16-mes-harran|research:r16-mes-samosata|research:r16-mes-zeugma"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-afr-leptis-magna|research:r16-afr-oea|research:r16-afr-sabratha"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-afr-lixus|research:r16-afr-tingis|research:r16-afr-volubilis"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-ana-amaseia|research:r16-ana-gangra|research:r16-ana-tavium"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-ana-byzantium|research:r16-ana-chalcedon|research:r16-bal-perinthos"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-bal-aenona|research:r16-bal-iader|research:r16-bal-siscia"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-bal-histria|research:r16-bal-kallatis|research:r16-bal-tomis"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-bal-nesactium|research:r16-ita-altinum|research:r16-ita-patavium"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-gal-agedincum|research:r16-gal-alesia|research:r16-gal-durocortorum"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-gal-aquae-tarbellicae|research:r16-gal-ausci|research:r16-ibe-pompelo"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-gal-bagacum|research:r16-gal-noviodunum-suessionum|research:r16-gal-samarobriva"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-gal-carcaso|research:r16-gal-narbon|research:r16-gal-tolosa"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-grm-brigantium|research:r16-grm-curia|research:r16-ita-tridentum"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-ibe-baelo|research:r16-ibe-gades|research:r16-ibe-hispalis"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-ibe-bilbilis|research:r16-ibe-ilerda|research:r16-ibe-osca"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-ita-caralis|research:r16-ita-nora|research:r16-ita-sulci"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-lev-damascus|research:r16-lev-emesa|research:r16-lev-palmyra"
+      },
+      {
+        "count": 3,
+        "ids": "research:r16-nub-jebel-barkal|research:r16-nub-kawa|research:r16-nub-napata"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-afr-capsa|research:r16-afr-theveste"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-afr-cirta|research:r16-afr-milev"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-ana-amisos|research:r16-ana-kotyora"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-bal-emona|research:r16-grm-magdalensberg"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-bal-herakleia-sintike|research:r16-bal-seuthopolis"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-cau-dioscurias|research:r16-cau-pityus"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-egy-dendera|research:r16-egy-koptos"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-gal-antipolis|research:r16-gal-nikaia"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-gal-massalia|research:r16-gal-olbia"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-gre-messene|research:r16-gre-pylos"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-grm-gellertegy|research:r16-grm-szazhalombatta"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-grm-nemcice|research:r16-grm-roseldorf"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-ibe-ebora|research:r16-ibe-salacia"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-ibe-ebusus|research:r16-ibe-ilici"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-ita-cossyra|research:r16-ita-melite"
+      },
+      {
+        "count": 2,
+        "ids": "research:r16-lev-hamath|research:r16-mes-apamea-euphrates"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-kerasos"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-mazaka"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-myra"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-sinope"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-soli-cilicia"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-trapezos"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ana-tyana"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-bal-odessos"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-bal-sarmizegetusa"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-bal-stobi"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-bri-rathcroghan"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-cau-olbia-borysthenes"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-cau-tanais"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-cau-tyras"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-cyr-antipyrgos"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-egy-dakhla"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-egy-kharga"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-egy-siwa"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-gal-avaricum"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-gal-burdigala"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-gal-cenabum"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-grm-dunsberg"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-grm-durrnberg"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-grm-zavist"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ibe-bracara"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ibe-cale"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ibe-olisipo"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ita-aleria"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ita-croton"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-ita-tharros"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-lev-gaza"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-lev-petra"
+      },
+      {
+        "count": 1,
+        "ids": "research:r16-nub-qasr-ibrim"
+      }
+    ],
+    "names": 36,
+    "metrics": {
+      "fps": 137.70943309616712,
+      "heapBytes": 299859467,
+      "drawCalls": 119,
+      "triangles": 146722,
+      "geometries": 191,
+      "textures": 22,
+      "terrainLod": 1
+    }
+  },
+  "loadedBundle": {
+    "path": "/assets/index-CE9pTKDa.js",
+    "sha256": "f04c00a1e75e9efd7b79392367cb24ed8f144b9a09334735b2ffaf350a8cd381",
+    "matchesLocalBuild": true
+  },
+  "performance": [
+    {
+      "atmosphere": {
+        "enabled": true,
+        "reducedMotion": false,
+        "birdsVisible": true,
+        "birdCount": 12,
+        "birdSpanPixels": 6.4,
+        "cloudsVisible": 7,
+        "cloudOpacity": 0.42,
+        "cloudShadowStrength": 0.1,
+        "time": 15.145400000000025
+      },
+      "meanFps": 142.91405238522054,
+      "p95FrameMs": 7.099999999998545,
+      "metrics": {
+        "fps": 142.90378481553103,
+        "heapBytes": 283352942,
+        "drawCalls": 119,
+        "triangles": 146722,
+        "geometries": 191,
+        "textures": 22,
+        "terrainLod": 1
+      }
+    },
+    {
+      "atmosphere": {
+        "enabled": false,
+        "reducedMotion": false,
+        "birdsVisible": false,
+        "birdCount": 0,
+        "birdSpanPixels": 6.4,
+        "cloudsVisible": 0,
+        "cloudOpacity": 0,
+        "cloudShadowStrength": 0,
+        "time": 15.173200000000024
+      },
+      "meanFps": 142.41177204140166,
+      "p95FrameMs": 7.099999999998545,
+      "metrics": {
+        "fps": 142.3813277058809,
+        "heapBytes": 272004086,
+        "drawCalls": 110,
+        "triangles": 146706,
+        "geometries": 191,
+        "textures": 22,
+        "terrainLod": 1
+      }
+    }
+  ],
+  "atmospherePixelDifference": {
+    "region": "unobstructed map, x330..1400 y150..910",
+    "threshold": 12,
+    "changed": 5365,
+    "pixels": 813200,
+    "fraction": 0.0065973930152484015
+  }
+}

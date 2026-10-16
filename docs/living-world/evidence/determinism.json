@@ -1,0 +1,15 @@
+{
+  "command": "node scripts/build-research-markers.mjs",
+  "exitCode": 0,
+  "byteIdentical": true,
+  "outputs": [
+    {
+      "path": "public/data/research-locations.json",
+      "sha256": "787e678361b1769f40e22e5b4f3630375651420ce99325e9e766780717937f5c"
+    },
+    {
+      "path": "docs/living-world/settlement-audit.json",
+      "sha256": "283a97f0bd41cf9f7ed13c635a8a11d007408ea959324459f46b2213c333e3ef"
+    }
+  ]
+}

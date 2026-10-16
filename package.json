@@ -35,7 +35,10 @@
     "map:verify:controls": "node scripts/verify-campaign-controls.mjs",
     "map:verify:detail": "node scripts/verify-campaign-detail.mjs",
     "map:profile:streaming": "node scripts/profile-terrain-streaming.mjs",
-    "map:verify:streaming": "node scripts/verify-streaming.mjs"
+    "map:verify:streaming": "node scripts/verify-streaming.mjs",
+    "atlas:audit": "npm run build && node scripts/audit-settlement-promotion.mjs",
+    "map:verify:vs6": "node scripts/verify-vs6-presentation.mjs",
+    "map:research": "npm run build && node scripts/build-research-markers.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

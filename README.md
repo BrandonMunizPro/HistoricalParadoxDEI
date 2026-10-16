@@ -114,3 +114,5 @@ Rome II, DeI or RPFM assets or binaries belong in this repository. See
 The [campaign camera and regional detail report](docs/vs5/campaign-map-experience.md) documents configurable navigation, sourced Greece/Egypt detail, browser evidence and remaining coverage limits.
 
 The [streaming smoothness report](docs/vs5/streaming-smoothness.md) includes repeatable camera-path profiling, bounded incremental terrain preparation, responsiveness evidence and remaining stalls.
+
+VS6: [terrain presentation and measurements](docs/vs6/terrain-presentation.md) and [review-gated settlement promotion](docs/vs6/settlement-promotion.md). The 12-site pilot remains blocked pending independent verification and approval.

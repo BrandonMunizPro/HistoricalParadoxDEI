@@ -1,0 +1,1515 @@
+{
+  "environment": {
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "ram": 16931676160,
+    "browser": "155.0.8059.40",
+    "viewport": "1440x1000",
+    "gpuMemory": "Not measurable with this API; heap is JS only"
+  },
+  "results": [
+    {
+      "region": "world",
+      "enabled": false,
+      "research": {
+        "enabled": false,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 0,
+        "represented": 0,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.91115050707822,
+        "heapBytes": 167747693,
+        "drawCalls": 179,
+        "triangles": 57241,
+        "geometries": 261,
+        "textures": 8,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 45.04495366231026,
+          "lat": 56.706908045574316,
+          "x": 1890.352432908129,
+          "y": 0,
+          "z": -2080.424619289834
+        },
+        "position": [
+          1890.352432908129,
+          13198.621230991357,
+          -2080.4114186167385
+        ],
+        "distance": 13198.621230997958,
+        "azimuth": 0,
+        "polar": 0.0000010001554605096898,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 4.935667451506797e-18
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000001455,
+      "p95": 7.100000000000364,
+      "p99": 7.199999999998909,
+      "worst": 7.200000000000728
+    },
+    {
+      "region": "world",
+      "enabled": true,
+      "research": {
+        "enabled": true,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 47,
+        "represented": 627,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.91481573912324,
+        "heapBytes": 163618041,
+        "drawCalls": 179,
+        "triangles": 57241,
+        "geometries": 261,
+        "textures": 8,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [],
+        "pending": [],
+        "failed": [],
+        "lods": [],
+        "heightBytes": 0,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 45.03913842739678,
+          "lat": 56.70013547435366,
+          "x": 1890.352432908128,
+          "y": 0,
+          "z": -2079.579907531047
+        },
+        "position": [
+          1890.352432908128,
+          13198.621230991357,
+          -2079.5667068579514
+        ],
+        "distance": 13198.621230997958,
+        "azimuth": 0,
+        "polar": 0.0000010001554605096898,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 4.9237877163679886e-18
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000001455,
+      "p95": 7.099999999998545,
+      "p99": 7.100000000002183,
+      "worst": 7.30000000000291
+    },
+    {
+      "region": "greece",
+      "enabled": false,
+      "research": {
+        "enabled": false,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 0,
+        "represented": 0,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.90904948072807,
+        "heapBytes": 230547865,
+        "drawCalls": 28,
+        "triangles": 426323,
+        "geometries": 273,
+        "textures": 20,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-23",
+          "world-42-23",
+          "world-42-28",
+          "world-37-18",
+          "world-32-23",
+          "world-32-18",
+          "world-37-13",
+          "world-37-28",
+          "world-42-18",
+          "world-32-28",
+          "world-32-13",
+          "world-42-13"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          },
+          {
+            "id": "world-37-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-13",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-42-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-13",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 23.195436143262782,
+          "lat": 39.41735541520412,
+          "x": 831.3706457778741,
+          "y": 0,
+          "z": 185.49909716044831
+        },
+        "position": [
+          831.3706457778741,
+          1100,
+          185.5090971561994
+        ],
+        "distance": 1100.0000000454545,
+        "azimuth": 0,
+        "polar": 0.000009090905227998804,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 4.456249121976138e-19
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000001455,
+      "p95": 7.099999999998545,
+      "p99": 7.19999999999709,
+      "worst": 7.400000000001455
+    },
+    {
+      "region": "greece",
+      "enabled": true,
+      "research": {
+        "enabled": true,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 80,
+        "represented": 165,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.6747204329396,
+        "heapBytes": 228503383,
+        "drawCalls": 28,
+        "triangles": 426323,
+        "geometries": 273,
+        "textures": 20,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-37-23",
+          "world-42-23",
+          "world-42-28",
+          "world-37-18",
+          "world-32-23",
+          "world-32-18",
+          "world-37-13",
+          "world-37-28",
+          "world-42-18",
+          "world-32-28",
+          "world-32-13",
+          "world-42-13"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-37-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-23",
+            "level": 0
+          },
+          {
+            "id": "world-42-28",
+            "level": 0
+          },
+          {
+            "id": "world-37-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-18",
+            "level": 0
+          },
+          {
+            "id": "world-37-13",
+            "level": 0
+          },
+          {
+            "id": "world-37-28",
+            "level": 0
+          },
+          {
+            "id": "world-42-18",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-32-13",
+            "level": 0
+          },
+          {
+            "id": "world-42-13",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 23.198558762917855,
+          "lat": 39.439319804254836,
+          "x": 831.3706457778759,
+          "y": 0,
+          "z": 183.0350971603459
+        },
+        "position": [
+          831.3706457778759,
+          1100,
+          183.045097156097
+        ],
+        "distance": 1100.0000000454545,
+        "azimuth": 0,
+        "polar": 0.000009090905227998804,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 4.093768369818067e-19
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000001455,
+      "p95": 7.099999999998545,
+      "p99": 7.19999999999709,
+      "worst": 13.80000000000291
+    },
+    {
+      "region": "egypt",
+      "enabled": false,
+      "research": {
+        "enabled": false,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 0,
+        "represented": 0,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.19467315815857,
+        "heapBytes": 271832116,
+        "drawCalls": 17,
+        "triangles": 212661,
+        "geometries": 279,
+        "textures": 24,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "world-32-13",
+          "world-32-18",
+          "world-37-28",
+          "world-17-28"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-27-18",
+          "world-27-28",
+          "world-27-23",
+          "world-27-33",
+          "world-22-28",
+          "world-22-33",
+          "world-22-23",
+          "world-32-33",
+          "world-27-38",
+          "world-32-38"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-32-38",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 30.947609514610463,
+          "lat": 30.314608052339672,
+          "x": 1676.375369986139,
+          "y": 0,
+          "z": 1085.906257333117
+        },
+        "position": [
+          1676.375369986139,
+          1800,
+          1085.916257333531
+        ],
+        "distance": 1800.0000000277778,
+        "azimuth": 0,
+        "polar": 0.000005555555785397059,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 7.285838729207157e-19
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000008731,
+      "p95": 7.099999999998545,
+      "p99": 7.19999999999709,
+      "worst": 14
+    },
+    {
+      "region": "egypt",
+      "enabled": true,
+      "research": {
+        "enabled": true,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 39,
+        "represented": 84,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 142.95585046818022,
+        "heapBytes": 242188873,
+        "drawCalls": 17,
+        "triangles": 212661,
+        "geometries": 277,
+        "textures": 23,
+        "terrainLod": 1
+      },
+      "tiles": {
+        "controlColor": [],
+        "revealParents": [],
+        "cached": [
+          "world-32-18",
+          "world-37-28",
+          "world-17-28"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "world-32-23",
+          "world-32-28",
+          "world-27-18",
+          "world-27-28",
+          "world-27-23",
+          "world-27-33",
+          "world-22-28",
+          "world-22-33",
+          "world-22-23",
+          "world-32-33",
+          "world-27-38",
+          "world-32-38"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "world-32-23",
+            "level": 0
+          },
+          {
+            "id": "world-32-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-18",
+            "level": 1
+          },
+          {
+            "id": "world-27-28",
+            "level": 0
+          },
+          {
+            "id": "world-27-23",
+            "level": 1
+          },
+          {
+            "id": "world-27-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-28",
+            "level": 1
+          },
+          {
+            "id": "world-22-33",
+            "level": 1
+          },
+          {
+            "id": "world-22-23",
+            "level": 1
+          },
+          {
+            "id": "world-32-33",
+            "level": 1
+          },
+          {
+            "id": "world-27-38",
+            "level": 1
+          },
+          {
+            "id": "world-32-38",
+            "level": 1
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 30.9548572713328,
+          "lat": 30.350423157072164,
+          "x": 1676.37536998614,
+          "y": 0,
+          "z": 1081.816657333049
+        },
+        "position": [
+          1676.37536998614,
+          1800,
+          1081.826657333463
+        ],
+        "distance": 1800.0000000277778,
+        "azimuth": 0,
+        "polar": 0.000005555555785397059,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 6.717172995522084e-19
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000008731,
+      "p95": 7.100000000005821,
+      "p99": 7.19999999999709,
+      "worst": 21.09999999999127
+    },
+    {
+      "region": "rome",
+      "enabled": false,
+      "research": {
+        "enabled": false,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 0,
+        "represented": 0,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.6300758589913,
+        "heapBytes": 263882759,
+        "drawCalls": 57,
+        "triangles": 948212,
+        "geometries": 270,
+        "textures": 24,
+        "terrainLod": 0
+      },
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "revealParents": [
+          {
+            "id": "local-roma",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.06661257604486245,
+              "parentHeight": 0.05638153079301607,
+              "appliedCenterHeight": 0.056381531059741974
+            }
+          },
+          {
+            "id": "local-capua",
+            "parentId": "N41E14",
+            "diagnostic": {
+              "previousGlobalHeight": 0.16659243705055982,
+              "parentHeight": 0.07692498527835644,
+              "appliedCenterHeight": 0.07692498713731766
+            }
+          },
+          {
+            "id": "local-neapolis",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.03828640310272867,
+              "parentHeight": 0.03828640310272867,
+              "appliedCenterHeight": 0.03828640282154083
+            }
+          },
+          {
+            "id": "local-norba",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.4992817388411547,
+              "parentHeight": 0.615200962176647,
+              "appliedCenterHeight": 0.615200936794281
+            }
+          }
+        ],
+        "cached": [
+          "world-32-33",
+          "world-27-38",
+          "world-32-38",
+          "N40E13"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E12",
+          "N42E12",
+          "N41E11",
+          "N41E13",
+          "N42E11",
+          "N42E13",
+          "N41E14",
+          "N42E10"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N42E10",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 12.486678412231981,
+          "lat": 41.89768015829514,
+          "x": -83.86811233975405,
+          "y": 0.16442878922150578,
+          "z": -44.712798776651546
+        },
+        "position": [
+          -82.06811233975405,
+          4.484428789221495,
+          -40.51279877665154
+        ],
+        "distance": 6.288274803155466,
+        "azimuth": 0.4048917862850826,
+        "polar": 0.8134536695517244,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 2.5492071261110054e-21
+        },
+        "zooming": false
+      },
+      "p50": 7,
+      "p95": 7.100000000005821,
+      "p99": 7.19999999999709,
+      "worst": 14
+    },
+    {
+      "region": "rome",
+      "enabled": true,
+      "research": {
+        "enabled": true,
+        "available": 645,
+        "excluded": [
+          {
+            "id": "r16-ibe-tartessos",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-gal-rhodanousia",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-cas-aornos-bactria",
+            "reason": "Missing coordinate components"
+          },
+          {
+            "id": "r16-ind-pataliputra",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vaishali",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-rajagriha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-kaushambi",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-sravasti",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ujjain",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-mathura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-vidisha",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-hastinapura",
+            "reason": "Outside current rendering coverage"
+          },
+          {
+            "id": "r16-ind-ayodhya",
+            "reason": "Outside current rendering coverage"
+          }
+        ],
+        "visible": 0,
+        "represented": 0,
+        "authoritative": false
+      },
+      "metrics": {
+        "fps": 143.6712801111054,
+        "heapBytes": 284098807,
+        "drawCalls": 57,
+        "triangles": 948212,
+        "geometries": 269,
+        "textures": 23,
+        "terrainLod": 0
+      },
+      "tiles": {
+        "controlColor": [
+          1,
+          1,
+          1
+        ],
+        "revealParents": [
+          {
+            "id": "local-roma",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.06661257604486245,
+              "parentHeight": 0.05638153079301607,
+              "appliedCenterHeight": 0.056381531059741974
+            }
+          },
+          {
+            "id": "local-capua",
+            "parentId": "N41E14",
+            "diagnostic": {
+              "previousGlobalHeight": 0.16659243705055982,
+              "parentHeight": 0.07692498527835644,
+              "appliedCenterHeight": 0.07692498713731766
+            }
+          },
+          {
+            "id": "local-neapolis",
+            "parentId": null,
+            "diagnostic": {
+              "previousGlobalHeight": 0.03828640310272867,
+              "parentHeight": 0.03828640310272867,
+              "appliedCenterHeight": 0.03828640282154083
+            }
+          },
+          {
+            "id": "local-norba",
+            "parentId": "N41E12",
+            "diagnostic": {
+              "previousGlobalHeight": 0.4992817388411547,
+              "parentHeight": 0.615200962176647,
+              "appliedCenterHeight": 0.615200936794281
+            }
+          }
+        ],
+        "cached": [
+          "world-27-38",
+          "world-32-38",
+          "N40E13"
+        ],
+        "cacheLimit": 4,
+        "preparationJobs": 0,
+        "limit": 12,
+        "resident": [
+          "local-roma",
+          "local-capua",
+          "local-neapolis",
+          "local-norba",
+          "N41E12",
+          "N42E12",
+          "N41E11",
+          "N41E13",
+          "N42E11",
+          "N42E13",
+          "N41E14",
+          "N42E10"
+        ],
+        "pending": [],
+        "failed": [],
+        "lods": [
+          {
+            "id": "local-roma",
+            "level": 0
+          },
+          {
+            "id": "local-capua",
+            "level": 0
+          },
+          {
+            "id": "local-neapolis",
+            "level": 0
+          },
+          {
+            "id": "local-norba",
+            "level": 0
+          },
+          {
+            "id": "N41E12",
+            "level": 0
+          },
+          {
+            "id": "N42E12",
+            "level": 0
+          },
+          {
+            "id": "N41E11",
+            "level": 0
+          },
+          {
+            "id": "N41E13",
+            "level": 0
+          },
+          {
+            "id": "N42E11",
+            "level": 0
+          },
+          {
+            "id": "N42E13",
+            "level": 0
+          },
+          {
+            "id": "N41E14",
+            "level": 0
+          },
+          {
+            "id": "N42E10",
+            "level": 0
+          }
+        ],
+        "heightBytes": 1597536,
+        "transitions": {
+          "morphing": "GPU parent-triangle position and normal interpolation",
+          "minimumReveal": 1,
+          "revealing": 0
+        }
+      },
+      "camera": {
+        "target": {
+          "lon": 12.486814197796662,
+          "lat": 41.897451796250685,
+          "x": -83.85717358627006,
+          "y": 0.1665348710144357,
+          "z": -44.687275018523216
+        },
+        "position": [
+          -82.05717358627007,
+          4.4865348710144355,
+          -40.48727501852321
+        ],
+        "distance": 6.288274803155474,
+        "azimuth": 0.4048917862850826,
+        "polar": 0.8134536695517233,
+        "settings": {
+          "movement": 1,
+          "rotation": 1,
+          "zoom": 1,
+          "edgeScroll": true,
+          "edgeWidth": 20,
+          "edgeDelayMs": 180,
+          "middleDrag": "pan",
+          "cursorZoom": true
+        },
+        "velocity": {
+          "x": 0,
+          "forward": 2.5505377761545132e-21
+        },
+        "zooming": false
+      },
+      "p50": 6.900000000008731,
+      "p95": 7.100000000005821,
+      "p99": 7.19999999999709,
+      "worst": 13.80000000000291
+    }
+  ],
+  "errors": [],
+  "assertions": [
+    "Independent layer toggles",
+    "Research does not mutate authoritative settlements or control",
+    "Bounded clusters and tile residency",
+    "WASD while references enabled",
+    "No browser errors"
+  ]
+}

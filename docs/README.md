@@ -156,6 +156,7 @@ open.
 | Record | Purpose |
 | --- | --- |
 | [HANDOFF-2026-10-04.md](HANDOFF-2026-10-04.md) | Point-in-time session resume note: git state, verification results, and what was in progress on 2026-10-04 |
+| [vs6/verification/pilot-verification.md](vs6/verification/pilot-verification.md) | **Evidence only, not approval (2026-10-15)** — independent identity/location/existence/chronology verification of the twelve VS6 pilot settlement candidates, with reviewed definition drafts and a coordination note for the promotion pipeline; machine-readable form in `vs6/verification/pilot-verification.json` |
 
 A handoff record is **not** an architecture source. It carries no authority over
 any ADR, no authority over any status mark, and no authority to authorise

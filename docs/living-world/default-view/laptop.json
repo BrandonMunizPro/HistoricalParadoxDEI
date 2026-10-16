@@ -1,0 +1,204 @@
+{
+  "preset": "mediterranean",
+  "research": {
+    "enabled": true,
+    "available": 660,
+    "excluded": [
+      {
+        "id": "r16-ibe-tartessos",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-gal-rhodanousia",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-cas-aornos-bactria",
+        "reason": "Missing coordinate components"
+      },
+      {
+        "id": "r16-ind-pataliputra",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-vaishali",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-rajagriha",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-kaushambi",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-sravasti",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-ujjain",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-mathura",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-vidisha",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-hastinapura",
+        "reason": "Outside current rendering coverage"
+      },
+      {
+        "id": "r16-ind-ayodhya",
+        "reason": "Outside current rendering coverage"
+      }
+    ],
+    "duplicates": [
+      {
+        "id": "r16-cas-alexandria-aria",
+        "primary": "research:r16-irn-alexandria-aria",
+        "reason": "Identical name and representative coordinates; reference handles retained"
+      },
+      {
+        "id": "r16-ind-alexandria-arachosia",
+        "primary": "research:r16-irn-alexandria-arachosia",
+        "reason": "Identical name and representative coordinates; reference handles retained"
+      }
+    ],
+    "possibleDuplicates": [
+      {
+        "ids": [
+          "research:r16-gre-pella",
+          "research:r16-bal-pella"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-aigai",
+          "research:r16-bal-aigai"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-thessalonica",
+          "research:r16-bal-thessalonica"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-amphipolis",
+          "research:r16-bal-amphipolis"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-pydna",
+          "research:r16-bal-pydna"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-cassandreia",
+          "research:r16-bal-cassandreia"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-abdera",
+          "research:r16-bal-abdera"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-maroneia",
+          "research:r16-bal-maroneia"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-ainos",
+          "research:r16-bal-ainos"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gre-dion",
+          "research:r16-bal-dion"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-gal-octodurus",
+          "research:r16-grm-octodurus"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cyr-taucheira",
+          "research:r16-cyr-tocra"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cas-bactra",
+          "research:r16-cas-zariaspa"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-cas-cyropolis",
+          "research:r16-cas-alexandria-eschate"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      },
+      {
+        "ids": [
+          "research:r16-nub-napata",
+          "research:r16-nub-jebel-barkal"
+        ],
+        "reason": "Nearby or co-located references; distinct records retained pending identity review"
+      }
+    ],
+    "visible": 90,
+    "represented": 502,
+    "instantiated": 660,
+    "visiblePoints": 502,
+    "visibleNames": 29,
+    "authoritative": false,
+    "suppressedPromoted": 12
+  },
+  "atmosphere": {
+    "enabled": true,
+    "reducedMotion": false,
+    "birdsVisible": true,
+    "birdCount": 12,
+    "birdSpanPixels": 6.400000000000001,
+    "cloudsVisible": 8,
+    "cloudOpacity": 0.42,
+    "cloudShadowStrength": 0.1,
+    "time": 6.078599999999974
+  },
+  "sites": 35,
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "errors": []
+}

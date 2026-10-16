@@ -1,0 +1,110 @@
+{
+  "status": "Evidence review only; no approval",
+  "checkedOn": "2026-10-15",
+  "pleiadesHtml": "All 12 returned automated challenges via web tool; this is not itself a blocker",
+  "pleiadesJson": "Direct Node fetch failed for all 12 in restricted environment; web tool JSON trials also inaccessible. No live JSON payload independently retrieved this session.",
+  "topostext": [
+    {
+      "candidateId": "r16-ita-tarquinii",
+      "url": "https://topostext.org/place/423118UTar",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-caere",
+      "url": "https://topostext.org/place/420121UAgy",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": "Accessible PECS narrative gives alternative loss-of-independence dates 293 or 273 BCE; do not assign controller from this alone"
+    },
+    {
+      "candidateId": "r16-ita-arretium",
+      "url": "https://topostext.org/place/435119UArr",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-populonia",
+      "url": "https://topostext.org/place/430105UPop",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-volaterrae",
+      "url": "https://topostext.org/place/434109UVol",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-iguvium",
+      "url": "https://topostext.org/place/434126UIgu",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-ancona",
+      "url": "https://topostext.org/place/436135PAnc",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": "Accessible gazetteer does not establish Roman ownership in 278 BCE"
+    },
+    {
+      "candidateId": "r16-ita-tusculum",
+      "url": "https://topostext.org/place/418127UTus",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-velitrae",
+      "url": "https://topostext.org/place/417128UVel",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-alba-fucens",
+      "url": "https://topostext.org/place/421134UAlb",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-akragas",
+      "url": "https://topostext.org/place/373136PAkr",
+      "access": "Search-index content accessible; direct requests timed out",
+      "crossReference": "Pleiades 462086 corroborated additionally by Brill SEG place index https://scholarlyeditions.brill.com/sego/places/",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    },
+    {
+      "candidateId": "r16-ita-catana",
+      "url": "https://topostext.org/place/375151PCat",
+      "access": "HTML accessible",
+      "crossReference": "Pleiades link matches packet identifier",
+      "coordinateComparison": "Published ToposText point matches packet ToposText point; reviewed Pleiades representative point remains packet-reported",
+      "reviewCaveat": null
+    }
+  ],
+  "chronology": "Broad period classification is compatible with 278 BCE but does not alone prove occupation in each year. Packet continuity assertions require explicit human acceptance of this inference.",
+  "supplementaryPrimarySource": {
+    "url": "https://www.perseus.tufts.edu/hopper/text?doc=10&fromdoc=Perseus%3Atext%3A1999.02.0155",
+    "locator": "Livy 10.1.1-2",
+    "finding": "Records foundation of colony Alba in Aequian territory; supports Alba Fucens colonial identification without inferring Marsian ownership."
+  }
+}
