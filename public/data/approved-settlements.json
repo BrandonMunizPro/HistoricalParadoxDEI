@@ -1,0 +1,918 @@
+{
+  "schemaVersion": 1,
+  "campaignYearBce": 278,
+  "policy": "Only explicitly approved independently reviewed records; initial control remains unknown",
+  "records": [
+    {
+      "atlas": {
+        "key": "tarquinii",
+        "historicalName": "Tarquinii",
+        "alternateNames": [
+          "Tarchna (Etruscan)",
+          "Tarquinia"
+        ],
+        "coordinates": {
+          "lon": 11.791453958606889,
+          "lat": 42.25725410452191
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/413332",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "city",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "One of the foremost Etruscan cities, continuously occupied from the Villanovan period through the campaign; the port at Graviscae and the great chamber-tomb necropoleis document an unbroken urban tradition.",
+          "source": "https://pleiades.stoa.org/places/413332",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "One of the foremost Etruscan cities, continuously occupied from the Villanovan period through the campaign; the port at Graviscae and the great chamber-tomb necropoleis document an unbroken urban tradition.",
+        "confidence": "high",
+        "culturalContext": "Etruscan",
+        "politicalContext": {
+          "claim": "Etruscan city, a Roman ally/subject after the Roman victories of the 280s BCE; the Etruscan league is defunct by 278 BCE.",
+          "source": "https://pleiades.stoa.org/places/413332",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "Civita di Tarquinia plateau",
+          "Graviscae (port)",
+          "Monterozzi necropolis"
+        ],
+        "importance": {
+          "strategic": "Leading Etruscan city (duodecim populi) commanding the coastal hinterland and the Graviscae emporion.",
+          "economic": "Agriculture and the Graviscae port trade; the Monterozzi necropoleis attest wealth.",
+          "political": "Etruscan metropolis subject to Rome by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/413332",
+          "https://topostext.org/place/423118UTar"
+        ],
+        "discoveryReference": null,
+        "id": "93ed3b26-73e3-5eca-a6b2-d3f3caf69ae6",
+        "locationId": "95974bc0-4384-5770-9b2c-60bb34850d84",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "93ed3b26-73e3-5eca-a6b2-d3f3caf69ae6",
+        "locationId": "95974bc0-4384-5770-9b2c-60bb34850d84",
+        "name": "Tarquinii",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/413332",
+          "https://topostext.org/place/423118UTar"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-tarquinii",
+        "candidateSha256": "5126c41d08bb57b3b1ae0a3934efd0c3f43cf50c0db3e6505649d791007a1172",
+        "reviewSha256": "78428627775595abb9f792af3cf0c1a2f2c0712d309961e6967a489a6bae61ae",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/413332"
+      }
+    },
+    {
+      "atlas": {
+        "key": "caere",
+        "historicalName": "Caere",
+        "alternateNames": [
+          "Agylla (Greek)",
+          "Cerveteri"
+        ],
+        "coordinates": {
+          "lon": 12.107778468896973,
+          "lat": 42.00248696534444
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/422859",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "city",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "A major Etruscan city with a continuous archaeological sequence; it had received Roman civitas sine suffragio in 353, so it was already inside the Roman civic system before the campaign.",
+          "source": "https://pleiades.stoa.org/places/422859",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A major Etruscan city with a continuous archaeological sequence; it had received Roman civitas sine suffragio in 353, so it was already inside the Roman civic system before the campaign.",
+        "confidence": "high",
+        "culturalContext": "Etruscan/Roman",
+        "politicalContext": {
+          "claim": "Etruscan city holding Roman civitas sine suffragio from 353 BCE.",
+          "source": "https://pleiades.stoa.org/places/422859",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "tufa plateau",
+          "Fosso del Manganello",
+          "Fosso della Mola",
+          "Banditaccia necropolis"
+        ],
+        "importance": {
+          "strategic": "Major Etruscan town on a defensible tufa plateau controlling the coastal route north of Rome.",
+          "economic": "Coastal trade and the wealth of the Banditaccia necropolis.",
+          "political": "Etruscan town within the Roman orbit by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/422859",
+          "https://topostext.org/place/420121UAgy"
+        ],
+        "discoveryReference": null,
+        "id": "c88792f8-54aa-5811-ba08-3d87e3af9804",
+        "locationId": "60020f79-bb34-5fcf-8d4d-38f8428049c3",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "c88792f8-54aa-5811-ba08-3d87e3af9804",
+        "locationId": "60020f79-bb34-5fcf-8d4d-38f8428049c3",
+        "name": "Caere",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/422859",
+          "https://topostext.org/place/420121UAgy"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-caere",
+        "candidateSha256": "42d4bd1871b5dc192c73b311489fc00f6229a3f896f956b301ed5d8ad0ecfadb",
+        "reviewSha256": "540140de9a11170ea6d9425ef21df8b3549bbfeefcf443501ca01c24620a61c1",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/422859"
+      }
+    },
+    {
+      "atlas": {
+        "key": "arretium",
+        "historicalName": "Arretium",
+        "alternateNames": [
+          "Aritim (Etruscan)",
+          "Arezzo"
+        ],
+        "coordinates": {
+          "lon": 11.863048,
+          "lat": 43.471274
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/413032",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "city",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "A major inland Etruscan city allied to Rome during the Third Samnite War; its continued occupation through the 3rd c. is well attested.",
+          "source": "https://pleiades.stoa.org/places/413032",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A major inland Etruscan city allied to Rome during the Third Samnite War; its continued occupation through the 3rd c. is well attested.",
+        "confidence": "high",
+        "culturalContext": "Etruscan",
+        "politicalContext": {
+          "claim": "Northern Etruscan city aligned with Rome by the early 3rd century BCE.",
+          "source": "https://pleiades.stoa.org/places/413032",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "upper Arno valley"
+        ],
+        "importance": {
+          "strategic": "Northern Etruscan city controlling the upper Arno valley.",
+          "economic": "Arno valley agriculture and metalworking (ancestor of the Arretine ware tradition).",
+          "political": "Etruscan city aligned with Rome by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/413032",
+          "https://topostext.org/place/435119UArr"
+        ],
+        "discoveryReference": null,
+        "id": "d36f8e5a-ab72-58ca-8a94-13117a9e837b",
+        "locationId": "b9ab6143-d57d-5a8c-b5ec-bebdf0444f68",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "d36f8e5a-ab72-58ca-8a94-13117a9e837b",
+        "locationId": "b9ab6143-d57d-5a8c-b5ec-bebdf0444f68",
+        "name": "Arretium",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/413032",
+          "https://topostext.org/place/435119UArr"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-arretium",
+        "candidateSha256": "2fed1a5eb3ed93ac2e7bc1eefd9218b51f1b0eaf40d680ff94483fdbbc913218",
+        "reviewSha256": "a2d8f2e1cdd86806501905f68abf7606843170aa253f84b406090a0dda82b894",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/413032"
+      }
+    },
+    {
+      "atlas": {
+        "key": "populonia",
+        "historicalName": "Populonia",
+        "alternateNames": [
+          "Pupluna (Etruscan)"
+        ],
+        "coordinates": {
+          "lon": 10.489646524702335,
+          "lat": 42.98824389753146
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/403212",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "port",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "The principal Etruscan coastal city and metallurgical harbour, facing the iron-bearing island of Ilva (Elba); its industrial activity continued into the Roman period.",
+          "source": "https://pleiades.stoa.org/places/403212",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "The principal Etruscan coastal city and metallurgical harbour, facing the iron-bearing island of Ilva (Elba); its industrial activity continued into the Roman period.",
+        "confidence": "high",
+        "culturalContext": "Etruscan",
+        "politicalContext": {
+          "claim": "Etruscan coastal city under Roman hegemony after the 280s BCE.",
+          "source": "https://pleiades.stoa.org/places/403212",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "promontory of Piombino",
+          "Gulf of Baratti",
+          "Elba (opposite)"
+        ],
+        "importance": {
+          "strategic": "The principal Etruscan port, facing Elba and the metal trade.",
+          "economic": "Iron and copper smelting from Elba; a major metallurgical harbour.",
+          "political": "Etruscan city subject to Rome by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/403212",
+          "https://topostext.org/place/430105UPop"
+        ],
+        "discoveryReference": null,
+        "id": "2a56b827-77c3-5531-acc7-d5ff98fbdfd2",
+        "locationId": "69fc3ee8-6f6d-5734-b9c8-7283c837efe3",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "2a56b827-77c3-5531-acc7-d5ff98fbdfd2",
+        "locationId": "69fc3ee8-6f6d-5734-b9c8-7283c837efe3",
+        "name": "Populonia",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/403212",
+          "https://topostext.org/place/430105UPop"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-populonia",
+        "candidateSha256": "28829d72327aa2c7548dcba70c2265040e3c3b5f5d1a18aa6fc8c121adf68902",
+        "reviewSha256": "fe106e17073f5233b38a226faf9bf3327807b16636b5d8d672472540281e4803",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/403212"
+      }
+    },
+    {
+      "atlas": {
+        "key": "volaterrae",
+        "historicalName": "Volaterrae",
+        "alternateNames": [
+          "Velathri (Etruscan)",
+          "Volterra"
+        ],
+        "coordinates": {
+          "lon": 10.8600625,
+          "lat": 43.401604000000006
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/403292",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "city",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "A major Etruscan hill city, incorporated into the Roman alliance system by the early 3rd c. and continuously occupied.",
+          "source": "https://pleiades.stoa.org/places/403292",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A major Etruscan hill city, incorporated into the Roman alliance system by the early 3rd c. and continuously occupied.",
+        "confidence": "high",
+        "culturalContext": "Etruscan",
+        "politicalContext": {
+          "claim": "Etruscan city on a high ridge; within the Roman orbit by the early 3rd century BCE.",
+          "source": "https://pleiades.stoa.org/places/403292",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "Cecina river valley",
+          "Era river valley"
+        ],
+        "importance": {
+          "strategic": "Etruscan city on a high ridge commanding the Cecina and Era river valleys.",
+          "economic": "Agriculture and the area’s alabaster and copper resources.",
+          "political": "Etruscan city within the Roman orbit by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/403292",
+          "https://topostext.org/place/434109UVol"
+        ],
+        "discoveryReference": null,
+        "id": "0669b78a-5aba-571a-901c-d0a50ac5c0a1",
+        "locationId": "c0314efc-016b-5f7c-bf59-74362ede06c5",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "0669b78a-5aba-571a-901c-d0a50ac5c0a1",
+        "locationId": "c0314efc-016b-5f7c-bf59-74362ede06c5",
+        "name": "Volaterrae",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/403292",
+          "https://topostext.org/place/434109UVol"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-volaterrae",
+        "candidateSha256": "218195083df4c72aef686c2036e1e523b2b27c8631bae1226688f803dbf078ab",
+        "reviewSha256": "2ecbbd2f4ce967c63882906bb4b0506f97689f75fc46e3fc019ce5987e112ad4",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/403292"
+      }
+    },
+    {
+      "atlas": {
+        "key": "iguvium",
+        "historicalName": "Iguvium",
+        "alternateNames": [
+          "Ikuvium (Umbrian)",
+          "Gubbio"
+        ],
+        "coordinates": {
+          "lon": 12.573438,
+          "lat": 43.355464
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/413174",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "town",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 550,
+          "toBce": null,
+          "description": "A principal Umbrian community, later famous for the Iguvine Tables which record its civic and religious institutions; occupation through the 3rd c. is attested.",
+          "source": "https://pleiades.stoa.org/places/413174",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A principal Umbrian community, later famous for the Iguvine Tables which record its civic and religious institutions; occupation through the 3rd c. is attested.",
+        "confidence": "high",
+        "culturalContext": "Umbrian",
+        "politicalContext": {
+          "claim": "Umbrian community of the central Apennines in the Roman orbit by the 3rd century BCE.",
+          "source": "https://pleiades.stoa.org/places/413174",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "Apennines",
+          "later Via Flaminia corridor"
+        ],
+        "importance": {
+          "strategic": "Umbrian town commanding the Apennine route between the Adriatic and the Tiber.",
+          "economic": "Apennine route exchange.",
+          "political": "Umbrian community in the Roman sphere by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/413174",
+          "https://topostext.org/place/434126UIgu"
+        ],
+        "discoveryReference": null,
+        "id": "49af1cc1-9af8-55e7-9cc5-73f140f7dc4c",
+        "locationId": "86ebb5fe-00fd-58f0-8d71-b9204cc5b5ee",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "49af1cc1-9af8-55e7-9cc5-73f140f7dc4c",
+        "locationId": "86ebb5fe-00fd-58f0-8d71-b9204cc5b5ee",
+        "name": "Iguvium",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/413174",
+          "https://topostext.org/place/434126UIgu"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-iguvium",
+        "candidateSha256": "1948a568a53b93a2ca0b8ad5ee0c4429609e0eaa9be6d65967f466074eeba402",
+        "reviewSha256": "b1c9f5a5fbb36869f4d13533f08de1c9127afd8a388dc93025b81a1efff1c948",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/413174"
+      }
+    },
+    {
+      "atlas": {
+        "key": "ancona",
+        "historicalName": "Ancona",
+        "alternateNames": [
+          "Ankon (Greek)"
+        ],
+        "coordinates": {
+          "lon": 13.516072666666666,
+          "lat": 43.618992666666664
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/413014",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "port",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 400,
+          "toBce": null,
+          "description": "A Greek colony on the Picene coast, traditionally founded by Syracusan settlers under Dionysius I (early 4th c.), occupying the only good natural harbour on that stretch of coast.",
+          "source": "https://pleiades.stoa.org/places/413014",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A Greek colony on the Picene coast, traditionally founded by Syracusan settlers under Dionysius I (early 4th c.), occupying the only good natural harbour on that stretch of coast.",
+        "confidence": "high",
+        "culturalContext": "Greek (Syracusan foundation)",
+        "politicalContext": {
+          "claim": "Greek colonial port on the Adriatic within the Roman sphere.",
+          "source": "https://pleiades.stoa.org/places/413014",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "Adriatic coast",
+          "Monte Conero promontory"
+        ],
+        "importance": {
+          "strategic": "The chief Adriatic port of Picenum, sheltered by the promontory.",
+          "economic": "Adriatic trade.",
+          "political": "Greek colonial polis within the Roman sphere by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/413014",
+          "https://topostext.org/place/436135PAnc"
+        ],
+        "discoveryReference": null,
+        "id": "46f7b909-7171-57cb-a5df-7b9037feecf8",
+        "locationId": "a4d27c42-9852-553e-b02f-dd0158b91eb5",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "46f7b909-7171-57cb-a5df-7b9037feecf8",
+        "locationId": "a4d27c42-9852-553e-b02f-dd0158b91eb5",
+        "name": "Ancona",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/413014",
+          "https://topostext.org/place/436135PAnc"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-ancona",
+        "candidateSha256": "0d4efa115963a993bedb4cd25a68e8f88ac5cc561a4f79869e84d35128a37fef",
+        "reviewSha256": "3caaf6114cacbfa9f511b07d1da890dfb21cd4f5a885dec9c201f8888bb97cff",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/413014"
+      }
+    },
+    {
+      "atlas": {
+        "key": "tusculum",
+        "historicalName": "Tusculum",
+        "alternateNames": [
+          "Tuscolo"
+        ],
+        "coordinates": {
+          "lon": 12.707207283463395,
+          "lat": 41.79807670079089
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/423108",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "town",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "A prominent Latin community that received Roman citizenship as early as 381; a settled and well-attested member of the Roman system by 278.",
+          "source": "https://pleiades.stoa.org/places/423108",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A prominent Latin community that received Roman citizenship as early as 381; a settled and well-attested member of the Roman system by 278.",
+        "confidence": "high",
+        "culturalContext": "Latin",
+        "politicalContext": {
+          "claim": "Latin community with Roman citizenship from 381 BCE.",
+          "source": "https://pleiades.stoa.org/places/423108",
+          "confidence": "high"
+        },
+        "geographicFeatures": [
+          "Alban Hills"
+        ],
+        "importance": {
+          "strategic": "Latin town in the Alban Hills controlling the route southeast of Rome.",
+          "economic": "Alban Hills agriculture and route traffic.",
+          "political": "Latin community incorporated into the Roman state by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/423108",
+          "https://topostext.org/place/418127UTus"
+        ],
+        "discoveryReference": null,
+        "id": "8d38cd10-e143-5335-a0aa-3e365aaa5ef5",
+        "locationId": "91219284-17cb-5a98-8b66-c857b229f4ab",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "8d38cd10-e143-5335-a0aa-3e365aaa5ef5",
+        "locationId": "91219284-17cb-5a98-8b66-c857b229f4ab",
+        "name": "Tusculum",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/423108",
+          "https://topostext.org/place/418127UTus"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-tusculum",
+        "candidateSha256": "6328addac32906628d275f4e26a2242ed2fcd9b47e82cfd997fa6b420fbf019e",
+        "reviewSha256": "bee072643ef503bfbb7693e69c77e48a84cf45ba61b095ce3f608213984abde1",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/423108"
+      }
+    },
+    {
+      "atlas": {
+        "key": "velitrae",
+        "historicalName": "Velitrae",
+        "alternateNames": [
+          "Velletri"
+        ],
+        "coordinates": {
+          "lon": 12.77721,
+          "lat": 41.687426
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/423117",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "town",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 750,
+          "toBce": null,
+          "description": "A Volscian town reduced by Rome in 338 and resettled as a Latin colony; occupied and inside the Roman alliance system at 278.",
+          "source": "https://pleiades.stoa.org/places/423117",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A Volscian town reduced by Rome in 338 and resettled as a Latin colony; occupied and inside the Roman alliance system at 278.",
+        "confidence": "high",
+        "culturalContext": "Volscian/Latin",
+        "politicalContext": {
+          "claim": "Volscian/Latin town under Roman control after 338 BCE.",
+          "source": "https://pleiades.stoa.org/places/423117",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "Alban Hills (SW slopes)",
+          "Pomptine plain approach"
+        ],
+        "importance": {
+          "strategic": "Volscian town at the edge of the Volscian hills controlling the approach to the Pomptine plain.",
+          "economic": "Route and agricultural exchange.",
+          "political": "Latin community under Roman authority by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/423117",
+          "https://topostext.org/place/417128UVel"
+        ],
+        "discoveryReference": null,
+        "id": "a3dba05d-c9c7-5174-ba0c-90d12db9932a",
+        "locationId": "8ba2f6e1-1cd0-5304-ad70-fc28f4ae7faf",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "a3dba05d-c9c7-5174-ba0c-90d12db9932a",
+        "locationId": "8ba2f6e1-1cd0-5304-ad70-fc28f4ae7faf",
+        "name": "Velitrae",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/423117",
+          "https://topostext.org/place/417128UVel"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-velitrae",
+        "candidateSha256": "01524e5d8ad5c75b3680f0068d0baa790c075643c13c5719ea4f16ee0a17093f",
+        "reviewSha256": "1d87c32237ea4c557ede7f8ef275abe55151cabb725ec4a51cf656c9d23a6bdd",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/423117"
+      }
+    },
+    {
+      "atlas": {
+        "key": "alba-fucens",
+        "historicalName": "Alba Fucens",
+        "alternateNames": [
+          "Alba Fucens (Marsi territory)"
+        ],
+        "coordinates": {
+          "lon": 13.411179118219938,
+          "lat": 42.07990437219554
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/413005",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "town",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 303,
+          "toBce": null,
+          "description": "A Latin colony founded in 303 in the territory of the Marsi, controlling the upland approach to central Italy; a major fortified site through the 3rd c.",
+          "source": "https://pleiades.stoa.org/places/413005",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A Latin colony founded in 303 in the territory of the Marsi, controlling the upland approach to central Italy; a major fortified site through the 3rd c.",
+        "confidence": "high",
+        "culturalContext": "Latin colony in Marsic/Aequian territory",
+        "politicalContext": {
+          "claim": "Latin colony founded c. 303 BCE in the territory of the Marsi/Aequi.",
+          "source": "https://pleiades.stoa.org/places/413005",
+          "confidence": "high"
+        },
+        "geographicFeatures": [
+          "Fucine basin",
+          "Apennine pass"
+        ],
+        "importance": {
+          "strategic": "Latin colony controlling the Apennine route and the former stronghold above the Fucine basin.",
+          "economic": "Apennine route exchange.",
+          "political": "Latin colony of the Roman Republic by 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/413005",
+          "https://topostext.org/place/421134UAlb"
+        ],
+        "discoveryReference": null,
+        "id": "3c5c62e2-89d5-5fef-a97f-17c4ccb4d01d",
+        "locationId": "129b54da-7645-5475-ab5c-606175a7a330",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "3c5c62e2-89d5-5fef-a97f-17c4ccb4d01d",
+        "locationId": "129b54da-7645-5475-ab5c-606175a7a330",
+        "name": "Alba Fucens",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/413005",
+          "https://topostext.org/place/421134UAlb"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-alba-fucens",
+        "candidateSha256": "01b7c790b9c2a1f7eec43482d6a6bde1fa57147a598569e4fc8d108f34ab9700",
+        "reviewSha256": "c2e0f1069dc7c8c5b61238e454024c23098726585b93b4e374e1579a598b2edc",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/413005"
+      }
+    },
+    {
+      "atlas": {
+        "key": "akragas",
+        "historicalName": "Akragas",
+        "alternateNames": [
+          "Agrigentum (Latin)",
+          "Agrigento"
+        ],
+        "coordinates": {
+          "lon": 13.585475,
+          "lat": 37.290594
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/462086",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "city",
+        "suggestedTier": 2,
+        "earliestEvidence": {
+          "fromBce": 580,
+          "toBce": null,
+          "description": "The second city of Greek Sicily, refounded after its 406/405 destruction; it is contested between Syracuse, Carthage and Pyrrhus through the 270s.",
+          "source": "https://pleiades.stoa.org/places/462086",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "The second city of Greek Sicily, refounded after its 406/405 destruction; it is contested between Syracuse, Carthage and Pyrrhus through the 270s.",
+        "confidence": "high",
+        "culturalContext": "Greek (Dorian)",
+        "politicalContext": {
+          "claim": "Greek polis of Sicily, contested between Carthage, Syracuse and Pyrrhos around 278 BCE.",
+          "source": "https://pleiades.stoa.org/places/462086",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "south coast of Sicily",
+          "temples ridge",
+          "Acragas river"
+        ],
+        "importance": {
+          "strategic": "Second city of Greek Sicily commanding the south coast.",
+          "economic": "Agriculture and Mediterranean trade.",
+          "political": "Greek polis of Sicily and a focus of the Pyrrhic war.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/462086",
+          "https://topostext.org/place/373136PAkr"
+        ],
+        "discoveryReference": null,
+        "id": "5c5f9130-5076-5a71-b63a-4a51353c70d9",
+        "locationId": "4024d2e6-9c16-52e5-877a-ed0d12ba40af",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "5c5f9130-5076-5a71-b63a-4a51353c70d9",
+        "locationId": "4024d2e6-9c16-52e5-877a-ed0d12ba40af",
+        "name": "Akragas",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/462086",
+          "https://topostext.org/place/373136PAkr"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-akragas",
+        "candidateSha256": "95f829bb13359fafa4d45f877ccd8f1c1c05c3420bb92b8fe99a657870145b5b",
+        "reviewSha256": "36f7e4e83beccff674a1f7d8392bba1f73536ba35f1e55aabe6771e3d8662e47",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/462086"
+      }
+    },
+    {
+      "atlas": {
+        "key": "catana",
+        "historicalName": "Catana",
+        "alternateNames": [
+          "Katane (Greek)",
+          "Catania"
+        ],
+        "coordinates": {
+          "lon": 15.088142,
+          "lat": 37.502959
+        },
+        "coordinateEvidence": {
+          "source": "https://pleiades.stoa.org/places/462270",
+          "precision": "Pleiades representative point; digit count does not imply archaeological accuracy",
+          "accuracyMetres": null
+        },
+        "category": "port",
+        "suggestedTier": 3,
+        "earliestEvidence": {
+          "fromBce": 729,
+          "toBce": null,
+          "description": "A significant Greek coastal polis beneath Etna, with a harbour and rich hinterland; a settled city through the 3rd c.",
+          "source": "https://pleiades.stoa.org/places/462270",
+          "confidence": "high",
+          "dateMeaning": "Earliest securely supported occupation/attestation horizon used as a floor; campaign-year presence is verified separately by the occupation interval."
+        },
+        "presence278Bce": "attested",
+        "evidence": "A significant Greek coastal polis beneath Etna, with a harbour and rich hinterland; a settled city through the 3rd c.",
+        "confidence": "high",
+        "culturalContext": "Greek (Chalcidian foundation)",
+        "politicalContext": {
+          "claim": "Greek (Chalcidian) polis generally in the Syracusan orbit around 278 BCE.",
+          "source": "https://pleiades.stoa.org/places/462270",
+          "confidence": "medium"
+        },
+        "geographicFeatures": [
+          "east coast of Sicily",
+          "Mount Etna",
+          "Simeto river"
+        ],
+        "importance": {
+          "strategic": "Greek port polis on the east coast of Sicily, at the foot of Mount Etna.",
+          "economic": "Agriculture of the fertile Etna slopes and port trade.",
+          "political": "Greek polis of Sicily contested by Syracuse around 278 BCE.",
+          "status": "qualitative-research-not-simulation-values"
+        },
+        "sources": [
+          "https://pleiades.stoa.org/places/462270",
+          "https://topostext.org/place/375151PCat"
+        ],
+        "discoveryReference": null,
+        "id": "6b4ee85f-28a3-53fb-8ee3-198c1f39af25",
+        "locationId": "a2a6ec2e-3905-5ee5-8f3c-9390b96ed0e0",
+        "selection": "expansion"
+      },
+      "geographicDefinition": {
+        "id": "6b4ee85f-28a3-53fb-8ee3-198c1f39af25",
+        "locationId": "a2a6ec2e-3905-5ee5-8f3c-9390b96ed0e0",
+        "name": "Catana",
+        "existence": "active",
+        "sourceReferences": [
+          "https://pleiades.stoa.org/places/462270",
+          "https://topostext.org/place/375151PCat"
+        ]
+      },
+      "initialControl": null,
+      "provenance": {
+        "candidateId": "r16-ita-catana",
+        "candidateSha256": "c65970b36697febc56e910dfbbc6dbe8618f44b69c051b85ad3ef3524acad617",
+        "reviewSha256": "0b7c0b55114c2e25cb8d724cab4861a1fbdeb97caa9bb4ec320041743d64cf53",
+        "reviewer": "User ? explicit geographical integration approval",
+        "reviewedOn": "2026-10-15",
+        "approvalReference": "docs/vs6-1/geographic-integration/approval.md#scope",
+        "verifiedIdentityUrl": "https://pleiades.stoa.org/places/462270"
+      }
+    }
+  ]
+}
