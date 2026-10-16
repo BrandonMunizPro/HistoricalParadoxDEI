@@ -1,8 +1,12 @@
+import {
+  assertMapSettlementCatalog,
+  expectedMapSettlementCount,
+} from './map-validation-contract.mjs';
 import process from 'node:process';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
-const out = 'docs/vs5/streaming-evidence';
+const out = process.argv[2] ?? '.runtime/streaming-verification';
 await mkdir(out, { recursive: true });
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 try {
@@ -76,15 +80,13 @@ try {
       assert.ok((f.tiles.cached ?? []).length <= 4);
       assert.deepEqual(f.tiles.failed, []);
     }
-    const during = moving
-      .slice(1)
-      .map((f, i) => ({
-        ms: f.t - moving[i].t,
-        distance: Math.hypot(
-          f.camera.target.x - moving[i].camera.target.x,
-          f.camera.target.z - moving[i].camera.target.z,
-        ),
-      }));
+    const during = moving.slice(1).map((f, i) => ({
+      ms: f.t - moving[i].t,
+      distance: Math.hypot(
+        f.camera.target.x - moving[i].camera.target.x,
+        f.camera.target.z - moving[i].camera.target.z,
+      ),
+    }));
     assert.ok(
       during.every((f) => f.distance < 5),
       'No arrival-induced horizontal camera jump at 300 km zoom',
@@ -117,11 +119,15 @@ try {
     scene: window.__campaignMap.sceneIdentity,
   }));
   assert.deepEqual(final, baseline);
-  assert.equal(final.settlements.length, 23);
+  await assertMapSettlementCatalog(page);
   assert.deepEqual(errors, []);
   await writeFile(
     `${out}/responsiveness.json`,
-    JSON.stringify({ results, resources, errors, settlements: 23 }, null, 2),
+    JSON.stringify(
+      { results, resources, errors, settlements: expectedMapSettlementCount },
+      null,
+      2,
+    ),
   );
   process.stdout.write(
     JSON.stringify(

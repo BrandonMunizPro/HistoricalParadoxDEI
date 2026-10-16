@@ -11,6 +11,10 @@ try {
     }),
     errors = [];
   page.on('pageerror', (e) => errors.push(e.stack));
+  page.on('console', (m) => {
+    if (m.type() === 'error' && !m.text().includes('404'))
+      errors.push(m.text());
+  });
   await page.addInitScript(() => {
     window.__longTasks = [];
     new window.PerformanceObserver((list) => {
@@ -18,6 +22,11 @@ try {
         window.__longTasks.push({ at: e.startTime, ms: e.duration });
     }).observe({ type: 'longtask', buffered: true });
   });
+  page.on('response', (r) => {
+    if (r.status() >= 400 && !r.url().endsWith('/favicon.ico'))
+      errors.push(r.status() + ' ' + r.url());
+  });
+  const bootStart = Date.now();
   await page.goto('http://127.0.0.1:4173');
   await page.waitForFunction(() => window.__campaignMap?.ready, null, {
     timeout: 90000,
@@ -25,6 +34,7 @@ try {
   await page.evaluate(() => {
     window.__streamProfile.enabled = true;
   });
+  const readyMs = Date.now() - bootStart;
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('Profiler.enable');
   await cdp.send('Profiler.start');
@@ -101,7 +111,7 @@ try {
   };
   await writeFile(
     `${out}/profile.json`,
-    JSON.stringify({ environment, errors, results }, null, 2),
+    JSON.stringify({ environment, readyMs, errors, results }, null, 2),
   );
   process.stdout.write(
     JSON.stringify(

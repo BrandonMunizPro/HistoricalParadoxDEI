@@ -1,3 +1,4 @@
+import { assertMapSettlementCatalog } from './map-validation-contract.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -97,10 +98,7 @@ try {
     () => window.__campaignMap.metrics.triangles,
   );
   assert.ok(farTriangles < nearTriangles);
-  assert.equal(
-    await page.evaluate(() => window.__campaignMap.settlements.length),
-    23,
-  );
+  await assertMapSettlementCatalog(page);
   const regionalCount = await page.locator('.label:visible').count();
   const newMarker = await page.evaluate(() => {
     const s = window.__campaignMap.settlements.find(

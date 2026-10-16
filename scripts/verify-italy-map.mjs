@@ -1,3 +1,4 @@
+import { assertMapSettlementCatalog } from './map-validation-contract.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -41,10 +42,7 @@ try {
   };
   await page.locator('#reset').click();
   await settle();
-  assert.equal(
-    await page.evaluate(() => window.__campaignMap.settlements.length),
-    23,
-  );
+  await assertMapSettlementCatalog(page);
   const sample = async () => {
     await page.evaluate(() => {
       window.__campaignMap.frames.length = 0;

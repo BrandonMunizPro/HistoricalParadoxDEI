@@ -1,3 +1,4 @@
+import { assertMapSettlementCatalog } from './map-validation-contract.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -34,7 +35,7 @@ try {
     control: window.__campaignMap.controlForValidation(),
     scene: window.__campaignMap.sceneIdentity,
   }));
-  assert.equal(initial.settlements.length, 23);
+  await assertMapSettlementCatalog(page);
   const settle = async (expected) => {
     await page.waitForFunction(
       (n) =>
@@ -69,6 +70,9 @@ try {
   };
   const metrics = {},
     navigation = [];
+  // The launch now frames the Mediterranean; this suite tests full-envelope navigation.
+  await page.selectOption('#world-view', 'world');
+  await page.waitForTimeout(1600);
   await settle(0);
   metrics.world = await sample();
   // Check all four edges, not just a recognizable center behind the UI.

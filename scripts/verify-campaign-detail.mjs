@@ -1,3 +1,4 @@
+import { assertMapSettlementCatalog } from './map-validation-contract.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -94,7 +95,7 @@ try {
     control: window.__campaignMap.controlForValidation(),
   }));
   assert.deepEqual(final, identity);
-  assert.equal(final.settlements.length, 23);
+  await assertMapSettlementCatalog(page);
   assert.deepEqual(errors, []);
   await mkdir(out, { recursive: true });
   await writeFile(

@@ -50,6 +50,9 @@ export default tseslint.config(
     files: [
       'scripts/import-central-italy.mjs',
       'scripts/verify-map.mjs',
+      'scripts/verify-living-world.mjs',
+      'scripts/verify-default-campaign.mjs',
+      'scripts/capture-water-defects.mjs',
       'scripts/build-settlement-atlas.mjs',
       'scripts/import-italy-terrain.mjs',
       'scripts/import-world-geography.mjs',
@@ -59,6 +62,11 @@ export default tseslint.config(
       'scripts/verify-campaign-detail.mjs',
       'scripts/profile-terrain-streaming.mjs',
       'scripts/verify-streaming.mjs',
+      'scripts/verify-vs6-presentation.mjs',
+      'scripts/map-validation-contract.mjs',
+      'scripts/verify-approved-sites.mjs',
+      'scripts/capture-vs6-1.mjs',
+      'scripts/verify-research-layer.mjs',
       'scripts/verify-regional-terrain.mjs',
       'scripts/validate-regional-ecology.mjs',
       'scripts/verify-world-map.mjs',
@@ -70,6 +78,11 @@ export default tseslint.config(
     languageOptions: {
       globals: { fetch: 'readonly', window: 'readonly', document: 'readonly' },
     },
+  },
+  {
+    // Node/Playwright JavaScript test helper; domain and adapter contracts stay typed.
+    files: ['scripts/map-validation-contract.mjs'],
+    rules: { '@typescript-eslint/explicit-module-boundary-types': 'off' },
   },
   {
     files: ['map/**/*.js'],
