@@ -1,0 +1,181 @@
+{
+  "hardware": {
+    "cpu": {
+      "Name": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz"
+    },
+    "ram": {
+      "TotalPhysicalMemory": 16931676160
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "resolution": [
+    1920,
+    1080
+  ],
+  "results": [
+    {
+      "view": "overview",
+      "godot": {
+        "fps": 141.3,
+        "meanMs": 7.1,
+        "p95Ms": 8.8,
+        "maxMs": 14.8,
+        "startupAndStreamingMaxMs": 1762,
+        "startupMs": 1146,
+        "peakWorkingSetMiB": 1414.8,
+        "videoMemoryMiB": 635.4,
+        "drawCalls": 37,
+        "primitives": 573954,
+        "maxTileLoadMs": 380.2,
+        "tiles": 1
+      },
+      "three": {
+        "fps": 143.1,
+        "meanMs": 7,
+        "p95Ms": 7.1,
+        "processWorkingSetMiB": 1242,
+        "jsHeapMiB": 200.1,
+        "drawCalls": 183,
+        "triangles": 61951
+      },
+      "camera": {
+        "distance": 8500,
+        "focus": [
+          29,
+          37
+        ],
+        "fov": 42,
+        "pitch": 78,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "sicily",
+      "godot": {
+        "fps": 86.5,
+        "meanMs": 11.6,
+        "p95Ms": 66.3,
+        "maxMs": 122.6,
+        "startupAndStreamingMaxMs": 150,
+        "startupMs": 1123,
+        "peakWorkingSetMiB": 1054,
+        "videoMemoryMiB": 657.3,
+        "drawCalls": 45,
+        "primitives": 967106,
+        "maxTileLoadMs": 309.4,
+        "tiles": 13
+      },
+      "three": {
+        "fps": 143.9,
+        "meanMs": 6.9,
+        "p95Ms": 7.1,
+        "processWorkingSetMiB": 1410.3,
+        "jsHeapMiB": 281.7,
+        "drawCalls": 18,
+        "triangles": 66892
+      },
+      "camera": {
+        "distance": 520,
+        "focus": [
+          14.5,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 57,
+        "position": [
+          88.0428771972656,
+          436.888000488281,
+          705.257141113281
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "etna",
+      "godot": {
+        "fps": 99.4,
+        "meanMs": 10.1,
+        "p95Ms": 14.6,
+        "maxMs": 107.6,
+        "startupAndStreamingMaxMs": 194.1,
+        "startupMs": 1104,
+        "peakWorkingSetMiB": 1111.5,
+        "videoMemoryMiB": 657,
+        "drawCalls": 47,
+        "primitives": 1068004,
+        "maxTileLoadMs": 306.3,
+        "tiles": 13
+      },
+      "three": {
+        "fps": 142.7,
+        "meanMs": 7,
+        "p95Ms": 7.1,
+        "processWorkingSetMiB": 1543.2,
+        "jsHeapMiB": 305,
+        "drawCalls": 20,
+        "triangles": 432554
+      },
+      "camera": {
+        "distance": 22,
+        "focus": [
+          15.1099996566772,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 8,
+        "position": [
+          163.530242919922,
+          4.01853704452515,
+          421.254516601563
+        ],
+        "yaw": 90
+      }
+    },
+    {
+      "view": "catana",
+      "godot": {
+        "fps": 113.9,
+        "meanMs": 8.8,
+        "p95Ms": 12.7,
+        "maxMs": 124.3,
+        "startupAndStreamingMaxMs": 192.2,
+        "startupMs": 1024,
+        "peakWorkingSetMiB": 1219.2,
+        "videoMemoryMiB": 709.6,
+        "drawCalls": 67,
+        "primitives": 1170760,
+        "maxTileLoadMs": 288,
+        "tiles": 13
+      },
+      "three": {
+        "fps": 143.5,
+        "meanMs": 7,
+        "p95Ms": 7.1,
+        "processWorkingSetMiB": null,
+        "jsHeapMiB": 288,
+        "drawCalls": 9,
+        "triangles": 196634
+      },
+      "camera": {
+        "distance": 1.8,
+        "focus": [
+          15.0881423950195,
+          37.5029602050781
+        ],
+        "fov": 42,
+        "pitch": 36,
+        "position": [
+          139.656494140625,
+          1.10179841518402,
+          444.547607421875
+        ],
+        "yaw": -22
+      }
+    }
+  ]
+}

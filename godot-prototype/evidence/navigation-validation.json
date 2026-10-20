@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "residentTiles": 1,
+      "stableHorizontalAnchors": 35,
+      "view": "overview"
+    },
+    {
+      "residentTiles": 13,
+      "stableHorizontalAnchors": 35,
+      "view": "sicily"
+    },
+    {
+      "residentTiles": 13,
+      "stableHorizontalAnchors": 35,
+      "view": "etna"
+    },
+    {
+      "residentTiles": 13,
+      "stableHorizontalAnchors": 35,
+      "view": "catana"
+    }
+  ],
+  "maxResidentTiles": 13,
+  "passed": true,
+  "settlementSelection": "catana",
+  "worldTransitions": [
+    "Greece",
+    "Egypt"
+  ]
+}
