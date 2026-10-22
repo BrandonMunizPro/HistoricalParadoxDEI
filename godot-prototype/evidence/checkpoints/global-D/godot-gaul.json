@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 160.0,
+    "focus": [
+      3.5,
+      46.0
+    ],
+    "fov": 42,
+    "pitch": 36.0,
+    "position": [
+      -748.859741210938,
+      94.6525039672852,
+      -418.941833496094
+    ],
+    "yaw": 10.0
+  },
+  "drawCalls": 50.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 85.305,
+  "meanFrameMs": 7.10820743639921,
+  "p95FrameMs": 8.147,
+  "primitives": 2726017.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 29685,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 967353824.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-42-3",
+    "world-42--2",
+    "world-47-3",
+    "world-47--2",
+    "world-37-3",
+    "world-37--2",
+    "world-42-8",
+    "world-47-8",
+    "world-42--7",
+    "world-47--7",
+    "world-52-3",
+    "world-52--2"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 9.085,
+    "meanMs": 6.87413309352518,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 6.948,
+    "samples": 278
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 150.0,
+  "startupMs": 2403,
+  "staticMemoryBytes": 237607168,
+  "tileLoadMs": [
+    134.993,
+    9.777,
+    9.065,
+    31.631,
+    31.203,
+    7.916,
+    8.33,
+    22.371,
+    22.432,
+    8.11,
+    8.07,
+    21.645,
+    21.067
+  ],
+  "view": "gaul"
+}

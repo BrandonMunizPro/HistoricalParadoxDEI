@@ -52,6 +52,24 @@ var all_frame_times=[]
 var initial_view="overview"
 var regional_river: MeshInstance3D
 var river_signature=""
+var regional_manifest={}
+var regional_node: MeshInstance3D
+var regional_heights=PackedFloat32Array()
+var regional_land: Image
+var regional_textures={}
+var regional_active=false
+var scenery
+var strategic_regional_rivers: MeshInstance3D
+var strategic_world_rivers: MeshInstance3D
+var comparison_camera={}
+var global_manifest={}
+var global_textures={}
+var global_land: Image
+var global_ecology: Image
+var mesh_cache={}
+var mesh_cache_building=false
+var settled_frame_times=[]
+var peak_frame_ms=0.0
 
 func read_json(p):
 	return JSON.parse_string(FileAccess.get_file_as_string("res://"+p))
@@ -81,13 +99,27 @@ func _ready():
 	research=read_json("data/research-locations.json").records
 	hydrology=read_json("data/hydrology.json")
 	for d in manifest.tiles:tiles[d.id]=d
+	global_manifest=read_json("data/global/manifest.json")
+	for d in global_manifest.tiles:tiles[d.id]=d
+	if FileAccess.file_exists("res://data/native/manifest.json"):mesh_cache=read_json("data/native/manifest.json").entries
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture="):capture_name=arg.trim_prefix("--capture=")
 		if arg.begins_with("--output="):capture_dir=arg.trim_prefix("--output=")
 		if arg.begins_with("--view="):initial_view=arg.trim_prefix("--view=")
+	if capture_name!="":
+		get_window().content_scale_mode=Window.CONTENT_SCALE_MODE_VIEWPORT
+		get_window().content_scale_size=Vector2i(1920,1080)
+	if OS.get_cmdline_user_args().has("--match-baseline"):
+		var baseline_folder="evidence/regional-before"
+		for arg in OS.get_cmdline_user_args():
+			if arg.begins_with("--baseline-folder="):baseline_folder=arg.trim_prefix("--baseline-folder=")
+		var baseline=baseline_folder+"/godot-"+capture_name+".json"
+		if FileAccess.file_exists("res://"+baseline):comparison_camera=read_json(baseline).camera
 	configure_environment()
 	make_material()
 	context_node=load_tile("context")
+	make_regional_backdrop()
+	scenery=preload("res://regional_scenery.gd").new(self)
 	make_water()
 	make_markers()
 	make_ui()
@@ -118,7 +150,7 @@ func configure_environment():
 	environment.sky=sky
 	environment.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR
 	environment.ambient_light_color=Color("b9cfdf")
-	environment.ambient_light_energy=.3
+	environment.ambient_light_energy=.24
 	environment.tonemap_mode=Environment.TONE_MAPPER_FILMIC
 	environment.tonemap_exposure=1.0
 	environment.fog_enabled=true
@@ -126,17 +158,18 @@ func configure_environment():
 	environment.fog_light_energy=.7
 	environment.fog_density=.00012
 	environment.ssao_enabled=true
-	environment.ssao_radius=.045
-	environment.ssao_intensity=1.6
+	environment.ssao_radius=.008
+	environment.ssao_intensity=.9
 	var world_environment=WorldEnvironment.new()
 	world_environment.environment=environment
 	add_child(world_environment)
 	sun=DirectionalLight3D.new()
 	sun.light_color=Color("fff0d3")
-	sun.light_energy=1.35
-	sun.rotation_degrees=Vector3(-33,-38,0)
+	sun.light_energy=1.55
+	sun.light_specular=.22
+	sun.rotation_degrees=Vector3(-28,-58,0)
 	sun.shadow_enabled=true
-	sun.directional_shadow_max_distance=85.0
+	sun.directional_shadow_max_distance=360.0
 	sun.shadow_bias=.035
 	sun.shadow_normal_bias=.8
 	add_child(sun)
@@ -154,15 +187,48 @@ func configure_environment():
 	add_child(city_root)
 
 func make_material():
+	regional_manifest=read_json("data/regional/manifest.json")
+	for item in ["land","ocean","shore","ecology"]:
+		var image=Image.load_from_file("res://data/regional/"+item+".png")
+		if item!="ecology":image.convert(Image.FORMAT_R8)
+		if item=="land":regional_land=image
+		regional_textures[item]=ImageTexture.create_from_image(image)
 	base_material=ShaderMaterial.new()
 	base_material.shader=load("res://terrain.gdshader")
 	base_material.set_shader_parameter("macro_color",load("res://data/surface.png"))
+	base_material.set_shader_parameter("regional_land",regional_textures.land)
+	base_material.set_shader_parameter("ecology",regional_textures.ecology)
+	for item in ["land","ocean","shore","ecology"]:
+		var image=Image.load_from_file("res://data/global/"+item+".png")
+		if item!="ecology":image.convert(Image.FORMAT_R8)
+		if item=="land":global_land=image
+		if item=="ecology":global_ecology=image
+		global_textures[item]=ImageTexture.create_from_image(image)
+	base_material.set_shader_parameter("global_land",global_textures.land)
+	base_material.set_shader_parameter("strategic_land",load("res://data/tiles/context-coast.png"))
+	base_material.set_shader_parameter("global_ecology",global_textures.ecology)
+	for item in [["quality_rock","limestone"],["quality_ground","meadow"],["quality_canopy","leaves"]]:
+		var image=Image.load_from_file("res://assets/quality/"+item[1]+".png")
+		image.generate_mipmaps()
+		base_material.set_shader_parameter(item[0],ImageTexture.create_from_image(image))
+	if OS.get_cmdline_user_args().has("--diagnostic"):base_material.set_shader_parameter("debug_view",1)
+	if OS.get_cmdline_user_args().has("--river-diagnostic"):base_material.set_shader_parameter("debug_view",2)
 	for name in ["rock","grass","soil","lava","sand"]:
 		base_material.set_shader_parameter(name,load("res://materials/"+name+".png"))
 	for name in ["rock","grass","lava"]:
 		base_material.set_shader_parameter(name+"_normal",load("res://materials/"+name+"-normal.png"))
 
-func mesh_from_file(p):
+func mesh_fingerprint(p,parent_path=""):
+	var paths=["res://"+p]
+	if parent_path!="":paths.append_array([parent_path,parent_path.replace(".parent",".normal"),parent_path.replace(".parent",".pnormal")])
+	var parts=["mesh-reader-1"]
+	for file in paths:parts.append(FileAccess.get_sha256(file) if FileAccess.file_exists(file) else "missing")
+	return "|".join(parts).sha256_text()
+
+func mesh_from_file(p,parent_path=""):
+	if not mesh_cache_building and mesh_cache.has(p):
+		var entry=mesh_cache[p]
+		if FileAccess.file_exists(entry.path) and entry.hash==mesh_fingerprint(p,parent_path):return ResourceLoader.load(entry.path,"ArrayMesh",ResourceLoader.CACHE_MODE_IGNORE)
 	var f=FileAccess.open("res://"+p,FileAccess.READ)
 	var count=f.get_32()
 	var indices=f.get_32()
@@ -183,10 +249,23 @@ func mesh_from_file(p):
 	arrays[Mesh.ARRAY_TEX_UV]=f.get_buffer(count*8).to_vector2_array()
 	arrays[Mesh.ARRAY_TEX_UV2]=f.get_buffer(count*8).to_vector2_array()
 	var color_data=f.get_buffer(count*16).to_float32_array()
+	var normals_path=parent_path.replace(".parent",".normal")
+	var parent_normals_path=parent_path.replace(".parent",".pnormal")
+	var parent_normals=PackedFloat32Array()
+	if parent_path!="" and FileAccess.file_exists(normals_path):
+		arrays[Mesh.ARRAY_NORMAL]=FileAccess.get_file_as_bytes(normals_path).to_vector3_array()
+		parent_normals=FileAccess.get_file_as_bytes(parent_normals_path).to_float32_array()
 	var colors=PackedColorArray()
 	colors.resize(count)
-	for i in count:colors[i]=Color(color_data[i*4],0,0,1)
+	for i in count:
+		var normal=Vector3(parent_normals[i*3],parent_normals[i*3+1],parent_normals[i*3+2]) if parent_normals.size()==count*3 else arrays[Mesh.ARRAY_NORMAL][i]
+		colors[i]=Color(normal.x*.5+.5,normal.y*.5+.5,normal.z*.5+.5,1)
 	arrays[Mesh.ARRAY_COLOR]=colors
+	var parent_values=FileAccess.get_file_as_bytes(parent_path).to_float32_array() if parent_path!="" else PackedFloat32Array()
+	var height_uv=PackedVector2Array()
+	height_uv.resize(count)
+	for i in count:height_uv[i]=Vector2(parent_values[i] if parent_values.size()==count else color_data[i*4],0)
+	arrays[Mesh.ARRAY_TEX_UV2]=height_uv
 	arrays[Mesh.ARRAY_INDEX]=f.get_buffer(indices*4).to_int32_array()
 	var mesh=ArrayMesh.new()
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
@@ -197,31 +276,79 @@ func load_tile(id):
 	var d=tiles[id]
 	var node=MeshInstance3D.new()
 	node.name=id
-	node.mesh=mesh_from_file(d.mesh)
+	var parent_path="res://data/regional/"+id+".parent" if d.kind=="regional" else ("res://data/global/"+id+".parent" if d.kind=="world" else "")
+	node.mesh=mesh_from_file(d.mesh,parent_path)
 	var mat=base_material.duplicate()
-	mat.set_shader_parameter("coast",load("res://"+d.coast))
+	var coast_texture=regional_textures.land if d.kind=="regional" else global_textures.land
+	mat.set_shader_parameter("coast",coast_texture)
+	mat.set_shader_parameter("tile_bounds",Vector4(d.bounds.west,d.bounds.south,d.bounds.east,d.bounds.north))
 	mat.set_shader_parameter("detail_strength",.32 if d.kind=="context" else 1.0)
 	node.material_override=mat
 	node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if d.kind=="regional" else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(node)
 	var heights=FileAccess.get_file_as_bytes("res://"+d.heights).to_float32_array()
-	resident[id]={"node":node,"heights":heights,"descriptor":d,"mask":load("res://"+d.coast).get_image(),"born":Time.get_ticks_msec(),"reveal":1.0 if id=="context" else 0.0}
+	resident[id]={"node":node,"heights":heights,"descriptor":d,"mask":regional_land if d.kind=="regional" else global_land,"born":Time.get_ticks_msec(),"reveal":1.0 if id=="context" else 0.0}
 	loading_ms.append((Time.get_ticks_usec()-begin)/1000.0)
 	return node
+
+func make_regional_backdrop():
+	regional_heights=FileAccess.get_file_as_bytes("res://"+regional_manifest.heights).to_float32_array()
+	regional_node=MeshInstance3D.new()
+	regional_node.name="ItaliaSicilyContinuousTerrain"
+	regional_node.mesh=mesh_from_file(regional_manifest.mesh)
+	var mat=base_material.duplicate()
+	mat.set_shader_parameter("tile_bounds",Vector4(6,35,20,49))
+	mat.set_shader_parameter("neighbors",Vector4.ZERO)
+	mat.set_shader_parameter("coast",regional_textures.land)
+	regional_node.material_override=mat
+	add_child(regional_node)
+
+func regional_height(lon,lat):
+	var n=int(regional_manifest.grid)
+	var w=n+1
+	var x=clamp((lon-6)*32,0.0,float(n)-.0001)
+	var y=clamp((49-lat)*32,0.0,float(n)-.0001)
+	var ix=int(x);var iy=int(y);var fx=x-ix;var fy=y-iy
+	var a=regional_heights[iy*w+ix];var b=regional_heights[iy*w+ix+1]
+	var c=regional_heights[(iy+1)*w+ix];var d=regional_heights[(iy+1)*w+ix+1]
+	return a+(b-a)*fx+(c-a)*fy if fx+fy<1 else d+(c-d)*(1-fx)+(b-d)*(1-fy)
 
 func contains(b,lon,lat):return lon>=b.west and lon<=b.east and lat>=b.south and lat<=b.north
 
 func sample_entry(e,lon,lat):
 	var d=e.descriptor
+	var g=int(d.grid)
+	var x=clamp((lon-d.bounds.west)/(d.bounds.east-d.bounds.west)*g,0.0,float(g)-.00001)
+	var y=clamp((d.bounds.north-lat)/(d.bounds.north-d.bounds.south)*g,0.0,float(g)-.00001)
+	var ix=int(x);var iy=int(y);var fx=x-ix;var fy=y-iy
+	var a=mesh_vertex_height(e,ix,iy);var b=mesh_vertex_height(e,ix+1,iy)
+	var c=mesh_vertex_height(e,ix,iy+1);var v=mesh_vertex_height(e,ix+1,iy+1)
+	return a+(b-a)*fx+(c-a)*fy if fx+fy<1 else v+(c-v)*(1-fx)+(b-v)*(1-fy)
+
+func mesh_vertex_height(e,gx,gy):
+	var d=e.descriptor
 	var b=d.bounds
-	var x=clamp((lon-b.west)/(b.east-b.west)*(d.width-1),0.0,float(d.width-1))
-	var y=clamp((b.north-lat)/(b.north-b.south)*(d.height-1),0.0,float(d.height-1))
+	var x=float(gx)/d.grid*(d.width-1)
+	var y=float(gy)/d.grid*(d.height-1)
 	var ix=int(x)
 	var iy=int(y)
 	var jx=mini(ix+1,d.width-1)
 	var jy=mini(iy+1,d.height-1)
 	var values=e.heights
-	return lerp(lerp(values[iy*d.width+ix],values[iy*d.width+jx],x-ix),lerp(values[jy*d.width+ix],values[jy*d.width+jx],x-ix),y-iy)*.0015
+	var h=max(.001,lerp(lerp(values[iy*d.width+ix],values[iy*d.width+jx],x-ix),lerp(values[jy*d.width+ix],values[jy*d.width+jx],x-ix),y-iy)*.0015)
+	if d.kind!="context":
+		var u=float(gx)/d.grid;var v=float(gy)/d.grid
+		var nx=e.get("neighbors",Vector4.ONE)
+		var blend=1.0
+		if nx.x<.5:blend=min(blend,u/.055)
+		if nx.y<.5:blend=min(blend,(1-u)/.055)
+		if nx.z<.5:blend=min(blend,v/.055)
+		if nx.w<.5:blend=min(blend,(1-v)/.055)
+		if clamp(blend,0.0,1.0)*e.reveal>=1.0:return h
+		var lon=lerp(b.west,b.east,u);var lat=lerp(b.north,b.south,v)
+		var parent=regional_height(lon,lat) if d.kind=="regional" else sample_entry(resident.context,lon,lat)
+		h=lerp(parent,h,clamp(blend,0.0,1.0)*e.reveal)
+	return h
 
 func elevation(lon,lat):
 	var best=resident.context
@@ -231,40 +358,30 @@ func elevation(lon,lat):
 		var b=e.descriptor.bounds
 		var size=(b.east-b.west)*(b.north-b.south)
 		if contains(b,lon,lat) and size<area:best=e;area=size
-	var h=max(.001,sample_entry(best,lon,lat))
-	if best.descriptor.kind!="context":
-		var b=best.descriptor.bounds
-		var edge=min(min((lon-b.west)/(b.east-b.west),(b.east-lon)/(b.east-b.west)),min((lat-b.south)/(b.north-b.south),(b.north-lat)/(b.north-b.south)))
-		var nx=best.get("neighbors",Vector4.ONE)
-		var blend=1.0
-		if nx.x<.5:blend=min(blend,(lon-b.west)/(b.east-b.west)/.08)
-		if nx.y<.5:blend=min(blend,(b.east-lon)/(b.east-b.west)/.08)
-		if nx.z<.5:blend=min(blend,(b.north-lat)/(b.north-b.south)/.08)
-		if nx.w<.5:blend=min(blend,(lat-b.south)/(b.north-b.south)/.08)
-		h=lerp(max(.001,sample_entry(resident.context,lon,lat)),h,clamp(blend,0.0,1.0)*best.reveal)
-	return h
+	var in_region=regional_active and contains(regional_manifest.bounds,lon,lat)
+	if in_region and best.descriptor.kind!="regional":return regional_height(lon,lat)
+	return max(.001,sample_entry(best,lon,lat))
 
 func is_land(lon,lat):
-	var best=resident.context
-	var area=100000.0
-	for id in resident:
-		var e=resident[id]
-		var b=e.descriptor.bounds
-		var size=(b.east-b.west)*(b.north-b.south)
-		if contains(b,lon,lat) and size<area:best=e;area=size
-	var b=best.descriptor.bounds
-	var im=best.mask
-	var x=clampi(int((lon-b.west)/(b.east-b.west)*(im.get_width()-1)),0,im.get_width()-1)
-	var y=clampi(int((b.north-lat)/(b.north-b.south)*(im.get_height()-1)),0,im.get_height()-1)
-	return im.get_pixel(x,y).r>.5
+	if contains(regional_manifest.bounds,lon,lat):
+		var x=clampi(roundi((lon-6)*512),0,7168)
+		var y=clampi(roundi((49-lat)*512),0,7168)
+		return regional_land.get_pixel(x,y).r>.5
+	var x=clampi(roundi((lon+12)*128),0,11136)
+	var y=clampi(roundi((62-lat)*128),0,6400)
+	return global_land.get_pixel(x,y).r>.5
 
 func make_water():
 	water_material=ShaderMaterial.new()
 	water_material.shader=load("res://water.gdshader")
 	water_material.render_priority=-128
 	water_material.set_shader_parameter("shore_mask",load("res://data/ocean-exclusion.png"))
-	for item in [["coast_14","N37E14"],["coast_15","N37E15"],["coast_n14","N38E14"],["coast_n15","N38E15"]]:
-		water_material.set_shader_parameter(item[0],load("res://data/tiles/"+item[1]+"-coast.png"))
+	water_material.set_shader_parameter("regional_ocean",regional_textures.ocean)
+	water_material.set_shader_parameter("regional_shore",regional_textures.shore)
+	water_material.set_shader_parameter("regional_land",regional_textures.land)
+	water_material.set_shader_parameter("global_land",global_textures.land)
+	water_material.set_shader_parameter("global_ocean",global_textures.ocean)
+	water_material.set_shader_parameter("global_shore",global_textures.shore)
 	var water=MeshInstance3D.new()
 	var plane=PlaneMesh.new()
 	plane.size=Vector2(40000,40000)
@@ -325,12 +442,19 @@ func make_ui():
 	sub.text="278 BCE  /  Geographic prototype"
 	sub.add_theme_color_override("font_color",Color("acbdbb"))
 	box.add_child(sub)
-	for item in [["Campaign overview","overview"],["Sicily & southern Italy","sicily"],["Catana · Mount Etna","etna"],["Catana settlement","catana"]]:
+	for item in [["Campaign overview","overview"],["Alps & northern Italy","alps"],["Po Valley","po"],["Central Apennines","apennines"],["Southern Italy","south"],["Sicily & southern Italy","sicily"],["Catana · Mount Etna","etna"],["Catana settlement","catana"]]:
 		var button=Button.new()
 		button.text=item[0]
 		button.pressed.connect(jump.bind(item[1]))
 		box.add_child(button)
 	search=LineEdit.new()
+	var region_picker=OptionButton.new()
+	region_picker.add_item("Explore campaign regions…")
+	var region_keys=read_json("data/global-views.json").keys()
+	for key in region_keys:region_picker.add_item(str(key).capitalize())
+	region_picker.item_selected.connect(func(index):
+		if index>0:jump(region_keys[index-1]))
+	box.add_child(region_picker)
 	search.placeholder_text="Find an approved settlement…"
 	search.text_changed.connect(filter_sites)
 	box.add_child(search)
@@ -384,8 +508,10 @@ func select_site(key):
 
 func jump(name):
 	if capture_name!="" and name!=capture_name:return
-	var views={"overview":[29.0,37.0,8500.0,78.0,0.0],"sicily":[14.5,37.7,520.0,57.0,0.0],"etna":[15.11,37.70,22.0,8.0,90.0],"catana":[15.088142,37.502959,1.8,36.0,-22.0]}
+	var views={"overview":[29.0,37.0,8500.0,78.0,0.0],"sicily":[14.5,37.7,520.0,57.0,0.0],"etna":[15.11,37.70,22.0,8.0,90.0],"catana":[15.088142,37.502959,1.8,36.0,-22.0],"alps":[11.1,45.85,100.0,28.0,0.0],"po":[10.5,45.12,95.0,38.0,-20.0],"apennines":[13.58,42.43,85.0,30.0,28.0],"south":[16.15,39.25,105.0,34.0,20.0]}
 	var view=views.get(name,views.overview)
+	var global_views=read_json("data/global-views.json")
+	if global_views.has(name):view=global_views[name]
 	goal_focus=Vector2(view[0],view[1])
 	goal_distance=view[2]
 	pitch=view[3]
@@ -394,7 +520,7 @@ func jump(name):
 	queue_tiles()
 
 func queue_tiles():
-	var family="regional" if distance<1400 and focus.x>=9 and focus.x<=20 and focus.y>=36 and focus.y<=46 else "world"
+	var family="regional" if distance<1800 and focus.x>=6 and focus.x<=20 and focus.y>=35 and focus.y<=49 else "world"
 	if distance>6000:family="context"
 	var candidates=[]
 	for id in tiles:
@@ -404,8 +530,10 @@ func queue_tiles():
 		var center=Vector2((b.west+b.east)*.5,(b.south+b.north)*.5)
 		candidates.append({"id":id,"score":center.distance_squared_to(focus)})
 	candidates.sort_custom(func(a,b):return a.score<b.score)
-	desired=[]
-	for item in candidates.slice(0,12):desired.append(item.id)
+	var next=[]
+	for item in candidates.slice(0,12):next.append(item.id)
+	if next==desired:return
+	desired=next
 	queue=[]
 	for id in desired:
 		if not resident.has(id):queue.append(id)
@@ -426,6 +554,16 @@ func update_coverage():
 	while rectangles.size()<12:rectangles.append(Vector4.ZERO)
 	context_node.material_override.set_shader_parameter("children",rectangles)
 	context_node.material_override.set_shader_parameter("child_count",count)
+	var regional_rectangles=PackedVector4Array()
+	for id in resident:
+		if resident[id].descriptor.kind=="regional":
+			var b=tiles[id].bounds
+			regional_rectangles.append(Vector4((b.west+12)/87,(62-b.north)/50,(b.east+12)/87,(62-b.south)/50))
+	var regional_count=regional_rectangles.size()
+	while regional_rectangles.size()<12:regional_rectangles.append(Vector4.ZERO)
+	if regional_node!=null:
+		regional_node.material_override.set_shader_parameter("children",regional_rectangles)
+		regional_node.material_override.set_shader_parameter("child_count",regional_count)
 	for id in resident:
 		if id=="context":continue
 		var b=tiles[id].bounds
@@ -444,6 +582,7 @@ func _process(delta):
 	var now_usec=Time.get_ticks_usec()
 	var wall_ms=(now_usec-last_frame_usec)/1000.0 if last_frame_usec>0 else delta*1000.0
 	last_frame_usec=now_usec
+	peak_frame_ms=max(peak_frame_ms,wall_ms)
 	all_frame_times.append(wall_ms)
 	if all_frame_times.size()>900:all_frame_times.pop_front()
 	ready_frame+=1
@@ -471,9 +610,28 @@ func _process(delta):
 	camera.near=max(.003,distance*.025)
 	camera.far=max(500.0,distance*5+200)
 	camera.look_at(target)
+	if not comparison_camera.is_empty():
+		var p=comparison_camera.position
+		camera.position=Vector3(p[0],p[1],p[2])
+		var direction=Vector3(0,sin(deg_to_rad(comparison_camera.pitch)),cos(deg_to_rad(comparison_camera.pitch))).rotated(Vector3.UP,deg_to_rad(comparison_camera.yaw))
+		camera.look_at(camera.position-direction*comparison_camera.distance)
 	water_material.set_shader_parameter("camera_distance",distance)
+	sun.directional_shadow_max_distance=clamp(distance*1.6,3.0,360.0)
+	regional_active=distance<3300
+	regional_node.visible=regional_active
+	regional_node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if distance>8 else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	strategic_regional_rivers.visible=not regional_active
+	strategic_world_rivers.visible=distance>=500
+	var material_detail=1.0-smoothstep(250.0,1800.0,distance)
+	context_node.material_override.set_shader_parameter("detail_strength",material_detail)
+	context_node.material_override.set_shader_parameter("camera_distance",distance)
+	regional_node.material_override.set_shader_parameter("detail_strength",material_detail)
+	regional_node.material_override.set_shader_parameter("camera_distance",distance)
+	for id in resident:
+		resident[id].node.material_override.set_shader_parameter("clip_region",regional_active and resident[id].descriptor.kind!="regional")
+		resident[id].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if resident[id].descriptor.kind=="regional" and distance>8 else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	scene_environment.fog_density=.00065*clamp(150.0/distance,.015,1.0)
-	vegetation_root.visible=distance<18
+	vegetation_root.visible=distance<190
 	scene_environment.ssao_enabled=distance<18
 	city_root.visible=distance<20
 	tick+=dt
@@ -487,21 +645,31 @@ func _process(delta):
 		if id=="context":continue
 		resident[id].reveal=clamp((Time.get_ticks_msec()-resident[id].born)/650.0,0.0,1.0)
 		resident[id].node.material_override.set_shader_parameter("reveal",resident[id].reveal)
-		resident[id].node.material_override.set_shader_parameter("detail_strength",1.0 if distance<500 else .32)
+		resident[id].node.material_override.set_shader_parameter("detail_strength",material_detail)
+		resident[id].node.material_override.set_shader_parameter("camera_distance",distance)
 	if queue.is_empty() and city_root.get_child_count()==0 and resident.has("N37E15") and resident.N37E15.reveal>=1.0:
 		build_catana()
-		build_vegetation()
-	if queue.is_empty() and distance<500 and resident.has("N37E15") and resident.N37E15.reveal>=1.0:
-		var signature=str(resident.keys())
-		if signature!=river_signature:
+	if queue.is_empty() and distance<1800 and regional_active:
+		var signature=str(resident.keys())+str(Vector2i(floori(focus.x),floori(focus.y)))
+		var stable=true
+		for id in resident:
+			if resident[id].reveal<1:stable=false
+		if signature!=river_signature and stable:
 			river_signature=signature
 			make_regional_rivers()
 	if regional_river!=null:regional_river.visible=distance<500
+	scenery.tick()
+	var settled=queue.is_empty() and not scenery.busy
+	for id in resident:
+		if resident[id].reveal<1:settled=false
+	if settled:settled_frame_times.append(wall_ms)
+	else:settled_frame_times.clear()
+	if settled_frame_times.size()>300:settled_frame_times.pop_front()
 	update_markers()
 	if ready_frame>90:frame_times.append(wall_ms)
 	if frame_times.size()>900:frame_times.pop_front()
 	status.text="%d FPS   ·   %.1f km camera   ·   %d terrain tiles   ·   WASD geographic navigation" % [Engine.get_frames_per_second(),distance,resident.size()]
-	if capture_name!="" and ready_frame>420 and queue.is_empty() and not capture_done:
+	if capture_name!="" and ready_frame>600 and settled_frame_times.size()>=180 and not capture_done:
 		capture_done=true
 		capture()
 
@@ -553,26 +721,32 @@ func zoom_at(screen,ratio):
 	goal_distance=next
 
 func make_rivers():
-	var mesh=ImmediateMesh.new()
-	var mat=StandardMaterial3D.new()
-	mat.albedo_color=Color("477f87")
-	mat.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
-	mesh.surface_begin(Mesh.PRIMITIVE_LINES,mat)
-	for f in hydrology.rivers:
-		var lines=f.geometry.coordinates if f.geometry.type=="MultiLineString" else [f.geometry.coordinates]
-		for line in lines:
-			for i in range(1,line.size()):
-				for p in [line[i-1],line[i]]:
-					var v=project(p[0],p[1]);v.y=elevation(p[0],p[1])+.025
-					mesh.surface_add_vertex(v)
-	mesh.surface_end()
-	var node=MeshInstance3D.new()
-	node.mesh=mesh
-	node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	add_child(node)
+	for regional in [false,true]:
+		var mesh=ImmediateMesh.new()
+		var mat=StandardMaterial3D.new()
+		mat.albedo_color=Color("477f87")
+		mat.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
+		mesh.surface_begin(Mesh.PRIMITIVE_LINES,mat)
+		for f in hydrology.rivers:
+			var lines=f.geometry.coordinates if f.geometry.type=="MultiLineString" else [f.geometry.coordinates]
+			for line in lines:
+				for i in range(1,line.size()):
+					var p0=line[i-1]
+					if contains(regional_manifest.bounds,p0[0],p0[1])!=regional:continue
+					for p in [line[i-1],line[i]]:
+						var v=project(p[0],p[1]);v.y=elevation(p[0],p[1])+.025
+						mesh.surface_add_vertex(v)
+		mesh.surface_end()
+		var node=MeshInstance3D.new()
+		node.mesh=mesh
+		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		add_child(node)
+		if regional:strategic_regional_rivers=node
+		else:strategic_world_rivers=node
 
 func make_lakes():
 	var lakes=read_json("data/lakes.json")
+	var regional_levels=read_json("data/regional/lake-levels.json")
 	var mesh=ImmediateMesh.new()
 	var mat=material("244b55",.38)
 	mat.cull_mode=BaseMaterial3D.CULL_DISABLED
@@ -581,7 +755,7 @@ func make_lakes():
 		for index in lake.indices:
 			var p=lake.vertices[index]
 			mesh.surface_set_normal(Vector3.UP)
-			mesh.surface_add_vertex(Vector3(p[0],p[1],p[2]))
+			mesh.surface_add_vertex(Vector3(p[0],regional_levels.get(str(lake.id),p[1]),p[2]))
 	mesh.surface_end()
 	var node=MeshInstance3D.new()
 	node.mesh=mesh
@@ -602,15 +776,17 @@ func make_regional_rivers():
 			for i in range(1,line.size()):
 				var a=Vector2(line[i-1][0],line[i-1][1])
 				var b=Vector2(line[i][0],line[i][1])
-				if a.x<12 or a.x>17 or a.y<36 or a.y>40:continue
-				var steps=max(1,int(project(a.x,a.y).distance_to(project(b.x,b.y))/.25))
+				var italian=contains(regional_manifest.bounds,a.x,a.y)
+				var projected=project(a.x,a.y)
+				if projected.distance_to(target)>max(80.0,distance*1.5):continue
+				var steps=max(1,int(projected.distance_to(project(b.x,b.y))/(.25 if italian else 1.0)))
 				for j in steps:
 					var ga=a.lerp(b,float(j)/steps)
 					var gb=a.lerp(b,float(j+1)/steps)
 					if not is_land(ga.x,ga.y):continue
-					var pa=project(ga.x,ga.y);pa.y=elevation(ga.x,ga.y)+.006
-					var pb=project(gb.x,gb.y);pb.y=elevation(gb.x,gb.y)+.006
-					var side=(pb-pa).cross(Vector3.UP).normalized()*.0225
+					var pa=project(ga.x,ga.y);pa.y=elevation(ga.x,ga.y)+.003
+					var pb=project(gb.x,gb.y);pb.y=elevation(gb.x,gb.y)+.003
+					var side=(pb-pa).cross(Vector3.UP).normalized()*(.0225 if italian else .075)
 					points.append_array([pa-side,pa+side,pb-side,pa+side,pb+side,pb-side])
 	if points.is_empty():return
 	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,mat)
@@ -781,7 +957,9 @@ func validate_geography():
 	print("VALIDATION_OK 35 stable identities; 687 retained records; projection roundtrip degrees=",worst)
 
 func capture():
-	await RenderingServer.frame_post_draw
+	# Hidden desktop windows may stop emitting frame_post_draw. Explicitly render the
+	# final frame instead of leaving the automated capture suspended indefinitely.
+	RenderingServer.force_draw()
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(capture_dir))
 	var path=capture_dir+"/godot-"+capture_name+".png"
 	get_viewport().get_texture().get_image().save_png(path)
@@ -792,7 +970,12 @@ func capture():
 	mean/=max(1,sorted.size())
 	var metrics={"view":capture_name,"engine":Engine.get_version_info(),"renderer":RenderingServer.get_video_adapter_name(),"resolution":get_viewport().get_visible_rect().size,"camera":{"focus":[focus.x,focus.y],"position":[camera.position.x,camera.position.y,camera.position.z],"distance":distance,"pitch":pitch,"yaw":yaw,"fov":42},"meanFrameMs":mean,"p95FrameMs":sorted[int(sorted.size()*.95)] if sorted.size()>0 else 0,"samples":sorted.size(),"staticMemoryBytes":OS.get_static_memory_usage(),"renderVideoMemoryBytes":Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED),"drawCalls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),"primitives":Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME),"residentTiles":resident.keys(),"startupMs":startup_ms,"tileLoadMs":loading_ms,"sites":sites.size(),"research":research.size(),"historicalScenery":false}
 	metrics["maxFrameMs"]=sorted[-1] if sorted.size()>0 else 0
-	metrics["startupAndStreamingMaxFrameMs"]=all_frame_times.max()
+	metrics["regionalTerrain"]={"active":regional_active,"backdropGrid":regional_manifest.grid,"parentHeightChannel":"float UV2.x","materialDetail":regional_node.material_override.get_shader_parameter("detail_strength"),"vegetationTiles":scenery.roots.size(),"localVegetationCells":scenery.local_roots.size(),"vegetationInstancesResident":scenery.resident_instances(),"renderFrames":ready_frame}
+	metrics["startupAndStreamingMaxFrameMs"]=peak_frame_ms
+	var steady=settled_frame_times.duplicate();steady.sort()
+	var steady_mean=0.0
+	for v in steady:steady_mean+=v
+	metrics["settledFrameStats"]={"samples":steady.size(),"meanMs":steady_mean/max(1,steady.size()),"p95Ms":steady[int(steady.size()*.95)] if not steady.is_empty() else 0,"maxMs":steady[-1] if not steady.is_empty() else 0,"method":"Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison."}
 	metrics["frameTimeSource"]="Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample."
 	var file=FileAccess.open(capture_dir+"/godot-"+capture_name+".json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(metrics,"  "))

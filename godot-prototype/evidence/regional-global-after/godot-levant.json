@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 110.0,
+    "focus": [
+      35.7000007629395,
+      33.5
+    ],
+    "fov": 42,
+    "pitch": 36.0,
+    "position": [
+      2064.20581054688,
+      66.0493469238281,
+      724.717041015625
+    ],
+    "yaw": 12.0
+  },
+  "drawCalls": 46.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 47.118,
+  "meanFrameMs": 7.00331311154599,
+  "p95FrameMs": 7.466,
+  "primitives": 652513.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 3917,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1036056032.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-33",
+    "world-27-33",
+    "world-32-38",
+    "world-32-28",
+    "world-37-33",
+    "world-27-38",
+    "world-27-28",
+    "world-37-38",
+    "world-37-28",
+    "world-22-33",
+    "world-32-43",
+    "world-22-38"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 7.857,
+    "meanMs": 6.94077224199289,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 7.461,
+    "samples": 281
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 150.0,
+  "startupMs": 2329,
+  "staticMemoryBytes": 235246770,
+  "tileLoadMs": [
+    108.484,
+    10.029,
+    10.825,
+    13.63,
+    10.215,
+    10.101,
+    12.364,
+    10.214,
+    10.595,
+    10.755,
+    12.474,
+    12.648,
+    13.076
+  ],
+  "view": "levant"
+}

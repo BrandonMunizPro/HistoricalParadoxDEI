@@ -1,0 +1,83 @@
+{
+  "camera": {
+    "distance": 105.0,
+    "focus": [
+      16.1499996185303,
+      39.25
+    ],
+    "fov": 42,
+    "pitch": 34.0,
+    "position": [
+      257.98486328125,
+      60.2600440979004,
+      328.542297363281
+    ],
+    "yaw": 20.0
+  },
+  "drawCalls": 73.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 80.686,
+  "meanFrameMs": 7.10550293542075,
+  "p95FrameMs": 7.808,
+  "primitives": 3592903.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "vegetationInstancesGenerated": 11203,
+    "vegetationTiles": 12
+  },
+  "renderVideoMemoryBytes": 848806704.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "N39E16",
+    "N39E15",
+    "N38E16",
+    "N38E15",
+    "N40E16",
+    "N39E17",
+    "N40E15",
+    "N38E17",
+    "N37E16",
+    "N38E14",
+    "N40E17",
+    "N37E15"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 1065.095,
+  "startupMs": 2226,
+  "staticMemoryBytes": 225909773,
+  "tileLoadMs": [
+    313.329,
+    14.769,
+    15.544,
+    13.75,
+    13.657,
+    13.424,
+    14.054,
+    13.513,
+    13.264,
+    12.977,
+    13.479,
+    13.404,
+    13.04
+  ],
+  "view": "south"
+}

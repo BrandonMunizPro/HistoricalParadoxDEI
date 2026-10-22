@@ -1,0 +1,395 @@
+{
+  "matchingCameraVerified": true,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "hardware": {
+    "cpu": {
+      "Name": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz"
+    },
+    "ram": {
+      "TotalPhysicalMemory": 16931676160
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "method": "Same camera eye, focus, FOV, pitch, yaw, resolution and fixed sun/environment configuration. Water animation phase is not synchronized. Wall-clock frame intervals; first 90 frames excluded. Short desktop captures, refresh-capped, background GPU load uncontrolled. RAM samples each launched runtime and console wrapper only every 200 ms. Loading maxima include initial scene/streaming frames; they are not continuous navigation percentiles.",
+  "rows": [
+    {
+      "view": "alps",
+      "label": "Alps and northern Italy",
+      "camera": {
+        "distance": 100,
+        "focus": [
+          11.1000003814697,
+          45.8499984741211
+        ],
+        "fov": 42,
+        "pitch": 28,
+        "position": [
+          -186.036849975586,
+          48.5403671264648,
+          -398.059753417969
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "averageFps": 122.2,
+        "meanMs": 8.2,
+        "p95Ms": 11.8,
+        "maxMs": 220,
+        "startupMs": 2641,
+        "startupAndStreamingMaxMs": 1604.3,
+        "largestDetailTileLoadMs": 60.5,
+        "peakWorkingSetMiB": 1628.9,
+        "videoMemoryMiB": 810.1,
+        "drawCalls": 61,
+        "primitives": 3173557,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 139.3,
+        "meanMs": 7.2,
+        "p95Ms": 8.6,
+        "maxMs": 14.7,
+        "startupMs": 2537,
+        "startupAndStreamingMaxMs": 1554.4,
+        "largestDetailTileLoadMs": 16.3,
+        "peakWorkingSetMiB": 1583.3,
+        "videoMemoryMiB": 844,
+        "drawCalls": 89,
+        "primitives": 3100037,
+        "samples": 511
+      }
+    },
+    {
+      "view": "po",
+      "label": "Po Valley",
+      "camera": {
+        "distance": 95,
+        "focus": [
+          10.5,
+          45.1199989318848
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -261.095794677734,
+          58.5232467651367,
+          -336.363128662109
+        ],
+        "yaw": -20
+      },
+      "before": {
+        "averageFps": 132.2,
+        "meanMs": 7.6,
+        "p95Ms": 10.8,
+        "maxMs": 14.4,
+        "startupMs": 2299,
+        "startupAndStreamingMaxMs": 1348.2,
+        "largestDetailTileLoadMs": 54.5,
+        "peakWorkingSetMiB": 1412.3,
+        "videoMemoryMiB": 809.5,
+        "drawCalls": 68,
+        "primitives": 3595059,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 137.1,
+        "meanMs": 7.3,
+        "p95Ms": 10.4,
+        "maxMs": 14.9,
+        "startupMs": 2477,
+        "startupAndStreamingMaxMs": 1346.6,
+        "largestDetailTileLoadMs": 20.4,
+        "peakWorkingSetMiB": 1374.8,
+        "videoMemoryMiB": 843.4,
+        "drawCalls": 96,
+        "primitives": 3329411,
+        "samples": 511
+      }
+    },
+    {
+      "view": "apennines",
+      "label": "Central Apennines",
+      "camera": {
+        "distance": 85,
+        "focus": [
+          13.5799999237061,
+          42.4300003051758
+        ],
+        "fov": 42,
+        "pitch": 30,
+        "position": [
+          41.1249618530273,
+          45.6159629821777,
+          -38.4188385009766
+        ],
+        "yaw": 28
+      },
+      "before": {
+        "averageFps": 117.9,
+        "meanMs": 8.5,
+        "p95Ms": 12.3,
+        "maxMs": 38.2,
+        "startupMs": 2212,
+        "startupAndStreamingMaxMs": 1302.8,
+        "largestDetailTileLoadMs": 152.4,
+        "peakWorkingSetMiB": 1414.3,
+        "videoMemoryMiB": 809.5,
+        "drawCalls": 72,
+        "primitives": 3432609,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 134.7,
+        "meanMs": 7.4,
+        "p95Ms": 9.9,
+        "maxMs": 15.8,
+        "startupMs": 2395,
+        "startupAndStreamingMaxMs": 1179.8,
+        "largestDetailTileLoadMs": 19.3,
+        "peakWorkingSetMiB": 1434.5,
+        "videoMemoryMiB": 843.3,
+        "drawCalls": 107,
+        "primitives": 3296919,
+        "samples": 511
+      }
+    },
+    {
+      "view": "south",
+      "label": "Southern Italy",
+      "camera": {
+        "distance": 105,
+        "focus": [
+          16.1499996185303,
+          39.25
+        ],
+        "fov": 42,
+        "pitch": 34,
+        "position": [
+          257.98486328125,
+          60.2600440979004,
+          328.542297363281
+        ],
+        "yaw": 20
+      },
+      "before": {
+        "averageFps": 132.3,
+        "meanMs": 7.6,
+        "p95Ms": 13.7,
+        "maxMs": 18.3,
+        "startupMs": 2237,
+        "startupAndStreamingMaxMs": 1113.3,
+        "largestDetailTileLoadMs": 59.6,
+        "peakWorkingSetMiB": 1354.6,
+        "videoMemoryMiB": 809.6,
+        "drawCalls": 67,
+        "primitives": 3406261,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 135.5,
+        "meanMs": 7.4,
+        "p95Ms": 13.7,
+        "maxMs": 14.7,
+        "startupMs": 2386,
+        "startupAndStreamingMaxMs": 1162.2,
+        "largestDetailTileLoadMs": 18.7,
+        "peakWorkingSetMiB": 1375.5,
+        "videoMemoryMiB": 843.4,
+        "drawCalls": 81,
+        "primitives": 3361845,
+        "samples": 511
+      }
+    },
+    {
+      "view": "sicily",
+      "label": "Sicily regional",
+      "camera": {
+        "distance": 520,
+        "focus": [
+          14.5,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 57,
+        "position": [
+          88.0428771972656,
+          436.888000488281,
+          705.257141113281
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "averageFps": 139.5,
+        "meanMs": 7.2,
+        "p95Ms": 8,
+        "maxMs": 14.6,
+        "startupMs": 2234,
+        "startupAndStreamingMaxMs": 1152.8,
+        "largestDetailTileLoadMs": 86.1,
+        "peakWorkingSetMiB": 1348.7,
+        "videoMemoryMiB": 809,
+        "drawCalls": 55,
+        "primitives": 1765851,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 139.8,
+        "meanMs": 7.2,
+        "p95Ms": 7.8,
+        "maxMs": 14.7,
+        "startupMs": 2315,
+        "startupAndStreamingMaxMs": 1150.9,
+        "largestDetailTileLoadMs": 22.2,
+        "peakWorkingSetMiB": 1363.1,
+        "videoMemoryMiB": 842.8,
+        "drawCalls": 55,
+        "primitives": 1765851,
+        "samples": 511
+      }
+    },
+    {
+      "view": "etna",
+      "label": "Etna campaign view",
+      "camera": {
+        "distance": 22,
+        "focus": [
+          15.1099996566772,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 8,
+        "position": [
+          163.530242919922,
+          4.01806735992432,
+          421.254516601563
+        ],
+        "yaw": 90
+      },
+      "before": {
+        "averageFps": 133.9,
+        "meanMs": 7.5,
+        "p95Ms": 12.6,
+        "maxMs": 24.2,
+        "startupMs": 2217,
+        "startupAndStreamingMaxMs": 1118.9,
+        "largestDetailTileLoadMs": 17,
+        "peakWorkingSetMiB": 1426.3,
+        "videoMemoryMiB": 810,
+        "drawCalls": 81,
+        "primitives": 4288101,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 129.6,
+        "meanMs": 7.7,
+        "p95Ms": 14,
+        "maxMs": 17,
+        "startupMs": 2363,
+        "startupAndStreamingMaxMs": 1164.5,
+        "largestDetailTileLoadMs": 16.9,
+        "peakWorkingSetMiB": 1413.8,
+        "videoMemoryMiB": 843.8,
+        "drawCalls": 241,
+        "primitives": 3038039,
+        "samples": 511
+      }
+    },
+    {
+      "view": "catana",
+      "label": "Catana close view",
+      "camera": {
+        "distance": 1.8,
+        "focus": [
+          15.0881423950195,
+          37.5029602050781
+        ],
+        "fov": 42,
+        "pitch": 36,
+        "position": [
+          139.656494140625,
+          1.10379672050476,
+          444.547607421875
+        ],
+        "yaw": -22
+      },
+      "before": {
+        "averageFps": 135.4,
+        "meanMs": 7.4,
+        "p95Ms": 13.4,
+        "maxMs": 15.7,
+        "startupMs": 2221,
+        "startupAndStreamingMaxMs": 1108,
+        "largestDetailTileLoadMs": 14.8,
+        "peakWorkingSetMiB": 1416.4,
+        "videoMemoryMiB": 862.1,
+        "drawCalls": 62,
+        "primitives": 1519481,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 137.6,
+        "meanMs": 7.3,
+        "p95Ms": 9.6,
+        "maxMs": 16.3,
+        "startupMs": 2407,
+        "startupAndStreamingMaxMs": 1195.1,
+        "largestDetailTileLoadMs": 18.1,
+        "peakWorkingSetMiB": 1426.9,
+        "videoMemoryMiB": 896,
+        "drawCalls": 116,
+        "primitives": 1127501,
+        "samples": 511
+      }
+    },
+    {
+      "view": "overview",
+      "label": "Mediterranean overview",
+      "camera": {
+        "distance": 8500,
+        "focus": [
+          29,
+          37
+        ],
+        "fov": 42,
+        "pitch": 78,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "averageFps": 140.7,
+        "meanMs": 7.1,
+        "p95Ms": 8.2,
+        "maxMs": 14.7,
+        "startupMs": 2174,
+        "startupAndStreamingMaxMs": 150,
+        "largestDetailTileLoadMs": null,
+        "peakWorkingSetMiB": 1391.7,
+        "videoMemoryMiB": 794.9,
+        "drawCalls": 46,
+        "primitives": 574344,
+        "samples": 511
+      },
+      "after": {
+        "averageFps": 141.4,
+        "meanMs": 7.1,
+        "p95Ms": 7.5,
+        "maxMs": 14.5,
+        "startupMs": 2381,
+        "startupAndStreamingMaxMs": 150,
+        "largestDetailTileLoadMs": null,
+        "peakWorkingSetMiB": 1343.9,
+        "videoMemoryMiB": 828.8,
+        "drawCalls": 46,
+        "primitives": 574344,
+        "samples": 511
+      }
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Campaign world visual prototype
 
+Global expansion: [regional status and measurements](GLOBAL.md), [matching world-region screenshots](evidence/global-comparison.html). The region picker and `-View greece`, `anatolia`, `egypt`, `iberia`, `persia` and other presets extend the same renderer beyond Italy. Existing Italian controls and geographic data remain available.
+
+Latest asset-quality checkpoint: [results and remaining visual limits](QUALITY.md), with [eight matching side-by-side rendered comparisons](evidence/quality-comparison.html). This adds original ground/leaf artwork and branching tree variants; the whole-region commercial-quality target remains unmet.
+
+Current Italia/Sicily development: [regional checkpoint and measurements](REGIONAL.md), with an [actual before/after image slider](evidence/regional-comparison.html). Launch with `-View alps`, `-View po`, `-View apennines`, `-View south`, or the existing Sicily views. The implementation details below describe the initial prototype; the regional report records the subsequent changes and remaining limits.
+
 Separate Godot desktop presentation experiment. The existing viewer, simulation and canonical geography are unchanged. See [measured evaluation and paired screenshots](REPORT.md).
 
 ## Run

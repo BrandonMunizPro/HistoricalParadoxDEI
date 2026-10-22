@@ -1,0 +1,3022 @@
+{
+  "version": 1,
+  "bounds": {
+    "west": -12,
+    "east": 75,
+    "south": 12,
+    "north": 62
+  },
+  "tiles": [
+    {
+      "id": "world-12--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12--12.height",
+      "mesh": "data/global/world-12--12.bin",
+      "coast": "data/tiles/world-12--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12--7.height",
+      "mesh": "data/global/world-12--7.bin",
+      "coast": "data/tiles/world-12--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12--2.height",
+      "mesh": "data/global/world-12--2.bin",
+      "coast": "data/tiles/world-12--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-3.height",
+      "mesh": "data/global/world-12-3.bin",
+      "coast": "data/tiles/world-12-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-8.height",
+      "mesh": "data/global/world-12-8.bin",
+      "coast": "data/tiles/world-12-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-13.height",
+      "mesh": "data/global/world-12-13.bin",
+      "coast": "data/tiles/world-12-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-18.height",
+      "mesh": "data/global/world-12-18.bin",
+      "coast": "data/tiles/world-12-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-23.height",
+      "mesh": "data/global/world-12-23.bin",
+      "coast": "data/tiles/world-12-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-28.height",
+      "mesh": "data/global/world-12-28.bin",
+      "coast": "data/tiles/world-12-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-33.height",
+      "mesh": "data/global/world-12-33.bin",
+      "coast": "data/tiles/world-12-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-38.height",
+      "mesh": "data/global/world-12-38.bin",
+      "coast": "data/tiles/world-12-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-43.height",
+      "mesh": "data/global/world-12-43.bin",
+      "coast": "data/tiles/world-12-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-48.height",
+      "mesh": "data/global/world-12-48.bin",
+      "coast": "data/tiles/world-12-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-53.height",
+      "mesh": "data/global/world-12-53.bin",
+      "coast": "data/tiles/world-12-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-12-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 12,
+        "north": 17
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-12-73.height",
+      "mesh": "data/global/world-12-73.bin",
+      "coast": "data/tiles/world-12-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17--12.height",
+      "mesh": "data/global/world-17--12.bin",
+      "coast": "data/tiles/world-17--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17--7.height",
+      "mesh": "data/global/world-17--7.bin",
+      "coast": "data/tiles/world-17--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17--2.height",
+      "mesh": "data/global/world-17--2.bin",
+      "coast": "data/tiles/world-17--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-3.height",
+      "mesh": "data/global/world-17-3.bin",
+      "coast": "data/tiles/world-17-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-8.height",
+      "mesh": "data/global/world-17-8.bin",
+      "coast": "data/tiles/world-17-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-13.height",
+      "mesh": "data/global/world-17-13.bin",
+      "coast": "data/tiles/world-17-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-18.height",
+      "mesh": "data/global/world-17-18.bin",
+      "coast": "data/tiles/world-17-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-23.height",
+      "mesh": "data/global/world-17-23.bin",
+      "coast": "data/tiles/world-17-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-28.height",
+      "mesh": "data/global/world-17-28.bin",
+      "coast": "data/tiles/world-17-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-33.height",
+      "mesh": "data/global/world-17-33.bin",
+      "coast": "data/tiles/world-17-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-38.height",
+      "mesh": "data/global/world-17-38.bin",
+      "coast": "data/tiles/world-17-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-43.height",
+      "mesh": "data/global/world-17-43.bin",
+      "coast": "data/tiles/world-17-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-48.height",
+      "mesh": "data/global/world-17-48.bin",
+      "coast": "data/tiles/world-17-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-53.height",
+      "mesh": "data/global/world-17-53.bin",
+      "coast": "data/tiles/world-17-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-58.height",
+      "mesh": "data/global/world-17-58.bin",
+      "coast": "data/tiles/world-17-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-68.height",
+      "mesh": "data/global/world-17-68.bin",
+      "coast": "data/tiles/world-17-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-17-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 17,
+        "north": 22
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-17-73.height",
+      "mesh": "data/global/world-17-73.bin",
+      "coast": "data/tiles/world-17-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22--12.height",
+      "mesh": "data/global/world-22--12.bin",
+      "coast": "data/tiles/world-22--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22--7.height",
+      "mesh": "data/global/world-22--7.bin",
+      "coast": "data/tiles/world-22--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22--2.height",
+      "mesh": "data/global/world-22--2.bin",
+      "coast": "data/tiles/world-22--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-3.height",
+      "mesh": "data/global/world-22-3.bin",
+      "coast": "data/tiles/world-22-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-8.height",
+      "mesh": "data/global/world-22-8.bin",
+      "coast": "data/tiles/world-22-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-13.height",
+      "mesh": "data/global/world-22-13.bin",
+      "coast": "data/tiles/world-22-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-18.height",
+      "mesh": "data/global/world-22-18.bin",
+      "coast": "data/tiles/world-22-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-23.height",
+      "mesh": "data/global/world-22-23.bin",
+      "coast": "data/tiles/world-22-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-28.height",
+      "mesh": "data/global/world-22-28.bin",
+      "coast": "data/tiles/world-22-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-33.height",
+      "mesh": "data/global/world-22-33.bin",
+      "coast": "data/tiles/world-22-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-38.height",
+      "mesh": "data/global/world-22-38.bin",
+      "coast": "data/tiles/world-22-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-43.height",
+      "mesh": "data/global/world-22-43.bin",
+      "coast": "data/tiles/world-22-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-48.height",
+      "mesh": "data/global/world-22-48.bin",
+      "coast": "data/tiles/world-22-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-53.height",
+      "mesh": "data/global/world-22-53.bin",
+      "coast": "data/tiles/world-22-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-58.height",
+      "mesh": "data/global/world-22-58.bin",
+      "coast": "data/tiles/world-22-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-63.height",
+      "mesh": "data/global/world-22-63.bin",
+      "coast": "data/tiles/world-22-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-68.height",
+      "mesh": "data/global/world-22-68.bin",
+      "coast": "data/tiles/world-22-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-22-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 22,
+        "north": 27
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-22-73.height",
+      "mesh": "data/global/world-22-73.bin",
+      "coast": "data/tiles/world-22-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27--12.height",
+      "mesh": "data/global/world-27--12.bin",
+      "coast": "data/tiles/world-27--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27--7.height",
+      "mesh": "data/global/world-27--7.bin",
+      "coast": "data/tiles/world-27--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27--2.height",
+      "mesh": "data/global/world-27--2.bin",
+      "coast": "data/tiles/world-27--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-3.height",
+      "mesh": "data/global/world-27-3.bin",
+      "coast": "data/tiles/world-27-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-8.height",
+      "mesh": "data/global/world-27-8.bin",
+      "coast": "data/tiles/world-27-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-13.height",
+      "mesh": "data/global/world-27-13.bin",
+      "coast": "data/tiles/world-27-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-18.height",
+      "mesh": "data/global/world-27-18.bin",
+      "coast": "data/tiles/world-27-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-23.height",
+      "mesh": "data/global/world-27-23.bin",
+      "coast": "data/tiles/world-27-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-28.height",
+      "mesh": "data/global/world-27-28.bin",
+      "coast": "data/tiles/world-27-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-33.height",
+      "mesh": "data/global/world-27-33.bin",
+      "coast": "data/tiles/world-27-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-38.height",
+      "mesh": "data/global/world-27-38.bin",
+      "coast": "data/tiles/world-27-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-43.height",
+      "mesh": "data/global/world-27-43.bin",
+      "coast": "data/tiles/world-27-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-48.height",
+      "mesh": "data/global/world-27-48.bin",
+      "coast": "data/tiles/world-27-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-53.height",
+      "mesh": "data/global/world-27-53.bin",
+      "coast": "data/tiles/world-27-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-58.height",
+      "mesh": "data/global/world-27-58.bin",
+      "coast": "data/tiles/world-27-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-63.height",
+      "mesh": "data/global/world-27-63.bin",
+      "coast": "data/tiles/world-27-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-68.height",
+      "mesh": "data/global/world-27-68.bin",
+      "coast": "data/tiles/world-27-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-27-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 27,
+        "north": 32
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-27-73.height",
+      "mesh": "data/global/world-27-73.bin",
+      "coast": "data/tiles/world-27-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32--12.height",
+      "mesh": "data/global/world-32--12.bin",
+      "coast": "data/tiles/world-32--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32--7.height",
+      "mesh": "data/global/world-32--7.bin",
+      "coast": "data/tiles/world-32--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32--2.height",
+      "mesh": "data/global/world-32--2.bin",
+      "coast": "data/tiles/world-32--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-3.height",
+      "mesh": "data/global/world-32-3.bin",
+      "coast": "data/tiles/world-32-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-8.height",
+      "mesh": "data/global/world-32-8.bin",
+      "coast": "data/tiles/world-32-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-13.height",
+      "mesh": "data/global/world-32-13.bin",
+      "coast": "data/tiles/world-32-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-18.height",
+      "mesh": "data/global/world-32-18.bin",
+      "coast": "data/tiles/world-32-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-23.height",
+      "mesh": "data/global/world-32-23.bin",
+      "coast": "data/tiles/world-32-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-28.height",
+      "mesh": "data/global/world-32-28.bin",
+      "coast": "data/tiles/world-32-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-33.height",
+      "mesh": "data/global/world-32-33.bin",
+      "coast": "data/tiles/world-32-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-38.height",
+      "mesh": "data/global/world-32-38.bin",
+      "coast": "data/tiles/world-32-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-43.height",
+      "mesh": "data/global/world-32-43.bin",
+      "coast": "data/tiles/world-32-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-48.height",
+      "mesh": "data/global/world-32-48.bin",
+      "coast": "data/tiles/world-32-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-53.height",
+      "mesh": "data/global/world-32-53.bin",
+      "coast": "data/tiles/world-32-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-58.height",
+      "mesh": "data/global/world-32-58.bin",
+      "coast": "data/tiles/world-32-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-63.height",
+      "mesh": "data/global/world-32-63.bin",
+      "coast": "data/tiles/world-32-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-68.height",
+      "mesh": "data/global/world-32-68.bin",
+      "coast": "data/tiles/world-32-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-32-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 32,
+        "north": 37
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-32-73.height",
+      "mesh": "data/global/world-32-73.bin",
+      "coast": "data/tiles/world-32-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37--12.height",
+      "mesh": "data/global/world-37--12.bin",
+      "coast": "data/tiles/world-37--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37--7.height",
+      "mesh": "data/global/world-37--7.bin",
+      "coast": "data/tiles/world-37--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37--2.height",
+      "mesh": "data/global/world-37--2.bin",
+      "coast": "data/tiles/world-37--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-3.height",
+      "mesh": "data/global/world-37-3.bin",
+      "coast": "data/tiles/world-37-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-8.height",
+      "mesh": "data/global/world-37-8.bin",
+      "coast": "data/tiles/world-37-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-13.height",
+      "mesh": "data/global/world-37-13.bin",
+      "coast": "data/tiles/world-37-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-18.height",
+      "mesh": "data/global/world-37-18.bin",
+      "coast": "data/tiles/world-37-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-23.height",
+      "mesh": "data/global/world-37-23.bin",
+      "coast": "data/tiles/world-37-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-28.height",
+      "mesh": "data/global/world-37-28.bin",
+      "coast": "data/tiles/world-37-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-33.height",
+      "mesh": "data/global/world-37-33.bin",
+      "coast": "data/tiles/world-37-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-38.height",
+      "mesh": "data/global/world-37-38.bin",
+      "coast": "data/tiles/world-37-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-43.height",
+      "mesh": "data/global/world-37-43.bin",
+      "coast": "data/tiles/world-37-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-48.height",
+      "mesh": "data/global/world-37-48.bin",
+      "coast": "data/tiles/world-37-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-53.height",
+      "mesh": "data/global/world-37-53.bin",
+      "coast": "data/tiles/world-37-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-58.height",
+      "mesh": "data/global/world-37-58.bin",
+      "coast": "data/tiles/world-37-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-63.height",
+      "mesh": "data/global/world-37-63.bin",
+      "coast": "data/tiles/world-37-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-68.height",
+      "mesh": "data/global/world-37-68.bin",
+      "coast": "data/tiles/world-37-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-37-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 37,
+        "north": 42
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-37-73.height",
+      "mesh": "data/global/world-37-73.bin",
+      "coast": "data/tiles/world-37-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42--12.height",
+      "mesh": "data/global/world-42--12.bin",
+      "coast": "data/tiles/world-42--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42--7.height",
+      "mesh": "data/global/world-42--7.bin",
+      "coast": "data/tiles/world-42--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42--2.height",
+      "mesh": "data/global/world-42--2.bin",
+      "coast": "data/tiles/world-42--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-3.height",
+      "mesh": "data/global/world-42-3.bin",
+      "coast": "data/tiles/world-42-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-8.height",
+      "mesh": "data/global/world-42-8.bin",
+      "coast": "data/tiles/world-42-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-13.height",
+      "mesh": "data/global/world-42-13.bin",
+      "coast": "data/tiles/world-42-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-18.height",
+      "mesh": "data/global/world-42-18.bin",
+      "coast": "data/tiles/world-42-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-23.height",
+      "mesh": "data/global/world-42-23.bin",
+      "coast": "data/tiles/world-42-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-28.height",
+      "mesh": "data/global/world-42-28.bin",
+      "coast": "data/tiles/world-42-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-33.height",
+      "mesh": "data/global/world-42-33.bin",
+      "coast": "data/tiles/world-42-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-38.height",
+      "mesh": "data/global/world-42-38.bin",
+      "coast": "data/tiles/world-42-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-43.height",
+      "mesh": "data/global/world-42-43.bin",
+      "coast": "data/tiles/world-42-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-48.height",
+      "mesh": "data/global/world-42-48.bin",
+      "coast": "data/tiles/world-42-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-53.height",
+      "mesh": "data/global/world-42-53.bin",
+      "coast": "data/tiles/world-42-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-58.height",
+      "mesh": "data/global/world-42-58.bin",
+      "coast": "data/tiles/world-42-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-63.height",
+      "mesh": "data/global/world-42-63.bin",
+      "coast": "data/tiles/world-42-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-68.height",
+      "mesh": "data/global/world-42-68.bin",
+      "coast": "data/tiles/world-42-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-42-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 42,
+        "north": 47
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-42-73.height",
+      "mesh": "data/global/world-42-73.bin",
+      "coast": "data/tiles/world-42-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47--12.height",
+      "mesh": "data/global/world-47--12.bin",
+      "coast": "data/tiles/world-47--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47--7.height",
+      "mesh": "data/global/world-47--7.bin",
+      "coast": "data/tiles/world-47--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47--2.height",
+      "mesh": "data/global/world-47--2.bin",
+      "coast": "data/tiles/world-47--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-3.height",
+      "mesh": "data/global/world-47-3.bin",
+      "coast": "data/tiles/world-47-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-8.height",
+      "mesh": "data/global/world-47-8.bin",
+      "coast": "data/tiles/world-47-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-13.height",
+      "mesh": "data/global/world-47-13.bin",
+      "coast": "data/tiles/world-47-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-18.height",
+      "mesh": "data/global/world-47-18.bin",
+      "coast": "data/tiles/world-47-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-23.height",
+      "mesh": "data/global/world-47-23.bin",
+      "coast": "data/tiles/world-47-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-28.height",
+      "mesh": "data/global/world-47-28.bin",
+      "coast": "data/tiles/world-47-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-33.height",
+      "mesh": "data/global/world-47-33.bin",
+      "coast": "data/tiles/world-47-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-38.height",
+      "mesh": "data/global/world-47-38.bin",
+      "coast": "data/tiles/world-47-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-43.height",
+      "mesh": "data/global/world-47-43.bin",
+      "coast": "data/tiles/world-47-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-48.height",
+      "mesh": "data/global/world-47-48.bin",
+      "coast": "data/tiles/world-47-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-53.height",
+      "mesh": "data/global/world-47-53.bin",
+      "coast": "data/tiles/world-47-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-58.height",
+      "mesh": "data/global/world-47-58.bin",
+      "coast": "data/tiles/world-47-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-63.height",
+      "mesh": "data/global/world-47-63.bin",
+      "coast": "data/tiles/world-47-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-68.height",
+      "mesh": "data/global/world-47-68.bin",
+      "coast": "data/tiles/world-47-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-47-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 47,
+        "north": 52
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-47-73.height",
+      "mesh": "data/global/world-47-73.bin",
+      "coast": "data/tiles/world-47-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52--12.height",
+      "mesh": "data/global/world-52--12.bin",
+      "coast": "data/tiles/world-52--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52--7.height",
+      "mesh": "data/global/world-52--7.bin",
+      "coast": "data/tiles/world-52--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52--2.height",
+      "mesh": "data/global/world-52--2.bin",
+      "coast": "data/tiles/world-52--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-3.height",
+      "mesh": "data/global/world-52-3.bin",
+      "coast": "data/tiles/world-52-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-8.height",
+      "mesh": "data/global/world-52-8.bin",
+      "coast": "data/tiles/world-52-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-13.height",
+      "mesh": "data/global/world-52-13.bin",
+      "coast": "data/tiles/world-52-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-18.height",
+      "mesh": "data/global/world-52-18.bin",
+      "coast": "data/tiles/world-52-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-23.height",
+      "mesh": "data/global/world-52-23.bin",
+      "coast": "data/tiles/world-52-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-28.height",
+      "mesh": "data/global/world-52-28.bin",
+      "coast": "data/tiles/world-52-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-33.height",
+      "mesh": "data/global/world-52-33.bin",
+      "coast": "data/tiles/world-52-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-38.height",
+      "mesh": "data/global/world-52-38.bin",
+      "coast": "data/tiles/world-52-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-43.height",
+      "mesh": "data/global/world-52-43.bin",
+      "coast": "data/tiles/world-52-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-48.height",
+      "mesh": "data/global/world-52-48.bin",
+      "coast": "data/tiles/world-52-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-53.height",
+      "mesh": "data/global/world-52-53.bin",
+      "coast": "data/tiles/world-52-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-58.height",
+      "mesh": "data/global/world-52-58.bin",
+      "coast": "data/tiles/world-52-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-63.height",
+      "mesh": "data/global/world-52-63.bin",
+      "coast": "data/tiles/world-52-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-68.height",
+      "mesh": "data/global/world-52-68.bin",
+      "coast": "data/tiles/world-52-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-52-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 52,
+        "north": 57
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-52-73.height",
+      "mesh": "data/global/world-52-73.bin",
+      "coast": "data/tiles/world-52-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57--12",
+      "kind": "world",
+      "bounds": {
+        "west": -12,
+        "east": -7,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57--12.height",
+      "mesh": "data/global/world-57--12.bin",
+      "coast": "data/tiles/world-57--12-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57--7",
+      "kind": "world",
+      "bounds": {
+        "west": -7,
+        "east": -2,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57--7.height",
+      "mesh": "data/global/world-57--7.bin",
+      "coast": "data/tiles/world-57--7-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57--2",
+      "kind": "world",
+      "bounds": {
+        "west": -2,
+        "east": 3,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57--2.height",
+      "mesh": "data/global/world-57--2.bin",
+      "coast": "data/tiles/world-57--2-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-3",
+      "kind": "world",
+      "bounds": {
+        "west": 3,
+        "east": 8,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-3.height",
+      "mesh": "data/global/world-57-3.bin",
+      "coast": "data/tiles/world-57-3-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-8",
+      "kind": "world",
+      "bounds": {
+        "west": 8,
+        "east": 13,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-8.height",
+      "mesh": "data/global/world-57-8.bin",
+      "coast": "data/tiles/world-57-8-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-13",
+      "kind": "world",
+      "bounds": {
+        "west": 13,
+        "east": 18,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-13.height",
+      "mesh": "data/global/world-57-13.bin",
+      "coast": "data/tiles/world-57-13-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-18",
+      "kind": "world",
+      "bounds": {
+        "west": 18,
+        "east": 23,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-18.height",
+      "mesh": "data/global/world-57-18.bin",
+      "coast": "data/tiles/world-57-18-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-23",
+      "kind": "world",
+      "bounds": {
+        "west": 23,
+        "east": 28,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-23.height",
+      "mesh": "data/global/world-57-23.bin",
+      "coast": "data/tiles/world-57-23-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-28",
+      "kind": "world",
+      "bounds": {
+        "west": 28,
+        "east": 33,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-28.height",
+      "mesh": "data/global/world-57-28.bin",
+      "coast": "data/tiles/world-57-28-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-33",
+      "kind": "world",
+      "bounds": {
+        "west": 33,
+        "east": 38,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-33.height",
+      "mesh": "data/global/world-57-33.bin",
+      "coast": "data/tiles/world-57-33-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-38",
+      "kind": "world",
+      "bounds": {
+        "west": 38,
+        "east": 43,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-38.height",
+      "mesh": "data/global/world-57-38.bin",
+      "coast": "data/tiles/world-57-38-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-43",
+      "kind": "world",
+      "bounds": {
+        "west": 43,
+        "east": 48,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-43.height",
+      "mesh": "data/global/world-57-43.bin",
+      "coast": "data/tiles/world-57-43-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-48",
+      "kind": "world",
+      "bounds": {
+        "west": 48,
+        "east": 53,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-48.height",
+      "mesh": "data/global/world-57-48.bin",
+      "coast": "data/tiles/world-57-48-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-53",
+      "kind": "world",
+      "bounds": {
+        "west": 53,
+        "east": 58,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-53.height",
+      "mesh": "data/global/world-57-53.bin",
+      "coast": "data/tiles/world-57-53-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-58",
+      "kind": "world",
+      "bounds": {
+        "west": 58,
+        "east": 63,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-58.height",
+      "mesh": "data/global/world-57-58.bin",
+      "coast": "data/tiles/world-57-58-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-63",
+      "kind": "world",
+      "bounds": {
+        "west": 63,
+        "east": 68,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-63.height",
+      "mesh": "data/global/world-57-63.bin",
+      "coast": "data/tiles/world-57-63-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-68",
+      "kind": "world",
+      "bounds": {
+        "west": 68,
+        "east": 73,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-68.height",
+      "mesh": "data/global/world-57-68.bin",
+      "coast": "data/tiles/world-57-68-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    },
+    {
+      "id": "world-57-73",
+      "kind": "world",
+      "bounds": {
+        "west": 73,
+        "east": 75,
+        "south": 57,
+        "north": 62
+      },
+      "width": 129,
+      "height": 129,
+      "heights": "data/tiles/world-57-73.height",
+      "mesh": "data/global/world-57-73.bin",
+      "coast": "data/tiles/world-57-73-coast.png",
+      "grid": 128,
+      "sourceSpacing": "2–19 km"
+    }
+  ],
+  "coast": {
+    "width": 11137,
+    "height": 6401,
+    "samplesPerDegree": 128
+  },
+  "shore": {
+    "width": 2785,
+    "height": 1601,
+    "notice": "Approximate geometric shore distance for colour, not bathymetry"
+  },
+  "ecology": {
+    "width": 1393,
+    "height": 801,
+    "samplesPerDegree": 16,
+    "channels": "R forest suitability, G moisture/colour cue, B aridity cue, A source-river corridor influence; interpretive, not ancient ecology"
+  },
+  "source": "Existing 176 Mapzen world grids and original coast masks, existing macro colour and river centrelines. No downloads or synthesized elevations.",
+  "elevationSamples": 2928816,
+  "maxSourceEastWestEdgeDeltaMetres": 0
+}

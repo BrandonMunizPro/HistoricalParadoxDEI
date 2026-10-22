@@ -1,0 +1,18 @@
+{
+  "bounds": {
+    "west": 6,
+    "east": 20,
+    "south": 35,
+    "north": 49
+  },
+  "width": 449,
+  "height": 449,
+  "grid": 448,
+  "coastWidth": 7169,
+  "mesh": "data/regional/backdrop.bin",
+  "heights": "data/regional/backdrop.height",
+  "fineTiles": 85,
+  "source": "Existing 85 Copernicus regional grids; existing world tiles outside their coverage. No downloads or elevation synthesis.",
+  "sourceLimit": "Copernicus regional sampling ends at 46 N and begins at 9 E; remaining Alpine arc uses existing ~3–4 km world samples.",
+  "heightScale": 1.5
+}

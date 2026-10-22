@@ -1,0 +1,85 @@
+{
+  "camera": {
+    "distance": 200.0,
+    "focus": [
+      51.0,
+      32.7999992370605
+    ],
+    "fov": 42,
+    "pitch": 34.0,
+    "position": [
+      3466.1435546875,
+      115.049331665039,
+      402.086639404297
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 43.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 19.908,
+  "meanFrameMs": 7.00072602739726,
+  "p95FrameMs": 9.144,
+  "primitives": 597415.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 890557488.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-48",
+    "world-27-48",
+    "world-32-53",
+    "world-27-53",
+    "world-32-43",
+    "world-27-43",
+    "world-37-48",
+    "world-37-53",
+    "world-22-48",
+    "world-37-43",
+    "world-22-53",
+    "world-32-58"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 1079.437,
+  "startupMs": 2541,
+  "staticMemoryBytes": 238170891,
+  "tileLoadMs": [
+    344.714,
+    71.567,
+    20.944,
+    31.675,
+    29.297,
+    14.135,
+    8.359,
+    6.071,
+    33.471,
+    43.611,
+    6.261,
+    32.09,
+    26.695
+  ],
+  "view": "persia"
+}

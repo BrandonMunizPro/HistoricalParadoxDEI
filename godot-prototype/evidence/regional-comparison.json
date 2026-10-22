@@ -1,0 +1,219 @@
+{
+  "resolution": [
+    1920,
+    1080
+  ],
+  "matchingCameraVerified": true,
+  "memoryScope": "Each launched runtime plus its console wrapper only; sampled every 200 ms. Baseline memory was not scoped equivalently and is not compared.",
+  "hardware": {
+    "cpu": {
+      "Name": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz"
+    },
+    "ram": {
+      "TotalPhysicalMemory": 16931676160
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "rows": [
+    {
+      "view": "alps",
+      "label": "Alps and northern Italy",
+      "beforeFps": 141.9,
+      "afterFps": 143.2,
+      "beforeP95Ms": 7.5,
+      "afterP95Ms": 8,
+      "maxFrameMs": 11.5,
+      "startupMs": 2386,
+      "startupAndStreamingMaxMs": 1268.4,
+      "largestDetailTileLoadMs": 26.8,
+      "peakWorkingSetMiB": 1360.9,
+      "reportedVideoMemoryMiB": 810.1,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 25463,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "po",
+      "label": "Po Valley",
+      "beforeFps": 142.6,
+      "afterFps": 143,
+      "beforeP95Ms": 7.4,
+      "afterP95Ms": 7.8,
+      "maxFrameMs": 14.5,
+      "startupMs": 2221,
+      "startupAndStreamingMaxMs": 1345.5,
+      "largestDetailTileLoadMs": 24.7,
+      "peakWorkingSetMiB": 1360.3,
+      "reportedVideoMemoryMiB": 809.5,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 24298,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "apennines",
+      "label": "Central Apennines",
+      "beforeFps": 136.7,
+      "afterFps": 140.3,
+      "beforeP95Ms": 11.5,
+      "afterP95Ms": 8.5,
+      "maxFrameMs": 17,
+      "startupMs": 2250,
+      "startupAndStreamingMaxMs": 1175.4,
+      "largestDetailTileLoadMs": 16.9,
+      "peakWorkingSetMiB": 1358.1,
+      "reportedVideoMemoryMiB": 809.5,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 22551,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "south",
+      "label": "Southern Italy",
+      "beforeFps": 81.9,
+      "afterFps": 143.5,
+      "beforeP95Ms": 57.3,
+      "afterP95Ms": 7.7,
+      "maxFrameMs": 18.6,
+      "startupMs": 2200,
+      "startupAndStreamingMaxMs": 1071.4,
+      "largestDetailTileLoadMs": 15.9,
+      "peakWorkingSetMiB": 1363.1,
+      "reportedVideoMemoryMiB": 809.6,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 12741,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "sicily",
+      "label": "Sicily regional",
+      "beforeFps": 81.2,
+      "afterFps": 143.4,
+      "beforeP95Ms": 64.8,
+      "afterP95Ms": 7.4,
+      "maxFrameMs": 20.4,
+      "startupMs": 2198,
+      "startupAndStreamingMaxMs": 1219,
+      "largestDetailTileLoadMs": 16.7,
+      "peakWorkingSetMiB": 1356.5,
+      "reportedVideoMemoryMiB": 809,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 0.919541069450505,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 0,
+        "vegetationTiles": 0
+      }
+    },
+    {
+      "view": "etna",
+      "label": "Etna campaign view",
+      "beforeFps": 123.8,
+      "afterFps": 138.8,
+      "beforeP95Ms": 8.8,
+      "afterP95Ms": 9,
+      "maxFrameMs": 16.7,
+      "startupMs": 2428,
+      "startupAndStreamingMaxMs": 1490.1,
+      "largestDetailTileLoadMs": 27.7,
+      "peakWorkingSetMiB": 1524.4,
+      "reportedVideoMemoryMiB": 810,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 9,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 32555,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "catana",
+      "label": "Catana close view",
+      "beforeFps": 113.9,
+      "afterFps": 142.2,
+      "beforeP95Ms": 12.7,
+      "afterP95Ms": 8.3,
+      "maxFrameMs": 15,
+      "startupMs": 2402,
+      "startupAndStreamingMaxMs": 1089,
+      "largestDetailTileLoadMs": 15.3,
+      "peakWorkingSetMiB": 1416,
+      "reportedVideoMemoryMiB": 862.1,
+      "sampleCount": 511,
+      "regional": {
+        "active": true,
+        "backdropGrid": 448,
+        "localVegetationCells": 9,
+        "materialDetail": 1,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 28035,
+        "vegetationTiles": 12
+      }
+    },
+    {
+      "view": "overview",
+      "label": "Campaign overview",
+      "beforeFps": 141.3,
+      "afterFps": 143.9,
+      "beforeP95Ms": 8.8,
+      "afterP95Ms": 7.6,
+      "maxFrameMs": 8.1,
+      "startupMs": 2286,
+      "startupAndStreamingMaxMs": 150,
+      "largestDetailTileLoadMs": null,
+      "peakWorkingSetMiB": 1337.6,
+      "reportedVideoMemoryMiB": 794.9,
+      "sampleCount": 511,
+      "regional": {
+        "active": false,
+        "backdropGrid": 448,
+        "localVegetationCells": 0,
+        "materialDetail": 0,
+        "parentHeightChannel": "float UV2.x",
+        "renderFrames": 601,
+        "vegetationInstancesResident": 0,
+        "vegetationTiles": 0
+      }
+    }
+  ]
+}

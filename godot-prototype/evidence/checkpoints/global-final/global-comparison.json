@@ -1,0 +1,1094 @@
+{
+  "groups": {
+    "A": [
+      "greece",
+      "balkans",
+      "aegean"
+    ],
+    "B": [
+      "anatolia",
+      "levant"
+    ],
+    "C": [
+      "africa",
+      "egypt",
+      "delta"
+    ],
+    "D": [
+      "iberia",
+      "gaul"
+    ],
+    "E": [
+      "mesopotamia",
+      "persia",
+      "east"
+    ]
+  },
+  "matchingCameras": true,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "hardware": {
+    "cpu": {
+      "Name": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz"
+    },
+    "ram": {
+      "TotalPhysicalMemory": 16931676160
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "method": "Same scene eye, focus, FOV, pitch, yaw, sun, sky and atmosphere settings; water animation phase differs. Legacy interval sample excludes first 90 frames but can include vegetation work. Separate after-only settled samples follow terrain reveal and vegetation completion. Short refresh-limited desktop runs, not controlled GPU benchmarks. RAM scopes launched runtime and console wrapper only.",
+  "rows": [
+    {
+      "view": "greece",
+      "label": "Greece",
+      "before": {
+        "averageFps": 136.1,
+        "meanMs": 7.3,
+        "p95Ms": 13.8,
+        "maxMs": 14.5,
+        "setupMs": 2655,
+        "startupStreamingMaxMs": 1097.8,
+        "detailTileMaxMs": 173.2,
+        "peakRamMiB": 1319.2,
+        "videoMemoryMiB": 848.8,
+        "drawCalls": 46,
+        "primitives": 2654435,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 7.7,
+        "maxMs": 49.5,
+        "setupMs": 2553,
+        "startupStreamingMaxMs": 196.7,
+        "detailTileMaxMs": 12.2,
+        "peakRamMiB": 1190.7,
+        "videoMemoryMiB": 988.1,
+        "drawCalls": 51,
+        "primitives": 2659563,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.261,
+          "meanMs": 6.9438892733564,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.581,
+          "samples": 289
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 15113,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 95,
+        "focus": [
+          22.3999996185303,
+          38.5
+        ],
+        "fov": 42,
+        "pitch": 32,
+        "position": [
+          794.412414550781,
+          51.2411880493164,
+          372.301452636719
+        ],
+        "yaw": 15
+      }
+    },
+    {
+      "view": "balkans",
+      "label": "Northern Balkans",
+      "before": {
+        "averageFps": 141.1,
+        "meanMs": 7.1,
+        "p95Ms": 9.4,
+        "maxMs": 15,
+        "setupMs": 2658,
+        "startupStreamingMaxMs": 1095.6,
+        "detailTileMaxMs": 168,
+        "peakRamMiB": 1176.9,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 48,
+        "primitives": 2663653,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 141.7,
+        "meanMs": 7.1,
+        "p95Ms": 7.9,
+        "maxMs": 64.9,
+        "setupMs": 2520,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 13.3,
+        "peakRamMiB": 1188.6,
+        "videoMemoryMiB": 989.2,
+        "drawCalls": 50,
+        "primitives": 2725547,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.449,
+          "meanMs": 6.93522695035462,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.314,
+          "samples": 282
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 28944,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 150,
+        "focus": [
+          23,
+          42.5
+        ],
+        "fov": 42,
+        "pitch": 35,
+        "position": [
+          802.810913085938,
+          87.1364669799805,
+          -34.0846710205078
+        ],
+        "yaw": 12
+      }
+    },
+    {
+      "view": "aegean",
+      "label": "Aegean islands",
+      "before": {
+        "averageFps": 143.5,
+        "meanMs": 7,
+        "p95Ms": 8.7,
+        "maxMs": 18.2,
+        "setupMs": 2444,
+        "startupStreamingMaxMs": 1053.5,
+        "detailTileMaxMs": 70,
+        "peakRamMiB": 1316.6,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 45,
+        "primitives": 1062629,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0.966551240307475,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.2,
+        "meanMs": 7,
+        "p95Ms": 7.2,
+        "maxMs": 57.4,
+        "setupMs": 2336,
+        "startupStreamingMaxMs": 149.6,
+        "detailTileMaxMs": 14.1,
+        "peakRamMiB": 1171.1,
+        "videoMemoryMiB": 987.9,
+        "drawCalls": 47,
+        "primitives": 1152789,
+        "samples": 511,
+        "settled": {
+          "maxMs": 7.667,
+          "meanMs": 6.94878333333333,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.195,
+          "samples": 300
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0.966551240307475,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "camera": {
+        "distance": 420,
+        "focus": [
+          25.3999996185303,
+          37.5999984741211
+        ],
+        "fov": 42,
+        "pitch": 57,
+        "position": [
+          1046.11328125,
+          352.242645263672,
+          592.020141601563
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "anatolia",
+      "label": "Anatolian interior",
+      "before": {
+        "averageFps": 140.6,
+        "meanMs": 7.1,
+        "p95Ms": 9.3,
+        "maxMs": 78.2,
+        "setupMs": 2368,
+        "startupStreamingMaxMs": 1062.8,
+        "detailTileMaxMs": 72.1,
+        "peakRamMiB": 1131,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 44,
+        "primitives": 1058021,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 7.6,
+        "maxMs": 49.4,
+        "setupMs": 2353,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 13.1,
+        "peakRamMiB": 1190.8,
+        "videoMemoryMiB": 988.5,
+        "drawCalls": 69,
+        "primitives": 1119921,
+        "samples": 511,
+        "settled": {
+          "maxMs": 7.818,
+          "meanMs": 6.93984668989547,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.316,
+          "samples": 287
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 12683,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 150,
+        "focus": [
+          30.7999992370605,
+          38.5
+        ],
+        "fov": 42,
+        "pitch": 32,
+        "position": [
+          1529.57409667969,
+          81.1607971191406,
+          308.572570800781
+        ],
+        "yaw": 15
+      }
+    },
+    {
+      "view": "levant",
+      "label": "Levant",
+      "before": {
+        "averageFps": 143,
+        "meanMs": 7,
+        "p95Ms": 8.7,
+        "maxMs": 16.7,
+        "setupMs": 2380,
+        "startupStreamingMaxMs": 1086.2,
+        "detailTileMaxMs": 69.6,
+        "peakRamMiB": 1113.7,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 40,
+        "primitives": 583591,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 7.5,
+        "maxMs": 47.1,
+        "setupMs": 2329,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 13.6,
+        "peakRamMiB": 1187.8,
+        "videoMemoryMiB": 988.1,
+        "drawCalls": 46,
+        "primitives": 652513,
+        "samples": 511,
+        "settled": {
+          "maxMs": 7.857,
+          "meanMs": 6.94077224199289,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.461,
+          "samples": 281
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 3917,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 110,
+        "focus": [
+          35.7000007629395,
+          33.5
+        ],
+        "fov": 42,
+        "pitch": 36,
+        "position": [
+          2064.20581054688,
+          66.0493469238281,
+          724.717041015625
+        ],
+        "yaw": 12
+      }
+    },
+    {
+      "view": "africa",
+      "label": "North African coast",
+      "before": {
+        "averageFps": 142.1,
+        "meanMs": 7,
+        "p95Ms": 10.1,
+        "maxMs": 13.8,
+        "setupMs": 2409,
+        "startupStreamingMaxMs": 1198,
+        "detailTileMaxMs": 28.6,
+        "peakRamMiB": 1368.1,
+        "videoMemoryMiB": 843.2,
+        "drawCalls": 54,
+        "primitives": 3001061,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 9609,
+          "vegetationTiles": 12
+        }
+      },
+      "after": {
+        "averageFps": 144,
+        "meanMs": 6.9,
+        "p95Ms": 7.6,
+        "maxMs": 9,
+        "setupMs": 2344,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 15.4,
+        "peakRamMiB": 1184.7,
+        "videoMemoryMiB": 988.5,
+        "drawCalls": 56,
+        "primitives": 2924185,
+        "samples": 511,
+        "settled": {
+          "maxMs": 9.028,
+          "meanMs": 6.93695895522387,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.617,
+          "samples": 268
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 9609,
+          "vegetationTiles": 12
+        }
+      },
+      "camera": {
+        "distance": 150,
+        "focus": [
+          9.5,
+          35.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 35,
+        "position": [
+          -339.889465332031,
+          86.9484176635742,
+          746.773193359375
+        ],
+        "yaw": 10
+      }
+    },
+    {
+      "view": "egypt",
+      "label": "Nile Valley",
+      "before": {
+        "averageFps": 143.1,
+        "meanMs": 7,
+        "p95Ms": 9.4,
+        "maxMs": 16.4,
+        "setupMs": 2369,
+        "startupStreamingMaxMs": 1072,
+        "detailTileMaxMs": 65.7,
+        "peakRamMiB": 1115.6,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 39,
+        "primitives": 578983,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 141.1,
+        "meanMs": 7.1,
+        "p95Ms": 7.3,
+        "maxMs": 90.1,
+        "setupMs": 2322,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 11.9,
+        "peakRamMiB": 1174.9,
+        "videoMemoryMiB": 988.1,
+        "drawCalls": 42,
+        "primitives": 621127,
+        "samples": 511,
+        "settled": {
+          "maxMs": 7.621,
+          "meanMs": 6.94532616487455,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.174,
+          "samples": 279
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 3175,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 180,
+        "focus": [
+          31,
+          28.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 48,
+        "position": [
+          1710.20715332031,
+          133.953094482422,
+          1372.84655761719
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "delta",
+      "label": "Nile Delta",
+      "before": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 8.9,
+        "maxMs": 24.4,
+        "setupMs": 2396,
+        "startupStreamingMaxMs": 1070.4,
+        "detailTileMaxMs": 67.8,
+        "peakRamMiB": 1116,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 41,
+        "primitives": 588199,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 141.4,
+        "meanMs": 7.1,
+        "p95Ms": 7.3,
+        "maxMs": 85.4,
+        "setupMs": 2364,
+        "startupStreamingMaxMs": 145.1,
+        "detailTileMaxMs": 10.6,
+        "peakRamMiB": 1172.4,
+        "videoMemoryMiB": 988,
+        "drawCalls": 44,
+        "primitives": 686361,
+        "samples": 511,
+        "settled": {
+          "maxMs": 7.551,
+          "meanMs": 6.94535483870967,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.23,
+          "samples": 279
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 1780,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 180,
+        "focus": [
+          31,
+          30.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 55,
+        "position": [
+          1671.96276855469,
+          147.459411621094,
+          1134.56286621094
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "iberia",
+      "label": "Interior Iberia",
+      "before": {
+        "averageFps": 143.7,
+        "meanMs": 7,
+        "p95Ms": 9.2,
+        "maxMs": 10.6,
+        "setupMs": 2445,
+        "startupStreamingMaxMs": 1127.3,
+        "detailTileMaxMs": 72.1,
+        "peakRamMiB": 1114.5,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 42,
+        "primitives": 592807,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 7.7,
+        "maxMs": 50.1,
+        "setupMs": 2381,
+        "startupStreamingMaxMs": 143.1,
+        "detailTileMaxMs": 13.8,
+        "peakRamMiB": 1179.3,
+        "videoMemoryMiB": 988.5,
+        "drawCalls": 44,
+        "primitives": 717953,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.04,
+          "meanMs": 6.94071631205674,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.553,
+          "samples": 282
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 12642,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 180,
+        "focus": [
+          -3,
+          40
+        ],
+        "fov": 42,
+        "pitch": 34,
+        "position": [
+          -1358.689453125,
+          101.842491149902,
+          178.013702392578
+        ],
+        "yaw": 15
+      }
+    },
+    {
+      "view": "gaul",
+      "label": "Gaul",
+      "before": {
+        "averageFps": 143,
+        "meanMs": 7,
+        "p95Ms": 9.6,
+        "maxMs": 14.2,
+        "setupMs": 2427,
+        "startupStreamingMaxMs": 1108.8,
+        "detailTileMaxMs": 73.1,
+        "peakRamMiB": 1315.8,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 47,
+        "primitives": 2599847,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 135.5,
+        "meanMs": 7.4,
+        "p95Ms": 8.3,
+        "maxMs": 131,
+        "setupMs": 2408,
+        "startupStreamingMaxMs": 147,
+        "detailTileMaxMs": 16.7,
+        "peakRamMiB": 1177.9,
+        "videoMemoryMiB": 989.3,
+        "drawCalls": 50,
+        "primitives": 2726017,
+        "samples": 511,
+        "settled": {
+          "maxMs": 130.956,
+          "meanMs": 7.26768150684932,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.34,
+          "samples": 292
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 29685,
+          "vegetationTiles": 9
+        }
+      },
+      "camera": {
+        "distance": 160,
+        "focus": [
+          3.5,
+          46
+        ],
+        "fov": 42,
+        "pitch": 36,
+        "position": [
+          -748.859741210938,
+          94.6525039672852,
+          -418.941833496094
+        ],
+        "yaw": 10
+      }
+    },
+    {
+      "view": "mesopotamia",
+      "label": "Mesopotamia",
+      "before": {
+        "averageFps": 142.9,
+        "meanMs": 7,
+        "p95Ms": 9.4,
+        "maxMs": 18.3,
+        "setupMs": 2417,
+        "startupStreamingMaxMs": 1042.3,
+        "detailTileMaxMs": 70.3,
+        "peakRamMiB": 1115.3,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 41,
+        "primitives": 588199,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 138.7,
+        "meanMs": 7.2,
+        "p95Ms": 7.6,
+        "maxMs": 145.5,
+        "setupMs": 2415,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 12.7,
+        "peakRamMiB": 1175.8,
+        "videoMemoryMiB": 988.1,
+        "drawCalls": 44,
+        "primitives": 688369,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.137,
+          "meanMs": 6.94942,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.6,
+          "samples": 300
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "camera": {
+        "distance": 200,
+        "focus": [
+          44,
+          33
+        ],
+        "fov": 42,
+        "pitch": 43,
+        "position": [
+          2803.98120117188,
+          136.478469848633,
+          613.410278320313
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "view": "persia",
+      "label": "Iranian plateau",
+      "before": {
+        "averageFps": 142.8,
+        "meanMs": 7,
+        "p95Ms": 9.1,
+        "maxMs": 19.9,
+        "setupMs": 2541,
+        "startupStreamingMaxMs": 1079.4,
+        "detailTileMaxMs": 71.6,
+        "peakRamMiB": 1114.6,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 43,
+        "primitives": 597415,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 142.5,
+        "meanMs": 7,
+        "p95Ms": 7.5,
+        "maxMs": 48.5,
+        "setupMs": 2402,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": 13.1,
+        "peakRamMiB": 1174.3,
+        "videoMemoryMiB": 987.9,
+        "drawCalls": 45,
+        "primitives": 750721,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.58,
+          "meanMs": 6.95015333333333,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.519,
+          "samples": 300
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 1,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "camera": {
+        "distance": 200,
+        "focus": [
+          51,
+          32.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 34,
+        "position": [
+          3466.1435546875,
+          115.049331665039,
+          402.086639404297
+        ],
+        "yaw": 15
+      }
+    },
+    {
+      "view": "east",
+      "label": "Eastern campaign coverage",
+      "before": {
+        "averageFps": 143.6,
+        "meanMs": 7,
+        "p95Ms": 8.7,
+        "maxMs": 15.4,
+        "setupMs": 2378,
+        "startupStreamingMaxMs": 1250.6,
+        "detailTileMaxMs": 68,
+        "peakRamMiB": 1146.3,
+        "videoMemoryMiB": 849.3,
+        "drawCalls": 43,
+        "primitives": 597415,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0.994065590278943,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 137.7,
+        "meanMs": 7.3,
+        "p95Ms": 7.6,
+        "maxMs": 177.1,
+        "setupMs": 2391,
+        "startupStreamingMaxMs": 177.1,
+        "detailTileMaxMs": 12.8,
+        "peakRamMiB": 1169.6,
+        "videoMemoryMiB": 987.9,
+        "drawCalls": 46,
+        "primitives": 754993,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.392,
+          "meanMs": 6.94688666666667,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 7.701,
+          "samples": 300
+        },
+        "vegetation": {
+          "active": true,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0.994065590278943,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "camera": {
+        "distance": 320,
+        "focus": [
+          69,
+          35.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          4758.41650390625,
+          200.7626953125,
+          -660.782958984375
+        ],
+        "yaw": 12
+      }
+    },
+    {
+      "view": "overview",
+      "label": "Campaign overview",
+      "before": {
+        "averageFps": 143.9,
+        "meanMs": 6.9,
+        "p95Ms": 9.7,
+        "maxMs": 11.9,
+        "setupMs": 2444,
+        "startupStreamingMaxMs": 144.6,
+        "detailTileMaxMs": null,
+        "peakRamMiB": 1401.9,
+        "videoMemoryMiB": 828.8,
+        "drawCalls": 46,
+        "primitives": 574344,
+        "samples": 511,
+        "settled": null,
+        "vegetation": {
+          "active": false,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "after": {
+        "averageFps": 143.9,
+        "meanMs": 6.9,
+        "p95Ms": 7.8,
+        "maxMs": 8.7,
+        "setupMs": 2468,
+        "startupStreamingMaxMs": 150,
+        "detailTileMaxMs": null,
+        "peakRamMiB": 1176.5,
+        "videoMemoryMiB": 977.8,
+        "drawCalls": 49,
+        "primitives": 574462,
+        "samples": 511,
+        "settled": {
+          "maxMs": 8.742,
+          "meanMs": 6.9471,
+          "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+          "p95Ms": 8.138,
+          "samples": 300
+        },
+        "vegetation": {
+          "active": false,
+          "backdropGrid": 448,
+          "localVegetationCells": 0,
+          "materialDetail": 0,
+          "parentHeightChannel": "float UV2.x",
+          "renderFrames": 601,
+          "vegetationInstancesResident": 0,
+          "vegetationTiles": 0
+        }
+      },
+      "camera": {
+        "distance": 8500,
+        "focus": [
+          29,
+          37
+        ],
+        "fov": 42,
+        "pitch": 78,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ],
+        "yaw": 0
+      }
+    }
+  ]
+}

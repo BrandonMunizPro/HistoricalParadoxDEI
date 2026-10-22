@@ -1,0 +1,8 @@
+{
+  "evidenceType": "Counters retained from an intermediate actual capture JSON read during this task. That intermediate raw capture was superseded by final captures; this is not a controlled cache-cold benchmark.",
+  "view": "overview",
+  "condition": "First capture after the strategic-mask shader change, before the final global sea-over-land discard correction.",
+  "startupAndStreamingMaxFrameMs": 1618.077,
+  "sceneSetupMs": 2738,
+  "interpretation": "Shader changes and initial resource/render setup can still cause a large frame spike. Shader compilation, uploads and background load were not measured independently. Final warm runs do not establish that cold-start stalls are solved."
+}

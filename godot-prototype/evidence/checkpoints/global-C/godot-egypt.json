@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 180.0,
+    "focus": [
+      31.0,
+      28.7999992370605
+    ],
+    "fov": 42,
+    "pitch": 48.0,
+    "position": [
+      1710.20715332031,
+      133.953094482422,
+      1372.84655761719
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 42.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 142.196,
+  "meanFrameMs": 7.28466927592955,
+  "p95FrameMs": 7.389,
+  "primitives": 621127.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 2927,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 966620976.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-27-28",
+    "world-22-28",
+    "world-27-33",
+    "world-27-23",
+    "world-32-28",
+    "world-22-33",
+    "world-22-23",
+    "world-32-33",
+    "world-32-23",
+    "world-17-28",
+    "world-27-38",
+    "world-17-33"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 7.343,
+    "meanMs": 6.89440647482014,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 6.948,
+    "samples": 278
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 150.0,
+  "startupMs": 2395,
+  "staticMemoryBytes": 230087471,
+  "tileLoadMs": [
+    111.329,
+    9.614,
+    10.463,
+    8.491,
+    9.154,
+    8.255,
+    8.764,
+    10.099,
+    9.722,
+    8.554,
+    13.044,
+    8.108,
+    13.528
+  ],
+  "view": "egypt"
+}

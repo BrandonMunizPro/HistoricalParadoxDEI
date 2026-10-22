@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 180.0,
+    "focus": [
+      31.0,
+      30.7999992370605
+    ],
+    "fov": 42,
+    "pitch": 55.0,
+    "position": [
+      1671.96276855469,
+      147.459411621094,
+      1134.56286621094
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 44.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 85.357,
+  "meanFrameMs": 7.06977886497065,
+  "p95FrameMs": 7.285,
+  "primitives": 686361.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 1780,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1036024144.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-27-28",
+    "world-32-28",
+    "world-27-33",
+    "world-27-23",
+    "world-32-33",
+    "world-22-28",
+    "world-32-23",
+    "world-22-33",
+    "world-22-23",
+    "world-37-28",
+    "world-27-38",
+    "world-37-33"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 7.551,
+    "meanMs": 6.94535483870967,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 7.23,
+    "samples": 279
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 145.143,
+  "startupMs": 2364,
+  "staticMemoryBytes": 234572532,
+  "tileLoadMs": [
+    120.333,
+    10.571,
+    9.677,
+    9.274,
+    9.551,
+    9.633,
+    9.751,
+    9.284,
+    9.193,
+    9.344,
+    9.782,
+    9.538,
+    10.08
+  ],
+  "view": "delta"
+}

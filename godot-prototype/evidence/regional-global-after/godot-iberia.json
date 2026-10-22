@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 180.0,
+    "focus": [
+      -3.0,
+      40.0
+    ],
+    "fov": 42,
+    "pitch": 34.0,
+    "position": [
+      -1358.689453125,
+      101.842491149902,
+      178.013702392578
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 44.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 50.136,
+  "meanFrameMs": 7.00253033268102,
+  "p95FrameMs": 7.696,
+  "primitives": 717953.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 12642,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1036474832.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-37--7",
+    "world-37--2",
+    "world-42--7",
+    "world-32--7",
+    "world-42--2",
+    "world-32--2",
+    "world-37--12",
+    "world-42--12",
+    "world-32--12",
+    "world-37-3",
+    "world-42-3",
+    "world-47--7"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 8.04,
+    "meanMs": 6.94071631205674,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 7.553,
+    "samples": 282
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 143.055333333334,
+  "startupMs": 2381,
+  "staticMemoryBytes": 236755404,
+  "tileLoadMs": [
+    110.51,
+    13.777,
+    11.995,
+    11.724,
+    10.956,
+    11.148,
+    11.327,
+    10.71,
+    10.794,
+    11.002,
+    10.961,
+    11.218,
+    10.845
+  ],
+  "view": "iberia"
+}
