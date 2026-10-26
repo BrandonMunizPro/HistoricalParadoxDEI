@@ -1,0 +1,26 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {researchLocations} from '../../dist/presentation/research-markers.js';
+const project=path.resolve(fileURLToPath(new URL('..',import.meta.url))),repo=path.dirname(project);
+const read=p=>JSON.parse(fs.readFileSync(path.join(repo,p)));
+const run=process.argv[2]??'final';
+const source=read(`godot-prototype/evidence/repair-20261026/${run}/source.json`);
+const protectedFiles=read('godot-prototype/evidence/protected-before.json');
+assert.equal(protectedFiles.length,460);
+for(const f of protectedFiles)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(repo,f.path))).digest('hex'),f.sha256,f.path);
+const atlas=read('public/data/settlement-atlas.json').records,approved=read('public/data/approved-settlements.json').records;
+const expected=[...atlas.filter(s=>['existing','expansion'].includes(s.selection)),...approved.map(p=>p.atlas)];
+const sites=read('godot-prototype/data/sites.json');assert.equal(sites.length,35);
+for(const e of expected){const s=sites.find(s=>s.id===e.id);assert.ok(s);assert.equal(s.locationId,e.locationId);assert.equal(s.lon,e.coordinates.lon);assert.equal(s.lat,e.coordinates.lat);}
+assert.ok(fs.readFileSync(path.join(project,'data/research-locations.json')).equals(fs.readFileSync(path.join(repo,'public/data/research-locations.json'))));
+const records=read('public/data/research-locations.json').records;assert.equal(records.length,687);
+const promoted=new Set(approved.map(r=>r.provenance.candidateId));
+const research=researchLocations(records.filter(r=>!promoted.has(r.proposedId)));assert.equal(research.locations.length,660);
+const global=read('godot-prototype/evidence/global-geography-validation.json'),regional=read('godot-prototype/evidence/regional-geography-validation.json');
+assert.ok(global.passed&&regional.passed);
+const result={passed:true,protectedFiles:460,protectedChanges:0,approvedSites:35,canonicalCoordinatesExact:true,researchRecords:687,browserResearchReferences:660,researchCopyByteIdentical:true,global,regional,evidence:{sourceRevision:source.sourceRevision,recordedAtUtc:new Date().toISOString()}};
+fs.writeFileSync(path.join(project,`evidence/repair-20261026/${run}/integrity.json`),JSON.stringify(result,null,2)+'\n');
+console.log('CHECKPOINT_INTEGRITY_OK 460 protected files; 35 exact sites; 687 research records');

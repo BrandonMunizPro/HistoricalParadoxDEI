@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 1000.0,
+    "focus": [
+      48.5,
+      33.5
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      3382.25415039063,
+      617.932495117188,
+      1021.94873046875
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 51.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 326.621,
+  "meanFrameMs": 7.73993542074365,
+  "p95FrameMs": 8.243,
+  "primitives": 930335.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.524185156590917,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1036442352.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-48",
+    "world-32-43",
+    "world-27-48",
+    "world-27-43",
+    "world-37-48",
+    "world-37-43",
+    "world-32-53",
+    "world-27-53",
+    "world-32-38",
+    "world-27-38",
+    "world-22-48",
+    "world-37-53"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 13.499,
+    "meanMs": 7.06275333333334,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 8.178,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 326.621,
+  "startupMs": 2542,
+  "staticMemoryBytes": 234504800,
+  "tileLoadMs": [
+    129.142,
+    11.496,
+    10.86,
+    10.606,
+    9.68,
+    9.304,
+    9.984,
+    10.47,
+    11.387,
+    10.143,
+    10.0,
+    11.024,
+    10.173
+  ],
+  "view": "zagros-strategic"
+}

@@ -1,0 +1,90 @@
+{
+  "status": "independent-review-pending",
+  "accepted": false,
+  "sourceRevision": "2ada68e20dca03fc0529b6c139fe10292c497a1ba67ee3a559f989e130922b22",
+  "recordedAtUtc": "2026-10-26T21:19:16.537Z",
+  "evidenceRecords": 92,
+  "productionViews": 9,
+  "captureProfiles": 24,
+  "globalCases": 17,
+  "regionalCases": 9,
+  "tests": 475,
+  "negativeTimeoutTest": "expected failure recorded",
+  "candidate": {
+    "minSettledFps": 103.85312398851387,
+    "maxSettledFps": 144.62660509705483,
+    "maxStartupStreamingFrameMs": 188,
+    "maxTerrainNodes": 13
+  },
+  "pairs": [
+    {
+      "name": "anatolia-overview",
+      "currentFps": 108.63212599588502,
+      "referenceFps": 104.33240303607293,
+      "repeatFps": 102.42956089812967,
+      "currentGpuMs": 8.1731333398819,
+      "referenceGpuMs": 8.61054665724437,
+      "repeatGpuMs": 8.72498998324076
+    },
+    {
+      "name": "anatolia-strategic",
+      "currentFps": 143.9913144439128,
+      "referenceFps": 143.1669971438184,
+      "repeatFps": 143.06813429138109,
+      "currentGpuMs": 5.44402002731959,
+      "referenceGpuMs": 5.81528667847315,
+      "repeatGpuMs": 5.81173667112986
+    },
+    {
+      "name": "zagros-overview",
+      "currentFps": 103.85312398851387,
+      "referenceFps": 101.62050837352993,
+      "repeatFps": 99.94249974847837,
+      "currentGpuMs": 8.58882663091024,
+      "referenceGpuMs": 8.81528667767843,
+      "repeatGpuMs": 9.01304000854492
+    },
+    {
+      "name": "zagros-strategic",
+      "currentFps": 137.23357245520918,
+      "referenceFps": 129.7413433332195,
+      "repeatFps": 132.2770569413047,
+      "currentGpuMs": 6.2289066696167,
+      "referenceGpuMs": 6.51091000874837,
+      "repeatGpuMs": 6.44447666803996
+    }
+  ],
+  "edgeControls": {
+    "patch": [
+      400,
+      80,
+      1200,
+      70
+    ],
+    "thresholdPerChannel": 10,
+    "noShadowChangedPixels": 0,
+    "noOverlapChangedPixels": 275,
+    "notice": "One fixed land join patch; this is not a whole-world seam-free guarantee."
+  },
+  "approach": {
+    "peakFrameMs": 58.259,
+    "river": {
+      "cancelled": 1,
+      "completed": 1,
+      "maxChunkMs": 2.106,
+      "maxUploadMs": 2.572
+    },
+    "trace": {
+      "elapsedMs": 5333,
+      "from": "campaign",
+      "maxFixedLocationHeightStepMetres": 0,
+      "maxRelativeDistanceStep": 0.08,
+      "to": "apennines"
+    }
+  },
+  "limitations": [
+    "First-use render pipeline stalls remain; no cache-cold guarantee.",
+    "Source-resolution and coarse/fine geometry transitions remain.",
+    "Diagnostic comparisons are not production navigation presets."
+  ]
+}

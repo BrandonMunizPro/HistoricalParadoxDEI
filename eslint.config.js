@@ -10,6 +10,9 @@ export default tseslint.config(
       'data/geography/source-cache/**',
       'node_modules/**',
       'coverage/**',
+      'godot-prototype/.godot/**',
+      'godot-prototype/.vite-cache/**',
+      'godot-prototype/evidence/**',
       // Preserved research output is not project source: legacy CommonJS tooling
       // plus large generated JSON. Never linted, never modified.
       'research/**',
@@ -101,6 +104,19 @@ export default tseslint.config(
         performance: 'readonly',
       },
     },
+  },
+  {
+    // CLI tools are linted as Node programs; stdout is their reporting interface.
+    files: ['godot-prototype/tools/**/*.mjs'],
+    languageOptions: {
+      globals: { URL: 'readonly', Buffer: 'readonly', process: 'readonly', console: 'readonly' },
+    },
+    rules: { 'no-console': 'off' },
+  },
+  {
+    // These callbacks execute in Playwright's browser context.
+    files: ['godot-prototype/tools/compare.mjs'],
+    languageOptions: { globals: { window: 'readonly', document: 'readonly', Event: 'readonly' } },
   },
   {
     // Tooling config is not part of the typechecked project (it pulls in

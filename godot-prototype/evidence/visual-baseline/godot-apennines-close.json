@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 144.0,
+    "focus": [
+      13.3000001907349,
+      42.0
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      12.8421268463135,
+      90.1486282348633,
+      53.9903182983398
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 89.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 47.952,
+  "meanFrameMs": 8.36479256360078,
+  "p95FrameMs": 11.679,
+  "primitives": 3353303.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 23051,
+    "vegetationTiles": 12
+  },
+  "renderVideoMemoryBytes": 1037300160.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "N41E13",
+    "N42E13",
+    "N41E12",
+    "N42E12",
+    "N41E14",
+    "N42E14",
+    "N40E13",
+    "N43E13",
+    "N43E12",
+    "N41E11",
+    "N42E11",
+    "N40E14"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 47.952,
+    "meanMs": 8.20996268656717,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.763,
+    "samples": 268
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 296.225,
+  "startupMs": 2765,
+  "staticMemoryBytes": 239509228,
+  "tileLoadMs": [
+    127.396,
+    10.683,
+    11.751,
+    10.89,
+    10.631,
+    11.446,
+    10.575,
+    12.419,
+    12.567,
+    11.244,
+    10.87,
+    17.491,
+    13.05
+  ],
+  "view": "apennines-close"
+}

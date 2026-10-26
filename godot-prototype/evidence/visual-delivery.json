@@ -1,0 +1,1522 @@
+{
+  "baseCommit": "3ff5be155bbe8dc67133745330ff1c42f078b9e9",
+  "committed": false,
+  "scope": "Godot visual presentation only; ignored logs and engine caches excluded",
+  "validation": {
+    "typecheck": "passed",
+    "testFiles": 9,
+    "testsPassed": 83,
+    "gpuChecks": 34,
+    "approvedSites": 35,
+    "researchRecords": 687,
+    "protectedFiles": 460,
+    "protectedChanges": 0,
+    "matchedCameraPairs": 30,
+    "lint": {
+      "passed": false,
+      "errors": 3870,
+      "warnings": 0,
+      "generatedCacheErrors": 3769,
+      "godotToolErrors": 101
+    }
+  },
+  "files": [
+    {
+      "path": "godot-prototype/README.md",
+      "status": "modified",
+      "bytes": 6776,
+      "sha256": "048fc1a084112e6b5937dfd6a568cd17a44fff70bbe28df173763b96e73367ad"
+    },
+    {
+      "path": "godot-prototype/VISUAL-DEBT.md",
+      "status": "added",
+      "bytes": 2166,
+      "sha256": "df4d770ac269cd37cc7845e9b9d3c69362f829190400e47ca1523e6941e2e481"
+    },
+    {
+      "path": "godot-prototype/VISUAL-UPGRADE.md",
+      "status": "added",
+      "bytes": 12300,
+      "sha256": "fb2431966bd1083b9deb80c00bc5139d889f4281d7748634f00ebe36e65030e4"
+    },
+    {
+      "path": "godot-prototype/data/visual-settings.json",
+      "status": "added",
+      "bytes": 833,
+      "sha256": "2338adda3416f77906945d795072a7f718dc16b6acd1dec774a5c654210ae19c"
+    },
+    {
+      "path": "godot-prototype/data/visual-views.json",
+      "status": "added",
+      "bytes": 500,
+      "sha256": "7a7a9bc4a3f35a6eeaf49788afffe8c1572e4e116630dbf97d6d01c848e77654"
+    },
+    {
+      "path": "godot-prototype/data/visual/relief-provenance.json",
+      "status": "added",
+      "bytes": 40565,
+      "sha256": "cb62d8f1e2d5a10c7d02fb5ad73146e25c4feffaa2989a713de76798cc1edf41"
+    },
+    {
+      "path": "godot-prototype/data/visual/relief.png",
+      "status": "added",
+      "bytes": 2494343,
+      "sha256": "66fdf24db1a1a71a34e6d8293ac76f973ad3195557a941c7f06232f2f8cbd0b4"
+    },
+    {
+      "path": "godot-prototype/evidence/global-navigation-validation.json",
+      "status": "modified",
+      "bytes": 2338,
+      "sha256": "aaedbf0d2c3edfe12cc1670c4a14124ee99bbd9ec8c60e94a6e45bafbcc03c57"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/godot-campaign.json",
+      "status": "added",
+      "bytes": 2485,
+      "sha256": "f187b0a1ee5a71ddcdd955d9a9a36dca9798fe1f6a672c7be002ff3ad836b844"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/godot-campaign.png",
+      "status": "added",
+      "bytes": 1640719,
+      "sha256": "0687c614439d0856ecb1982e3abd7d0ba40b37f3d34e7b9fa885214ea1a7e879"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/godot-overview.json",
+      "status": "added",
+      "bytes": 2146,
+      "sha256": "c7450d45d191d44d3dfc2b7c3dc54fda7472c82d1a87dba42a0037e407099ab7"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/godot-overview.png",
+      "status": "added",
+      "bytes": 1508823,
+      "sha256": "9faec62801828f73240792b91daa9926e2e9497e4da6a50b1aee572cb542976f"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/process-campaign.json",
+      "status": "added",
+      "bytes": 283,
+      "sha256": "ade67cb49e0a65a741b5af61d2aab431f0d3e850cd4035cf1553766f8e72887b"
+    },
+    {
+      "path": "godot-prototype/evidence/regional-visual-default/process-overview.json",
+      "status": "added",
+      "bytes": 285,
+      "sha256": "9a095356d7c71936b5952b6903b0b389f6ef71e434178f25ae591db94ffda3fa"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-close.json",
+      "status": "added",
+      "bytes": 2489,
+      "sha256": "a6284ab20958800901284b50c04aac0d1fd499c57cf1dca14f70f0a91c3be011"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-close.png",
+      "status": "added",
+      "bytes": 2334753,
+      "sha256": "38667a2eba5cd2bf0531ccb175705e001fbab4fba8f4b091bfc53e3d75fb04ad"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-overview.json",
+      "status": "added",
+      "bytes": 2537,
+      "sha256": "195eaa88b5498b872bb56ba32d48e96bda853d45e1122590335b32efe9eaa061"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-overview.png",
+      "status": "added",
+      "bytes": 1709131,
+      "sha256": "f1f55ea31b257dd1fc14de9526a4135ca88b15bbaf847c46932133bdb81016bf"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-strategic.json",
+      "status": "added",
+      "bytes": 2499,
+      "sha256": "dd79ca556a43846ea8adb0964af6d6a2b01ac1afb11dffa139e80f5beeca829c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-alps-strategic.png",
+      "status": "added",
+      "bytes": 1782021,
+      "sha256": "b443796158777b72cf22c29486cd8a9ce96d136ec2940d5cf3b9827a5a03c668"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-close.json",
+      "status": "added",
+      "bytes": 2535,
+      "sha256": "0649e2e9cb2bb969a28c115ae11d6ae7ca65c98d069dd1a21da702aa2f02149d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-close.png",
+      "status": "added",
+      "bytes": 2032580,
+      "sha256": "d158db29210933d37579ace566f01023662dca6f9f8d6a3996c775368aefc2ea"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-overview.json",
+      "status": "added",
+      "bytes": 2538,
+      "sha256": "1ec7299233d85bb91cd05934ed4e4d440936c39b33a25a208daa0736811a17eb"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-overview.png",
+      "status": "added",
+      "bytes": 1764172,
+      "sha256": "790349f3c9d1cfe1f58681acb1722feea332d2a481ed45a152d1d0c7a7a2c277"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-strategic.json",
+      "status": "added",
+      "bytes": 2570,
+      "sha256": "302cf34f62fb77cd1c2b7abb52f910e9ba26f6bd83695ea2498285af4d01c067"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-anatolia-strategic.png",
+      "status": "added",
+      "bytes": 1573063,
+      "sha256": "9e39c0ae77acf036eab9756e15227239b82184c5ddb8c6c0f79948c427430947"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-close.json",
+      "status": "added",
+      "bytes": 2496,
+      "sha256": "b3eb2748bfc59929b17b74e4da29ab5a37280c8738ff4e0c91512f2c6e6552c7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-close.png",
+      "status": "added",
+      "bytes": 2234508,
+      "sha256": "370d1808b026e8c454f07931895ab9a7e8651c8d6551ef8587f26208ed4077ea"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-overview.json",
+      "status": "added",
+      "bytes": 2549,
+      "sha256": "ca100926f4572769e663d27ff15148bda95d61a887c5e56fab539511b9829dda"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-overview.png",
+      "status": "added",
+      "bytes": 1594451,
+      "sha256": "d91bcc8200383df8d92969eee5bf76baee537cd6dc7a6c78102ec3a179a2cc39"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-strategic.json",
+      "status": "added",
+      "bytes": 2509,
+      "sha256": "5efcee661feeb85e3a29bb0584feddc9003fe4b5aa8b348a87ad483181c5cdcc"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-apennines-strategic.png",
+      "status": "added",
+      "bytes": 1617395,
+      "sha256": "79ff09c8785faf2ea8c6851bffefb537b78ae535bf3002d2a0eb1a63bddbe3f1"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-close.json",
+      "status": "added",
+      "bytes": 2522,
+      "sha256": "4a2e6e4e2c2565da05f56f8b2d6cbe9a5cfd2b9e17c95b00d2da1923ac9d0ef8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-close.png",
+      "status": "added",
+      "bytes": 2159127,
+      "sha256": "799cd6ef455caab0817eec1efe49cbd07e74028323e3bea3f18d1c521d624a54"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-overview.json",
+      "status": "added",
+      "bytes": 2529,
+      "sha256": "a346de343ee88f9fcd257354836fdb307954a4af83c9cafff6750e7255d1da03"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-overview.png",
+      "status": "added",
+      "bytes": 1507324,
+      "sha256": "85f1095e106e6edca7babedde3f55c46a6f103f7136fdfd0f87bbe2972460aa7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-strategic.json",
+      "status": "added",
+      "bytes": 2535,
+      "sha256": "79b10d50e69bbc731cb64521571e1d336ea932dd5bfd1478e5262e53e55452dd"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-atlas-strategic.png",
+      "status": "added",
+      "bytes": 1529923,
+      "sha256": "67a3a521029e2325a3ab8d02c8da7ca5bc7d016ef45788fee3bd25eac336c56b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-close.json",
+      "status": "added",
+      "bytes": 2527,
+      "sha256": "68aa55225c738c42cf457864891ccc693383aa0b4684ae0f4270a480d8355522"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-close.png",
+      "status": "added",
+      "bytes": 2241572,
+      "sha256": "2f01f4b9f3da27c5b68b5467842e9259ebf8f7e2e26beb3b149ba7232ff425e2"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-overview.json",
+      "status": "added",
+      "bytes": 2525,
+      "sha256": "e4402a234fbc5d86b4d6039998cd37765e36178d3bdc34977427fe7fc7a48ae9"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-overview.png",
+      "status": "added",
+      "bytes": 1572114,
+      "sha256": "382325ac1ab7adc9441e261473fc6e22ea5a126d63f9cf2e4c7080e28a512a64"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-strategic.json",
+      "status": "added",
+      "bytes": 2541,
+      "sha256": "e4539bbf4eb8af2542fd07f1789941a233c4b9485d94a20a2b772d5cc9270073"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-east-strategic.png",
+      "status": "added",
+      "bytes": 1910739,
+      "sha256": "665ef789c320286cf285c420a48592307a437c9515cf3a99ca64fbe619ad06bc"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-close.json",
+      "status": "added",
+      "bytes": 2542,
+      "sha256": "cb7270bbdce0d5c5eb80e2c76d5840ee1c8a4b1de8b88b3ba426a721564fd65e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-close.png",
+      "status": "added",
+      "bytes": 2100009,
+      "sha256": "9942725f38549ae8ec3f226ec350d1cb72eeac4487f8f5620edf1ea2034d589d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-overview.json",
+      "status": "added",
+      "bytes": 2543,
+      "sha256": "72a116eab7b9c9e11319638bf2c3d7c7bb50ff375dc80dfc74c92e84becaf6d2"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-overview.png",
+      "status": "added",
+      "bytes": 1824370,
+      "sha256": "13917fdf2d7ba29c372eb6420edb8ef3bb4ee5692c09bc5cf1d464e1c15203d5"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-strategic.json",
+      "status": "added",
+      "bytes": 2565,
+      "sha256": "76c6d4e2a28271256a2ea003ab312fb72aaeda2182523f95de0dffcee1af23f1"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-egypt-strategic.png",
+      "status": "added",
+      "bytes": 1489846,
+      "sha256": "03e32a1d991eac71c2849c02ebd1d41e8909affb2c0e2e7b37331e364365efe0"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-close.json",
+      "status": "added",
+      "bytes": 2548,
+      "sha256": "28bd1eff82da4d8d429a1dedc1baf699b09a8f29d9169bb27e22489ce008102b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-close.png",
+      "status": "added",
+      "bytes": 1837963,
+      "sha256": "07ab3697721bd8cca5d94be70f20cb5468216ee4f5098b5f797506e4ac8ad57e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-overview.json",
+      "status": "added",
+      "bytes": 2552,
+      "sha256": "aec5e9c5ec3efd3835bebde6268b535f67abe224439c86a37bcd18cab72bd2b9"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-overview.png",
+      "status": "added",
+      "bytes": 1701054,
+      "sha256": "0b2544d89c16d67ce4cf3139cce9c448b4bf63c6a9f38c01a405734426416fe3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-strategic.json",
+      "status": "added",
+      "bytes": 2565,
+      "sha256": "8634f88d69e2c2fb41aa54dc15433d76d335fe080519cbaec22bcc6c2acb497e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-greece-strategic.png",
+      "status": "added",
+      "bytes": 1452073,
+      "sha256": "050fd7d47c63353df8b4093cbf0dd110e0f54b2e15d188f3587b9b20c39d2fc1"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-close.json",
+      "status": "added",
+      "bytes": 2558,
+      "sha256": "23352d7e05474ed287220d85bd4ba5784f879df94c832a6df10ce3697fe9d3bb"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-close.png",
+      "status": "added",
+      "bytes": 2021066,
+      "sha256": "1d97faa065949e844fa865c9bb731280ee5f4a9c29eb99c9956961520b4fc883"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-overview.json",
+      "status": "added",
+      "bytes": 2560,
+      "sha256": "cdf91e8956118786eac4e62d17ce11fa477c846b5ace9a0fc44fc17d45936018"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-overview.png",
+      "status": "added",
+      "bytes": 1562017,
+      "sha256": "58a9fca61e760325271b9da97d695dc9baedd2a257e72202e8a7615cc0521f7e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-strategic.json",
+      "status": "added",
+      "bytes": 2566,
+      "sha256": "7e637d34b73c549addf50d8116e9de9ba1b6656b273f068ddda070ada1ce07e9"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-pyrenees-strategic.png",
+      "status": "added",
+      "bytes": 1499507,
+      "sha256": "e4607f95e6ea7e92c1f5f13216733d0837da93aca93764ed543fc19ef459a549"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-close.json",
+      "status": "added",
+      "bytes": 2483,
+      "sha256": "89a2fbef1848a27180f98a449bd713721e1872e0c44aa7211490168f1aac3b1d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-close.png",
+      "status": "added",
+      "bytes": 2136499,
+      "sha256": "2e28cbfeaf51ab20310cadc851fcd0895d2d80a3f49e9aef6aa59998bd348483"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-overview.json",
+      "status": "added",
+      "bytes": 2556,
+      "sha256": "ac46add7a59adf6d0027b24ffea2f4a82fcfdfce830a9d5a8c77c0e0e8ccc100"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-overview.png",
+      "status": "added",
+      "bytes": 1620863,
+      "sha256": "9b7e665cb4c0c9dbb65e61776108e73534d361fe7b41cb6e03196c6b84b074ab"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-strategic.json",
+      "status": "added",
+      "bytes": 2502,
+      "sha256": "6718b9969db88aa86a33c4bd4436141f7aef4a7b5b9bffd2288540871c375f1a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-sicily-strategic.png",
+      "status": "added",
+      "bytes": 1099032,
+      "sha256": "8dc10a46b2db6558e4908a2e33ff5f532b2573a431f2e4ddd200261451f33b42"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-close.json",
+      "status": "added",
+      "bytes": 2534,
+      "sha256": "56a86aca3d7c27112a862214906322702a4cf96f3a41441e920ab7a235e59266"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-close.png",
+      "status": "added",
+      "bytes": 2342286,
+      "sha256": "9f1d595b0ca4b657b652faf96b3bb327f673990d4546c51488b7431737d4d1aa"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-overview.json",
+      "status": "added",
+      "bytes": 2536,
+      "sha256": "fc6b918e239a315f140266f3f53b94b39eb6a5b8e4566e156b0d6566521f1676"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-overview.png",
+      "status": "added",
+      "bytes": 1810762,
+      "sha256": "5ef2f5052210e966b2b0609be2ce2bbf165e010a252bc261bf62bc62ca8bb497"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-strategic.json",
+      "status": "added",
+      "bytes": 2545,
+      "sha256": "a3dfbd3c7860b7ceca08b9e24f6bc5b678732e39884f7b270106fb9bfe4f6df7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/godot-zagros-strategic.png",
+      "status": "added",
+      "bytes": 1810132,
+      "sha256": "300620c783b9d7d3eefecdffbe5e83e75d7d8ed68657d6bfaef3f4fca3b1d97a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-alps-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "343d19d782d17f1aa8fe98cafe71c1cadd35c4eae0838eeff8d5f5f36847d542"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-alps-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "e229b9e5d15120d0e3c883dfd2c55b0f67ff49cca6057b7e34d18be41d3977d0"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-alps-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "719dd4f9c286cf0db474e5a7c4f0413f15b085e9cf9b6decbfa340a8dcaff88d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-anatolia-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "6ff339bf6d311ce2c1a1fb2cd170804af31f8a1339b1f9148dc60828178f9b71"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-anatolia-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d5f9e01628a32861a203510e4f853c5f6fd5d8a99efa3b594219d518954e9aac"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-anatolia-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "735d25ca8a0fbd5f131283516faa76ddff483cab51298cbc771dcb1c91728183"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-apennines-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "cd9c07bff80f92944d199b26a1ee30edbbd3fadf8760c704cce8d8c67576e143"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-apennines-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "7ce129475de4dacd3925d5c48318bbe10d3762fec1d2ba3305bcd92e12b01bd7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-apennines-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c96db0821216e92a62c49a0b140bfb25e49dffab177902c287134bb4a76d375d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-atlas-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "eb9df68d3cda32653f9016bbbe3620cb5813121f2a4c236676057766daeff82e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-atlas-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "32dd6a7cc5042c6de76edb79218c850819c71f1849e333f0ccb5209c87327974"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-atlas-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "82530d73e754cf10e707b386867ba23e9a5f2d24676adae7b71265334fc7eabe"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-east-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "df19bd1ebd8a3e2b6097b1a6718b3f445e1fef9d470e3e522dbb711bd4a8b3fa"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-east-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "dd8f1691e0b34acc07f594abdff717547d3d12e3f7e95ff3e60adac6b326bbb6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-east-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "9123b60db3033027b8b81e5d8be1efb41c588ddf977da44631feddc0ce43df5b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-egypt-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "2243177aa30384f35632f6d018c91b7bf6ffa29a6c9d66aaa23df8ba428e0f71"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-egypt-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c75fea78de9a43aa6277064eb847b017056188a2d258c8bcd5634fe8d4d16448"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-egypt-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "1af9824fc42613e4d06bad576db0acef7a3c1478d362a6c956a0f62c91996ee9"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-greece-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "2ee96cc6671c96302a72c6840442af0a1146cdaf375b43fdb970e2de4d732ca7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-greece-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c602fa4a57b31ea7ce0daf6d60a3f52c816ff412f5dbaa7b625a9f58a661ae5e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-greece-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "ea69f23ef3274bd7b059c043e33fd2c6b1988c5e57fc4c2b4a5dd857b094ef86"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-pyrenees-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "6b556bda094a2b1197b056b5cdf8cd7f9667347d9923cc1ae01964df56235906"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-pyrenees-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "84f912cb2ea97f8eef90cbfba94fabbb3936b38b2d4fec9d8edb68063daaf998"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-pyrenees-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "fb6b2e878427efe7bbcd96f0371eaea4ba372dcb88b7094d8d9c0e67fdd246d9"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-sicily-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d74816ff6ddd82386fec7559b28893a7d23acbc0867d38d907119621a97c83a3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-sicily-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c92909eecdbe7dce8485baa26cb61cc0b89fccb5c7f5a7f1fda72c23b084516d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-sicily-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "820ba357d734804d3c175ec33cbad90c79d9beecf586caff4de92d138b0a0935"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-zagros-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "f61d166f8fa98bbf1474a725165a2b9bdd62794380c3d692847dff35480c7731"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-zagros-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "0c8db92108cdabe9e4dc0316e47525b167e9b9318808810eeb4b68444fe66fda"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-after/process-zagros-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "eec3c5d3531361d663db741c0ebd5ff1c4f1e93f141645577643a32bbd02f34c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-close.json",
+      "status": "added",
+      "bytes": 2040,
+      "sha256": "7ceec62795e6b914d07ef3b2c56509eb027325a0e42bdfc840f532fa64ee7c9c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-close.png",
+      "status": "added",
+      "bytes": 2347099,
+      "sha256": "094bdc32253791abfb54b7bbfd0341e52b50117439c013a528595eae86d5e4cc"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-overview.json",
+      "status": "added",
+      "bytes": 2090,
+      "sha256": "815d2406fba557c777f99d922320510b3a12ea93f03649dece7aec1503ae63c7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-overview.png",
+      "status": "added",
+      "bytes": 1827552,
+      "sha256": "b3b2e7495b05d055a15e8b3770fccf0ff1fddd71d2d400ba0c0234d71d7653de"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-strategic.json",
+      "status": "added",
+      "bytes": 2040,
+      "sha256": "7f5c9d1316d6c8e418ff2a5a744f2ba0558e3e9bbfc75fb099b52aaf0b8e8db4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-alps-strategic.png",
+      "status": "added",
+      "bytes": 1699224,
+      "sha256": "df9a4dd01de323253ade6f900689f50592498cf38ae10f812ffc1b8f21f51186"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-close.json",
+      "status": "added",
+      "bytes": 2094,
+      "sha256": "fce0117d1bfc20227c89c4298f0296e7ec28f18abb0492701b66ea80b100c8c8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-close.png",
+      "status": "added",
+      "bytes": 2035924,
+      "sha256": "12e5989b149765f36337a68fa1ba96f0de26f66d6b0f9143e56f829d5ad23a52"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-overview.json",
+      "status": "added",
+      "bytes": 2101,
+      "sha256": "aba98a5666f21ef5fec6824decdaedf51209083e377f2f06ddd44ee242685300"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-overview.png",
+      "status": "added",
+      "bytes": 1883943,
+      "sha256": "07dcb9c0abe776e3ad4cdb4a663ba6f1a82f3c4038fc68caafa5ccaaba0ce9a8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-strategic.json",
+      "status": "added",
+      "bytes": 2108,
+      "sha256": "8b2c74539f7119c8fec3127408be71398ee0715bd8c6d5bf81393a6c4868e411"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-anatolia-strategic.png",
+      "status": "added",
+      "bytes": 1463791,
+      "sha256": "64a1f08597b59c90b86d32e50a123508f7c70770cdab146eb20d8dcd1f73e01b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-close.json",
+      "status": "added",
+      "bytes": 2043,
+      "sha256": "72138791187a955e0e007a7247c2cd1834fc046d48ddc7aec4d93d321112ecd8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-close.png",
+      "status": "added",
+      "bytes": 2175181,
+      "sha256": "ceaad72fb68da4af58e4a422b023e96c6b8b948c1ca78a45dd43c3d2acadce99"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-overview.json",
+      "status": "added",
+      "bytes": 2094,
+      "sha256": "3c1d0cb35396432d1d816c7ce52f73f67cde893727fe5ee76659c9aedaf4c325"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-overview.png",
+      "status": "added",
+      "bytes": 1752934,
+      "sha256": "f32e1719ba4af6f7ba842d279554226316dc6b6ad73340e22929a13681a4e37f"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-strategic.json",
+      "status": "added",
+      "bytes": 2059,
+      "sha256": "1069cdadaac09c4dabc721005a6075f849855eb05cf84b76ffd5d1b99d4297c6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-apennines-strategic.png",
+      "status": "added",
+      "bytes": 1535856,
+      "sha256": "52f7070ba9dc44e7351e44fc87e865985f25830991c82b5a2dca524de65bf9bd"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-close.json",
+      "status": "added",
+      "bytes": 2071,
+      "sha256": "2ec5559ee2ba89b74954c3bb8796d188668c949a0069c78abfb71b6c351afc68"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-close.png",
+      "status": "added",
+      "bytes": 2162214,
+      "sha256": "8b02903377190e0fed16da9e9d27cc7e8d1d8cb81a403d6df5efa2be8bcf9048"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-overview.json",
+      "status": "added",
+      "bytes": 2067,
+      "sha256": "ccfbc299d89bb4943a4c2808eb4ef2a8f70d1044de33076d5afdfb5efd70e60a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-overview.png",
+      "status": "added",
+      "bytes": 1659080,
+      "sha256": "2bf4c14e6fafe1c1ee4821f6754be6d8c59faf76d8ec9cf2d087de01cc97526c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-strategic.json",
+      "status": "added",
+      "bytes": 2088,
+      "sha256": "37648433453e1736dffde8032a6ae7ccafdd039dc030997d3bd3ab64931ae219"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-atlas-strategic.png",
+      "status": "added",
+      "bytes": 1355279,
+      "sha256": "16d896e330015bfae05c65a11c7cc2eb16d8f1bcc79bd427db013c790b157cfa"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-close.json",
+      "status": "added",
+      "bytes": 2074,
+      "sha256": "8e8a993996e77da5e94ca5a53801cb8cc6257f95ad67d78fd51d55f6421d24ba"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-close.png",
+      "status": "added",
+      "bytes": 2246735,
+      "sha256": "85d02d0069e4fd729a457686ca2a2db2fc9de27b0e18edc0ec86938c36fc7a34"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-overview.json",
+      "status": "added",
+      "bytes": 2076,
+      "sha256": "fec07740eab8a42efa329a05812012a6e86707b4450014c8ea9653ad18c66819"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-overview.png",
+      "status": "added",
+      "bytes": 1863054,
+      "sha256": "bfc25fb6d55c0f4b0c7c3f2aae97375f9eb89f0eabc5d7901332f78e65352753"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-strategic.json",
+      "status": "added",
+      "bytes": 2096,
+      "sha256": "711224fc23148f61c6ca08d211623855546e29fc5ed794b1d7c67cc265572879"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-east-strategic.png",
+      "status": "added",
+      "bytes": 1767913,
+      "sha256": "8c476f43a482540b553b443586b15b87a7a6fb92f8c4b976bf766c5712a9a835"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-close.json",
+      "status": "added",
+      "bytes": 2081,
+      "sha256": "51dbba88ca12c927adcec4b44458769a9b79d38c9c22fd2d1bd45bfbe1faab97"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-close.png",
+      "status": "added",
+      "bytes": 2097748,
+      "sha256": "f750b7811764e142491040035926ef255d8b56c7e9b4e8b70b8f173669f5a9ae"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-overview.json",
+      "status": "added",
+      "bytes": 2096,
+      "sha256": "558e8258fdd5cc72da46587edc94bb9677b5d1eb4452c924ed6be77b41e3e307"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-overview.png",
+      "status": "added",
+      "bytes": 1935189,
+      "sha256": "56960f1e4d88b514a8f9c9eb47a951af4f35ec4679aafdfcf2d1ad95b60c74f4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-strategic.json",
+      "status": "added",
+      "bytes": 2109,
+      "sha256": "43bfb25272aa467a95dab4615c956532a818dc207c9ebf8b52fbd95e998b5e46"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-egypt-strategic.png",
+      "status": "added",
+      "bytes": 1320957,
+      "sha256": "2a3ac1da49fce0b506bafedf64de2774b105b30a81bed11dc562d4ef5eb372d3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-close.json",
+      "status": "added",
+      "bytes": 2092,
+      "sha256": "a6da05e93a9e1063f0d6d25357ed3d66df3c6a362bce32353dcde53d0ebb4959"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-close.png",
+      "status": "added",
+      "bytes": 1720574,
+      "sha256": "b6ec8c490d390738481c431ad9ac865fa602d75bdfc430ea0cbe77b341419efb"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-overview.json",
+      "status": "added",
+      "bytes": 2086,
+      "sha256": "b6c09f4478c96f8c9423662ad5e98ce6013ab340221de8abc8772cb73a75622c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-overview.png",
+      "status": "added",
+      "bytes": 1831066,
+      "sha256": "ba26f3b4d76dffe1a11e8a080b1f53b19a3fe1bc0bdd1785fb5aabb4e1fcf693"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-strategic.json",
+      "status": "added",
+      "bytes": 2100,
+      "sha256": "c95ef49c4adc94b6333caa237060daeeed271e7b058f500ca3a7991f2d9f53d0"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-greece-strategic.png",
+      "status": "added",
+      "bytes": 1354590,
+      "sha256": "66b96a4b87d74eabff155b35eda4d21f7e5a1c5f9055ea0e0816f5f5b501196d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-close.json",
+      "status": "added",
+      "bytes": 2110,
+      "sha256": "b44a2552ca865e5f855e507184290e62890421cd9dbdb9c46e3f542a6fa9f57c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-close.png",
+      "status": "added",
+      "bytes": 2021863,
+      "sha256": "a523fd8e517b08071a353705f3d615a0831d216d497b2ffd3da0d1a40099694b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-overview.json",
+      "status": "added",
+      "bytes": 2108,
+      "sha256": "60804a6defeb01480c9a7f648051aacc9416231ab4bce4aabe41b758195c535d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-overview.png",
+      "status": "added",
+      "bytes": 1733761,
+      "sha256": "dbdcf0fda7012f3c98dfb86a1d9870f31e5cff982edc11cd1bbb5745fc7a2314"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-strategic.json",
+      "status": "added",
+      "bytes": 2122,
+      "sha256": "b3caa4af37b2235c8432e38d05903e00ee5e5f32a69c1f067bb1b14059ae7a1f"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-pyrenees-strategic.png",
+      "status": "added",
+      "bytes": 1412912,
+      "sha256": "ece5f3af5f45c8a9756904d61c7e9b8dcfebf8617b9f8de3ed18bc7b739886a3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-close.json",
+      "status": "added",
+      "bytes": 2031,
+      "sha256": "d2187e30120abf5da4569715d0a43f4508aa51bb8c841bba14c00e10a8f21b4d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-close.png",
+      "status": "added",
+      "bytes": 2064001,
+      "sha256": "e843a8a08372be9c4de5a0828570e8621f9474472dc9d3554f4799fbf4ae56b8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-overview.json",
+      "status": "added",
+      "bytes": 2097,
+      "sha256": "f61154818cb9f34eace63067c504d3ec2e9b64b8fccc260bbf25c7afdb146435"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-overview.png",
+      "status": "added",
+      "bytes": 1626646,
+      "sha256": "c93af3597a881da165f92f64780c5799d7b95b104b37fa4b799361357aeede9e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-strategic.json",
+      "status": "added",
+      "bytes": 2052,
+      "sha256": "8f3f9e9d51ecbfca900d417540a4389c4d2863b1ff5aae345d2c6e8646e37d8a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-sicily-strategic.png",
+      "status": "added",
+      "bytes": 1127768,
+      "sha256": "655248be929cec0fddf705a45fc08384bbb7a0f739e893f508003badcf2ed313"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-close.json",
+      "status": "added",
+      "bytes": 2073,
+      "sha256": "cdbced8d13e3032f82ec098a96231615bd093ccc7f95844144c56c78184796f3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-close.png",
+      "status": "added",
+      "bytes": 2342945,
+      "sha256": "5dcd6a707c7177284679d1ea3cbe7d48ed2b750e168d1c2744740ebe8d3325fe"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-overview.json",
+      "status": "added",
+      "bytes": 2085,
+      "sha256": "59a88a56d45223ed574816a5e8226d061765f63661c2b1f5718c0fb84f2160b7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-overview.png",
+      "status": "added",
+      "bytes": 1966525,
+      "sha256": "1a1e4f60f4248d950cd16a54809c8ffaf75c842dd079b10107a5e7d02af5681e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-strategic.json",
+      "status": "added",
+      "bytes": 2095,
+      "sha256": "f75dd57bae7b073c057d055d84326723863f311f584ecd2cc2ead49cf0c74df4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/godot-zagros-strategic.png",
+      "status": "added",
+      "bytes": 1599274,
+      "sha256": "690833703dca1863c763d4fc3eada57974915c94ee4a0575b72642c56e6b2a8e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-alps-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "18b0b85b1bb1e058fcd89a2fe182d44b1417dba0da7dbe4a60d1628ef8be7881"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-alps-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "e5cd3d4db2dcc7c339471f41f3c10016054881dcc9613571405aebacffb7c0bb"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-alps-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d5a0dc1a366ba70e5c8d663c429d698b01760666e725002ccdbf871327fa519d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-anatolia-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "35ca96387a9a9819c0f64876ed292b5b39ba99fc194c7d8ba4a3debc2e34c89e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-anatolia-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "ee61f1eee6d640264ad7cb1f7a4458106ab1dab3f0f41e9d74057482155b68b7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-anatolia-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "dd58e95d19ad19a5f7a4b44f7f5514a018305a1f2b8b0b0bd2d141fc5ff6013d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-apennines-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "ec3f2b4044f48966e19ca31adffa18ade5bdde7ffa8033defe3af96f99b1556e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-apennines-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "138d4ce3cdef7f332ea165af7a0f4ba7cf8165df7abca1225c8edfd19269d24b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-apennines-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "8fdfdb9071d6cd17d144f5e591267ace6194f9b79fb2baea965ea9d998cb1a59"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-atlas-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "f1685c39cf445fe6b9839c924b59c78c994d7ed4c94ec436b3f2e41e7a33b12a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-atlas-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "22a1361880b463818c08603cd0340141d652433ed5bffa17d8a3a0f2c0d9777f"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-atlas-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "0b3a8401db29fef4da3d2aef7763740d83305224c835881202fe44eac166c698"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-east-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "ab4cb66dd36f25ddeec978e1b3b1aeec50cf9c256032d632437fa24951109884"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-east-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "126590e516bbf021a8a53a326b6c40955d76530f1fd9e5b3bd75fb186685bf6e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-east-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "f05e7dbb45a56a32bd7566d703830e85ee426752c8687fad7c6dd49a0564c2c6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-egypt-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "67d49d8bda691f09e17d6eb3025d50726a09223955e421cededcb98e01b18920"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-egypt-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "08e93896f48743c2355d8369804487977492e9d4ad53be303a6740502fa05d3e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-egypt-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c04c94f70c8790acfa9bfad971f99c4a4befb709f893cc174b729f650f73ff1c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-greece-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "f879c87a45680fa06b4da2b22919c9fc1c8afed678999d9faa3199b0745c110e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-greece-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c8f1b6d35add9a2d9d5c9af321c261c51965d629db24eac1e58c12049c1362e5"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-greece-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "0ff0a8ba5ffaf3cf510f7e7044e2229589feab48a97f244877950ca8bb0835e8"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-pyrenees-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "82de8f1d58f7288c59d988e4a5ce74173ef8af62fd5464cc828d44e2e5cb91af"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-pyrenees-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "1665ad0b101b2ebac5e5c952ae3cc02dc382663811bcfcc3be08ce4edd575dc3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-pyrenees-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "4319d5a0a54da1c818b2d940db94abb15f6f490ebe7547121c8f4494c8c9a336"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-sicily-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "af144eb3d4b4008cdfe5c17cbb01c0dafda3c21869b580cc22609786421b5988"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-sicily-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "12a6c3d161cf370a3088c79cd9d9e49ca88f6f470d71ef23e1c35d5e239abc1a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-sicily-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "6187e2610df3514318cc96d6e8484a7ee2ad0edb772c5057750bfb6412faeca3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-zagros-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "76f199646da4575915f28176b1c3335f79dcbdde2b60cb08670412e672c4fd4e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-zagros-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d71ce8bd25495a02a92e0541f710ddba5de085aa607ba60bd00d5af07af2f6e4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-baseline/process-zagros-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "41fca756a852729ac65952c320d438c353b1742507463536af7dc9a463902a26"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-before/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-before/godot-alps-overview.json",
+      "status": "added",
+      "bytes": 2086,
+      "sha256": "5e864bdd8a7d4bfdbc9237d74a87ad56071fc8548afa21b186dd6055402af05a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-before/godot-alps-overview.png",
+      "status": "added",
+      "bytes": 1827289,
+      "sha256": "1c0822b56917bf0e337e60d3de8ab6478fd741816b87077e85c78d3070223f15"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-comparison/.gdignore",
+      "status": "added",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-comparison/index.html",
+      "status": "added",
+      "bytes": 15594,
+      "sha256": "0d57a83387945510942b574091d8f83c02d938284751b576ade3986008603827"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-comparison/measurements.json",
+      "status": "added",
+      "bytes": 22382,
+      "sha256": "cf5f83ccb86ae3137065f08a118da9ca55f0261a700677f4c49ba415f7684d20"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/godot-alps-strategic.json",
+      "status": "added",
+      "bytes": 2503,
+      "sha256": "fc7baf00115f4f05de3f0e7c29f4a56ff96477b01c1bacbd94e8bf44d857b151"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/godot-alps-strategic.png",
+      "status": "added",
+      "bytes": 1819216,
+      "sha256": "14e2006b7db1018fa2dd705c21fb57996250b3691102800bb21454c8233af5da"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/godot-greece-strategic.json",
+      "status": "added",
+      "bytes": 2569,
+      "sha256": "d1cc249ce8c92e1ddc17ade131865f07e38e242ea6d038eb08922a76a5b67a71"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/godot-greece-strategic.png",
+      "status": "added",
+      "bytes": 1534348,
+      "sha256": "9087add66d1cc4a7e5293138711d62053ef695d0ce1ce3818cf76be169e980f7"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/process-alps-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "3ab8fe8aa9010a6e76426ac20ad2b8293a6792ffab8d5fef80d131e43f7f13d4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-continuity/process-greece-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d0c920ab9706c428f9a9f5599c4c2901041c7f97f9b41e692b1f2aec2ebcd14c"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-delivery.json",
+      "status": "added",
+      "sha256": null,
+      "notice": "Self-manifest; hash intentionally omitted"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-close.json",
+      "status": "added",
+      "bytes": 2551,
+      "sha256": "929efb2c5292d684315ca722dbc4df6b22503bbb068add36e5af49dddabf23d1"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-close.png",
+      "status": "added",
+      "bytes": 2365127,
+      "sha256": "e3f7e880c08818cc0d586f8e7f807df4b9e4075eb65f54c75c89260f52b499dc"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-overview.json",
+      "status": "added",
+      "bytes": 2557,
+      "sha256": "23dfe88a2f336026bdb2149462a27c5b61ad5f71661ae2e047613bcc7e927880"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-overview.png",
+      "status": "added",
+      "bytes": 1383276,
+      "sha256": "0e4dd511fe503ec67ab8693597aff5f4264703ec73347c99c40732e40b44965d"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-strategic.json",
+      "status": "added",
+      "bytes": 2571,
+      "sha256": "83ae1873b4bae8ee7033615d0f78222c17254b6cbc1fbb1ba47c06572466f010"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/godot-high-atlas-strategic.png",
+      "status": "added",
+      "bytes": 1570348,
+      "sha256": "6154f6689e9a3436164e4b6b3c0560424bb8b2c45af4398e04e698713e297e44"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/process-high-atlas-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "c10d951cdace7b0aa36d9d0a7921ff203fb6d0997baf521d14ececd94512f294"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/process-high-atlas-overview.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "53d6927cd3c5c76b669824418d55456f4dafe4d4b8298297b2a91e4e3683dc2b"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-high-atlas/process-high-atlas-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "98ef913f76718d365778c1c26c04d36aa4c68cd999ce3aaa0c5e1b34d8483f5a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/godot-alps-strategic.json",
+      "status": "added",
+      "bytes": 2493,
+      "sha256": "2a33ad240ab29fb7a30d27fa0b3469d700d6bba704246c91def2e6d28d5f82cc"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/godot-alps-strategic.png",
+      "status": "added",
+      "bytes": 1822704,
+      "sha256": "eaa742bddc3bb4c61c1541b64e1f0c4fa774a4e3701e929395425eeb2cfe8147"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/godot-east-strategic.json",
+      "status": "added",
+      "bytes": 2546,
+      "sha256": "3bfe0301c7cc1daf731b8662b4ef831ead7412b7763ae6f3fc43ffe8677d580a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/godot-east-strategic.png",
+      "status": "added",
+      "bytes": 1943394,
+      "sha256": "2f75aa18679a0e050a08ecc49cb07cfd3db2e7787c90c2faab75d3776d28baa0"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/process-alps-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "e3b4e99da134ef03e91752664c6a079707239972dac5e99d2ae89ed33401bd44"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-preview/process-east-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "ce36f37a7f4b06d349c176cade7c93e0213d1cc0f10df662dd3519d6d7e82bab"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/godot-sicily-close.json",
+      "status": "added",
+      "bytes": 2478,
+      "sha256": "d9dccb9d00d9ef6f72e7871a59d564e1d64f5d4c56e84a94102068b98bb31e5e"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/godot-sicily-close.png",
+      "status": "added",
+      "bytes": 2134093,
+      "sha256": "fda30ec6f1a4a08f97599a436055d0842810261484cb33585fb3c9b91f5a2532"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/godot-sicily-strategic.json",
+      "status": "added",
+      "bytes": 2481,
+      "sha256": "37726439d9b3ce601183111552ad7da69b0646dc436a53cfe5ec01516a84daca"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/godot-sicily-strategic.png",
+      "status": "added",
+      "bytes": 1099609,
+      "sha256": "d3b15feede8fba3c8a6c69cd63e99032b914e17785b2483c9b0b5b2cddc25c5a"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/process-sicily-close.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "4638f4b0ef8bd8495467711c600d5a32bac54c103e5dfb7dcd7d413fbcb5f7d5"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-static/process-sicily-strategic.json",
+      "status": "added",
+      "bytes": 135,
+      "sha256": "d6e9c982f81ea9c7b2c920862f971dfdf0e68552203e524a9668b2e4acdd1ee4"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-validation/.gdignore",
+      "status": "added",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-validation/animated.png",
+      "status": "added",
+      "bytes": 1026853,
+      "sha256": "a772f01fccfc9ca3b90376f772d73ff7b5cf283fdf82c848183df97f2d99eef1"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-validation/results.json",
+      "status": "added",
+      "bytes": 4728,
+      "sha256": "e8dbf02897118fb5a2c8d729440d027dd8b185c79c806ba72faa6393be1b4b18"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-validation/static-a.png",
+      "status": "added",
+      "bytes": 1026932,
+      "sha256": "7d2928c6fd6ce403c084a390cb87a7c896840045f2166f2fc732536989273de3"
+    },
+    {
+      "path": "godot-prototype/evidence/visual-validation/static-b.png",
+      "status": "added",
+      "bytes": 1027343,
+      "sha256": "70371c9bbdcd357774a513378be94e7e47fe072fdf8236e11aa46109393540ad"
+    },
+    {
+      "path": "godot-prototype/run.ps1",
+      "status": "modified",
+      "bytes": 442,
+      "sha256": "735a9c6dbbc230137afabb691ed0b982764032eb2c40d19e51ac947c05806a99"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "status": "modified",
+      "bytes": 9854,
+      "sha256": "cfd71b2df2ef5cdc40c35106e00d349dd3faf58736138e4131408372a3cfa188"
+    },
+    {
+      "path": "godot-prototype/tools/strategic-relief.mjs",
+      "status": "added",
+      "bytes": 3545,
+      "sha256": "e43fcd20da491a415d3f29a5fe28df7a1498a44c0062d6a609923edaa645d087"
+    },
+    {
+      "path": "godot-prototype/tools/visual-capture.gd",
+      "status": "added",
+      "bytes": 786,
+      "sha256": "4e097033dca8973ad4e2e834ea0f0b656775435d12f744ae6ab120844b89cf31"
+    },
+    {
+      "path": "godot-prototype/tools/visual-capture.ps1",
+      "status": "added",
+      "bytes": 2241,
+      "sha256": "1d8094230ebe34ee338622d277516e15f614ec5b9f4239c977abb1c378a89cdb"
+    },
+    {
+      "path": "godot-prototype/tools/visual-report.mjs",
+      "status": "added",
+      "bytes": 3256,
+      "sha256": "d373eb54fa1bebef03f461b8bcbbef9c35580444dd0c5d0f2d9d8110d662023f"
+    },
+    {
+      "path": "godot-prototype/tools/visual-validate.gd",
+      "status": "added",
+      "bytes": 5533,
+      "sha256": "078dbba0334b400b9e61717296b30162cfc921ff10ddf2416733d1b97f7f8ea3"
+    },
+    {
+      "path": "godot-prototype/water.gdshader",
+      "status": "modified",
+      "bytes": 3996,
+      "sha256": "f233f3f219bbd72fdbb3b1b303adaaf3f588d3424483273634e5fbc329f6c6e8"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "status": "modified",
+      "bytes": 45151,
+      "sha256": "1485e7e595908df1686703e2368de6ea21382be48ac71d1dab3c04e666fe1f48"
+    }
+  ],
+  "historicalCheckpointStatus": "failed-predecessor",
+  "validForCurrentSource": false,
+  "supersededBy": "godot-prototype/evidence/repair-20261026/final2/"
+}

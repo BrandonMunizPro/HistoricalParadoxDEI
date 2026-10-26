@@ -1,0 +1,115 @@
+{
+  "camera": {
+    "distance": 3200.0,
+    "focus": [
+      31.5,
+      38.2000007629395
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      2215.7080078125,
+      1972.78356933594,
+      2642.181640625
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 63.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 18.183,
+  "meanFrameMs": 9.93314481409003,
+  "p95FrameMs": 13.714,
+  "primitives": 1364723.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.62,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1061162880.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-37-28",
+    "world-32-28",
+    "world-37-33",
+    "world-32-33",
+    "world-37-23",
+    "world-42-28",
+    "world-32-23",
+    "world-42-33",
+    "world-42-23",
+    "world-27-28",
+    "world-37-38",
+    "world-27-33"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 18.183,
+    "meanMs": 10.04958,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 14.132,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 69.272,
+  "startupMs": 2562,
+  "staticMemoryBytes": 235923072,
+  "tileLoadMs": [
+    129.019,
+    10.954,
+    10.367,
+    10.617,
+    10.603,
+    9.855,
+    9.767,
+    9.964,
+    9.86,
+    10.982,
+    11.235,
+    11.722,
+    11.847
+  ],
+  "view": "anatolia-overview",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 4.0,
+      "coastal_color": [
+        0.045,
+        0.24,
+        0.23
+      ],
+      "deep_color": [
+        0.018,
+        0.085,
+        0.13
+      ],
+      "foam_strength": 0.055,
+      "fresnel_strength": 0.12,
+      "roughness": 0.3,
+      "specular_strength": 0.55,
+      "wave_strength": 0.1
+    },
+    "time": 6.18911404761901
+  }
+}

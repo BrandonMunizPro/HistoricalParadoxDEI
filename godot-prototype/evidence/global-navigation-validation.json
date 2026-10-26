@@ -1,10 +1,10 @@
 {
   "checks": [
     {
-      "instances": 15113,
+      "instances": 0,
       "localCells": 0,
       "terrainTiles": 13,
-      "vegetationCells": 9,
+      "vegetationCells": 0,
       "view": "greece"
     },
     {
@@ -22,10 +22,10 @@
       "view": "aegean"
     },
     {
-      "instances": 12683,
+      "instances": 0,
       "localCells": 0,
       "terrainTiles": 13,
-      "vegetationCells": 9,
+      "vegetationCells": 0,
       "view": "anatolia"
     },
     {
@@ -36,17 +36,17 @@
       "view": "levant"
     },
     {
-      "instances": 7889,
+      "instances": 9609,
       "localCells": 0,
       "terrainTiles": 13,
-      "vegetationCells": 11,
+      "vegetationCells": 12,
       "view": "africa"
     },
     {
-      "instances": 3656,
+      "instances": 0,
       "localCells": 0,
       "terrainTiles": 13,
-      "vegetationCells": 9,
+      "vegetationCells": 0,
       "view": "egypt"
     },
     {
@@ -99,14 +99,14 @@
       "view": "overview"
     },
     {
-      "instances": 25688,
+      "instances": 0,
       "localCells": 0,
       "terrainTiles": 13,
-      "vegetationCells": 12,
+      "vegetationCells": 0,
       "view": "alps"
     },
     {
-      "instances": 28036,
+      "instances": 25021,
       "localCells": 9,
       "terrainTiles": 13,
       "vegetationCells": 12,
@@ -114,7 +114,10 @@
     }
   ],
   "maxPlacementErrorMetres": 0.0000651550231545173,
-  "maxWorldEdgeErrorMetres": 0.0,
+  "maxWorldEdgeErrorMetres": 0,
   "passed": true,
-  "selectable": 35
+  "selectable": 35,
+  "historicalCheckpointStatus": "failed-predecessor",
+  "validForCurrentSource": false,
+  "supersededBy": "godot-prototype/evidence/repair-20261026/final2/"
 }

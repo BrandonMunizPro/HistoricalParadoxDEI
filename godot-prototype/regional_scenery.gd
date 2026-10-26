@@ -8,6 +8,34 @@ var meshes=[]
 var busy=false
 var tree_count=0
 
+func expected_cells():
+	var cells={}
+	if world.distance>=200:return cells
+	if world.distance<55:
+		var center=Vector2i(floori(world.focus.x/.05),floori(world.focus.y/.05))
+		for dy in [-1,0,1]:
+			for dx in [-1,0,1]:
+				var c=center+Vector2i(dx,dy)
+				cells["local|%d|%d" % [c.x,c.y]]=true
+	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y):
+		for dy in [-1,0,1]:
+			for dx in [-1,0,1]:cells["global|%d|%d" % [floori(world.focus.x)+dx,floori(world.focus.y)+dy]]=false
+	else:
+		for id in world.resident:
+			if world.resident[id].descriptor.kind=="regional":cells[id]=false
+	return cells
+
+func pending_cells():
+	var pending=[]
+	var expected=expected_cells()
+	for id in expected:
+		var group=local_roots if expected[id] else roots
+		if not group.has(id) or not group[id].get_meta("ready",false):pending.append(id)
+	return pending
+
+func is_ready():
+	return not busy and pending_cells().is_empty()
+
 func _init(owner):
 	world=owner
 	ecology=Image.load_from_file("res://data/regional/ecology.png")
@@ -56,7 +84,7 @@ func tick():
 		if (id.begins_with("global|") and not id in global_keys) or (not id.begins_with("global|") and not world.resident.has(id)):
 			roots[id].queue_free()
 			roots.erase(id)
-	for id in roots:roots[id].visible=world.distance<180
+	for id in roots:roots[id].visible=world.distance<190
 	var local_keys=[]
 	var cell=Vector2i(floori(world.focus.x/.05),floori(world.focus.y/.05))
 	if world.distance<55:
@@ -67,7 +95,10 @@ func tick():
 		if not id in local_keys:
 			local_roots[id].queue_free()
 			local_roots.erase(id)
-	if busy or world.distance>200 or not world.queue.is_empty():return
+	if busy or world.distance>=200 or not world.queue.is_empty():return
+	# All placements must use settled terrain, including close cells.
+	for id in world.resident:
+		if world.resident[id].reveal<1:return
 	for id in local_keys:
 		if local_roots.has(id):continue
 		var split=id.split("|")
@@ -101,7 +132,8 @@ func build(id,local_bounds={},is_local=false):
 	for i in 12:batches.append([])
 	for i in 12000:
 		if i%500==0:await world.get_tree().process_frame
-		if (is_local and not local_roots.has(id)) or (not is_local and not roots.has(id)):busy=false;return
+		var group=local_roots if is_local else roots
+		if not is_instance_valid(root) or not group.has(id) or group[id]!=root:busy=false;return
 		var lon=rng.randf_range(b.west,b.east);var lat=rng.randf_range(b.south,b.north)
 		var italian=world.contains(world.regional_manifest.bounds,lon,lat)
 		var x=clampi(roundi((lon-6)*32),0,448);var y=clampi(roundi((49-lat)*32),0,448)
@@ -137,6 +169,7 @@ func build(id,local_bounds={},is_local=false):
 		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		root.add_child(node)
 		tree_count+=mm.instance_count
+	root.set_meta("ready",true)
 	busy=false
 	print("REGIONAL_SCENERY_READY ",id," asset_variants=12")
 

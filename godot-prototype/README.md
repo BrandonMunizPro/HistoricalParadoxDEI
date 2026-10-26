@@ -1,5 +1,11 @@
 # Campaign world visual prototype
 
+Latest focused pass: [water/coastline changes and reproduction](COAST-POLISH.md), [13 matched before/final comparisons](evidence/coast-20261026/comparison.html), and [validation/performance results](evidence/coast-20261026/RESULTS.md). Awaiting independent visual review; earlier checkpoint evidence below predates this polish.
+
+Current repair candidate: [engineering report and reproduction](REPAIR.md), [fresh production/profile evidence](evidence/repair-20261026/final2/index.html), and [exact commands/results](evidence/repair-20261026/final2/checks.json). Independent Pickle review is pending; this is not an acceptance declaration. Production presets retain their original distances. The 1,100 km campaign default, strategic relief and static/animated sea remain available.
+
+The previous [visual upgrade report](VISUAL-UPGRADE.md) and its old evidence describe the failed predecessor. They are historical context, not current validation.
+
 Global expansion: [regional status and measurements](GLOBAL.md), [matching world-region screenshots](evidence/global-comparison.html). The region picker and `-View greece`, `anatolia`, `egypt`, `iberia`, `persia` and other presets extend the same renderer beyond Italy. Existing Italian controls and geographic data remain available.
 
 Latest asset-quality checkpoint: [results and remaining visual limits](QUALITY.md), with [eight matching side-by-side rendered comparisons](evidence/quality-comparison.html). This adds original ground/leaf artwork and branching tree variants; the whole-region commercial-quality target remains unmet.

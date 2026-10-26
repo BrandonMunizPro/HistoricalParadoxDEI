@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 650.0,
+    "focus": [
+      14.5,
+      37.7000007629395
+    ],
+    "fov": 42,
+    "pitch": 42.0,
+    "position": [
+      88.0428771972656,
+      435.714233398438,
+      905.088989257813
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 71.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 859.133,
+  "meanFrameMs": 8.58674951076322,
+  "p95FrameMs": 9.603,
+  "primitives": 1364769.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.834580913698768,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1038852016.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "N37E14",
+    "N38E14",
+    "N37E13",
+    "N37E15",
+    "N36E14",
+    "N38E15",
+    "N38E13",
+    "N36E15",
+    "N37E12",
+    "N37E16",
+    "N39E15",
+    "N38E16"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 10.41,
+    "meanMs": 6.94673666666667,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 9.291,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 859.133,
+  "startupMs": 2481,
+  "staticMemoryBytes": 241334277,
+  "tileLoadMs": [
+    122.532,
+    13.874,
+    11.679,
+    11.681,
+    11.049,
+    11.185,
+    11.121,
+    11.274,
+    11.025,
+    11.122,
+    10.864,
+    11.052,
+    12.05
+  ],
+  "view": "sicily-strategic"
+}

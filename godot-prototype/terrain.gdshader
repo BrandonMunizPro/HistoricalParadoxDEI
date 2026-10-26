@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode cull_disabled;
+#include "res://shoreline.gdshaderinc"
 uniform sampler2D coast : filter_linear, repeat_disable;
 uniform sampler2D macro_color : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
 uniform sampler2D rock : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
@@ -24,6 +25,13 @@ uniform int child_count=0;
 uniform float reveal=1.0;
 uniform float detail_strength=1.0;
 uniform float camera_distance=1000.0;
+uniform sampler2D strategic_relief : filter_linear_mipmap, repeat_disable;
+uniform float relief_start_km=120.0;
+uniform float relief_full_km=500.0;
+uniform float relief_contrast=2.4;
+uniform float relief_strength=.85;
+uniform vec3 relief_light_direction=vec3(.5,.5,.5);
+uniform float coverage_overlap_km=.6;
 uniform vec4 neighbors=vec4(1.0);
 uniform bool clip_region=false;
 uniform int debug_view=0;
@@ -49,20 +57,37 @@ void vertex(){
 void fragment(){
  vec2 geo=vec2(UV.x*87.0-12.0,62.0-UV.y*50.0),region=vec2((geo.x-6.0)/14.0,(49.0-geo.y)/14.0);
  bool in_region=all(greaterThanEqual(region,vec2(0.0)))&&all(lessThanEqual(region,vec2(1.0)));
- if(clip_region&&all(greaterThan(region,vec2(.0001)))&&all(lessThan(region,vec2(.9999))))discard;
- vec2 rq=(region*7168.0+.5)/7169.0;
- vec2 global_q=(UV*vec2(11136.0,6400.0)+.5)/vec2(11137.0,6401.0);
- float land=in_region?texture(regional_land,rq).r:texture(global_land,global_q).r;
- if(camera_distance>2800.0)land=mix(land,texture(strategic_land,UV).r,smoothstep(2800.0,4000.0,camera_distance));
+ // Keep a narrow parent strip under differently tessellated projected edges.
+ // Sampling and source vertices stay unchanged; only parent fragment clipping moves.
+ vec2 geo_overlap=vec2(coverage_overlap_km/(111.195*max(.3,cos(radians(geo.y)))),coverage_overlap_km/111.195);
+ vec2 region_overlap=geo_overlap/14.0;
+ if(clip_region&&all(greaterThan(region,region_overlap))&&all(lessThan(region,vec2(1.0)-region_overlap)))discard;
+ vec2 coast_geo=coast_geographic(world_pos.xz);
+ vec2 coast_region=vec2((coast_geo.x-6.0)/14.0,(49.0-coast_geo.y)/14.0);
+ bool coast_local=all(greaterThanEqual(coast_region,vec2(0.0)))&&all(lessThanEqual(coast_region,vec2(1.0)));
+ vec2 coast_uv=vec2((coast_geo.x+12.0)/87.0,(62.0-coast_geo.y)/50.0);
+ vec2 rq=(coast_region*7168.0+.5)/7169.0;
+ vec2 global_q=(coast_uv*vec2(11136.0,6400.0)+.5)/vec2(11137.0,6401.0);
+ float land=coast_local?texture(regional_land,rq).r:texture(global_land,global_q).r;
+ if(camera_distance>2800.0)land=mix(land,texture(strategic_land,coast_uv).r,smoothstep(2800.0,4000.0,camera_distance));
  if(land<.5)discard;
- for(int i=0;i<12;i++){if(i>=child_count)break;vec4 b=children[i];if(UV.x>b.x+.000001&&UV.y>b.y+.000001&&UV.x<b.z-.000001&&UV.y<b.w-.000001)discard;}
+ vec2 cover_inset=geo_overlap/vec2(87.0,50.0);
+ for(int i=0;i<12;i++){if(i>=child_count)break;vec4 b=children[i];if(UV.x>b.x+cover_inset.x&&UV.y>b.y+cover_inset.y&&UV.x<b.z-cover_inset.x&&UV.y<b.w-cover_inset.y)discard;}
  vec3 macro=texture(macro_color,(UV*vec2(3915.0,2250.0)+.5)/vec2(3916.0,2251.0)).rgb;
  vec3 eco=texture(ecology,(region*448.0+.5)/449.0).rgb;
  vec4 global_eco=texture(global_ecology,(UV*vec2(1392.0,800.0)+.5)/vec2(1393.0,801.0));
  float region_edge=min(min(geo.x-6.0,20.0-geo.x),min(geo.y-35.8,49.0-geo.y));
  float italian_style=in_region?smoothstep(0.0,.6,region_edge):0.0;
  eco=mix(global_eco.rgb,eco,italian_style);
- float slope=1.0-clamp(ground_normal.y,0.0,1.0),h=world_pos.y/1.5;
+ // The same geographic lighting field spans context and resident detail meshes.
+ // Source-derived normals reveal ridges without displacing terrain or anchors.
+ vec2 relief_size=vec2(textureSize(strategic_relief,0));
+ vec2 relief_uv=(UV*(relief_size-1.0)+.5)/relief_size;
+ vec3 relief_normal=normalize(texture(strategic_relief,relief_uv).rgb*2.0-1.0);
+ float strategic=smoothstep(relief_start_km,relief_full_km,camera_distance);
+ vec3 lighting_normal=normalize(mix(ground_normal,relief_normal,strategic*relief_strength));
+ NORMAL=normalize(mat3(VIEW_MATRIX)*lighting_normal);
+ float slope=1.0-clamp(lighting_normal.y,0.0,1.0),h=world_pos.y/1.5;
  vec2 p=world_pos.xz;
  float wide=noise(p*.035),middle=noise(p*.24),fine=noise(p*1.7);
  float steep=smoothstep(.045,.30,slope),alpine=smoothstep(1.55,2.55,h);
@@ -117,12 +142,22 @@ void fragment(){
  }
  float region_weight=detail_strength;
  ALBEDO=mix(macro*.57,regional,region_weight);
+ // Darken only the source-mask shoreline fringe, not every low inland valley.
+ float wet_edge=(1.0-smoothstep(.5,.88,land))*(1.0-smoothstep(.015,.08,h));
+ ALBEDO*=1.0-wet_edge*.22*(1.0-strategic);
+ vec3 light_direction=normalize(relief_light_direction);
+ float relief=dot(relief_normal,light_direction)-light_direction.y;
+ ALBEDO*=clamp(exp(relief*relief_contrast*strategic),.65,1.3);
  ROUGHNESS=.94;SPECULAR=.12;
- vec2 nq=p*(1.2+nearby*9.0);
- float dx=dot(texture(quality_rock,nq+vec2(.001,0)).rgb-texture(quality_rock,nq-vec2(.001,0)).rgb,vec3(.333));
- float dy=dot(texture(quality_rock,nq+vec2(0,.001)).rgb-texture(quality_rock,nq-vec2(0,.001)).rgb,vec3(.333));
- NORMAL_MAP=normalize(vec3(-dx*2.5,-dy*2.5,1.0))*.5+.5;
- NORMAL_MAP_DEPTH=mix(.05,.40,rock_weight)*detail_strength;
+ // Do not pay for four close-detail samples after their strength reaches zero.
+ NORMAL_MAP=vec3(.5,.5,1.0);NORMAL_MAP_DEPTH=0.0;
+ if(strategic<1.0){
+  vec2 nq=p*(1.2+nearby*9.0);
+  float dx=dot(texture(quality_rock,nq+vec2(.001,0)).rgb-texture(quality_rock,nq-vec2(.001,0)).rgb,vec3(.333));
+  float dy=dot(texture(quality_rock,nq+vec2(0,.001)).rgb-texture(quality_rock,nq-vec2(0,.001)).rgb,vec3(.333));
+  NORMAL_MAP=normalize(vec3(-dx*2.5,-dy*2.5,1.0))*.5+.5;
+  NORMAL_MAP_DEPTH=mix(.05,.40,rock_weight)*detail_strength*(1.0-strategic);
+ }
  if(debug_view==1){ALBEDO=vec3(0.0);EMISSION=vec3(eco.r,region_weight,steep);}
  if(debug_view==2){ALBEDO=vec3(0.0);EMISSION=vec3(global_eco.a,global_eco.b,global_eco.g);}
 }

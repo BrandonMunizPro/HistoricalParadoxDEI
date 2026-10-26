@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 3200.0,
+    "focus": [
+      48.5,
+      33.5
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      3830.94897460938,
+      1972.38781738281,
+      2696.50073242188
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 53.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 11.46,
+  "meanFrameMs": 8.83983757338552,
+  "p95FrameMs": 10.396,
+  "primitives": 1364511.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1035605872.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-48",
+    "world-32-43",
+    "world-27-48",
+    "world-27-43",
+    "world-37-48",
+    "world-37-43",
+    "world-32-53",
+    "world-27-53",
+    "world-32-38",
+    "world-27-38",
+    "world-22-48",
+    "world-37-53"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 11.46,
+    "meanMs": 8.74180333333334,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.104,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 93.701,
+  "startupMs": 2539,
+  "staticMemoryBytes": 232935392,
+  "tileLoadMs": [
+    126.357,
+    53.019,
+    52.953,
+    43.475,
+    61.344,
+    43.923,
+    46.69,
+    44.06,
+    42.742,
+    67.987,
+    12.869,
+    47.407,
+    44.934
+  ],
+  "view": "zagros-overview"
+}

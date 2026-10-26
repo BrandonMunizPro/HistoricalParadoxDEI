@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 176.0,
+    "focus": [
+      69.0,
+      35.5
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      4734.82421875,
+      112.297225952148,
+      -771.77685546875
+    ],
+    "yaw": 12.0
+  },
+  "drawCalls": 45.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 65.448,
+  "meanFrameMs": 7.03974559686888,
+  "p95FrameMs": 9.302,
+  "primitives": 718631.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 3730,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1036087872.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-68",
+    "world-32-63",
+    "world-37-68",
+    "world-32-73",
+    "world-37-63",
+    "world-27-68",
+    "world-37-73",
+    "world-27-63",
+    "world-27-73",
+    "world-32-58",
+    "world-42-68",
+    "world-37-58"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 9.864,
+    "meanMs": 6.94364013840831,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 9.255,
+    "samples": 289
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 65.448,
+  "startupMs": 2580,
+  "staticMemoryBytes": 234613310,
+  "tileLoadMs": [
+    130.435,
+    12.988,
+    10.463,
+    10.587,
+    9.737,
+    9.376,
+    9.657,
+    9.721,
+    9.703,
+    10.331,
+    11.019,
+    11.241,
+    11.738
+  ],
+  "view": "east-close"
+}

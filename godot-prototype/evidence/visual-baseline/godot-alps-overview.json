@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 2880.0,
+    "focus": [
+      10.8000001907349,
+      46.0
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      -208.732543945313,
+      1774.71997070313,
+      1765.73706054688
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 63.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 13.153,
+  "meanFrameMs": 7.66008219178082,
+  "p95FrameMs": 10.234,
+  "primitives": 1364647.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1035868016.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-42-8",
+    "world-47-8",
+    "world-42-13",
+    "world-42-3",
+    "world-47-13",
+    "world-47-3",
+    "world-37-8",
+    "world-37-13",
+    "world-37-3",
+    "world-52-8",
+    "world-52-13",
+    "world-42-18"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 13.153,
+    "meanMs": 7.76872333333333,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.267,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 65.443,
+  "startupMs": 2397,
+  "staticMemoryBytes": 232961748,
+  "tileLoadMs": [
+    109.637,
+    11.783,
+    10.818,
+    11.069,
+    15.3,
+    10.837,
+    10.548,
+    10.346,
+    10.805,
+    10.544,
+    10.865,
+    10.578,
+    11.589
+  ],
+  "view": "alps-overview"
+}

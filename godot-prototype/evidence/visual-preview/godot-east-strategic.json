@@ -1,0 +1,115 @@
+{
+  "camera": {
+    "distance": 1100.0,
+    "focus": [
+      69.0,
+      35.5
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      4886.208984375,
+      681.16845703125,
+      -59.5661010742188
+    ],
+    "yaw": 12.0
+  },
+  "drawCalls": 56.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 327.51,
+  "meanFrameMs": 7.80133659491194,
+  "p95FrameMs": 10.658,
+  "primitives": 963243.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.868780107411926,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1062047120.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-68",
+    "world-32-63",
+    "world-37-68",
+    "world-32-73",
+    "world-37-63",
+    "world-27-68",
+    "world-37-73",
+    "world-27-63",
+    "world-27-73",
+    "world-32-58",
+    "world-42-68",
+    "world-37-58"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 12.827,
+    "meanMs": 7.31798666666667,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.603,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 327.51,
+  "startupMs": 2450,
+  "staticMemoryBytes": 236637543,
+  "tileLoadMs": [
+    118.79,
+    10.371,
+    10.992,
+    11.316,
+    10.53,
+    10.915,
+    13.356,
+    11.202,
+    11.24,
+    11.061,
+    11.229,
+    12.182,
+    11.792
+  ],
+  "view": "east-strategic",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 4.0,
+      "coastal_color": [
+        0.045,
+        0.24,
+        0.23
+      ],
+      "deep_color": [
+        0.018,
+        0.085,
+        0.13
+      ],
+      "foam_strength": 0.055,
+      "fresnel_strength": 0.12,
+      "roughness": 0.3,
+      "specular_strength": 0.55,
+      "wave_strength": 0.16
+    },
+    "time": 4.7701115555556
+  }
+}

@@ -5,7 +5,7 @@ $folder=Join-Path $project "evidence\regional-$Stage"
 New-Item -ItemType Directory -Force -Path $folder | Out-Null
 Set-Content -LiteralPath (Join-Path $folder '.gdignore') -Value ''
 foreach($view in $Views){
- $arguments=@('--path',$project,'--resolution','1920x1080','--',"--capture=$view","--output=res://evidence/regional-$Stage")
+ $arguments=@('--path',$project,'--resolution','1920x1080','--',"--view=$view","--capture=$view","--output=res://evidence/regional-$Stage")
  if($Stage -eq 'diagnostic'){$arguments+='--diagnostic'}
  if($Stage -eq 'after'){$arguments+='--match-baseline'}
  if($Stage -eq 'quality-after'){$arguments+=@('--match-baseline','--baseline-folder=evidence/regional-quality-before')}

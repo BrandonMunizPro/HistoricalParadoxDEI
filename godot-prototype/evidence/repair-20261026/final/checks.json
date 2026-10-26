@@ -1,0 +1,168 @@
+{
+  "status": "superseded-packaging-failure",
+  "accepted": false,
+  "steps": [
+    {
+      "passed": true,
+      "name": "npm-validate",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:52:46.7785909Z",
+      "command": "npm.cmd run validate",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "lint-scope",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:52:49.0712579Z",
+      "command": "node --test godot-prototype/tools/lint-scope.test.mjs",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "parse",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:52:50.5438299Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --headless --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/parse-scripts.gd -- --output=res://evidence/repair-20261026/final/parse --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "navigation-regression",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:52:51.0153653Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --headless --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/navigation-test.gd -- --output=res://evidence/repair-20261026/final/navigation-regression --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "launcher-greece",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:52:53.7015122Z",
+      "command": ".\\godot-prototype\\run.ps1 -View greece -Headless -RuntimeArguments --validate",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "global",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:53:48.8410460Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --headless --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/global-validate.gd -- --output=res://evidence/repair-20261026/final/navigation --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "regional",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:54:15.1211046Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --headless --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/regional-validate.gd -- --output=res://evidence/repair-20261026/final/navigation --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "negative-timeout",
+      "exitCode": 1,
+      "recordedAtUtc": "2026-10-26T20:54:17.7123646Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --headless --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/global-validate.gd -- --output=res://evidence/repair-20261026/final/negative-timeout --source-manifest=res://evidence/repair-20261026/final/source.json --timeout-seconds=0",
+      "expectedExitCode": 1
+    },
+    {
+      "passed": true,
+      "name": "global-geography",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:54:20.1150034Z",
+      "command": "node godot-prototype/tools/global-verify.mjs",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "regional-geography",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:54:21.5814932Z",
+      "command": "node godot-prototype/tools/regional-verify.mjs",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "integrity",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:54:21.9052615Z",
+      "command": "node godot-prototype/tools/checkpoint-integrity.mjs final",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "production-captures",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:55:47.2030850Z",
+      "command": "checkpoint-capture.ps1 -Stage final/production -Views greece,anatolia,egypt,east,alps,apennines,sicily,campaign,overview",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "profile-captures",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T20:59:41.9466569Z",
+      "command": "checkpoint-capture.ps1 -Stage final/profiles -Views @() -Profiles alps,apennines,sicily,greece,anatolia,egypt,zagros,east",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "reference-captures",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:00:23.4416705Z",
+      "command": "checkpoint-capture.ps1 -Stage final/reference -ReferenceShaders -Profiles anatolia,zagros -Scales overview,strategic",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "repeat-captures",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:05.4433893Z",
+      "command": "checkpoint-capture.ps1 -Stage final/repeat -Profiles anatolia,zagros -Scales overview,strategic",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "edge-shadow-control",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:15.5970906Z",
+      "command": "checkpoint-capture.ps1 -Stage final/no-shadows -Views campaign -NoTerrainShadows",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "edge-overlap-control",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:25.6678685Z",
+      "command": "checkpoint-capture.ps1 -Stage final/no-overlap -Views campaign -NoOverlap",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "water",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:37.5869811Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/visual-validate.gd -- --output=res://evidence/repair-20261026/final/water --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "approach",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:50.3865528Z",
+      "command": "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe --path C:\\Users\\brand\\historicalgame\\godot-prototype --resolution 1920x1080 --script res://tools/navigation-profile.gd -- --output=res://evidence/repair-20261026/final/approach --source-manifest=res://evidence/repair-20261026/final/source.json",
+      "expectedExitCode": 0
+    },
+    {
+      "passed": true,
+      "name": "source-verify",
+      "exitCode": 0,
+      "recordedAtUtc": "2026-10-26T21:01:52.1492350Z",
+      "command": "node godot-prototype/tools/checkpoint-source.mjs verify C:\\Users\\brand\\historicalgame\\godot-prototype\\evidence\\repair-20261026\\final/source.json",
+      "expectedExitCode": 0
+    }
+  ],
+  "sourceRevision": "ceb7d8d1c87a83bfe7ad6324e00e509a11d4fff4e4bddc3b638840ccaa7fb04b",
+  "failure": "PowerShell treated a benign Git line-ending warning from the report subprocess as a native command error; final2 is the replacement review set."
+}

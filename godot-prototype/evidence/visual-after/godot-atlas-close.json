@@ -1,0 +1,115 @@
+{
+  "camera": {
+    "distance": 160.0,
+    "focus": [
+      4.0,
+      34.0
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      -876.743896484375,
+      99.4379425048828,
+      914.156616210938
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 47.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 49.471,
+  "meanFrameMs": 7.02196281800391,
+  "p95FrameMs": 9.487,
+  "primitives": 1422605.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 2378,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1061801312.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-32-3",
+    "world-32--2",
+    "world-27-3",
+    "world-37-3",
+    "world-27--2",
+    "world-32-8",
+    "world-37--2",
+    "world-27-8",
+    "world-32--7",
+    "world-37-8",
+    "world-27--7",
+    "world-22-3"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 10.087,
+    "meanMs": 6.95388571428571,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 9.411,
+    "samples": 280
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 82.029,
+  "startupMs": 2704,
+  "staticMemoryBytes": 237226626,
+  "tileLoadMs": [
+    130.907,
+    12.15,
+    11.142,
+    10.78,
+    10.667,
+    10.719,
+    11.259,
+    11.047,
+    10.962,
+    10.609,
+    10.4,
+    11.08,
+    11.636
+  ],
+  "view": "atlas-close",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 4.0,
+      "coastal_color": [
+        0.045,
+        0.24,
+        0.23
+      ],
+      "deep_color": [
+        0.018,
+        0.085,
+        0.13
+      ],
+      "foam_strength": 0.055,
+      "fresnel_strength": 0.12,
+      "roughness": 0.3,
+      "specular_strength": 0.55,
+      "wave_strength": 0.1
+    },
+    "time": 4.46080477777784
+  }
+}

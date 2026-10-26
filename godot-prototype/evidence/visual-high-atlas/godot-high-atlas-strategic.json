@@ -1,0 +1,115 @@
+{
+  "camera": {
+    "distance": 900.0,
+    "focus": [
+      -6.0,
+      31.7000007629395
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      -1840.89916992188,
+      558.376220703125,
+      1602.88598632813
+    ],
+    "yaw": 0.0
+  },
+  "drawCalls": 54.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 47.327,
+  "meanFrameMs": 7.02219373776908,
+  "p95FrameMs": 9.91,
+  "primitives": 1266345.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.916804054988869,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1061687168.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-27--7",
+    "world-32--7",
+    "world-27--12",
+    "world-32--12",
+    "world-27--2",
+    "world-32--2",
+    "world-22--7",
+    "world-37--7",
+    "world-22--12",
+    "world-37--12",
+    "world-22--2",
+    "world-37--2"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 11.168,
+    "meanMs": 6.95668666666667,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.066,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 59.413,
+  "startupMs": 2439,
+  "staticMemoryBytes": 235905782,
+  "tileLoadMs": [
+    110.489,
+    11.369,
+    10.451,
+    11.146,
+    10.035,
+    10.507,
+    10.287,
+    10.934,
+    10.354,
+    10.511,
+    10.295,
+    11.647,
+    10.126
+  ],
+  "view": "high-atlas-strategic",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 4.0,
+      "coastal_color": [
+        0.045,
+        0.24,
+        0.23
+      ],
+      "deep_color": [
+        0.018,
+        0.085,
+        0.13
+      ],
+      "foam_strength": 0.055,
+      "fresnel_strength": 0.12,
+      "roughness": 0.3,
+      "specular_strength": 0.55,
+      "wave_strength": 0.1
+    },
+    "time": 4.53678711111118
+  }
+}

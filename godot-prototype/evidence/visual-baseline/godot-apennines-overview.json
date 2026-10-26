@@ -1,0 +1,92 @@
+{
+  "camera": {
+    "distance": 2880.0,
+    "focus": [
+      13.3000001907349,
+      42.0
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      570.855346679688,
+      1774.66845703125,
+      2136.52392578125
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 63.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 14.206,
+  "meanFrameMs": 7.62323679060664,
+  "p95FrameMs": 10.392,
+  "primitives": 1364647.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1035868016.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-42-13",
+    "world-37-13",
+    "world-37-8",
+    "world-42-8",
+    "world-42-18",
+    "world-37-18",
+    "world-32-13",
+    "world-47-13",
+    "world-32-8",
+    "world-47-8",
+    "world-37-3",
+    "world-42-3"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 14.206,
+    "meanMs": 7.69895666666666,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.727,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 60.533,
+  "startupMs": 2408,
+  "staticMemoryBytes": 232961852,
+  "tileLoadMs": [
+    115.658,
+    11.731,
+    10.34,
+    10.69,
+    11.509,
+    11.177,
+    56.043,
+    47.767,
+    10.373,
+    43.17,
+    10.449,
+    10.19,
+    10.734
+  ],
+  "view": "apennines-overview"
+}

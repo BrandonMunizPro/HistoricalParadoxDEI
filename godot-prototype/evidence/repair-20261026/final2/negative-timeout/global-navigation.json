@@ -1,0 +1,49 @@
+{
+  "cameraToleranceKm": 0.0001,
+  "checks": [
+    {
+      "busy": false,
+      "distance": 95.0,
+      "focusErrorDegrees": 0.0,
+      "goalDistance": 95.0,
+      "pendingScenery": [
+        "global|21|37",
+        "global|22|37",
+        "global|23|37",
+        "global|21|38",
+        "global|22|38",
+        "global|23|38",
+        "global|21|39",
+        "global|22|39",
+        "global|23|39"
+      ],
+      "pendingTerrain": [
+        "world-37-18",
+        "world-37-23",
+        "world-32-18",
+        "world-32-23",
+        "world-42-18",
+        "world-42-23",
+        "world-37-13",
+        "world-32-13",
+        "world-37-28",
+        "world-32-28",
+        "world-42-13",
+        "world-27-18"
+      ],
+      "sceneryReady": false,
+      "view": "greece"
+    }
+  ],
+  "evidence": {
+    "baseCommit": "3ff5be155bbe8dc67133745330ff1c42f078b9e9",
+    "recordedAtUtc": "2026-10-26T21:07:14Z",
+    "sourceRevision": "2ada68e20dca03fc0529b6c139fe10292c497a1ba67ee3a559f989e130922b22"
+  },
+  "failure": "Timed out waiting for camera, terrain and scenery: greece",
+  "maxPlacementErrorMetres": 0.0,
+  "maxSharedEdgeErrorMetres": 0.0,
+  "passed": false,
+  "selectable": 35,
+  "timeoutSeconds": 0.0
+}

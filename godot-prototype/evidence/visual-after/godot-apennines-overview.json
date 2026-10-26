@@ -1,0 +1,115 @@
+{
+  "camera": {
+    "distance": 2880.0,
+    "focus": [
+      13.3000001907349,
+      42.0
+    ],
+    "fov": 42,
+    "pitch": 38.0,
+    "position": [
+      570.855346679688,
+      1774.66845703125,
+      2136.52392578125
+    ],
+    "yaw": 15.0
+  },
+  "drawCalls": 67.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "maxFrameMs": 15.519,
+  "meanFrameMs": 7.79623483365949,
+  "p95FrameMs": 10.394,
+  "primitives": 1364787.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 0,
+    "materialDetail": 0.62,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 601,
+    "vegetationInstancesResident": 0,
+    "vegetationTiles": 0
+  },
+  "renderVideoMemoryBytes": 1061425024.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-42-13",
+    "world-37-13",
+    "world-37-8",
+    "world-42-8",
+    "world-42-18",
+    "world-37-18",
+    "world-32-13",
+    "world-47-13",
+    "world-32-8",
+    "world-47-8",
+    "world-37-3",
+    "world-42-3"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "samples": 511,
+  "settledFrameStats": {
+    "maxMs": 15.519,
+    "meanMs": 7.86983666666667,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 10.574,
+    "samples": 300
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 65.086,
+  "startupMs": 2562,
+  "staticMemoryBytes": 235932028,
+  "tileLoadMs": [
+    136.478,
+    10.853,
+    11.406,
+    12.058,
+    12.381,
+    11.985,
+    14.213,
+    13.143,
+    11.404,
+    14.394,
+    11.605,
+    11.911,
+    13.475
+  ],
+  "view": "apennines-overview",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 4.0,
+      "coastal_color": [
+        0.045,
+        0.24,
+        0.23
+      ],
+      "deep_color": [
+        0.018,
+        0.085,
+        0.13
+      ],
+      "foam_strength": 0.055,
+      "fresnel_strength": 0.12,
+      "roughness": 0.3,
+      "specular_strength": 0.55,
+      "wave_strength": 0.1
+    },
+    "time": 4.97424242424245
+  }
+}

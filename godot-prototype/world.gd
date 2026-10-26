@@ -49,7 +49,7 @@ var city_batches={}
 var scene_environment: Environment
 var last_frame_usec=0
 var all_frame_times=[]
-var initial_view="overview"
+var initial_view="campaign"
 var regional_river: MeshInstance3D
 var river_signature=""
 var regional_manifest={}
@@ -70,6 +70,24 @@ var mesh_cache={}
 var mesh_cache_building=false
 var settled_frame_times=[]
 var peak_frame_ms=0.0
+var visual_settings={}
+var water_time=0.0
+var water_animation_enabled=true
+var navigation=preload("res://navigation.gd").new()
+var camera_path="production"
+var resolved_view=""
+var frame_stages=[]
+var previous_cpu_stages={}
+var stage_maxima={}
+var boot_stages={}
+var river_building=false
+var river_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"completed":0,"cancelled":0}
+var settled_gpu=[]
+var settled_render_cpu=[]
+var source_manifest={}
+var terrain_shadow_enabled=true
+var water_toggle: CheckButton
+var navigation_trace={}
 
 func read_json(p):
 	return JSON.parse_string(FileAccess.get_file_as_string("res://"+p))
@@ -94,6 +112,13 @@ func unproject(p):
 	return Vector2(rad_to_deg(lon),rad_to_deg(lat))
 
 func _ready():
+	set_process(false)
+	visual_settings=read_json("data/visual-settings.json")
+	if not navigation.configure(read_json("data/production-views.json"),read_json("data/global-views.json")):
+		push_error("Duplicate or invalid production navigation preset")
+		get_tree().quit(1)
+		return
+	water_animation_enabled=not OS.get_cmdline_user_args().has("--static-water")
 	manifest=read_json("data/world.json")
 	sites=read_json("data/sites.json")
 	research=read_json("data/research-locations.json").records
@@ -106,6 +131,17 @@ func _ready():
 		if arg.begins_with("--capture="):capture_name=arg.trim_prefix("--capture=")
 		if arg.begins_with("--output="):capture_dir=arg.trim_prefix("--output=")
 		if arg.begins_with("--view="):initial_view=arg.trim_prefix("--view=")
+		if arg.begins_with("--source-manifest="):
+			var source_path=arg.trim_prefix("--source-manifest=")
+			if not FileAccess.file_exists(source_path):push_error("Missing evidence source manifest");get_tree().quit(1);return
+			var loaded=JSON.parse_string(FileAccess.get_file_as_string(source_path))
+			if not loaded is Dictionary or not loaded.has("sourceRevision"):push_error("Invalid evidence source manifest");get_tree().quit(1);return
+			source_manifest=loaded
+	if not source_manifest.is_empty():
+		var repo=ProjectSettings.globalize_path("res://").trim_suffix("/").get_base_dir()
+		for file in source_manifest.files:
+			if file.kind=="code" and FileAccess.get_sha256(repo+"/"+file.path)!=file.sha256:
+				push_error("Stale evidence source: "+file.path);get_tree().quit(1);return
 	if capture_name!="":
 		get_window().content_scale_mode=Window.CONTENT_SCALE_MODE_VIEWPORT
 		get_window().content_scale_size=Vector2i(1920,1080)
@@ -115,19 +151,31 @@ func _ready():
 			if arg.begins_with("--baseline-folder="):baseline_folder=arg.trim_prefix("--baseline-folder=")
 		var baseline=baseline_folder+"/godot-"+capture_name+".json"
 		if FileAccess.file_exists("res://"+baseline):comparison_camera=read_json(baseline).camera
+	var boot_clock=Time.get_ticks_usec()
 	configure_environment()
+	boot_clock=profile_stage("environment",boot_clock,boot_stages)
 	make_material()
+	boot_clock=profile_stage("materials",boot_clock,boot_stages)
 	context_node=load_tile("context")
 	make_regional_backdrop()
+	boot_clock=profile_stage("base_meshes",boot_clock,boot_stages)
 	scenery=preload("res://regional_scenery.gd").new(self)
+	boot_clock=profile_stage("canopy_meshes",boot_clock,boot_stages)
 	make_water()
 	make_markers()
 	make_ui()
 	make_rivers()
 	make_lakes()
-	if capture_name!="":jump(capture_name)
-	else:jump(initial_view)
+	profile_stage("water_ui_hydrology",boot_clock,boot_stages)
+	RenderingServer.viewport_set_measure_render_time(get_viewport().get_viewport_rid(),true)
+	# A capture filename is not a navigation key. Screenshot tools set their own
+	# camera after instantiation; --view always resolves the production registry.
+	if not jump(initial_view):
+		push_error("Unknown production view: "+initial_view)
+		get_tree().quit(1)
+		return
 	startup_ms=Time.get_ticks_msec()-started
+	set_process(true)
 	print("GEOGRAPHY_READY sites=",sites.size()," research=",research.size()," Catana=15.088142,37.502959 startup_ms=",startup_ms)
 	if OS.get_cmdline_user_args().has("--validate"):
 		validate_geography()
@@ -166,7 +214,7 @@ func configure_environment():
 	sun=DirectionalLight3D.new()
 	sun.light_color=Color("fff0d3")
 	sun.light_energy=1.55
-	sun.light_specular=.22
+	sun.light_specular=visual_settings.lighting.sun_specular
 	sun.rotation_degrees=Vector3(-28,-58,0)
 	sun.shadow_enabled=true
 	sun.directional_shadow_max_distance=360.0
@@ -195,6 +243,11 @@ func make_material():
 		regional_textures[item]=ImageTexture.create_from_image(image)
 	base_material=ShaderMaterial.new()
 	base_material.shader=load("res://terrain.gdshader")
+	var relief_image=Image.load_from_file("res://data/visual/relief.png")
+	relief_image.generate_mipmaps()
+	base_material.set_shader_parameter("strategic_relief",ImageTexture.create_from_image(relief_image))
+	for key in visual_settings.terrain:base_material.set_shader_parameter(key,visual_settings.terrain[key])
+	base_material.set_shader_parameter("relief_light_direction",sun.global_basis.z)
 	base_material.set_shader_parameter("macro_color",load("res://data/surface.png"))
 	base_material.set_shader_parameter("regional_land",regional_textures.land)
 	base_material.set_shader_parameter("ecology",regional_textures.ecology)
@@ -374,6 +427,11 @@ func is_land(lon,lat):
 func make_water():
 	water_material=ShaderMaterial.new()
 	water_material.shader=load("res://water.gdshader")
+	water_material.set_shader_parameter("strategic_land",load("res://data/tiles/context-coast.png"))
+	for key in visual_settings.water:
+		var value=visual_settings.water[key]
+		if value is Array:value=Vector3(value[0],value[1],value[2])
+		water_material.set_shader_parameter(key,value)
 	water_material.render_priority=-128
 	water_material.set_shader_parameter("shore_mask",load("res://data/ocean-exclusion.png"))
 	water_material.set_shader_parameter("regional_ocean",regional_textures.ocean)
@@ -390,6 +448,11 @@ func make_water():
 	water.material_override=water_material
 	water.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(water)
+
+func set_water_animation(enabled):
+	water_animation_enabled=enabled
+	if water_toggle!=null:water_toggle.set_pressed_no_signal(enabled)
+	water_material.set_shader_parameter("water_time",water_time)
 
 func make_markers():
 	marker_root=Node3D.new()
@@ -442,7 +505,7 @@ func make_ui():
 	sub.text="278 BCE  /  Geographic prototype"
 	sub.add_theme_color_override("font_color",Color("acbdbb"))
 	box.add_child(sub)
-	for item in [["Campaign overview","overview"],["Alps & northern Italy","alps"],["Po Valley","po"],["Central Apennines","apennines"],["Southern Italy","south"],["Sicily & southern Italy","sicily"],["Catana · Mount Etna","etna"],["Catana settlement","catana"]]:
+	for item in [["Campaign strategic view","campaign"],["Campaign overview","overview"],["Alps & northern Italy","alps"],["Po Valley","po"],["Central Apennines","apennines"],["Southern Italy","south"],["Sicily & southern Italy","sicily"],["Catana · Mount Etna","etna"],["Catana settlement","catana"]]:
 		var button=Button.new()
 		button.text=item[0]
 		button.pressed.connect(jump.bind(item[1]))
@@ -450,7 +513,7 @@ func make_ui():
 	search=LineEdit.new()
 	var region_picker=OptionButton.new()
 	region_picker.add_item("Explore campaign regions…")
-	var region_keys=read_json("data/global-views.json").keys()
+	var region_keys=navigation.presets.keys()
 	for key in region_keys:region_picker.add_item(str(key).capitalize())
 	region_picker.item_selected.connect(func(index):
 		if index>0:jump(region_keys[index-1]))
@@ -467,6 +530,11 @@ func make_ui():
 	check.text="Research references (687 retained)"
 	check.toggled.connect(toggle_research)
 	box.add_child(check)
+	water_toggle=CheckButton.new()
+	water_toggle.text="Animated water"
+	water_toggle.button_pressed=water_animation_enabled
+	water_toggle.toggled.connect(set_water_animation)
+	box.add_child(water_toggle)
 	selection_label=Label.new()
 	selection_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	selection_label.custom_minimum_size.x=240
@@ -507,17 +575,18 @@ func select_site(key):
 			return
 
 func jump(name):
-	if capture_name!="" and name!=capture_name:return
-	var views={"overview":[29.0,37.0,8500.0,78.0,0.0],"sicily":[14.5,37.7,520.0,57.0,0.0],"etna":[15.11,37.70,22.0,8.0,90.0],"catana":[15.088142,37.502959,1.8,36.0,-22.0],"alps":[11.1,45.85,100.0,28.0,0.0],"po":[10.5,45.12,95.0,38.0,-20.0],"apennines":[13.58,42.43,85.0,30.0,28.0],"south":[16.15,39.25,105.0,34.0,20.0]}
-	var view=views.get(name,views.overview)
-	var global_views=read_json("data/global-views.json")
-	if global_views.has(name):view=global_views[name]
+	var view=navigation.resolve(name)
+	if view.is_empty():return false
+	camera_path="production"
+	resolved_view=name
+	print("PRODUCTION_VIEW_RESOLVED ",name," distance=",view[2])
 	goal_focus=Vector2(view[0],view[1])
 	goal_distance=view[2]
 	pitch=view[3]
 	yaw=view[4]
 	if ready_frame==0 or capture_name!="":focus=goal_focus;distance=goal_distance
 	queue_tiles()
+	return true
 
 func queue_tiles():
 	var family="regional" if distance<1800 and focus.x>=6 and focus.x<=20 and focus.y>=35 and focus.y<=49 else "world"
@@ -578,17 +647,45 @@ func update_coverage():
 		resident[id]["neighbors"]=nx
 		resident[id].node.material_override.set_shader_parameter("neighbors",nx)
 
+func profile_stage(label,begin,stages):
+	var end=Time.get_ticks_usec()
+	stages[label]=(end-begin)/1000.0
+	stage_maxima[label]=max(stage_maxima.get(label,0.0),stages[label])
+	return end
+
+func evidence_metadata():
+	return {"sourceRevision":source_manifest.get("sourceRevision","diagnostic-unversioned"),"recordedAtUtc":Time.get_datetime_string_from_system(true)+"Z","baseCommit":source_manifest.get("baseCommit","")}
+
+func is_settled():
+	if not queue.is_empty() or not scenery.is_ready() or river_building:return false
+	for id in resident:
+		if resident[id].reveal<1:return false
+	return true
+
 func _process(delta):
+	var cpu_clock=Time.get_ticks_usec()
+	var stages={}
+	if water_animation_enabled and not get_tree().paused and DisplayServer.window_get_mode()!=DisplayServer.WINDOW_MODE_MINIMIZED:
+		water_time+=delta
+		water_material.set_shader_parameter("water_time",water_time)
 	var now_usec=Time.get_ticks_usec()
 	var wall_ms=(now_usec-last_frame_usec)/1000.0 if last_frame_usec>0 else delta*1000.0
 	last_frame_usec=now_usec
+	if wall_ms>33.3:
+		frame_stages.append({"frame":ready_frame,"wallMs":wall_ms,"previousCpuStagesMs":previous_cpu_stages.duplicate(),"renderCpuMs":RenderingServer.viewport_get_measured_render_time_cpu(get_viewport().get_viewport_rid()),"renderGpuMs":RenderingServer.viewport_get_measured_render_time_gpu(get_viewport().get_viewport_rid())})
+		frame_stages.sort_custom(func(a,b):return a.wallMs>b.wallMs)
+		if frame_stages.size()>40:frame_stages.pop_back()
 	peak_frame_ms=max(peak_frame_ms,wall_ms)
 	all_frame_times.append(wall_ms)
 	if all_frame_times.size()>900:all_frame_times.pop_front()
 	ready_frame+=1
 	var dt=min(delta,.05)
 	focus=focus.lerp(goal_focus,1.0-exp(-dt*9))
-	distance=lerp(distance,goal_distance,1.0-exp(-dt*9))
+	# Vector2 is float32: easing can stall several ULPs short of its endpoint.
+	if focus.distance_to(goal_focus)<.0001:focus=goal_focus
+	var next_distance=lerp(distance,goal_distance,1.0-exp(-dt*9))
+	var max_zoom_step=visual_settings.camera.max_zoom_step_fraction
+	distance=clamp(next_distance,distance*(1.0-max_zoom_step),distance*(1.0+max_zoom_step))
 	if capture_name!="":distance=goal_distance
 	if not search.has_focus() and capture_name=="":
 		var move=Vector2(float(Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT)),float(Input.is_physical_key_pressed(KEY_W) or Input.is_physical_key_pressed(KEY_UP))-float(Input.is_physical_key_pressed(KEY_S) or Input.is_physical_key_pressed(KEY_DOWN)))
@@ -619,21 +716,23 @@ func _process(delta):
 	sun.directional_shadow_max_distance=clamp(distance*1.6,3.0,360.0)
 	regional_active=distance<3300
 	regional_node.visible=regional_active
-	regional_node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if distance>8 else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	regional_node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if distance>8 and terrain_shadow_enabled else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	strategic_regional_rivers.visible=not regional_active
 	strategic_world_rivers.visible=distance>=500
-	var material_detail=1.0-smoothstep(250.0,1800.0,distance)
+	var tuning=visual_settings.camera
+	var material_detail=lerp(1.0,tuning.distant_material_weight,smoothstep(tuning.detail_near_km,tuning.detail_far_km,distance))
 	context_node.material_override.set_shader_parameter("detail_strength",material_detail)
 	context_node.material_override.set_shader_parameter("camera_distance",distance)
 	regional_node.material_override.set_shader_parameter("detail_strength",material_detail)
 	regional_node.material_override.set_shader_parameter("camera_distance",distance)
 	for id in resident:
 		resident[id].node.material_override.set_shader_parameter("clip_region",regional_active and resident[id].descriptor.kind!="regional")
-		resident[id].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if resident[id].descriptor.kind=="regional" and distance>8 else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		resident[id].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if resident[id].descriptor.kind=="regional" and distance>8 and terrain_shadow_enabled else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	scene_environment.fog_density=.00065*clamp(150.0/distance,.015,1.0)
 	vegetation_root.visible=distance<190
 	scene_environment.ssao_enabled=distance<18
 	city_root.visible=distance<20
+	cpu_clock=profile_stage("camera_materials",cpu_clock,stages)
 	tick+=dt
 	if tick>.4:
 		tick=0
@@ -641,6 +740,7 @@ func _process(delta):
 	if queue.size()>0:
 		load_tile(queue.pop_front())
 		update_coverage()
+	cpu_clock=profile_stage("tile_upload",cpu_clock,stages)
 	for id in resident:
 		if id=="context":continue
 		resident[id].reveal=clamp((Time.get_ticks_msec()-resident[id].born)/650.0,0.0,1.0)
@@ -649,26 +749,35 @@ func _process(delta):
 		resident[id].node.material_override.set_shader_parameter("camera_distance",distance)
 	if queue.is_empty() and city_root.get_child_count()==0 and resident.has("N37E15") and resident.N37E15.reveal>=1.0:
 		build_catana()
-	if queue.is_empty() and distance<1800 and regional_active:
-		var signature=str(resident.keys())+str(Vector2i(floori(focus.x),floori(focus.y)))
+	cpu_clock=profile_stage("city",cpu_clock,stages)
+	if queue.is_empty() and distance<500 and regional_active and not river_building:
+		var signature=river_view_signature()
 		var stable=true
 		for id in resident:
 			if resident[id].reveal<1:stable=false
 		if signature!=river_signature and stable:
 			river_signature=signature
-			make_regional_rivers()
+			make_regional_rivers(signature)
 	if regional_river!=null:regional_river.visible=distance<500
+	cpu_clock=profile_stage("rivers",cpu_clock,stages)
 	scenery.tick()
-	var settled=queue.is_empty() and not scenery.busy
-	for id in resident:
-		if resident[id].reveal<1:settled=false
-	if settled:settled_frame_times.append(wall_ms)
-	else:settled_frame_times.clear()
+	cpu_clock=profile_stage("scenery",cpu_clock,stages)
+	var settled=is_settled()
+	if settled:
+		settled_frame_times.append(wall_ms)
+		settled_gpu.append(RenderingServer.viewport_get_measured_render_time_gpu(get_viewport().get_viewport_rid()))
+		settled_render_cpu.append(RenderingServer.viewport_get_measured_render_time_cpu(get_viewport().get_viewport_rid()))
+	else:
+		settled_frame_times.clear();settled_gpu.clear();settled_render_cpu.clear()
 	if settled_frame_times.size()>300:settled_frame_times.pop_front()
+	if settled_gpu.size()>300:settled_gpu.pop_front();settled_render_cpu.pop_front()
 	update_markers()
+	cpu_clock=profile_stage("markers",cpu_clock,stages)
 	if ready_frame>90:frame_times.append(wall_ms)
 	if frame_times.size()>900:frame_times.pop_front()
 	status.text="%d FPS   ·   %.1f km camera   ·   %d terrain tiles   ·   WASD geographic navigation" % [Engine.get_frames_per_second(),distance,resident.size()]
+	profile_stage("ui",cpu_clock,stages)
+	previous_cpu_stages=stages
 	if capture_name!="" and ready_frame>600 and settled_frame_times.size()>=180 and not capture_done:
 		capture_done=true
 		capture()
@@ -762,10 +871,14 @@ func make_lakes():
 	node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(node)
 
-func make_regional_rivers():
+func river_view_signature():
+	return str(resident.keys())+str(Vector2i(floori(focus.x),floori(focus.y)))
+
+func make_regional_rivers(signature):
 	# Original ribbons follow existing centreline data. Width is a visual convention,
 	# not a historical bank survey. Resample against the active terrain surface.
-	if regional_river!=null:regional_river.queue_free()
+	river_building=true
+	var chunk_begin=Time.get_ticks_usec()
 	var mesh=ImmediateMesh.new()
 	var mat=material("355b60",.32)
 	mat.cull_mode=BaseMaterial3D.CULL_DISABLED
@@ -774,6 +887,12 @@ func make_regional_rivers():
 		var lines=f.geometry.coordinates if f.geometry.type=="MultiLineString" else [f.geometry.coordinates]
 		for line in lines:
 			for i in range(1,line.size()):
+				if Time.get_ticks_usec()-chunk_begin>2000:
+					river_profile.maxChunkMs=max(river_profile.maxChunkMs,(Time.get_ticks_usec()-chunk_begin)/1000.0)
+					await get_tree().process_frame
+					if signature!=river_view_signature() or distance>=500:
+						river_building=false;river_signature="";river_profile.cancelled+=1;return
+					chunk_begin=Time.get_ticks_usec()
 				var a=Vector2(line[i-1][0],line[i-1][1])
 				var b=Vector2(line[i][0],line[i][1])
 				var italian=contains(regional_manifest.bounds,a.x,a.y)
@@ -781,6 +900,12 @@ func make_regional_rivers():
 				if projected.distance_to(target)>max(80.0,distance*1.5):continue
 				var steps=max(1,int(projected.distance_to(project(b.x,b.y))/(.25 if italian else 1.0)))
 				for j in steps:
+					if Time.get_ticks_usec()-chunk_begin>2000:
+						river_profile.maxChunkMs=max(river_profile.maxChunkMs,(Time.get_ticks_usec()-chunk_begin)/1000.0)
+						await get_tree().process_frame
+						if signature!=river_view_signature() or distance>=500:
+							river_building=false;river_signature="";river_profile.cancelled+=1;return
+						chunk_begin=Time.get_ticks_usec()
 					var ga=a.lerp(b,float(j)/steps)
 					var gb=a.lerp(b,float(j+1)/steps)
 					if not is_land(ga.x,ga.y):continue
@@ -788,16 +913,24 @@ func make_regional_rivers():
 					var pb=project(gb.x,gb.y);pb.y=elevation(gb.x,gb.y)+.003
 					var side=(pb-pa).cross(Vector3.UP).normalized()*(.0225 if italian else .075)
 					points.append_array([pa-side,pa+side,pb-side,pa+side,pb+side,pb-side])
-	if points.is_empty():return
+	river_profile.maxChunkMs=max(river_profile.maxChunkMs,(Time.get_ticks_usec()-chunk_begin)/1000.0)
+	if points.is_empty():
+		if regional_river!=null:regional_river.queue_free();regional_river=null
+		river_building=false;river_profile.completed+=1;return
+	var upload_begin=Time.get_ticks_usec()
 	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,mat)
 	for p in points:
 		mesh.surface_set_normal(Vector3.UP)
 		mesh.surface_add_vertex(p)
 	mesh.surface_end()
+	if regional_river!=null:regional_river.queue_free()
 	regional_river=MeshInstance3D.new()
 	regional_river.mesh=mesh
 	regional_river.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(regional_river)
+	river_profile.maxUploadMs=max(river_profile.maxUploadMs,(Time.get_ticks_usec()-upload_begin)/1000.0)
+	river_profile.completed+=1
+	river_building=false
 
 func exercise_navigation():
 	validate_geography()
@@ -972,6 +1105,18 @@ func capture():
 	metrics["maxFrameMs"]=sorted[-1] if sorted.size()>0 else 0
 	metrics["regionalTerrain"]={"active":regional_active,"backdropGrid":regional_manifest.grid,"parentHeightChannel":"float UV2.x","materialDetail":regional_node.material_override.get_shader_parameter("detail_strength"),"vegetationTiles":scenery.roots.size(),"localVegetationCells":scenery.local_roots.size(),"vegetationInstancesResident":scenery.resident_instances(),"renderFrames":ready_frame}
 	metrics["startupAndStreamingMaxFrameMs"]=peak_frame_ms
+	metrics["water"]={"animated":water_animation_enabled,"time":water_time,"settings":visual_settings.water}
+	metrics["cameraPath"]=camera_path
+	metrics["resolvedProductionView"]=resolved_view
+	metrics["resolvedCameraDistanceKm"]=goal_distance
+	metrics["frameStages"]={"bootMs":boot_stages,"maximumCpuStageMs":stage_maxima,"slowFrames":frame_stages}
+	metrics["sceneryReadiness"]={"ready":scenery.is_ready(),"pending":scenery.pending_cells(),"instances":scenery.resident_instances()}
+	metrics["riverWork"]=river_profile
+	metrics["settledGpuStats"]=sample_stats(settled_gpu)
+	metrics["settledRenderCpuStats"]=sample_stats(settled_render_cpu)
+	metrics["evidence"]=evidence_metadata()
+	metrics["navigationTrace"]=navigation_trace
+	metrics["diagnosticFlags"]=Array(OS.get_cmdline_user_args()).filter(func(arg):return arg in ["--reference-shaders","--no-terrain-shadows","--no-overlap","--static-water"])
 	var steady=settled_frame_times.duplicate();steady.sort()
 	var steady_mean=0.0
 	for v in steady:steady_mean+=v
@@ -981,3 +1126,9 @@ func capture():
 	file.store_string(JSON.stringify(metrics,"  "))
 	print("CAPTURE_SAVED ",path," mean_ms=",mean," tiles=",resident.size())
 	get_tree().quit()
+
+func sample_stats(values):
+	var samples=values.duplicate();samples.sort()
+	var total=0.0
+	for value in samples:total+=value
+	return {"samples":samples.size(),"meanMs":total/max(1,samples.size()),"p95Ms":samples[int(samples.size()*.95)] if not samples.is_empty() else 0.0}

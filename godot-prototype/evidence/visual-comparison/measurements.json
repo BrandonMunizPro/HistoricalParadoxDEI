@@ -1,0 +1,1025 @@
+{
+  "notice": "Short sequential desktop samples, not cold-cache or sustained traversal guarantees. FPS uses consecutive settled frames. Identical camera objects and image dimensions asserted.",
+  "rows": [
+    {
+      "name": "alps-overview",
+      "camera": {
+        "distance": 2880,
+        "focus": [
+          10.8000001907349,
+          46
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -208.732543945313,
+          1774.71997070313,
+          1765.73706054688
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 128.72127852838975,
+        "p95Ms": 10.267,
+        "maxFrameMs": 65.443,
+        "tiles": 13,
+        "drawCalls": 63,
+        "vramMiB": 987.8807220458984
+      },
+      "after": {
+        "fps": 126.02786223978386,
+        "p95Ms": 10.42,
+        "maxFrameMs": 100.463,
+        "tiles": 13,
+        "drawCalls": 67,
+        "vramMiB": 1012.2537841796875
+      }
+    },
+    {
+      "name": "alps-strategic",
+      "camera": {
+        "distance": 900,
+        "focus": [
+          10.8000001907349,
+          46
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -208.732543945313,
+          555.710205078125,
+          205.475891113281
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 121.9095918466865,
+        "p95Ms": 10.661,
+        "maxFrameMs": 1515.592,
+        "tiles": 13,
+        "drawCalls": 67,
+        "vramMiB": 992.1091003417969
+      },
+      "after": {
+        "fps": 120.33732960234117,
+        "p95Ms": 10.948,
+        "maxFrameMs": 1457.911,
+        "tiles": 13,
+        "drawCalls": 71,
+        "vramMiB": 1016.7321624755859
+      }
+    },
+    {
+      "name": "alps-close",
+      "camera": {
+        "distance": 144,
+        "focus": [
+          10.8000001907349,
+          46
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -208.732543945313,
+          90.2700958251953,
+          -390.260284423828
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.6868488815477,
+        "p95Ms": 10.216,
+        "maxFrameMs": 398.527,
+        "tiles": 13,
+        "drawCalls": 59,
+        "vramMiB": 989.7989044189453
+      },
+      "after": {
+        "fps": 142.96310965856438,
+        "p95Ms": 10.292,
+        "maxFrameMs": 354.204,
+        "tiles": 13,
+        "drawCalls": 63,
+        "vramMiB": 1014.4219665527344
+      }
+    },
+    {
+      "name": "apennines-overview",
+      "camera": {
+        "distance": 2880,
+        "focus": [
+          13.3000001907349,
+          42
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          570.855346679688,
+          1774.66845703125,
+          2136.52392578125
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 129.88772937631822,
+        "p95Ms": 10.727,
+        "maxFrameMs": 60.533,
+        "tiles": 13,
+        "drawCalls": 63,
+        "vramMiB": 987.8807220458984
+      },
+      "after": {
+        "fps": 127.06744019676812,
+        "p95Ms": 10.574,
+        "maxFrameMs": 65.086,
+        "tiles": 13,
+        "drawCalls": 67,
+        "vramMiB": 1012.2537841796875
+      }
+    },
+    {
+      "name": "apennines-strategic",
+      "camera": {
+        "distance": 900,
+        "focus": [
+          13.3000001907349,
+          42
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          167.029983520508,
+          555.588684082031,
+          629.42724609375
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 131.38469394592462,
+        "p95Ms": 10.382,
+        "maxFrameMs": 1505.502,
+        "tiles": 13,
+        "drawCalls": 78,
+        "vramMiB": 992.1295776367188
+      },
+      "after": {
+        "fps": 133.7069402370088,
+        "p95Ms": 10.163,
+        "maxFrameMs": 1426.106,
+        "tiles": 13,
+        "drawCalls": 82,
+        "vramMiB": 1016.7526397705078
+      }
+    },
+    {
+      "name": "apennines-close",
+      "camera": {
+        "distance": 144,
+        "focus": [
+          13.3000001907349,
+          42
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          12.8421268463135,
+          90.1486282348633,
+          53.9903182983398
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 121.80323323955687,
+        "p95Ms": 10.763,
+        "maxFrameMs": 296.225,
+        "tiles": 13,
+        "drawCalls": 89,
+        "vramMiB": 989.2465209960938
+      },
+      "after": {
+        "fps": 126.74111234261515,
+        "p95Ms": 10.747,
+        "maxFrameMs": 204.362,
+        "tiles": 13,
+        "drawCalls": 93,
+        "vramMiB": 1013.8695831298828
+      }
+    },
+    {
+      "name": "sicily-overview",
+      "camera": {
+        "distance": 2080,
+        "focus": [
+          14.5,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          88.0428771972656,
+          1392.45861816406,
+          1967.78601074219
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 132.27402415940966,
+        "p95Ms": 10.464,
+        "maxFrameMs": 123.687,
+        "tiles": 13,
+        "drawCalls": 65,
+        "vramMiB": 987.8807220458984
+      },
+      "after": {
+        "fps": 130.63374347974346,
+        "p95Ms": 10.403,
+        "maxFrameMs": 76.918,
+        "tiles": 13,
+        "drawCalls": 69,
+        "vramMiB": 1012.2537841796875
+      }
+    },
+    {
+      "name": "sicily-strategic",
+      "camera": {
+        "distance": 650,
+        "focus": [
+          14.5,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          88.0428771972656,
+          435.714233398438,
+          905.088989257813
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.95248416402708,
+        "p95Ms": 9.291,
+        "maxFrameMs": 859.133,
+        "tiles": 13,
+        "drawCalls": 71,
+        "vramMiB": 990.7264862060547
+      },
+      "after": {
+        "fps": 143.68710695589297,
+        "p95Ms": 9.711,
+        "maxFrameMs": 900.265,
+        "tiles": 13,
+        "drawCalls": 75,
+        "vramMiB": 1015.3495483398438
+      }
+    },
+    {
+      "name": "sicily-close",
+      "camera": {
+        "distance": 104,
+        "focus": [
+          14.5,
+          37.7000007629395
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          88.0428771972656,
+          70.3689270019531,
+          499.331909179688
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.66418580418974,
+        "p95Ms": 9.507,
+        "maxFrameMs": 105.402,
+        "tiles": 13,
+        "drawCalls": 82,
+        "vramMiB": 988.3798828125
+      },
+      "after": {
+        "fps": 143.96252691117695,
+        "p95Ms": 9.96,
+        "maxFrameMs": 104.649,
+        "tiles": 13,
+        "drawCalls": 86,
+        "vramMiB": 1013.0029449462891
+      }
+    },
+    {
+      "name": "pyrenees-overview",
+      "camera": {
+        "distance": 2880,
+        "focus": [
+          0.200000002980232,
+          42.5999984741211
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -1084.27624511719,
+          1775.2138671875,
+          2062.78564453125
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 131.00213577148693,
+        "p95Ms": 9.537,
+        "maxFrameMs": 140.989,
+        "tiles": 13,
+        "drawCalls": 63,
+        "vramMiB": 987.8807220458984
+      },
+      "after": {
+        "fps": 122.72689338960215,
+        "p95Ms": 10.776,
+        "maxFrameMs": 73.295,
+        "tiles": 13,
+        "drawCalls": 67,
+        "vramMiB": 1012.2537841796875
+      }
+    },
+    {
+      "name": "pyrenees-strategic",
+      "camera": {
+        "distance": 900,
+        "focus": [
+          0.200000002980232,
+          42.5999984741211
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -1084.27624511719,
+          556.204162597656,
+          502.524322509766
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 141.61825289337884,
+        "p95Ms": 7.684,
+        "maxFrameMs": 850.71,
+        "tiles": 13,
+        "drawCalls": 50,
+        "vramMiB": 990.4363098144531
+      },
+      "after": {
+        "fps": 143.70789358717894,
+        "p95Ms": 10.213,
+        "maxFrameMs": 846.66,
+        "tiles": 13,
+        "drawCalls": 54,
+        "vramMiB": 1015.0593719482422
+      }
+    },
+    {
+      "name": "pyrenees-close",
+      "camera": {
+        "distance": 144,
+        "focus": [
+          0.200000002980232,
+          42.5999984741211
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -1084.27624511719,
+          90.7640609741211,
+          -93.2118453979492
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.82398392435465,
+        "p95Ms": 7.857,
+        "maxFrameMs": 56.266,
+        "tiles": 13,
+        "drawCalls": 45,
+        "vramMiB": 988.9638824462891
+      },
+      "after": {
+        "fps": 144.91610739973387,
+        "p95Ms": 9.151,
+        "maxFrameMs": 70.724,
+        "tiles": 13,
+        "drawCalls": 49,
+        "vramMiB": 1013.5869445800781
+      }
+    },
+    {
+      "name": "greece-overview",
+      "camera": {
+        "distance": 2880,
+        "focus": [
+          22.3999996185303,
+          38.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          1360.94311523438,
+          1773.55004882813,
+          2486.62255859375
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 123.73511775871157,
+        "p95Ms": 9.695,
+        "maxFrameMs": 50.67,
+        "tiles": 13,
+        "drawCalls": 61,
+        "vramMiB": 987.8807220458984
+      },
+      "after": {
+        "fps": 112.99801048169549,
+        "p95Ms": 11.651,
+        "maxFrameMs": 75.881,
+        "tiles": 13,
+        "drawCalls": 65,
+        "vramMiB": 1012.2537841796875
+      }
+    },
+    {
+      "name": "greece-strategic",
+      "camera": {
+        "distance": 900,
+        "focus": [
+          22.3999996185303,
+          38.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          957.117797851563,
+          554.540222167969,
+          979.526000976563
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 143.9533821367287,
+        "p95Ms": 8.04,
+        "maxFrameMs": 1076.227,
+        "tiles": 13,
+        "drawCalls": 52,
+        "vramMiB": 991.2538757324219
+      },
+      "after": {
+        "fps": 144.04496507629835,
+        "p95Ms": 10.157,
+        "maxFrameMs": 1116.676,
+        "tiles": 13,
+        "drawCalls": 56,
+        "vramMiB": 1015.8769378662109
+      }
+    },
+    {
+      "name": "greece-close",
+      "camera": {
+        "distance": 144,
+        "focus": [
+          22.3999996185303,
+          38.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          802.929931640625,
+          89.1001586914063,
+          404.089080810547
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 143.86433898927646,
+        "p95Ms": 7.761,
+        "maxFrameMs": 53.977,
+        "tiles": 13,
+        "drawCalls": 72,
+        "vramMiB": 988.5725402832031
+      },
+      "after": {
+        "fps": 138.45377525334143,
+        "p95Ms": 9.579,
+        "maxFrameMs": 64.849,
+        "tiles": 13,
+        "drawCalls": 76,
+        "vramMiB": 1013.1956024169922
+      }
+    },
+    {
+      "name": "anatolia-overview",
+      "camera": {
+        "distance": 3200,
+        "focus": [
+          31.5,
+          38.2000007629395
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          2215.7080078125,
+          1972.78356933594,
+          2642.181640625
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 117.62934522801285,
+        "p95Ms": 9.999,
+        "maxFrameMs": 192.119,
+        "tiles": 13,
+        "drawCalls": 59,
+        "vramMiB": 987.6307220458984
+      },
+      "after": {
+        "fps": 99.50664604888959,
+        "p95Ms": 14.132,
+        "maxFrameMs": 69.272,
+        "tiles": 13,
+        "drawCalls": 63,
+        "vramMiB": 1012.0037841796875
+      }
+    },
+    {
+      "name": "anatolia-strategic",
+      "camera": {
+        "distance": 1000,
+        "focus": [
+          31.5,
+          38.2000007629395
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          1767.01318359375,
+          618.328186035156,
+          967.629821777344
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 141.60013820173486,
+        "p95Ms": 8.07,
+        "maxFrameMs": 746.653,
+        "tiles": 13,
+        "drawCalls": 51,
+        "vramMiB": 990.0385131835938
+      },
+      "after": {
+        "fps": 143.98094844090215,
+        "p95Ms": 10.969,
+        "maxFrameMs": 826.356,
+        "tiles": 13,
+        "drawCalls": 55,
+        "vramMiB": 1014.4115753173828
+      }
+    },
+    {
+      "name": "anatolia-close",
+      "camera": {
+        "distance": 160,
+        "focus": [
+          31.5,
+          38.2000007629395
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          1595.693359375,
+          101.172546386719,
+          328.255432128906
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 144.04339966768572,
+        "p95Ms": 7.891,
+        "maxFrameMs": 56.343,
+        "tiles": 13,
+        "drawCalls": 44,
+        "vramMiB": 988.2881774902344
+      },
+      "after": {
+        "fps": 144.17116000115337,
+        "p95Ms": 9.54,
+        "maxFrameMs": 63.062,
+        "tiles": 13,
+        "drawCalls": 48,
+        "vramMiB": 1012.9112396240234
+      }
+    },
+    {
+      "name": "egypt-overview",
+      "camera": {
+        "distance": 3520,
+        "focus": [
+          31,
+          28.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          1710.20715332031,
+          2355.54248046875,
+          3868.27270507813
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 111.32183922974197,
+        "p95Ms": 10.752,
+        "maxFrameMs": 70.326,
+        "tiles": 13,
+        "drawCalls": 61,
+        "vramMiB": 987.6307220458984
+      },
+      "after": {
+        "fps": 104.02594268309265,
+        "p95Ms": 12.897,
+        "maxFrameMs": 66.874,
+        "tiles": 13,
+        "drawCalls": 65,
+        "vramMiB": 1012.0037841796875
+      }
+    },
+    {
+      "name": "egypt-strategic",
+      "camera": {
+        "distance": 1100,
+        "focus": [
+          31,
+          28.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          1710.20715332031,
+          736.246337890625,
+          2069.8623046875
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.9137438584811,
+        "p95Ms": 7.941,
+        "maxFrameMs": 439.485,
+        "tiles": 13,
+        "drawCalls": 51,
+        "vramMiB": 988.6820526123047
+      },
+      "after": {
+        "fps": 143.77325232828795,
+        "p95Ms": 10.444,
+        "maxFrameMs": 430.362,
+        "tiles": 13,
+        "drawCalls": 55,
+        "vramMiB": 1013.0551147460938
+      }
+    },
+    {
+      "name": "egypt-close",
+      "camera": {
+        "distance": 176,
+        "focus": [
+          31,
+          28.7999992370605
+        ],
+        "fov": 42,
+        "pitch": 42,
+        "position": [
+          1710.20715332031,
+          117.969612121582,
+          1383.19653320313
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.98848092152627,
+        "p95Ms": 7.636,
+        "maxFrameMs": 83.611,
+        "tiles": 13,
+        "drawCalls": 43,
+        "vramMiB": 988.1090393066406
+      },
+      "after": {
+        "fps": 143.79894124808223,
+        "p95Ms": 9.445,
+        "maxFrameMs": 94.858,
+        "tiles": 13,
+        "drawCalls": 47,
+        "vramMiB": 1012.7321014404297
+      }
+    },
+    {
+      "name": "atlas-overview",
+      "camera": {
+        "distance": 3200,
+        "focus": [
+          4,
+          34
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -876.743896484375,
+          1971.04895019531,
+          3309.70947265625
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 116.603933750309,
+        "p95Ms": 10.189,
+        "maxFrameMs": 54.595,
+        "tiles": 13,
+        "drawCalls": 61,
+        "vramMiB": 987.6307220458984
+      },
+      "after": {
+        "fps": 108.80118143576212,
+        "p95Ms": 12.287,
+        "maxFrameMs": 64.46,
+        "tiles": 13,
+        "drawCalls": 65,
+        "vramMiB": 1012.0037841796875
+      }
+    },
+    {
+      "name": "atlas-strategic",
+      "camera": {
+        "distance": 1000,
+        "focus": [
+          4,
+          34
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -876.743896484375,
+          616.593627929688,
+          1576.08569335938
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.86405422332106,
+        "p95Ms": 7.9,
+        "maxFrameMs": 548.378,
+        "tiles": 13,
+        "drawCalls": 60,
+        "vramMiB": 989.5544281005859
+      },
+      "after": {
+        "fps": 142.08521418635613,
+        "p95Ms": 10.462,
+        "maxFrameMs": 575.647,
+        "tiles": 13,
+        "drawCalls": 64,
+        "vramMiB": 1013.927490234375
+      }
+    },
+    {
+      "name": "atlas-close",
+      "camera": {
+        "distance": 160,
+        "focus": [
+          4,
+          34
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          -876.743896484375,
+          99.4379425048828,
+          914.156616210938
+        ],
+        "yaw": 0
+      },
+      "before": {
+        "fps": 143.9658865608593,
+        "p95Ms": 7.682,
+        "maxFrameMs": 58.353,
+        "tiles": 13,
+        "drawCalls": 43,
+        "vramMiB": 987.9895782470703
+      },
+      "after": {
+        "fps": 143.80449163057867,
+        "p95Ms": 9.411,
+        "maxFrameMs": 82.029,
+        "tiles": 13,
+        "drawCalls": 47,
+        "vramMiB": 1012.6126403808594
+      }
+    },
+    {
+      "name": "zagros-overview",
+      "camera": {
+        "distance": 3200,
+        "focus": [
+          48.5,
+          33.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          3830.94897460938,
+          1972.38781738281,
+          2696.50073242188
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 114.39287317147749,
+        "p95Ms": 10.104,
+        "maxFrameMs": 93.701,
+        "tiles": 13,
+        "drawCalls": 53,
+        "vramMiB": 987.6307220458984
+      },
+      "after": {
+        "fps": 102.83572952009314,
+        "p95Ms": 12.78,
+        "maxFrameMs": 79.975,
+        "tiles": 13,
+        "drawCalls": 57,
+        "vramMiB": 1012.0037841796875
+      }
+    },
+    {
+      "name": "zagros-strategic",
+      "camera": {
+        "distance": 1000,
+        "focus": [
+          48.5,
+          33.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          3382.25415039063,
+          617.932495117188,
+          1021.94873046875
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 141.58784156886867,
+        "p95Ms": 8.178,
+        "maxFrameMs": 326.621,
+        "tiles": 13,
+        "drawCalls": 51,
+        "vramMiB": 988.4284515380859
+      },
+      "after": {
+        "fps": 127.19916760864727,
+        "p95Ms": 10.974,
+        "maxFrameMs": 320.509,
+        "tiles": 13,
+        "drawCalls": 55,
+        "vramMiB": 1012.801513671875
+      }
+    },
+    {
+      "name": "zagros-close",
+      "camera": {
+        "distance": 160,
+        "focus": [
+          48.5,
+          33.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          3210.93432617188,
+          100.776840209961,
+          382.574371337891
+        ],
+        "yaw": 15
+      },
+      "before": {
+        "fps": 142.5117597291876,
+        "p95Ms": 7.82,
+        "maxFrameMs": 152.04,
+        "tiles": 13,
+        "drawCalls": 44,
+        "vramMiB": 988.0730438232422
+      },
+      "after": {
+        "fps": 143.94688001540902,
+        "p95Ms": 9.849,
+        "maxFrameMs": 75.097,
+        "tiles": 13,
+        "drawCalls": 48,
+        "vramMiB": 1012.6961059570312
+      }
+    },
+    {
+      "name": "east-overview",
+      "camera": {
+        "distance": 3520,
+        "focus": [
+          69,
+          35.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          5282.69384765625,
+          2171.0693359375,
+          1805.74780273438
+        ],
+        "yaw": 12
+      },
+      "before": {
+        "fps": 128.18080671872517,
+        "p95Ms": 10.559,
+        "maxFrameMs": 106.672,
+        "tiles": 13,
+        "drawCalls": 52,
+        "vramMiB": 987.6307220458984
+      },
+      "after": {
+        "fps": 121.1604260969865,
+        "p95Ms": 11.092,
+        "maxFrameMs": 57.451,
+        "tiles": 13,
+        "drawCalls": 56,
+        "vramMiB": 1012.0037841796875
+      }
+    },
+    {
+      "name": "east-strategic",
+      "camera": {
+        "distance": 1100,
+        "focus": [
+          69,
+          35.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          4886.208984375,
+          681.16845703125,
+          -59.5661010742188
+        ],
+        "yaw": 12
+      },
+      "before": {
+        "fps": 129.01156072595654,
+        "p95Ms": 10.71,
+        "maxFrameMs": 386.453,
+        "tiles": 13,
+        "drawCalls": 52,
+        "vramMiB": 988.4739990234375
+      },
+      "after": {
+        "fps": 130.4202662660156,
+        "p95Ms": 10.843,
+        "maxFrameMs": 365.678,
+        "tiles": 13,
+        "drawCalls": 56,
+        "vramMiB": 1012.8470611572266
+      }
+    },
+    {
+      "name": "east-close",
+      "camera": {
+        "distance": 176,
+        "focus": [
+          69,
+          35.5
+        ],
+        "fov": 42,
+        "pitch": 38,
+        "position": [
+          4734.82421875,
+          112.297225952148,
+          -771.77685546875
+        ],
+        "yaw": 12
+      },
+      "before": {
+        "fps": 144.01668002184658,
+        "p95Ms": 9.255,
+        "maxFrameMs": 65.448,
+        "tiles": 13,
+        "drawCalls": 45,
+        "vramMiB": 988.0903930664062
+      },
+      "after": {
+        "fps": 143.97090058122532,
+        "p95Ms": 10.075,
+        "maxFrameMs": 77.239,
+        "tiles": 13,
+        "drawCalls": 49,
+        "vramMiB": 1012.7134552001953
+      }
+    }
+  ]
+}
