@@ -1,5 +1,7 @@
 shader_type spatial;
-render_mode cull_disabled, depth_draw_never;
+// Terrain's exaggerated, clipped coast mesh casts a false floating ledge shadow.
+// Keep terrain shadows on land; the campaign sea uses sky and sun lighting only.
+render_mode cull_disabled, depth_draw_never, shadows_disabled;
 #include "res://shoreline.gdshaderinc"
 uniform sampler2D strategic_land : filter_linear, repeat_disable;
 uniform sampler2D shore_mask : filter_linear, repeat_disable;
@@ -9,29 +11,23 @@ uniform sampler2D regional_land : filter_linear, repeat_disable;
 uniform sampler2D global_land : filter_linear, repeat_disable;
 uniform sampler2D global_ocean : filter_linear, repeat_disable;
 uniform sampler2D global_shore : filter_linear, repeat_disable;
+uniform sampler2D ripple_normals : filter_linear_mipmap_anisotropic, repeat_enable;
+uniform float ripple_large_km=3.5;
+uniform float ripple_small_km=.42;
+uniform float coastal_color_strength=.65;
 uniform float camera_distance=500.0;
 uniform float water_time=0.0;
 uniform float animation_speed=1.0;
-uniform float wave_strength=.10;
+uniform float wave_strength=.18;
 uniform float roughness=.30;
-uniform float specular_strength=.55;
-uniform float fresnel_strength=.12;
-uniform float foam_strength=.055;
-uniform float coastal_band_km=4.0;
-uniform vec3 deep_color=vec3(.018,.085,.13);
-uniform vec3 coastal_color=vec3(.045,.24,.23);
+uniform float specular_strength=.42;
+uniform float fresnel_strength=.16;
+uniform float foam_strength=.065;
+uniform float coastal_band_km=1.8;
+uniform vec3 deep_color=vec3(.008,.040,.085);
+uniform vec3 coastal_color=vec3(.027,.16,.16);
 varying vec3 world_pos;
 void vertex(){world_pos=(MODEL_MATRIX*vec4(VERTEX,1.0)).xyz;}
-// Analytic gradients at independent wavelengths/directions. Filter subpixel waves
-// before lighting so distant highlights do not sparkle or alias into stripes.
-vec2 wave_gradient(vec2 p,vec2 k,float speed,float phase,float amplitude,float t){
- float crossing=dot(p,vec2(-k.y,k.x))*.31+phase+t*.07;
- float along=dot(p,k)*.43+phase;
- float angle=dot(p,k)+sin(crossing)*.35+sin(along)*.2+t*speed+phase;
- float visible=1.0-smoothstep(.7,2.5,fwidth(angle));
- vec2 direction=k*(1.0+cos(along)*.086)+vec2(-k.y,k.x)*cos(crossing)*.1085;
- return normalize(direction)*cos(angle)*amplitude*visible;
-}
 void fragment(){
  vec2 geo=coast_geographic(world_pos.xz),q=vec2((geo.x-6.0)/14.0,(49.0-geo.y)/14.0);
  bool region=all(greaterThanEqual(q,vec2(0.0)))&&all(lessThanEqual(q,vec2(1.0)));
@@ -41,11 +37,19 @@ void fragment(){
  vec2 gq=(global_uv*vec2(11136.0,6400.0)+.5)/vec2(11137.0,6401.0);
  float land=region?texture(regional_ocean,rq).r:(inside?texture(global_ocean,gq).r:0.0);
  if(camera_distance>2800.0)land=mix(land,inside?texture(shore_mask,global_uv).r:0.0,smoothstep(2800.0,4000.0,camera_distance));
- float ground=region?texture(regional_land,rq).r:(inside?texture(global_land,gq).r:0.0);
- if(camera_distance>2800.0)ground=mix(ground,inside?texture(strategic_land,global_uv).r:0.0,smoothstep(2800.0,4000.0,camera_distance));
+ float ground=region?coast_coverage(regional_land,rq):(inside?coast_coverage(global_land,gq):0.0);
+ float source_ground=region?texture(regional_land,rq).r:(inside?texture(global_land,gq).r:0.0);
+ if(camera_distance>2800.0){
+  float distant_ground=inside?texture(strategic_land,global_uv).r:0.0;
+  float blend=smoothstep(2800.0,4000.0,camera_distance);
+  ground=mix(ground,distant_ground,blend);
+  source_ground=mix(source_ground,distant_ground,blend);
+ }
  // Keep sea under opaque land: elevated coast edges otherwise reveal the
  // background through parallax gaps. Inland water exclusions remain intact.
- if(land>.5&&ground<.5)discard;
+ // Compare unfiltered source masks for lakes: smoothing must not misclassify
+ // an ordinary sea coast as inland water and expose background slivers.
+ if(land>.5&&source_ground<.5)discard;
  vec2 sq=(global_uv*vec2(2784.0,1600.0)+.5)/vec2(2785.0,1601.0);
  // Regional distance stores source pixels; global distance already stores km.
  float d=region?texture(regional_shore,rq).r*63.75*(111.195/512.0):(inside?texture(global_shore,sq).r*63.75:64.0);
@@ -53,23 +57,28 @@ void fragment(){
  float shallow=exp(-d/max(.1,coastal_band_km));
  vec2 p=world_pos.xz;
  float t=water_time*animation_speed;
- vec2 waves=wave_gradient(p,vec2(8.7,5.1),.24,0.0,.12,t);
- waves+=wave_gradient(p,vec2(-11.9,17.1),-.19,1.7,.09,t);
- float fine_weight=1.0-smoothstep(150.0,500.0,camera_distance);
- if(fine_weight>0.0){
-  waves+=wave_gradient(p,vec2(93.0,81.0),.71,2.4,.34,t)*fine_weight;
-  waves+=wave_gradient(p,vec2(-231.0,310.0),-.53,.8,.23,t)*fine_weight;
-  waves+=wave_gradient(p,vec2(410.0,170.0),1.1,3.0,.14,t)*fine_weight;
- }
+ // Independently advected spectra; mip filtering removes subpixel sparkle.
+ // The source texture is independently synthesized, not a game asset.
+ vec2 large_uv=p/ripple_large_km+vec2(.0007,-.0004)*t;
+ vec2 small_uv=mat2(vec2(.8,.6),vec2(-.6,.8))*p/ripple_small_km+vec2(-.0013,.0009)*t;
+ vec2 waves=(texture(ripple_normals,large_uv).rg*2.0-1.0)*.65;
+ waves+=(texture(ripple_normals,small_uv).rg*2.0-1.0)*.35;
+ waves*=1.0-smoothstep(250.0,1500.0,camera_distance)*.75;
  vec3 normal_world=normalize(vec3(-waves.x*wave_strength,1.0,-waves.y*wave_strength));
  NORMAL=normalize(mat3(VIEW_MATRIX)*normal_world);
  float fresnel=pow(1.0-clamp(dot(NORMAL,VIEW),0.0,1.0),5.0);
- ALBEDO=mix(deep_color,coastal_color,shallow*.65);
+ ALBEDO=mix(deep_color,coastal_color,shallow*coastal_color_strength);
  ALBEDO=mix(ALBEDO,vec3(.24,.34,.38),fresnel*fresnel_strength);
  // Restrained shore-distance wash, close views only. Never changes alpha/masks.
- float foam=exp(-d*2.5)*(1.0-smoothstep(40.0,180.0,camera_distance));
- float wash=.65+.35*sin(d*9.0-t*.65+sin(p.x*.4+p.y*.6));
- ALBEDO=mix(ALBEDO,vec3(.46,.54,.49),foam*wash*foam_strength);
- ROUGHNESS=mix(roughness,min(.55,roughness+.15),smoothstep(150.0,1600.0,camera_distance));
+ // Source-mask fringe supplies a narrow, broken wash, not a broad white halo.
+ float edge=smoothstep(.36,.46,ground)*(1.0-smoothstep(.49,.51,ground));
+ float foam=edge*(1.0-smoothstep(100.0,650.0,camera_distance));
+ float wash=smoothstep(.77,.96,texture(ripple_normals,p/.25+vec2(.001,-.0008)*t).b);
+ ALBEDO=mix(ALBEDO,vec3(.36,.42,.36),foam*wash*foam_strength);
+ // Broken, mip-filtered gloss rather than a broad uniform specular sheet.
+ float gloss=texture(ripple_normals,small_uv).b;
+ ROUGHNESS=mix(roughness,roughness+.12,gloss);
+ ROUGHNESS=mix(ROUGHNESS,min(.55,roughness+.15),smoothstep(150.0,1600.0,camera_distance));
  SPECULAR=specular_strength;
+ METALLIC=.04;
 }

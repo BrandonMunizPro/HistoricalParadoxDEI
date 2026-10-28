@@ -1,30 +1,64 @@
 {
   "notice": "Presentation settings only. Coast masks, source heights, canonical locations and hydrology are unchanged.",
   "camera": {
-    "detail_near_km": 250.0,
-    "detail_far_km": 2400.0,
+    "detail_near_km": 250,
+    "detail_far_km": 2400,
     "distant_material_weight": 0.62,
     "max_zoom_step_fraction": 0.08
   },
   "terrain": {
     "coverage_overlap_km": 0.6,
-    "relief_start_km": 120.0,
-    "relief_full_km": 500.0,
-    "relief_contrast": 2.4,
-    "relief_strength": 0.85
+    "relief_start_km": 15,
+    "relief_full_km": 150,
+    "relief_contrast": 3.3,
+    "relief_strength": 0.85,
+    "shore_blend_strength": 0.65,
+    "ground_tile_km": 0.012,
+    "rock_tile_km": 0.035,
+    "habitat_strength": 0.85,
+    "mosaic_strength": 0.3,
+    "mosaic_tile_km": 1.5,
+    "canopy_relief": 0.35,
+    "rock_strata_strength": 0.28,
+    "ground_macro_strength": 0.22
   },
   "lighting": {
-    "sun_specular": 0.55
+    "sun_specular": 0.55,
+    "sun_energy": 1.5,
+    "ambient_energy": 0.38,
+    "exposure": 1,
+    "fog_min_distance_km": 12,
+    "fog_color": [
+      0.53,
+      0.63,
+      0.72
+    ],
+    "fog_density": 0.38,
+    "fog_begin_fraction": 0.75,
+    "fog_end_fraction": 2.2,
+    "fog_depth_curve": 1.4,
+    "terrain_cast_shadows": false
   },
   "water": {
-    "animation_speed": 1.0,
-    "wave_strength": 0.10,
-    "roughness": 0.30,
+    "animation_speed": 1,
+    "wave_strength": 0.26,
+    "roughness": 0.23,
     "specular_strength": 0.55,
-    "fresnel_strength": 0.12,
-    "foam_strength": 0.025,
-    "coastal_band_km": 1.4,
-    "deep_color": [0.012, 0.065, 0.12],
-    "coastal_color": [0.035, 0.19, 0.19]
+    "fresnel_strength": 0.16,
+    "foam_strength": 0.065,
+    "coastal_band_km": 1.8,
+    "coastal_color_strength": 0.65,
+    "ripple_large_km": 3.5,
+    "ripple_small_km": 0.42,
+    "deep_color": [
+      0.012,
+      0.062,
+      0.125
+    ],
+    "coastal_color": [
+      0.045,
+      0.2,
+      0.21
+    ]
   }
 }

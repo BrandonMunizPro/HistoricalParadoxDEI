@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+const target='godot-prototype/evidence/coast-v2/delivery.json';
+const git=args=>execFileSync('git',args,{encoding:'utf8'}).split('\0').filter(Boolean);
+const files=[...new Set([...git(['diff','--name-only','-z']),...git(['ls-files','--others','--exclude-standard','-z'])])].filter(p=>p!==target).sort();
+const rows=files.map(p=>({path:p,bytes:fs.statSync(p).size,sha256:crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')}));
+const source=JSON.parse(fs.readFileSync(path.join(path.dirname(target),'final-source.json')));
+fs.writeFileSync(target,JSON.stringify({baseCommit:source.baseCommit,sourceRevision:source.sourceRevision,createdAtUtc:new Date().toISOString(),notice:'All changed/untracked delivery files except this manifest itself; no commit or push.',files:rows},null,2));
+console.log(JSON.stringify({files:rows.length,manifest:target}));

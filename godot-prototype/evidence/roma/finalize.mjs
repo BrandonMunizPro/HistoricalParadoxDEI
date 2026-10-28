@@ -1,0 +1,12 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+const root=path.resolve('godot-prototype'),out=path.join(root,'evidence/roma'),read=p=>JSON.parse(fs.readFileSync(p)),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const source=read(path.join(out,'final3-source.json')),before=read(path.join(out,'before-source.json')),comparison=read(path.join(out,'comparison.json')),integrity=read(path.join(out,'integrity.json'));
+if(comparison.matchedPairs.length!==5||comparison.checks.length!==12||!comparison.checks.every(x=>x.passed)||!integrity.passed)throw Error('Missing final validation');
+const files=[];
+function walk(dir){for(const f of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,f.name);if(f.isDirectory())walk(p);else if(f.name!=='delivery-manifest.json')files.push({path:path.relative(root,p).replaceAll('\\','/'),bytes:fs.statSync(p).size,sha256:hash(p)});}}
+walk(out);
+for(const dir of ['roma-baseline-serial','roma-baseline-detail-serial','roma-final3','roma-final3-detail','roma-final3-architecture'])walk(path.join(root,'evidence/repair-20261026',dir));
+for(const p of ['ROMA-VISUAL.md','data/roma-views.json'])files.push({path:p,bytes:fs.statSync(path.join(root,p)).size,sha256:hash(path.join(root,p))});
+const reference='C:/Users/brand/OneDrive/Pictures/Screenshots/Screenshot 2026-10-27 140402.png';
+const result={createdAtUtc:new Date().toISOString(),status:'Independent review pending; artistic target remains incomplete',baseCommit:source.baseCommit,sourceRevision:source.sourceRevision,baselineRevision:before.sourceRevision,protectedFiles:460,approvedSites:35,researchRecords:687,romaStructures:121,archetypes:7,matchedPairs:5,additionalCloseViews:2,godotChecks:12,tests:475,sourceChanges:source.files.filter(f=>before.files.find(b=>b.path===f.path)?.sha256!==f.sha256),captureProfileAddedBeforeBaseline:'data/roma-views.json',originalReferenceInspected:{path:reference,sha256:hash(reference),copiedIntoProject:false},newAssets:read(path.join(out,'asset-manifest.json')),committed:false,pushed:false,artExpandedOutsideRoma:false,artifacts:files};
+fs.writeFileSync(path.join(out,'delivery-manifest.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({artifacts:files.length,changedInputs:result.sourceChanges.length,sourceRevision:source.sourceRevision,status:result.status}));

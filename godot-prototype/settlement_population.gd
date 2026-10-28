@@ -1,0 +1,151 @@
+extends RefCounted
+## Independent presentation layer; never adds approved sites or simulation state.
+var world
+var records=[]
+var nodes={}
+var mesh
+var root:Node3D
+var busy=false
+var signature=""
+var stats={"eligible":0,"approved":35,"landAccepted":0,"waterRejected":[],"resident":0,"houses":0,"maxChunkMs":0.0,"buildCpuMs":0.0,"completed":0}
+var tuning
+var placed={}
+var enabled=true
+var roma_visual
+var roma_enabled=true
+func _init(owner):
+	world=owner;tuning=world.read_json("data/foundation-settings.json").settlements
+	enabled=not OS.get_cmdline_user_args().has("--no-settlement-visuals");stats["enabled"]=enabled
+	mesh=preload("res://neutral_settlement.gd").house()
+	root=Node3D.new();root.name="NeutralSettlementPresentation";world.add_child(root)
+	for r in world.read_json("data/settlement-presentation.json").records:
+		stats.eligible+=1
+		if not world.is_land(r.lon,r.lat) and not r.approved:
+			stats.waterRejected.append(r.id);continue
+		records.append(r)
+	stats.landAccepted=records.size()
+	roma_visual=preload("res://roma_settlement.gd").new(world)
+	roma_enabled=not OS.get_cmdline_user_args().has("--roma-neutral-baseline")
+	stats["romaPrototypeEnabled"]=roma_enabled
+
+func is_ready():return not busy
+
+func tick():
+	roma_visual.update_lighting(roma_enabled and enabled)
+	if not enabled:return
+	if busy or not world.queue.is_empty():return
+	for id in world.resident:
+		if world.resident[id].reveal<1:return
+	var next=str(Vector2i(floori(world.focus.x*5),floori(world.focus.y*5)))+"|"+str(int(world.distance/(2.0 if world.distance<30 else 10.0)))+str(world.resident.keys())
+	if signature==next:return
+	signature=next
+	build(next)
+
+func build(request):
+	busy=true
+	var selection_begin=Time.get_ticks_usec()
+	var candidates=[]
+	var radius=max(5.0,world.distance*1.6)
+	for r in records:
+		var p=world.project(r.lon,r.lat)
+		var separation=Vector2(p.x-world.target.x,p.z-world.target.z).length()
+		if separation>=radius:continue
+		p.y=world.target.y
+		if world.camera.is_position_behind(p):continue
+		var screen=world.camera.unproject_position(p)
+		if not Rect2(Vector2(-100,-100),world.get_viewport().get_visible_rect().size+Vector2(200,200)).has_point(screen):continue
+		candidates.append({"record":r,"separation":separation})
+	candidates.sort_custom(func(a,b):return a.separation<b.separation)
+	stats["maxSelectionCpuMs"]=max(stats.get("maxSelectionCpuMs",0.0),(Time.get_ticks_usec()-selection_begin)/1000.0)
+	var retained={}
+	for candidate in candidates.slice(0,int(tuning.max_resident)):retained[candidate.record.id]=true
+	for id in nodes.keys():
+		if not retained.has(id):
+			root.remove_child(nodes[id]);nodes[id].queue_free();nodes.erase(id)
+	var wanted={};var detailed=0;var total_houses=0
+	var chunk=Time.get_ticks_usec()
+	for candidate in candidates.slice(0,int(tuning.max_resident)):
+		var r=candidate.record
+		var close=world.distance<float(tuning.detail_distance_km) and detailed<int(tuning.max_detailed) and candidate.separation<world.distance*1.4
+		if close:detailed+=1
+		# Preserve the original detailed Catana asset, without doubling it.
+		if r.get("key","")=="catana" and world.distance<20:continue
+		wanted[r.id]=true
+		var count=int(lerp(float(tuning.proxy_houses),float(tuning.close_houses),1.0-smoothstep(8.0,float(tuning.detail_distance_km),world.distance))) if close else int(tuning.proxy_houses)
+		var terrain_key=str(world.resident.keys())
+		var footprint=max(1.0,min(float(tuning.max_proxy_scale),world.distance/float(tuning.proxy_scale_distance_km))) if not close else 1.0
+		if r.get("key","")=="roma" and roma_enabled:
+			# The hidden neutral topology must not trigger repeated Roma rebuilds.
+			count=int(tuning.close_houses);footprint=roma_visual.display_scale(world.distance)
+		var roma_lod=roma_visual.lod(world.distance) if r.get("key","")=="roma" else ""
+		if nodes.has(r.id) and nodes[r.id].get_meta("count")==count and nodes[r.id].get_meta("terrain")==terrain_key and nodes[r.id].get_meta("footprint")==footprint and nodes[r.id].get_meta("roma_lod","")==roma_lod:
+			total_houses+=nodes[r.id].multimesh.instance_count;continue
+		var center=world.project(r.lon,r.lat)
+		var layout=preload("res://neutral_settlement.gd").layout(r.id.hash(),count)
+		var mm=MultiMesh.new();mm.transform_format=MultiMesh.TRANSFORM_3D;mm.use_colors=true;mm.mesh=mesh;mm.instance_count=layout.size()
+		for i in layout.size():
+			var b=layout[i];var offset=b.offset*footprint
+			var p=center+offset;var geo=world.unproject(p)
+			# Sample each building on the rendered terrain; never move its site anchor.
+			p.y=world.elevation(geo.x,geo.y)
+			if not world.is_land(geo.x,geo.y):
+				mm.set_instance_transform(i,Transform3D(Basis.IDENTITY.scaled(Vector3.ZERO),p));continue
+			var scale_value=b.scale*footprint
+			mm.set_instance_transform(i,Transform3D(Basis(Vector3.UP,b.angle).scaled(scale_value),p))
+			mm.set_instance_color(i,b.tint)
+			if (Time.get_ticks_usec()-chunk)/1000.0>float(tuning.budget_ms):
+				record_chunk(chunk);await world.get_tree().process_frame;chunk=Time.get_ticks_usec()
+		var node=MultiMeshInstance3D.new();node.multimesh=mm
+		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if close else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		node.set_meta("footprint",footprint)
+		node.set_meta("roma_lod",roma_lod)
+		node.set_meta("count",count);node.set_meta("terrain",terrain_key);node.set_meta("anchor",Vector2(r.lon,r.lat));node.set_meta("approved",r.approved)
+		if r.get("key","")=="roma" and roma_enabled:
+			# Keep the canonical node/anchor and shared placement audit intact.
+			# Only Roma replaces the neutral proxy with this review-stage art kit.
+			mm.visible_instance_count=0
+			node.add_child(await roma_visual.create(world.distance))
+			stats["roma"]=roma_visual.stats.duplicate(true)
+			chunk=Time.get_ticks_usec()
+		if not r.approved:
+			var label=Label3D.new();label.text="R · "+r.name;label.font_size=34;label.outline_size=8
+			label.billboard=BaseMaterial3D.BILLBOARD_ENABLED;label.no_depth_test=true
+			label.modulate=Color("d6d0b1");label.outline_modulate=Color("243438")
+			var ground_height=world.elevation(r.lon,r.lat)
+			label.position=center+Vector3(0,ground_height,0);label.set_meta("ground_height",ground_height)
+			node.add_child(label);node.set_meta("label",label)
+		if nodes.has(r.id):root.remove_child(nodes[r.id]);nodes[r.id].queue_free()
+		nodes[r.id]=node;root.add_child(node);total_houses+=mm.instance_count
+		placed[r.id]=true
+		if (Time.get_ticks_usec()-chunk)/1000.0>float(tuning.budget_ms):
+			record_chunk(chunk);await world.get_tree().process_frame;chunk=Time.get_ticks_usec()
+	for id in nodes.keys():
+		if not wanted.has(id):nodes[id].queue_free();nodes.erase(id)
+	record_chunk(chunk)
+	stats.resident=nodes.size();stats.houses=total_houses;stats.completed+=1;stats["distinctInstantiated"]=placed.size()
+	busy=false
+
+func record_chunk(begin):
+	var elapsed=(Time.get_ticks_usec()-begin)/1000.0
+	stats.maxChunkMs=max(stats.maxChunkMs,elapsed);stats.buildCpuMs+=elapsed
+
+func update_labels():
+	if not enabled:return
+	var occupied=[];var visible_count=0
+	for m in world.markers:
+		if roma_enabled and m.site.key=="roma" and world.distance<3:
+			m.label.pixel_size=max(.00004,world.distance*.00025)
+		if m.label.visible:occupied.append(Rect2(world.camera.unproject_position(m.label.position)-Vector2(50,14),Vector2(120,30)))
+	for id in nodes:
+		var node=nodes[id]
+		if not node.has_meta("label"):continue
+		var label=node.get_meta("label")
+		label.pixel_size=max(.0003,world.distance*.00017)
+		label.position.y=label.get_meta("ground_height")+world.distance*.0018
+		var point=label.position
+		var screen=world.camera.unproject_position(point)
+		var rect=Rect2(screen-Vector2(55,12),Vector2(130,28))
+		label.visible=world.distance<400 and visible_count<24 and not world.camera.is_position_behind(point) and screen.x>390 and screen.x<1900 and screen.y>70 and screen.y<1000
+		for other in occupied:
+			if other.intersects(rect):label.visible=false;break
+		if label.visible:visible_count+=1;occupied.append(rect)

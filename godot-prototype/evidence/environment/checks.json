@@ -1,0 +1,177 @@
+[
+    {
+        "endedAtUtc":  "2026-10-27T17:20:16.6585933Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/parse-scripts.gd",
+                        "--headless",
+                        "--",
+                        "--output=res://evidence/environment/check-parse",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:16.2128095Z",
+        "stderr":  "",
+        "name":  "parse",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:20:16.9850563Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/navigation-test.gd",
+                        "--headless",
+                        "--",
+                        "--output=res://evidence/environment/check-navigation-resolver",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:16.7541125Z",
+        "stderr":  "",
+        "name":  "navigation-resolver",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:20:18.9031926Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/environment-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-environment",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:16.9850563Z",
+        "stderr":  "",
+        "name":  "environment",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:20:20.6665191Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/habitat-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-habitat",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:18.9082466Z",
+        "stderr":  "",
+        "name":  "habitat",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:20:40.9227980Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/visual-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-water",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:20.6722450Z",
+        "stderr":  "",
+        "name":  "water",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:22:12.3210191Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/global-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-global",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:20:40.9227980Z",
+        "stderr":  "",
+        "name":  "global",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:22:56.9440004Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/regional-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-regional",
+                        "--source-manifest=res://evidence/environment/tour-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:22:12.3210191Z",
+        "stderr":  "",
+        "name":  "regional",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T17:23:01.4215978Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/global-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/environment/check-timeout-negative",
+                        "--source-manifest=res://evidence/environment/tour-source.json",
+                        "--timeout-seconds=0.001"
+                    ],
+        "startedAtUtc":  "2026-10-27T17:22:56.9490388Z",
+        "stderr":  "",
+        "name":  "timeout-negative",
+        "timedOut":  false,
+        "exitCode":  1,
+        "expectedExit":  1
+    }
+]

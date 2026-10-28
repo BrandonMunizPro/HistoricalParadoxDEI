@@ -1,5 +1,17 @@
 # Campaign world visual prototype
 
+World foundation and settlement-population candidate: [changes, placement counts and limitations](WORLD-FOUNDATION.md), [24 matched comparisons](evidence/foundation/comparison.html), [performance](evidence/foundation/MEASUREMENTS.md). Includes 539 land-supported neutral location representations; artistic and performance acceptance remain pending.
+
+North Africa/Egypt review candidate: [implementation and limitations](NORTH-AFRICA.md), [24 matched camera pairs](evidence/north-africa/comparison.html), [measurements](evidence/north-africa/MEASUREMENTS.md). Preserves Italy, Sicily and Illyria as regression baselines; independent review pending.
+
+Current art-direction candidate: [reference comparison, changes and limitations](ART-DIRECTION.md), [15 matched before/after pairs](evidence/art-direction/comparison.html). Woodland composition/LOD, ground structure, atmospheric depth and sea palette build on the global expansion. Awaiting independent visual review.
+
+Latest global environmental candidate: [regional coverage, implementation and limitations](ENVIRONMENT-EXPANSION.md), [48 matched comparisons and Nile supplement](evidence/environment/comparison.html). Shared material families and deterministic scenery now apply across the supported world. This supersedes the Italian slice as the current review target; independent acceptance is pending.
+
+Owner-approved visual baseline for this expansion: [Sicily/southern Italy slice](REGIONAL-SLICE.md), [seven earlier matched pairs plus regional regressions](evidence/slice/comparison.html). That report records the earlier checkpoint; the global expansion above is the current review candidate.
+
+Current water/shore review candidate: [second-pass report](COAST-POLISH-V2.md) and [13 fresh before/final comparisons](evidence/coast-v2/comparison.html). This supersedes the first polish's appearance measurements below; independent visual review remains pending.
+
 Latest focused pass: [water/coastline changes and reproduction](COAST-POLISH.md), [13 matched before/final comparisons](evidence/coast-20261026/comparison.html), and [validation/performance results](evidence/coast-20261026/RESULTS.md). Awaiting independent visual review; earlier checkpoint evidence below predates this polish.
 
 Current repair candidate: [engineering report and reproduction](REPAIR.md), [fresh production/profile evidence](evidence/repair-20261026/final2/index.html), and [exact commands/results](evidence/repair-20261026/final2/checks.json). Independent Pickle review is pending; this is not an acceptance declaration. Production presets retain their original distances. The 1,100 km campaign default, strategic relief and static/animated sea remain available.

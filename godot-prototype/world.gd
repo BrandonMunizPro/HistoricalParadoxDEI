@@ -5,11 +5,13 @@ const ORIGIN = Vector2(13.5,41.5)
 var manifest = {}
 var sites = []
 var research = []
+var settlements
 var tiles = {}
 var resident = {}
 var desired = []
 var base_material: ShaderMaterial
 var water_material: ShaderMaterial
+var material_loads=[]
 var camera: Camera3D
 var sun: DirectionalLight3D
 var target = Vector3.ZERO
@@ -66,12 +68,15 @@ var global_manifest={}
 var global_textures={}
 var global_land: Image
 var global_ecology: Image
+var presentation
 var mesh_cache={}
 var mesh_cache_building=false
 var settled_frame_times=[]
 var peak_frame_ms=0.0
 var visual_settings={}
 var water_time=0.0
+var inland_water_material:ShaderMaterial
+var nile_material:ShaderMaterial
 var water_animation_enabled=true
 var navigation=preload("res://navigation.gd").new()
 var camera_path="production"
@@ -114,6 +119,10 @@ func unproject(p):
 func _ready():
 	set_process(false)
 	visual_settings=read_json("data/visual-settings.json")
+	var presentation_mode=read_json("data/foundation-settings.json").rendering
+	if DisplayServer.get_name()!="headless":DisplayServer.window_set_vsync_mode(int(presentation_mode.vsync_mode))
+	Engine.max_fps=int(presentation_mode.frame_cap)
+	terrain_shadow_enabled=visual_settings.lighting.terrain_cast_shadows
 	if not navigation.configure(read_json("data/production-views.json"),read_json("data/global-views.json")):
 		push_error("Duplicate or invalid production navigation preset")
 		get_tree().quit(1)
@@ -124,6 +133,8 @@ func _ready():
 	research=read_json("data/research-locations.json").records
 	hydrology=read_json("data/hydrology.json")
 	for d in manifest.tiles:tiles[d.id]=d
+	if FileAccess.file_exists("res://data/roma-terrain.json") and not OS.get_cmdline_user_args().has("--roma-landscape-baseline"):
+		var roma_detail=read_json("data/roma-terrain.json");tiles[roma_detail.id]=roma_detail
 	global_manifest=read_json("data/global/manifest.json")
 	for d in global_manifest.tiles:tiles[d.id]=d
 	if FileAccess.file_exists("res://data/native/manifest.json"):mesh_cache=read_json("data/native/manifest.json").entries
@@ -163,6 +174,7 @@ func _ready():
 	boot_clock=profile_stage("canopy_meshes",boot_clock,boot_stages)
 	make_water()
 	make_markers()
+	settlements=preload("res://settlement_population.gd").new(self)
 	make_ui()
 	make_rivers()
 	make_lakes()
@@ -198,24 +210,25 @@ func configure_environment():
 	environment.sky=sky
 	environment.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR
 	environment.ambient_light_color=Color("b9cfdf")
-	environment.ambient_light_energy=.24
+	environment.ambient_light_energy=visual_settings.lighting.get("ambient_energy",.32)
 	environment.tonemap_mode=Environment.TONE_MAPPER_FILMIC
-	environment.tonemap_exposure=1.0
+	environment.tonemap_exposure=visual_settings.lighting.get("exposure",.94)
 	environment.fog_enabled=true
 	environment.fog_light_color=Color("adbdc0")
 	environment.fog_light_energy=.7
 	environment.fog_density=.00012
 	environment.ssao_enabled=true
-	environment.ssao_radius=.008
-	environment.ssao_intensity=.9
+	environment.ssao_radius=.035
+	environment.ssao_intensity=1.15
 	var world_environment=WorldEnvironment.new()
 	world_environment.environment=environment
 	add_child(world_environment)
 	sun=DirectionalLight3D.new()
-	sun.light_color=Color("fff0d3")
-	sun.light_energy=1.55
+	sun.light_color=Color("fff5e7")
+	sun.light_energy=visual_settings.lighting.get("sun_energy",1.65)
 	sun.light_specular=visual_settings.lighting.sun_specular
-	sun.rotation_degrees=Vector3(-28,-58,0)
+	sun.rotation_degrees=Vector3(-28,-48,0)
+	sun.light_angular_distance=0.0
 	sun.shadow_enabled=true
 	sun.directional_shadow_max_distance=360.0
 	sun.shadow_bias=.035
@@ -237,12 +250,20 @@ func configure_environment():
 func make_material():
 	regional_manifest=read_json("data/regional/manifest.json")
 	for item in ["land","ocean","shore","ecology"]:
+		var load_begin=Time.get_ticks_usec()
 		var image=Image.load_from_file("res://data/regional/"+item+".png")
 		if item!="ecology":image.convert(Image.FORMAT_R8)
 		if item=="land":regional_land=image
 		regional_textures[item]=ImageTexture.create_from_image(image)
+		material_loads.append({"resource":"regional/"+item,"cpuMs":(Time.get_ticks_usec()-load_begin)/1000.0})
 	base_material=ShaderMaterial.new()
 	base_material.shader=load("res://terrain.gdshader")
+	if FileAccess.file_exists("res://data/roma-landscape-mask.png") and not OS.get_cmdline_user_args().has("--roma-landscape-baseline"):
+		var roma_paint=Image.load_from_file("res://data/roma-landscape-mask.png");roma_paint.generate_mipmaps()
+		base_material.set_shader_parameter("roma_landscape_mask",ImageTexture.create_from_image(roma_paint))
+		for site in sites:
+			if site.key=="roma":
+				var p=project(site.lon,site.lat);base_material.set_shader_parameter("roma_landscape_rect",Vector4(p.x-1.65,p.z-1.65,3.3,3.3))
 	var relief_image=Image.load_from_file("res://data/visual/relief.png")
 	relief_image.generate_mipmaps()
 	base_material.set_shader_parameter("strategic_relief",ImageTexture.create_from_image(relief_image))
@@ -252,24 +273,52 @@ func make_material():
 	base_material.set_shader_parameter("regional_land",regional_textures.land)
 	base_material.set_shader_parameter("ecology",regional_textures.ecology)
 	for item in ["land","ocean","shore","ecology"]:
+		var load_begin=Time.get_ticks_usec()
 		var image=Image.load_from_file("res://data/global/"+item+".png")
 		if item!="ecology":image.convert(Image.FORMAT_R8)
 		if item=="land":global_land=image
 		if item=="ecology":global_ecology=image
 		global_textures[item]=ImageTexture.create_from_image(image)
+		material_loads.append({"resource":"global/"+item,"cpuMs":(Time.get_ticks_usec()-load_begin)/1000.0})
 	base_material.set_shader_parameter("global_land",global_textures.land)
 	base_material.set_shader_parameter("strategic_land",load("res://data/tiles/context-coast.png"))
 	base_material.set_shader_parameter("global_ecology",global_textures.ecology)
-	for item in [["quality_rock","limestone"],["quality_ground","meadow"],["quality_canopy","leaves"]]:
-		var image=Image.load_from_file("res://assets/quality/"+item[1]+".png")
+	var foundation=read_json("data/foundation-settings.json")
+	for item in [["foundation_ground","rocky-ground.jpg"],["foundation_normal","rocky-normal.jpg"]]:
+		var image=Image.load_from_file("res://assets/foundation/"+item[1]);image.generate_mipmaps()
+		base_material.set_shader_parameter(item[0],ImageTexture.create_from_image(image))
+	for key in foundation.terrain:base_material.set_shader_parameter("foundation_"+key,foundation.terrain[key])
+	presentation=preload("res://environment_rules.gd").new(self)
+	var arid=presentation.settings.north_africa
+	base_material.set_shader_parameter("na_scope_rules",Vector4(arid.scope_rules[0],arid.scope_rules[1],arid.scope_rules[2],arid.scope_rules[3]))
+	base_material.set_shader_parameter("na_plain_rules",Vector4(arid.plain_rules[0],arid.plain_rules[1],arid.plain_rules[2],arid.plain_rules[3]))
+	for field in ["alluvium_tint","sand_color"]:
+		var v=arid[field];base_material.set_shader_parameter("na_"+field,Vector3(v[0],v[1],v[2]))
+	base_material.set_shader_parameter("na_rock_strength",arid.rock_strength)
+	base_material.set_shader_parameter("na_relief_contrast",arid.relief_contrast)
+	base_material.set_shader_parameter("river_corridors",ImageTexture.create_from_image(presentation.rivers))
+	var settings=presentation.settings
+	var lr=settings.latitude_rules;var dr=settings.dry_river_rules
+	base_material.set_shader_parameter("environment_latitude_rules",Vector4(lr[0],lr[1],lr[2],lr[3]))
+	base_material.set_shader_parameter("environment_dry_river_rules",Vector4(dr[0],dr[1],dr[2],dr[3]))
+	var cover=settings.families
+	base_material.set_shader_parameter("environment_cover",Vector4(cover[0].ground_cover,cover[1].ground_cover,cover[2].ground_cover,cover[3].ground_cover))
+	var fields=[];var full=PackedFloat32Array()
+	for feature in settings.geology_fields:
+		fields.append(Vector4(feature.center[0],feature.center[1],feature.radius_degrees,feature.minimum_elevation_km))
+		full.append(feature.full_elevation_km)
+	base_material.set_shader_parameter("geology_count",fields.size())
+	while fields.size()<8:fields.append(Vector4.ZERO);full.append(1.0)
+	base_material.set_shader_parameter("geology_fields",fields)
+	base_material.set_shader_parameter("geology_full_elevation",full)
+	for item in [["quality_rock","slice/limestone-scree"],["quality_ground","slice/mediterranean-ground"],["quality_mosaic","slice/mediterranean-mosaic"],["quality_temperate","environment/temperate-ground"],["quality_arid","environment/arid-ground"],["quality_alluvium","environment/alluvial-ground"]]:
+		var load_begin=Time.get_ticks_usec()
+		var image=Image.load_from_file("res://assets/"+item[1]+".png")
 		image.generate_mipmaps()
 		base_material.set_shader_parameter(item[0],ImageTexture.create_from_image(image))
+		material_loads.append({"resource":item[1],"cpuMs":(Time.get_ticks_usec()-load_begin)/1000.0})
 	if OS.get_cmdline_user_args().has("--diagnostic"):base_material.set_shader_parameter("debug_view",1)
 	if OS.get_cmdline_user_args().has("--river-diagnostic"):base_material.set_shader_parameter("debug_view",2)
-	for name in ["rock","grass","soil","lava","sand"]:
-		base_material.set_shader_parameter(name,load("res://materials/"+name+".png"))
-	for name in ["rock","grass","lava"]:
-		base_material.set_shader_parameter(name+"_normal",load("res://materials/"+name+"-normal.png"))
 
 func mesh_fingerprint(p,parent_path=""):
 	var paths=["res://"+p]
@@ -399,7 +448,7 @@ func mesh_vertex_height(e,gx,gy):
 		if nx.w<.5:blend=min(blend,(1-v)/.055)
 		if clamp(blend,0.0,1.0)*e.reveal>=1.0:return h
 		var lon=lerp(b.west,b.east,u);var lat=lerp(b.north,b.south,v)
-		var parent=regional_height(lon,lat) if d.kind=="regional" else sample_entry(resident.context,lon,lat)
+		var parent=sample_entry(resident[d.parentId],lon,lat) if d.get("romaDetail",false) and resident.has(d.parentId) else (regional_height(lon,lat) if d.kind=="regional" else sample_entry(resident.context,lon,lat))
 		h=lerp(parent,h,clamp(blend,0.0,1.0)*e.reveal)
 	return h
 
@@ -427,6 +476,9 @@ func is_land(lon,lat):
 func make_water():
 	water_material=ShaderMaterial.new()
 	water_material.shader=load("res://water.gdshader")
+	var ripples=Image.load_from_file("res://data/visual/water-ripples.png")
+	ripples.generate_mipmaps()
+	water_material.set_shader_parameter("ripple_normals",ImageTexture.create_from_image(ripples))
 	water_material.set_shader_parameter("strategic_land",load("res://data/tiles/context-coast.png"))
 	for key in visual_settings.water:
 		var value=visual_settings.water[key]
@@ -594,6 +646,7 @@ func queue_tiles():
 	var candidates=[]
 	for id in tiles:
 		var d=tiles[id]
+		if d.get("romaDetail",false) and (distance>15 or focus.distance_to(Vector2(12.491258174554883,41.8899769864849))>.03):continue
 		if d.kind!=family:continue
 		var b=d.bounds
 		var center=Vector2((b.west+b.east)*.5,(b.south+b.north)*.5)
@@ -633,6 +686,13 @@ func update_coverage():
 	if regional_node!=null:
 		regional_node.material_override.set_shader_parameter("children",regional_rectangles)
 		regional_node.material_override.set_shader_parameter("child_count",regional_count)
+	if resident.has("N41E12"):
+		var parent_material=resident.N41E12.node.material_override
+		parent_material.set_shader_parameter("child_count",1 if resident.has("roma-local") else 0)
+		parent_material.set_shader_parameter("coverage_overlap_km",0.0 if resident.has("roma-local") else visual_settings.terrain.get("coverage_overlap_km",.6))
+		if resident.has("roma-local"):
+			var b=tiles["roma-local"].bounds
+			parent_material.set_shader_parameter("children",PackedVector4Array([Vector4((b.west+12)/87,(62-b.north)/50,(b.east+12)/87,(62-b.south)/50)]))
 	for id in resident:
 		if id=="context":continue
 		var b=tiles[id].bounds
@@ -657,6 +717,7 @@ func evidence_metadata():
 	return {"sourceRevision":source_manifest.get("sourceRevision","diagnostic-unversioned"),"recordedAtUtc":Time.get_datetime_string_from_system(true)+"Z","baseCommit":source_manifest.get("baseCommit","")}
 
 func is_settled():
+	if settlements!=null and not settlements.is_ready():return false
 	if not queue.is_empty() or not scenery.is_ready() or river_building:return false
 	for id in resident:
 		if resident[id].reveal<1:return false
@@ -668,6 +729,8 @@ func _process(delta):
 	if water_animation_enabled and not get_tree().paused and DisplayServer.window_get_mode()!=DisplayServer.WINDOW_MODE_MINIMIZED:
 		water_time+=delta
 		water_material.set_shader_parameter("water_time",water_time)
+		if nile_material!=null:nile_material.set_shader_parameter("water_time",water_time)
+		if inland_water_material!=null:inland_water_material.set_shader_parameter("water_time",water_time)
 	var now_usec=Time.get_ticks_usec()
 	var wall_ms=(now_usec-last_frame_usec)/1000.0 if last_frame_usec>0 else delta*1000.0
 	last_frame_usec=now_usec
@@ -728,7 +791,14 @@ func _process(delta):
 	for id in resident:
 		resident[id].node.material_override.set_shader_parameter("clip_region",regional_active and resident[id].descriptor.kind!="regional")
 		resident[id].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if resident[id].descriptor.kind=="regional" and distance>8 and terrain_shadow_enabled else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	scene_environment.fog_density=.00065*clamp(150.0/distance,.015,1.0)
+	var atmosphere=visual_settings.lighting
+	scene_environment.fog_mode=Environment.FOG_MODE_DEPTH
+	scene_environment.fog_density=atmosphere.fog_density
+	scene_environment.fog_depth_begin=distance*atmosphere.fog_begin_fraction
+	scene_environment.fog_depth_end=max(distance,atmosphere.fog_min_distance_km)*atmosphere.fog_end_fraction
+	scene_environment.fog_depth_curve=atmosphere.fog_depth_curve
+	var haze=atmosphere.fog_color
+	scene_environment.fog_light_color=Color(haze[0],haze[1],haze[2])
 	vegetation_root.visible=distance<190
 	scene_environment.ssao_enabled=distance<18
 	city_root.visible=distance<20
@@ -761,6 +831,7 @@ func _process(delta):
 	if regional_river!=null:regional_river.visible=distance<500
 	cpu_clock=profile_stage("rivers",cpu_clock,stages)
 	scenery.tick()
+	settlements.tick()
 	cpu_clock=profile_stage("scenery",cpu_clock,stages)
 	var settled=is_settled()
 	if settled:
@@ -772,6 +843,7 @@ func _process(delta):
 	if settled_frame_times.size()>300:settled_frame_times.pop_front()
 	if settled_gpu.size()>300:settled_gpu.pop_front();settled_render_cpu.pop_front()
 	update_markers()
+	settlements.update_labels()
 	cpu_clock=profile_stage("markers",cpu_clock,stages)
 	if ready_frame>90:frame_times.append(wall_ms)
 	if frame_times.size()>900:frame_times.pop_front()
@@ -857,13 +929,13 @@ func make_lakes():
 	var lakes=read_json("data/lakes.json")
 	var regional_levels=read_json("data/regional/lake-levels.json")
 	var mesh=ImmediateMesh.new()
-	var mat=material("244b55",.38)
-	mat.cull_mode=BaseMaterial3D.CULL_DISABLED
+	var mat=ShaderMaterial.new();mat.shader=load("res://nile_water.gdshader")
+	inland_water_material=mat
 	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,mat)
 	for lake in lakes:
 		for index in lake.indices:
 			var p=lake.vertices[index]
-			mesh.surface_set_normal(Vector3.UP)
+			mesh.surface_set_normal(Vector3.UP);mesh.surface_set_uv(Vector2(.5,0))
 			mesh.surface_add_vertex(Vector3(p[0],regional_levels.get(str(lake.id),p[1]),p[2]))
 	mesh.surface_end()
 	var node=MeshInstance3D.new()
@@ -872,7 +944,7 @@ func make_lakes():
 	add_child(node)
 
 func river_view_signature():
-	return str(resident.keys())+str(Vector2i(floori(focus.x),floori(focus.y)))
+	return str(resident.keys())+str(Vector2i(floori(focus.x),floori(focus.y)))+str(distance<presentation.settings.river_rendering.near_distance_km)
 
 func make_regional_rivers(signature):
 	# Original ribbons follow existing centreline data. Width is a visual convention,
@@ -883,6 +955,7 @@ func make_regional_rivers(signature):
 	var mat=material("355b60",.32)
 	mat.cull_mode=BaseMaterial3D.CULL_DISABLED
 	var points=[]
+	var arid_points=[]
 	for f in hydrology.rivers:
 		var lines=f.geometry.coordinates if f.geometry.type=="MultiLineString" else [f.geometry.coordinates]
 		for line in lines:
@@ -895,10 +968,21 @@ func make_regional_rivers(signature):
 					chunk_begin=Time.get_ticks_usec()
 				var a=Vector2(line[i-1][0],line[i-1][1])
 				var b=Vector2(line[i][0],line[i][1])
-				var italian=contains(regional_manifest.bounds,a.x,a.y)
+				var high_resolution_source=contains(regional_manifest.bounds,a.x,a.y)
 				var projected=project(a.x,a.y)
 				if projected.distance_to(target)>max(80.0,distance*1.5):continue
-				var steps=max(1,int(projected.distance_to(project(b.x,b.y))/(.25 if italian else 1.0)))
+				var river_tuning=presentation.settings.river_rendering
+				var spacing=river_tuning.near_sample_km if distance<river_tuning.near_distance_km else river_tuning.far_sample_km
+				var roma_river=false
+				if resident.has("roma-local"):
+					var rb=tiles["roma-local"].bounds
+					roma_river=max(a.x,b.x)>=rb.west and min(a.x,b.x)<=rb.east and max(a.y,b.y)>=rb.south and min(a.y,b.y)<=rb.north
+					if roma_river:spacing=min(spacing,.02)
+				var steps=max(1,int(projected.distance_to(project(b.x,b.y))/spacing))
+				var width=.0225 if high_resolution_source else .075
+				var prev=line[max(0,i-2)];var next=line[min(line.size()-1,i+1)]
+				var side_a=preload("res://river_geometry.gd").bank_offset(project(prev[0],prev[1]),project(a.x,a.y),project(b.x,b.y),width)
+				var side_b=preload("res://river_geometry.gd").bank_offset(project(a.x,a.y),project(b.x,b.y),project(next[0],next[1]),width)
 				for j in steps:
 					if Time.get_ticks_usec()-chunk_begin>2000:
 						river_profile.maxChunkMs=max(river_profile.maxChunkMs,(Time.get_ticks_usec()-chunk_begin)/1000.0)
@@ -909,20 +993,43 @@ func make_regional_rivers(signature):
 					var ga=a.lerp(b,float(j)/steps)
 					var gb=a.lerp(b,float(j+1)/steps)
 					if not is_land(ga.x,ga.y):continue
-					var pa=project(ga.x,ga.y);pa.y=elevation(ga.x,ga.y)+.003
-					var pb=project(gb.x,gb.y);pb.y=elevation(gb.x,gb.y)+.003
-					var side=(pb-pa).cross(Vector3.UP).normalized()*(.0225 if italian else .075)
-					points.append_array([pa-side,pa+side,pb-side,pa+side,pb+side,pb-side])
+					var shape=preload("res://river_geometry.gd")
+					var pa=shape.surface_point(project(prev[0],prev[1]),project(a.x,a.y),project(b.x,b.y),project(next[0],next[1]),float(j)/steps,width)
+					var pb=shape.surface_point(project(prev[0],prev[1]),project(a.x,a.y),project(b.x,b.y),project(next[0],next[1]),float(j+1)/steps,width)
+					var terrain_a=unproject(pa);var terrain_b=unproject(pb)
+					pa.y=elevation(terrain_a.x,terrain_a.y)+.003;pb.y=elevation(terrain_b.x,terrain_b.y)+.003
+					var sa=side_a.lerp(side_b,float(j)/steps);var sb=side_a.lerp(side_b,float(j+1)/steps)
+					if roma_river:
+						# The finer existing DEM needs bank-aware sampling; retain source XY/width.
+						for bank in [-1.0,1.0]:
+							var edge_a=unproject(pa+sa*bank);var edge_b=unproject(pb+sb*bank)
+							pa.y=max(pa.y,elevation(edge_a.x,edge_a.y)+.003)
+							pb.y=max(pb.y,elevation(edge_b.x,edge_b.y)+.003)
+					var ribbon=[pa-sa,pa+sa,pb-sb,pa+sa,pb+sb,pb-sb]
+					if presentation.north_africa(ga.x,ga.y)>.01:arid_points.append_array(ribbon)
+					else:points.append_array(ribbon)
 	river_profile.maxChunkMs=max(river_profile.maxChunkMs,(Time.get_ticks_usec()-chunk_begin)/1000.0)
-	if points.is_empty():
+	if points.is_empty() and arid_points.is_empty():
 		if regional_river!=null:regional_river.queue_free();regional_river=null
 		river_building=false;river_profile.completed+=1;return
 	var upload_begin=Time.get_ticks_usec()
-	mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,mat)
-	for p in points:
-		mesh.surface_set_normal(Vector3.UP)
-		mesh.surface_add_vertex(p)
-	mesh.surface_end()
+	if not points.is_empty():
+		mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,mat)
+		for p in points:
+			mesh.surface_set_normal(Vector3.UP);mesh.surface_add_vertex(p)
+		mesh.surface_end()
+	if not arid_points.is_empty():
+		if nile_material==null:
+			nile_material=ShaderMaterial.new();nile_material.shader=load("res://nile_water.gdshader")
+		var tuning=read_json("data/foundation-settings.json").river
+		for key in ["roughness","specular"]:nile_material.set_shader_parameter("river_"+key,tuning[key])
+		nile_material.set_shader_parameter("bank_fraction",tuning.bank_fraction)
+		nile_material.set_shader_parameter("water_time",water_time)
+		mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES,nile_material)
+		var across=[0.0,1.0,0.0,1.0,1.0,0.0]
+		for i in arid_points.size():
+			mesh.surface_set_normal(Vector3.UP);mesh.surface_set_uv(Vector2(across[i%6],0));mesh.surface_add_vertex(arid_points[i])
+		mesh.surface_end()
 	if regional_river!=null:regional_river.queue_free()
 	regional_river=MeshInstance3D.new()
 	regional_river.mesh=mesh
@@ -982,10 +1089,10 @@ func material(color,roughness=.9):
 	mat.roughness=roughness
 	return mat
 
-func box_at(parent,pos,size,mat):
+func box_at(parent,pos,size,mat,angle=0.0):
 	var key=str(mat.get_instance_id())
 	if not city_batches.has(key):city_batches[key]={"material":mat,"transforms":[]}
-	city_batches[key].transforms.append(Transform3D(Basis.IDENTITY.scaled(size),pos))
+	city_batches[key].transforms.append(Transform3D(Basis(Vector3.UP,angle).scaled(size),pos))
 
 func build_catana():
 	var center=project(15.088142,37.502959)
@@ -993,21 +1100,27 @@ func build_catana():
 	var roof=material("91533a")
 	roof.set_meta("roof",true)
 	var road=material("b2a17e")
+	var masonry=[stone,material("b4a68e"),material("aa9e86")]
+	var tiles_roof=[roof,material("79533d"),material("a16e4d")]
+	for mat in tiles_roof:mat.set_meta("roof",true)
 	var rng=RandomNumberGenerator.new()
 	rng.seed=278
 	for i in 480:
 		var col=i%24
 		var row=i/24
-		var p=center+Vector3((col-11.5)*.035+rng.randf_range(-.004,.004),0,(row-9.5)*.035+rng.randf_range(-.004,.004))
+		var p=center+Vector3((col-11.5)*.035+rng.randf_range(-.007,.007)+sin(row*.9)*.009,0,(row-9.5)*.035+rng.randf_range(-.006,.006))
 		var delta=p-center
 		if pow(delta.x/.44,2)+pow(delta.z/.36,2)>rng.randf_range(.82,1.12):continue
 		if abs(delta.x)<.055 and abs(delta.z)<.045:continue
+		if rng.randf()<smoothstep(.18,.43,delta.length())*.18:continue
 		var geo=unproject(p)
 		if not is_land(geo.x,geo.y):continue
 		p.y=elevation(geo.x,geo.y)
 		var size=Vector3(rng.randf_range(.012,.027),rng.randf_range(.009,.018),rng.randf_range(.014,.03))
-		box_at(city_root,p+Vector3(0,size.y*.5,0),size,stone)
-		box_at(city_root,p+Vector3(0,size.y+.002,0),Vector3(size.x*1.13,.008,size.z*1.13),roof)
+		var variant=rng.randi_range(0,2)
+		var angle=rng.randf_range(-.18,.18)
+		box_at(city_root,p+Vector3(0,size.y*.5,0),size,masonry[variant],angle)
+		box_at(city_root,p+Vector3(0,size.y+.002,0),Vector3(size.x*1.13,.008,size.z*1.13),tiles_roof[variant],angle)
 	var h=elevation(15.088142,37.502959)
 	box_at(city_root,center+Vector3(0,h+.004,0),Vector3(.075,.008,.045),stone)
 	box_at(city_root,center+Vector3(0,h+.033,0),Vector3(.066,.009,.037),roof)
@@ -1095,7 +1208,11 @@ func capture():
 	RenderingServer.force_draw()
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(capture_dir))
 	var path=capture_dir+"/godot-"+capture_name+".png"
-	get_viewport().get_texture().get_image().save_png(path)
+	var save_error=get_viewport().get_texture().get_image().save_png(path)
+	if save_error!=OK:
+		push_error("Screenshot write failed: %s error=%s" % [path,save_error])
+		get_tree().quit(1)
+		return
 	var sorted=frame_times.duplicate()
 	sorted.sort()
 	var mean=0.0
@@ -1111,12 +1228,20 @@ func capture():
 	metrics["resolvedCameraDistanceKm"]=goal_distance
 	metrics["frameStages"]={"bootMs":boot_stages,"maximumCpuStageMs":stage_maxima,"slowFrames":frame_stages}
 	metrics["sceneryReadiness"]={"ready":scenery.is_ready(),"pending":scenery.pending_cells(),"instances":scenery.resident_instances()}
+	metrics["sceneryComposition"]=scenery.resident_composition()
+	metrics["sceneryWork"]=scenery.work_profile
+	metrics["settlementPresentation"]=settlements.stats
+	metrics["presentationMode"]={"reportedVsyncMode":DisplayServer.window_get_vsync_mode(),"frameCap":Engine.max_fps,"refreshHz":DisplayServer.screen_get_refresh_rate()}
+	var climate=presentation.climate(focus.x,focus.y)
+	var family=presentation.weights(focus.y,climate)
+	metrics["environmentAtFocus"]={"sourceClimate":[climate.r,climate.g,climate.b,climate.a],"familyWeights":[family.x,family.y,family.z,family.w],"order":["Mediterranean","Temperate","Arid/steppe","River alluvium"]}
 	metrics["riverWork"]=river_profile
+	metrics["materialLoads"]=material_loads
 	metrics["settledGpuStats"]=sample_stats(settled_gpu)
 	metrics["settledRenderCpuStats"]=sample_stats(settled_render_cpu)
 	metrics["evidence"]=evidence_metadata()
 	metrics["navigationTrace"]=navigation_trace
-	metrics["diagnosticFlags"]=Array(OS.get_cmdline_user_args()).filter(func(arg):return arg in ["--reference-shaders","--no-terrain-shadows","--no-overlap","--static-water"])
+	metrics["diagnosticFlags"]=Array(OS.get_cmdline_user_args()).filter(func(arg):return arg in ["--reference-shaders","--no-terrain-shadows","--no-overlap","--static-water","--no-settlement-visuals"])
 	var steady=settled_frame_times.duplicate();steady.sort()
 	var steady_mean=0.0
 	for v in steady:steady_mean+=v

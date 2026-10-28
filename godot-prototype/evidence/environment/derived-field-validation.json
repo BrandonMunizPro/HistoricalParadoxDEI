@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "command": "node godot-prototype/tools/environment-build.mjs",
+  "byteIdentical": true,
+  "output": {
+    "width": 5569,
+    "height": 3201,
+    "segments": 20233,
+    "bytes": 263191
+  },
+  "files": [
+    {
+      "path": "godot-prototype/data/environment/river-corridors.png",
+      "sha256": "881ed8e626bf29b44555c10f37e0d4c169e012365f5f0279f6bcb6098e9d3470"
+    },
+    {
+      "path": "godot-prototype/data/environment/provenance.json",
+      "sha256": "0b0bb5141c403e4b831cb0759868474b952894a006cf8175121692f4ca03aaf7"
+    }
+  ]
+}

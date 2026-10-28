@@ -1,0 +1,1142 @@
+{
+  "createdAtUtc": "2026-10-28T02:07:24.678Z",
+  "status": "Independent review pending; artistic target remains incomplete",
+  "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+  "sourceRevision": "f655dbb942c5e8eff1cdcb1c1ee018b085b38ce45f64b3487e3dd945582663d0",
+  "baselineRevision": "cd82ca5c45df14447a87b22f2eed9d1a987134a9fb3aa674141eb7686fdda909",
+  "protectedFiles": 460,
+  "approvedSites": 35,
+  "researchRecords": 687,
+  "romaStructures": 121,
+  "archetypes": 7,
+  "matchedPairs": 5,
+  "additionalCloseViews": 2,
+  "godotChecks": 12,
+  "tests": 475,
+  "sourceChanges": [
+    {
+      "path": "godot-prototype/assets/roma/manifest.json",
+      "kind": "asset",
+      "sha256": "2543b4f34b16f6c7e19ef0ac51a43263666ff158f231c50a77bb91cebea7d6ec"
+    },
+    {
+      "path": "godot-prototype/assets/roma/plaster-color.jpg",
+      "kind": "asset",
+      "sha256": "b86e9a408aac5b493c31a4ec221e5022b0b704d2f51596006f7d6840a6a3300a"
+    },
+    {
+      "path": "godot-prototype/assets/roma/plaster-normal.jpg",
+      "kind": "asset",
+      "sha256": "c64dc8d1ad382b8832e430e738f099343ed959b7ae7d9390919a497536d1191e"
+    },
+    {
+      "path": "godot-prototype/assets/roma/plaster-roughness.jpg",
+      "kind": "asset",
+      "sha256": "978bd1d9f8d4132564d40375f705975e897ca588c2d756e6257f68946651bab0"
+    },
+    {
+      "path": "godot-prototype/assets/roma/PROVENANCE.md",
+      "kind": "asset",
+      "sha256": "c72e43ce1eb08034214529271dcccc5a231b8ae856419ecd58cdeb99f2f9ec65"
+    },
+    {
+      "path": "godot-prototype/assets/roma/roof-color.jpg",
+      "kind": "asset",
+      "sha256": "aac0f4e742a2cce21afb5dfb523b47c720c6a8e2782a312b823608fe3f80eae6"
+    },
+    {
+      "path": "godot-prototype/assets/roma/roof-normal.jpg",
+      "kind": "asset",
+      "sha256": "e6b364661f6c3045bf5268f684047968fc6550e5fa9b22b4b1266df47b495faa"
+    },
+    {
+      "path": "godot-prototype/assets/roma/roof-roughness.jpg",
+      "kind": "asset",
+      "sha256": "9dbddfda928ea582e520d5e6fe7fadcfb886a169df9aa8ecaefa689363679b58"
+    },
+    {
+      "path": "godot-prototype/data/roma-presentation.json",
+      "kind": "asset",
+      "sha256": "78a3917698275af5d7a91690004533b8c7b88f6405a418671fb9e532d558d39c"
+    },
+    {
+      "path": "godot-prototype/roma_architecture.gd",
+      "kind": "code",
+      "sha256": "91214d5fdaa2f7c2a4cd1d6b6ec03c93527d318a2b8a0ce93b7e267c0b87a17d"
+    },
+    {
+      "path": "godot-prototype/roma_ground.gdshader",
+      "kind": "code",
+      "sha256": "d6b24b5399724b93ae44e175647c20da6861943a4691bbb0e314e198900fb532"
+    },
+    {
+      "path": "godot-prototype/roma_roof.gdshader",
+      "kind": "code",
+      "sha256": "f7f9f76a1b663d6dffe403b323c6021ff8206f7e9bf231050299098ec90186a7"
+    },
+    {
+      "path": "godot-prototype/roma_settlement.gd",
+      "kind": "code",
+      "sha256": "6cda1e9419aac6dafcb1af4498c2939961a2a9bcc0b9d3bcd39adb19ddba4fc7"
+    },
+    {
+      "path": "godot-prototype/settlement_population.gd",
+      "kind": "code",
+      "sha256": "8f554733b8cb3a537743c18c9e336f5c1c6094b317494d42341b8120975a1110"
+    },
+    {
+      "path": "godot-prototype/tools/roma-profile.gd",
+      "kind": "code",
+      "sha256": "4bc2746c4de31311838bd2af825e738e906b727f085dce62c634986a2a3c853e"
+    },
+    {
+      "path": "godot-prototype/tools/roma-validate.gd",
+      "kind": "code",
+      "sha256": "e4b657f80e9e000c6a05b1f474a760c0993f4ab898b90e4c174d0c3da6351931"
+    }
+  ],
+  "captureProfileAddedBeforeBaseline": "data/roma-views.json",
+  "originalReferenceInspected": {
+    "path": "C:/Users/brand/OneDrive/Pictures/Screenshots/Screenshot 2026-10-27 140402.png",
+    "sha256": "2bc9d053fff20552732c1e8819b441ea09a480c67c17ab362742aa61fc8434de",
+    "copiedIntoProject": false
+  },
+  "newAssets": {
+    "assets": [
+      {
+        "author": "Rob Tuytel",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_diff_1k.jpg",
+        "asset": "https://polyhaven.com/a/plastered_stone_wall",
+        "license": "CC0-1.0",
+        "md5": "dfa5e68b2337761c887f995301272ac3",
+        "bytes": 680077,
+        "file": "plaster-color.jpg",
+        "sha256": "b86e9a408aac5b493c31a4ec221e5022b0b704d2f51596006f7d6840a6a3300a"
+      },
+      {
+        "author": "Rob Tuytel",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_nor_gl_1k.jpg",
+        "asset": "https://polyhaven.com/a/plastered_stone_wall",
+        "license": "CC0-1.0",
+        "md5": "8f38591716ec61172255880bff0dccec",
+        "bytes": 1041406,
+        "file": "plaster-normal.jpg",
+        "sha256": "c64dc8d1ad382b8832e430e738f099343ed959b7ae7d9390919a497536d1191e"
+      },
+      {
+        "author": "Rob Tuytel",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_rough_1k.jpg",
+        "asset": "https://polyhaven.com/a/plastered_stone_wall",
+        "license": "CC0-1.0",
+        "md5": "8bab4178befcd298d625d27d792a21b8",
+        "bytes": 508548,
+        "file": "plaster-roughness.jpg",
+        "sha256": "978bd1d9f8d4132564d40375f705975e897ca588c2d756e6257f68946651bab0"
+      },
+      {
+        "author": "Amal Kumar",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clay_roof_tiles/clay_roof_tiles_diff_1k.jpg",
+        "asset": "https://polyhaven.com/a/clay_roof_tiles",
+        "license": "CC0-1.0",
+        "md5": "d862ac9932b09b0918b5971ddb77099c",
+        "bytes": 878367,
+        "file": "roof-color.jpg",
+        "sha256": "aac0f4e742a2cce21afb5dfb523b47c720c6a8e2782a312b823608fe3f80eae6"
+      },
+      {
+        "author": "Amal Kumar",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clay_roof_tiles/clay_roof_tiles_nor_gl_1k.jpg",
+        "asset": "https://polyhaven.com/a/clay_roof_tiles",
+        "license": "CC0-1.0",
+        "md5": "d861a708c94c824befc8aac668052776",
+        "bytes": 1101177,
+        "file": "roof-normal.jpg",
+        "sha256": "e6b364661f6c3045bf5268f684047968fc6550e5fa9b22b4b1266df47b495faa"
+      },
+      {
+        "author": "Amal Kumar",
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clay_roof_tiles/clay_roof_tiles_rough_1k.jpg",
+        "asset": "https://polyhaven.com/a/clay_roof_tiles",
+        "license": "CC0-1.0",
+        "md5": "a5881067d2ba78e439f4782b1f6045bd",
+        "bytes": 306665,
+        "file": "roof-roughness.jpg",
+        "sha256": "9dbddfda928ea582e520d5e6fe7fadcfb886a169df9aa8ecaefa689363679b58"
+      }
+    ],
+    "totalBytes": 4516240,
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "note": "Flat review index of the frozen download manifest; its first entry groups the three plaster maps under value."
+  },
+  "committed": false,
+  "pushed": false,
+  "artExpandedOutsideRoma": false,
+  "artifacts": [
+    {
+      "path": "evidence/roma/art.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/art.stdout.log",
+      "bytes": 244,
+      "sha256": "5d74a4978c43e69f75ae34bdc24973fac2fed9a388060703cf04080b7e853b95"
+    },
+    {
+      "path": "evidence/roma/asset-manifest.json",
+      "bytes": 2924,
+      "sha256": "c48b1e4b3e3ec8d03a956a16635cf00d46c326116f96e52d4343ae6d786ba9fe"
+    },
+    {
+      "path": "evidence/roma/before-source.json",
+      "bytes": 479473,
+      "sha256": "aef27404994a58251343e893a4239a2f89fb94ba14829af8a132f8e788df44c6"
+    },
+    {
+      "path": "evidence/roma/capture-final.log",
+      "bytes": 730,
+      "sha256": "786de883a1b6e98763a8a95dd3688806733ccc8279c96fbc73125062c8507345"
+    },
+    {
+      "path": "evidence/roma/capture-final.ps1",
+      "bytes": 745,
+      "sha256": "cab1489a4b013d36ba12633bbbff036d371074e4f47fad676f518668f3938b82"
+    },
+    {
+      "path": "evidence/roma/capture-final3.log",
+      "bytes": 730,
+      "sha256": "786de883a1b6e98763a8a95dd3688806733ccc8279c96fbc73125062c8507345"
+    },
+    {
+      "path": "evidence/roma/capture-final3.ps1",
+      "bytes": 753,
+      "sha256": "ed48ae02d51cc7090f584469c56c572f57564d3b52f64ee2752bfd3bf1d8b36e"
+    },
+    {
+      "path": "evidence/roma/check2-global/global-navigation.json",
+      "bytes": 6829,
+      "sha256": "51e2923049053b23b766de193c2302ab6c98c17951e8e54b187fb168e00ca8d0"
+    },
+    {
+      "path": "evidence/roma/check2-regional/regional-navigation.json",
+      "bytes": 3874,
+      "sha256": "6d3aeb4b69b556332b5b920d5890f3f7c22bf3079f14f5aa9fdfa2ad65e0c6d3"
+    },
+    {
+      "path": "evidence/roma/check2-roma/roma.json",
+      "bytes": 605,
+      "sha256": "b79cbec26050bf7ea5cf6251283dcd8f37d53b1402f1c6c033edd95bc61a79e5"
+    },
+    {
+      "path": "evidence/roma/check2-settlement-population/settlements.json",
+      "bytes": 78039,
+      "sha256": "e327b62259bd1479962fc4ceed585f568ebbea54acd02bc2f7a7d015530b4834"
+    },
+    {
+      "path": "evidence/roma/check2-timeout-negative/global-navigation.json",
+      "bytes": 1207,
+      "sha256": "b00f2c453ebc216c553a69df2c45f9ddec4d8e283299278ad554c966bfc4e288"
+    },
+    {
+      "path": "evidence/roma/check2-water/animated.png",
+      "bytes": 1771721,
+      "sha256": "a990bd904e50e4fa7952595ebb8d14f48a40a7e296eea7b6845436378061361f"
+    },
+    {
+      "path": "evidence/roma/check2-water/static-a.png",
+      "bytes": 1770527,
+      "sha256": "f21e55f853caedfb685163cbadcb99474806de8671cef2dd72a1b1634a2a4e1b"
+    },
+    {
+      "path": "evidence/roma/check2-water/static-b.png",
+      "bytes": 1770637,
+      "sha256": "91abf9e49b435a7301cfd6b1de952e4464773a48db848ad4ed997fa36da15006"
+    },
+    {
+      "path": "evidence/roma/check2-water/water.json",
+      "bytes": 639,
+      "sha256": "e6c8352e39270fec186259f3a3878faaad6edbae26f1a3b6bb6490abc731101b"
+    },
+    {
+      "path": "evidence/roma/check3-global/global-navigation.json",
+      "bytes": 6827,
+      "sha256": "4478351537a92e2978b69e81a293e992333bacd04ad269283cd4317c496b3fab"
+    },
+    {
+      "path": "evidence/roma/check3-regional/regional-navigation.json",
+      "bytes": 3863,
+      "sha256": "668b9a9ca178df4ee607d1f47ad4006ad9bab94c31d8874c6797a924f25872ce"
+    },
+    {
+      "path": "evidence/roma/check3-roma/roma.json",
+      "bytes": 663,
+      "sha256": "cb64f0baa694114a76c8e6a827f10a835a241ee7987ef238737a53f724238cb6"
+    },
+    {
+      "path": "evidence/roma/check3-settlement-population/settlements.json",
+      "bytes": 78090,
+      "sha256": "c78ec7eea4632ba9cdd394312891edc470c63b112d404eee39c1c33588252817"
+    },
+    {
+      "path": "evidence/roma/check3-timeout-negative/global-navigation.json",
+      "bytes": 1207,
+      "sha256": "f051b07ecaba9a7884539b3e4ff7ec9fee5c40ac9ee73070659cc82e4bf942d4"
+    },
+    {
+      "path": "evidence/roma/check3-water/animated.png",
+      "bytes": 1771709,
+      "sha256": "59a35dcd442574471fa3da7c1f7b7645921a1613e7c1ae2a76967bf83ec0a9b3"
+    },
+    {
+      "path": "evidence/roma/check3-water/static-a.png",
+      "bytes": 1770527,
+      "sha256": "f21e55f853caedfb685163cbadcb99474806de8671cef2dd72a1b1634a2a4e1b"
+    },
+    {
+      "path": "evidence/roma/check3-water/static-b.png",
+      "bytes": 1770596,
+      "sha256": "a9c6bcfa99b683957291f2f4a77ab2458ab4e94ccefc4dd891f995f9d3279f5e"
+    },
+    {
+      "path": "evidence/roma/check3-water/water.json",
+      "bytes": 639,
+      "sha256": "5c32e61f6cb5d653cfe4e8add543fa8bed9bce872741393708ea74e0fd9b437f"
+    },
+    {
+      "path": "evidence/roma/checks2.json",
+      "bytes": 11128,
+      "sha256": "5f9c5d1b3bdde9a09fc18459e48c347825bd5a8453ab103e20cc148ed1397f91"
+    },
+    {
+      "path": "evidence/roma/checks3.json",
+      "bytes": 11128,
+      "sha256": "ab3e735d68c5dda0603639f6ddadea665ca90b0b003fe05606b01a3f437afb11"
+    },
+    {
+      "path": "evidence/roma/comparison.html",
+      "bytes": 5470,
+      "sha256": "d18b239cc0d3bd575cd434bfb93ef799971cadef02f04ac973878e4af60c7eb4"
+    },
+    {
+      "path": "evidence/roma/comparison.json",
+      "bytes": 263105,
+      "sha256": "fc4d885009557bbf3fae0144be839b4615dec02f2fa813f455b0c6712595e5ba"
+    },
+    {
+      "path": "evidence/roma/diff-final3-warnings.log",
+      "bytes": 3570,
+      "sha256": "74aa8f76db38c27b5f9243244bd7a4a1708681588cbc2c8d4fe8660729396bba"
+    },
+    {
+      "path": "evidence/roma/diff-warnings.log",
+      "bytes": 3570,
+      "sha256": "bc9d673efb7eadc3ec12b98a75294cfa0c0d14a5a8aa249bd7f13f8a72e0332a"
+    },
+    {
+      "path": "evidence/roma/environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/environment.stdout.log",
+      "bytes": 251,
+      "sha256": "3ba6dd5c02ccb2d06fd07010f825e6ee1db76e152db2c568baae532acc388e91"
+    },
+    {
+      "path": "evidence/roma/final-source.json",
+      "bytes": 482133,
+      "sha256": "b8b855fe2f45a3fc81fea64fbf5e51a2ccb8651cedc1751b1fb899c7d6d36d10"
+    },
+    {
+      "path": "evidence/roma/final2-source.json",
+      "bytes": 482133,
+      "sha256": "aa1a82acfeee42e34a80a870df686fab715821802d13a1f88c3eabefd1496852"
+    },
+    {
+      "path": "evidence/roma/final3-art.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-art.stdout.log",
+      "bytes": 244,
+      "sha256": "5d74a4978c43e69f75ae34bdc24973fac2fed9a388060703cf04080b7e853b95"
+    },
+    {
+      "path": "evidence/roma/final3-environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-environment.stdout.log",
+      "bytes": 251,
+      "sha256": "3ba6dd5c02ccb2d06fd07010f825e6ee1db76e152db2c568baae532acc388e91"
+    },
+    {
+      "path": "evidence/roma/final3-foundation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-foundation.stdout.log",
+      "bytes": 1153,
+      "sha256": "3c195e09a013c2249f0b4a1c08b2863b7e438ea027aa728d06d9845234240545"
+    },
+    {
+      "path": "evidence/roma/final3-global.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-global.stdout.log",
+      "bytes": 12156,
+      "sha256": "64f282354b149f651156f261a3c5897efb782c0d2f91e22bee33951131b95c6b"
+    },
+    {
+      "path": "evidence/roma/final3-habitat.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-habitat.stdout.log",
+      "bytes": 236,
+      "sha256": "d239da6edd830baf1b4d780d7d76b1587666605f49110a1769749726da63d8e1"
+    },
+    {
+      "path": "evidence/roma/final3-navigation-resolver.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-navigation-resolver.stdout.log",
+      "bytes": 172,
+      "sha256": "9827700b5a746088b6536fe6f21db233c8cbc6c24e53719fff1ceec988bae3dc"
+    },
+    {
+      "path": "evidence/roma/final3-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-parse.stdout.log",
+      "bytes": 105,
+      "sha256": "a35417693799ff40eeb3667bf984a3c248e15280850668293d3391dc1c96a21f"
+    },
+    {
+      "path": "evidence/roma/final3-regional.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-regional.stdout.log",
+      "bytes": 5715,
+      "sha256": "afc810b46802fd73735a7baab99941510be391ff44d0997364d778247e0bb917"
+    },
+    {
+      "path": "evidence/roma/final3-roma.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-roma.stdout.log",
+      "bytes": 358,
+      "sha256": "cbc88aa4d8f40f39f7932cd6d804d70827c795e8628c092f6b33c9d6889cd18a"
+    },
+    {
+      "path": "evidence/roma/final3-settlement-population.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-settlement-population.stdout.log",
+      "bytes": 423,
+      "sha256": "1d27da73d12dec7656efb722b3821f44b21f0788d65468268f20916cd31e2c33"
+    },
+    {
+      "path": "evidence/roma/final3-source.json",
+      "bytes": 482133,
+      "sha256": "599c1a5f3d5dafaf35f15f54bf3defd7b9665761ad56818ca0c6f9a381b5b762"
+    },
+    {
+      "path": "evidence/roma/final3-timeout-negative.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-timeout-negative.stdout.log",
+      "bytes": 427,
+      "sha256": "d736fc4e492e6a451f255d1fdd475b8d19fba07e544deab8041b33e849ba347f"
+    },
+    {
+      "path": "evidence/roma/final3-water.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/final3-water.stdout.log",
+      "bytes": 1268,
+      "sha256": "3442cfbcbd92e1adc2820f8ef5de277533802fb27e61c8bb661215f62fb567c1"
+    },
+    {
+      "path": "evidence/roma/finalize.mjs",
+      "bytes": 2401,
+      "sha256": "55bc86c0dd63e7ec2f95f3163d7cb7937188f9461ccd1c435a2852c62650e7bb"
+    },
+    {
+      "path": "evidence/roma/foundation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/foundation.stdout.log",
+      "bytes": 1153,
+      "sha256": "a2b5f07050824196325952120af61945d527e9fe5963fe715ec81163ca4178a6"
+    },
+    {
+      "path": "evidence/roma/git-final.txt",
+      "bytes": 14874,
+      "sha256": "da003ae1a77fe9c535128e6941f329eea242f33a0664f394576f90ec1b6c7847"
+    },
+    {
+      "path": "evidence/roma/global.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/global.stdout.log",
+      "bytes": 12008,
+      "sha256": "4d46cb089ee0476158c2d4bedcf4fdab1c36a080502816903fa861fde44d9697"
+    },
+    {
+      "path": "evidence/roma/habitat.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/habitat.stdout.log",
+      "bytes": 236,
+      "sha256": "d239da6edd830baf1b4d780d7d76b1587666605f49110a1769749726da63d8e1"
+    },
+    {
+      "path": "evidence/roma/integrity.json",
+      "bytes": 1130,
+      "sha256": "573ecdd39cef3c8844334b3a3d9c72bb32f48d44495590f1e7e01f7cc3fbaa53"
+    },
+    {
+      "path": "evidence/roma/MEASUREMENTS.md",
+      "bytes": 4719,
+      "sha256": "6f17735e84d9dd8a2750b6d596dd0c361111ab37cabf284f94522d3b6b2de828"
+    },
+    {
+      "path": "evidence/roma/navigation-neutral/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma/navigation-neutral/errors.log",
+      "bytes": 2231376,
+      "sha256": "b45ae5c8d3e89a95e0f2db70a1b54d3d3fdf18a7e27d7957eb07eab1658a6027"
+    },
+    {
+      "path": "evidence/roma/navigation-neutral/process.json",
+      "bytes": 592,
+      "sha256": "c51b49f7d302450594d4298de66f6aec95458e4cdc4745a9d536449a240a73a0"
+    },
+    {
+      "path": "evidence/roma/navigation-neutral/run.log",
+      "bytes": 298,
+      "sha256": "ead07fbed99c6229067075894070905128a780953c2bc36243503ff246aa0194"
+    },
+    {
+      "path": "evidence/roma/navigation-resolver.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/navigation-resolver.stdout.log",
+      "bytes": 172,
+      "sha256": "9827700b5a746088b6536fe6f21db233c8cbc6c24e53719fff1ceec988bae3dc"
+    },
+    {
+      "path": "evidence/roma/navigation2-neutral/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma/navigation2-neutral/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/navigation2-neutral/navigation.json",
+      "bytes": 36889,
+      "sha256": "fddc678de369e6a32fdc22d038d76edd241fd89ef43e4c3ca0e6a8979846ae58"
+    },
+    {
+      "path": "evidence/roma/navigation2-neutral/process.json",
+      "bytes": 592,
+      "sha256": "e0f4355b3c1ac12d664f0f70c4effcff41082d55626fb8e966fc77515ba9e9a1"
+    },
+    {
+      "path": "evidence/roma/navigation2-neutral/run.log",
+      "bytes": 2661,
+      "sha256": "44269d742c5ca7b1a616ba5163f324c2e1ec926bbb86e096574f044552ba0b50"
+    },
+    {
+      "path": "evidence/roma/navigation2-prototype/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma/navigation2-prototype/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/navigation2-prototype/navigation.json",
+      "bytes": 41955,
+      "sha256": "8bf565b7ca79a39af58baedbcf692b30bf0e841f6e59b6633cbd95b78da4472b"
+    },
+    {
+      "path": "evidence/roma/navigation2-prototype/process.json",
+      "bytes": 592,
+      "sha256": "24253be341f3de072908319034400f75297cd69d661ab435a8eed2d9bdbceb61"
+    },
+    {
+      "path": "evidence/roma/navigation2-prototype/run.log",
+      "bytes": 2660,
+      "sha256": "4df2157abc7b2b918416320e1230cf3af10d0fb30e8e821a9e7bbbdc91706b7e"
+    },
+    {
+      "path": "evidence/roma/navigation3-neutral/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma/navigation3-neutral/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/navigation3-neutral/navigation.json",
+      "bytes": 37688,
+      "sha256": "a28498ee6af367104ddd8971b8cd7b1340c9e418367115637f6dbde85425048e"
+    },
+    {
+      "path": "evidence/roma/navigation3-neutral/process.json",
+      "bytes": 591,
+      "sha256": "c83bcc7807e301334d5ddc8eca5d9e621c979a97e112a5aec5403913ddd54937"
+    },
+    {
+      "path": "evidence/roma/navigation3-neutral/run.log",
+      "bytes": 2660,
+      "sha256": "6c456f81ba94d9fd5fc75c14c5e13b75a238469c7d1fa582bb845c15edd50883"
+    },
+    {
+      "path": "evidence/roma/navigation3-prototype/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma/navigation3-prototype/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/navigation3-prototype/navigation.json",
+      "bytes": 43288,
+      "sha256": "52f5cf10b515b0546068cdd44159b15d20f8fc0185a1697280755c7a8058e36f"
+    },
+    {
+      "path": "evidence/roma/navigation3-prototype/process.json",
+      "bytes": 591,
+      "sha256": "d6e4a10d1f813cb1add935f0a89258f8c1faa310c697753bce1741211bd06a97"
+    },
+    {
+      "path": "evidence/roma/navigation3-prototype/run.log",
+      "bytes": 2660,
+      "sha256": "cceaadd20d6e2e50446c322df9b78e834af606e59adb62c5504966ea923ccbbb"
+    },
+    {
+      "path": "evidence/roma/no-shadow/godot-no-shadow.json",
+      "bytes": 10532,
+      "sha256": "f3e7e9810cf25d5c68dadf7c4a949de9044e32f6fe4576a4bee2a17e990b91a5"
+    },
+    {
+      "path": "evidence/roma/no-shadow/godot-no-shadow.png",
+      "bytes": 3192280,
+      "sha256": "809901b016d756a9935f5c2cb8a0320b0fa78b5d0a722fc7c4b440478dc49685"
+    },
+    {
+      "path": "evidence/roma/npm-final3.log",
+      "bytes": 1686,
+      "sha256": "b39118746a84a12f15e61df99abee424b0210d1e0da00c845b00b8475959581a"
+    },
+    {
+      "path": "evidence/roma/npm-validation.log",
+      "bytes": 1686,
+      "sha256": "38a44f1a480ade2e5accbe68c2f8b115a4f719c4d526debbd23d96d44ffa3eeb"
+    },
+    {
+      "path": "evidence/roma/parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/parse.stdout.log",
+      "bytes": 105,
+      "sha256": "a35417693799ff40eeb3667bf984a3c248e15280850668293d3391dc1c96a21f"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks.ps1",
+      "bytes": 2184,
+      "sha256": "08692a0dff6d110837edaa80b27bbb7b8f9f0a9166603051fa0cacba10aeeddf"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks2.log",
+      "bytes": 1148,
+      "sha256": "a73ba751e9b85242ae16cc09c3cd9be046ee5dfc208fbd17267c0a231879f911"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks2.ps1",
+      "bytes": 2190,
+      "sha256": "f30d05597aea1a83e0c3d64489256ffaa368d4f7feb70a139b0fc48decef5f32"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks3.log",
+      "bytes": 1148,
+      "sha256": "a73ba751e9b85242ae16cc09c3cd9be046ee5dfc208fbd17267c0a231879f911"
+    },
+    {
+      "path": "evidence/roma/performance-and-checks3.ps1",
+      "bytes": 2192,
+      "sha256": "d427726489cf82dd22c4a0ba7c3e931d6b76df7bb7789a8bfaa858a7b18b6231"
+    },
+    {
+      "path": "evidence/roma/regional.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/regional.stdout.log",
+      "bytes": 5715,
+      "sha256": "661e5ed20bbad935c12ee6caa5bb9c9f1d24fcdaa6a58f9351854120e474d14d"
+    },
+    {
+      "path": "evidence/roma/report.mjs",
+      "bytes": 10409,
+      "sha256": "8d5acabe92631a9628fd7518438faa670c18c90ace1b61f05e6183e98622c962"
+    },
+    {
+      "path": "evidence/roma/roma.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/roma.stdout.log",
+      "bytes": 358,
+      "sha256": "25ce1fe112fdbfc15424d80ac0384f7547bc8e8cd22ec97e7d3eb6c419ef661b"
+    },
+    {
+      "path": "evidence/roma/run-checks.ps1",
+      "bytes": 2345,
+      "sha256": "bd26edf1275bcda500dfd4b8eccf59e16d8af5e9367955f0cd40981a95a47d02"
+    },
+    {
+      "path": "evidence/roma/run-checks2.ps1",
+      "bytes": 2350,
+      "sha256": "c93af3f046532eead15693cb5eaa64379a110cf5b29dbebd3a5b41a9faa6a51f"
+    },
+    {
+      "path": "evidence/roma/run-checks3.ps1",
+      "bytes": 2375,
+      "sha256": "3d657f34796f9fcbd6bfa8ba2ed81ef5c0b73f4460dc34d93140918c4e826a20"
+    },
+    {
+      "path": "evidence/roma/settlement-population.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/settlement-population.stdout.log",
+      "bytes": 423,
+      "sha256": "3d6f11ece6f4c2512ec04982fdf74d91ab415be23344b3403a3f6197f45e479c"
+    },
+    {
+      "path": "evidence/roma/shadow-diagnostic.gd",
+      "bytes": 354,
+      "sha256": "6db5b7fdddab88f1933f37c4ac7e4f5d7bfc631882ffb905f0b7e975fc362c49"
+    },
+    {
+      "path": "evidence/roma/shadow-diagnostic.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/shadow-diagnostic.stdout.log",
+      "bytes": 1937,
+      "sha256": "c152d9d6645ea68c9640bb5a6b55bc89145d6809596cf72136d052f0c3d611ed"
+    },
+    {
+      "path": "evidence/roma/timeout-negative.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/timeout-negative.stdout.log",
+      "bytes": 427,
+      "sha256": "9ca62afcc8980909946fae2ccce6966ff0b45ada34e3c3b736ed27ba08f33446"
+    },
+    {
+      "path": "evidence/roma/water.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma/water.stdout.log",
+      "bytes": 1268,
+      "sha256": "e04d1e24dddd1986fe237d77aff0479f0aeb68c2555ed032d6e6bb2c92631bd0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/godot-profile-roma-close.json",
+      "bytes": 19718,
+      "sha256": "baebb024734bfa4e6ca73ecd628435e82b8ba1e594a63cf3c29774d63d9b32a2"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/godot-profile-roma-close.png",
+      "bytes": 2893337,
+      "sha256": "8a7ee2fbcdaa2c4a9eeb268dab19b919b06a48e6d2a114f4b36183ffbd724300"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/godot-profile-roma-strategic.json",
+      "bytes": 8396,
+      "sha256": "7481fa38a51aed0457c1bd2ec9d7ab008900b8cdf57497c7c0fadf897ab96c38"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/godot-profile-roma-strategic.png",
+      "bytes": 2730436,
+      "sha256": "b2e450c4569462d8e322aae70c5600a90e7c73cf197037a1797b65c38d12b0fb"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/process-profile-roma-close.json",
+      "bytes": 840,
+      "sha256": "725a648a9d8afbbd7de0cb9827cbc17594b5d75f62f6b05ffdc4b4f3a99eeb14"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/process-profile-roma-strategic.json",
+      "bytes": 841,
+      "sha256": "8e25587b830aade697a3545ec45b8a9aab8cbe716b6f7f56aded220a3376a45f"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/profile-roma-close-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/profile-roma-close-run.log",
+      "bytes": 1968,
+      "sha256": "67d794de22b3c5bbbb8981db6ff43acb61784a1a3b64f58670e583ea137b4d2a"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/profile-roma-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-serial/profile-roma-strategic-run.log",
+      "bytes": 1263,
+      "sha256": "194360010efda2cd50952e7f80154dcdc4a1bc915af466d3eb2c21f97a0943cb"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-east-strategic.json",
+      "bytes": 10726,
+      "sha256": "83d68aeac670c8d48538f5b584c43bdbf87804a330340c93558421c8393d4849"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-east-strategic.png",
+      "bytes": 2921342,
+      "sha256": "77b9f31fb60b0855f08354e6bc79fd117b54ea809ea556ef6459cb6b72ac5d82"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-layout-strategic.json",
+      "bytes": 8409,
+      "sha256": "7173a5e5169beaa5d67baed15edb7df4effbc3508091a0e5f9e9e90635a55103"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-layout-strategic.png",
+      "bytes": 2907048,
+      "sha256": "bfefc20981b2385e02232b9e40f3dfc821ebfa0f88767829e3cf0eb00337df2e"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-west-strategic.json",
+      "bytes": 9167,
+      "sha256": "857f46c330b3a4920604ec0ae91327ef4f5e69b28b5bc3ef802edb0d317cb331"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/godot-profile-roma-west-strategic.png",
+      "bytes": 2954752,
+      "sha256": "0734bd9edad8c1e5cc875bf00d2a504fa6ce441120dd1561df9124096d590927"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/process-profile-roma-east-strategic.json",
+      "bytes": 839,
+      "sha256": "53daca7c40b09220a38b28f3d4c7589718f85d196d04cc6854949f675b4f9c66"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/process-profile-roma-layout-strategic.json",
+      "bytes": 840,
+      "sha256": "e3a967c7678326ee3f81b1d70cd1038155dbcc89d1551ae215c2485253c905b9"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/process-profile-roma-west-strategic.json",
+      "bytes": 840,
+      "sha256": "f5d4e5cb19a7ed81fd12e1c4f9ff9440379c0f5c7b374e4d6a0dc68ac33ec097"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-east-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-east-strategic-run.log",
+      "bytes": 1975,
+      "sha256": "d9baca2cc8f334dc7872cd4c087bd49340373fe1902cb142a035db3f42cf0e9a"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-layout-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-layout-strategic-run.log",
+      "bytes": 1986,
+      "sha256": "812dddf5efcbd9d8dce5eb2a810440c374bc8f2d792b19a2809b48d5a2184996"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-west-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-baseline-detail-serial/profile-roma-west-strategic-run.log",
+      "bytes": 1984,
+      "sha256": "f5244120ae330e3e952ec7f2f4497ebace9ed318dc8a4a38ecb851b452bbce7d"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-close.json",
+      "bytes": 11858,
+      "sha256": "34b809dd76909edc44a93563d6a163099b0b548982160875f51cb3f8e5af4446"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-close.png",
+      "bytes": 2873552,
+      "sha256": "c644d2f680296a36924e69c25b0d543e0dd1ad4694ac5fcb169ff614cd0a404a"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-strategic.json",
+      "bytes": 11050,
+      "sha256": "5b6918a6ab8c45fdf1e80ab4c06d807f6b3bb697afdf55c4449362a16ccd421b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-strategic.png",
+      "bytes": 2731744,
+      "sha256": "9b94f04a9a553efad114bc4f6b224638511d85f386029dc42dc5b80477f49c56"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/process-profile-roma-close.json",
+      "bytes": 840,
+      "sha256": "6051a46669a0fa0bf1284013e3b894ac543d6ed1f21129dc0650c213a0b5a4b8"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/process-profile-roma-strategic.json",
+      "bytes": 839,
+      "sha256": "ecc59cd570b6020f7e53719db8205124873525ff1e83cdac92e8325bfd27be60"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-close-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-close-run.log",
+      "bytes": 1959,
+      "sha256": "1b62c4ef9acd5e3af5d82c65e834aa164f852713f82743540c45661497b57cf5"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-strategic-run.log",
+      "bytes": 1262,
+      "sha256": "987d11b7a74c86e24b8eca4e34644834609775650215e852ead6ae835fd0cd81"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-east-strategic.json",
+      "bytes": 11466,
+      "sha256": "9723c8727c5d33acdf0e62873b12878ea85133de0833c6cb5a7a17c3577e3b50"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-east-strategic.png",
+      "bytes": 3134626,
+      "sha256": "47269719f193943ad2b25c6dc4ec457e4d0174a4a1bdd17603de698622de46dc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-layout-strategic.json",
+      "bytes": 11458,
+      "sha256": "6234244705c324391a9ed95873b51bf0c9dc94ecc69b47b5f728a3cd0509286b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-layout-strategic.png",
+      "bytes": 2965459,
+      "sha256": "6605f62ff1114a1c179b6a1776003a1d4fd5df661af4b9c81aa9d2c992825945"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-west-strategic.json",
+      "bytes": 12651,
+      "sha256": "1d26255f497d5bba3934c10dba7b81ffe2ef80e102cd1de59b35b43b7d6324f0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-west-strategic.png",
+      "bytes": 3134274,
+      "sha256": "cbd245064214fad524d807b8d41c30c88d6a7bb3093597f718dcc312fbfe9bbc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-east-strategic.json",
+      "bytes": 841,
+      "sha256": "262112c96f1ab4b7f83dd60d8ccf3efe43a1c22ff8a43d5fbc8284d91be99bce"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-layout-strategic.json",
+      "bytes": 841,
+      "sha256": "490c94f2acdbd773e45dc43e9c2c3f2d8efa282a709a02a4483e153233df5a41"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-west-strategic.json",
+      "bytes": 841,
+      "sha256": "87a824d4b3c1e70af77976b12bb2cdc9af6bd5e58ea7d519d518c1c31f11fc83"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-east-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-east-strategic-run.log",
+      "bytes": 1975,
+      "sha256": "47a8ccb32fd8c91953d69203923bf7b071d95ede3745d231a1acff80855bb123"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-layout-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-layout-strategic-run.log",
+      "bytes": 1968,
+      "sha256": "989fc52fa2cbf78b94d8e99f0959d9abdec19e75f12d2026f9690bd5f2add6c9"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-west-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-west-strategic-run.log",
+      "bytes": 1975,
+      "sha256": "bfcce0654cf82a2168cee7447d4ca728ac6f1c8123fe489c02c664441401c8fc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/godot-profile-roma-east-regional.json",
+      "bytes": 12235,
+      "sha256": "342590849c5886d16291d27ce22fae4c7683e85309cdd8f789c6194525e1cf2c"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/godot-profile-roma-east-regional.png",
+      "bytes": 3217528,
+      "sha256": "c873be137678c23f366bd446a3c18f262a1691de5a697aa4d2c69efb0e4b586a"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/godot-profile-roma-west-regional.json",
+      "bytes": 11093,
+      "sha256": "028d7ec0e9b6ed8c5431cf2f5955b28225106a0c3d9d5f74e8cc7778bcbb10aa"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/godot-profile-roma-west-regional.png",
+      "bytes": 3157302,
+      "sha256": "dce5c1e5331861faf25c28c21622f5da50d618da147162666b2a6a4ce1f1cd63"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/process-profile-roma-east-regional.json",
+      "bytes": 840,
+      "sha256": "27e7f4d7841e189f4211d84aea249639e0284bb8c0eab8a55c992ddd309e89a0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/process-profile-roma-west-regional.json",
+      "bytes": 840,
+      "sha256": "c5562116246ba9ee15c28f13e7e0d29d2813d037bd42be1c6c9bc3c28fac22e0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/profile-roma-east-regional-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/profile-roma-east-regional-run.log",
+      "bytes": 1980,
+      "sha256": "ca1ab639f098e6be7b0541c82951bc9bfbb60a4abcbd77f23584a2724ed84835"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/profile-roma-west-regional-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-architecture/profile-roma-west-regional-run.log",
+      "bytes": 1980,
+      "sha256": "a4d7342eeab1c1506ed879aeb2678e675ce51f61e6a441db11d6efe7fbcfceec"
+    },
+    {
+      "path": "ROMA-VISUAL.md",
+      "bytes": 15125,
+      "sha256": "3586ae90adb888c3989cf492f546090ea3dba2932e55f7a2ebc6d31c430c7bc9"
+    },
+    {
+      "path": "data/roma-views.json",
+      "bytes": 238,
+      "sha256": "76d8acf7bcda5d7ec1fd5cc77ec9262e4b42b76c2061cf20d2dd27d778258309"
+    }
+  ]
+}

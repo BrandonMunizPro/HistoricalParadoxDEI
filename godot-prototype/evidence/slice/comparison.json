@@ -1,0 +1,476 @@
+{
+  "beforeRevision": "1d2dd84a08e6bf0b79763a60a997d9e8a062499a023a36f9e516ce903bc4b29b",
+  "afterRevision": "cfa4048cf7026693a5e69d7a7e027c5f5bb216306c5b1b469be3ddf20274da00",
+  "fpsSource": "Consecutive settled frames after scenery completion",
+  "rows": [
+    {
+      "view": "production-catana",
+      "distanceKm": 1.8,
+      "beforeFps": 138.6746707632192,
+      "afterFps": 144.16342365705768,
+      "beforeGpuMs": 5.59989442692863,
+      "afterGpuMs": 4.09676110612022,
+      "beforeProps": 28036,
+      "afterProps": 11287,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 209.664,
+      "afterLoadingMaxMs": 186.436,
+      "bootStages": {
+        "base_meshes": 191.233,
+        "canopy_meshes": 48.87,
+        "environment": 11.177,
+        "materials": 1564.119,
+        "water_ui_hydrology": 741.015
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 174.143,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 165.817,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 196.753,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 8.386,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 235.596,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 232.47,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 23.032,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 22.292,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 38.625,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 39.318,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 37.117,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:11:22Z"
+    },
+    {
+      "view": "profile-italy-close",
+      "distanceKm": 14.4,
+      "beforeFps": 118.89294812898827,
+      "afterFps": 127.64843917870988,
+      "beforeGpuMs": 6.32943889829848,
+      "afterGpuMs": 5.84460001256731,
+      "beforeProps": 35546,
+      "afterProps": 14662,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 56.139,
+      "afterLoadingMaxMs": 58.589,
+      "bootStages": {
+        "base_meshes": 189.71,
+        "canopy_meshes": 44.588,
+        "environment": 3.908,
+        "materials": 1501.038,
+        "water_ui_hydrology": 682.71
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 149.589,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 150.868,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 193.54,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 7.776,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 225.878,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 222.593,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 21.999,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 24.296,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 40.877,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 43.305,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 39.229,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:12:34Z"
+    },
+    {
+      "view": "profile-italy-overview",
+      "distanceKm": 288,
+      "beforeFps": 107.61706404865447,
+      "afterFps": 142.75008029692017,
+      "beforeGpuMs": 6.63499000549316,
+      "afterGpuMs": 5.24551667372386,
+      "beforeProps": 0,
+      "afterProps": 0,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 68.557,
+      "afterLoadingMaxMs": 170.065,
+      "bootStages": {
+        "base_meshes": 197.175,
+        "canopy_meshes": 47.233,
+        "environment": 3.745,
+        "materials": 1508.743,
+        "water_ui_hydrology": 661.624
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 149.627,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 149.108,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 191.923,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 6.471,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 235.212,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 232.804,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 25.496,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 24.707,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 39.647,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 41.678,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 39.478,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:12:08Z"
+    },
+    {
+      "view": "profile-italy-strategic",
+      "distanceKm": 90,
+      "beforeFps": 114.10371286566287,
+      "afterFps": 144.5196928153641,
+      "beforeGpuMs": 5.12605192960599,
+      "afterGpuMs": 4.13893888658947,
+      "beforeProps": 21093,
+      "afterProps": 8037,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 59.303,
+      "afterLoadingMaxMs": 85.821,
+      "bootStages": {
+        "base_meshes": 213.213,
+        "canopy_meshes": 47.973,
+        "environment": 3.984,
+        "materials": 1479.944,
+        "water_ui_hydrology": 655.249
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 147.121,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 145.657,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 186.599,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 6.083,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 230.232,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 230.967,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 21.099,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 23.195,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 38.961,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 43.21,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 41.968,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:12:19Z"
+    },
+    {
+      "view": "profile-sicily-close",
+      "distanceKm": 14.4,
+      "beforeFps": 105.84704983690737,
+      "afterFps": 136.48367996396817,
+      "beforeGpuMs": 7.13853891955482,
+      "afterGpuMs": 6.01342776351505,
+      "beforeProps": 28036,
+      "afterProps": 11287,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 154.376,
+      "afterLoadingMaxMs": 79.919,
+      "bootStages": {
+        "base_meshes": 211.068,
+        "canopy_meshes": 47.395,
+        "environment": 3.866,
+        "materials": 1588.39,
+        "water_ui_hydrology": 698.221
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 153.123,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 161.71,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 203.116,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 6.271,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 228.117,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 229.079,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 25.746,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 25.528,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 44.435,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 65.888,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 54.784,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:11:58Z"
+    },
+    {
+      "view": "profile-sicily-overview",
+      "distanceKm": 288,
+      "beforeFps": 125.05997668048306,
+      "afterFps": 143.8910341976229,
+      "beforeGpuMs": 5.63148666938146,
+      "afterGpuMs": 4.03095332304637,
+      "beforeProps": 0,
+      "afterProps": 0,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 104.312,
+      "afterLoadingMaxMs": 75.239,
+      "bootStages": {
+        "base_meshes": 202.235,
+        "canopy_meshes": 45.708,
+        "environment": 4.019,
+        "materials": 1506.983,
+        "water_ui_hydrology": 699.959
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 156.808,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 147.119,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 189.736,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 6.425,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 226.06,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 241.776,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 25.089,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 23.627,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 40.982,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 46.665,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 40.797,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:11:32Z"
+    },
+    {
+      "view": "profile-sicily-strategic",
+      "distanceKm": 90,
+      "beforeFps": 120.59207020248935,
+      "afterFps": 144.19495157452866,
+      "beforeGpuMs": 5.56550657593007,
+      "afterGpuMs": 3.80992221302456,
+      "beforeProps": 9581,
+      "afterProps": 4792,
+      "tiles": 13,
+      "beforeLoadingMaxMs": 83.174,
+      "afterLoadingMaxMs": 77.425,
+      "bootStages": {
+        "base_meshes": 196.567,
+        "canopy_meshes": 47.415,
+        "environment": 3.834,
+        "materials": 1497.092,
+        "water_ui_hydrology": 716.336
+      },
+      "materialLoads": [
+        {
+          "cpuMs": 147.806,
+          "resource": "regional/land"
+        },
+        {
+          "cpuMs": 148.342,
+          "resource": "regional/ocean"
+        },
+        {
+          "cpuMs": 184.595,
+          "resource": "regional/shore"
+        },
+        {
+          "cpuMs": 6.089,
+          "resource": "regional/ecology"
+        },
+        {
+          "cpuMs": 230.619,
+          "resource": "global/land"
+        },
+        {
+          "cpuMs": 235.379,
+          "resource": "global/ocean"
+        },
+        {
+          "cpuMs": 24.164,
+          "resource": "global/shore"
+        },
+        {
+          "cpuMs": 24.224,
+          "resource": "global/ecology"
+        },
+        {
+          "cpuMs": 43.145,
+          "resource": "slice/limestone-scree"
+        },
+        {
+          "cpuMs": 43.733,
+          "resource": "slice/mediterranean-ground"
+        },
+        {
+          "cpuMs": 39.652,
+          "resource": "slice/mediterranean-mosaic"
+        }
+      ],
+      "recordedAtUtc": "2026-10-27T15:11:43Z"
+    }
+  ]
+}

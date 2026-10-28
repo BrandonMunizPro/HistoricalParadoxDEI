@@ -1,0 +1,353 @@
+{
+  "bankClearanceValidated": true,
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-27T20:57:37Z",
+    "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+  },
+  "passed": true,
+  "samples": [
+    {
+      "cameraDistanceKm": 95.0000000000001,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:56:39Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 6.41222224235535,
+        "p95Ms": 8.38199996948242,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9975,
+        "rocks": 3608
+      },
+      "settled": {
+        "meanMs": 7.55381666666667,
+        "p95Ms": 10.212,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 8457,
+        "maxFrameMs": 19.066,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "production-greece",
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 1.093
+      }
+    },
+    {
+      "cameraDistanceKm": 150.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:56:48Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 4.49885555770662,
+        "p95Ms": 5.35900020599365,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9615,
+        "rocks": 6585
+      },
+      "settled": {
+        "meanMs": 7.18687222222222,
+        "p95Ms": 8.422,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 8270,
+        "maxFrameMs": 23.141,
+        "maxRelativeZoomStep": 0.0800000000000001,
+        "ready": true
+      },
+      "view": "production-anatolia",
+      "work": {
+        "cancelled": 4,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 180.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:56:56Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 3.56877221928702,
+        "p95Ms": 3.89499998092651,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 3868,
+        "rocks": 12096
+      },
+      "settled": {
+        "meanMs": 6.93516111111111,
+        "p95Ms": 7.568,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 6915,
+        "maxFrameMs": 20.548,
+        "maxRelativeZoomStep": 0.0669368867396429,
+        "ready": true
+      },
+      "view": "production-egypt",
+      "work": {
+        "cancelled": 6,
+        "cellsBuilt": 28,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:04Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 3.94073888725705,
+        "p95Ms": 4.63899993896484,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 5960,
+        "rocks": 10240
+      },
+      "settled": {
+        "meanMs": 7.08201666666667,
+        "p95Ms": 8.129,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 7636,
+        "maxFrameMs": 23.661,
+        "maxRelativeZoomStep": 0.037571169541482,
+        "ready": true
+      },
+      "view": "production-mesopotamia",
+      "work": {
+        "cancelled": 14,
+        "cellsBuilt": 37,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:12Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 4.0384888821178,
+        "p95Ms": 4.44600009918213,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 1671,
+        "rocks": 14529
+      },
+      "settled": {
+        "meanMs": 8.40151111111111,
+        "p95Ms": 13.898,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 7147,
+        "maxFrameMs": 21.246,
+        "maxRelativeZoomStep": 0.00000000000000014210854715202,
+        "ready": true
+      },
+      "view": "production-persia",
+      "work": {
+        "cancelled": 18,
+        "cellsBuilt": 47,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:19Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 3.90095001724031,
+        "p95Ms": 4.24900007247925,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 3867,
+        "rocks": 12333
+      },
+      "settled": {
+        "meanMs": 9.13040555555556,
+        "p95Ms": 14.045,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 6530,
+        "maxFrameMs": 19.313,
+        "maxRelativeZoomStep": 0.00000000000000014210854715202,
+        "ready": true
+      },
+      "view": "zagros-200",
+      "work": {
+        "cancelled": 19,
+        "cellsBuilt": 56,
+        "maxChunkMs": 5.184,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 70.0000973271001,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:21Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 4.24354000329971,
+        "p95Ms": 5.24599981307983,
+        "samples": 300
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 3867,
+        "rocks": 12333
+      },
+      "settled": {
+        "meanMs": 10.6878733333333,
+        "p95Ms": 13.985,
+        "samples": 300
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 1545,
+        "maxFrameMs": 14.806,
+        "maxRelativeZoomStep": 0.0799999999999999,
+        "ready": true
+      },
+      "view": "zagros-70",
+      "work": {
+        "cancelled": 19,
+        "cellsBuilt": 56,
+        "maxChunkMs": 5.184,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 8.00000000000001,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:28Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 6.93755556212531,
+        "p95Ms": 8.49600028991699,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9189,
+        "rocks": 23211
+      },
+      "settled": {
+        "meanMs": 8.59375,
+        "p95Ms": 13.001,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 5751,
+        "maxFrameMs": 15.355,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "zagros-8",
+      "work": {
+        "cancelled": 19,
+        "cellsBuilt": 65,
+        "maxChunkMs": 5.184,
+        "maxUploadMs": 2.114
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-27T20:57:37Z",
+        "sourceRevision": "7b9d5013ba53bc6616ab9f4e4138bfc88b5dc617e19cb0b8ad22e3946c9dc67e"
+      },
+      "gpu": {
+        "meanMs": 3.9596333305041,
+        "p95Ms": 4.47499990463257,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 1671,
+        "rocks": 14529
+      },
+      "settled": {
+        "meanMs": 9.78618888888889,
+        "p95Ms": 14.054,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 7506,
+        "maxFrameMs": 17.341,
+        "maxRelativeZoomStep": 0.0188413678177235,
+        "ready": true
+      },
+      "view": "production-cancellation-recovery",
+      "work": {
+        "cancelled": 23,
+        "cellsBuilt": 74,
+        "maxChunkMs": 6.136,
+        "maxUploadMs": 2.114
+      }
+    }
+  ]
+}

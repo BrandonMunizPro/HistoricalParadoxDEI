@@ -44,7 +44,7 @@ func exercise():
 		if not await wait_ready():
 			checks.append({"view":view,"sceneryReady":world.scenery.is_ready(),"busy":world.scenery.busy,"pendingScenery":world.scenery.pending_cells(),"pendingTerrain":world.queue,"distance":world.distance,"goalDistance":world.goal_distance,"focusErrorDegrees":world.focus.distance_to(world.goal_focus)})
 			finish(false,"Timed out waiting for camera, terrain and scenery: "+view);return
-		var instances=world.scenery.resident_instances()
+		var instances=world.scenery.resident_vegetation()
 		var row={"view":view,"expectedDistance":expected[0],"resolvedDistance":world.goal_distance,"actualDistance":world.distance,"cameraPath":world.camera_path,"vegetationExpected":expected[1],"sceneryReady":world.scenery.is_ready(),"pendingScenery":world.scenery.pending_cells(),"vegetationInstances":instances,"terrainTiles":world.resident.size(),"vegetationCells":world.scenery.roots.size(),"localCells":world.scenery.local_roots.size()}
 		checks.append(row)
 		if world.camera_path!="production" or world.resolved_view!=view:finish(false,"Used a capture-only camera: "+view);return

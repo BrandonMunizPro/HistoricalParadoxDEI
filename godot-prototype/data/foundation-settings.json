@@ -1,0 +1,17 @@
+{
+  "notice": "Interpretive presentation only; no settlement approval, historical extent or population is inferred.",
+  "rendering": {"vsync_mode": 3, "frame_cap": 120},
+  "settlements": {
+    "max_resident": 160,
+    "max_detailed": 12,
+    "detail_distance_km": 24,
+    "proxy_houses": 16,
+    "close_houses": 48,
+    "max_proxy_scale": 7,
+    "proxy_scale_distance_km": 30,
+    "budget_ms": 3,
+    "clearance_km": 0.42
+  },
+  "terrain": {"photo_tile_km": 0.09,"detail_near_km": 6,"detail_far_km": 55,"photo_strength": 0.55,"normal_strength": 0.3},
+  "river": {"roughness": 0.21,"specular": 0.65,"bank_fraction": 0.10}
+}

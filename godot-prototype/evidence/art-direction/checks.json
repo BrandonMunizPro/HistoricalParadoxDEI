@@ -1,0 +1,199 @@
+[
+    {
+        "endedAtUtc":  "2026-10-27T19:22:48.7328415Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/parse-scripts.gd",
+                        "--headless",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-parse",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:48.2526843Z",
+        "stderr":  "",
+        "name":  "parse",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:22:49.0783023Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/navigation-test.gd",
+                        "--headless",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-navigation-resolver",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:48.8241965Z",
+        "stderr":  "",
+        "name":  "navigation-resolver",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:22:50.8809353Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/environment-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-environment",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:49.0813655Z",
+        "stderr":  "",
+        "name":  "environment",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:22:52.6904482Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/habitat-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-habitat",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:50.8841664Z",
+        "stderr":  "",
+        "name":  "habitat",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:22:54.6488837Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/art-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-art",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:52.6934558Z",
+        "stderr":  "",
+        "name":  "art",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:23:13.9605044Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/visual-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-water",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:22:54.6518675Z",
+        "stderr":  "",
+        "name":  "water",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:25:10.6871902Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/global-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-global",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:23:13.9654976Z",
+        "stderr":  "",
+        "name":  "global",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:26:12.2693450Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/regional-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-regional",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:25:10.6907230Z",
+        "stderr":  "",
+        "name":  "regional",
+        "timedOut":  false,
+        "exitCode":  0,
+        "expectedExit":  0
+    },
+    {
+        "endedAtUtc":  "2026-10-27T19:26:17.1529526Z",
+        "passed":  true,
+        "command":  [
+                        "C:\\Users\\brand\\tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+                        "--path",
+                        "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                        "--script",
+                        "res://tools/global-validate.gd",
+                        "--resolution",
+                        "1920x1080",
+                        "--",
+                        "--output=res://evidence/art-direction/final-check-timeout-negative",
+                        "--source-manifest=res://evidence/art-direction/final2-source.json",
+                        "--timeout-seconds=0.001"
+                    ],
+        "startedAtUtc":  "2026-10-27T19:26:12.2733558Z",
+        "stderr":  "",
+        "name":  "timeout-negative",
+        "timedOut":  false,
+        "exitCode":  1,
+        "expectedExit":  1
+    }
+]

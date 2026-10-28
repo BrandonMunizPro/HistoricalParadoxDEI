@@ -8,6 +8,7 @@ param(
  [switch]$ReferenceShaders,
  [switch]$NoTerrainShadows,
  [switch]$NoOverlap,
+ [switch]$NoSettlementVisuals,
  [string]$ProfileFile='data/visual-views.json'
 )
 $ErrorActionPreference='Stop'
@@ -22,11 +23,13 @@ foreach($view in $Views){$jobs+=@{name="production-$view";arguments=@('--product
 foreach($captureRegion in $Profiles){foreach($scale in $Scales){$jobs+=@{name="profile-$captureRegion-$scale";arguments=@("--region=$captureRegion","--scale=$scale")}}}
 foreach($job in $jobs){
  $name=$job.name
+ $gpuStart=if(Get-Command nvidia-smi -ErrorAction SilentlyContinue){@(nvidia-smi --query-gpu=temperature.gpu,utilization.gpu,clocks.gr,power.draw --format=csv)}else{@()}
  $arguments=@('--path',$project,'--resolution','1920x1080','--script','res://tools/visual-capture.gd','--',"--capture=$name","--output=res://$relative")+$job.arguments
  if($StaticWater){$arguments+='--static-water'}
  if($ReferenceShaders){$arguments+='--reference-shaders'}
  if($NoTerrainShadows){$arguments+='--no-terrain-shadows'}
  if($NoOverlap){$arguments+='--no-overlap'}
+ if($NoSettlementVisuals){$arguments+='--no-settlement-visuals'}
  $arguments+="--profile-file=$ProfileFile"
  if($SourceManifest){$arguments+="--source-manifest=$SourceManifest"}
  $process=Start-Process -FilePath 'C:\Users\brand\tools\godot\4.7.2-stable\Godot_v4.7.2-stable_win64_console.exe' -ArgumentList $arguments -WindowStyle Hidden -RedirectStandardOutput "$folder/$name-run.log" -RedirectStandardError "$folder/$name-errors.log" -PassThru
@@ -48,6 +51,7 @@ foreach($job in $jobs){
  $expectedPath=if($name.StartsWith('production-')){'production'}else{'capture-profile'}
  if($metrics.cameraPath -ne $expectedPath){throw "Incorrect camera resolver: $name"}
  if(-not(Test-Path -LiteralPath "$folder/godot-$name.png")){throw "Missing image: $name"}
- @{sampledPeakWorkingSetBytes=$peak;intervalMs=250;scope='Console wrapper and direct Godot child';evidence=$metrics.evidence} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath "$folder/process-$name.json"
+ $gpuEnd=if(Get-Command nvidia-smi -ErrorAction SilentlyContinue){@(nvidia-smi --query-gpu=temperature.gpu,utilization.gpu,clocks.gr,power.draw --format=csv)}else{@()}
+ @{sampledPeakWorkingSetBytes=$peak;intervalMs=250;scope='Console wrapper and direct Godot child';gpuAtStart=$gpuStart;gpuAtEnd=$gpuEnd;evidence=$metrics.evidence} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath "$folder/process-$name.json"
  Write-Output "$name completed; scenery=$($metrics.sceneryReadiness.instances)"
 }

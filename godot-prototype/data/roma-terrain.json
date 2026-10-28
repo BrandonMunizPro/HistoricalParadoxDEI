@@ -1,0 +1,23 @@
+{
+  "id": "roma-local",
+  "kind": "regional",
+  "romaDetail": true,
+  "parentId": "N41E12",
+  "bounds": {
+    "west": 12.461258,
+    "east": 12.521258,
+    "south": 41.864977,
+    "north": 41.914977
+  },
+  "width": 129,
+  "height": 129,
+  "grid": 128,
+  "mesh": "data/roma-terrain/roma.bin",
+  "heights": "data/roma-terrain/roma.height",
+  "sourceSpacing": "approximately 39–43 m resampled existing source",
+  "surfaceFilter": "5x5 Gaussian, sigma 1.2 samples, renderer derivative only",
+  "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E012_00_DEM/Copernicus_DSM_COG_10_N41_00_E012_00_DEM.tif",
+  "input": "public/data/italy-terrain/local-roma.json",
+  "inputSha256": "3409ed725dc2079e496253a89725da7704dd7af25aadf4c6f02509033c0875ad",
+  "notice": "Modern DSM, not an ancient seven-hill reconstruction; canonical source bytes unchanged; broad source relief retained with roof-scale surface filtering; existing 1.5x height presentation and 5.5% parent seam morph retained."
+}

@@ -1,0 +1,40 @@
+{
+  "cameraDistanceKm": 200.0,
+  "cameraPath": "environment-approach-diagnostic",
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-27T21:55:24Z",
+    "sourceRevision": "ce0246585068e514c27c3c539851c90951075accdc19c9040da6bda19b65cbfe"
+  },
+  "sceneryComposition": {
+    "paletteVariants": 28,
+    "plants": 3867,
+    "rocks": 12333
+  },
+  "sceneryWork": {
+    "cancelled": 18,
+    "candidates": 291252,
+    "cellsBuilt": 56,
+    "generationCpuMs": 13785.5430000001,
+    "generationYieldFrames": 3390,
+    "maxChunkMs": 6.097,
+    "maxUploadMs": 8.707,
+    "uploadCpuMs": 120.588
+  },
+  "settledFrameStats": {
+    "meanMs": 6.94543333333334,
+    "p95Ms": 7.348,
+    "samples": 180
+  },
+  "settledGpuStats": {
+    "meanMs": 4.81820555263095,
+    "p95Ms": 5.12599992752075,
+    "samples": 180
+  },
+  "transition": {
+    "elapsedMs": 5339,
+    "maxFrameMs": 22.554,
+    "maxRelativeZoomStep": 0.00000000000000014210854715202,
+    "ready": true
+  }
+}

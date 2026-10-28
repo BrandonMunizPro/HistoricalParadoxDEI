@@ -1,0 +1,389 @@
+{
+  "bankClearanceValidated": true,
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-28T00:04:01Z",
+    "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+  },
+  "passed": true,
+  "samples": [
+    {
+      "cameraDistanceKm": 95.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:02:28Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 9.93675551679399,
+        "p95Ms": 12.673999786377,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9958,
+        "rocks": 3620
+      },
+      "settled": {
+        "meanMs": 14.91085,
+        "p95Ms": 21.523,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 13301,
+        "maxFrameMs": 52.644,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "production-greece",
+      "work": {
+        "cancelled": 0,
+        "candidates": 42337,
+        "cellsBuilt": 9,
+        "generationCpuMs": 2613.168,
+        "generationYieldFrames": 623,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 1.419,
+        "uploadCpuMs": 21.808
+      }
+    },
+    {
+      "cameraDistanceKm": 150.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:02:41Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 7.1495333592097,
+        "p95Ms": 9.36699962615967,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9610,
+        "rocks": 6590
+      },
+      "settled": {
+        "meanMs": 14.525,
+        "p95Ms": 20.284,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 12701,
+        "maxFrameMs": 28.36,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "production-anatolia",
+      "work": {
+        "cancelled": 5,
+        "candidates": 79685,
+        "cellsBuilt": 18,
+        "generationCpuMs": 5470.47400000001,
+        "generationYieldFrames": 1299,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.522,
+        "uploadCpuMs": 43.463
+      }
+    },
+    {
+      "cameraDistanceKm": 180.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:02:53Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.21314444012112,
+        "p95Ms": 8.30599975585938,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 2752,
+        "rocks": 480
+      },
+      "settled": {
+        "meanMs": 13.9410777777778,
+        "p95Ms": 20.02,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 11186,
+        "maxFrameMs": 32.61,
+        "maxRelativeZoomStep": 0.0601348767927368,
+        "ready": true
+      },
+      "view": "production-egypt",
+      "work": {
+        "cancelled": 6,
+        "candidates": 145757,
+        "cellsBuilt": 29,
+        "generationCpuMs": 7708.189,
+        "generationYieldFrames": 1866,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.522,
+        "uploadCpuMs": 50.32
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:03:08Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.25069444576899,
+        "p95Ms": 8.67399978637695,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 5957,
+        "rocks": 10243
+      },
+      "settled": {
+        "meanMs": 14.4428444444444,
+        "p95Ms": 21.19,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 13763,
+        "maxFrameMs": 38.061,
+        "maxRelativeZoomStep": 0.0352674412404497,
+        "ready": true
+      },
+      "view": "production-mesopotamia",
+      "work": {
+        "cancelled": 8,
+        "candidates": 190808,
+        "cellsBuilt": 38,
+        "generationCpuMs": 10291.247,
+        "generationYieldFrames": 2495,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 76.047
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:03:20Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.16351113054487,
+        "p95Ms": 8.49300003051758,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 1671,
+        "rocks": 14529
+      },
+      "settled": {
+        "meanMs": 15.7642611111111,
+        "p95Ms": 22.24,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 11980,
+        "maxFrameMs": 29.28,
+        "maxRelativeZoomStep": 0.00000000000000014210854715202,
+        "ready": true
+      },
+      "view": "production-persia",
+      "work": {
+        "cancelled": 12,
+        "candidates": 239466,
+        "cellsBuilt": 47,
+        "generationCpuMs": 12390.032,
+        "generationYieldFrames": 3022,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 100.483
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:03:32Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.22722776995765,
+        "p95Ms": 8.10900020599365,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 3862,
+        "rocks": 12338
+      },
+      "settled": {
+        "meanMs": 14.6786611111111,
+        "p95Ms": 20.626,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 11357,
+        "maxFrameMs": 29.677,
+        "maxRelativeZoomStep": 0.0,
+        "ready": true
+      },
+      "view": "zagros-200",
+      "work": {
+        "cancelled": 13,
+        "candidates": 284757,
+        "cellsBuilt": 56,
+        "generationCpuMs": 14700.246,
+        "generationYieldFrames": 3590,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 127.013
+      }
+    },
+    {
+      "cameraDistanceKm": 70.0000000002442,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:03:36Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.81487778822581,
+        "p95Ms": 8.80700016021729,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 3862,
+        "rocks": 12338
+      },
+      "settled": {
+        "meanMs": 14.2885722222222,
+        "p95Ms": 19.524,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 2991,
+        "maxFrameMs": 23.182,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "zagros-70",
+      "work": {
+        "cancelled": 13,
+        "candidates": 284757,
+        "cellsBuilt": 56,
+        "generationCpuMs": 14700.246,
+        "generationYieldFrames": 3590,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 127.013
+      }
+    },
+    {
+      "cameraDistanceKm": 8.0,
+      "cameraPath": "environment-approach-diagnostic",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:03:47Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 11.2786555369695,
+        "p95Ms": 14.4770002365112,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 9184,
+        "rocks": 23216
+      },
+      "settled": {
+        "meanMs": 14.5549611111111,
+        "p95Ms": 20.976,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 9964,
+        "maxFrameMs": 72.811,
+        "maxRelativeZoomStep": 0.08,
+        "ready": true
+      },
+      "view": "zagros-8",
+      "work": {
+        "cancelled": 13,
+        "candidates": 323231,
+        "cellsBuilt": 65,
+        "generationCpuMs": 16587.484,
+        "generationYieldFrames": 4054,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 151.961
+      }
+    },
+    {
+      "cameraDistanceKm": 200.0,
+      "cameraPath": "production",
+      "evidence": {
+        "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+        "recordedAtUtc": "2026-10-28T00:04:01Z",
+        "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+      },
+      "gpu": {
+        "meanMs": 6.21665000650618,
+        "p95Ms": 8.5290002822876,
+        "samples": 180
+      },
+      "scenery": {
+        "paletteVariants": 28,
+        "plants": 1671,
+        "rocks": 14529
+      },
+      "settled": {
+        "meanMs": 15.1259944444444,
+        "p95Ms": 21.445,
+        "samples": 180
+      },
+      "tiles": 13,
+      "transition": {
+        "elapsedMs": 12519,
+        "maxFrameMs": 31.054,
+        "maxRelativeZoomStep": 0.0225815915680507,
+        "ready": true
+      },
+      "view": "production-cancellation-recovery",
+      "work": {
+        "cancelled": 22,
+        "candidates": 376993,
+        "cellsBuilt": 74,
+        "generationCpuMs": 18727.782,
+        "generationYieldFrames": 4598,
+        "maxChunkMs": 5.726,
+        "maxUploadMs": 2.799,
+        "uploadCpuMs": 178.572
+      }
+    }
+  ]
+}

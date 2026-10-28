@@ -1,0 +1,1049 @@
+{
+  "createdAtUtc": "2026-10-28T15:29:36.356Z",
+  "status": "Independent visual review pending",
+  "sourceRevision": "b63b6ed68d3b0b728a049376e6dcc604cd423e6018f8ac0167689e91acd706f4",
+  "beforeRevision": "f655dbb942c5e8eff1cdcb1c1ee018b085b38ce45f64b3487e3dd945582663d0",
+  "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+  "sourceChanges": [
+    {
+      "path": "godot-prototype/data/regional/roma-local.normal",
+      "kind": "asset",
+      "sha256": "8c493267d64a1647484ded530437fd70a7e9a1f7320e29edda15ea19038cb055"
+    },
+    {
+      "path": "godot-prototype/data/regional/roma-local.parent",
+      "kind": "asset",
+      "sha256": "a56be52ed3f8169875f720b929d38dcd24120e4746ad9e5bbb0328dd4f32d49d"
+    },
+    {
+      "path": "godot-prototype/data/regional/roma-local.pnormal",
+      "kind": "asset",
+      "sha256": "230e8cc29462c688f304b9c84e1cac565decc3bc81a94c3e362425f8843be58e"
+    },
+    {
+      "path": "godot-prototype/data/roma-landscape-layout.json",
+      "kind": "asset",
+      "sha256": "51ada2a67d1e085b4589d45bb146d000de04e2f14a6a5e946a23e1bc92209d2e"
+    },
+    {
+      "path": "godot-prototype/data/roma-landscape-mask.png",
+      "kind": "asset",
+      "sha256": "11b8276df3b702fe23bd2bd78d0333b273e11cdbe0a6ab3df42c2a5067f86cb7"
+    },
+    {
+      "path": "godot-prototype/data/roma-presentation.json",
+      "kind": "asset",
+      "sha256": "f6ee7c5f9af4933a811f8d4926c49fa2cfc2bca35fa2cafa7628fd56957716fd"
+    },
+    {
+      "path": "godot-prototype/data/roma-terrain.json",
+      "kind": "asset",
+      "sha256": "af0cf88638ebc814eef9da6b1d53a2284665ba8c9bd14965f31a2bb7058c9932"
+    },
+    {
+      "path": "godot-prototype/data/roma-terrain/roma.bin",
+      "kind": "asset",
+      "sha256": "44bd3adb276d1a07dc3cee4a67562fe8550ed8c4eb7e693c4f6ee79ea74d756b"
+    },
+    {
+      "path": "godot-prototype/data/roma-terrain/roma.height",
+      "kind": "asset",
+      "sha256": "4675384249ba4bcd1ce6e877a8fe713547b86e10a7b9334cec487527215b3601"
+    },
+    {
+      "path": "godot-prototype/regional_scenery.gd",
+      "kind": "code",
+      "sha256": "d5bdc6ef44368f308d96a3f9e2e11b4b4de0daf35ea8549dd7f7fc02990dd2a0"
+    },
+    {
+      "path": "godot-prototype/roma_landscape.gd",
+      "kind": "code",
+      "sha256": "fd4e41ccd042749c57d78674f85c7e0cc6cca0e4c7586c444534e555dc1d2b7c"
+    },
+    {
+      "path": "godot-prototype/roma_settlement.gd",
+      "kind": "code",
+      "sha256": "4ef989df36e6225dd6f2365c7bee2d78a98ee2ba052001b355ca09bde1a130f1"
+    },
+    {
+      "path": "godot-prototype/roma_stone.gdshader",
+      "kind": "code",
+      "sha256": "3badc2138baddc050cc7f7ac130c401e3b81f3a46a705c51ea16e00d9d3a454d"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "kind": "code",
+      "sha256": "078781e7c0515f00fd933c8ccd3124e9d96d4c2540f8e01fd04a73059232c0d2"
+    },
+    {
+      "path": "godot-prototype/tools/roma-landscape-mask.mjs",
+      "kind": "code",
+      "sha256": "6551355ebf3c1a34259b40ef6c0e742e0aa7c801db66ea95c02dd50e07ef892b"
+    },
+    {
+      "path": "godot-prototype/tools/roma-landscape-validate.gd",
+      "kind": "code",
+      "sha256": "3b163c96755d5445af6a4c0ff37f21afe14bab9e73d598f904ea0e9d4a8d398b"
+    },
+    {
+      "path": "godot-prototype/tools/roma-profile.gd",
+      "kind": "code",
+      "sha256": "7e69241a0e4dff9bc7cd278a4568ad802d55dd8cbd8a0bc2dbe0baafbb743513"
+    },
+    {
+      "path": "godot-prototype/tools/roma-terrain.mjs",
+      "kind": "code",
+      "sha256": "d315db5820ad4cd9c20897469a51aab415da2b394d2c485fa76c7e0c8ededf39"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "kind": "code",
+      "sha256": "6ea3d10d0bb065e9599242ec42b59a44e7ee833918975785e7c1a4a036c87722"
+    }
+  ],
+  "unchangedBuildingMeshSource": true,
+  "unchangedLayoutEntries": 121,
+  "connectedApproaches": 4,
+  "cultivatedPlots": 10,
+  "localTreeInstances": 479,
+  "nativeResidencyCap": 13,
+  "sourceElevationInput": {
+    "id": "roma-local",
+    "kind": "regional",
+    "romaDetail": true,
+    "parentId": "N41E12",
+    "bounds": {
+      "west": 12.461258,
+      "east": 12.521258,
+      "south": 41.864977,
+      "north": 41.914977
+    },
+    "width": 129,
+    "height": 129,
+    "grid": 128,
+    "mesh": "data/roma-terrain/roma.bin",
+    "heights": "data/roma-terrain/roma.height",
+    "sourceSpacing": "approximately 39–43 m resampled existing source",
+    "surfaceFilter": "5x5 Gaussian, sigma 1.2 samples, renderer derivative only",
+    "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E012_00_DEM/Copernicus_DSM_COG_10_N41_00_E012_00_DEM.tif",
+    "input": "public/data/italy-terrain/local-roma.json",
+    "inputSha256": "3409ed725dc2079e496253a89725da7704dd7af25aadf4c6f02509033c0875ad",
+    "notice": "Modern DSM, not an ancient seven-hill reconstruction; canonical source bytes unchanged; broad source relief retained with roof-scale surface filtering; existing 1.5x height presentation and 5.5% parent seam morph retained."
+  },
+  "protectedFiles": 460,
+  "approvedSites": 35,
+  "researchRecords": 687,
+  "tests": 475,
+  "godotChecks": 13,
+  "matchedGeographicalPairs": 5,
+  "additionalCloseViews": 2,
+  "absoluteCameraYIdentical": false,
+  "committed": false,
+  "pushed": false,
+  "artifacts": [
+    {
+      "path": "evidence/roma-landscape/before-source.json",
+      "bytes": 482133,
+      "sha256": "ef972f1e06021a606c21a1532b9db7a043f8f106dc0a4fdf523e57ce7383a53f"
+    },
+    {
+      "path": "evidence/roma-landscape/check-global/global-navigation.json",
+      "bytes": 6829,
+      "sha256": "e42d3ed488e83cf4143731464e86f1c67a617de5ea63f9034fdc8e9be7924708"
+    },
+    {
+      "path": "evidence/roma-landscape/check-landscape/landscape.json",
+      "bytes": 574,
+      "sha256": "98fce0d33358135663c276adf07284ea2682c33ef50fc1e9954cf5d3b5d00efb"
+    },
+    {
+      "path": "evidence/roma-landscape/check-regional/regional-navigation.json",
+      "bytes": 3863,
+      "sha256": "486f99a225086143d31ebc7fcbfbd760456ceb678187ac6cffcf76d45224fd37"
+    },
+    {
+      "path": "evidence/roma-landscape/check-roma/roma.json",
+      "bytes": 877,
+      "sha256": "ea55e1f81a86a0f6744ab717921ebfd0ef9f31db46a6aa6cb6712af4dbce9d83"
+    },
+    {
+      "path": "evidence/roma-landscape/check-settlement-population/settlements.json",
+      "bytes": 78325,
+      "sha256": "7ef15b505760b2d462ff98ecc9df82b50a1970a680378a18f24cbb683548946d"
+    },
+    {
+      "path": "evidence/roma-landscape/check-timeout-negative/global-navigation.json",
+      "bytes": 1207,
+      "sha256": "8700e345420e14a63dffe3ee5c5558a8ad514e6896880d043712258b45f510ba"
+    },
+    {
+      "path": "evidence/roma-landscape/check-water/animated.png",
+      "bytes": 1771624,
+      "sha256": "28ccfd27ddf27ce152f242976677a6724adaa8c948e851090a7ebdb1d1754826"
+    },
+    {
+      "path": "evidence/roma-landscape/check-water/static-a.png",
+      "bytes": 1770435,
+      "sha256": "56ee6b557a1598ffaaab16ff549295de99173f0bbff93d6f0b229e1762bfb145"
+    },
+    {
+      "path": "evidence/roma-landscape/check-water/static-b.png",
+      "bytes": 1770568,
+      "sha256": "8828e58184a719c341d05ae587269e7995874af9deaf91822ded667e008c7d3c"
+    },
+    {
+      "path": "evidence/roma-landscape/check-water/water.json",
+      "bytes": 639,
+      "sha256": "31d8385e29aa21734e88bfce28e24f757a11be86f1c8d16031c3315a69956e5d"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-global/global-navigation.json",
+      "bytes": 6828,
+      "sha256": "26e79f6788152c8c7ef233a0e71fac33996c4fabc285b499a17961c6b751802b"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-landscape/landscape.json",
+      "bytes": 605,
+      "sha256": "a8480df47838f2079fdc52cbf574d93b21ed057270828d8087d34631af5f2067"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-regional/regional-navigation.json",
+      "bytes": 3875,
+      "sha256": "d320d4a1805fac10a0e1afa4df657f9e6f024cd222fb87e08766f7e831df521a"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-roma/roma.json",
+      "bytes": 878,
+      "sha256": "5efd2d518e55e43140527d2be9dbdcd566725c69f940d93893ae535bb3323bc3"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-settlement-population/settlements.json",
+      "bytes": 78325,
+      "sha256": "bca0fb89f3fa22d294a0e7d371b66ba1647a496e1613b8c2b1a33cec8a45cbca"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-timeout-negative/global-navigation.json",
+      "bytes": 1207,
+      "sha256": "b169475b8653039651b992f96a6b6d939c5ff0924ed6ba9dc3c1874258efa309"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-water/animated.png",
+      "bytes": 1771690,
+      "sha256": "96a17fe5a6cd795c1b8f651a2b4eb564ea2bd973395729a7946325b899b11487"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-water/static-a.png",
+      "bytes": 1770527,
+      "sha256": "f21e55f853caedfb685163cbadcb99474806de8671cef2dd72a1b1634a2a4e1b"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-water/static-b.png",
+      "bytes": 1770612,
+      "sha256": "cc81af9893fd2b64230269289ad3d5d769333737d7ef09083f377811aa1bfd98"
+    },
+    {
+      "path": "evidence/roma-landscape/check2-water/water.json",
+      "bytes": 639,
+      "sha256": "2d6129701e69289472c7cf937d4edf9460d2692b9d1be35197559ead2fa3d825"
+    },
+    {
+      "path": "evidence/roma-landscape/checks.json",
+      "bytes": 12298,
+      "sha256": "040d65130c233380d4df5dbaba9104b092276ca3ea124bae66e76d1120d260b4"
+    },
+    {
+      "path": "evidence/roma-landscape/checks2.json",
+      "bytes": 12324,
+      "sha256": "3033ca0d52e6662730e4ae7fd17dfc387ff835812c9a038dff6e2e9f1aa04b7e"
+    },
+    {
+      "path": "evidence/roma-landscape/comparison.html",
+      "bytes": 5071,
+      "sha256": "a18071f6683a6c4ca46d00bcd2bddce67fcddc7d7fcf034ae1ff4f94aa9ffdb2"
+    },
+    {
+      "path": "evidence/roma-landscape/comparison.json",
+      "bytes": 275083,
+      "sha256": "2ee1484a3872ab7c08349a8600f1352e322964db95aaaff40c600369db4f97f6"
+    },
+    {
+      "path": "evidence/roma-landscape/final-art.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-art.stdout.log",
+      "bytes": 244,
+      "sha256": "5d74a4978c43e69f75ae34bdc24973fac2fed9a388060703cf04080b7e853b95"
+    },
+    {
+      "path": "evidence/roma-landscape/final-environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-environment.stdout.log",
+      "bytes": 251,
+      "sha256": "3ba6dd5c02ccb2d06fd07010f825e6ee1db76e152db2c568baae532acc388e91"
+    },
+    {
+      "path": "evidence/roma-landscape/final-foundation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-foundation.stdout.log",
+      "bytes": 1153,
+      "sha256": "a6b58345171e65f98907b71d40637c86212e4bca13c8712be186570903349b68"
+    },
+    {
+      "path": "evidence/roma-landscape/final-global.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-global.stdout.log",
+      "bytes": 12084,
+      "sha256": "2603dc1b164cc327077232a7b5a56cf1aa68e9a268d366ad25bb4b9c3aa570bc"
+    },
+    {
+      "path": "evidence/roma-landscape/final-habitat.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-habitat.stdout.log",
+      "bytes": 236,
+      "sha256": "d239da6edd830baf1b4d780d7d76b1587666605f49110a1769749726da63d8e1"
+    },
+    {
+      "path": "evidence/roma-landscape/final-landscape.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-landscape.stdout.log",
+      "bytes": 1921,
+      "sha256": "ba23d2299c0bba2a8ea078c6778fe3401cdb34b965d4f1b394d3f6868014adb6"
+    },
+    {
+      "path": "evidence/roma-landscape/final-navigation-resolver.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-navigation-resolver.stdout.log",
+      "bytes": 172,
+      "sha256": "9827700b5a746088b6536fe6f21db233c8cbc6c24e53719fff1ceec988bae3dc"
+    },
+    {
+      "path": "evidence/roma-landscape/final-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-parse.stdout.log",
+      "bytes": 105,
+      "sha256": "858665b851cd250688cd2fee05b0015f5bd66390286a98f551f63be8e1628a51"
+    },
+    {
+      "path": "evidence/roma-landscape/final-regional.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-regional.stdout.log",
+      "bytes": 5715,
+      "sha256": "c3b68d62fd14b24dd22280a10dbd84bcf5310eb5979f3a1bf2c89ef2973ea468"
+    },
+    {
+      "path": "evidence/roma-landscape/final-roma.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-roma.stdout.log",
+      "bytes": 358,
+      "sha256": "c15180b939e722bee53982ca4d4591008d041b6624c5582cc9fa8991a3f41091"
+    },
+    {
+      "path": "evidence/roma-landscape/final-settlement-population.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-settlement-population.stdout.log",
+      "bytes": 423,
+      "sha256": "62d2e7a341989a826c2d5a26486aed74ce4ae3e4d67433f34428361a88b6ebce"
+    },
+    {
+      "path": "evidence/roma-landscape/final-source.json",
+      "bytes": 484466,
+      "sha256": "b97bc1e76e071a1630c8e9c1eb0a17975a5bbca7d97fe08e0c362f90b37a2ecb"
+    },
+    {
+      "path": "evidence/roma-landscape/final-timeout-negative.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-timeout-negative.stdout.log",
+      "bytes": 427,
+      "sha256": "63f8ef116b81141bee9a6ed1e28b0e4f15a3a2e0e93a45a71058626911704302"
+    },
+    {
+      "path": "evidence/roma-landscape/final-water.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final-water.stdout.log",
+      "bytes": 1268,
+      "sha256": "efa8dd2325697aae42b5e133ec1c9f6fb28a63ceb09e2a3c72d3db8a2260e8f9"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-art.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-art.stdout.log",
+      "bytes": 244,
+      "sha256": "5d74a4978c43e69f75ae34bdc24973fac2fed9a388060703cf04080b7e853b95"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-environment.stdout.log",
+      "bytes": 251,
+      "sha256": "3ba6dd5c02ccb2d06fd07010f825e6ee1db76e152db2c568baae532acc388e91"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-foundation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-foundation.stdout.log",
+      "bytes": 1153,
+      "sha256": "8118bbd3e29f8a70c912748f809040fbe50fa1ab23857f6ab8edb173fd3f164d"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-global.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-global.stdout.log",
+      "bytes": 12234,
+      "sha256": "1b8244705b1168deceabd2b950e2e82f37448451b082db4cd2d87aa41b6650b9"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-habitat.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-habitat.stdout.log",
+      "bytes": 236,
+      "sha256": "d239da6edd830baf1b4d780d7d76b1587666605f49110a1769749726da63d8e1"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-landscape.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-landscape.stdout.log",
+      "bytes": 1921,
+      "sha256": "3d9d78e7bfc585341a3aaab746b1c6a99ccbc2ef5f47b87fef421d700ab804aa"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-navigation-resolver.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-navigation-resolver.stdout.log",
+      "bytes": 172,
+      "sha256": "9827700b5a746088b6536fe6f21db233c8cbc6c24e53719fff1ceec988bae3dc"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-parse.stdout.log",
+      "bytes": 105,
+      "sha256": "858665b851cd250688cd2fee05b0015f5bd66390286a98f551f63be8e1628a51"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-regional.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-regional.stdout.log",
+      "bytes": 5715,
+      "sha256": "eb47020783ebed53a6587d5f6c2eff1bfa09508272d63d32745675377c5f27b1"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-roma.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-roma.stdout.log",
+      "bytes": 358,
+      "sha256": "47a87695142bb6e09291b85beb461aeffb989182454a888d22d3be104ceb72ad"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-settlement-population.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-settlement-population.stdout.log",
+      "bytes": 423,
+      "sha256": "fdf1a8f8aa58c54e5b79ba606681dc9fb2aab61384d762e30c60eaf829946e1f"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-source.json",
+      "bytes": 484466,
+      "sha256": "7858d328e2668da7613372a38b545bbffeeec95a79f726f9534283ee9eac9876"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-timeout-negative.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-timeout-negative.stdout.log",
+      "bytes": 427,
+      "sha256": "32eaa973d58272fcbacb4c666ef93c9c9aa154c880ae2c4a36a3cada183e9b2e"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-water.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/final2-water.stdout.log",
+      "bytes": 1271,
+      "sha256": "2a3c654281d284fc600bb7227f39fa1a335840baaba2f26d7e43c33d5e275c56"
+    },
+    {
+      "path": "evidence/roma-landscape/finalize.mjs",
+      "bytes": 2572,
+      "sha256": "f668da1319008aa260a297429704dd646aee03171c4da4c929c30e61b5f4c0c9"
+    },
+    {
+      "path": "evidence/roma-landscape/git-final.txt",
+      "bytes": 17902,
+      "sha256": "51f7696e49acfc18b822a552fc5c0f74d49f0920926abc064ff1d26d2fba4df6"
+    },
+    {
+      "path": "evidence/roma-landscape/integrity.json",
+      "bytes": 1130,
+      "sha256": "6590ed1fa99d94d33644a8210a4d5805004e1428902e95e76c5d325ec0bf912a"
+    },
+    {
+      "path": "evidence/roma-landscape/integrity2.json",
+      "bytes": 1130,
+      "sha256": "5467051fa56ae969ca90f9744857c2d9edfc12cc44fd24b699099f46c3c0af73"
+    },
+    {
+      "path": "evidence/roma-landscape/layout-export.gd",
+      "bytes": 730,
+      "sha256": "9b3a95026a0dda425fc7e273963ffb2bc6697a5ec94503b42f337725d8d58fbb"
+    },
+    {
+      "path": "evidence/roma-landscape/layout-export.log",
+      "bytes": 418,
+      "sha256": "6c2e8f57aab9fa2ca390037d55abd33eb3f5e0b7139002bfcf6139ccc6d14af5"
+    },
+    {
+      "path": "evidence/roma-landscape/MEASUREMENTS.md",
+      "bytes": 4292,
+      "sha256": "6d046504d39a571cae95ba1b7eff9c010c2daf0c99b081aa5da85378aeabebf4"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-baseline/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-baseline/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-baseline/navigation.json",
+      "bytes": 40125,
+      "sha256": "2f5c2e2aa0cb9d44d94f06a1c4af931c49119bdbba7176f6dac89edf68333d01"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-baseline/process.json",
+      "bytes": 592,
+      "sha256": "292ab190c8a36dcaca3ccaec906c68491d2dde844a277941c18820252d65f359"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-baseline/run.log",
+      "bytes": 2658,
+      "sha256": "5b1a58502d69e872176cb50b720def40265e334270c2f2a232491296f99731d8"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-landscape/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-landscape/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-landscape/navigation.json",
+      "bytes": 46278,
+      "sha256": "4008bf2f024791751d6b59ed4a6be4693b7d8f82bbfcb949c997194a05bfc627"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-landscape/process.json",
+      "bytes": 592,
+      "sha256": "19b8d3259003b52d0f7d8df4445a51b5258bc8f95e8cff8a5c720988269e0c26"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation-landscape/run.log",
+      "bytes": 2946,
+      "sha256": "c8eb661e4111c7bb7d679c1645f5ed379036be2c97ac1b91d0173d28d0a3e4bb"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-baseline/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-baseline/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-baseline/navigation.json",
+      "bytes": 39540,
+      "sha256": "df8368d7aee1e1a0f50d53e956fd6bc882d440b64bcf772df75527129f10fbb2"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-baseline/process.json",
+      "bytes": 590,
+      "sha256": "72e52e08247b412eaeefd9a942147fb51a85e0d7fefe2cc56bacb5b422be22a2"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-baseline/run.log",
+      "bytes": 2659,
+      "sha256": "f32705c6d50350bd059b40b4ec886f67c99a76a50927eb39e560f7da5bcd52eb"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-landscape/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-landscape/errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-landscape/navigation.json",
+      "bytes": 45373,
+      "sha256": "3ae8135e8fe0a34df32d050086019af94b95f5d1c22949438503e9bcd2dcdf08"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-landscape/process.json",
+      "bytes": 591,
+      "sha256": "79888b91862bb72d6ad6a407641463bb4af27406d40bbf0fb706fb284dfccb24"
+    },
+    {
+      "path": "evidence/roma-landscape/navigation2-landscape/run.log",
+      "bytes": 2946,
+      "sha256": "b138b6fe8ed101c99349f04c1975a3fbcf7f4a92c7c8cc8de6eccbce87191da8"
+    },
+    {
+      "path": "evidence/roma-landscape/npm-final2.log",
+      "bytes": 1686,
+      "sha256": "f5bc6510435ee5730eb9c8bfed6ca6ba05e9fe3ba1a0e3b06784658c32196f94"
+    },
+    {
+      "path": "evidence/roma-landscape/npm-validation.log",
+      "bytes": 1686,
+      "sha256": "bd00f50e4d29673fe76e6c22c38448ee40aeac6ad5dd6c85c874c050726613cc"
+    },
+    {
+      "path": "evidence/roma-landscape/performance-and-checks.log",
+      "bytes": 1232,
+      "sha256": "c360623a3b9e8b9129a5046b9732792d50f76adbd5440451693d2fb527869f74"
+    },
+    {
+      "path": "evidence/roma-landscape/performance-and-checks.ps1",
+      "bytes": 2214,
+      "sha256": "07f5bebe1980b1c72e9859705e83468346c313642f69163a436125b7528cebad"
+    },
+    {
+      "path": "evidence/roma-landscape/performance-and-checks2.log",
+      "bytes": 1232,
+      "sha256": "c360623a3b9e8b9129a5046b9732792d50f76adbd5440451693d2fb527869f74"
+    },
+    {
+      "path": "evidence/roma-landscape/performance-and-checks2.ps1",
+      "bytes": 2220,
+      "sha256": "3e2cdcea8f36c08df57b32233e812a17defeb3ddcba9e9ec065e8c04839de979"
+    },
+    {
+      "path": "evidence/roma-landscape/report.mjs",
+      "bytes": 9725,
+      "sha256": "6920a01dee690f596bb4f19048316200874ee3486af838e5d32f1549e61dc150"
+    },
+    {
+      "path": "evidence/roma-landscape/run-checks.ps1",
+      "bytes": 2503,
+      "sha256": "5f87eb2cb54ac093173d8e796a2a994a7b60bbec354901c8d4535e3823d236b3"
+    },
+    {
+      "path": "evidence/roma-landscape/run-checks2.ps1",
+      "bytes": 2511,
+      "sha256": "df6efec02de7b3c641f53c01ce4f700eefe3ae088f0cad2910ec26d6255c9eb2"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-close.json",
+      "bytes": 11858,
+      "sha256": "34b809dd76909edc44a93563d6a163099b0b548982160875f51cb3f8e5af4446"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-close.png",
+      "bytes": 2873552,
+      "sha256": "c644d2f680296a36924e69c25b0d543e0dd1ad4694ac5fcb169ff614cd0a404a"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-strategic.json",
+      "bytes": 11050,
+      "sha256": "5b6918a6ab8c45fdf1e80ab4c06d807f6b3bb697afdf55c4449362a16ccd421b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/godot-profile-roma-strategic.png",
+      "bytes": 2731744,
+      "sha256": "9b94f04a9a553efad114bc4f6b224638511d85f386029dc42dc5b80477f49c56"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/process-profile-roma-close.json",
+      "bytes": 840,
+      "sha256": "6051a46669a0fa0bf1284013e3b894ac543d6ed1f21129dc0650c213a0b5a4b8"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/process-profile-roma-strategic.json",
+      "bytes": 839,
+      "sha256": "ecc59cd570b6020f7e53719db8205124873525ff1e83cdac92e8325bfd27be60"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-close-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-close-run.log",
+      "bytes": 1959,
+      "sha256": "1b62c4ef9acd5e3af5d82c65e834aa164f852713f82743540c45661497b57cf5"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3/profile-roma-strategic-run.log",
+      "bytes": 1262,
+      "sha256": "987d11b7a74c86e24b8eca4e34644834609775650215e852ead6ae835fd0cd81"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-east-strategic.json",
+      "bytes": 11466,
+      "sha256": "9723c8727c5d33acdf0e62873b12878ea85133de0833c6cb5a7a17c3577e3b50"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-east-strategic.png",
+      "bytes": 3134626,
+      "sha256": "47269719f193943ad2b25c6dc4ec457e4d0174a4a1bdd17603de698622de46dc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-layout-strategic.json",
+      "bytes": 11458,
+      "sha256": "6234244705c324391a9ed95873b51bf0c9dc94ecc69b47b5f728a3cd0509286b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-layout-strategic.png",
+      "bytes": 2965459,
+      "sha256": "6605f62ff1114a1c179b6a1776003a1d4fd5df661af4b9c81aa9d2c992825945"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-west-strategic.json",
+      "bytes": 12651,
+      "sha256": "1d26255f497d5bba3934c10dba7b81ffe2ef80e102cd1de59b35b43b7d6324f0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/godot-profile-roma-west-strategic.png",
+      "bytes": 3134274,
+      "sha256": "cbd245064214fad524d807b8d41c30c88d6a7bb3093597f718dcc312fbfe9bbc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-east-strategic.json",
+      "bytes": 841,
+      "sha256": "262112c96f1ab4b7f83dd60d8ccf3efe43a1c22ff8a43d5fbc8284d91be99bce"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-layout-strategic.json",
+      "bytes": 841,
+      "sha256": "490c94f2acdbd773e45dc43e9c2c3f2d8efa282a709a02a4483e153233df5a41"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/process-profile-roma-west-strategic.json",
+      "bytes": 841,
+      "sha256": "87a824d4b3c1e70af77976b12bb2cdc9af6bd5e58ea7d519d518c1c31f11fc83"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-east-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-east-strategic-run.log",
+      "bytes": 1975,
+      "sha256": "47a8ccb32fd8c91953d69203923bf7b071d95ede3745d231a1acff80855bb123"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-layout-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-layout-strategic-run.log",
+      "bytes": 1968,
+      "sha256": "989fc52fa2cbf78b94d8e99f0959d9abdec19e75f12d2026f9690bd5f2add6c9"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-west-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-final3-detail/profile-roma-west-strategic-run.log",
+      "bytes": 1975,
+      "sha256": "bfcce0654cf82a2168cee7447d4ca728ac6f1c8123fe489c02c664441401c8fc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/godot-profile-roma-close.json",
+      "bytes": 12485,
+      "sha256": "9b28bcec96df11bc4644cbf96d0cc2d13f274e6baa49bc8d34ece1552767a14e"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/godot-profile-roma-close.png",
+      "bytes": 2892663,
+      "sha256": "f11469d1b97afb2e078ef2c2705144d99e95b6abab94a5ac201ac22b838d61dd"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/godot-profile-roma-strategic.json",
+      "bytes": 11670,
+      "sha256": "eb5cc9cfa9391ddb35ce1da671447a71c4634310cbc5b99222ebeabf052c0170"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/godot-profile-roma-strategic.png",
+      "bytes": 2729663,
+      "sha256": "a44991d84c6a72525ebd5b9686d9d7d736d6a285c6dc850eade2b85c2714134b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/process-profile-roma-close.json",
+      "bytes": 839,
+      "sha256": "a496c59357229fcb5155e5cb236c92386a44f9340e07a2bd740060a7a3e32645"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/process-profile-roma-strategic.json",
+      "bytes": 838,
+      "sha256": "358f39bb6112b95751977478d03b366fffe639c531f94abdc924a013a8a3e066"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/profile-roma-close-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/profile-roma-close-run.log",
+      "bytes": 1974,
+      "sha256": "37d3933d81f7eefa5561d0f01b72ced309412cda26d5e0e379c5b961d9bac47e"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/profile-roma-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2/profile-roma-strategic-run.log",
+      "bytes": 1272,
+      "sha256": "bf3aaaa57bda104f07ba851ccb8e99398afa50164cfd38c8482faa021b3a9e79"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-east-strategic.json",
+      "bytes": 12859,
+      "sha256": "a82a02e24c045e7afc5b3aa9c9de3106cc2d2813156b03c899da5a74e9bd8cdd"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-east-strategic.png",
+      "bytes": 3167027,
+      "sha256": "ccbfaf41907b14e6e15339fc3f867a40cbb8c3d4ae648ba17d111fbeeab62a71"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-layout-strategic.json",
+      "bytes": 11311,
+      "sha256": "d97f88d0c51dbad9b4f6b2f7a99e2c9fab97017d67d3205af1c7ae563a0f0bda"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-layout-strategic.png",
+      "bytes": 2968202,
+      "sha256": "d0070d02d80d2b1bf9f0594925ad56e058b10e9367e3b05cd3f1bba63f455ae6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-west-strategic.json",
+      "bytes": 14050,
+      "sha256": "98e7d6646dad92d2bc23ab218961c0da7e4cdd299314fa12afaabd3a0526980b"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/godot-profile-roma-west-strategic.png",
+      "bytes": 3115575,
+      "sha256": "3abf79000dafcf3d6bc98c3300edaf6b2630e6994dca9749045c92ba8e7aabc0"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/process-profile-roma-east-strategic.json",
+      "bytes": 839,
+      "sha256": "8c83ce9b1c99c379be542a0ad7c5dc197d4ea59a346f4058305c1d87efbe7a38"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/process-profile-roma-layout-strategic.json",
+      "bytes": 839,
+      "sha256": "296dd82e373b0bfbf4617e7b4f3b4ebf45ad610d3d2862a205b21821140f2608"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/process-profile-roma-west-strategic.json",
+      "bytes": 839,
+      "sha256": "988e3c8520d9005828b79be0ab062dbbc986d47ba656dd0bdf87a8360372b9cc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-east-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-east-strategic-run.log",
+      "bytes": 1990,
+      "sha256": "7fc6d89f88a9c82f8598e6eaea07a6dc5a705746a7781126dd00e8ffeb546af8"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-layout-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-layout-strategic-run.log",
+      "bytes": 1992,
+      "sha256": "0cfdff9d798f36c36886b18542df8d7d36f497dacec975133fa59d5f450350d7"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-west-strategic-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-detail/profile-roma-west-strategic-run.log",
+      "bytes": 1990,
+      "sha256": "fdedeb66d03f6d0d09bdb51872705b0cc0434a5c86a3d5a78348bb3436a1f459"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/godot-profile-roma-east-regional.json",
+      "bytes": 13256,
+      "sha256": "b595c002eb6937f2f12191dd288fbbc33d75f4232ad883d5e3b463b6436eb9c3"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/godot-profile-roma-east-regional.png",
+      "bytes": 3255494,
+      "sha256": "830a18c53ea513f4af807bf757c9e39dbcbd07dc681f941e7e0052ef9080687f"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/godot-profile-roma-west-regional.json",
+      "bytes": 12100,
+      "sha256": "6e1cfcba8e5b3a548ff9f5a9ea00c937fe558839116bc50706236de65239d830"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/godot-profile-roma-west-regional.png",
+      "bytes": 3203867,
+      "sha256": "513137c5cd693b54d944dea65f3cc2c8e38c20f375ba9091b02ad2dc6cf5108d"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/process-profile-roma-east-regional.json",
+      "bytes": 839,
+      "sha256": "6f8bfcc8a621cff3af270b989390cb4472a30522b350c9800c19ad7673938ccc"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/process-profile-roma-west-regional.json",
+      "bytes": 839,
+      "sha256": "f569d679f0838020851b3fb1649c46eb9bab73360d5283dbfcdc5ab0ff3006d5"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/profile-roma-east-regional-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/profile-roma-east-regional-run.log",
+      "bytes": 1995,
+      "sha256": "d86177da32702a0f81ce36edde4c52a3d47a8a90783d31a9d8573fad0a95f1c2"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/profile-roma-west-regional-errors.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/repair-20261026/roma-landscape-final2-architecture/profile-roma-west-regional-run.log",
+      "bytes": 1995,
+      "sha256": "fff5dc19a102d1b60a6e598faab6fc5609a00d4d9fd4c7d942785bdb03088cbd"
+    },
+    {
+      "path": "ROMA-LANDSCAPE.md",
+      "sha256": "b99ba8b90fa6e0360a2d6fe5262cb0a9d86eae4b11768a38e0e99fefded7bcaa"
+    }
+  ]
+}

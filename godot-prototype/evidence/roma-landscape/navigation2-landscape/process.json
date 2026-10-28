@@ -1,0 +1,13 @@
+{
+    "scope":  "Console wrapper and direct Godot child",
+    "gpuAtStart":  [
+                       "temperature.gpu, utilization.gpu [%], clocks.current.graphics [MHz], power.draw [W]",
+                       "66, 0 %, 1980 MHz, 43.14 W"
+                   ],
+    "gpuAtEnd":  [
+                     "temperature.gpu, utilization.gpu [%], clocks.current.graphics [MHz], power.draw [W]",
+                     "74, 0 %, 1957 MHz, 47.93 W"
+                 ],
+    "sampleInterval":  "250 ms wait plus CIM/process query overhead",
+    "sampledPeakWorkingSetBytes":  1510842368
+}

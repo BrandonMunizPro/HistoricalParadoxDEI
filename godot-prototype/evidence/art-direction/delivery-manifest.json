@@ -1,0 +1,1515 @@
+{
+  "createdAtUtc": "2026-10-27T19:39:22.448Z",
+  "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+  "beforeSourceRevision": "ec4a261c34be8ced6aa713d1450866a4d3b231544cfe2e561109b749c4c1bbfc",
+  "finalSourceRevision": "da362c955d859fd0feb663accab739ebb96fed40b057a1051b6927810d423ac9",
+  "status": "Implementation and validation complete. Independent visual acceptance pending; artistic gaps and performance regressions documented.",
+  "authoritativeStages": [
+    "art-before",
+    "art-final2"
+  ],
+  "matchedPairs": 15,
+  "regions": [
+    "italy",
+    "greece",
+    "egypt",
+    "anatolia",
+    "alps"
+  ],
+  "checks": {
+    "npm": {
+      "exitCode": 0,
+      "command": "npm.cmd run validate",
+      "endedAtUtc": "2026-10-27T19:23:18.1833104Z"
+    },
+    "engine": [
+      {
+        "name": "parse",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "navigation-resolver",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "environment",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "habitat",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "art",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "water",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "global",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "regional",
+        "passed": true,
+        "exitCode": 0,
+        "expectedExit": 0
+      },
+      {
+        "name": "timeout-negative",
+        "passed": true,
+        "exitCode": 1,
+        "expectedExit": 1
+      }
+    ],
+    "integrity": {
+      "protectedFiles": 460,
+      "changed": [],
+      "approvedSites": 35,
+      "researchRecords": 687,
+      "canonicalCoordinatesExact": true,
+      "researchCopyByteIdentical": true
+    },
+    "sourceFilesVerified": 2632
+  },
+  "trackedGitDiffIncludingPreservedWork": [
+    "godot-prototype/README.md",
+    "godot-prototype/canopy_assets.gd",
+    "godot-prototype/data/visual-settings.json",
+    "godot-prototype/regional_scenery.gd",
+    "godot-prototype/shoreline.gdshaderinc",
+    "godot-prototype/terrain.gdshader",
+    "godot-prototype/tools/navigation-validation.gd",
+    "godot-prototype/tools/visual-capture.gd",
+    "godot-prototype/water.gdshader",
+    "godot-prototype/world.gd"
+  ],
+  "files": [
+    {
+      "path": "godot-prototype/ART-DIRECTION.md",
+      "kind": "delivery",
+      "bytes": 20138,
+      "sha256": "3660e0ec6d54f600541192a216a380d388a7dec0ef11e3ebcf79a831c6a23519"
+    },
+    {
+      "path": "godot-prototype/canopy_assets.gd",
+      "kind": "implementation",
+      "bytes": 7616,
+      "sha256": "710e7b5b741a02db18f2e6895920d93757a632286656c74c0433a390c802f3a4"
+    },
+    {
+      "path": "godot-prototype/data/art-direction-views.json",
+      "kind": "delivery",
+      "bytes": 323,
+      "sha256": "26c27e2db88f9e7240cf41c103d5c1efed876c91ab64d85cd6373af36cd1434b"
+    },
+    {
+      "path": "godot-prototype/data/environment-presentation.json",
+      "kind": "implementation",
+      "bytes": 2577,
+      "sha256": "be9dda86c721a81921108781d972cdc2524181dd5264f5195c27168aec01bf1b"
+    },
+    {
+      "path": "godot-prototype/data/visual-settings.json",
+      "kind": "implementation",
+      "bytes": 1492,
+      "sha256": "92722fd46dbc09719502a3c3dccbedbcb900bcc7627787c119ffa4549c946b88"
+    },
+    {
+      "path": "godot-prototype/environment_rules.gd",
+      "kind": "implementation",
+      "bytes": 3571,
+      "sha256": "2aaf3f09fd837a54c566e3666ccbb237170e1a20ea3f5cf000e5c7958fea3209"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/before-source.json",
+      "kind": "delivery",
+      "bytes": 476439,
+      "sha256": "e5ba888bc3c35f4884dd7a5d428a0c84f43c1c5dc04c3943a3600578c16238b2"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/checks.json",
+      "kind": "delivery",
+      "bytes": 8537,
+      "sha256": "bbb6087f5e4e3010b334a22682a8f2e4baef8728a1af3f67b334bb95843d5168"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/compare.mjs",
+      "kind": "delivery",
+      "bytes": 9206,
+      "sha256": "e39db59990c1ee72968302240788098cb8c1585c5f7efda08838c2f1881035f9"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/comparison.html",
+      "kind": "delivery",
+      "bytes": 9532,
+      "sha256": "a805c2b19a8df51cc7847ffdf81d31d19e0b1c303fceee2396e00d9f6b295c9e"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/comparison.json",
+      "kind": "delivery",
+      "bytes": 13100,
+      "sha256": "4256ad4907c567b9294e99d899660327625b7fbaa72709e1d0f51719f83deeaf"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/delivery.mjs",
+      "kind": "delivery",
+      "bytes": 4220,
+      "sha256": "85efaaac4e39fb5b8abbd477fb5431de85862f8f737c750c6ec32e3527292904"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-art.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-art.stdout.log",
+      "kind": "delivery",
+      "bytes": 244,
+      "sha256": "5d74a4978c43e69f75ae34bdc24973fac2fed9a388060703cf04080b7e853b95"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-global/global-navigation.json",
+      "kind": "delivery",
+      "bytes": 6829,
+      "sha256": "921b847c5c60433d6d2a6ba1e8ed8453e549dd72752f2e2aa39985ea741aba33"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-regional/regional-navigation.json",
+      "kind": "delivery",
+      "bytes": 3862,
+      "sha256": "e38fd4675365b0b09b669e8e42f7b8242afad1bfd6451bfa8ab72638bec49bf7"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-timeout-negative/global-navigation.json",
+      "kind": "delivery",
+      "bytes": 1207,
+      "sha256": "655c422fcbe5b5dc6edc6cb9fcd4477a373265cad618608ef7a0cdc4963194f7"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-water/animated.png",
+      "kind": "delivery",
+      "bytes": 1771600,
+      "sha256": "fff63e9ee7b30e74de4f1a842ed91766c08f1df762a9cf0aa19bb9beb35c2217"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-water/static-a.png",
+      "kind": "delivery",
+      "bytes": 1770546,
+      "sha256": "72524096356d5fcff99c0af7390e68492f492c1dea9ba8f3c94abae3c4ea6f3a"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-water/static-b.png",
+      "kind": "delivery",
+      "bytes": 1770658,
+      "sha256": "7acf57a644c959221fbc210e1fdb8011e2978a462a2bc9194188166cd599d937"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-check-water/water.json",
+      "kind": "delivery",
+      "bytes": 639,
+      "sha256": "ec6cf69c2ed66056076aa14d5835473f23ebc6051d911fdf088bdbf16b787576"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-environment.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-environment.stdout.log",
+      "kind": "delivery",
+      "bytes": 251,
+      "sha256": "3ba6dd5c02ccb2d06fd07010f825e6ee1db76e152db2c568baae532acc388e91"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-global.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-global.stdout.log",
+      "kind": "delivery",
+      "bytes": 12124,
+      "sha256": "91fca2cb72c26a36943b720046fbec2c5f1a59942a7fa70f7fe88a1675409a07"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-habitat.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-habitat.stdout.log",
+      "kind": "delivery",
+      "bytes": 236,
+      "sha256": "d239da6edd830baf1b4d780d7d76b1587666605f49110a1769749726da63d8e1"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-navigation-resolver.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-navigation-resolver.stdout.log",
+      "kind": "delivery",
+      "bytes": 172,
+      "sha256": "9827700b5a746088b6536fe6f21db233c8cbc6c24e53719fff1ceec988bae3dc"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-parse.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-parse.stdout.log",
+      "kind": "delivery",
+      "bytes": 105,
+      "sha256": "91f8282c4d17b736bec3c4eb20280b862723d0ddc2f4750e21bd095764ebea86"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-regional.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-regional.stdout.log",
+      "kind": "delivery",
+      "bytes": 5715,
+      "sha256": "4a274cfe35194f3be3504b07485a1a04498f4f737c16fafbe6bdbfa189bc75f0"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-timeout-negative.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-timeout-negative.stdout.log",
+      "kind": "delivery",
+      "bytes": 427,
+      "sha256": "703da6b8b06bd8976582b550f113e6674ccd234a92a7c8073752f58fdc7cc6e3"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-water.stderr.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final-water.stdout.log",
+      "kind": "delivery",
+      "bytes": 1268,
+      "sha256": "35dae70482b2acd772601daf4f3db58b2fd414e8b1f5eafe1aa681d6d9614fd1"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/final2-source.json",
+      "kind": "delivery",
+      "bytes": 476612,
+      "sha256": "d931fd6237445d03aa7751c856ad40a6359102e42dafe4449ce593cdcbdcc748"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/git-diff-check.log",
+      "kind": "delivery",
+      "bytes": 3270,
+      "sha256": "2e997c7689bc58fc9e29cc68261d816648f97d42a367e490d42d90570a6bdd39"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/implementation-files.json",
+      "kind": "delivery",
+      "bytes": 2351,
+      "sha256": "56f5ac9aedd4db1a6681d864ad3538593d8d665384c442ced0ddc02a43aab845"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/integrity.json",
+      "kind": "delivery",
+      "bytes": 302,
+      "sha256": "3cb8ffdb5e5555ccb87eb3cf6eefbea8d737206fe3a90f0b03c92c1db051b0f5"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/MEASUREMENTS.md",
+      "kind": "delivery",
+      "bytes": 4108,
+      "sha256": "572746f749820740b46155a7ba65f961a853d211c274e70c3b28a20c7d84d12a"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2.log",
+      "kind": "delivery",
+      "bytes": 12588,
+      "sha256": "cc256eae57842f7d8b9cfc0068b31b0fa97592b58b8d4db986f41787e64baae5"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-anatolia.json",
+      "kind": "delivery",
+      "bytes": 825,
+      "sha256": "3fdce38d7dda524863c78fbceb6537493e8f262af04686c70f9e844466b177d5"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-anatolia.png",
+      "kind": "delivery",
+      "bytes": 2650648,
+      "sha256": "9cf5dc54b302a3eee181e48578bcd1cb32ba9e61d4285c5148c6ce6ffd89aaaa"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-cancellation-recovery.json",
+      "kind": "delivery",
+      "bytes": 841,
+      "sha256": "9fdb7833eadfeb5810e873b998d7e3a3292d4eab9da5cc14a327eccea0fbab7c"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-cancellation-recovery.png",
+      "kind": "delivery",
+      "bytes": 1811576,
+      "sha256": "4d7a4ac3864ce7124b17584cd10c4b74535bc9ead0861dbe48015a5dea0a9bc9"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-egypt.json",
+      "kind": "delivery",
+      "bytes": 839,
+      "sha256": "2784626e725cf78b35557866bfa629f060bb9bfe1edceccedba74ac9d70af508"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-egypt.png",
+      "kind": "delivery",
+      "bytes": 2154984,
+      "sha256": "4b3506c73c9aa6dd9ff3df0bf9fe15c6fe03b21db9832a9fe0dc8e288e043c20"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-greece.json",
+      "kind": "delivery",
+      "bytes": 823,
+      "sha256": "878aab02e89ea68950586e8a7c4369e4c20b2c0a635a83530c994d684deae8b4"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-greece.png",
+      "kind": "delivery",
+      "bytes": 2816012,
+      "sha256": "4b1e4adf8436a201547b7c49fc591037f531a381915451cd6317e2939a4503c3"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-mesopotamia.json",
+      "kind": "delivery",
+      "bytes": 840,
+      "sha256": "d81b5dc4c8a2ae4308211bab6d4f812f5765df69554bc5d728295b5bc4382d0c"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-mesopotamia.png",
+      "kind": "delivery",
+      "bytes": 2492022,
+      "sha256": "e4ee70646180a4283482acbba978264fbac1eaaaf845d62228e5d16c9b905b94"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-persia.json",
+      "kind": "delivery",
+      "bytes": 853,
+      "sha256": "98e5cc7c8c9caa5b76c201243096f66a6b98ec4cd4fc3e6842b4a930253bb6a6"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-production-persia.png",
+      "kind": "delivery",
+      "bytes": 1811654,
+      "sha256": "50dee84a54a3bf8a425fa983e2e7a8f55f5848427b2db557acd3f61c2a30ac62"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-200.json",
+      "kind": "delivery",
+      "bytes": 864,
+      "sha256": "219fe09340e815c6c33afea25662a2bc187e26e4eeb2a42ac39a881656697c5a"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-200.png",
+      "kind": "delivery",
+      "bytes": 2116715,
+      "sha256": "6ee256d279018be5c3d66f109b32b3311154a371c9abfc42b8b5132f842e453b"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-70.json",
+      "kind": "delivery",
+      "bytes": 859,
+      "sha256": "2f042dadd969c8fcea92211be42c4e112139c791c4d086c889ca8b81cbe52e4d"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-70.png",
+      "kind": "delivery",
+      "bytes": 1910822,
+      "sha256": "af05879ad71cffe86af0b638cea8936e964753bf18b7e8c8710458e045f99496"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-8.json",
+      "kind": "delivery",
+      "bytes": 873,
+      "sha256": "6df842f1b525a1f051f7d96151975f2e3494a9ed9b2a5a1a1037a184d5cffe95"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/godot-zagros-8.png",
+      "kind": "delivery",
+      "bytes": 2578709,
+      "sha256": "578f4d37654888dc724dbd69ffc968085347c08e2a28c7f77578a0da672762d1"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/navigation-final2/navigation.json",
+      "kind": "delivery",
+      "bytes": 9344,
+      "sha256": "2478983c0f2089eeeadd6848816379087826bef5378ed14d06e597a123b645e5"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/npm-final-result.json",
+      "kind": "delivery",
+      "bytes": 119,
+      "sha256": "a7d1f0571d4f27f92b8a597b47be1f901b8605d312eb87671ca28a51eeb6701e"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/npm-final.log",
+      "kind": "delivery",
+      "bytes": 1686,
+      "sha256": "89d794e9d90e57d6c5e084846182e8923a89e938ccfea99a33cebe7f7996ef8a"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/references.json",
+      "kind": "delivery",
+      "bytes": 686,
+      "sha256": "c0bc3437e996407f15205a8b84646f8310b6ffc8f5eec4883b48ef91ccebe202"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/run-checks.ps1",
+      "kind": "delivery",
+      "bytes": 2160,
+      "sha256": "8aa8f2d80f614c0fcc6f189c72d6515bfbf5077937e3daf0cc0d559d67ddf996"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/sheets/alps.png",
+      "kind": "delivery",
+      "bytes": 5175721,
+      "sha256": "eae3fc32f4029dbc2fb3950eea62778be8248a956852887fcb56e04fbb298aad"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/sheets/anatolia.png",
+      "kind": "delivery",
+      "bytes": 5300882,
+      "sha256": "923feab4f96a7ecc0f77fe46a553c96c0bf52a74df0e2369bcfcb080f5a28ae2"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/sheets/egypt.png",
+      "kind": "delivery",
+      "bytes": 4824696,
+      "sha256": "414b515e7202daba51f3f4fefe560b2b50d3aee3aaa1f1b1397ffaa9b66c4252"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/sheets/greece.png",
+      "kind": "delivery",
+      "bytes": 5828547,
+      "sha256": "42f66b75d79786aa7050ff3f3f19655c4074bca2bbaa3a76dc2b1e54942ff923"
+    },
+    {
+      "path": "godot-prototype/evidence/art-direction/sheets/italy.png",
+      "kind": "delivery",
+      "bytes": 4770497,
+      "sha256": "efaedc5202dc1a5725aaddbb2b32f1217186c65201c5dd723c6c7c602cbe3f98"
+    },
+    {
+      "path": "godot-prototype/evidence/final-integrity.json",
+      "kind": "delivery",
+      "bytes": 167,
+      "sha256": "193f5f07503cd8610300b8ff07f4e95e8764499a4f952a6efa5d6f32df1e15cb"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/.gdignore",
+      "kind": "delivery",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-inspection.json",
+      "kind": "delivery",
+      "bytes": 8323,
+      "sha256": "547d5eb94c9b21b90700e056893d17fb468f90e7277816084d91f1d95c77ace4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-inspection.png",
+      "kind": "delivery",
+      "bytes": 3239829,
+      "sha256": "17614c02f85b16295001b57d455ff664b667af8d88097a6830e66b3363ec599b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-regional.json",
+      "kind": "delivery",
+      "bytes": 6373,
+      "sha256": "0d60f06a37ef3fc2401dae993a4feaf938955ddb7d26ea2f9bdfccbb68e04773"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-regional.png",
+      "kind": "delivery",
+      "bytes": 2444341,
+      "sha256": "059eeb4061b9762803dfd47521880607c89dddd25493ce82606d7f9ecfac626a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-strategic.json",
+      "kind": "delivery",
+      "bytes": 6381,
+      "sha256": "77d3fe41ed7e5f51a73764f626ba37183ca04c25fef1defe30a33d71ce895ac7"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-alps-strategic.png",
+      "kind": "delivery",
+      "bytes": 2355791,
+      "sha256": "107384d796bc076743202a5882c6df8e27ccf03aaf4a5e959004ba362b567ff8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-inspection.json",
+      "kind": "delivery",
+      "bytes": 6060,
+      "sha256": "04acd90d6b32099adadd1f38c74def00fb62d9546667758de023d158bdca857c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-inspection.png",
+      "kind": "delivery",
+      "bytes": 3182225,
+      "sha256": "ceb593baa28ac3b946f64fdc0ca000f684841c84c707ea21c26d117792872ac6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-regional.json",
+      "kind": "delivery",
+      "bytes": 6053,
+      "sha256": "c976a6ebb54501700ea594c20bf9a6433d239b0d71c432af544f4bea2326b8df"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-regional.png",
+      "kind": "delivery",
+      "bytes": 2590372,
+      "sha256": "d89887c32562aa7f2352ee9c2d1f2d77568ca1ab243a9992033dd469d0dd3556"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-strategic.json",
+      "kind": "delivery",
+      "bytes": 6059,
+      "sha256": "fcfdd04555484ec1e457c8cbaf2b9d48392870c71d67277173326dba3e2ab95b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-anatolia-strategic.png",
+      "kind": "delivery",
+      "bytes": 2562954,
+      "sha256": "fb39d20215dd7a6d2ac97cb448201c4ebf61fd93af69459591c54e053f479574"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-inspection.json",
+      "kind": "delivery",
+      "bytes": 6053,
+      "sha256": "ba17e2876980dd249ec27ab49a9369493d3f6efc985671172bbe137e328f4975"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-inspection.png",
+      "kind": "delivery",
+      "bytes": 3210900,
+      "sha256": "5b00f652a738a36a544ca2fd8d5d181d19b075448f2a66591f5fe67e1c3880d8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-regional.json",
+      "kind": "delivery",
+      "bytes": 6440,
+      "sha256": "4c70a6096b8de945940a895d9086b6c18e40802340c64834d98824c7efad8d83"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-regional.png",
+      "kind": "delivery",
+      "bytes": 2409004,
+      "sha256": "42993bf6d3c08568c8c2c73eb7615ce89204b031050c82e329fd79578b4f97b4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-strategic.json",
+      "kind": "delivery",
+      "bytes": 6431,
+      "sha256": "40b586bb72fd26c385fddab8ad9cefbf664df5ff5c8c300cc746c1d1feffb4a3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-egypt-strategic.png",
+      "kind": "delivery",
+      "bytes": 2178658,
+      "sha256": "65065400c0f2725a4fea57ce3e139ae8b19eb9472e5e144aa2b946aca70e85ab"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-inspection.json",
+      "kind": "delivery",
+      "bytes": 6019,
+      "sha256": "d16ba4c62e47bc20d61579f36909d092d390bccbbabcb42e10897a49c323e91c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-inspection.png",
+      "kind": "delivery",
+      "bytes": 3547267,
+      "sha256": "cd454ddd934231e5d188adc469c75134d5f9a21774efad844e173f376016ba87"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-regional.json",
+      "kind": "delivery",
+      "bytes": 6033,
+      "sha256": "e596817827d0f217e5afc6c416a199c2337d827f4d52dcb20b102bc009cc3fef"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-regional.png",
+      "kind": "delivery",
+      "bytes": 2992828,
+      "sha256": "b616b10e4b8ef96c8dec269fc4f892ce057264118caf0c06897599fbb9cf2738"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-strategic.json",
+      "kind": "delivery",
+      "bytes": 6415,
+      "sha256": "9eaacdb16c4de44ef7371179c14a13524563a6456d768efb6a7a47556d9e6886"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-greece-strategic.png",
+      "kind": "delivery",
+      "bytes": 2610431,
+      "sha256": "5afea7787e0280d0d2479db513136dd1551f9cc10f265c32a65be5087a24fd1a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-inspection.json",
+      "kind": "delivery",
+      "bytes": 5997,
+      "sha256": "b57f2411df77fba90cb271e211fff852d8b2f80765daafd6903a489b254c4794"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-inspection.png",
+      "kind": "delivery",
+      "bytes": 1989236,
+      "sha256": "619974362b92bcaa52b50ba022f478c7d02a1bf9f8bb4fbcf239d43d05733b9e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-regional.json",
+      "kind": "delivery",
+      "bytes": 6376,
+      "sha256": "5f4f6ec5f4bfd5afc6258ad99cede4b7e917a2b06da220a1bd149c8b16560dc5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-regional.png",
+      "kind": "delivery",
+      "bytes": 2444344,
+      "sha256": "96bd415d2e9978004ac471f6743d0e556f9276596463276401795ac974f16450"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-strategic.json",
+      "kind": "delivery",
+      "bytes": 5999,
+      "sha256": "edb48990230385a521ace7edfec760142ea1d7ce2fdd0696c76811b5d6b49ef7"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/godot-profile-italy-strategic.png",
+      "kind": "delivery",
+      "bytes": 2427677,
+      "sha256": "9e64fa9cfd91073a554f2171b77d2a0523b38828624bd0a403486a17c5366306"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-alps-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "10b87d1e483ab513c93830b447c07fa07ab20cbf815366d39518cda976f83235"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-alps-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "fb26e1e131609086bf0df9ab5205d0638c6770c20a9f9263c2a71f2a18d0169b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-alps-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "1fbdaa9ac433e0b5c1a87729d4f48d1f9390c34c78b65da5d801226964796eb4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-anatolia-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "e4251d75260e81b90dacf3a28f4d5fefc9e546cdea9b94f7c47e68746aee2796"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-anatolia-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "cd584148f8f02f1497445c7d6743d0c887901018f0deaf39e1a453b35bc36056"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-anatolia-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "1c04a34a10567385c5cbdb42054e8a62f9fe6a4e4b337cd054a13fd9e375fa71"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-egypt-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "83e03931d8aaf30ff1fab8c3d38c3ce2dee345d985b642c92cb26a6f5e9e8ec9"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-egypt-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "5c163aaa05ba53b79a36092f28fad6d60dcb12337892ad69a6aabf1cb8a7018e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-egypt-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "49099c27f692c04dcb555d7a698740612b12732fd14094d19eb4c788d66f4a74"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-greece-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "2385169700ef2fe2e19f989aa58c211aa95103354b152684c899d3bb0907e759"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-greece-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "0e990d1600ea0491ec7f792b346f8de1ed98fd12850c62085794167c07e98516"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-greece-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "9002139a9a519b117f9107fc25527562f97d8eb7f00bff861cd6938f709a491a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-italy-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "a3c505a40058c1e94582fdeeb6f72a1ef45050e2c247d5709931debb4758b44f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-italy-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "7bd2a7dc5eba244954d7db8a3a487cb275e642dcf77f2bef10df6ab58e798982"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/process-profile-italy-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "20de7d8d511efe74c4922f868bf1af477cd1085769237a08385afd1264265173"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1970,
+      "sha256": "41d7f9413a5b7e615d738067512c500715cbb1e8036922241fd3b68022969d5b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1960,
+      "sha256": "76a87c2016ecc5221a8fa1a9acbb587eac552aa752fc54d0bc7b7c38ad02e059"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-alps-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1270,
+      "sha256": "ae264a684d3d6184a8efd883d888bafa78f56b8501af40799551445564c90291"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1819,
+      "sha256": "a1b9a99dfdf8b135ddf88d2c60f61d2c18334b1a03d3f1890c9f522d3f4f92f5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1817,
+      "sha256": "1d7a8b320778511f0da44cab56ae5a0dd1e5278747cd5d280decca84e394ebd2"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-anatolia-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1117,
+      "sha256": "91f35db32ed47bd1089bb2e3e049e8d89d8fcc9bec29530528c6fa9d94eea271"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1815,
+      "sha256": "eed39d2853ea1d1153df757c43e3cc66e3024b8197b7215c120a14a42fa8d251"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1114,
+      "sha256": "21a96a1372137b964571db9dbbfb06f4ea8d79a7936de6de474f563fdf717f33"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-egypt-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1115,
+      "sha256": "848ca24f1688b61fb39538fd440cb4b7e137d9fcd29fb14bfb973ab1502496ed"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1805,
+      "sha256": "ef10a6cdae8a85234679cb670567ad27937e856f1e4b2a6e624a77c94d74d3bf"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1813,
+      "sha256": "3484b842bd5af9b4b6aa3bc710ee5a59780cfe619af575365ea5c6f8a3b1470c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-greece-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1114,
+      "sha256": "05df3e96c0a43bd732d0d41fea238443b788404366e617067ca240dd071c2222"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1953,
+      "sha256": "eafce3e4b1cfd0ac20db9d9f72bf8414c2069a02ae8108059c47fadf03f195d1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1951,
+      "sha256": "4a2bf30f257bcf64e92bb2e0c2be130b9824ec4159b6ca6201eebbe981452fc9"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-before/profile-italy-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1262,
+      "sha256": "920c652b8c43a522f418ac290a812cc35e6b32b71acbca539f64579760dae9ba"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/.gdignore",
+      "kind": "delivery",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-inspection.json",
+      "kind": "delivery",
+      "bytes": 6382,
+      "sha256": "51f4cb3e3fac99468bebf7516d9f83e8c238957fd97a8e62aeac5aec33dd2d17"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-inspection.png",
+      "kind": "delivery",
+      "bytes": 2742767,
+      "sha256": "e60b9b7fc1a9f3e7eece009a05a25f1d68313fbf203d879c9d6868211a7b0577"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-regional.json",
+      "kind": "delivery",
+      "bytes": 6379,
+      "sha256": "b943d868acc7e736a41fa2db8b253c7fca1374ffceacd075e7eab840e13713df"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-regional.png",
+      "kind": "delivery",
+      "bytes": 2484078,
+      "sha256": "fb7bff33bb2481fdd4ff81d29a26c6facb5b691ca0060fc129324a474d8d12f3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-strategic.json",
+      "kind": "delivery",
+      "bytes": 6763,
+      "sha256": "e55c326c7cdc37b99a28d5bd714838aa7679ec8c5f5e667be75a95436e9be6da"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-alps-strategic.png",
+      "kind": "delivery",
+      "bytes": 2872778,
+      "sha256": "492a1f94f877a5afb6ed1da9b4edb5167b483c9a3c358f1fe2dd27300ea0f5cb"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-inspection.json",
+      "kind": "delivery",
+      "bytes": 7223,
+      "sha256": "1efc95f7e0f368d7e5c861fc5bc0b1021ae3e3fdcb9e0445121f426c72d38ca4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-inspection.png",
+      "kind": "delivery",
+      "bytes": 2827979,
+      "sha256": "ba6e93bdf42d55fad6b25d3555358d952588f7dda69772609fc1c344e05f6e00"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-regional.json",
+      "kind": "delivery",
+      "bytes": 6441,
+      "sha256": "e133fad3933d47682c772ef2207ad9331ef7136ba3ec4647403facc214d71c8c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-regional.png",
+      "kind": "delivery",
+      "bytes": 2377369,
+      "sha256": "1ca3091093a0f4e6e0a9f95d244402698aec54c164bd7d47052d93a526404be6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-strategic.json",
+      "kind": "delivery",
+      "bytes": 6838,
+      "sha256": "d76c0d3e4c61d8cde5dac9e9a93ad62f3b616ef474059fd03881054c740391cf"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-anatolia-strategic.png",
+      "kind": "delivery",
+      "bytes": 2650715,
+      "sha256": "a3cf20802e9ddb902806df57d2f09eb6dd30d700c9eacd4067df0f241f660833"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-inspection.json",
+      "kind": "delivery",
+      "bytes": 6437,
+      "sha256": "c4315f48c179256734929d14d136b5c5031de6132c0366280dedbc882f589039"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-inspection.png",
+      "kind": "delivery",
+      "bytes": 2605766,
+      "sha256": "d55c64e6ef2775258a4aacc9e59399b0abd0004982f798f48136d1a310884694"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-regional.json",
+      "kind": "delivery",
+      "bytes": 6438,
+      "sha256": "c6f2839c3bf12a610cf695f725bb37282338ac3c2cac5c9c59a82e21caa56a5e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-regional.png",
+      "kind": "delivery",
+      "bytes": 2072433,
+      "sha256": "9883811cc1bb1c1119320f7541d6d65f78c17f48d83a206acff6e728a6749703"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-strategic.json",
+      "kind": "delivery",
+      "bytes": 6425,
+      "sha256": "e10f28f4f0fb40a10ea2d3fd69cd6a36c0345d54be476f46be685997b88e25ae"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-egypt-strategic.png",
+      "kind": "delivery",
+      "bytes": 2259082,
+      "sha256": "c566cec4111b73c4ebc6372f55853932b248b70bb5068ae633a2b36c6b98e94e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-inspection.json",
+      "kind": "delivery",
+      "bytes": 6410,
+      "sha256": "baa47d78b28d8fba729624c78e3b6a147271ccef41e5f94f6ad80ef8db1694df"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-inspection.png",
+      "kind": "delivery",
+      "bytes": 3034690,
+      "sha256": "f9cd1160d19577acff067b4415b004f69778cc748bb530b812dddcdbc6989d80"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-regional.json",
+      "kind": "delivery",
+      "bytes": 6415,
+      "sha256": "1fbb4a372c312cd5f5ffccd79fbfffcb21d6f05b1dca3a574e5c94a7ca1b546e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-regional.png",
+      "kind": "delivery",
+      "bytes": 2634904,
+      "sha256": "d7614bd47d048deb46998d114de0025d6a24e1bc25e60bccfcb7bf4b1c1c9ddc"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-strategic.json",
+      "kind": "delivery",
+      "bytes": 6418,
+      "sha256": "70a1f1409ce01e6e5c800b4cab4bf60a0758cfedb13f6992bf1971bcf4abeb9e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-greece-strategic.png",
+      "kind": "delivery",
+      "bytes": 2816132,
+      "sha256": "99d5bbb2f0e0b59dd652651bb94ebfd4e88cbe28e112cb98936360e7d3940ad1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-inspection.json",
+      "kind": "delivery",
+      "bytes": 6378,
+      "sha256": "b16061694ba6651ce5ca63694c3add87041beec87064d924f51d6fb8fe7778f8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-inspection.png",
+      "kind": "delivery",
+      "bytes": 1937607,
+      "sha256": "cc915a4f330862f87c5bf41339efc25faa37f7a645ac0b2f8851d73790b09e55"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-regional.json",
+      "kind": "delivery",
+      "bytes": 5985,
+      "sha256": "bbedc461640fc2787cbd8ce5f28e405283459aadcc7e7ebb797af513a801ffba"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-regional.png",
+      "kind": "delivery",
+      "bytes": 2331626,
+      "sha256": "baad3c00c4aab1a7ae81a70086e5425cd1960f2d2aab570e167915632d390fee"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-strategic.json",
+      "kind": "delivery",
+      "bytes": 6377,
+      "sha256": "0bec6d81b12fe4627d0c56c5ceba9d765298fc9506c5eaf3eb74041d4c4755fc"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/godot-profile-italy-strategic.png",
+      "kind": "delivery",
+      "bytes": 2650272,
+      "sha256": "811877a9b11b938b471bda3ab216791b6a9ce93d1ee51d6f3efebcc851b4e1c1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-alps-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "765585ca3c1db8e2152dcefefaebf1cba51204111f728d2116fc4c08fa42a4ac"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-alps-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "0e3c0f36137b45ce19b7467e4fed7b02c75410acb5a1f5908e6073da8052c05f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-alps-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "7a15670942cbd12a01f42706ff53f9da6f5e959e14f9926eb358e255e237b896"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-anatolia-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "0f2f1aa597724a5584e5817e17b83c9273bb69b57ce529df558530a6321a7853"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-anatolia-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "a4f6d69702ac4a21c9f5e647af891cebaf9c33da465d1a688c6a5483873bb27e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-anatolia-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "9bf7a37ee89f56f073864e89d9ca98f417820965f26198b9595cbb6c3325b762"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-egypt-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "ca44cf695f57ef2b2f76d273c5bd6f611f8f12137bbd13c32375340f4d96a298"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-egypt-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "4cde8a96a33de836c575a7ad3f7bfae84cb66416c85727f1c421515d1c57ad09"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-egypt-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "bb75e2663202888cd2d45ac61850270b884863e6af7a4c993f4b8419115a0fe0"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-greece-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "8a8ccdc00499a5aff1d1a936a7af7eec68949e79ab42ec79b527022b1d45382b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-greece-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "922c4853ef0c4a5952191a58669bcb6827c49652ac94857a764e999e196540b0"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-greece-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "e2ccbda717c1a62b9c4135cb40903efa840efd95c65171016785d48a68dffed7"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-italy-inspection.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "e6f89fbd3de0de2957b7e634f6be50afb623184f0c6e8848d9002ba119614416"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-italy-regional.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "3ec1506458decd4a62c1f3427c6b9412635d9212dcec8b8c912e81eb5a5ad019"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/process-profile-italy-strategic.json",
+      "kind": "delivery",
+      "bytes": 429,
+      "sha256": "fb68cabdaa27c5fef5952c2e914b6f9a85948883cca5afa6c46f060d4718ae37"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1971,
+      "sha256": "2cc6b5c470cca76a2007992917c2505f8cf7961c3842c4561c98cb62a9e33f11"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1261,
+      "sha256": "f15e270a76450dfd88c6c49bc0491048522fdfa46afff1ad14ef89bc8eb1c8f4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-alps-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1271,
+      "sha256": "e1180c5469436ba9f9e4c247a0b3fb664d59a08974a3ccd3628692b2f2c1a663"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1818,
+      "sha256": "2b509c0d9509c4d58fa23abc8e223003055ec0fbc8e43e435088a2a7f047ab02"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1116,
+      "sha256": "1cad9f48091a920a322506ec2599f0e0c6cb52d63c826260c9ce8d8f1f5a0d8c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-anatolia-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1117,
+      "sha256": "4a574dcac75df046c836cbc89e4bcaa2f7db0d090c1aa5868cfa2b88ecd54da4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1815,
+      "sha256": "adaceebeecb2e82638b20242285f6209f05ea80599a7842c2789648f068f7adb"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1113,
+      "sha256": "4ee00018fb2a2022aa319f82867f55fb5793c42a0596740b26f861715b5dfcc2"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-egypt-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1114,
+      "sha256": "82caea616dd1ff6b858eff051c1a36a6de47fca297c512a1a01af75fa40a80f8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1815,
+      "sha256": "8bdbce157e21ab6d7554aa28660b994936741a0b40779b830669e7f2a09a77c2"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1113,
+      "sha256": "41ab97905b175cbdd75ac05084e4b921453521903222e8bebf7ff293dcdf8fdd"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-greece-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1114,
+      "sha256": "25709a9e23f82574c7f58f1a45dc02139c44355b964d56d494275b8ff50e0d71"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-inspection-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-inspection-run.log",
+      "kind": "delivery",
+      "bytes": 1951,
+      "sha256": "a7be16d8e0623856a4b0ea07ec252b725c8a34c893404bb9b19f6c1063e1abc5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-regional-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-regional-run.log",
+      "kind": "delivery",
+      "bytes": 1940,
+      "sha256": "5cd399e6e7afb80bdb5cb14f1c14e3036dad76b2664a940d8f0fa4d75425763f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-strategic-errors.log",
+      "kind": "delivery",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-final2/profile-italy-strategic-run.log",
+      "kind": "delivery",
+      "bytes": 1260,
+      "sha256": "378789ddc7978e2a7932023bb165bd7ba7c15080e5588cf394c3ae3212368440"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-preview/godot-profile-alps-regional.json",
+      "kind": "shadow-diagnostic-predecessor",
+      "bytes": 5986,
+      "sha256": "7c01055ae176f6a41b31811dfc69b339e33561561f96c7d84bf6179fbb9f9dc1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-preview/godot-profile-alps-regional.png",
+      "kind": "shadow-diagnostic-predecessor",
+      "bytes": 2417374,
+      "sha256": "1c44645c761a87831ab0d6d295c291b8bb89461d708a17df7cd87c1ba091cdd4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-shadow-diagnostic/godot-profile-alps-regional.json",
+      "kind": "shadow-diagnostic-predecessor",
+      "bytes": 6788,
+      "sha256": "02ae73b0cb92e83faa47d9209c63f800e30e0c94e6b2b2dd8d422dbde220963c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/art-shadow-diagnostic/godot-profile-alps-regional.png",
+      "kind": "shadow-diagnostic-predecessor",
+      "bytes": 2422653,
+      "sha256": "d236d28d27a4fbaa0269b4cbd287c7ca4e9422385ddf132ac8a1fda369bac03e"
+    },
+    {
+      "path": "godot-prototype/foliage.gdshader",
+      "kind": "implementation",
+      "bytes": 1383,
+      "sha256": "a600d3b12142a5849e12a3f7f7b342de6984b47c8b4d00e2395782e66f84d90c"
+    },
+    {
+      "path": "godot-prototype/README.md",
+      "kind": "delivery",
+      "bytes": 8674,
+      "sha256": "8fee233f611d0a2e1689a21e49d26a49b7cce3b3f7d42a1dffcb93cc79a8450e"
+    },
+    {
+      "path": "godot-prototype/regional_scenery.gd",
+      "kind": "implementation",
+      "bytes": 14431,
+      "sha256": "769a894846282f8dd18f17fbe563feae77aa11087c6c29adf1d015e608d276b1"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "kind": "implementation",
+      "bytes": 12363,
+      "sha256": "0d741d525f32c25f8c4ff4b1d9990a867380ded2e702cbdd5daad26c33c3e7c3"
+    },
+    {
+      "path": "godot-prototype/tools/art-validate.gd",
+      "kind": "implementation",
+      "bytes": 3272,
+      "sha256": "cd5620b981a8e9fafeeb24810f035c0fe6f29aca4792518bbea632b9c5a70d7c"
+    },
+    {
+      "path": "godot-prototype/water.gdshader",
+      "kind": "implementation",
+      "bytes": 4941,
+      "sha256": "8ee6b70dd8221782357f3c3935b83130d9f2f4f623fafd63f8d7523236cc72b4"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "kind": "implementation",
+      "bytes": 54568,
+      "sha256": "b8e84056e752fcca063277289c2f988cd3e97af8afcf08cde414ebccc6addd31"
+    }
+  ]
+}

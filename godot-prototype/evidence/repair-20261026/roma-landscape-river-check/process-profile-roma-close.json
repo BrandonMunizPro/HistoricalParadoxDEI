@@ -1,0 +1,18 @@
+{
+    "intervalMs":  250,
+    "scope":  "Console wrapper and direct Godot child",
+    "gpuAtEnd":  [
+                     "temperature.gpu, utilization.gpu [%], clocks.current.graphics [MHz], power.draw [W]",
+                     "57, 0 %, 412 MHz, 28.33 W"
+                 ],
+    "gpuAtStart":  [
+                       "temperature.gpu, utilization.gpu [%], clocks.current.graphics [MHz], power.draw [W]",
+                       "42, 2 %, 210 MHz, 10.50 W"
+                   ],
+    "evidence":  {
+                     "baseCommit":  "",
+                     "recordedAtUtc":  "2026-10-28T14:44:48Z",
+                     "sourceRevision":  "diagnostic-unversioned"
+                 },
+    "sampledPeakWorkingSetBytes":  1496637440
+}

@@ -1,0 +1,146 @@
+{
+  "notice": "Interpretive environmental presentation, separate from canonical geography and historical research. Latitude, source colour/ecology, elevation and existing river centrelines guide blended families; these are not measured ancient biomes.",
+  "latitude_rules": [
+    40,
+    49,
+    0.2,
+    0.65
+  ],
+  "dry_river_rules": [
+    0.25,
+    0.65,
+    0.08,
+    0.65
+  ],
+  "families": [
+    {
+      "name": "Mediterranean",
+      "density": 0.55,
+      "ground_cover": 0.85,
+      "rock_rate": 0.14,
+      "scale": [
+        1.3,
+        2.2
+      ]
+    },
+    {
+      "name": "Temperate",
+      "density": 0.64,
+      "ground_cover": 0.92,
+      "rock_rate": 0.1,
+      "scale": [
+        1.5,
+        2.5
+      ]
+    },
+    {
+      "name": "Arid and steppe",
+      "density": 0.16,
+      "ground_cover": 0.12,
+      "rock_rate": 0.3,
+      "scale": [
+        0.65,
+        1.2
+      ]
+    },
+    {
+      "name": "River alluvium",
+      "density": 0.62,
+      "ground_cover": 0.78,
+      "rock_rate": 0.08,
+      "scale": [
+        1.2,
+        2.1
+      ]
+    }
+  ],
+  "scenery": {
+    "attempts": 6000,
+    "max_instances_per_cell": 1800,
+    "yield_every": 1024,
+    "upload_yield_every": 250,
+    "river_clearance_km": 0.14,
+    "coarse_visibility_km": 110,
+    "coarse_fade_km": 30,
+    "local_visibility_km": 45,
+    "local_fade_km": 15,
+    "local_density": 1.85,
+    "coarse_density": 1.25,
+    "local_tree_scale": 1.8,
+    "coarse_tree_scale": 7,
+    "coarse_transition_km": [
+      8,
+      35
+    ],
+    "local_transition_km": [
+      12,
+      32
+    ],
+    "coarse_footprint_km": 1.2,
+    "generation_budget_ms": 4
+  },
+  "river_field": {
+    "pixels_per_degree": 64,
+    "influence_km": 1.5,
+    "notice": "Appearance/suitability influence from existing river centrelines, not river width or reconstructed floodplain geography."
+  },
+  "river_rendering": {
+    "near_sample_km": 0.25,
+    "far_sample_km": 1,
+    "near_distance_km": 150,
+    "notice": "Equal close terrain-following sampling globally. Existing ribbon widths and centreline coordinates are preserved."
+  },
+  "geology_fields": [
+    {
+      "name": "Existing Etna volcanic presentation",
+      "center": [
+        15,
+        37.75
+      ],
+      "radius_degrees": 0.43,
+      "minimum_elevation_km": 0.55,
+      "full_elevation_km": 1.9
+    }
+  ],
+  "settlement_clearances": [
+    {
+      "site_id": "6b4ee85f-28a3-53fb-8ee3-198c1f39af25",
+      "radius_km": 0.72,
+      "notice": "Existing interpretive Catana city footprint, not a new settlement or geographic exclusion."
+    }
+  ],
+  "north_africa": {
+    "notice": "Interpretive presentation scope and source-moisture/height cues only; no new ancient land cover or landforms.",
+    "scope_rules": [
+      8,
+      18,
+      38,
+      34
+    ],
+    "plain_rules": [
+      0.35,
+      0.72,
+      0.15,
+      0.55
+    ],
+    "dry_plant_multiplier": 0.18,
+    "loose_rock_multiplier": 0.18,
+    "coarse_plant_scale": 0.35,
+    "local_plant_scale": 0.75,
+    "footprint_km": 0.18,
+    "alluvium_tint": [
+      0.55,
+      1.15,
+      0.4
+    ],
+    "sand_color": [
+      0.43,
+      0.32,
+      0.2
+    ],
+    "rock_strength": 0.65,
+    "relief_contrast": 2.6
+  }
+}
+
+

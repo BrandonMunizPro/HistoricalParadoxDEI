@@ -1,0 +1,205 @@
+{
+  "sourceRevision": "ce0246585068e514c27c3c539851c90951075accdc19c9040da6bda19b65cbfe",
+  "repeats": [
+    {
+      "region": "italy",
+      "fps": 143.79776282636104,
+      "gpuMs": 5.04083889590369,
+      "loadingPeakMs": 217.395
+    },
+    {
+      "region": "sicily",
+      "fps": 140.29683692986882,
+      "gpuMs": 5.39902779923545,
+      "loadingPeakMs": 289.346
+    },
+    {
+      "region": "illyria",
+      "fps": 141.69780738387277,
+      "gpuMs": 4.11094999843174,
+      "loadingPeakMs": 616.332
+    }
+  ],
+  "beforeNavigation": [
+    {
+      "view": "production-greece",
+      "elapsedMs": 8457,
+      "maxFrameMs": 19.066,
+      "maxRelativeZoomStep": 0.08,
+      "ready": true
+    },
+    {
+      "view": "production-anatolia",
+      "elapsedMs": 8270,
+      "maxFrameMs": 23.141,
+      "maxRelativeZoomStep": 0.0800000000000001,
+      "ready": true
+    },
+    {
+      "view": "production-egypt",
+      "elapsedMs": 6915,
+      "maxFrameMs": 20.548,
+      "maxRelativeZoomStep": 0.0669368867396429,
+      "ready": true
+    },
+    {
+      "view": "production-mesopotamia",
+      "elapsedMs": 7636,
+      "maxFrameMs": 23.661,
+      "maxRelativeZoomStep": 0.037571169541482,
+      "ready": true
+    },
+    {
+      "view": "production-persia",
+      "elapsedMs": 7147,
+      "maxFrameMs": 21.246,
+      "maxRelativeZoomStep": 1.4210854715202e-16,
+      "ready": true
+    },
+    {
+      "view": "zagros-200",
+      "elapsedMs": 6530,
+      "maxFrameMs": 19.313,
+      "maxRelativeZoomStep": 1.4210854715202e-16,
+      "ready": true
+    },
+    {
+      "view": "zagros-70",
+      "elapsedMs": 1545,
+      "maxFrameMs": 14.806,
+      "maxRelativeZoomStep": 0.0799999999999999,
+      "ready": true
+    },
+    {
+      "view": "zagros-8",
+      "elapsedMs": 5751,
+      "maxFrameMs": 15.355,
+      "maxRelativeZoomStep": 0.08,
+      "ready": true
+    },
+    {
+      "view": "production-cancellation-recovery",
+      "elapsedMs": 7506,
+      "maxFrameMs": 17.341,
+      "maxRelativeZoomStep": 0.0188413678177235,
+      "ready": true
+    }
+  ],
+  "afterNavigation": [
+    {
+      "view": "production-greece",
+      "elapsedMs": 7330,
+      "maxFrameMs": 27.46,
+      "maxRelativeZoomStep": 0.08,
+      "ready": true
+    },
+    {
+      "view": "production-anatolia",
+      "elapsedMs": 6810,
+      "maxFrameMs": 29.391,
+      "maxRelativeZoomStep": 0.08,
+      "ready": true
+    },
+    {
+      "view": "production-egypt",
+      "elapsedMs": 5721,
+      "maxFrameMs": 33.998,
+      "maxRelativeZoomStep": 0.0672682540953699,
+      "ready": true
+    },
+    {
+      "view": "production-mesopotamia",
+      "elapsedMs": 7117,
+      "maxFrameMs": 37.857,
+      "maxRelativeZoomStep": 0.0375713354082656,
+      "ready": true
+    },
+    {
+      "view": "production-persia",
+      "elapsedMs": 6169,
+      "maxFrameMs": 27.527,
+      "maxRelativeZoomStep": 2.8421709430404e-16,
+      "ready": true
+    },
+    {
+      "view": "zagros-200",
+      "elapsedMs": 5339,
+      "maxFrameMs": 22.554,
+      "maxRelativeZoomStep": 1.4210854715202e-16,
+      "ready": true
+    },
+    {
+      "view": "zagros-70",
+      "elapsedMs": 1541,
+      "maxFrameMs": 8.417,
+      "maxRelativeZoomStep": 0.08,
+      "ready": true
+    },
+    {
+      "view": "zagros-8",
+      "elapsedMs": 5211,
+      "maxFrameMs": 13.799,
+      "maxRelativeZoomStep": 0.0799999999999999,
+      "ready": true
+    },
+    {
+      "view": "production-cancellation-recovery",
+      "elapsedMs": 6087,
+      "maxFrameMs": 18.501,
+      "maxRelativeZoomStep": 0.0177749892935634,
+      "ready": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "parse",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "navigation-resolver",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "environment",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "habitat",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "art",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "north-africa",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "water",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "global",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "regional",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "timeout-negative",
+      "passed": true,
+      "exitCode": 1
+    }
+  ]
+}

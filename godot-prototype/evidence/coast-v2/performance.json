@@ -1,0 +1,39 @@
+{
+  "cameraDistanceKm": 288.0,
+  "cameraPath": "coast-performance-diagnostic",
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-27T00:32:24Z",
+    "sourceRevision": "1d2dd84a08e6bf0b79763a60a997d9e8a062499a023a36f9e516ce903bc4b29b"
+  },
+  "samples": [
+    {
+      "fps": 83.4618878244407,
+      "frames": 300,
+      "meanGpuMs": 9.98321001847585,
+      "stage": "before",
+      "tiles": 13
+    },
+    {
+      "fps": 86.6173082747536,
+      "frames": 300,
+      "meanGpuMs": 9.42922666549683,
+      "stage": "final",
+      "tiles": 13
+    },
+    {
+      "fps": 85.5225685506148,
+      "frames": 300,
+      "meanGpuMs": 9.44506667613983,
+      "stage": "before",
+      "tiles": 13
+    },
+    {
+      "fps": 90.1802432521881,
+      "frames": 300,
+      "meanGpuMs": 9.20532667636871,
+      "stage": "final",
+      "tiles": 13
+    }
+  ]
+}

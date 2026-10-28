@@ -1,0 +1,178 @@
+{
+  "sourceRevision": "80f1c276958ea64cc8f61279b71bfbe7c6f4d9b9888845e25ad2afa0efa94207",
+  "settledFps": [
+    99.92899489751403,
+    120.39602265050509
+  ],
+  "p95Ms": [
+    8.369,
+    12.672
+  ],
+  "loadingPeakMs": 375.166,
+  "warmNavigationPeakMs": 33.865,
+  "readinessMs": [
+    1749,
+    8438
+  ],
+  "settlementChunkMs": 3.104,
+  "selectionMs": 2.31,
+  "controls": [
+    {
+      "region": "delta",
+      "zoom": "strategic",
+      "onFps": 120.3190057906865,
+      "offFps": 120.34354069416835,
+      "onGpu": 2.85273332595825,
+      "offGpu": 3.17701110574934,
+      "onDraws": 76,
+      "offDraws": 49,
+      "towns": 11
+    },
+    {
+      "region": "delta",
+      "zoom": "inspection",
+      "onFps": 114.01865725294856,
+      "offFps": 95.8550671384863,
+      "onGpu": 7.7246444357766,
+      "offGpu": 9.3574444188012,
+      "onDraws": 213,
+      "offDraws": 213,
+      "towns": 0
+    },
+    {
+      "region": "dense",
+      "zoom": "strategic",
+      "onFps": 120.33187531211081,
+      "offFps": 120.32946206713993,
+      "onGpu": 4.02253888580534,
+      "offGpu": 4.41818333334393,
+      "onDraws": 167,
+      "offDraws": 131,
+      "towns": 17
+    },
+    {
+      "region": "dense",
+      "zoom": "inspection",
+      "onFps": 114.1873319305208,
+      "offFps": 118.74173343140521,
+      "onGpu": 7.59981666935815,
+      "offGpu": 7.06362221240997,
+      "onDraws": 334,
+      "offDraws": 330,
+      "towns": 1
+    },
+    {
+      "region": "sparse",
+      "zoom": "strategic",
+      "onFps": 120.04569739547523,
+      "offFps": 120.03737163503585,
+      "onGpu": 5.40324998696645,
+      "offGpu": 4.73254445128971,
+      "onDraws": 148,
+      "offDraws": 126,
+      "towns": 8
+    },
+    {
+      "region": "sparse",
+      "zoom": "inspection",
+      "onFps": 99.92899489751403,
+      "offFps": 106.925505594283,
+      "onGpu": 8.86675555706024,
+      "offGpu": 8.4203666528066,
+      "onDraws": 490,
+      "offDraws": 486,
+      "towns": 1
+    }
+  ],
+  "experiments": [
+    {
+      "label": "Existing FIFO/default VSync",
+      "fps": 77.26263630416736,
+      "p95": 19.591,
+      "gpu": 4.6388999859492,
+      "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+    },
+    {
+      "label": "VSync disabled, uncapped diagnostic",
+      "fps": 257.1153090740282,
+      "p95": 4.175,
+      "gpu": 3.13230000999239,
+      "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+    },
+    {
+      "label": "Mailbox plus 120 FPS target diagnostic",
+      "fps": 120.33509312264884,
+      "p95": 8.393,
+      "gpu": 2.56883333921432,
+      "sourceRevision": "e1650b7897c83c24eb65170f4ad71c6bb41baad0b582b95a1c364f500718d950"
+    }
+  ],
+  "checks": [
+    {
+      "name": "parse",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "navigation-resolver",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "environment",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "habitat",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "art",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "foundation",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "settlement-population",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "water",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "global",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "regional",
+      "passed": true,
+      "exitCode": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "timeout-negative",
+      "passed": true,
+      "exitCode": 1,
+      "expectedExit": 1
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "beforeRevision": "ec4a261c34be8ced6aa713d1450866a4d3b231544cfe2e561109b749c4c1bbfc",
+  "afterRevision": "da362c955d859fd0feb663accab739ebb96fed40b057a1051b6927810d423ac9",
+  "pairs": 15,
+  "regions": 5,
+  "rows": [
+    {
+      "region": "alps",
+      "zoom": "inspection",
+      "distanceKm": 4,
+      "beforeFps": 93.87320858626919,
+      "afterFps": 92.14178983379146,
+      "beforeGpuMs": 9.41856110625797,
+      "afterGpuMs": 9.53019444677565,
+      "beforeDrawCalls": 607,
+      "afterDrawCalls": 511,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 26638,
+        "rocks": 8514
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 5.596,
+        "maxUploadMs": 2.617
+      },
+      "loadingMaxMs": 97.79,
+      "startupMs": 3033,
+      "materialBootMs": 1908.451,
+      "peakProcessMiB": 1313.13671875,
+      "videoMemoryMiB": 1103.0199584960938,
+      "recordedAtUtc": "2026-10-27T19:15:05Z"
+    },
+    {
+      "region": "alps",
+      "zoom": "regional",
+      "distanceKm": 35,
+      "beforeFps": 98.34759646669836,
+      "afterFps": 116.16950421437147,
+      "beforeGpuMs": 9.14212776025136,
+      "afterGpuMs": 5.67318889564938,
+      "beforeDrawCalls": 858,
+      "afterDrawCalls": 119,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 15997,
+        "rocks": 4045
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 6.056,
+        "maxUploadMs": 2.44
+      },
+      "loadingMaxMs": 108.539,
+      "startupMs": 3128,
+      "materialBootMs": 1929.139,
+      "peakProcessMiB": 1279.5859375,
+      "videoMemoryMiB": 1049.2265319824219,
+      "recordedAtUtc": "2026-10-27T19:14:38Z"
+    },
+    {
+      "region": "alps",
+      "zoom": "strategic",
+      "distanceKm": 100,
+      "beforeFps": 108.19277789164735,
+      "afterFps": 79.88181042360021,
+      "beforeGpuMs": 7.2815388891432,
+      "afterGpuMs": 7.37969443003337,
+      "beforeDrawCalls": 162,
+      "afterDrawCalls": 152,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 15997,
+        "rocks": 4045
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 5.397,
+        "maxUploadMs": 4.359
+      },
+      "loadingMaxMs": 89.603,
+      "startupMs": 3022,
+      "materialBootMs": 1892.687,
+      "peakProcessMiB": 1276.02734375,
+      "videoMemoryMiB": 1050.3822326660156,
+      "recordedAtUtc": "2026-10-27T19:14:19Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "inspection",
+      "distanceKm": 6,
+      "beforeFps": 108.57566819275807,
+      "afterFps": 109.15911699977379,
+      "beforeGpuMs": 7.77462220986684,
+      "afterGpuMs": 8.17561665905846,
+      "beforeDrawCalls": 651,
+      "afterDrawCalls": 609,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 17836,
+        "rocks": 14459
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.203,
+        "maxUploadMs": 4.719
+      },
+      "loadingMaxMs": 101.301,
+      "startupMs": 3109,
+      "materialBootMs": 1902.443,
+      "peakProcessMiB": 1314.33203125,
+      "videoMemoryMiB": 1102.7052764892578,
+      "recordedAtUtc": "2026-10-27T19:13:58Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "regional",
+      "distanceKm": 52.5,
+      "beforeFps": 137.90524989963572,
+      "afterFps": 143.47476757087668,
+      "beforeGpuMs": 5.91373889181349,
+      "afterGpuMs": 5.73088889651828,
+      "beforeDrawCalls": 621,
+      "afterDrawCalls": 151,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 9615,
+        "rocks": 6585
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.14,
+        "maxUploadMs": 2.28
+      },
+      "loadingMaxMs": 82.876,
+      "startupMs": 2993,
+      "materialBootMs": 1859.892,
+      "peakProcessMiB": 1280.69921875,
+      "videoMemoryMiB": 1049.0867004394531,
+      "recordedAtUtc": "2026-10-27T19:13:38Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "strategic",
+      "distanceKm": 150,
+      "beforeFps": 142.56375569958007,
+      "afterFps": 101.03907461679529,
+      "beforeGpuMs": 4.17912222146988,
+      "afterGpuMs": 4.63938334253099,
+      "beforeDrawCalls": 119,
+      "afterDrawCalls": 123,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 9615,
+        "rocks": 6585
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.11,
+        "maxUploadMs": 2.278
+      },
+      "loadingMaxMs": 86.401,
+      "startupMs": 3107,
+      "materialBootMs": 1934.828,
+      "peakProcessMiB": 1268.35546875,
+      "videoMemoryMiB": 1049.5867004394531,
+      "recordedAtUtc": "2026-10-27T19:13:24Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "inspection",
+      "distanceKm": 7.2,
+      "beforeFps": 127.24283163369898,
+      "afterFps": 130.62485123280834,
+      "beforeGpuMs": 5.78731666405996,
+      "afterGpuMs": 6.00709443622165,
+      "beforeDrawCalls": 698,
+      "afterDrawCalls": 600,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 13191,
+        "rocks": 18359
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.125,
+        "maxUploadMs": 3.62
+      },
+      "loadingMaxMs": 81.955,
+      "startupMs": 2934,
+      "materialBootMs": 1857.283,
+      "peakProcessMiB": 1313.43359375,
+      "videoMemoryMiB": 1102.76220703125,
+      "recordedAtUtc": "2026-10-27T19:13:09Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "regional",
+      "distanceKm": 63,
+      "beforeFps": 103.80545013215017,
+      "afterFps": 144.3019952155872,
+      "beforeGpuMs": 3.69314999315474,
+      "afterGpuMs": 4.48828887939453,
+      "beforeDrawCalls": 146,
+      "afterDrawCalls": 160,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 5257,
+        "rocks": 10707
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 4.759,
+        "maxUploadMs": 2.086
+      },
+      "loadingMaxMs": 80.181,
+      "startupMs": 2939,
+      "materialBootMs": 1804.968,
+      "peakProcessMiB": 1283.9140625,
+      "videoMemoryMiB": 1048.95751953125,
+      "recordedAtUtc": "2026-10-27T19:12:52Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "strategic",
+      "distanceKm": 180,
+      "beforeFps": 107.65730526587758,
+      "afterFps": 144.26683593975417,
+      "beforeGpuMs": 3.52162222332425,
+      "afterGpuMs": 3.67153332630793,
+      "beforeDrawCalls": 47,
+      "afterDrawCalls": 47,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 5257,
+        "rocks": 10707
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 4.632,
+        "maxUploadMs": 2.01
+      },
+      "loadingMaxMs": 87.691,
+      "startupMs": 2936,
+      "materialBootMs": 1755.022,
+      "peakProcessMiB": 1269.10546875,
+      "videoMemoryMiB": 1049.647445678711,
+      "recordedAtUtc": "2026-10-27T19:12:39Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "inspection",
+      "distanceKm": 3.8,
+      "beforeFps": 102.25349664352895,
+      "afterFps": 102.52461160259632,
+      "beforeGpuMs": 8.08338330321842,
+      "afterGpuMs": 8.56730555958218,
+      "beforeDrawCalls": 509,
+      "afterDrawCalls": 470,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 22472,
+        "rocks": 6891
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.912,
+        "maxUploadMs": 1.714
+      },
+      "loadingMaxMs": 93.157,
+      "startupMs": 2937,
+      "materialBootMs": 1851.578,
+      "peakProcessMiB": 1299.3515625,
+      "videoMemoryMiB": 1102.4815826416016,
+      "recordedAtUtc": "2026-10-27T19:12:25Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "regional",
+      "distanceKm": 33.25,
+      "beforeFps": 106.01761895029604,
+      "afterFps": 141.209364063629,
+      "beforeGpuMs": 6.0951388809416,
+      "afterGpuMs": 4.68576666778988,
+      "beforeDrawCalls": 509,
+      "afterDrawCalls": 119,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 9975,
+        "rocks": 3608
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.298,
+        "maxUploadMs": 1.177
+      },
+      "loadingMaxMs": 91.198,
+      "startupMs": 2910,
+      "materialBootMs": 1779.974,
+      "peakProcessMiB": 1271.4453125,
+      "videoMemoryMiB": 1048.6370391845703,
+      "recordedAtUtc": "2026-10-27T19:12:05Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "strategic",
+      "distanceKm": 95,
+      "beforeFps": 143.61809077301643,
+      "afterFps": 102.92342554319269,
+      "beforeGpuMs": 3.8961555480957,
+      "afterGpuMs": 6.05155001746284,
+      "beforeDrawCalls": 123,
+      "afterDrawCalls": 145,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 9,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 9975,
+        "rocks": 3608
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.083,
+        "maxUploadMs": 1.582
+      },
+      "loadingMaxMs": 116.479,
+      "startupMs": 2910,
+      "materialBootMs": 1823.318,
+      "peakProcessMiB": 1297.36328125,
+      "videoMemoryMiB": 1048.8870391845703,
+      "recordedAtUtc": "2026-10-27T19:11:51Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "inspection",
+      "distanceKm": 3.6,
+      "beforeFps": 131.0941481757156,
+      "afterFps": 143.31837779520606,
+      "beforeGpuMs": 4.39275556008021,
+      "afterGpuMs": 4.564561091529,
+      "beforeDrawCalls": 380,
+      "afterDrawCalls": 343,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 19740,
+        "rocks": 4790
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 5.535,
+        "maxUploadMs": 2.145
+      },
+      "loadingMaxMs": 88.933,
+      "startupMs": 2810,
+      "materialBootMs": 1764.742,
+      "peakProcessMiB": 1289.46484375,
+      "videoMemoryMiB": 1102.1701965332031,
+      "recordedAtUtc": "2026-10-27T19:11:36Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "regional",
+      "distanceKm": 31.5,
+      "beforeFps": 120.18428256660206,
+      "afterFps": 144.22475986577487,
+      "beforeGpuMs": 5.18695556587643,
+      "afterGpuMs": 4.19559999439451,
+      "beforeDrawCalls": 532,
+      "afterDrawCalls": 524,
+      "tiles": 13,
+      "localCells": 9,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 19740,
+        "rocks": 4790
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 5.171,
+        "maxUploadMs": 2.477
+      },
+      "loadingMaxMs": 73.995,
+      "startupMs": 2887,
+      "materialBootMs": 1734.793,
+      "peakProcessMiB": 1283.5546875,
+      "videoMemoryMiB": 1049.5295715332031,
+      "recordedAtUtc": "2026-10-27T19:11:18Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "strategic",
+      "distanceKm": 90,
+      "beforeFps": 123.09653435384912,
+      "afterFps": 121.24192141502797,
+      "beforeGpuMs": 4.21484444008933,
+      "afterGpuMs": 4.06326667335298,
+      "beforeDrawCalls": 126,
+      "afterDrawCalls": 106,
+      "tiles": 13,
+      "localCells": 0,
+      "coarseCells": 12,
+      "composition": {
+        "paletteVariants": 28,
+        "plants": 10844,
+        "rocks": 3415
+      },
+      "work": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 5.13,
+        "maxUploadMs": 2.468
+      },
+      "loadingMaxMs": 86.602,
+      "startupMs": 2749,
+      "materialBootMs": 1705.201,
+      "peakProcessMiB": 1281.63671875,
+      "videoMemoryMiB": 1049.0759582519531,
+      "recordedAtUtc": "2026-10-27T19:11:00Z"
+    }
+  ],
+  "fps": [
+    79.88181042360021,
+    144.3019952155872
+  ],
+  "gpuMeanMs": [
+    3.67153332630793,
+    9.53019444677565
+  ],
+  "startupMs": [
+    2749,
+    3128
+  ],
+  "loadingFrameMs": [
+    73.995,
+    116.479
+  ],
+  "materialBootMs": [
+    1705.201,
+    1934.828
+  ],
+  "processMiB": [
+    1268.35546875,
+    1314.33203125
+  ],
+  "videoMemoryMiB": [
+    1048.6370391845703,
+    1103.0199584960938
+  ],
+  "maxChunkMs": 6.083,
+  "maxUploadMs": 4.719
+}

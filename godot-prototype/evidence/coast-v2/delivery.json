@@ -1,0 +1,698 @@
+{
+  "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+  "sourceRevision": "1d2dd84a08e6bf0b79763a60a997d9e8a062499a023a36f9e516ce903bc4b29b",
+  "createdAtUtc": "2026-10-27T00:37:41.636Z",
+  "notice": "All changed/untracked delivery files except this manifest itself; no commit or push.",
+  "files": [
+    {
+      "path": "godot-prototype/COAST-POLISH-V2.md",
+      "bytes": 10446,
+      "sha256": "3d3e688bf3bad93ae947d038ddb6e71372f2ea4dc94229cb024a9a2c74e0b5ed"
+    },
+    {
+      "path": "godot-prototype/README.md",
+      "bytes": 7669,
+      "sha256": "ce657c95b654f530e1a807bd79a911ec825ce3b104d0ecc64a69cf2bb61d9d51"
+    },
+    {
+      "path": "godot-prototype/data/visual-settings.json",
+      "bytes": 908,
+      "sha256": "6ae18ad8c3b5daaec855670c51878ff1006499ee801566720723f697e0d199c4"
+    },
+    {
+      "path": "godot-prototype/data/visual/water-ripples.png",
+      "bytes": 124919,
+      "sha256": "6faec7c97d2484c89f985ef48ed41377dfa61b0882fc6d56492dd11878b70e07"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/.gdignore",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/before-settings.json",
+      "bytes": 780,
+      "sha256": "4ab71de37983e21ee3370009062003b193bc2bbb0f40407929772729572660af"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/before-source.json",
+      "bytes": 471556,
+      "sha256": "57baecda95fd2481ecc947899b2d4bfafa9bd59e460d1177ba0db92502579d8d"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/before-terrain.gdshader",
+      "bytes": 10569,
+      "sha256": "ab3e7eff955c875b0c9006f6910c449cffdfdc071be02b88c0291f675b3ce011"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/before-water.gdshader",
+      "bytes": 4336,
+      "sha256": "ae3dbf54ffe7ed92096ad0ec57fb46035ffd8bf8a7c2bd77c2252641b803d006"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/compare.mjs",
+      "bytes": 2586,
+      "sha256": "8af339ccb76e5b6b4e5f31c8b6bcd62b412992ab4b3db32169195e4f14a9f35e"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/comparison.html",
+      "bytes": 7377,
+      "sha256": "92afa733b24d7df295df09b50980877c1651ebc38080b251f05221d861c402cc"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/comparison.json",
+      "bytes": 4729,
+      "sha256": "c854e040132f36526a3bdc3915531abb5393d45d880327930c2246defdcdb38b"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/delivery.mjs",
+      "bytes": 1003,
+      "sha256": "0629c8c17398d61e0af3e332326101aac1d1abf2d009b3b059f0c337f8ae6e8d"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/export-baseline.mjs",
+      "bytes": 356,
+      "sha256": "5b8f92f752b0a9df30a81298e82c1ab2e0e3f3d4d1971cf3a58ad48bba894f20"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/final-source.json",
+      "bytes": 471913,
+      "sha256": "6ee791c61bb887771338847c4f02c91dbdb6e54deb8ca81f254eef4a78395a5d"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/performance.gd",
+      "bytes": 2387,
+      "sha256": "fa6d22ec555c50567ca6e18fd38114b637ea1234dce7b715c43bb01e30996ef1"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/performance.json",
+      "bytes": 893,
+      "sha256": "50d57b44e4261df920da6bde2780792d30f24384c34b563e1190e90f7e38b89b"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/validation/global-navigation.json",
+      "bytes": 6865,
+      "sha256": "5caad9202d3d9b5350cec613c327e517ec24f328183bd35e72ef92951721feba"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/validation/regional-navigation.json",
+      "bytes": 3889,
+      "sha256": "ad640827442ee95a9ec0617032e9720c5ee58bf8b40010f22d1581e5356b7809"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/water/animated.png",
+      "bytes": 1586101,
+      "sha256": "5fdfb4b7bb35dc89552c105dfe52b433198541cf94e8a54cd1437139c618f799"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/water/static-a.png",
+      "bytes": 1585523,
+      "sha256": "7ac8634f530e7cf368311d41387ee1bab1cb2073d54febc6920528e9fb97f463"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/water/static-b.png",
+      "bytes": 1585442,
+      "sha256": "15e628a496b6a494d156ba41b8631eafe92ab9a4dde87164aa7c8044753c9ef4"
+    },
+    {
+      "path": "godot-prototype/evidence/coast-v2/water/water.json",
+      "bytes": 639,
+      "sha256": "7ed9579fbcbeabd00e9187839a195b36a08d4bd2c22c02fbacf03335bb782222"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-production-catana.json",
+      "bytes": 5586,
+      "sha256": "7607016289e8373a7cbab0078c7e9c7e7eac53213c5f49c25ab9f8231e7c4bde"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-production-catana.png",
+      "bytes": 2973234,
+      "sha256": "4428cb156e6cfceba4fca7cc47754888d17d3fd82f8a147ebfbb23c26df42c5a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-close.json",
+      "bytes": 4704,
+      "sha256": "414c181f9da409ff522c48fb74a4c87d8591f5f8cf35bb97012d696173160729"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-close.png",
+      "bytes": 1326724,
+      "sha256": "27c59c6e0c4a586f4258681084418c02d8330c47f06ac428c4670437f39922b6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-overview.json",
+      "bytes": 4323,
+      "sha256": "f4bd94a08be75102c558ad6ce044b1128eb458f2d15e6214a1eaaad3767db9af"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-overview.png",
+      "bytes": 839730,
+      "sha256": "f236da442b2ed00d3bbe30fde136e0943d08fbde7707d4a7b697e28d350d2def"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-strategic.json",
+      "bytes": 4316,
+      "sha256": "77383bf088f6116e150d7fb23779698599a46e8dc7eecdd59a74ea992dde8d85"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-aegean-strategic.png",
+      "bytes": 665264,
+      "sha256": "fe16fed6c846c4171e0f0eca671e3cfade9b761f513194d339ccb6f42f7df322"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-close.json",
+      "bytes": 4305,
+      "sha256": "ee0d47e6c4467c474e4bf61cb86c65daa2060f779611444bccb10a0ac4f652f7"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-close.png",
+      "bytes": 1157901,
+      "sha256": "fa08207d04377121c296dfc9e3402e7d770c100ff8eca22ae0d937582277a880"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-overview.json",
+      "bytes": 4313,
+      "sha256": "0f84b88838000da5a75aeef7925b6f85dcf9fe32ee60bae25948edd54a346670"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-overview.png",
+      "bytes": 1003366,
+      "sha256": "1a43da423f8c8cead447950dd8edf380c7b9f6dfb94bbcb526206670269d62e1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-strategic.json",
+      "bytes": 4690,
+      "sha256": "62b905645b1de9f0330bff72ad879d102e036e184181a1b804469975bbcc610c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-greece-strategic.png",
+      "bytes": 1517098,
+      "sha256": "be73b08f340e427b25fe4f00dd8dc6ec06fd45b48cd9624fdd14fdf7936d49e8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-close.json",
+      "bytes": 4647,
+      "sha256": "a98a23ba0956d29162a366243d975ef6c943fce826320863e4c131ce6b49854d"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-close.png",
+      "bytes": 1819640,
+      "sha256": "1d557b7881c1456c62c09b880a81f09c1b06794a12ea7702215a56701e9ba826"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-overview.json",
+      "bytes": 4658,
+      "sha256": "3e78564e5d120c5ee095dad477eed3e935bef734748517e970cfc5758ad1c964"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-overview.png",
+      "bytes": 1256040,
+      "sha256": "23201ee06a17bc6fbc52902b0bbc9e70f1e787f82b4fbfb879303d54e58113f9"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-strategic.json",
+      "bytes": 5039,
+      "sha256": "2a50b4a700385c0b43c31b8efd1d62f4f6d543d4d8b6339d2ed6eda22118be14"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-italy-strategic.png",
+      "bytes": 1767917,
+      "sha256": "ea17bcef3658391ec2dadf805b0e318a5c71939da0efefefb217d47c1ff68643"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-close.json",
+      "bytes": 5817,
+      "sha256": "979943cb683d547d192ea4ef5f3f1a1a0ae856f38bbc2beba222ddb250f8488f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-close.png",
+      "bytes": 2189863,
+      "sha256": "be26d406bf2c201bedceee5c920aca1558cd60bff6e66db477ef6e61a347ffe1"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-overview.json",
+      "bytes": 4664,
+      "sha256": "6b71d1d9ac7f6031a3451b453d7b475bdc5aa99e9f1866880003e5f10c9df4e2"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-overview.png",
+      "bytes": 851363,
+      "sha256": "3078e8e179154ea97610480d416b84b47902a9ff5c1ff4562825c47bc1d08072"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-strategic.json",
+      "bytes": 4649,
+      "sha256": "79723551077affb5ab8e56b1bfae41342ed128a66b82aa34e0f91fbace9ab65a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/godot-profile-sicily-strategic.png",
+      "bytes": 1685855,
+      "sha256": "e8de951704d334aba29f5f97c597ddbf7b23c10f5d3fb17a2b23b5e0d83d3091"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-production-catana.json",
+      "bytes": 429,
+      "sha256": "2444451bff2d8d6aff2b495b3b74214df500f2a7cbd9fcf615e195a76ce5a645"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-aegean-close.json",
+      "bytes": 429,
+      "sha256": "6a5239dedc0746e88196affe95c4d4b88b869690375ab589865aa50e7e50c34f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-aegean-overview.json",
+      "bytes": 429,
+      "sha256": "029f0c98b71237c27c81f8cbd60c6c022e1901699744d523a4d899253d2ea32b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-aegean-strategic.json",
+      "bytes": 429,
+      "sha256": "81dbe44f3eb2849a20fb3d8b109f93da085013889b12113a2b939bc52d69845e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-greece-close.json",
+      "bytes": 429,
+      "sha256": "018bd17d528fca9f52682a2c24439d49d6ccb597edef5a913e1be8e5d9f82a29"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-greece-overview.json",
+      "bytes": 429,
+      "sha256": "ce7f36d6f573acbb857f24e4be81b4bc4492e2e724597c8cfb1995c80ce71179"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-greece-strategic.json",
+      "bytes": 429,
+      "sha256": "aa2dcdde0ffed0e4a419b65e7a8da6f74c9a541eec75d804bbb53a70359f43e5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-italy-close.json",
+      "bytes": 429,
+      "sha256": "420489ede70535f54d27b1018e9dd3ffbc17b6f88f4825d90a23f82d00036ce8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-italy-overview.json",
+      "bytes": 429,
+      "sha256": "6fef6c6da9c6b88b001f46f51f24bf7f18ef51cad1f98fb012864fe523f64806"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-italy-strategic.json",
+      "bytes": 429,
+      "sha256": "f33abf033a4401e9c8d4f53625846dd6c02c0eddc7b3116dd0ef7a0687c5d772"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-sicily-close.json",
+      "bytes": 429,
+      "sha256": "bf965b870b643ed8e6e4e2872d86c81ed0ab4c39ced0fd99598001756794709e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-sicily-overview.json",
+      "bytes": 429,
+      "sha256": "26ceb773e910bb2c8d788b8ecf28af641fc49db5f7c7e239bcd1bcb5a4d8a95c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-before/process-profile-sicily-strategic.json",
+      "bytes": 429,
+      "sha256": "05b8b100624503596efff54e34ed7e7f939c9b830587c5635231de51ff5c3e03"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-production-catana.json",
+      "bytes": 5137,
+      "sha256": "339cbf166bde0e93c6b52b8870d6bf9a841eabcd4f0f8c09a1fd0caa13fa779e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-production-catana.png",
+      "bytes": 3021223,
+      "sha256": "7c43854644a03316ab50e08dceddcc887be3b7525b9fe9b12885a96c89b2b469"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-close.json",
+      "bytes": 4414,
+      "sha256": "02761d375d55771e8ce2bf0e63604c2ff1db4290aabe5830c0e6d1b133b88963"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-close.png",
+      "bytes": 1970629,
+      "sha256": "fb05d6fc122e327004583c1f7af961496d24f37a2a6408014c6f16b8ff6a1604"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-overview.json",
+      "bytes": 4426,
+      "sha256": "f65bc9bbcb041c3ff3eab52fefe3cd111315278f5e3600b959aadcb35b2cd8bb"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-overview.png",
+      "bytes": 1308519,
+      "sha256": "cce635563f7c3df3be8cc27b302862d1975a0601e0a393b2bc1419a3e42a4d4a"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-strategic.json",
+      "bytes": 4422,
+      "sha256": "393f91a0ac249f9a26e7e20b4983fce82d4c58ada0f2afc6adca01ddfd46d1ed"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-aegean-strategic.png",
+      "bytes": 1527265,
+      "sha256": "a189804dcd985acfd5cf45d57d3b1e2b3dd1ab46e40d953b6c93b81a6e2391c5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-close.json",
+      "bytes": 4406,
+      "sha256": "91f3a93704a7567d1df4cee7c52cdea0f1e0de85785b246f2e86cc39b5fa75d9"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-close.png",
+      "bytes": 1892366,
+      "sha256": "a8f535ad0595e61fdbc03f46aa3472f1a486177dfa1bbace7a81e5c0c913ec82"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-overview.json",
+      "bytes": 4418,
+      "sha256": "02e944319c8c869c5d4915efb75add7a58d649b9caecbe997c0b3409df278ca8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-overview.png",
+      "bytes": 1652951,
+      "sha256": "c2131ab0b448fd25942befe855e32870e648a5a72615116b07095965b8fb5642"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-strategic.json",
+      "bytes": 4401,
+      "sha256": "81b9dbf8299981a3298a52676238e8754da55b20e07a2c1a92a7b635c28fa717"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-greece-strategic.png",
+      "bytes": 2020560,
+      "sha256": "c21f98519187d4ef34eceb793901a631933da30d5ebe8fa4bc3c3b6e8be3f577"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-close.json",
+      "bytes": 6297,
+      "sha256": "98b438808b66f92fbcca3942e672a35afb28fc34be1d94bd39aefba4cfbb458f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-close.png",
+      "bytes": 2168445,
+      "sha256": "6e17a63038e9ec64cb308160c3810a8bde721a3fa3324798772d7337de02d8d5"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-overview.json",
+      "bytes": 5149,
+      "sha256": "629be0a5be32b97692660158ab7bb8663c673776891b7a03e27750bf76cda307"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-overview.png",
+      "bytes": 1877424,
+      "sha256": "b5336fb8e46d849abcbfe3c4e0d67fc6696fadd1eb0ffbe646509db537b5dda3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-strategic.json",
+      "bytes": 5129,
+      "sha256": "4742cc60d50d6f964974e150ee95f77ec549d269280f19a9c6ff8c2037ded9e4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-italy-strategic.png",
+      "bytes": 2147530,
+      "sha256": "25fff4162d873a7fbdd22c08d536193baa1394de28e8780be9aeb803d50ab3e8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-close.json",
+      "bytes": 5131,
+      "sha256": "80e03c2cb301f82cae1e77ad3b673352efea5b6783dc2ac800612494fd024c09"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-close.png",
+      "bytes": 2432847,
+      "sha256": "791657957258d4941d88191344928983b055f9e6c99d58948945a509858fec5e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-overview.json",
+      "bytes": 5151,
+      "sha256": "4bfd4dc647459fab1f0a8d3c22422fea8049529c0922c09d8632900ba484ef3c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-overview.png",
+      "bytes": 1579034,
+      "sha256": "47d35479571feadd639369585a80c026a4cef83327b269dccfd3db7ae13a0390"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-strategic.json",
+      "bytes": 5136,
+      "sha256": "8e9d5016d4f9ed0cd108211ef1f11362a599f788c355b31506b76f865d813be3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/godot-profile-sicily-strategic.png",
+      "bytes": 2149857,
+      "sha256": "1d9dac6c0b11975653dd1f2f361dd26d95c0df427fa3a7186628a60c3f1868c8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-production-catana.json",
+      "bytes": 429,
+      "sha256": "455ee2a85d3145a696f86d979497bf3cbd124f7cf2a41601b938e60f9560a336"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-aegean-close.json",
+      "bytes": 429,
+      "sha256": "dc2d22d4a0739e795b59af1032ac05f759a6fd9edf53c8b1c3b826c3c78f3097"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-aegean-overview.json",
+      "bytes": 429,
+      "sha256": "75b754c74e31eb31369888cc9f95a5d71b4e19200b63ddd65c2aad5c64a76109"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-aegean-strategic.json",
+      "bytes": 429,
+      "sha256": "80c47ab37c7af5119df02df2b8004bef7e257ca88d2b47c9fa18b532ffba66cf"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-greece-close.json",
+      "bytes": 429,
+      "sha256": "5eaca967aa5ce3b1f0956386e9b15f27543962f55a4faa2380a6dd4bf7cc1bde"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-greece-overview.json",
+      "bytes": 429,
+      "sha256": "679b98210cea6355281f77dbe7ff600c3c27babe3e492a645673c1bb8dc794de"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-greece-strategic.json",
+      "bytes": 429,
+      "sha256": "8d32d56b1543eed5609a274e2841bb76799862201eabda2b961c995e0d824633"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-italy-close.json",
+      "bytes": 429,
+      "sha256": "4e98083644d3ed7050e60e32f4d26ca48c317f129b57c94018425723138aaa8e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-italy-overview.json",
+      "bytes": 429,
+      "sha256": "b704ce3ba256ba04938caa56056dc66609e952e59c45bbe66038dad52381ac8b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-italy-strategic.json",
+      "bytes": 429,
+      "sha256": "6464faafc66111ca97a117fc063599fc84128a095b86a0eb0f7d6e73db297dc6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-sicily-close.json",
+      "bytes": 429,
+      "sha256": "553e74eb0db3784833e21e10d8c039156c15956ebcd4412bf4b5f80da60da589"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-sicily-overview.json",
+      "bytes": 429,
+      "sha256": "9e344f1832a35046fa892771794fe2c26cff2c9adc99ec24464db18de96d06f2"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-final/process-profile-sicily-strategic.json",
+      "bytes": 429,
+      "sha256": "ccd0dad7cdcbb252aca8f5b5bc68df97f735f6f8250f871cd30e38f74c4ccbb3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-production-catana.json",
+      "bytes": 4664,
+      "sha256": "58922bd883e35fe0de75f177640a0a9bc6315e0702354faa9e63483582ea2043"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-production-catana.png",
+      "bytes": 3069683,
+      "sha256": "e6341766c7a047d2523e2f671f47ec3156cc4f9ff115acc16b0dd085e63aee7e"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-greece-close.json",
+      "bytes": 6646,
+      "sha256": "014c07a1e6de51a1bb0fa0e8024a0cff6e6f2508c98c3c89ff46c2d935b834d9"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-greece-close.png",
+      "bytes": 2217146,
+      "sha256": "3bacaecc90b5e9a284b353b9a7aa4b3c051301d3e5757096806ca92a857abfa6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-greece-strategic.json",
+      "bytes": 5490,
+      "sha256": "44d0ded28698a895a2d30449a325626150bdb93186de115c64fddc587819817c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-greece-strategic.png",
+      "bytes": 2211126,
+      "sha256": "04dfb534b2aee313f6a419f230b82db56561fcb921b6cabb952df0247d655d86"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-italy-close.json",
+      "bytes": 4272,
+      "sha256": "e0802944a77fa9c6f91d018ff8f597da90bee875662fdf99285007e15975a9f4"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-italy-close.png",
+      "bytes": 2325474,
+      "sha256": "08d345669f8f6851a046af04db15d779884d5da2e38656a7d71ba9f579154b01"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-italy-strategic.json",
+      "bytes": 5832,
+      "sha256": "6649ea6260f1fbb0b326179a79caf878f92b8875eb2407b78fb0c0e031076d7f"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/godot-profile-italy-strategic.png",
+      "bytes": 2321848,
+      "sha256": "0d14c7cd2e26244399e1efbb6cc06158d5ce47517e33efebc61837279f745fe0"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/process-production-catana.json",
+      "bytes": 347,
+      "sha256": "492647ce8e8c9682a31afda3ea5b3f78c13d019616b989df44ab1501f750d122"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/process-profile-greece-close.json",
+      "bytes": 347,
+      "sha256": "47abf469a2ff8322c62e53df5aef6770acd54aef6d7a34de5556710739916522"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/process-profile-greece-strategic.json",
+      "bytes": 347,
+      "sha256": "d6be3f75d688fee7d97184e7d56ec6b16d31d983ad6d9c018985c7c586146ceb"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/process-profile-italy-close.json",
+      "bytes": 347,
+      "sha256": "92282030f7bff6eaec76b570f028140f8a410b7266b84050b5ee8900cfc1dbb8"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-preview/process-profile-italy-strategic.json",
+      "bytes": 347,
+      "sha256": "7c1320dd09c2e8a7fc213f33ea83730ef37c447811d6b81018d384004a5d00d0"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-production-catana.json",
+      "bytes": 5834,
+      "sha256": "c80bfd8b3b805babaeee816eb2344f953fd6ff611c42a4ded8a501207a5180d0"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-production-catana.png",
+      "bytes": 3023451,
+      "sha256": "c1cb7c301581f1a1749b1ac780825b4d4973adea99eedbeae5669e0237baa207"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-profile-greece-close.json",
+      "bytes": 4314,
+      "sha256": "7fa823b3d056ce3e86d3dc39f89ae14dfcb56fbb2198c0254a54497d82349c0b"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-profile-greece-close.png",
+      "bytes": 1879967,
+      "sha256": "d5abc106193cae0eb5b598a7d588dfaaea8c576459ede26accd718de1e45e7ad"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-profile-italy-close.json",
+      "bytes": 4266,
+      "sha256": "bc9aaeef30ed199207324aa92163120d6b777dbf28c7a1f5f6ff206c3c092f73"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/godot-profile-italy-close.png",
+      "bytes": 2172709,
+      "sha256": "bb3859ff347708401d1ed7cfe567de45eb1f7ddf898072d98ceb1603b76978d6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/process-production-catana.json",
+      "bytes": 347,
+      "sha256": "91b3ef8cd7f8654fc75873c835024d4537f49a79cda7139c7c974c1f4d734aa6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/process-profile-greece-close.json",
+      "bytes": 347,
+      "sha256": "eded60872228116960a639586962ce6c91018e29444b7714ccb55f4e89bad4d3"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-refined/process-profile-italy-close.json",
+      "bytes": 347,
+      "sha256": "c055943f499af17ce942b23f84d3f2a611254ec1508c525b7561baf98055f673"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-shadow-diagnostic/.gdignore",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-shadow-diagnostic/godot-profile-italy-close.json",
+      "bytes": 7781,
+      "sha256": "2d63d68a4eb5fa738657884f56f1a82bb015a6581ba6e4d466223ae298dcdc57"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-shadow-diagnostic/godot-profile-italy-close.png",
+      "bytes": 2325809,
+      "sha256": "eb9b4e4d4f077d7dcaa1059d00361e24bf76f1165f8a6b0e5652b71272bf237c"
+    },
+    {
+      "path": "godot-prototype/evidence/repair-20261026/coast-v2-shadow-diagnostic/process-profile-italy-close.json",
+      "bytes": 347,
+      "sha256": "b8bcaa1bcd5f31cfbaed3e50b98b0719ce990d219939a804b76ab32728036977"
+    },
+    {
+      "path": "godot-prototype/shoreline.gdshaderinc",
+      "bytes": 890,
+      "sha256": "04e41efb1f0036477403fdd7a9798d404c48bcf80ec70f62e2dc480031ef84b7"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "bytes": 10870,
+      "sha256": "e9a453e8345b23dc8e6c867e4a7e8e6f61cef09919c296194c377c45a2f1ae04"
+    },
+    {
+      "path": "godot-prototype/tools/water-ripples.mjs",
+      "bytes": 1262,
+      "sha256": "fb44758adbcb2e155b57aeded450218d9d2e27d8917e3017375521bd63b62405"
+    },
+    {
+      "path": "godot-prototype/water.gdshader",
+      "bytes": 4770,
+      "sha256": "86397220f9ba9d907a9596042433db9dbe829d9d66207552ab25d594cbb56a25"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "bytes": 51341,
+      "sha256": "c70eff1e2ed28b37a91bac624cc7e8d1e851659134b9bfd982fffb1df729dce5"
+    }
+  ]
+}

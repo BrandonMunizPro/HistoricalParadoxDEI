@@ -1,0 +1,107 @@
+{
+  "before": "f1847e952b42693f9a8a39265873871526bf095a182fc04c645d56bc8dcdf712",
+  "final": "9e3a29425721c8de8a81f74998d30598f94e46d461ab6c182e6ffc2e50cd1e0c",
+  "files": [
+    {
+      "path": "godot-prototype/assets/environment/.gdignore",
+      "status": "added",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "godot-prototype/assets/environment/alluvial-ground.png",
+      "status": "added",
+      "sha256": "425c5ae974538d4f90a7b1eab107bdc2fd2d71116eaa19b1572927f57e6685ee"
+    },
+    {
+      "path": "godot-prototype/assets/environment/arid-ground.png",
+      "status": "added",
+      "sha256": "795dc2223306775c96ddc1cc4dcc3a820573ada21d25a1155c82f50c8a40c222"
+    },
+    {
+      "path": "godot-prototype/assets/environment/provenance.json",
+      "status": "added",
+      "sha256": "171d42bd29b92a68febb226ed61936af5b2ea9a88b51cb6c2cf018d68ede7812"
+    },
+    {
+      "path": "godot-prototype/assets/environment/temperate-ground.png",
+      "status": "added",
+      "sha256": "435765128de1b7e6c73bbaf1a95730de83a64ee2bbff6028d23ee20935bff908"
+    },
+    {
+      "path": "godot-prototype/canopy_assets.gd",
+      "status": "modified",
+      "sha256": "a354a7a8e25e7c248761932fd07f39f2ae9b9da0c9191ca9341fe09afb5ad02f"
+    },
+    {
+      "path": "godot-prototype/data/environment-presentation.json",
+      "status": "added",
+      "sha256": "650c0727a87267796c7ba8c3230bf283e629dd6917675c0573fc2f2b2296261a"
+    },
+    {
+      "path": "godot-prototype/data/environment-views.json",
+      "status": "modified",
+      "sha256": "a5ca6d82b3f8be9ebf67326075f762f63c2177e3ed772776dc419e62e5070ba9"
+    },
+    {
+      "path": "godot-prototype/data/environment/.gdignore",
+      "status": "added",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "godot-prototype/data/environment/provenance.json",
+      "status": "added",
+      "sha256": "0b0bb5141c403e4b831cb0759868474b952894a006cf8175121692f4ca03aaf7"
+    },
+    {
+      "path": "godot-prototype/data/environment/river-corridors.png",
+      "status": "added",
+      "sha256": "881ed8e626bf29b44555c10f37e0d4c169e012365f5f0279f6bcb6098e9d3470"
+    },
+    {
+      "path": "godot-prototype/environment_rules.gd",
+      "status": "added",
+      "sha256": "b067ccb9fede0864969f8c2be6154df3076b7c83cc64fd23bdd7f15c04b87743"
+    },
+    {
+      "path": "godot-prototype/environment.gdshaderinc",
+      "status": "added",
+      "sha256": "b9d54908cf94b1e009a40616c44164c1f2d5fa4d8dcfab16e806b5f67a14b439"
+    },
+    {
+      "path": "godot-prototype/regional_scenery.gd",
+      "status": "modified",
+      "sha256": "2050768f7143fcbd3fcdc7e6c1e7fd683ca8673e7f67ed2894bfdd2aaaac4c42"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "status": "modified",
+      "sha256": "96ea9c6f4817f7adb165a130b4f0c4457e1927a3699422e6da86896a89db4d70"
+    },
+    {
+      "path": "godot-prototype/tools/environment-build.mjs",
+      "status": "added",
+      "sha256": "6534e43ac1cc95bb753b4ea5e9d96f0df564793ad452e00b2c6dc22e1de47cbf"
+    },
+    {
+      "path": "godot-prototype/tools/environment-profile.gd",
+      "status": "added",
+      "sha256": "2ad51eba48b5abacda341aaef86af5783b3f08c56b7a7d8ad783709b440e0fc4"
+    },
+    {
+      "path": "godot-prototype/tools/environment-validate.gd",
+      "status": "added",
+      "sha256": "9a7dd397a98cfd602e191c342be3b5fe34b7f384381c29c3978e6dc73c566d32"
+    },
+    {
+      "path": "godot-prototype/tools/navigation-validation.gd",
+      "status": "modified",
+      "sha256": "a5c265545e2dabdd38c39158a813e06e2fa3cbb7c4975314ad03742f840839df"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "status": "modified",
+      "sha256": "352b7603604044902919868100713f9d51591c737e03558b4b7d5927eef1a56f"
+    }
+  ],
+  "captureHelperNote": "tools/visual-capture.gd also gained regional/inspection scales before the before-source snapshot, to support identical cameras."
+}

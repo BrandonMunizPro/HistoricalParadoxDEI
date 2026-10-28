@@ -1,0 +1,344 @@
+{
+  "camera": {
+    "distance": 3.6,
+    "focus": [
+      23.7250003814697,
+      37.9749984741211
+    ],
+    "fov": 42,
+    "pitch": 45.0,
+    "position": [
+      894.86376953125,
+      2.67764496803284,
+      342.688995361328
+    ],
+    "yaw": 0.0
+  },
+  "cameraPath": "capture-profile",
+  "diagnosticFlags": [
+    "--no-settlement-visuals"
+  ],
+  "drawCalls": 330.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "environmentAtFocus": {
+    "familyWeights": [
+      0.172554790973663,
+      0.0,
+      0.827445209026337,
+      0.0
+    ],
+    "order": [
+      "Mediterranean",
+      "Temperate",
+      "Arid/steppe",
+      "River alluvium"
+    ],
+    "sourceClimate": [
+      0.0,
+      0.369263708591461,
+      0.544308662414551,
+      0.0
+    ]
+  },
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-28T00:34:56Z",
+    "sourceRevision": "80f1c276958ea64cc8f61279b71bfbe7c6f4d9b9888845e25ad2afa0efa94207"
+  },
+  "frameStages": {
+    "bootMs": {
+      "base_meshes": 244.991,
+      "canopy_meshes": 133.663,
+      "environment": 4.245,
+      "materials": 2080.041,
+      "water_ui_hydrology": 774.868
+    },
+    "maximumCpuStageMs": {
+      "base_meshes": 244.991,
+      "camera_materials": 1.23,
+      "canopy_meshes": 133.663,
+      "city": 0.21,
+      "environment": 4.245,
+      "markers": 1.893,
+      "materials": 2080.041,
+      "rivers": 2.074,
+      "scenery": 0.212,
+      "tile_upload": 12.69,
+      "ui": 0.145,
+      "water_ui_hydrology": 774.868
+    },
+    "slowFrames": [
+      {
+        "frame": 1,
+        "previousCpuStagesMs": {
+          "camera_materials": 0.151,
+          "city": 0.013,
+          "markers": 0.336,
+          "rivers": 0.002,
+          "scenery": 0.067,
+          "tile_upload": 11.549,
+          "ui": 0.025
+        },
+        "renderCpuMs": 0.0,
+        "renderGpuMs": 0.0,
+        "wallMs": 133.779
+      }
+    ]
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "materialLoads": [
+    {
+      "cpuMs": 164.493,
+      "resource": "regional/land"
+    },
+    {
+      "cpuMs": 164.744,
+      "resource": "regional/ocean"
+    },
+    {
+      "cpuMs": 205.831,
+      "resource": "regional/shore"
+    },
+    {
+      "cpuMs": 7.223,
+      "resource": "regional/ecology"
+    },
+    {
+      "cpuMs": 250.933,
+      "resource": "global/land"
+    },
+    {
+      "cpuMs": 274.563,
+      "resource": "global/ocean"
+    },
+    {
+      "cpuMs": 26.059,
+      "resource": "global/shore"
+    },
+    {
+      "cpuMs": 29.125,
+      "resource": "global/ecology"
+    },
+    {
+      "cpuMs": 42.672,
+      "resource": "slice/limestone-scree"
+    },
+    {
+      "cpuMs": 46.496,
+      "resource": "slice/mediterranean-ground"
+    },
+    {
+      "cpuMs": 44.299,
+      "resource": "slice/mediterranean-mosaic"
+    },
+    {
+      "cpuMs": 54.839,
+      "resource": "environment/temperate-ground"
+    },
+    {
+      "cpuMs": 61.584,
+      "resource": "environment/arid-ground"
+    },
+    {
+      "cpuMs": 48.514,
+      "resource": "environment/alluvial-ground"
+    }
+  ],
+  "maxFrameMs": 12.23,
+  "meanFrameMs": 8.35034222222222,
+  "navigationTrace": {},
+  "p95FrameMs": 10.451,
+  "presentationMode": {
+    "frameCap": 120,
+    "refreshHz": 143.912002563477,
+    "reportedVsyncMode": 3
+  },
+  "primitives": 1836119.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 9,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 1190,
+    "vegetationInstancesResident": 23414,
+    "vegetationTiles": 9
+  },
+  "renderVideoMemoryBytes": 1167156256.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "world-37-23",
+    "world-37-18",
+    "world-32-23",
+    "world-32-18",
+    "world-42-23",
+    "world-37-28",
+    "world-42-18",
+    "world-32-28",
+    "world-37-13",
+    "world-27-23",
+    "world-32-13",
+    "world-27-18"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "resolvedCameraDistanceKm": 3.6,
+  "resolvedProductionView": "",
+  "riverWork": {
+    "cancelled": 0,
+    "completed": 1,
+    "maxChunkMs": 2.026,
+    "maxUploadMs": 0.0
+  },
+  "samples": 900,
+  "sceneryComposition": {
+    "paletteVariants": 28,
+    "plants": 11593,
+    "rocks": 11821
+  },
+  "sceneryReadiness": {
+    "instances": 23414,
+    "pending": [],
+    "ready": true
+  },
+  "sceneryWork": {
+    "cancelled": 0,
+    "candidates": 92060,
+    "cellsBuilt": 18,
+    "generationCpuMs": 3560.945,
+    "generationYieldFrames": 888,
+    "maxChunkMs": 5.621,
+    "maxUploadMs": 2.64,
+    "uploadCpuMs": 35.115
+  },
+  "settledFrameStats": {
+    "maxMs": 10.375,
+    "meanMs": 8.42163888888889,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 9.523,
+    "samples": 180
+  },
+  "settledGpuStats": {
+    "meanMs": 7.06362221240997,
+    "p95Ms": 8.77099990844727,
+    "samples": 180
+  },
+  "settledRenderCpuStats": {
+    "meanMs": 0.503933332694901,
+    "p95Ms": 0.685999989509583,
+    "samples": 180
+  },
+  "settlementPresentation": {
+    "approved": 35,
+    "buildCpuMs": 0.0,
+    "completed": 0,
+    "eligible": 581,
+    "enabled": false,
+    "houses": 0,
+    "landAccepted": 539,
+    "maxChunkMs": 0.0,
+    "resident": 0,
+    "waterRejected": [
+      "research:r16-ita-sipontum",
+      "research:r16-ita-hydruntum",
+      "research:r16-gre-elis",
+      "research:r16-gre-naupactus",
+      "research:r16-gre-thasos",
+      "research:r16-gre-itanos",
+      "research:r16-ana-cyme",
+      "research:r16-ana-sinope",
+      "research:r16-gre-eleusis",
+      "research:r16-gre-rhamnous",
+      "research:r16-gre-hermione",
+      "research:r16-gre-pylos",
+      "research:r16-gre-hierapytna",
+      "research:r16-gre-tenos",
+      "research:r16-ana-myrina",
+      "research:r16-ana-dardanos",
+      "research:r16-ana-prokonnesos",
+      "research:r16-ana-iasos",
+      "research:r16-ana-knidos",
+      "research:r16-ana-tios",
+      "research:r16-bal-epetion",
+      "research:r16-bal-torone",
+      "research:r16-bal-apollonia-pontica",
+      "research:r16-ibe-sexi",
+      "research:r16-ibe-carteia",
+      "research:r16-ibe-rhode",
+      "research:r16-gal-antipolis",
+      "research:r16-lev-aradus",
+      "research:r16-lev-sidon",
+      "research:r16-lev-sarepta",
+      "research:r16-lev-achzib",
+      "research:r16-lev-akko",
+      "research:r16-cyr-apollonia",
+      "research:r16-egy-canopus",
+      "research:r16-egy-herakleion",
+      "research:r16-nub-qasr-ibrim",
+      "research:r16-cau-myrmekion",
+      "research:r16-cau-chersonesos-taurica",
+      "research:r16-cau-hermonassa",
+      "research:r16-bri-hengistbury-head",
+      "research:r16-lev-salamis-cyprus",
+      "research:r16-afr-tingis"
+    ]
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 133.779,
+  "startupMs": 3324,
+  "staticMemoryBytes": 310258923,
+  "tileLoadMs": [
+    142.557,
+    11.497,
+    10.712,
+    10.297,
+    10.529,
+    12.565,
+    12.313,
+    11.926,
+    10.037,
+    10.057,
+    9.835,
+    9.606,
+    10.054
+  ],
+  "view": "profile-dense-inspection",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 1.8,
+      "coastal_color": [
+        0.045,
+        0.2,
+        0.21
+      ],
+      "coastal_color_strength": 0.65,
+      "deep_color": [
+        0.012,
+        0.062,
+        0.125
+      ],
+      "foam_strength": 0.065,
+      "fresnel_strength": 0.16,
+      "ripple_large_km": 3.5,
+      "ripple_small_km": 0.42,
+      "roughness": 0.23,
+      "specular_strength": 0.55,
+      "wave_strength": 0.26
+    },
+    "time": 10.1629363333334
+  }
+}

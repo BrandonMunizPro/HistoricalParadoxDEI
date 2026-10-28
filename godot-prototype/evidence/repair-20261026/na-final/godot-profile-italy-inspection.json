@@ -1,0 +1,327 @@
+{
+  "camera": {
+    "distance": 3.6,
+    "focus": [
+      14.2299995422363,
+      40.8199996948242
+    ],
+    "fov": 42,
+    "pitch": 45.0,
+    "position": [
+      62.299919128418,
+      2.55051040649414,
+      77.7466049194336
+    ],
+    "yaw": 20.0
+  },
+  "cameraPath": "capture-profile",
+  "diagnosticFlags": [],
+  "drawCalls": 343.0,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "environmentAtFocus": {
+    "familyWeights": [
+      0.976889789104462,
+      0.0231102053076029,
+      0.0,
+      0.0
+    ],
+    "order": [
+      "Mediterranean",
+      "Temperate",
+      "Arid/steppe",
+      "River alluvium"
+    ],
+    "sourceClimate": [
+      0.0,
+      0.733791947364807,
+      0.22910076379776,
+      0.0
+    ]
+  },
+  "evidence": {
+    "baseCommit": "cbab45903ee34973b68fac5360ad17dbe24c90a6",
+    "recordedAtUtc": "2026-10-27T21:31:20Z",
+    "sourceRevision": "fb1a7d25f265fcbc66c046df5659c2a57487b6d2f601d2b18ac48706c352ae8d"
+  },
+  "frameStages": {
+    "bootMs": {
+      "base_meshes": 204.034,
+      "canopy_meshes": 105.256,
+      "environment": 3.846,
+      "materials": 2031.439,
+      "water_ui_hydrology": 735.078
+    },
+    "maximumCpuStageMs": {
+      "base_meshes": 204.034,
+      "camera_materials": 0.403,
+      "canopy_meshes": 105.256,
+      "city": 0.123,
+      "environment": 3.846,
+      "markers": 2.043,
+      "materials": 2031.439,
+      "rivers": 2.059,
+      "scenery": 0.145,
+      "tile_upload": 23.705,
+      "ui": 0.083,
+      "water_ui_hydrology": 735.078
+    },
+    "slowFrames": [
+      {
+        "frame": 1,
+        "previousCpuStagesMs": {
+          "camera_materials": 0.145,
+          "city": 0.012,
+          "markers": 0.405,
+          "rivers": 0.002,
+          "scenery": 0.05,
+          "tile_upload": 10.396,
+          "ui": 0.026
+        },
+        "renderCpuMs": 0.0,
+        "renderGpuMs": 0.0,
+        "wallMs": 364.166
+      },
+      {
+        "frame": 308,
+        "previousCpuStagesMs": {
+          "camera_materials": 0.094,
+          "city": 0.031,
+          "markers": 0.809,
+          "rivers": 0.02,
+          "scenery": 0.024,
+          "tile_upload": 0.002,
+          "ui": 0.01
+        },
+        "renderCpuMs": 0.407000005245209,
+        "renderGpuMs": 3.86899995803833,
+        "wallMs": 284.046
+      },
+      {
+        "frame": 32,
+        "previousCpuStagesMs": {
+          "camera_materials": 0.162,
+          "city": 0.038,
+          "markers": 1.208,
+          "rivers": 0.026,
+          "scenery": 0.033,
+          "tile_upload": 0.004,
+          "ui": 0.019
+        },
+        "renderCpuMs": 0.367000013589859,
+        "renderGpuMs": 3.25,
+        "wallMs": 163.978
+      },
+      {
+        "frame": 2,
+        "previousCpuStagesMs": {
+          "camera_materials": 0.201,
+          "city": 0.014,
+          "markers": 0.414,
+          "rivers": 0.002,
+          "scenery": 0.037,
+          "tile_upload": 23.705,
+          "ui": 0.02
+        },
+        "renderCpuMs": 346.477996826172,
+        "renderGpuMs": 25.30299949646,
+        "wallMs": 66.724
+      }
+    ]
+  },
+  "frameTimeSource": "Wall-clock process-frame intervals; first 90 frames excluded from steady-state sample.",
+  "historicalScenery": false,
+  "materialLoads": [
+    {
+      "cpuMs": 161.685,
+      "resource": "regional/land"
+    },
+    {
+      "cpuMs": 163.3,
+      "resource": "regional/ocean"
+    },
+    {
+      "cpuMs": 236.006,
+      "resource": "regional/shore"
+    },
+    {
+      "cpuMs": 7.947,
+      "resource": "regional/ecology"
+    },
+    {
+      "cpuMs": 257.367,
+      "resource": "global/land"
+    },
+    {
+      "cpuMs": 265.51,
+      "resource": "global/ocean"
+    },
+    {
+      "cpuMs": 26.26,
+      "resource": "global/shore"
+    },
+    {
+      "cpuMs": 26.876,
+      "resource": "global/ecology"
+    },
+    {
+      "cpuMs": 46.571,
+      "resource": "slice/limestone-scree"
+    },
+    {
+      "cpuMs": 44.088,
+      "resource": "slice/mediterranean-ground"
+    },
+    {
+      "cpuMs": 41.082,
+      "resource": "slice/mediterranean-mosaic"
+    },
+    {
+      "cpuMs": 46.068,
+      "resource": "environment/temperate-ground"
+    },
+    {
+      "cpuMs": 47.197,
+      "resource": "environment/arid-ground"
+    },
+    {
+      "cpuMs": 61.56,
+      "resource": "environment/alluvial-ground"
+    }
+  ],
+  "maxFrameMs": 284.046,
+  "meanFrameMs": 7.30656555555556,
+  "navigationTrace": {},
+  "p95FrameMs": 8.408,
+  "primitives": 1200371.0,
+  "regionalTerrain": {
+    "active": true,
+    "backdropGrid": 448.0,
+    "localVegetationCells": 9,
+    "materialDetail": 1.0,
+    "parentHeightChannel": "float UV2.x",
+    "renderFrames": 1159,
+    "vegetationInstancesResident": 24530,
+    "vegetationTiles": 12
+  },
+  "renderVideoMemoryBytes": 1155725280.0,
+  "renderer": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "research": 687,
+  "residentTiles": [
+    "context",
+    "N40E14",
+    "N41E14",
+    "N40E13",
+    "N41E13",
+    "N40E15",
+    "N41E15",
+    "N42E14",
+    "N42E13",
+    "N39E15",
+    "N41E12",
+    "N42E15",
+    "N40E16"
+  ],
+  "resolution": "(1920.0, 1080.0)",
+  "resolvedCameraDistanceKm": 3.6,
+  "resolvedProductionView": "",
+  "riverWork": {
+    "cancelled": 0,
+    "completed": 1,
+    "maxChunkMs": 2.055,
+    "maxUploadMs": 1.004
+  },
+  "samples": 900,
+  "sceneryComposition": {
+    "paletteVariants": 28,
+    "plants": 19740,
+    "rocks": 4790
+  },
+  "sceneryReadiness": {
+    "instances": 24530,
+    "pending": [],
+    "ready": true
+  },
+  "sceneryWork": {
+    "cancelled": 0,
+    "candidates": 94963,
+    "cellsBuilt": 21,
+    "generationCpuMs": 3692.006,
+    "generationYieldFrames": 894,
+    "maxChunkMs": 6.179,
+    "maxUploadMs": 2.33,
+    "uploadCpuMs": 32.902
+  },
+  "settledFrameStats": {
+    "maxMs": 8.494,
+    "meanMs": 6.94626666666667,
+    "method": "Consecutive frames after terrain reveal and queued scenery work finish; up to 300 samples. Separate from the legacy first-90-excluded sample used for baseline comparison.",
+    "p95Ms": 7.582,
+    "samples": 180
+  },
+  "settledGpuStats": {
+    "meanMs": 4.64028334882524,
+    "p95Ms": 5.19700002670288,
+    "samples": 180
+  },
+  "settledRenderCpuStats": {
+    "meanMs": 0.545016665094429,
+    "p95Ms": 0.72299998998642,
+    "samples": 180
+  },
+  "sites": 35,
+  "startupAndStreamingMaxFrameMs": 364.166,
+  "startupMs": 3142,
+  "staticMemoryBytes": 301365612,
+  "tileLoadMs": [
+    125.781,
+    10.347,
+    23.644,
+    9.928,
+    10.216,
+    10.368,
+    10.254,
+    9.831,
+    10.547,
+    10.122,
+    11.719,
+    11.875,
+    11.048
+  ],
+  "view": "profile-italy-inspection",
+  "water": {
+    "animated": true,
+    "settings": {
+      "animation_speed": 1.0,
+      "coastal_band_km": 1.8,
+      "coastal_color": [
+        0.045,
+        0.2,
+        0.21
+      ],
+      "coastal_color_strength": 0.65,
+      "deep_color": [
+        0.012,
+        0.062,
+        0.125
+      ],
+      "foam_strength": 0.065,
+      "fresnel_strength": 0.16,
+      "ripple_large_km": 3.5,
+      "ripple_small_km": 0.42,
+      "roughness": 0.23,
+      "specular_strength": 0.55,
+      "wave_strength": 0.26
+    },
+    "time": 9.14166666666681
+  }
+}

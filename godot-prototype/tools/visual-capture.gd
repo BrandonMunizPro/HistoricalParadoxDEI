@@ -36,7 +36,7 @@ func run():
 		if arg.begins_with("--scale="):scale_name=arg.trim_prefix("--scale=")
 		if arg.begins_with("--profile-file="):profile_file=arg.trim_prefix("--profile-file=")
 	var view=world.read_json(profile_file)[name]
-	var factor={"overview":3.2,"strategic":1.0,"close":.16}[scale_name]
+	var factor={"overview":3.2,"strategic":1.0,"close":.16,"regional":.35,"inspection":.04}[scale_name]
 	world.focus=Vector2(view[0],view[1])
 	world.goal_focus=world.focus
 	world.distance=view[2]*factor

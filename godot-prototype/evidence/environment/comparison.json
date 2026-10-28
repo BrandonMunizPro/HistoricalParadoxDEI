@@ -1,0 +1,2071 @@
+{
+  "beforeRevision": "f1847e952b42693f9a8a39265873871526bf095a182fc04c645d56bc8dcdf712",
+  "afterRevision": "9e3a29425721c8de8a81f74998d30598f94e46d461ab6c182e6ffc2e50cd1e0c",
+  "method": "Consecutive settled-frame samples. Short desktop runs, not a statistical throughput benchmark.",
+  "rows": [
+    {
+      "region": "africa",
+      "zoom": "inspection",
+      "distanceKm": 6,
+      "beforeFps": 139.07421386369018,
+      "afterFps": 134.24400488648163,
+      "beforeGpuMs": 6.20942777792613,
+      "afterGpuMs": 6.40735001034207,
+      "tiles": 13,
+      "plants": 8210,
+      "rocks": 16238,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 6.809,
+        "maxUploadMs": 18.308
+      },
+      "loadingMaxMs": 83.136,
+      "startupMs": 2937,
+      "peakProcessMiB": 1293.95703125,
+      "videoMemoryMiB": 1099.4551391601562,
+      "environment": {
+        "familyWeights": [
+          0.0181349273771048,
+          0,
+          0.981865048408508,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.205492928624153,
+          0.375689953565598,
+          0.618037223815918,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:15:27Z"
+    },
+    {
+      "region": "africa",
+      "zoom": "regional",
+      "distanceKm": 52.5,
+      "beforeFps": 119.90966805006897,
+      "afterFps": 101.2334167009267,
+      "beforeGpuMs": 6.52210000356038,
+      "afterGpuMs": 6.45354443920983,
+      "tiles": 13,
+      "plants": 8210,
+      "rocks": 16238,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 6.187,
+        "maxUploadMs": 19.509
+      },
+      "loadingMaxMs": 56.549,
+      "startupMs": 2925,
+      "peakProcessMiB": 1272.55859375,
+      "videoMemoryMiB": 1047.0645141601562,
+      "environment": {
+        "familyWeights": [
+          0.0181349273771048,
+          0,
+          0.981865048408508,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.205492928624153,
+          0.375689953565598,
+          0.618037223815918,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:15:10Z"
+    },
+    {
+      "region": "africa",
+      "zoom": "strategic",
+      "distanceKm": 150,
+      "beforeFps": 132.08071893002875,
+      "afterFps": 140.32341428695057,
+      "beforeGpuMs": 5.85545554425981,
+      "afterGpuMs": 6.11528887483809,
+      "tiles": 13,
+      "plants": 5471,
+      "rocks": 2777,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 8.303,
+        "maxUploadMs": 24.352
+      },
+      "loadingMaxMs": 87.175,
+      "startupMs": 2829,
+      "peakProcessMiB": 1266.28515625,
+      "videoMemoryMiB": 1046.5534210205078,
+      "environment": {
+        "familyWeights": [
+          0.0181349273771048,
+          0,
+          0.981865048408508,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.205492928624153,
+          0.375689953565598,
+          0.618037223815918,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:14:50Z"
+    },
+    {
+      "region": "alps",
+      "zoom": "inspection",
+      "distanceKm": 4,
+      "beforeFps": 125.99315857148954,
+      "afterFps": 48.60184638414413,
+      "beforeGpuMs": 6.62515556017558,
+      "afterGpuMs": 18.1620555135939,
+      "tiles": 13,
+      "plants": 23450,
+      "rocks": 10356,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 9.098,
+        "maxUploadMs": 17.97
+      },
+      "loadingMaxMs": 60,
+      "startupMs": 3118,
+      "peakProcessMiB": 1290.76171875,
+      "videoMemoryMiB": 1100.0682983398438,
+      "environment": {
+        "familyWeights": [
+          0.281750231981277,
+          0.718249797821045,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.62602436542511,
+          1,
+          0.00392156885936856,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:10:01Z"
+    },
+    {
+      "region": "alps",
+      "zoom": "regional",
+      "distanceKm": 35,
+      "beforeFps": 109.85181600309052,
+      "afterFps": 51.0448454489691,
+      "beforeGpuMs": 5.84420000712077,
+      "afterGpuMs": 17.2474221335517,
+      "tiles": 13,
+      "plants": 23450,
+      "rocks": 10356,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 10.932,
+        "maxUploadMs": 26.584
+      },
+      "loadingMaxMs": 74.724,
+      "startupMs": 3305,
+      "peakProcessMiB": 1288.33203125,
+      "videoMemoryMiB": 1047.4276733398438,
+      "environment": {
+        "familyWeights": [
+          0.281750231981277,
+          0.718249797821045,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.62602436542511,
+          1,
+          0.00392156885936856,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:09:30Z"
+    },
+    {
+      "region": "alps",
+      "zoom": "strategic",
+      "distanceKm": 100,
+      "beforeFps": 89.75000137118066,
+      "afterFps": 74.3852370099613,
+      "beforeGpuMs": 6.04932219452328,
+      "afterGpuMs": 10.8893278121948,
+      "tiles": 13,
+      "plants": 14636,
+      "rocks": 4647,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 12.8,
+        "maxUploadMs": 26.268
+      },
+      "loadingMaxMs": 78.874,
+      "startupMs": 3403,
+      "peakProcessMiB": 1286.31640625,
+      "videoMemoryMiB": 1047.6969604492188,
+      "environment": {
+        "familyWeights": [
+          0.281750231981277,
+          0.718249797821045,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.62602436542511,
+          1,
+          0.00392156885936856,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:08:59Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "inspection",
+      "distanceKm": 6,
+      "beforeFps": 127.51849018107626,
+      "afterFps": 108.93015459004444,
+      "beforeGpuMs": 6.52500555780199,
+      "afterGpuMs": 8.18367220825619,
+      "tiles": 13,
+      "plants": 14567,
+      "rocks": 17740,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 7.997,
+        "maxUploadMs": 25.018
+      },
+      "loadingMaxMs": 87.044,
+      "startupMs": 3009,
+      "peakProcessMiB": 1294.1328125,
+      "videoMemoryMiB": 1099.8800964355469,
+      "environment": {
+        "familyWeights": [
+          0.356952726840973,
+          0,
+          0.643047273159027,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0933330506086349,
+          0.497255802154541,
+          0.488626182079315,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:13:58Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "regional",
+      "distanceKm": 52.5,
+      "beforeFps": 140.00602025887113,
+      "afterFps": 144.97411004018207,
+      "beforeGpuMs": 4.82732223404778,
+      "afterGpuMs": 5.15100002288818,
+      "tiles": 13,
+      "plants": 14567,
+      "rocks": 17740,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 9.368,
+        "maxUploadMs": 21.256
+      },
+      "loadingMaxMs": 156.87,
+      "startupMs": 3011,
+      "peakProcessMiB": 1279.94921875,
+      "videoMemoryMiB": 1047.4894714355469,
+      "environment": {
+        "familyWeights": [
+          0.356952726840973,
+          0,
+          0.643047273159027,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0933330506086349,
+          0.497255802154541,
+          0.488626182079315,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:13:41Z"
+    },
+    {
+      "region": "anatolia",
+      "zoom": "strategic",
+      "distanceKm": 150,
+      "beforeFps": 136.9133642656119,
+      "afterFps": 26.15297192928877,
+      "beforeGpuMs": 3.79786666631699,
+      "afterGpuMs": 27.4325166993671,
+      "tiles": 13,
+      "plants": 8609,
+      "rocks": 7591,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 7.761,
+        "maxUploadMs": 19.235
+      },
+      "loadingMaxMs": 162.038,
+      "startupMs": 3075,
+      "peakProcessMiB": 1279.4765625,
+      "videoMemoryMiB": 1047.0063781738281,
+      "environment": {
+        "familyWeights": [
+          0.356952726840973,
+          0,
+          0.643047273159027,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0933330506086349,
+          0.497255802154541,
+          0.488626182079315,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:13:02Z"
+    },
+    {
+      "region": "balkans",
+      "zoom": "inspection",
+      "distanceKm": 6,
+      "beforeFps": 107.39203222715561,
+      "afterFps": 13.463047300920797,
+      "beforeGpuMs": 8.12926665147146,
+      "afterGpuMs": 64.0064333597819,
+      "tiles": 13,
+      "plants": 23712,
+      "rocks": 8688,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 10.504,
+        "maxUploadMs": 21.17
+      },
+      "loadingMaxMs": 252.743,
+      "startupMs": 3146,
+      "peakProcessMiB": 1290.2109375,
+      "videoMemoryMiB": 1099.8857727050781,
+      "environment": {
+        "familyWeights": [
+          0.811385452747345,
+          0.188614547252655,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.52549022436142,
+          0.886274516582489,
+          0.113725490868092,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:12:30Z"
+    },
+    {
+      "region": "balkans",
+      "zoom": "regional",
+      "distanceKm": 52.5,
+      "beforeFps": 135.7120130766065,
+      "afterFps": 61.406998077960914,
+      "beforeGpuMs": 6.34265554745992,
+      "afterGpuMs": 13.9408000098334,
+      "tiles": 13,
+      "plants": 23712,
+      "rocks": 8688,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 8.997,
+        "maxUploadMs": 21.474
+      },
+      "loadingMaxMs": 67.247,
+      "startupMs": 3120,
+      "peakProcessMiB": 1294.26953125,
+      "videoMemoryMiB": 1047.4951477050781,
+      "environment": {
+        "familyWeights": [
+          0.811385452747345,
+          0.188614547252655,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.52549022436142,
+          0.886274516582489,
+          0.113725490868092,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:11:40Z"
+    },
+    {
+      "region": "balkans",
+      "zoom": "strategic",
+      "distanceKm": 150,
+      "beforeFps": 144.76912943084017,
+      "afterFps": 78.73599047939918,
+      "beforeGpuMs": 4.19917777776718,
+      "afterGpuMs": 7.55846992086192,
+      "tiles": 13,
+      "plants": 11837,
+      "rocks": 4363,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 9.827,
+        "maxUploadMs": 17.494
+      },
+      "loadingMaxMs": 51.779,
+      "startupMs": 3057,
+      "peakProcessMiB": 1279.12109375,
+      "videoMemoryMiB": 1047.0382080078125,
+      "environment": {
+        "familyWeights": [
+          0.811385452747345,
+          0.188614547252655,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.52549022436142,
+          0.886274516582489,
+          0.113725490868092,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:11:19Z"
+    },
+    {
+      "region": "east",
+      "zoom": "inspection",
+      "distanceKm": 12.8,
+      "beforeFps": 119.65984694176025,
+      "afterFps": 131.62484287284383,
+      "beforeGpuMs": 4.57028333213594,
+      "afterGpuMs": 6.56163334581587,
+      "tiles": 13,
+      "plants": 5718,
+      "rocks": 18560,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 7.516,
+        "maxUploadMs": 22.838
+      },
+      "loadingMaxMs": 85.522,
+      "startupMs": 2816,
+      "peakProcessMiB": 1294,
+      "videoMemoryMiB": 1099.1400451660156,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.47842276096344,
+          0.247063845396042,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:18:43Z"
+    },
+    {
+      "region": "east",
+      "zoom": "regional",
+      "distanceKm": 112,
+      "beforeFps": 144.17358499633565,
+      "afterFps": 143.94046622317003,
+      "beforeGpuMs": 3.25753333568573,
+      "afterGpuMs": 3.65734444061915,
+      "tiles": 13,
+      "plants": 2977,
+      "rocks": 9911,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.798,
+        "maxUploadMs": 18.305
+      },
+      "loadingMaxMs": 54.25,
+      "startupMs": 2946,
+      "peakProcessMiB": 1271.6953125,
+      "videoMemoryMiB": 1046.8042297363281,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.47842276096344,
+          0.247063845396042,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:18:27Z"
+    },
+    {
+      "region": "east",
+      "zoom": "strategic",
+      "distanceKm": 320,
+      "beforeFps": 115.32096708162995,
+      "afterFps": 143.8984192278986,
+      "beforeGpuMs": 4.09992333253225,
+      "afterGpuMs": 4.68288666804632,
+      "tiles": 13,
+      "plants": 0,
+      "rocks": 0,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 0,
+        "maxChunkMs": 0,
+        "maxUploadMs": 0
+      },
+      "loadingMaxMs": 78.093,
+      "startupMs": 2976,
+      "peakProcessMiB": 1242.4609375,
+      "videoMemoryMiB": 1046.0065002441406,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.47842276096344,
+          0.247063845396042,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:18:15Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "inspection",
+      "distanceKm": 7.2,
+      "beforeFps": 141.8433009773004,
+      "afterFps": 134.4068959698091,
+      "beforeGpuMs": 5.56140554216173,
+      "afterGpuMs": 6.43652222686344,
+      "tiles": 13,
+      "plants": 9507,
+      "rocks": 22588,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 7.149,
+        "maxUploadMs": 18.811
+      },
+      "loadingMaxMs": 80.459,
+      "startupMs": 2908,
+      "peakProcessMiB": 1293.375,
+      "videoMemoryMiB": 1099.9848175048828,
+      "environment": {
+        "familyWeights": [
+          0.0567473880946636,
+          0,
+          0.943252623081207,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0368620008230209,
+          0.164738371968269,
+          0.592123985290527,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:14:37Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "regional",
+      "distanceKm": 63,
+      "beforeFps": 144.43109794113482,
+      "afterFps": 144.0070275429442,
+      "beforeGpuMs": 3.21320555607478,
+      "afterGpuMs": 4.33798889981376,
+      "tiles": 13,
+      "plants": 4503,
+      "rocks": 11392,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.882,
+        "maxUploadMs": 19.996
+      },
+      "loadingMaxMs": 77.673,
+      "startupMs": 2891,
+      "peakProcessMiB": 1273.80078125,
+      "videoMemoryMiB": 1046.380142211914,
+      "environment": {
+        "familyWeights": [
+          0.0567473880946636,
+          0,
+          0.943252623081207,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0368620008230209,
+          0.164738371968269,
+          0.592123985290527,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:14:21Z"
+    },
+    {
+      "region": "egypt",
+      "zoom": "strategic",
+      "distanceKm": 180,
+      "beforeFps": 124.98897666664112,
+      "afterFps": 143.92630972941853,
+      "beforeGpuMs": 3.26298332876629,
+      "afterGpuMs": 4.19316664934158,
+      "tiles": 13,
+      "plants": 4503,
+      "rocks": 11392,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.676,
+        "maxUploadMs": 19.92
+      },
+      "loadingMaxMs": 79.453,
+      "startupMs": 3088,
+      "peakProcessMiB": 1264.21875,
+      "videoMemoryMiB": 1047.0665130615234,
+      "environment": {
+        "familyWeights": [
+          0.0567473880946636,
+          0,
+          0.943252623081207,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0368620008230209,
+          0.164738371968269,
+          0.592123985290527,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:14:09Z"
+    },
+    {
+      "region": "gaul",
+      "zoom": "inspection",
+      "distanceKm": 6.4,
+      "beforeFps": 122.1032695185468,
+      "afterFps": 95.88202675428184,
+      "beforeGpuMs": 6.4316555791431,
+      "afterGpuMs": 8.03991111914317,
+      "tiles": 13,
+      "plants": 20558,
+      "rocks": 8846,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 12.121,
+        "maxUploadMs": 24.659
+      },
+      "loadingMaxMs": 240.177,
+      "startupMs": 3200,
+      "peakProcessMiB": 1297.140625,
+      "videoMemoryMiB": 1099.7755889892578,
+      "environment": {
+        "familyWeights": [
+          0.259259253740311,
+          0.740740716457367,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          1,
+          0.00784313771873713,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:08:41Z"
+    },
+    {
+      "region": "gaul",
+      "zoom": "regional",
+      "distanceKm": 56,
+      "beforeFps": 139.94658705260832,
+      "afterFps": 115.20272800059905,
+      "beforeGpuMs": 3.96375555859672,
+      "afterGpuMs": 4.22630001174079,
+      "tiles": 13,
+      "plants": 12689,
+      "rocks": 3511,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 10.049,
+        "maxUploadMs": 22.803
+      },
+      "loadingMaxMs": 118.022,
+      "startupMs": 3066,
+      "peakProcessMiB": 1262.7734375,
+      "videoMemoryMiB": 1046.5847778320312,
+      "environment": {
+        "familyWeights": [
+          0.259259253740311,
+          0.740740716457367,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          1,
+          0.00784313771873713,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:08:23Z"
+    },
+    {
+      "region": "gaul",
+      "zoom": "strategic",
+      "distanceKm": 160,
+      "beforeFps": 144.67197237729806,
+      "afterFps": 142.27989300552045,
+      "beforeGpuMs": 4.0083555592431,
+      "afterGpuMs": 4.7431722217136,
+      "tiles": 13,
+      "plants": 12689,
+      "rocks": 3511,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 9.204,
+        "maxUploadMs": 22.117
+      },
+      "loadingMaxMs": 55.581,
+      "startupMs": 2898,
+      "peakProcessMiB": 1273.12890625,
+      "videoMemoryMiB": 1047.0650939941406,
+      "environment": {
+        "familyWeights": [
+          0.259259253740311,
+          0.740740716457367,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          1,
+          0.00784313771873713,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:08:11Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "inspection",
+      "distanceKm": 3.8,
+      "beforeFps": 103.90138142658907,
+      "afterFps": 51.1380924525572,
+      "beforeGpuMs": 8.57053890228272,
+      "afterGpuMs": 16.9939388751984,
+      "tiles": 13,
+      "plants": 19505,
+      "rocks": 9175,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 9.787,
+        "maxUploadMs": 21.01
+      },
+      "loadingMaxMs": 71.148,
+      "startupMs": 3001,
+      "peakProcessMiB": 1297.08984375,
+      "videoMemoryMiB": 1099.6587219238281,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.00313696777448058,
+          0.92392098903656,
+          0.207843139767647,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:11:05Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "regional",
+      "distanceKm": 33.25,
+      "beforeFps": 110.46150201868392,
+      "afterFps": 65.27872018893103,
+      "beforeGpuMs": 5.88736666043599,
+      "afterGpuMs": 12.921844514211,
+      "tiles": 13,
+      "plants": 19505,
+      "rocks": 9175,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 12.003,
+        "maxUploadMs": 20.021
+      },
+      "loadingMaxMs": 55.939,
+      "startupMs": 3018,
+      "peakProcessMiB": 1294.34765625,
+      "videoMemoryMiB": 1047.0180969238281,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.00313696777448058,
+          0.92392098903656,
+          0.207843139767647,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:10:38Z"
+    },
+    {
+      "region": "greece",
+      "zoom": "strategic",
+      "distanceKm": 95,
+      "beforeFps": 141.89138057160142,
+      "afterFps": 86.3524715996319,
+      "beforeGpuMs": 3.68687222268846,
+      "afterGpuMs": 7.08799444304572,
+      "tiles": 13,
+      "plants": 9155,
+      "rocks": 4085,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.857,
+        "maxUploadMs": 18.498
+      },
+      "loadingMaxMs": 64.442,
+      "startupMs": 3019,
+      "peakProcessMiB": 1279.55078125,
+      "videoMemoryMiB": 1046.3257141113281,
+      "environment": {
+        "familyWeights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.00313696777448058,
+          0.92392098903656,
+          0.207843139767647,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:10:15Z"
+    },
+    {
+      "region": "iberia",
+      "zoom": "inspection",
+      "distanceKm": 7.2,
+      "beforeFps": 140.62565918277738,
+      "afterFps": 124.77384740158479,
+      "beforeGpuMs": 5.4834388812383,
+      "afterGpuMs": 7.06887776056925,
+      "tiles": 13,
+      "plants": 13826,
+      "rocks": 18254,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 8.516,
+        "maxUploadMs": 24.283
+      },
+      "loadingMaxMs": 71.908,
+      "startupMs": 2827,
+      "peakProcessMiB": 1288.515625,
+      "videoMemoryMiB": 1099.8662414550781,
+      "environment": {
+        "familyWeights": [
+          0.511028587818146,
+          0,
+          0.488971382379532,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0196078438311815,
+          0.576470613479614,
+          0.447058826684952,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:07:19Z"
+    },
+    {
+      "region": "iberia",
+      "zoom": "regional",
+      "distanceKm": 63,
+      "beforeFps": 143.7450537726289,
+      "afterFps": 144.5080904460081,
+      "beforeGpuMs": 3.23703333404329,
+      "afterGpuMs": 4.18107221259011,
+      "tiles": 13,
+      "plants": 8402,
+      "rocks": 7798,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 8.641,
+        "maxUploadMs": 19.718
+      },
+      "loadingMaxMs": 80.535,
+      "startupMs": 2892,
+      "peakProcessMiB": 1257.16015625,
+      "videoMemoryMiB": 1046.2563781738281,
+      "environment": {
+        "familyWeights": [
+          0.511028587818146,
+          0,
+          0.488971382379532,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0196078438311815,
+          0.576470613479614,
+          0.447058826684952,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:07:04Z"
+    },
+    {
+      "region": "iberia",
+      "zoom": "strategic",
+      "distanceKm": 180,
+      "beforeFps": 144.4946340312157,
+      "afterFps": 144.44755630846612,
+      "beforeGpuMs": 3.51907778051164,
+      "afterGpuMs": 4.18148333364063,
+      "tiles": 13,
+      "plants": 8402,
+      "rocks": 7798,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.803,
+        "maxUploadMs": 22.011
+      },
+      "loadingMaxMs": 233.224,
+      "startupMs": 2942,
+      "peakProcessMiB": 1254.6640625,
+      "videoMemoryMiB": 1047.0063781738281,
+      "environment": {
+        "familyWeights": [
+          0.511028587818146,
+          0,
+          0.488971382379532,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0196078438311815,
+          0.576470613479614,
+          0.447058826684952,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:06:53Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "inspection",
+      "distanceKm": 3.6,
+      "beforeFps": 143.61980963992116,
+      "afterFps": 86.07000073159502,
+      "beforeGpuMs": 3.97595556179682,
+      "afterGpuMs": 3.56623888545566,
+      "tiles": 13,
+      "plants": 16786,
+      "rocks": 6653,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 8.826,
+        "maxUploadMs": 18.114
+      },
+      "loadingMaxMs": 169.45,
+      "startupMs": 2741,
+      "peakProcessMiB": 1274.8203125,
+      "videoMemoryMiB": 1099.3961791992188,
+      "environment": {
+        "familyWeights": [
+          0.976889789104462,
+          0.0231102053076029,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.733791947364807,
+          0.22910076379776,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:05:53Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "regional",
+      "distanceKm": 31.5,
+      "beforeFps": 119.25671266221401,
+      "afterFps": 143.9249287571604,
+      "beforeGpuMs": 4.38644444147746,
+      "afterGpuMs": 5.23044443660312,
+      "tiles": 13,
+      "plants": 16786,
+      "rocks": 6653,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 11.045,
+        "maxUploadMs": 17.727
+      },
+      "loadingMaxMs": 80.292,
+      "startupMs": 2854,
+      "peakProcessMiB": 1279.3671875,
+      "videoMemoryMiB": 1046.7555541992188,
+      "environment": {
+        "familyWeights": [
+          0.976889789104462,
+          0.0231102053076029,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.733791947364807,
+          0.22910076379776,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:05:36Z"
+    },
+    {
+      "region": "italy",
+      "zoom": "strategic",
+      "distanceKm": 90,
+      "beforeFps": 133.99068169248088,
+      "afterFps": 124.2741183269113,
+      "beforeGpuMs": 3.95034998522864,
+      "afterGpuMs": 4.08343889315923,
+      "tiles": 13,
+      "plants": 9808,
+      "rocks": 3947,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 8.54,
+        "maxUploadMs": 19.646
+      },
+      "loadingMaxMs": 204.918,
+      "startupMs": 3013,
+      "peakProcessMiB": 1279.94921875,
+      "videoMemoryMiB": 1046.4944915771484,
+      "environment": {
+        "familyWeights": [
+          0.976889789104462,
+          0.0231102053076029,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.733791947364807,
+          0.22910076379776,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:05:19Z"
+    },
+    {
+      "region": "levant",
+      "zoom": "inspection",
+      "distanceKm": 4.4,
+      "beforeFps": 131.89383425634603,
+      "afterFps": 123.91360468118062,
+      "beforeGpuMs": 6.09764445092943,
+      "afterGpuMs": 6.94796667893728,
+      "tiles": 13,
+      "plants": 7987,
+      "rocks": 16879,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.337,
+        "maxUploadMs": 17.96
+      },
+      "loadingMaxMs": 86.961,
+      "startupMs": 2798,
+      "peakProcessMiB": 1297.61328125,
+      "videoMemoryMiB": 1099.4259338378906,
+      "environment": {
+        "familyWeights": [
+          0.351290822029114,
+          0,
+          0.648709177970886,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0125497858971357,
+          0.509802997112274,
+          0.490197032690048,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:16:11Z"
+    },
+    {
+      "region": "levant",
+      "zoom": "regional",
+      "distanceKm": 38.5,
+      "beforeFps": 133.95777502089385,
+      "afterFps": 143.97454530039093,
+      "beforeGpuMs": 4.24848888847563,
+      "afterGpuMs": 4.97005001174079,
+      "tiles": 13,
+      "plants": 7987,
+      "rocks": 16879,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 6.249,
+        "maxUploadMs": 24.152
+      },
+      "loadingMaxMs": 77.564,
+      "startupMs": 3019,
+      "peakProcessMiB": 1265.58984375,
+      "videoMemoryMiB": 1046.7853088378906,
+      "environment": {
+        "familyWeights": [
+          0.351290822029114,
+          0,
+          0.648709177970886,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0125497858971357,
+          0.509802997112274,
+          0.490197032690048,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:15:55Z"
+    },
+    {
+      "region": "levant",
+      "zoom": "strategic",
+      "distanceKm": 110,
+      "beforeFps": 144.46761276901066,
+      "afterFps": 143.93643766912533,
+      "beforeGpuMs": 2.91370000441869,
+      "afterGpuMs": 3.37775555451711,
+      "tiles": 13,
+      "plants": 3913,
+      "rocks": 5706,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.081,
+        "maxUploadMs": 16.95
+      },
+      "loadingMaxMs": 80.235,
+      "startupMs": 2858,
+      "peakProcessMiB": 1272.3671875,
+      "videoMemoryMiB": 1046.6047058105469,
+      "environment": {
+        "familyWeights": [
+          0.351290822029114,
+          0,
+          0.648709177970886,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0125497858971357,
+          0.509802997112274,
+          0.490197032690048,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:15:39Z"
+    },
+    {
+      "region": "mesopotamia",
+      "zoom": "inspection",
+      "distanceKm": 8,
+      "beforeFps": 116.35453485335452,
+      "afterFps": 117.80305162260608,
+      "beforeGpuMs": 6.64944444762336,
+      "afterGpuMs": 7.49479998747508,
+      "tiles": 13,
+      "plants": 12979,
+      "rocks": 18820,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 7.729,
+        "maxUploadMs": 22.867
+      },
+      "loadingMaxMs": 83.833,
+      "startupMs": 2875,
+      "peakProcessMiB": 1288.68359375,
+      "videoMemoryMiB": 1100.0030212402344,
+      "environment": {
+        "familyWeights": [
+          0.68359375,
+          0,
+          0.316406279802322,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0941131040453911,
+          0.341179817914963,
+          0.400000005960464,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:16:50Z"
+    },
+    {
+      "region": "mesopotamia",
+      "zoom": "regional",
+      "distanceKm": 70,
+      "beforeFps": 144.43353168871684,
+      "afterFps": 143.89627956169193,
+      "beforeGpuMs": 3.66459999746747,
+      "afterGpuMs": 4.13112777339088,
+      "tiles": 13,
+      "plants": 5245,
+      "rocks": 10921,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 6.4,
+        "maxUploadMs": 24.309
+      },
+      "loadingMaxMs": 76.334,
+      "startupMs": 2869,
+      "peakProcessMiB": 1282.7109375,
+      "videoMemoryMiB": 1046.7154541015625,
+      "environment": {
+        "familyWeights": [
+          0.68359375,
+          0,
+          0.316406279802322,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0941131040453911,
+          0.341179817914963,
+          0.400000005960464,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:16:34Z"
+    },
+    {
+      "region": "mesopotamia",
+      "zoom": "strategic",
+      "distanceKm": 200,
+      "beforeFps": 143.9537965894467,
+      "afterFps": 143.92969322345414,
+      "beforeGpuMs": 3.68611666679382,
+      "afterGpuMs": 4.07804333368937,
+      "tiles": 13,
+      "plants": 0,
+      "rocks": 0,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 0,
+        "maxChunkMs": 0,
+        "maxUploadMs": 0
+      },
+      "loadingMaxMs": 79.805,
+      "startupMs": 2963,
+      "peakProcessMiB": 1238.1875,
+      "videoMemoryMiB": 1046.1942443847656,
+      "environment": {
+        "familyWeights": [
+          0.68359375,
+          0,
+          0.316406279802322,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0941131040453911,
+          0.341179817914963,
+          0.400000005960464,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:16:22Z"
+    },
+    {
+      "region": "persia",
+      "zoom": "inspection",
+      "distanceKm": 8,
+      "beforeFps": 143.02855008780367,
+      "afterFps": 135.68868793561725,
+      "beforeGpuMs": 5.25547776752048,
+      "afterGpuMs": 6.3748333480623,
+      "tiles": 13,
+      "plants": 3028,
+      "rocks": 29357,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.058,
+        "maxUploadMs": 17.626
+      },
+      "loadingMaxMs": 81.099,
+      "startupMs": 2842,
+      "peakProcessMiB": 1288.046875,
+      "videoMemoryMiB": 1099.8848571777344,
+      "environment": {
+        "familyWeights": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0384299121797085,
+          0.225881561636925,
+          0.734901785850525,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:18:05Z"
+    },
+    {
+      "region": "persia",
+      "zoom": "regional",
+      "distanceKm": 70,
+      "beforeFps": 136.0246053397215,
+      "afterFps": 144.0094470197245,
+      "beforeGpuMs": 3.45161666340298,
+      "afterGpuMs": 3.84619443946415,
+      "tiles": 13,
+      "plants": 1422,
+      "rocks": 14778,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 4.101,
+        "maxUploadMs": 20.04
+      },
+      "loadingMaxMs": 54.967,
+      "startupMs": 2903,
+      "peakProcessMiB": 1271.5859375,
+      "videoMemoryMiB": 1046.5063781738281,
+      "environment": {
+        "familyWeights": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0384299121797085,
+          0.225881561636925,
+          0.734901785850525,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:17:49Z"
+    },
+    {
+      "region": "persia",
+      "zoom": "strategic",
+      "distanceKm": 200,
+      "beforeFps": 116.2205990939443,
+      "afterFps": 143.90898044804638,
+      "beforeGpuMs": 3.89602999607722,
+      "afterGpuMs": 4.40990000009537,
+      "tiles": 13,
+      "plants": 0,
+      "rocks": 0,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 0,
+        "maxChunkMs": 0,
+        "maxUploadMs": 0
+      },
+      "loadingMaxMs": 57.806,
+      "startupMs": 2954,
+      "peakProcessMiB": 1241.65234375,
+      "videoMemoryMiB": 1046.0119323730469,
+      "environment": {
+        "familyWeights": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0384299121797085,
+          0.225881561636925,
+          0.734901785850525,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:17:38Z"
+    },
+    {
+      "region": "pyrenees",
+      "zoom": "inspection",
+      "distanceKm": 4,
+      "beforeFps": 122.789448839094,
+      "afterFps": 113.56251932140088,
+      "beforeGpuMs": 6.47076665560404,
+      "afterGpuMs": 7.82188331551022,
+      "tiles": 13,
+      "plants": 20840,
+      "rocks": 10327,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 8.746,
+        "maxUploadMs": 18.125
+      },
+      "loadingMaxMs": 86.588,
+      "startupMs": 2970,
+      "peakProcessMiB": 1298.7109375,
+      "videoMemoryMiB": 1099.8105163574219,
+      "environment": {
+        "familyWeights": [
+          0.783999919891357,
+          0.216000109910965,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.548242211341858,
+          0.0227450504899025,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:08:01Z"
+    },
+    {
+      "region": "pyrenees",
+      "zoom": "regional",
+      "distanceKm": 35,
+      "beforeFps": 143.080848628411,
+      "afterFps": 141.28473347812414,
+      "beforeGpuMs": 5.81423332426283,
+      "afterGpuMs": 6.24867222309113,
+      "tiles": 13,
+      "plants": 20840,
+      "rocks": 10327,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 8.296,
+        "maxUploadMs": 19.025
+      },
+      "loadingMaxMs": 92.769,
+      "startupMs": 3028,
+      "peakProcessMiB": 1302.91796875,
+      "videoMemoryMiB": 1047.1698913574219,
+      "environment": {
+        "familyWeights": [
+          0.783999919891357,
+          0.216000109910965,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.548242211341858,
+          0.0227450504899025,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:07:45Z"
+    },
+    {
+      "region": "pyrenees",
+      "zoom": "strategic",
+      "distanceKm": 100,
+      "beforeFps": 145.16480237425105,
+      "afterFps": 144.626173480702,
+      "beforeGpuMs": 3.86576664845149,
+      "afterGpuMs": 4.43335000806385,
+      "tiles": 13,
+      "plants": 11304,
+      "rocks": 4896,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 9.305,
+        "maxUploadMs": 21.89
+      },
+      "loadingMaxMs": 86.75,
+      "startupMs": 2899,
+      "peakProcessMiB": 1260.6953125,
+      "videoMemoryMiB": 1047.0063781738281,
+      "environment": {
+        "familyWeights": [
+          0.783999919891357,
+          0.216000109910965,
+          0,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0,
+          0.548242211341858,
+          0.0227450504899025,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:07:31Z"
+    },
+    {
+      "region": "sicily",
+      "zoom": "inspection",
+      "distanceKm": 3.6,
+      "beforeFps": 115.06376450282858,
+      "afterFps": 138.91268411718667,
+      "beforeGpuMs": 4.65847222672568,
+      "afterGpuMs": 6.25218887594011,
+      "tiles": 13,
+      "plants": 14362,
+      "rocks": 8292,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 7.984,
+        "maxUploadMs": 20.722
+      },
+      "loadingMaxMs": 84.112,
+      "startupMs": 3081,
+      "peakProcessMiB": 1322.3671875,
+      "videoMemoryMiB": 1099.3692779541016,
+      "environment": {
+        "familyWeights": [
+          0.879134178161621,
+          0,
+          0.120865792036057,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0172798447310925,
+          0.658775329589844,
+          0.336813896894455,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:06:41Z"
+    },
+    {
+      "region": "sicily",
+      "zoom": "regional",
+      "distanceKm": 31.5,
+      "beforeFps": 124.19334696240324,
+      "afterFps": 144.4262306920183,
+      "beforeGpuMs": 4.67047222322888,
+      "afterGpuMs": 6.05112222035726,
+      "tiles": 13,
+      "plants": 14362,
+      "rocks": 8292,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 21,
+        "maxChunkMs": 8.363,
+        "maxUploadMs": 22.541
+      },
+      "loadingMaxMs": 197.177,
+      "startupMs": 2988,
+      "peakProcessMiB": 1298.38671875,
+      "videoMemoryMiB": 1046.7286529541016,
+      "environment": {
+        "familyWeights": [
+          0.879134178161621,
+          0,
+          0.120865792036057,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0172798447310925,
+          0.658775329589844,
+          0.336813896894455,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:06:24Z"
+    },
+    {
+      "region": "sicily",
+      "zoom": "strategic",
+      "distanceKm": 90,
+      "beforeFps": 144.3455054017296,
+      "afterFps": 143.98905683168084,
+      "beforeGpuMs": 4.3518111175961,
+      "afterGpuMs": 4.42212220960193,
+      "tiles": 13,
+      "plants": 6584,
+      "rocks": 2799,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 12,
+        "maxChunkMs": 6.771,
+        "maxUploadMs": 19.009
+      },
+      "loadingMaxMs": 78.599,
+      "startupMs": 2896,
+      "peakProcessMiB": 1284.70703125,
+      "videoMemoryMiB": 1046.2382354736328,
+      "environment": {
+        "familyWeights": [
+          0.879134178161621,
+          0,
+          0.120865792036057,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0172798447310925,
+          0.658775329589844,
+          0.336813896894455,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:06:06Z"
+    },
+    {
+      "region": "zagros",
+      "zoom": "inspection",
+      "distanceKm": 8,
+      "beforeFps": 139.51422696329473,
+      "afterFps": 123.40515970684416,
+      "beforeGpuMs": 6.18316111299727,
+      "afterGpuMs": 7.02816667026944,
+      "tiles": 13,
+      "plants": 6524,
+      "rocks": 25876,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 18,
+        "maxChunkMs": 5.761,
+        "maxUploadMs": 19.615
+      },
+      "loadingMaxMs": 84.938,
+      "startupMs": 2895,
+      "peakProcessMiB": 1289.8828125,
+      "videoMemoryMiB": 1099.8857727050781,
+      "environment": {
+        "familyWeights": [
+          0.0496214963495731,
+          0,
+          0.950378477573395,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0431441962718964,
+          0.294122219085693,
+          0.596075832843781,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:17:28Z"
+    },
+    {
+      "region": "zagros",
+      "zoom": "regional",
+      "distanceKm": 70,
+      "beforeFps": 144.3203912686163,
+      "afterFps": 143.91618321489563,
+      "beforeGpuMs": 3.39537777503332,
+      "afterGpuMs": 3.96378334230847,
+      "tiles": 13,
+      "plants": 3140,
+      "rocks": 13060,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 9,
+        "maxChunkMs": 5.089,
+        "maxUploadMs": 18.496
+      },
+      "loadingMaxMs": 77.38,
+      "startupMs": 2820,
+      "peakProcessMiB": 1274.00390625,
+      "videoMemoryMiB": 1046.5063781738281,
+      "environment": {
+        "familyWeights": [
+          0.0496214963495731,
+          0,
+          0.950378477573395,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0431441962718964,
+          0.294122219085693,
+          0.596075832843781,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:17:12Z"
+    },
+    {
+      "region": "zagros",
+      "zoom": "strategic",
+      "distanceKm": 200,
+      "beforeFps": 143.23589949996347,
+      "afterFps": 143.46776900924021,
+      "beforeGpuMs": 3.94186665376027,
+      "afterGpuMs": 4.46844665288925,
+      "tiles": 13,
+      "plants": 0,
+      "rocks": 0,
+      "sceneryWork": {
+        "cancelled": 0,
+        "cellsBuilt": 0,
+        "maxChunkMs": 0,
+        "maxUploadMs": 0
+      },
+      "loadingMaxMs": 80.259,
+      "startupMs": 2908,
+      "peakProcessMiB": 1235.21875,
+      "videoMemoryMiB": 1046.0533752441406,
+      "environment": {
+        "familyWeights": [
+          0.0496214963495731,
+          0,
+          0.950378477573395,
+          0
+        ],
+        "order": [
+          "Mediterranean",
+          "Temperate",
+          "Arid/steppe",
+          "River alluvium"
+        ],
+        "sourceClimate": [
+          0.0431441962718964,
+          0.294122219085693,
+          0.596075832843781,
+          0
+        ]
+      },
+      "recordedAtUtc": "2026-10-27T17:17:00Z"
+    }
+  ]
+}
