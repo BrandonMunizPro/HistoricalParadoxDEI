@@ -1,0 +1,50 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+const project='godot-prototype',root=project+'/evidence/visual-reset-20261028';
+const json=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
+const write=(p,v)=>fs.writeFileSync(root+'/'+p,JSON.stringify(v,null,2)+'\n');
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const profile=json(root+'/baseline/performance.json');
+// The first capture recorded this duration after the 600-frame sample loop.
+// Preserve that original number and derive readiness from the recorded intervals.
+for(const view of profile.views)if(view.readinessMeasurementCorrection===undefined){
+ view.originalReadinessPlusSamplingMs=view.readinessMs;
+ view.readinessMs=view.firstRenderSamplesMs.reduce((a,b)=>a+b,0);
+ view.readinessMeasurementCorrection='Readiness duration reconstructed from consecutive first-render intervals; original total including steady sampling retained separately. Capture tool corrected for subsequent runs.';
+}
+fs.writeFileSync(root+'/baseline/performance.json',JSON.stringify(profile,null,2)+'\n');
+const nav=json(root+'/navigation/navigation.json');
+function statistics(values){const s=[...values].sort((a,b)=>a-b),tail=s.slice(Math.floor(s.length*.99));return {samples:s.length,averageFps:1000/(s.reduce((a,b)=>a+b,0)/s.length),onePercentLowFps:1000/(tail.reduce((a,b)=>a+b,0)/tail.length),maxMs:s.at(-1),over16_67ms:s.filter(x=>x>16.667).length,over33_33ms:s.filter(x=>x>33.333).length};}
+const previous={close:'roma-landscape-final2-architecture/godot-profile-roma-east-regional',regional:'roma-landscape-final2/godot-profile-roma-close',strategic:'roma-landscape-final2/godot-profile-roma-strategic'};
+const matches=profile.views.map(v=>{const old=json(project+'/evidence/repair-20261026/'+previous[v.view.name]+'.json');assert.deepEqual(v.cameraPosition,old.camera.position);assert.equal(v.fov,old.camera.fov);assert.equal(v.view.distance,old.camera.distance);assert.equal(v.view.pitch,old.camera.pitch);assert.equal(v.view.yaw,old.camera.yaw);return {name:v.view.name,position:v.cameraPosition,fov:v.fov,distanceKm:v.view.distance,pitch:v.view.pitch,yaw:v.view.yaw,exactCameraPositionMatch:true,previous:'../repair-20261026/'+previous[v.view.name]+'.png',fresh:'baseline/'+v.view.name+'.png',comparisonType:'Same campaign baseline recaptured; not an overhaul before/after',earlierMeanFrameMs:old.settledFrameStats.meanMs,freshMeanFrameMs:v.steady.meanMs};});
+write('camera-matches.json',matches);
+const times=nav.stages.flatMap(x=>x.frames);
+write('navigation-summary.json',{method:'Derived from existing roma-profile.gd raw stage frames; warmed zoom round trip plus pan/orbit',...statistics(times),stages:nav.stages.map(s=>({distanceKm:s.distance,elapsedMs:s.elapsedMs,...statistics(s.frames)})),firstReadiness:statistics(nav.firstReadiness.frames),note:'Existing passed flag records route completion only; onePercentLowFps below 60 fails that performance target. SourceRevision diagnostic-unversioned in the original benchmark is supplemented by this package production-source-manifest.json.'});
+function dimensions(p){
+ const b=fs.readFileSync(p);
+ if(b[0]===137&&b.toString('ascii',1,4)==='PNG')return {width:b.readUInt32BE(16),height:b.readUInt32BE(20)};
+ if(b[0]===255&&b[1]===216){let i=2;while(i<b.length){if(b[i]!==255){i++;continue;}const marker=b[i+1];i+=2;if(marker===0xd8||marker===0xd9)continue;const size=b.readUInt16BE(i);if([0xc0,0xc1,0xc2,0xc3].includes(marker))return {width:b.readUInt16BE(i+5),height:b.readUInt16BE(i+3)};i+=size;}}
+ throw Error('Unknown image '+p);
+}
+const inventory=[];
+for(const folder of ['materials','assets/quality','assets/foundation','assets/roma','assets/environment','assets/slice']){
+ if(!fs.existsSync(project+'/'+folder))continue;
+ for(const f of fs.readdirSync(project+'/'+folder))if(/\.(png|jpg)$/.test(f)){const p=project+'/'+folder+'/'+f;inventory.push({file:folder+'/'+f,...dimensions(p),bytes:fs.statSync(p).size});}
+}
+inventory.push({file:'data/roma-landscape-mask.png',...dimensions(project+'/data/roma-landscape-mask.png')});
+for(const f of fs.readdirSync(root+'/source-evaluation'))if(/\.png$/.test(f)&&!f.startsWith('godot-'))inventory.push({file:'source-evaluation/'+f,...dimensions(root+'/source-evaluation/'+f),bytes:fs.statSync(root+'/source-evaluation/'+f).size});
+write('texture-inventory.json',inventory);
+const sources=[];
+for(const f of fs.readdirSync(project))if(fs.statSync(project+'/'+f).isFile()&&/\.(gd|gdshader|gdshaderinc|godot|tscn)$/.test(f))sources.push(f);
+for(const f of ['data/visual-settings.json','data/roma-presentation.json','data/roma-terrain.json','data/roma-views.json','data/world.json'])sources.push(f);
+write('production-source-manifest.json',{recordedAtUtc:new Date().toISOString(),purpose:'Reproduction fingerprint of untouched production source; Git status separately establishes that production files were not edited',files:sources.map(p=>({path:project+'/'+p,sha256:hash(project+'/'+p)}))});
+fs.copyFileSync(project+'/evidence/final-integrity.json',root+'/integrity.json');
+const downloaded=json(root+'/source-evaluation/download-manifest.json');
+for(const f of downloaded){assert.equal(hash(root+'/source-evaluation/'+f.file),f.sha256);}
+write('validation.json',{protectedSources:json(root+'/integrity.json'),exactMatchedCameras:3,staticMeshVariantsConverted:4,downloadedFilesHashVerified:downloaded.length,baselineGodotRunCompleted:true,isolatedImportRendered:true,navigationRouteCompleted:nav.passed,artisticAcceptance:false,highQualityRomaShowcaseDelivered:false,afterComparisonDelivered:false,performanceOfReplacementMeasured:false});
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const rows=profile.views.map(v=>`<tr><td>${esc(v.view.name)}</td><td>${v.steady.averageFps.toFixed(1)}</td><td>${v.steady.onePercentLowFps.toFixed(1)}</td><td>${v.steady.maxMs.toFixed(2)} ms</td><td>${v.drawCalls}</td></tr>`).join('');
+const cards=matches.map(m=>`<article><h2>${esc(m.name)} baseline • ${m.distanceKm} km</h2><p>Exact camera match: position, distance, pitch, yaw and 42° FOV. No after scene exists.</p><div class="pair"><figure><a href="${m.previous}"><img src="${m.previous}" alt="Earlier Roma ${m.name} baseline" loading="lazy"></a><figcaption>Earlier campaign baseline</figcaption></figure><figure><a href="${m.fresh}"><img src="${m.fresh}" alt="Fresh unchanged Roma ${m.name} baseline" loading="lazy"></a><figcaption>Fresh baseline recapture • unchanged art</figcaption></figure></div></article>`).join('');
+fs.writeFileSync(root+'/index.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Roma visual reset — audit; showcase not delivered</title><style>body{margin:0;background:#11181d;color:#e4e8e5;font:16px/1.6 system-ui}main{max-width:1500px;margin:auto;padding:36px}h1{font-size:36px;line-height:1.2}h2{font-size:23px}a{color:#b6d8e9}.status{border-left:5px solid #d58d6c;background:#28201e;padding:20px;max-width:1000px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}img{width:100%;display:block}figcaption{padding:8px;background:#202d34}article{margin:40px 0}table{border-collapse:collapse}td,th{padding:10px 22px;border-bottom:1px solid #40515b;text-align:left}p{max-width:1000px}.links{display:flex;gap:22px;flex-wrap:wrap}@media(max-width:800px){.pair{grid-template-columns:1fr}main{padding:20px}}</style><main><p>HISTORICAL PARADOX DEI • 28 OCTOBER 2026</p><h1>Roma visual quality reset</h1><div class="status"><strong>Showcase not delivered. Artistic acceptance not demonstrated.</strong><p>Rendering audit, fresh baseline evidence and a rejected asset import test. The campaign scene was left unchanged at the asset-quality gate. These pairs are baseline recaptures; they must not be represented as an overhaul.</p></div><p class="links"><a href="REVIEW.md">Full audit and stop reason</a><a href="ASSETS.md">Sources and licenses</a><a href="baseline/performance.json">Raw frame samples</a><a href="navigation-summary.json">Navigation</a><a href="validation.json">Validation</a></p><h2>Current baseline performance • RTX 3060 Laptop / 1920×1080</h2><table><tr><th>View</th><th>Average FPS</th><th>1% low</th><th>Worst settled</th><th>Draw calls</th></tr>${rows}</table><p>600 settled samples per view, same process; wall-clock frames include presentation and scheduling. First loading has a 275 ms stall. Warm navigation: 98.1 average / 55.5 FPS 1% low, below the 60 FPS low-end target. No replacement-scene comparison is available.</p>${cards}<article><h2>Rejected architecture import evaluation</h2><p>Four 0 A.D. base house meshes, actually rendered by Godot in a separate inspection scene. These improve silhouette variety but were not established as a sufficiently modern, period-suitable art kit. Material behavior is approximated; this is not the complete original actor or a Roma after screenshot.</p><a href="source-evaluation/godot-house-evaluation.png"><img src="source-evaluation/godot-house-evaluation.png" alt="Four imported 0 A.D. house meshes in isolated Godot inspection lighting"></a><p>Geometry, textures and adapted render: <a href="https://wildfiregames.com/">Wildfire Games</a> and 0 A.D. contributors, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Static extraction, coordinate/UV conversion, triangulation and inspection materials by this experiment. <a href="source-evaluation/LICENSE.txt">Upstream license</a> • <a href="source-evaluation/download-manifest.json">Source URLs and hashes</a></p></article><p>Protected validation: 460 source files unchanged; 35 exact settlement coordinates; 687 retained research records. These checks do not establish visual success. No commits, pushes, gameplay changes, The Rev edits or global asset expansion.</p></main></html>`);
+console.log({cameraMatches:matches.length,textureFiles:inventory.length,verifiedDownloads:downloaded.length,artisticAcceptance:false});

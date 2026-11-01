@@ -8,7 +8,13 @@ uniform float camera_distance=1000.0;
 uniform vec2 coarse_transition_km=vec2(8.0,35.0);
 uniform vec2 local_transition_km=vec2(12.0,32.0);
 uniform bool woody=false;
+uniform bool landscape_enabled=false;
+uniform vec4 landscape_rect=vec4(0.);
 void vertex(){
+ vec2 origin=MODEL_MATRIX[3].xz;
+ vec2 edge=min(origin-landscape_rect.xy,landscape_rect.zw-origin);
+ float scope=landscape_enabled?smoothstep(0.,2.,min(edge.x,edge.y)):0.;
+ VERTEX*=mix(1.,.5,scope*INSTANCE_CUSTOM.y);
  crown_height=VERTEX.y;
  stand_proxy=INSTANCE_CUSTOM.x;
  // Coarse canopy proxies shrink continuously as the existing local cells take

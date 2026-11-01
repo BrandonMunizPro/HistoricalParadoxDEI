@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/holm-oak-branch.png" id="1_v5nvk"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.45
+alpha_antialiasing_mode = 1
+alpha_antialiasing_edge = 0.3
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_v5nvk")
+roughness = 0.82
+backlight_enabled = true
+backlight = Color(0.22, 0.25, 0.12, 1)
+texture_filter = 5

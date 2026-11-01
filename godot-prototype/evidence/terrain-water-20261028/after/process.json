@@ -1,0 +1,503 @@
+{
+    "gpuScope":  "Device-wide",
+    "elapsedMs":  95442,
+    "exitCode":  0,
+    "peakWorkingSetBytes":  1607475200,
+    "arguments":  [
+                      "--path",
+                      "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                      "--resolution",
+                      "1920x1080",
+                      "--script",
+                      "res://tools/landscape-profile.gd",
+                      "--",
+                      "--settlement-development",
+                      "--settlement-identities",
+                      "--automation-input-lock",
+                      "--output=res://evidence/terrain-water-20261028/after",
+                      "--landscape-quality",
+                      "--reference-before=res://evidence/terrain-water-20261028/before/performance.json"
+                  ],
+    "gpuSamples":  [
+                       {
+                           "deviceWideCsv":  [
+                                                 "1402 MiB, 7 %, 55, 1425 MHz, 26.12 W"
+                                             ],
+                           "elapsedMs":  1248
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1786 MiB, 3 %, 56, 1425 MHz, 25.83 W"
+                                             ],
+                           "elapsedMs":  2456
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2038 MiB, 2 %, 56, 1425 MHz, 25.81 W"
+                                             ],
+                           "elapsedMs":  3636
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2584 MiB, 28 %, 54, 375 MHz, 15.93 W"
+                                             ],
+                           "elapsedMs":  4833
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2584 MiB, 4 %, 54, 247 MHz, 14.92 W"
+                                             ],
+                           "elapsedMs":  6039
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2595 MiB, 99 %, 65, 1687 MHz, 88.11 W"
+                                             ],
+                           "elapsedMs":  7238
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 59 %, 69, 1672 MHz, 90.79 W"
+                                             ],
+                           "elapsedMs":  8439
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 91 %, 70, 1620 MHz, 86.59 W"
+                                             ],
+                           "elapsedMs":  9636
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 92 %, 72, 1590 MHz, 90.26 W"
+                                             ],
+                           "elapsedMs":  10825
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 84 %, 73, 1567 MHz, 86.60 W"
+                                             ],
+                           "elapsedMs":  12011
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 99 %, 73, 1590 MHz, 85.72 W"
+                                             ],
+                           "elapsedMs":  13180
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 99 %, 73, 1522 MHz, 84.97 W"
+                                             ],
+                           "elapsedMs":  14386
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 99 %, 74, 1492 MHz, 85.02 W"
+                                             ],
+                           "elapsedMs":  15576
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 2 %, 70, 1980 MHz, 54.29 W"
+                                             ],
+                           "elapsedMs":  16753
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 99 %, 75, 1552 MHz, 90.52 W"
+                                             ],
+                           "elapsedMs":  17929
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2597 MiB, 5 %, 68, 1875 MHz, 44.59 W"
+                                             ],
+                           "elapsedMs":  19104
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2599 MiB, 1 %, 63, 1237 MHz, 23.16 W"
+                                             ],
+                           "elapsedMs":  20347
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 2 %, 61, 802 MHz, 19.81 W"
+                                             ],
+                           "elapsedMs":  21563
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 90 %, 74, 1507 MHz, 86.67 W"
+                                             ],
+                           "elapsedMs":  22763
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 99 %, 75, 1522 MHz, 87.53 W"
+                                             ],
+                           "elapsedMs":  23933
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 98 %, 75, 1545 MHz, 87.79 W"
+                                             ],
+                           "elapsedMs":  25133
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 99 %, 77, 1560 MHz, 86.16 W"
+                                             ],
+                           "elapsedMs":  26318
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2577 MiB, 99 %, 77, 1537 MHz, 89.20 W"
+                                             ],
+                           "elapsedMs":  27516
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2576 MiB, 99 %, 77, 1477 MHz, 86.36 W"
+                                             ],
+                           "elapsedMs":  28702
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2576 MiB, 98 %, 78, 1537 MHz, 87.28 W"
+                                             ],
+                           "elapsedMs":  29886
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2523 MiB, 99 %, 78, 1515 MHz, 84.23 W"
+                                             ],
+                           "elapsedMs":  31058
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2523 MiB, 96 %, 79, 1575 MHz, 92.19 W"
+                                             ],
+                           "elapsedMs":  32272
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2532 MiB, 99 %, 79, 1507 MHz, 87.50 W"
+                                             ],
+                           "elapsedMs":  33444
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2532 MiB, 99 %, 79, 1492 MHz, 87.97 W"
+                                             ],
+                           "elapsedMs":  34655
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2532 MiB, 99 %, 79, 1515 MHz, 85.64 W"
+                                             ],
+                           "elapsedMs":  35836
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2532 MiB, 99 %, 79, 1500 MHz, 85.36 W"
+                                             ],
+                           "elapsedMs":  37024
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2532 MiB, 99 %, 80, 1485 MHz, 87.73 W"
+                                             ],
+                           "elapsedMs":  38237
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 80, 1530 MHz, 90.14 W"
+                                             ],
+                           "elapsedMs":  39420
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 1 %, 75, 1957 MHz, 53.69 W"
+                                             ],
+                           "elapsedMs":  40610
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 97 %, 81, 1552 MHz, 94.46 W"
+                                             ],
+                           "elapsedMs":  41790
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1560 MHz, 93.64 W"
+                                             ],
+                           "elapsedMs":  42969
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1507 MHz, 92.30 W"
+                                             ],
+                           "elapsedMs":  44168
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1500 MHz, 92.01 W"
+                                             ],
+                           "elapsedMs":  45350
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1455 MHz, 91.54 W"
+                                             ],
+                           "elapsedMs":  46530
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1500 MHz, 89.66 W"
+                                             ],
+                           "elapsedMs":  47713
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 83, 1455 MHz, 88.66 W"
+                                             ],
+                           "elapsedMs":  48919
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1485 MHz, 86.94 W"
+                                             ],
+                           "elapsedMs":  50112
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 82, 1582 MHz, 97.68 W"
+                                             ],
+                           "elapsedMs":  51296
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 61 %, 84, 1717 MHz, 98.77 W"
+                                             ],
+                           "elapsedMs":  52465
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 92 %, 84, 1560 MHz, 91.71 W"
+                                             ],
+                           "elapsedMs":  53659
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 92 %, 84, 1522 MHz, 89.97 W"
+                                             ],
+                           "elapsedMs":  54854
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 93 %, 84, 1522 MHz, 91.66 W"
+                                             ],
+                           "elapsedMs":  56031
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 94 %, 85, 1567 MHz, 91.95 W"
+                                             ],
+                           "elapsedMs":  57197
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 96 %, 85, 1567 MHz, 92.38 W"
+                                             ],
+                           "elapsedMs":  58375
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 91 %, 85, 1597 MHz, 92.61 W"
+                                             ],
+                           "elapsedMs":  59562
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1545 MHz, 95.39 W"
+                                             ],
+                           "elapsedMs":  60759
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1537 MHz, 93.80 W"
+                                             ],
+                           "elapsedMs":  61955
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1530 MHz, 91.81 W"
+                                             ],
+                           "elapsedMs":  63139
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 87, 1567 MHz, 93.63 W"
+                                             ],
+                           "elapsedMs":  64318
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1515 MHz, 90.55 W"
+                                             ],
+                           "elapsedMs":  65499
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 87, 1500 MHz, 94.76 W"
+                                             ],
+                           "elapsedMs":  66676
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1507 MHz, 89.72 W"
+                                             ],
+                           "elapsedMs":  67854
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 1 %, 82, 1560 MHz, 55.39 W"
+                                             ],
+                           "elapsedMs":  69048
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 90 %, 87, 1425 MHz, 94.53 W"
+                                             ],
+                           "elapsedMs":  70237
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 93 %, 87, 1485 MHz, 91.44 W"
+                                             ],
+                           "elapsedMs":  71407
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 96 %, 86, 1470 MHz, 86.53 W"
+                                             ],
+                           "elapsedMs":  72571
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1410 MHz, 87.85 W"
+                                             ],
+                           "elapsedMs":  73756
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1455 MHz, 86.12 W"
+                                             ],
+                           "elapsedMs":  74917
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 87, 1402 MHz, 90.04 W"
+                                             ],
+                           "elapsedMs":  76103
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1410 MHz, 86.43 W"
+                                             ],
+                           "elapsedMs":  77272
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1395 MHz, 85.07 W"
+                                             ],
+                           "elapsedMs":  78451
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 99 %, 86, 1410 MHz, 85.48 W"
+                                             ],
+                           "elapsedMs":  79630
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 2 %, 80, 1957 MHz, 55.07 W"
+                                             ],
+                           "elapsedMs":  80794
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 90 %, 86, 1522 MHz, 81.65 W"
+                                             ],
+                           "elapsedMs":  81991
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 57 %, 87, 1792 MHz, 89.84 W"
+                                             ],
+                           "elapsedMs":  83160
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 59 %, 87, 1800 MHz, 67.28 W"
+                                             ],
+                           "elapsedMs":  84349
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 10 %, 83, 1905 MHz, 68.00 W"
+                                             ],
+                           "elapsedMs":  85537
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 68 %, 87, 1762 MHz, 101.26 W"
+                                             ],
+                           "elapsedMs":  86728
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 75 %, 86, 1567 MHz, 80.38 W"
+                                             ],
+                           "elapsedMs":  87897
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 70 %, 87, 1620 MHz, 84.09 W"
+                                             ],
+                           "elapsedMs":  89078
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 74 %, 87, 1537 MHz, 85.65 W"
+                                             ],
+                           "elapsedMs":  90273
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 81 %, 87, 1582 MHz, 87.64 W"
+                                             ],
+                           "elapsedMs":  91458
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 72 %, 87, 1545 MHz, 82.39 W"
+                                             ],
+                           "elapsedMs":  92626
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2548 MiB, 90 %, 87, 1515 MHz, 85.08 W"
+                                             ],
+                           "elapsedMs":  93804
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1337 MiB, 94 %, 87, 1395 MHz, 83.23 W"
+                                             ],
+                           "elapsedMs":  95034
+                       }
+                   ]
+}

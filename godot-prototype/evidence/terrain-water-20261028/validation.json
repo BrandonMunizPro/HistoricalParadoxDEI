@@ -1,0 +1,117 @@
+{
+  "passed": true,
+  "artisticAcceptance": false,
+  "performanceAcceptance": false,
+  "nativeChecks": 18,
+  "matchedCameras": [
+    {
+      "name": "campaign",
+      "before": "before/campaign.png",
+      "after": "review-final/campaign.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "79105c58882e7a7570dd453b3194b7559c75d51c32f6b4e34bdc984e5a67a498",
+      "afterSha256": "8fcba6d20e78e12f0cd9fc2aac519c0b02a9766d14b119734510c3d7f587bff1"
+    },
+    {
+      "name": "roma-region",
+      "before": "before/roma-region.png",
+      "after": "review-final/roma-region.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "8d5e1089419420d5bd86e3a319195df6adc773c9d677c3109b6c4f2d709cfe17",
+      "afterSha256": "87fb113bbf007c48bc8e3b921d7c10b3b8e65c11e8d4a52a5b55c5844eed9e25"
+    },
+    {
+      "name": "aricia-region",
+      "before": "before/aricia-region.png",
+      "after": "review-final/aricia-region.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "ec863a75411ed6e8ce945e4e0efa1733fc32d718ae4be5e95450950978e02110",
+      "afterSha256": "0c7e40d6438eabd5d2155edc94abb23b0b7b009e24c39f932137cc00bff01183"
+    },
+    {
+      "name": "aricia-terrain",
+      "before": "before/aricia-terrain.png",
+      "after": "review-final/aricia-terrain.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 1.1920928999487046e-7,
+        "focus": 0
+      },
+      "beforeSha256": "0080abcc0f5193ba233a3e4e0b040ac83278437e4a550144a4c7c516e36ac444",
+      "afterSha256": "a08aa9484b8bdf48871c29913a7c79f211e2136c988036808884118d8278950a"
+    },
+    {
+      "name": "roma-terrain",
+      "before": "before/roma-terrain.png",
+      "after": "review-final/roma-terrain.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "2b38adb0c32faf87f74d31e253d9cd5a45e688872c21b3523f188cf836a37204",
+      "afterSha256": "6ea4605760f888ceb2d60f90c9c6b7414120de9f27d9b1dd731edf1ed6a72ca4"
+    },
+    {
+      "name": "tiber-close",
+      "before": "before/tiber-close.png",
+      "after": "review-final/tiber-close.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "93c6a1c186743a6a10f0b159f7a98ba62f68b2a7055564283e7f65138448b079",
+      "afterSha256": "4ea025eb4e0301dcffa0c809935485ceb24b941bb1bfc973bb00ad7e68a8c9b3"
+    },
+    {
+      "name": "roma-ground",
+      "before": "ground-before/roma-ground.png",
+      "after": "ground-after/roma-ground.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 5.960464499743523e-8,
+        "focus": 0
+      },
+      "beforeSha256": "ef95522c32666d9e7ca39f763fc196ff9d29e9e1e2779dd37c3cb197674635f8",
+      "afterSha256": "46d142db582207991fffd5d27a696d313c1cf2c1c58ad31c3a60c3c5d0533675"
+    },
+    {
+      "name": "aricia-ground",
+      "before": "ground-before/aricia-ground.png",
+      "after": "ground-after/aricia-ground.png",
+      "cameraDifferences": {
+        "position": 0,
+        "basis": 0,
+        "focus": 0
+      },
+      "beforeSha256": "4ad5540aff87d6e28dc80137cec5b9468f1f445cf06a37ae3411228ad0ea2e45",
+      "afterSha256": "af77e7f1e30a355b5aef94c85082aa40acf34c168ede392793f2de334644fa23"
+    }
+  ],
+  "protected": {
+    "protectedFiles": 460,
+    "changed": [],
+    "approvedSites": 35,
+    "researchRecords": 687,
+    "canonicalCoordinatesExact": true,
+    "researchCopyByteIdentical": true
+  },
+  "settlementSourceHashesPreserved": 23,
+  "verifiedNewPhotographs": 6,
+  "ariciaVertices": 66049,
+  "animationFramesDiffer": true,
+  "notice": "Automated validation establishes integrity and functioning, not artistic quality."
+}

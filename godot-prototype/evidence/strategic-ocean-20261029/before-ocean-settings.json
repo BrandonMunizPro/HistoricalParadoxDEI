@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "quality": "balanced",
+  "wind_direction_degrees": 28.0,
+  "wind_speed_multiplier": 1.0,
+  "wave_intensity": 0.65,
+  "maximum_displacement_metres": 0.75,
+  "foam_strength": 0.12,
+  "shore_foam_strength": 0.09,
+  "roughness": 0.14,
+  "coastal_band_km": 1.8,
+  "deep_color": [0.012, 0.065, 0.115],
+  "coastal_color": [0.045, 0.23, 0.235],
+  "sea_spray_budget": 0,
+  "presets": {
+    "low": {"resolution":128,"cascades":2,"grid":65,"near_hz":18.0,"regional_hz":8.0,"far_hz":2.0},
+    "balanced": {"resolution":256,"cascades":3,"grid":129,"near_hz":24.0,"regional_hz":12.0,"far_hz":3.0},
+    "high": {"resolution":512,"cascades":3,"grid":193,"near_hz":30.0,"regional_hz":15.0,"far_hz":4.0}
+  },
+  "cascades": [
+    {"tile_metres":128.0,"wind_speed":4.0,"fetch_km":4.0,"displacement":0.28,"normal":0.5},
+    {"tile_metres":487.0,"wind_speed":5.5,"fetch_km":20.0,"displacement":0.40,"normal":0.65},
+    {"tile_metres":1973.0,"wind_speed":6.5,"fetch_km":60.0,"displacement":0.20,"normal":0.45}
+  ],
+  "notice": "Rendering only. Source coastline/exclusion masks and all terrain heights remain authoritative. Shore colour is an appearance approximation, not measured bathymetry. No sea-spray particles in the Mediterranean preset."
+}

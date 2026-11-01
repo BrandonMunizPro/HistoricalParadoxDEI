@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "details": {
+        "maxChannel": 0.0,
+        "meanMaxChannel": 0.0,
+        "pixelsOverOneByte": 0
+      },
+      "passed": true,
+      "test": "1.2 km original/current sunlight and wave pixels identical"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Background and patch share the existing water clock"
+    },
+    {
+      "details": {
+        "maxChannel": 0.0117647051811218,
+        "meanMaxChannel": 0.00245661878535326,
+        "pixelsOverOneByte": 4961
+      },
+      "passed": true,
+      "test": "Strategic water visibly changes over 12 simulated seconds"
+    },
+    {
+      "details": {
+        "maxChannel": 0.0,
+        "meanMaxChannel": 0.0,
+        "pixelsOverOneByte": 0
+      },
+      "passed": true,
+      "test": "Reduced motion holds world clock and wind-field pixels"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Reduced motion does not schedule FFT work"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Animation resumes existing FFT and shared clock"
+    },
+    {
+      "details": {
+        "maxChannel": 0.0196078419685364,
+        "meanMaxChannel": 0.00170196786679791,
+        "pixelsOverOneByte": 445
+      },
+      "passed": true,
+      "test": "Continuous rendering around 4.0 km"
+    },
+    {
+      "details": {
+        "maxChannel": 0.0274509787559509,
+        "meanMaxChannel": 0.00142318457419619,
+        "pixelsOverOneByte": 284
+      },
+      "passed": true,
+      "test": "Continuous rendering around 5.0 km"
+    },
+    {
+      "details": {
+        "maxChannel": 0.0156862735748291,
+        "meanMaxChannel": 0.000828341543810927,
+        "pixelsOverOneByte": 38
+      },
+      "passed": true,
+      "test": "Continuous rendering around 8.0 km"
+    },
+    {
+      "details": {
+        "maxChannel": 0.00784313678741455,
+        "meanMaxChannel": 0.00051788404583931,
+        "pixelsOverOneByte": 2
+      },
+      "passed": true,
+      "test": "Continuous rendering around 10.0 km"
+    },
+    {
+      "details": {
+        "maxChannel": 0.00392159819602966,
+        "meanMaxChannel": 0.000101558570869458,
+        "pixelsOverOneByte": 34
+      },
+      "passed": true,
+      "test": "Continuous rendering around 24.0 km"
+    }
+  ],
+  "notice": "Rendering continuity and preservation, not artistic approval.",
+  "passed": true
+}

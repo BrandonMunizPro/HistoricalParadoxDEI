@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "notice": "Two illustrative game configurations at existing unchanged site IDs/coordinates. Aricia agricultural specialization is a design interpretation, not an excavated building census. Roma spectacle deliberately compresses chronology.",
+  "settlements": [
+    {
+      "settlementId": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+      "class": "major",
+      "architectureCulture": "roman-italic",
+      "regionalStyle": "latium",
+      "yearBce": 278,
+      "terrain": [
+        "urban",
+        "cultivable",
+        "freshwater"
+      ],
+      "deposits": [],
+      "technologies": [
+        "appia-conduit"
+      ],
+      "waterRoutes": [],
+      "slots": [
+        {
+          "id": "roma-slot-1",
+          "anchorM": [
+            45,
+            -15
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": {
+            "chain": "civic-forum",
+            "startingLevel": 3,
+            "landmark": "forum-romanum",
+            "evidence": [
+              "https://colosseo.it/en/area/the-roman-forum/",
+              "https://pleiades.stoa.org/places/423025"
+            ],
+            "confidence": "attested"
+          }
+        },
+        {
+          "id": "roma-slot-2",
+          "anchorM": [
+            130,
+            88
+          ],
+          "yawDegrees": -12,
+          "allowedCategories": [],
+          "building": {
+            "chain": "grain-storage",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/423025",
+              "docs/research/settlement-procedural-component-catalog.md"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "roma-slot-3",
+          "anchorM": [
+            -65,
+            -65
+          ],
+          "yawDegrees": 8,
+          "allowedCategories": [],
+          "building": {
+            "chain": "sanctuary",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/423025",
+              "https://colosseo.it/en/area/the-roman-forum/"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "roma-slot-4",
+          "anchorM": [
+            -75,
+            45
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": {
+            "chain": "market",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/423025",
+              "https://colosseo.it/en/area/the-roman-forum/"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "roma-slot-5",
+          "anchorM": [
+            -20,
+            135
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": {
+            "chain": "roman-spectacle",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "design:user-authorized historical liberty"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "roma-slot-6",
+          "anchorM": [
+            160,
+            -115
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        }
+      ],
+      "evidence": [
+        "https://pleiades.stoa.org/places/423025",
+        "https://colosseo.it/en/area/the-roman-forum/"
+      ]
+    },
+    {
+      "settlementId": "828bcd83-58e1-591b-932f-61a8c972f2c4",
+      "class": "minor",
+      "architectureCulture": "roman-italic",
+      "regionalStyle": "latium",
+      "yearBce": 278,
+      "terrain": [
+        "cultivable",
+        "freshwater"
+      ],
+      "deposits": [],
+      "technologies": [],
+      "waterRoutes": [],
+      "slots": [
+        {
+          "id": "aricia-slot-1",
+          "anchorM": [
+            0,
+            -8
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": {
+            "chain": "farm",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/422844"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "aricia-slot-2",
+          "anchorM": [
+            80,
+            -15
+          ],
+          "yawDegrees": -20,
+          "allowedCategories": [],
+          "building": {
+            "chain": "sanctuary",
+            "startingLevel": 1,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/422844"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "aricia-slot-3",
+          "anchorM": [
+            -75,
+            -30
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        },
+        {
+          "id": "aricia-slot-4",
+          "anchorM": [
+            0,
+            115
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        }
+      ],
+      "evidence": [
+        "https://pleiades.stoa.org/places/422844"
+      ]
+    }
+  ]
+}

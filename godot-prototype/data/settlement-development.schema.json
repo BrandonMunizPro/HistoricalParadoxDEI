@@ -1,0 +1,961 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Settlement development prototype: catalog or starting configurations",
+  "description": "Structural schema. Cross-reference, historical eligibility, slot capacity and landmark rules are enforced by the typed validator and Godot contract tests.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Catalog"
+    },
+    {
+      "$ref": "#/$defs/Starts"
+    },
+    {
+      "$ref": "#/$defs/Overlay"
+    }
+  ],
+  "$defs": {
+    "Stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visualKey": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "level",
+        "name",
+        "visualKey",
+        "effects"
+      ]
+    },
+    "Building": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "enum": [
+            "food",
+            "religion",
+            "civic",
+            "industry",
+            "trade",
+            "military",
+            "entertainment",
+            "extraction"
+          ]
+        },
+        "maxLevel": {
+          "const": 3
+        },
+        "cultures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fromBce": {
+          "type": "integer"
+        },
+        "toBce": {
+          "type": "integer"
+        },
+        "terrain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Terrain"
+          }
+        },
+        "deposits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Mineral"
+          }
+        },
+        "technology": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "infrastructure": {
+          "enum": [
+            null,
+            "water-route"
+          ]
+        },
+        "levels": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "prefixItems": [
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/Stage"
+                },
+                {
+                  "properties": {
+                    "level": {
+                      "const": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/Stage"
+                },
+                {
+                  "properties": {
+                    "level": {
+                      "const": 2
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/Stage"
+                },
+                {
+                  "properties": {
+                    "level": {
+                      "const": 3
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "designLiberty": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "maxLevel",
+        "cultures",
+        "fromBce",
+        "toBce",
+        "terrain",
+        "deposits",
+        "technology",
+        "infrastructure",
+        "levels",
+        "evidence",
+        "interpretation"
+      ]
+    },
+    "Terrain": {
+      "enum": [
+        "cultivable",
+        "freshwater",
+        "coastal",
+        "navigable",
+        "rocky",
+        "urban"
+      ]
+    },
+    "Mineral": {
+      "enum": [
+        "iron",
+        "gold",
+        "copper",
+        "tin",
+        "stone"
+      ]
+    },
+    "Culture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "roofs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "materials": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "forms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "details": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "parent",
+        "roofs",
+        "materials",
+        "forms",
+        "details"
+      ]
+    },
+    "Visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visualKey": {
+          "type": "string",
+          "minLength": 1
+        },
+        "culture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "regionalStyle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "near": {
+          "type": "string",
+          "pattern": "^res://"
+        },
+        "far": {
+          "type": "string",
+          "pattern": "^res://"
+        },
+        "footprintM": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "silhouette": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "environment": {
+          "$ref": "#/$defs/Environment"
+        }
+      },
+      "required": [
+        "id",
+        "visualKey",
+        "culture",
+        "regionalStyle",
+        "near",
+        "far",
+        "footprintM",
+        "silhouette",
+        "license",
+        "source"
+      ]
+    },
+    "Landmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "settlementIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "minimumLevel": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "chain",
+        "settlementIds",
+        "minimumLevel",
+        "modifiers",
+        "evidence"
+      ]
+    },
+    "Slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchorM": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "yawDegrees": {
+          "type": "number"
+        },
+        "allowedCategories": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "food",
+              "religion",
+              "civic",
+              "industry",
+              "trade",
+              "military",
+              "entertainment",
+              "extraction"
+            ]
+          }
+        },
+        "building": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "chain": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "startingLevel": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                },
+                "landmark": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "confidence": {
+                  "enum": [
+                    "attested",
+                    "interpretive"
+                  ]
+                }
+              },
+              "required": [
+                "chain",
+                "startingLevel",
+                "landmark",
+                "evidence",
+                "confidence"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "anchorM",
+        "yawDegrees",
+        "allowedCategories",
+        "building"
+      ]
+    },
+    "Settlement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "settlementId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "architectureCulture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "regionalStyle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "yearBce": {
+          "const": 278
+        },
+        "terrain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Terrain"
+          }
+        },
+        "deposits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "mineral": {
+                "$ref": "#/$defs/Mineral"
+              },
+              "evidence": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "id",
+              "mineral",
+              "evidence"
+            ]
+          }
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "waterRoutes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pointsM": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "sourceEvidence": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "mode": {
+                "enum": [
+                  "gravity-channel",
+                  "subterranean-conduit"
+                ]
+              }
+            },
+            "required": [
+              "pointsM",
+              "sourceEvidence",
+              "mode"
+            ]
+          }
+        },
+        "slots": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/Slot"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "settlementId",
+        "class",
+        "architectureCulture",
+        "regionalStyle",
+        "yearBce",
+        "terrain",
+        "deposits",
+        "technologies",
+        "waterRoutes",
+        "slots",
+        "evidence"
+      ]
+    },
+    "Catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "yearBce": {
+          "const": 278
+        },
+        "classes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "slots": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "id",
+              "slots"
+            ]
+          }
+        },
+        "cultures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Culture"
+          }
+        },
+        "chains": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Building"
+          }
+        },
+        "visuals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Visual"
+          }
+        },
+        "landmarks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Landmark"
+          }
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "magnitude": {
+                "type": "null"
+              },
+              "metric": {
+                "enum": [
+                  "food",
+                  "public-order",
+                  "wealth",
+                  "trade",
+                  "recruitment",
+                  "culture",
+                  "development"
+                ]
+              },
+              "scope": {
+                "enum": [
+                  "settlement",
+                  "region"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "description",
+              "magnitude"
+            ]
+          }
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "cultures": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "fromBce": {
+                "type": "integer"
+              },
+              "toBce": {
+                "type": "integer"
+              },
+              "evidence": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "id",
+              "cultures",
+              "fromBce",
+              "toBce",
+              "evidence"
+            ]
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "yearBce",
+        "classes",
+        "cultures",
+        "chains",
+        "visuals",
+        "landmarks",
+        "effects",
+        "technologies"
+      ]
+    },
+    "Starts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "notice": {
+          "type": "string",
+          "minLength": 1
+        },
+        "settlements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Settlement"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "notice",
+        "settlements"
+      ]
+    },
+    "Environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "radiusM",
+        "fields",
+        "treePointsM"
+      ],
+      "properties": {
+        "surface": {
+          "enum": [
+            "civic",
+            "sacred",
+            "cultivation",
+            "trade",
+            "entertainment"
+          ]
+        },
+        "radiusM": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "centerM",
+              "sizeM",
+              "rotationDegrees",
+              "crop"
+            ],
+            "properties": {
+              "centerM": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "sizeM": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              },
+              "rotationDegrees": {
+                "type": "number"
+              },
+              "crop": {
+                "enum": [
+                  "grain",
+                  "fallow"
+                ]
+              }
+            }
+          }
+        },
+        "treePointsM": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "Overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "cultures",
+        "chains",
+        "visuals",
+        "effects"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "cultures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Culture"
+          }
+        },
+        "chains": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Building"
+          }
+        },
+        "visuals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Visual"
+          }
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "magnitude": {
+                "type": "null"
+              },
+              "metric": {
+                "enum": [
+                  "food",
+                  "public-order",
+                  "wealth",
+                  "trade",
+                  "recruitment",
+                  "culture",
+                  "development"
+                ]
+              },
+              "scope": {
+                "enum": [
+                  "settlement",
+                  "region"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "description",
+              "magnitude"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

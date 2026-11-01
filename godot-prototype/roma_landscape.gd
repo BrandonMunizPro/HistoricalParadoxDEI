@@ -110,6 +110,8 @@ func vegetation():
 		await pause_if_needed()
 	for index in batches:
 		var mm=MultiMesh.new();mm.transform_format=MultiMesh.TRANSFORM_3D;mm.use_custom_data=true;mm.mesh=world.scenery.meshes[index];mm.instance_count=batches[index].size()
+		var replacement=world.scenery.quality.mesh_for(index)
+		if replacement!=null:mm.mesh=replacement
 		for i in mm.instance_count:
 			mm.set_instance_transform(i,batches[index][i]);mm.set_instance_custom_data(i,Color(0,1,0,0))
 		assets.append({"multimesh":mm,"shadows":true})

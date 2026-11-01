@@ -1,0 +1,17 @@
+# 278 BCE faction cartography
+
+This is an original game scenario layer over the unchanged geographic world.
+
+`scenario-278.json` separates cultural families, factions, territory geometry and initial control. No armies, characters, diplomacy or economic rules are attached. Each territory has source references and a confidence classification. Cultural families do not own territory.
+
+The dated Cliopatria subset is **CC BY 4.0**: Bennett et al. (2025), *Cliopatria*, Scientific Data 12:247, https://doi.org/10.1038/s41597-025-04516-9, repository https://github.com/Seshat-Global-History-Databank/cliopatria, revision `5f433377139a6eeaeacbdc894b70f8805b72c8b5`. License: https://creativecommons.org/licenses/by/4.0/. Changes: select the inclusive year −278 and existing geographic scope; map names to game faction records; identify selected disjoint Greek-city components; omit aggregate Greek and fixed Galatian ownership; rasterize. Equal-priority source overlaps are disputed. Original source properties and the unmodified scoped subset remain alongside the derivative. These are scholarly reconstructions with acknowledged uncertainty, not surveyed borders.
+
+Provisional tribal regions are original authored scenario envelopes, **not scholarly boundary data**. Reference-game faction names and regional associations inform them, including many tribal names attested later than 278 BCE. They are deliberately classified as scenario abstractions and use weaker outlines. Do not describe these as confirmed 278 BCE frontiers. Unknown land remains neutral. These regions are neither modern administrative polygons nor settlement Voronoi cells.
+
+Three Galatian groups receive arrival markers only: later settled Galatian frontiers are not projected backward. Bactria and Parthia are not independent kingdoms at this date. Antigonid holdings in Greece are distinguished from contested Macedonian kingship. Pyrrhus' campaign does not automatically annex Syracuse or Italian allies.
+
+Emblems are original vector game symbols, not copied Rome II/Imperator art or claims to attested ancient national flags. Colors are original presentation choices. The existing researched settlement catalog remains separate and unchanged.
+
+Rebuild with `node godot-prototype/tools/faction-catalog-build.mjs` then `node godot-prototype/tools/faction-map-raster.mjs`. Raster IDs are territory identities, with a separate runtime controller/palette lookup, so control/color changes do not require rewriting geography.
+
+`presentation.json` is the separate visual/evidence manifest for the revised palette and emblems. It does not override faction IDs, controller assignments, culture, territory geometry or display anchors. Rebuild it with `node godot-prototype/tools/faction-presentation-build.mjs`, then run Godot headless with `--script res://tools/faction-emblem-bake.gd` to rebuild SVGs and the atlas. The palette considers 178 adjacency pairs from the unchanged ID raster, with fixed major-faction colors and bounded chroma for other entries. It is a readability aid, not a color-vision-deficiency certification. All faction fields now use full palette strength and continuous borders. Confidence remains explicit in the roster and source data; clear borders do not upgrade provisional regions to historical certainty.

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/roof-color.jpg" id="1_t7s2o"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/roof-normal.jpg" id="2_hbq6w"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/roof-roughness.jpg" id="3_hfcpd"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.93333334, 0.8862745, 0.80784315, 1)
+albedo_texture = ExtResource("1_t7s2o")
+roughness_texture = ExtResource("3_hfcpd")
+normal_enabled = true
+normal_scale = 0.35
+normal_texture = ExtResource("2_hbq6w")
+texture_filter = 5

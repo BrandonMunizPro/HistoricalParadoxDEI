@@ -1,0 +1,56 @@
+[
+  {
+    "name": "close",
+    "position": [
+      -83.1991348266602,
+      0.294301599264145,
+      -43.7119064331055
+    ],
+    "fov": 42,
+    "distanceKm": 0.42,
+    "pitch": 38,
+    "yaw": 65,
+    "exactCameraPositionMatch": true,
+    "previous": "../repair-20261026/roma-landscape-final2-architecture/godot-profile-roma-east-regional.png",
+    "fresh": "baseline/close.png",
+    "comparisonType": "Same campaign baseline recaptured; not an overhaul before/after",
+    "earlierMeanFrameMs": 8.90032777777778,
+    "freshMeanFrameMs": 8.63624833333333
+  },
+  {
+    "name": "regional",
+    "position": [
+      -83.4990921020508,
+      5.12689208984375,
+      -38.760612487793
+    ],
+    "fov": 42,
+    "distanceKm": 7.2,
+    "pitch": 45,
+    "yaw": 0,
+    "exactCameraPositionMatch": true,
+    "previous": "../repair-20261026/roma-landscape-final2/godot-profile-roma-close.png",
+    "fresh": "baseline/regional.png",
+    "comparisonType": "Same campaign baseline recaptured; not an overhaul before/after",
+    "earlierMeanFrameMs": 10.4913666666667,
+    "freshMeanFrameMs": 10.4814733333333
+  },
+  {
+    "name": "strategic",
+    "position": [
+      -83.4990921020508,
+      31.8784160614014,
+      -12.0319747924805
+    ],
+    "fov": 42,
+    "distanceKm": 45,
+    "pitch": 45,
+    "yaw": 0,
+    "exactCameraPositionMatch": true,
+    "previous": "../repair-20261026/roma-landscape-final2/godot-profile-roma-strategic.png",
+    "fresh": "baseline/strategic.png",
+    "comparisonType": "Same campaign baseline recaptured; not an overhaul before/after",
+    "earlierMeanFrameMs": 8.31033333333334,
+    "freshMeanFrameMs": 8.33286499999999
+  }
+]

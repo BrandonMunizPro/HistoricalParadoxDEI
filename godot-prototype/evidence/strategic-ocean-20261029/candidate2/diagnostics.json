@@ -1,0 +1,100 @@
+{
+  "boot": {
+    "base_meshes": 224.614,
+    "canopy_meshes": 129.723,
+    "environment": 4.179,
+    "materials": 1978.298,
+    "water_ui_hydrology": 1023.632
+  },
+  "maxCpuStages": {
+    "base_meshes": 224.614,
+    "camera_materials": 0.437,
+    "canopy_meshes": 129.723,
+    "city": 0.145,
+    "environment": 4.179,
+    "markers": 2.952,
+    "materials": 1978.298,
+    "rivers": 2.035,
+    "scenery": 3.236,
+    "tile_upload": 13.785,
+    "ui": 0.077,
+    "water_ui_hydrology": 1023.632
+  },
+  "slowFrames": [
+    {
+      "frame": 1254,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.201,
+        "city": 0.045,
+        "markers": 1.108,
+        "rivers": 0.037,
+        "scenery": 0.109,
+        "tile_upload": 0.004,
+        "ui": 0.02
+      },
+      "renderCpuMs": 0.368999987840652,
+      "renderGpuMs": 4.9229998588562,
+      "wallMs": 522.752
+    },
+    {
+      "frame": 1,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.17,
+        "city": 0.01,
+        "markers": 0.384,
+        "rivers": 0.002,
+        "scenery": 0.061,
+        "tile_upload": 10.529,
+        "ui": 0.023
+      },
+      "renderCpuMs": 0.398000001907349,
+      "renderGpuMs": 28.625,
+      "wallMs": 45.392
+    },
+    {
+      "frame": 5,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.196,
+        "city": 0.022,
+        "markers": 0.849,
+        "rivers": 0.002,
+        "scenery": 0.061,
+        "tile_upload": 11.84,
+        "ui": 0.028
+      },
+      "renderCpuMs": 0.273000001907349,
+      "renderGpuMs": 23.5189990997314,
+      "wallMs": 34.943
+    },
+    {
+      "frame": 3,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.186,
+        "city": 0.023,
+        "markers": 0.569,
+        "rivers": 0.002,
+        "scenery": 0.066,
+        "tile_upload": 11.99,
+        "ui": 0.053
+      },
+      "renderCpuMs": 0.26800000667572,
+      "renderGpuMs": 21.496000289917,
+      "wallMs": 34.146
+    },
+    {
+      "frame": 7,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.22,
+        "city": 0.033,
+        "markers": 0.889,
+        "rivers": 0.003,
+        "scenery": 0.062,
+        "tile_upload": 13.785,
+        "ui": 0.036
+      },
+      "renderCpuMs": 0.379999995231628,
+      "renderGpuMs": 19.2269992828369,
+      "wallMs": 33.492
+    }
+  ]
+}

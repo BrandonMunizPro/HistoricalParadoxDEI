@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/2Retr0/GodotOceanWaves/",
+  "commit": "a171446f8174348895aaafc426576c26261058b9",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Ethan Truong",
+  "files": [
+    {
+      "upstream": "assets/shaders/compute/spectrum_compute.glsl",
+      "sha256": "4623446836be24bcedfb14be187c27649d98de2567350434e9d86570595b70b7"
+    },
+    {
+      "upstream": "assets/shaders/compute/spectrum_modulate.glsl",
+      "sha256": "e0572476eb0ff1de99d01d47962dc0619739fbff27e75b16dc801990b184b763"
+    },
+    {
+      "upstream": "assets/shaders/compute/fft_butterfly.glsl",
+      "sha256": "543b41e32c9a50aacd1ee763a02f5d86b8fbe20e550b7e84ecd7738c255628f3"
+    },
+    {
+      "upstream": "assets/shaders/compute/fft_unpack.glsl",
+      "sha256": "cb7b5f20ae221fb801f88a9e95dc14d1c0e2cf5ca2db68c5c4e5dd1256b60734"
+    },
+    {
+      "upstream": "assets/shaders/compute/transpose.glsl",
+      "sha256": "f866d399a014ae916e5283d1bbd6edbaf6cb7e56e71bed078e6a45df2b3f853e"
+    },
+    {
+      "upstream": "assets/shaders/compute/fft_compute.glsl",
+      "sha256": "67523bcdcee8b1468129ce675c73c10f79fc7948473162106719aa695acfbbef"
+    },
+    {
+      "upstream": "assets/render_context.gd",
+      "sha256": "ad99fa817d4c564090936be5e650a965505c7df8f64f35224c163d630bac60ef"
+    },
+    {
+      "upstream": "assets/water/wave_cascade_parameters.gd",
+      "sha256": "7357fe6a791c4e95c21a4d64b578d9c3609dcc9b618c7d5acd5da191b96c4127"
+    }
+  ]
+}

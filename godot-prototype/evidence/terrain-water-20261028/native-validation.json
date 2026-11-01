@@ -1,0 +1,120 @@
+{
+  "artisticAcceptance": "Not assessed by these tests",
+  "checks": [
+    {
+      "passed": true,
+      "test": "Tiber view river vertices identical with quality disabled/enabled",
+      "vertices": 6108
+    },
+    {
+      "detailResident": false,
+      "distanceKm": 15.1,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 14.9,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 8.1,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 7.9,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 3.1,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 2.9,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "detailResident": true,
+      "distanceKm": 0.65,
+      "passed": true,
+      "resident": 13,
+      "test": "Aricia terrain and vegetation LOD boundary"
+    },
+    {
+      "channel": "color",
+      "material": "grass",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "normal",
+      "material": "grass",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "roughness",
+      "material": "grass",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "color",
+      "material": "soil",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "normal",
+      "material": "soil",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "roughness",
+      "material": "soil",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "color",
+      "material": "rock",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "normal",
+      "material": "rock",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "channel": "roughness",
+      "material": "rock",
+      "passed": true,
+      "test": "PBR mipmaps and compressed channel layout"
+    },
+    {
+      "boundMaterials": 2,
+      "passed": true,
+      "test": "Existing settlement ground inherits shared landscape without building edits"
+    }
+  ],
+  "count": 18,
+  "passed": true
+}

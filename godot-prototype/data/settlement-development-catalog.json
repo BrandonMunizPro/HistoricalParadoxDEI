@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "yearBce": 278,
+  "classes": [
+    {
+      "id": "major",
+      "slots": 6
+    },
+    {
+      "id": "minor",
+      "slots": 4
+    }
+  ],
+  "cultures": [
+    {
+      "id": "roman-italic",
+      "name": "Roman and Italic",
+      "parent": null,
+      "roofs": [
+        "pitched terracotta",
+        "timber"
+      ],
+      "materials": [
+        "tuff",
+        "plaster",
+        "timber",
+        "terracotta"
+      ],
+      "forms": [
+        "atrium courts",
+        "Tuscan porches",
+        "irregular taberna frontages"
+      ],
+      "details": [
+        "painted eaves",
+        "timber lintels"
+      ]
+    },
+    {
+      "id": "greek-hellenistic",
+      "name": "Greek and Hellenistic",
+      "parent": null,
+      "roofs": [
+        "pitched tile"
+      ],
+      "materials": [
+        "limestone",
+        "selective marble",
+        "plaster"
+      ],
+      "forms": [
+        "peristyles",
+        "stoas",
+        "proportioned orders"
+      ],
+      "details": [
+        "antefixes",
+        "pediments"
+      ]
+    },
+    {
+      "id": "celtic-regional",
+      "name": "Celtic regional cultures",
+      "parent": null,
+      "roofs": [
+        "regional conical or pitched thatch"
+      ],
+      "materials": [
+        "wattle and daub",
+        "timber",
+        "regional dry stone"
+      ],
+      "forms": [
+        "roundhouses and regional rectilinear halls",
+        "enclosed compounds"
+      ],
+      "details": [
+        "carved timber",
+        "woven fences"
+      ]
+    },
+    {
+      "id": "thracian",
+      "name": "Thracian",
+      "parent": null,
+      "roofs": [
+        "pitched thatch or tile by context"
+      ],
+      "materials": [
+        "timber",
+        "daub",
+        "stone plinth"
+      ],
+      "forms": [
+        "timber courts",
+        "hilltop enclosures"
+      ],
+      "details": [
+        "cult enclosures",
+        "stone terraces"
+      ]
+    },
+    {
+      "id": "dacian",
+      "name": "Dacian",
+      "parent": null,
+      "roofs": [
+        "pitched organic roofing"
+      ],
+      "materials": [
+        "timber",
+        "daub",
+        "dry stone"
+      ],
+      "forms": [
+        "timber hill compounds",
+        "raised storage"
+      ],
+      "details": [
+        "palisades",
+        "wooden porches",
+        "no later Dacian sanctuary replicas"
+      ]
+    },
+    {
+      "id": "illyrian",
+      "name": "Illyrian",
+      "parent": null,
+      "roofs": [
+        "organic roofing or tile by site"
+      ],
+      "materials": [
+        "local stone",
+        "timber",
+        "daub"
+      ],
+      "forms": [
+        "hilltop terraces",
+        "regional enclosed compounds"
+      ],
+      "details": [
+        "dry stone defenses",
+        "regional gateways"
+      ]
+    },
+    {
+      "id": "punic",
+      "name": "Punic",
+      "parent": null,
+      "roofs": [
+        "flat terraced and pitched tile regionally"
+      ],
+      "materials": [
+        "plaster",
+        "stone",
+        "timber"
+      ],
+      "forms": [
+        "dense courtyard blocks",
+        "rectilinear sanctuaries"
+      ],
+      "details": [
+        "rendered parapets",
+        "stelae in evidenced contexts"
+      ]
+    },
+    {
+      "id": "kemetic-egyptian",
+      "name": "Kemetic Egyptian",
+      "parent": null,
+      "roofs": [
+        "flat earthen roofs",
+        "temple stone slabs"
+      ],
+      "materials": [
+        "mud brick",
+        "sandstone",
+        "limestone",
+        "palm timber"
+      ],
+      "forms": [
+        "battered sanctuary walls",
+        "pylon courts",
+        "mudbrick houses"
+      ],
+      "details": [
+        "cavetto cornices",
+        "lotus or papyrus capitals"
+      ]
+    },
+    {
+      "id": "hellenistic-egyptian",
+      "name": "Hellenistic Egyptian",
+      "parent": null,
+      "roofs": [
+        "flat terraces and Greek tiled roofs"
+      ],
+      "materials": [
+        "mud brick",
+        "plaster",
+        "limestone"
+      ],
+      "forms": [
+        "Greek civic colonnades",
+        "Egyptian sanctuaries by district"
+      ],
+      "details": [
+        "traditions assigned by building provenance",
+        "no universal hybrid"
+      ]
+    }
+  ],
+  "chains": [
+    {
+      "id": "civic-forum",
+      "category": "civic",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Assembly clearing",
+          "visualKey": "civic-forum.1",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Civic court and council house",
+          "visualKey": "civic-forum.2",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Forum Romanum: civic precinct",
+          "visualKey": "civic-forum.3",
+          "effects": [
+            "civic.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "https://colosseo.it/en/area/the-roman-forum/",
+        "https://pleiades.stoa.org/places/423025"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "grain-storage",
+      "category": "food",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "cultivable"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Raised grain store",
+          "visualKey": "grain-storage.1",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Granary and threshing yard",
+          "visualKey": "grain-storage.2",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Storage courtyard and twin granaries",
+          "visualKey": "grain-storage.3",
+          "effects": [
+            "food.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "https://pleiades.stoa.org/places/423025",
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "farm",
+      "category": "food",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "cultivable"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Farmstead",
+          "visualKey": "farm.1",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Cultivated farm compound",
+          "visualKey": "farm.2",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Extended fields and storage",
+          "visualKey": "farm.3",
+          "effects": [
+            "food.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "irrigation",
+      "category": "food",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "cultivable",
+        "freshwater"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": "water-route",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Field ditch",
+          "visualKey": "irrigation.1",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Lined feeder channel",
+          "visualKey": "irrigation.2",
+          "effects": [
+            "food.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Managed channel network",
+          "visualKey": "irrigation.3",
+          "effects": [
+            "food.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "sanctuary",
+      "category": "religion",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Local shrine",
+          "visualKey": "sanctuary.1",
+          "effects": [
+            "religion.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Sanctuary court",
+          "visualKey": "sanctuary.2",
+          "effects": [
+            "religion.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Regional sanctuary",
+          "visualKey": "sanctuary.3",
+          "effects": [
+            "religion.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "civic-square",
+      "category": "civic",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Gathering space",
+          "visualKey": "civic-square.1",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Formal public square",
+          "visualKey": "civic-square.2",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Public square with civic frontage",
+          "visualKey": "civic-square.3",
+          "effects": [
+            "civic.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "greek-bath",
+      "category": "civic",
+      "maxLevel": 3,
+      "cultures": [
+        "greek-hellenistic",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban",
+        "freshwater"
+      ],
+      "deposits": [],
+      "technology": "greek-bathing",
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Bathing room",
+          "visualKey": "greek-bath.1",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Balaneion",
+          "visualKey": "greek-bath.2",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Courtyard balaneion",
+          "visualKey": "greek-bath.3",
+          "effects": [
+            "civic.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "https://www.ascsa.edu.gr/uploads/media/hesperia/148226.pdf"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "aqueduct-conduit",
+      "category": "civic",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "freshwater"
+      ],
+      "deposits": [],
+      "technology": "appia-conduit",
+      "infrastructure": "water-route",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Spring intake",
+          "visualKey": "aqueduct-conduit.1",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Buried conduit",
+          "visualKey": "aqueduct-conduit.2",
+          "effects": [
+            "civic.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Intake, buried conduit and distribution basin",
+          "visualKey": "aqueduct-conduit.3",
+          "effects": [
+            "civic.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "https://www.parcoappiaantica.it/itinerari/acquedotti/"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "market",
+      "category": "trade",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Market stalls",
+          "visualKey": "market.1",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Market court",
+          "visualKey": "market.2",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Market and storage frontage",
+          "visualKey": "market.3",
+          "effects": [
+            "trade.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "spice-market",
+      "category": "trade",
+      "maxLevel": 3,
+      "cultures": [
+        "greek-hellenistic",
+        "hellenistic-egyptian",
+        "punic",
+        "kemetic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Imported aromatics stall",
+          "visualKey": "spice-market.1",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Aromatics court",
+          "visualKey": "spice-market.2",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Aromatics market and stores",
+          "visualKey": "spice-market.3",
+          "effects": [
+            "trade.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "port",
+      "category": "trade",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "coastal",
+        "navigable"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Landing and beach stores",
+          "visualKey": "port.1",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Quay and warehouse",
+          "visualKey": "port.2",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Harbour frontage and warehouses",
+          "visualKey": "port.3",
+          "effects": [
+            "trade.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "warehouse",
+      "category": "trade",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Storehouse",
+          "visualKey": "warehouse.1",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Storage compound",
+          "visualKey": "warehouse.2",
+          "effects": [
+            "trade.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Warehouse courtyard",
+          "visualKey": "warehouse.3",
+          "effects": [
+            "trade.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "bronze-workshop",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "urban"
+      ],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Bronze casting hearth",
+          "visualKey": "bronze-workshop.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Casting workshop",
+          "visualKey": "bronze-workshop.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Foundry court with casting sheds",
+          "visualKey": "bronze-workshop.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "walls",
+      "category": "military",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Timber enclosure",
+          "visualKey": "walls.1",
+          "effects": [
+            "military.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Local masonry curtain",
+          "visualKey": "walls.2",
+          "effects": [
+            "military.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Curtain with gates and defended approaches",
+          "visualKey": "walls.3",
+          "effects": [
+            "military.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "training-yard",
+      "category": "military",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [],
+      "deposits": [],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Training enclosure",
+          "visualKey": "training-yard.1",
+          "effects": [
+            "military.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Training compound",
+          "visualKey": "training-yard.2",
+          "effects": [
+            "military.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Training ground and stores",
+          "visualKey": "training-yard.3",
+          "effects": [
+            "military.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "iron-extraction",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "rocky"
+      ],
+      "deposits": [
+        "iron"
+      ],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "iron working",
+          "visualKey": "iron-extraction.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "iron mine and sorting yard",
+          "visualKey": "iron-extraction.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "iron workings with processing court",
+          "visualKey": "iron-extraction.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "gold-extraction",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "rocky"
+      ],
+      "deposits": [
+        "gold"
+      ],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "gold working",
+          "visualKey": "gold-extraction.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "gold mine and sorting yard",
+          "visualKey": "gold-extraction.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "gold workings with processing court",
+          "visualKey": "gold-extraction.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "copper-extraction",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "rocky"
+      ],
+      "deposits": [
+        "copper"
+      ],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "copper working",
+          "visualKey": "copper-extraction.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "copper mine and sorting yard",
+          "visualKey": "copper-extraction.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "copper workings with processing court",
+          "visualKey": "copper-extraction.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "tin-extraction",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "rocky"
+      ],
+      "deposits": [
+        "tin"
+      ],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "tin working",
+          "visualKey": "tin-extraction.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "tin mine and sorting yard",
+          "visualKey": "tin-extraction.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "tin workings with processing court",
+          "visualKey": "tin-extraction.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    },
+    {
+      "id": "quarry",
+      "category": "industry",
+      "maxLevel": 3,
+      "cultures": [
+        "roman-italic",
+        "greek-hellenistic",
+        "celtic-regional",
+        "thracian",
+        "dacian",
+        "illyrian",
+        "punic",
+        "kemetic-egyptian",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 600,
+      "toBce": 200,
+      "terrain": [
+        "rocky"
+      ],
+      "deposits": [
+        "stone"
+      ],
+      "technology": null,
+      "infrastructure": null,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Stone working",
+          "visualKey": "quarry.1",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Quarry face and yard",
+          "visualKey": "quarry.2",
+          "effects": [
+            "industry.potential"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Quarry and dressing compound",
+          "visualKey": "quarry.3",
+          "effects": [
+            "industry.potential"
+          ]
+        }
+      ],
+      "evidence": [
+        "docs/research/settlement-procedural-component-catalog.md"
+      ],
+      "interpretation": "Three levels are prototype development classifications, not literal historical construction stages. Local evidence is required before campaign population."
+    }
+  ],
+  "visuals": [
+    {
+      "id": "roman.forum.1",
+      "visualKey": "civic-forum.1",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/forum-1.res",
+      "far": "res://assets/settlement-development/forum-1-far.res",
+      "footprintM": [
+        24,
+        24
+      ],
+      "silhouette": "Open assembly and small timber dais",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    },
+    {
+      "id": "roman.forum.2",
+      "visualKey": "civic-forum.2",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/forum-2.res",
+      "far": "res://assets/settlement-development/forum-2-far.res",
+      "footprintM": [
+        38,
+        36
+      ],
+      "silhouette": "Council hall with partial taberna frontage",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    },
+    {
+      "id": "roman.forum.3",
+      "visualKey": "civic-forum.3",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/forum-3.res",
+      "far": "res://assets/settlement-development/forum-3-far.res",
+      "footprintM": [
+        54,
+        48
+      ],
+      "silhouette": "Curia, stepped comitium, rostra and enclosing tabernae",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    },
+    {
+      "id": "roman.granary.1",
+      "visualKey": "grain-storage.1",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/granary-1.res",
+      "far": "res://assets/settlement-development/granary-1-far.res",
+      "footprintM": [
+        14,
+        20
+      ],
+      "silhouette": "Single raised timber store",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    },
+    {
+      "id": "roman.granary.2",
+      "visualKey": "grain-storage.2",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/granary-2.res",
+      "far": "res://assets/settlement-development/granary-2-far.res",
+      "footprintM": [
+        26,
+        30
+      ],
+      "silhouette": "Long ventilated granary and threshing floor",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    },
+    {
+      "id": "roman.granary.3",
+      "visualKey": "grain-storage.3",
+      "culture": "roman-italic",
+      "regionalStyle": "latium",
+      "near": "res://assets/settlement-development/granary-3.res",
+      "far": "res://assets/settlement-development/granary-3-far.res",
+      "footprintM": [
+        42,
+        38
+      ],
+      "silhouette": "Twin grain houses enclosing working courtyard",
+      "license": "Original project geometry; inherited CC0 material maps; see PROVENANCE.md",
+      "source": "res://assets/settlement-development/PROVENANCE.md"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "forum-romanum",
+      "chain": "civic-forum",
+      "settlementIds": [
+        "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda"
+      ],
+      "minimumLevel": 3,
+      "modifiers": [
+        "forum.historical-significance"
+      ],
+      "evidence": [
+        "https://colosseo.it/en/area/the-roman-forum/",
+        "https://pleiades.stoa.org/places/423025"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "food.potential",
+      "description": "Reserved food effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "religion.potential",
+      "description": "Reserved religion effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "civic.potential",
+      "description": "Reserved civic effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "industry.potential",
+      "description": "Reserved industry effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "trade.potential",
+      "description": "Reserved trade effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "military.potential",
+      "description": "Reserved military effect hook; no costs, production or balance values.",
+      "magnitude": null
+    },
+    {
+      "id": "forum.historical-significance",
+      "description": "Separate landmark identity modifier; no numeric bonus.",
+      "magnitude": null
+    }
+  ],
+  "technologies": [
+    {
+      "id": "appia-conduit",
+      "cultures": [
+        "roman-italic"
+      ],
+      "fromBce": 312,
+      "toBce": 200,
+      "evidence": [
+        "https://www.parcoappiaantica.it/itinerari/acquedotti/"
+      ]
+    },
+    {
+      "id": "greek-bathing",
+      "cultures": [
+        "greek-hellenistic",
+        "hellenistic-egyptian"
+      ],
+      "fromBce": 500,
+      "toBce": 200,
+      "evidence": [
+        "https://www.ascsa.edu.gr/uploads/media/hesperia/148226.pdf"
+      ]
+    }
+  ]
+}

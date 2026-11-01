@@ -1,0 +1,38 @@
+; Independent presentation experiment. Canonical geography remains in ../public/data.
+config_version=5
+
+[application]
+config/name="HistoricalParadoxDEI — Campaign World"
+run/main_scene="res://world.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="forward_plus"
+renderer/rendering_method.mobile="mobile"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/default_filters/anisotropic_filtering_level=3
+anti_aliasing/quality/msaa_3d=2
+environment/defaults/default_clear_color=Color(0.32, 0.43, 0.47, 1)
+
+[environment]
+defaults/default_clear_color=Color(0.32, 0.43, 0.47, 1)
+
+[shader_globals]
+
+political_blend={"type":"float","value":0.0}
+political_neutral={"type":"vec4","value":Vector4(0.30,0.30,0.30,1)}
+political_sea_deep={"type":"vec4","value":Vector4(0.022,0.105,0.16,1)}
+political_sea_coast={"type":"vec4","value":Vector4(0.055,0.20,0.25,1)}
+political_coast_band_km={"type":"float","value":2.5}
+political_layers_enabled={"type":"bool","value":false}
+political_boundaries_enabled={"type":"bool","value":false}
+political_layer_bounds={"type":"vec4","value":Vector4(-12,12,87,50)}
+political_color_layer={"type":"sampler2D","value":"res://political_empty_layer.tres"}
+political_boundary_layer={"type":"sampler2D","value":"res://political_empty_layer.tres"}

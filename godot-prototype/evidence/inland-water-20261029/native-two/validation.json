@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "details": {},
+      "passed": true,
+      "test": "Inland shares the existing FFT normal texture"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Inland shares FFT history and cascade scales"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "No extra ocean meshes or simulation receivers"
+    },
+    {
+      "details": {
+        "actualVertices": 82935,
+        "maximumRoundtripErrorKm": 0.0000872367672855034,
+        "vertices": 82935
+      },
+      "passed": true,
+      "test": "All lake triangle positions and levels match original source"
+    },
+    {
+      "details": {
+        "max": 0.819607838988304,
+        "mean": 0.0668309565173462
+      },
+      "passed": true,
+      "test": "Actual inland wave animation changes water pixels"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Shared pausable water clock reaches inland surface"
+    },
+    {
+      "details": {
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "passed": true,
+      "test": "Reduced motion freezes FFT scheduling and inland appearance"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Inland uses approved full political presentation"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Political view retains suspended FFT updates"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Nile material shares FFT receiver without duplicate registration"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Geography and research remain intact"
+    }
+  ],
+  "passed": true
+}

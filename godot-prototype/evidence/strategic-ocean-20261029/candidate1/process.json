@@ -1,0 +1,90 @@
+{
+    "gpuScope":  "Device-wide",
+    "elapsedMs":  14615,
+    "exitCode":  0,
+    "peakWorkingSetBytes":  1282174976,
+    "arguments":  [
+                      "--path",
+                      "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                      "--resolution",
+                      "1920x1080",
+                      "--script",
+                      "res://tools/strategic-ocean-profile.gd",
+                      "--",
+                      "--settlement-development",
+                      "--settlement-identities",
+                      "--automation-input-lock",
+                      "--output=res://evidence/strategic-ocean-20261029/candidate1",
+                      "--samples=300",
+                      "--only=d59p3-ym48p0",
+                      "--reference=res://evidence/strategic-ocean-20261029/before/performance.json"
+                  ],
+    "gpuSamples":  [
+                       {
+                           "deviceWideCsv":  [
+                                                 "1432 MiB, 12 %, 64, 1425 MHz, 28.76 W"
+                                             ],
+                           "elapsedMs":  1566
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1816 MiB, 9 %, 64, 1425 MHz, 30.20 W"
+                                             ],
+                           "elapsedMs":  2858
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2072 MiB, 1 %, 64, 495 MHz, 21.70 W"
+                                             ],
+                           "elapsedMs":  4039
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2630 MiB, 3 %, 61, 345 MHz, 15.72 W"
+                                             ],
+                           "elapsedMs":  5244
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2630 MiB, 43 %, 75, 1935 MHz, 87.64 W"
+                                             ],
+                           "elapsedMs":  6481
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 77 %, 77, 1650 MHz, 86.84 W"
+                                             ],
+                           "elapsedMs":  7658
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 84 %, 79, 1567 MHz, 87.06 W"
+                                             ],
+                           "elapsedMs":  8841
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 79 %, 80, 1642 MHz, 87.76 W"
+                                             ],
+                           "elapsedMs":  10043
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 86 %, 81, 1575 MHz, 88.34 W"
+                                             ],
+                           "elapsedMs":  11260
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 99 %, 81, 1507 MHz, 88.53 W"
+                                             ],
+                           "elapsedMs":  12488
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2635 MiB, 44 %, 80, 1935 MHz, 53.39 W"
+                                             ],
+                           "elapsedMs":  13708
+                       }
+                   ]
+}

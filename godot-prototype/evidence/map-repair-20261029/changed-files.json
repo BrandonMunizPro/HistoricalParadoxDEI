@@ -1,0 +1,22 @@
+{
+  "runtime": [
+    {
+      "path": "godot-prototype/nile_water.gdshader",
+      "beforeSha256": "f23dc55047d88ad25fcc991b40840c878f9fdae0a7e55bad65906b779179ec68",
+      "afterSha256": "4765a40e1f78d8a72a6af075d69b1aa851ea5f13f45a9950a08303453d85903e"
+    },
+    {
+      "path": "godot-prototype/ocean/ocean_surface.gdshader",
+      "beforeSha256": "b4be8c928a919c8d86683241ca1bf39caa79197a8c84ed894f9e13f34a8f4022",
+      "afterSha256": "eb0c02380fd77bec3af7f828adc28a1df2a2ee057bdf8d0c383fefd459ea3123"
+    }
+  ],
+  "addedTools": [
+    "godot-prototype/tools/map-repair-audit.gd",
+    "godot-prototype/tools/map-repair-capture.ps1",
+    "godot-prototype/tools/map-repair-validate.gd",
+    "godot-prototype/tools/map-repair-report.mjs"
+  ],
+  "evidenceDirectory": "godot-prototype/evidence/map-repair-20261029",
+  "note": "Compared with task-start source snapshot; earlier uncommitted work is preserved. No commits or pushes."
+}

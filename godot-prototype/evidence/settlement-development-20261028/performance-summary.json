@@ -1,0 +1,264 @@
+{
+  "method": "600 settled wall intervals, one forced GPU draw per interval, hidden window/no swap, input locked, retained shader caches. Rendered comparison, not presented-frame FPS.",
+  "hardware": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "sceneInstantiationMs": {
+    "before": 3159.246,
+    "after": 3075.806
+  },
+  "pairs": [
+    {
+      "before": "city",
+      "after": "city",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.4918012619019,
+          41.8899803161621
+        ],
+        "fov": 42,
+        "near": 0.0120000001043081,
+        "position": [
+          -83.3618469238281,
+          0.357702046632767,
+          -43.5071258544922
+        ]
+      },
+      "beforePerformance": {
+        "averageFps": 67.4483859657445,
+        "maxMs": 19.813,
+        "meanMs": 14.8261516666667,
+        "onePercentLowFps": 53.4069161956473,
+        "over16_67ms": 140,
+        "over33_33ms": 0,
+        "p99Ms": 18.218,
+        "samples": 600
+      },
+      "afterPerformance": {
+        "averageFps": 66.8133293482894,
+        "maxMs": 18.947,
+        "meanMs": 14.9670733333333,
+        "onePercentLowFps": 53.5284146667856,
+        "over16_67ms": 149,
+        "over33_33ms": 0,
+        "p99Ms": 18.466,
+        "samples": 600
+      }
+    },
+    {
+      "before": "strategic",
+      "after": "strategic-3",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.4912576675415,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -74.843864440918,
+          30.1694869995117,
+          -11.5497589111328
+        ]
+      },
+      "beforePerformance": {
+        "averageFps": 120.006240324497,
+        "maxMs": 9.052,
+        "meanMs": 8.33289999999999,
+        "onePercentLowFps": 111.288348109953,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.925,
+        "samples": 600
+      },
+      "afterPerformance": {
+        "averageFps": 119.992464473231,
+        "maxMs": 10.569,
+        "meanMs": 8.33385666666667,
+        "onePercentLowFps": 96.3174623559251,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.231,
+        "samples": 600
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "city",
+      "averageFps": 66.8133293482894,
+      "maxMs": 18.947,
+      "meanMs": 14.9670733333333,
+      "onePercentLowFps": 53.5284146667856,
+      "over16_67ms": 149,
+      "over33_33ms": 0,
+      "p99Ms": 18.466,
+      "samples": 600,
+      "readinessMs": 22032.494,
+      "firstFrameWorstMs": 176.555,
+      "gpuMeanMs": 7.4663649892807,
+      "videoMemoryBytes": 1277300944,
+      "drawCalls": 336
+    },
+    {
+      "name": "civic-1",
+      "averageFps": 91.5385990810746,
+      "maxMs": 14.549,
+      "meanMs": 10.9243533333333,
+      "onePercentLowFps": 69.0440846480478,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 14.428,
+      "samples": 600,
+      "readinessMs": 1960.391,
+      "firstFrameWorstMs": 14.733,
+      "gpuMeanMs": 5.44918166240056,
+      "videoMemoryBytes": 1277376544,
+      "drawCalls": 299
+    },
+    {
+      "name": "civic-2",
+      "averageFps": 90.4092919053848,
+      "maxMs": 14.846,
+      "meanMs": 11.06081,
+      "onePercentLowFps": 67.8218996914104,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 14.672,
+      "samples": 600,
+      "readinessMs": 1969.737,
+      "firstFrameWorstMs": 14.673,
+      "gpuMeanMs": 5.52450000127157,
+      "videoMemoryBytes": 1278000704,
+      "drawCalls": 303
+    },
+    {
+      "name": "civic-3",
+      "averageFps": 86.2887468831786,
+      "maxMs": 15.812,
+      "meanMs": 11.5889966666667,
+      "onePercentLowFps": 64.6774749913763,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 15.231,
+      "samples": 600,
+      "readinessMs": 1998.567,
+      "firstFrameWorstMs": 15.231,
+      "gpuMeanMs": 5.78211166302363,
+      "videoMemoryBytes": 1278000704,
+      "drawCalls": 303
+    },
+    {
+      "name": "grain-1",
+      "averageFps": 82.6520508453376,
+      "maxMs": 16.331,
+      "meanMs": 12.0989133333333,
+      "onePercentLowFps": 62.2426009108167,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 15.848,
+      "samples": 600,
+      "readinessMs": 2087.692,
+      "firstFrameWorstMs": 15.897,
+      "gpuMeanMs": 6.02621667146683,
+      "videoMemoryBytes": 1278319728,
+      "drawCalls": 325
+    },
+    {
+      "name": "grain-2",
+      "averageFps": 81.4512550213002,
+      "maxMs": 16.554,
+      "meanMs": 12.2772816666667,
+      "onePercentLowFps": 61.4924210591045,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 16,
+      "samples": 600,
+      "readinessMs": 2147.689,
+      "firstFrameWorstMs": 16.604,
+      "gpuMeanMs": 6.11730001052221,
+      "videoMemoryBytes": 1278319728,
+      "drawCalls": 329
+    },
+    {
+      "name": "grain-3",
+      "averageFps": 78.7948899412677,
+      "maxMs": 18.505,
+      "meanMs": 12.6911783333333,
+      "onePercentLowFps": 56.4015792442188,
+      "over16_67ms": 14,
+      "over33_33ms": 0,
+      "p99Ms": 17.231,
+      "samples": 600,
+      "readinessMs": 2203.636,
+      "firstFrameWorstMs": 16.674,
+      "gpuMeanMs": 6.36657333453496,
+      "videoMemoryBytes": 1279737872,
+      "drawCalls": 329
+    },
+    {
+      "name": "strategic-1",
+      "averageFps": 120.014617780446,
+      "maxMs": 11.837,
+      "meanMs": 8.33231833333333,
+      "onePercentLowFps": 91.2283902750536,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 10.546,
+      "samples": 600,
+      "readinessMs": 1541.689,
+      "firstFrameWorstMs": 29.865,
+      "gpuMeanMs": 6.89063332716624,
+      "videoMemoryBytes": 1277884688,
+      "drawCalls": 264
+    },
+    {
+      "name": "strategic-2",
+      "averageFps": 120.013609543322,
+      "maxMs": 10.712,
+      "meanMs": 8.33238833333333,
+      "onePercentLowFps": 97.616529732368,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 10.005,
+      "samples": 600,
+      "readinessMs": 1494.946,
+      "firstFrameWorstMs": 15.477,
+      "gpuMeanMs": 7.2010383327802,
+      "videoMemoryBytes": 1279074176,
+      "drawCalls": 270
+    },
+    {
+      "name": "strategic-3",
+      "averageFps": 119.992464473231,
+      "maxMs": 10.569,
+      "meanMs": 8.33385666666667,
+      "onePercentLowFps": 96.3174623559251,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 10.231,
+      "samples": 600,
+      "readinessMs": 1491.461,
+      "firstFrameWorstMs": 12.391,
+      "gpuMeanMs": 7.1443116569519,
+      "videoMemoryBytes": 1279426528,
+      "drawCalls": 270
+    }
+  ],
+  "peakWorkingSetBytes": {
+    "before": 1500983296,
+    "after": 1509928960
+  },
+  "allAverage60": true,
+  "allOnePercentLow60": false,
+  "runtimeValidation": {
+    "emptySlotsDisabled": true,
+    "missingAssetShowsGap": true,
+    "passed": true,
+    "realUiButtonsExercised": true,
+    "renderedLevelsMatchState": true,
+    "startingDataRestored": true
+  }
+}

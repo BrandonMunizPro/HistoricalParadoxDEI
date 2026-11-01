@@ -1,0 +1,468 @@
+{
+  "date": "2026-10-30",
+  "generator": {
+    "name": "EZ-Tree",
+    "author": "Daniel Greenheck",
+    "url": "https://github.com/dgreenheck/ez-tree",
+    "revision": "dcf309bd86bd521083d9c70f01f2de45fdc7c457",
+    "license": "MIT",
+    "notice": "LICENSE-EZ-Tree.txt",
+    "vendoredSource": "../../tools/vendor/ez-tree",
+    "adaptations": "Node ESM relative import extensions and JSON import attributes; uses existing repository Three.js dependency. Generated meshes normalize height and use project-specific seeds; foliage size multiplied by 1.8. Columnar evergreen narrows a pine preset; not a botanically validated cypress model."
+  },
+  "textures": [
+    {
+      "files": [
+        "oak.png",
+        "ash.png",
+        "pine.png"
+      ],
+      "source": "https://github.com/dgreenheck/ez-tree/tree/dcf309bd86bd521083d9c70f01f2de45fdc7c457/src/app/public/textures/leaves",
+      "license": "MIT, under the EZ-Tree project license as explicitly stated in its texture attribution",
+      "verification": "https://github.com/dgreenheck/ez-tree/blob/dcf309bd86bd521083d9c70f01f2de45fdc7c457/src/app/public/textures/LICENSE.md"
+    },
+    {
+      "files": [
+        "bark-Color.jpg",
+        "bark-NormalGL.jpg",
+        "bark-Roughness.jpg"
+      ],
+      "asset": "ambientCG Bark001",
+      "source": "https://ambientcg.com/view?id=Bark001",
+      "license": "CC0-1.0",
+      "verification": "https://docs.ambientcg.com/license/",
+      "acquiredThrough": "EZ-Tree bundled Bark001_1K-JPG maps; upstream attribution copied as TEXTURE-LICENSE.md"
+    }
+  ],
+  "derivatives": "Twenty project-generated mesh variants with three LODs, directional renders and native Godot texture resources. Retain bundled MIT notices; do not describe MIT leaf textures as CC0. No Total War or other proprietary game assets.",
+  "directionalBake": {
+    "azimuths": 8,
+    "elevationsDegrees": [
+      15,
+      50,
+      85
+    ],
+    "framePixels": 256,
+    "atlasPixels": [
+      2048,
+      768
+    ],
+    "runtime": "Four-frame interpolation between neighboring directions/elevations, alpha-to-coverage, mipmaps, source alpha edge repair baked offline. Campaign uses these impostors throughout its current supported zoom range; full meshes are retained for asset authoring/gallery and possible future close camera work."
+  },
+  "trialBoundsDegrees": {
+    "west": 11.5,
+    "east": 13.5,
+    "south": 40.5,
+    "north": 43.5
+  },
+  "notImplemented": [
+    "Species-validated olive trees",
+    "Umbrella/stone pine kit",
+    "Updated palms",
+    "Grass/flower/ground-cover pass",
+    "World-wide rollout"
+  ],
+  "evaluatedNotImported": [
+    {
+      "url": "https://polyhaven.com/a/pine_tree_01",
+      "license": "CC0",
+      "finding": "Metadata shows multi-million-vertex tree geometry. Rejected as a direct campaign instance; no large mesh binary downloaded."
+    },
+    {
+      "url": "https://opengameart.org/content/foliage1",
+      "license": "CC0",
+      "finding": "Downloaded and inspected outside the game. Rounded/stylized tree crowns do not meet this art direction. No files imported."
+    },
+    {
+      "url": "https://www.innerscene.com/tools/library/3d-parts/mature-scots-pine-tree-280307e1",
+      "license": "CC0 stated by provider",
+      "finding": "Downloaded outside project and inspected GLB structure. Not integrated or presented as a validated asset."
+    },
+    {
+      "url": "https://github.com/caphindsight/Foliage3D",
+      "finding": "Reference investigated. Existing instancing/culling was retained; no plugin or demo asset imported."
+    }
+  ],
+  "files": [
+    {
+      "file": "LICENSE-EZ-Tree.txt",
+      "bytes": 1094,
+      "sha256": "dfcc723b09e99427663fb35ad5a86a39667255d3d6ea35a1efe0d8235d24cb40"
+    },
+    {
+      "file": "TEXTURE-LICENSE.md",
+      "bytes": 1402,
+      "sha256": "3f17468025e37e51b22533c48fb7a9a893ddf115dd6a837315afc68148282ce2"
+    },
+    {
+      "file": "ash-0-atlas.png",
+      "bytes": 1296201,
+      "sha256": "a377b44366ac833e2dde6b3a1af6b32cac450decf3746eba2f3fa666031e2b3e"
+    },
+    {
+      "file": "ash-0-atlas.res",
+      "bytes": 2159072,
+      "sha256": "fc72b07cf1867fda3c6b29690aee7d88063ef3d8b2426ef4b7f70974b1d0d575"
+    },
+    {
+      "file": "ash-0.bin",
+      "bytes": 1661580,
+      "sha256": "5552ef8f664efda007539406b3f574220e8e3815410bb273854f867913ba5f9d"
+    },
+    {
+      "file": "ash-1-atlas.png",
+      "bytes": 1456270,
+      "sha256": "091613c62497718cde15d4e16748b820330d2eb84fabb8e4de2e3d7acbaef0ce"
+    },
+    {
+      "file": "ash-1-atlas.res",
+      "bytes": 2410748,
+      "sha256": "b86bf35c3fc7b3e7d99c88058fdd34de1ac5a83c84311feeb49ebef216be85de"
+    },
+    {
+      "file": "ash-1.bin",
+      "bytes": 1661580,
+      "sha256": "53fa64d699a384d84e6b3ef36d0cfe7b2083522873535b5cbab120c4ce533922"
+    },
+    {
+      "file": "ash-2-atlas.png",
+      "bytes": 1104364,
+      "sha256": "c010dcac34d8d584c53f85b049ba1919534a9f636f7e2a7a3c9f04634d1f36b0"
+    },
+    {
+      "file": "ash-2-atlas.res",
+      "bytes": 1862708,
+      "sha256": "6df7112df5f83e4daf5a4e6fa3e0ddf3a00b1283d578d0333011769af1435822"
+    },
+    {
+      "file": "ash-2.bin",
+      "bytes": 1661580,
+      "sha256": "f2631fb95eeda125cfc94af851975456ebc973edc5c3beebdbb0c1e10bb97418"
+    },
+    {
+      "file": "ash-3-atlas.png",
+      "bytes": 1008128,
+      "sha256": "7a90ce73d63025b158a5adf750f92b3b8f2a26589847064ed0cac5e2fb1a1048"
+    },
+    {
+      "file": "ash-3-atlas.res",
+      "bytes": 1716616,
+      "sha256": "ec3ab55837b7de13a1a4c45d46cedeffaf7f5cfce1cd379292967c20e7f2a243"
+    },
+    {
+      "file": "ash-3.bin",
+      "bytes": 1661580,
+      "sha256": "8b3adedc81306e619847dbd842039abd5493103f0fde2cfda478307310ba5c5d"
+    },
+    {
+      "file": "ash.png",
+      "bytes": 181423,
+      "sha256": "5ec987db3829a839856c32c79b18a33a78f209e911cad55c65abfb77f30e2d29"
+    },
+    {
+      "file": "ash.res",
+      "bytes": 773159,
+      "sha256": "675fa087f57d3483666051be24afb0e5a1a09273cbe4959d4e7b3bba8fc5265a"
+    },
+    {
+      "file": "bark-Color.jpg",
+      "bytes": 831490,
+      "sha256": "2a7e8c742aa0110057d7a3ff0e8ec193c26ef23b77bc778fb9258c0e41b29474"
+    },
+    {
+      "file": "bark-Color.res",
+      "bytes": 1971846,
+      "sha256": "4abc5a3a7d08b6cd0c0674581bed8ebf84828b6306776ec26e480b2755de6249"
+    },
+    {
+      "file": "bark-NormalGL.jpg",
+      "bytes": 1270807,
+      "sha256": "d7a275aa573a701d8814d7378abd8ea227f651ae6da33f8c57a6b862419e621e"
+    },
+    {
+      "file": "bark-NormalGL.res",
+      "bytes": 1967685,
+      "sha256": "3a0369a334933561df4e81e8936c0eb9a161258b36f353a5f1dd4e6890290dbe"
+    },
+    {
+      "file": "bark-Roughness.jpg",
+      "bytes": 397062,
+      "sha256": "2c0829e7a04b78234357ac6eb93173667fab9191c4340343ce88dddfcca1e6fd"
+    },
+    {
+      "file": "bark-Roughness.res",
+      "bytes": 634768,
+      "sha256": "82819bd03a5011a6365f81b3334f5ba220b67a065be64961b4990210e646ee55"
+    },
+    {
+      "file": "catalog.json",
+      "bytes": 5902,
+      "sha256": "eae300d48f3b87eb6d46b0d9890be5697efbfd582b7751ec532c97fffd95af35"
+    },
+    {
+      "file": "cypress-0-atlas.png",
+      "bytes": 311212,
+      "sha256": "982ff21a67315cde088342467b4912da98fa8fb9d88a5063653faf3cd1231253"
+    },
+    {
+      "file": "cypress-0-atlas.res",
+      "bytes": 632525,
+      "sha256": "9b584a02768cda53069bb61d3e49651747885d16b9c15a4f5cc8a8a1783d5e42"
+    },
+    {
+      "file": "cypress-0.bin",
+      "bytes": 1336380,
+      "sha256": "2c4bec51649b12899f65a7ffdce757a13708d910f5e63157f6a1de0969e3e94e"
+    },
+    {
+      "file": "cypress-1-atlas.png",
+      "bytes": 310695,
+      "sha256": "10311c4e71b44e74be964323cff3ce6952d5182ed7506a276b9a386cb127a478"
+    },
+    {
+      "file": "cypress-1-atlas.res",
+      "bytes": 629954,
+      "sha256": "227f63f2a1f30a7143fa39983bb9824190bdd06018a059d536beb0ab1f83da12"
+    },
+    {
+      "file": "cypress-1.bin",
+      "bytes": 1336380,
+      "sha256": "21af14a7a7c1cab62bfe47a189738ba760ebaf502e9694d29d79bfbf3ffb6ac0"
+    },
+    {
+      "file": "cypress-2-atlas.png",
+      "bytes": 295703,
+      "sha256": "a2f099220b34bad5485777cd019ce38ad54e4d6d444407d12cdff9f82d809fe6"
+    },
+    {
+      "file": "cypress-2-atlas.res",
+      "bytes": 599774,
+      "sha256": "6f8ad67b9ed3e226db99d73a5d297fd662c751c16cc90ecb7d56e6d3f9d9a122"
+    },
+    {
+      "file": "cypress-2.bin",
+      "bytes": 1336380,
+      "sha256": "ef35c95c3ab97024eacad5adbc9e86e9be01c419a92079da8dcc4a4a6ce71e43"
+    },
+    {
+      "file": "cypress-3-atlas.png",
+      "bytes": 309360,
+      "sha256": "717805023639f8f4a9727656b300a405809e44b33d4e1987e62483f36eb05028"
+    },
+    {
+      "file": "cypress-3-atlas.res",
+      "bytes": 628971,
+      "sha256": "3aad9b4ffb84ac406573855303eaf68ff13ae8c8a7aaabbc0c1266af95a8c069"
+    },
+    {
+      "file": "cypress-3.bin",
+      "bytes": 1336380,
+      "sha256": "ec02c3d0ee62c4ae30a1231176f98ba54d9972f1e9d13fe0bda44e9662090dfc"
+    },
+    {
+      "file": "impostors.json",
+      "bytes": 3736,
+      "sha256": "05a493eef3f9dc57db450c1f735e8d97320441a7cf18f703c8f99b777780f9cb"
+    },
+    {
+      "file": "oak-0-atlas.png",
+      "bytes": 1082492,
+      "sha256": "893bb09e25a1d248b5bc4a0d5a048748095b2d37b44313d03966dd2ac590f5b2"
+    },
+    {
+      "file": "oak-0-atlas.res",
+      "bytes": 1883318,
+      "sha256": "3e07200b8feb33c2827d0e10bd82508625f8112f688f01ef0723b7a469059a74"
+    },
+    {
+      "file": "oak-0.bin",
+      "bytes": 1353156,
+      "sha256": "1aea05f208c57b36e14c9836401ceb3b680067f4aaab5dd79e630f8703f20e7a"
+    },
+    {
+      "file": "oak-1-atlas.png",
+      "bytes": 1140119,
+      "sha256": "fda88153a5d9d0e84341c4400a7a7af1585cc9f3908e1e70fe7555db9c1cc2f7"
+    },
+    {
+      "file": "oak-1-atlas.res",
+      "bytes": 1978558,
+      "sha256": "72b13c0be16abb1471f997796db16d7058e669ecc12e20110ceee782676fb59c"
+    },
+    {
+      "file": "oak-1.bin",
+      "bytes": 1353156,
+      "sha256": "03bb9000ce7796e0d1aaad020adebf42ef4e8636a4e9e569b8bbb444fc990c07"
+    },
+    {
+      "file": "oak-2-atlas.png",
+      "bytes": 1243908,
+      "sha256": "b1a30dfe8cea170b0bc99dadd79a99596b788303b20059242ff1527843e818ce"
+    },
+    {
+      "file": "oak-2-atlas.res",
+      "bytes": 2129221,
+      "sha256": "767b088590566ecf73d28eec81694a8e84752c3b2a0f52a0c76ac8fc2f8091a3"
+    },
+    {
+      "file": "oak-2.bin",
+      "bytes": 1353156,
+      "sha256": "0c1272df77133bd492815da98ee64b90f81196cf3021d4a4317a854aef2b7289"
+    },
+    {
+      "file": "oak-3-atlas.png",
+      "bytes": 1072105,
+      "sha256": "1a9225fe26a77641cfb220171301a3ced4ba8243791a2447bb19a9fc063bcb6e"
+    },
+    {
+      "file": "oak-3-atlas.res",
+      "bytes": 1870143,
+      "sha256": "26ef616f133c5e76ac5d7373c192995d08db21f8570d1cbbecf267debf71697b"
+    },
+    {
+      "file": "oak-3.bin",
+      "bytes": 1353156,
+      "sha256": "b22767317e0855f296c7d23d66365385dda749ee1f1b7f8a57a4b2f22f9caf69"
+    },
+    {
+      "file": "oak.png",
+      "bytes": 238115,
+      "sha256": "24451223cf396d22910a4932b8bb996a7274e63d81e24128c96a430ab67822b1"
+    },
+    {
+      "file": "oak.res",
+      "bytes": 1063622,
+      "sha256": "30bc4349e6c5c700dd061d720ab1a3f608e3aaef0da0ca1ccfd98bdff5842ec7"
+    },
+    {
+      "file": "pine-0-atlas.png",
+      "bytes": 998324,
+      "sha256": "9415dbc24ef24a757d09a4abe455a83e751b5ced7a3ffef9756ff220adc0f5d4"
+    },
+    {
+      "file": "pine-0-atlas.res",
+      "bytes": 1739800,
+      "sha256": "54aa94b08a967f79f27636ae7efc8987680228cb7324f8b767a4e683e42db302"
+    },
+    {
+      "file": "pine-0.bin",
+      "bytes": 1504108,
+      "sha256": "094510546d5705e44c5ad975b3497f798dd1fd16b72f46245fe180a07e1612b1"
+    },
+    {
+      "file": "pine-1-atlas.png",
+      "bytes": 1012025,
+      "sha256": "5d43e26646697bca76650a6103a9b5d89e9a903ae080c7466a5b60144d132213"
+    },
+    {
+      "file": "pine-1-atlas.res",
+      "bytes": 1775199,
+      "sha256": "96e9aaa247ef0d8fe3ff2c3166fecda75002f1589f2f5605f5b47584f0f12024"
+    },
+    {
+      "file": "pine-1.bin",
+      "bytes": 1504108,
+      "sha256": "1bcaf8449572a3eacde06a17e8f5f34309b41d8abe22b0e5cf1edfca86b89f0c"
+    },
+    {
+      "file": "pine-2-atlas.png",
+      "bytes": 983002,
+      "sha256": "c4bf03bce8975a2b931381392005eb83971388bdafc8cbf14cb13c2b7d632ca8"
+    },
+    {
+      "file": "pine-2-atlas.res",
+      "bytes": 1724521,
+      "sha256": "aea2ee394c69cb4c6fbdf3191ddbd4e597b3e9d97c112c7386eced2a31f5a0f7"
+    },
+    {
+      "file": "pine-2.bin",
+      "bytes": 1504108,
+      "sha256": "7121a4824dae7c62fe14d1bf1446e41940d10cef7073d94db1c4c7748e9cf2de"
+    },
+    {
+      "file": "pine-3-atlas.png",
+      "bytes": 1018704,
+      "sha256": "7ef115d0d6fee431f3e2b0e4393ccfa59b6e590c761549dbde17c08dc2eef49e"
+    },
+    {
+      "file": "pine-3-atlas.res",
+      "bytes": 1789530,
+      "sha256": "b0ecb9cd835d9cdb5c14bfc0eb24ff4e950ec88a9781b6df5efd89db714c603d"
+    },
+    {
+      "file": "pine-3.bin",
+      "bytes": 1504108,
+      "sha256": "f714901c5a793e430ab27ff9eca3cc93e21472e37b7389f7ab0452ececcf06b5"
+    },
+    {
+      "file": "pine.png",
+      "bytes": 303684,
+      "sha256": "88be36a2387554ac4b7c7d1549eae454a37ad896e8e33a7d6ae5956bd169ab08"
+    },
+    {
+      "file": "pine.res",
+      "bytes": 1281233,
+      "sha256": "5f07339a00f1621bbb0eb5a94296bb3bdfc0a19aec9020f1a9f9e4cad5f9caa7"
+    },
+    {
+      "file": "scrub-0-atlas.png",
+      "bytes": 1115853,
+      "sha256": "454f50e12231226698f49d3fa564dbc23f23a4ffab68ce0260831847b4dfe49f"
+    },
+    {
+      "file": "scrub-0-atlas.res",
+      "bytes": 1940114,
+      "sha256": "288dc849c5c37d2ee0a78089acdbe0c3842e4546362071bb4549c570aa1fca02"
+    },
+    {
+      "file": "scrub-0.bin",
+      "bytes": 339932,
+      "sha256": "0015bbc9e2c78d78f957c52fb16c730a195bf67a44a072bdd02dc03ce64ece02"
+    },
+    {
+      "file": "scrub-1-atlas.png",
+      "bytes": 1128249,
+      "sha256": "acd3cd8c7ff27fed8ee5cffc062ea0742636f906560501fdb85f02564eee9e32"
+    },
+    {
+      "file": "scrub-1-atlas.res",
+      "bytes": 1946392,
+      "sha256": "9e58b1c94b543f93303e929fc843330aef78df78ce7362f3c8ee6abe0f29cbdb"
+    },
+    {
+      "file": "scrub-1.bin",
+      "bytes": 339932,
+      "sha256": "ba67cca8d50ea0a2914ed4f90409573a567a829671aee314c6a53035a2817386"
+    },
+    {
+      "file": "scrub-2-atlas.png",
+      "bytes": 1233779,
+      "sha256": "c07adb6bf1297faa1e0fa662b9446b17e86ed09603fa68c504825c522fef0c0c"
+    },
+    {
+      "file": "scrub-2-atlas.res",
+      "bytes": 2125492,
+      "sha256": "cd700ec207ec4c5f3ac8754fcd0fde8beb772d819f12e77c234c330e20df9928"
+    },
+    {
+      "file": "scrub-2.bin",
+      "bytes": 339932,
+      "sha256": "f2945fcfc727869d12fd6529940da05ef8fd36b849850b3d156440053954e12d"
+    },
+    {
+      "file": "scrub-3-atlas.png",
+      "bytes": 1241171,
+      "sha256": "c63a1bfe88bbec5e4c480ee8062ea6e8855e12cfcad8c7b4f13f45c6e398a15d"
+    },
+    {
+      "file": "scrub-3-atlas.res",
+      "bytes": 2139358,
+      "sha256": "780dd9977498da14c07f8177838f761e74607a93ad1456e1b5757f9ace447e15"
+    },
+    {
+      "file": "scrub-3.bin",
+      "bytes": 339932,
+      "sha256": "54d6bd6c6bb7edbdc106011c086311704a7d59c0214243c7812e8cd25cf515a0"
+    }
+  ]
+}

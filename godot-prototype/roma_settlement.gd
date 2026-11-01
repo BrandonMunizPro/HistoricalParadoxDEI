@@ -15,6 +15,7 @@ var height_cache={}
 var terrain_signature=""
 var terrain_meshes=[]
 var landscape
+var showcase
 
 func _init(owner):
 	world=owner
@@ -28,6 +29,7 @@ func _init(owner):
 		if site.key=="roma":center=world.project(site.lon,site.lat)
 	plan()
 	landscape=preload("res://roma_landscape.gd").new(self)
+	if OS.get_cmdline_user_args().has("--roma-showcase") or OS.get_cmdline_user_args().has("--settlement-development") or OS.get_cmdline_user_args().has("--settlement-identities"):showcase=preload("res://roma_showcase.gd").new(self)
 
 func lod(distance):
 	return "close" if distance<settings.lod.close_km else ("strategic" if distance>=settings.lod.strategic_km else "regional")
@@ -47,6 +49,13 @@ func update_lighting(enabled):
 	world.sun.light_angular_distance=lerp(original_lighting.z,float(rules.sun_angular_distance),weight)
 	world.sun.shadow_opacity=lerp(float(original_shadow_opacity),float(rules.shadow_opacity),weight)
 	stats["lightingWeight"]=weight
+	if showcase!=null:
+		environment.ambient_light_energy=lerp(.38,.34,weight)
+		world.sun.light_angular_distance=0.0
+		world.sun.shadow_opacity=lerp(float(original_shadow_opacity),.78,weight)
+		world.sun.directional_shadow_mode=DirectionalLight3D.SHADOW_ORTHOGONAL if weight>.5 else DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
+		if weight>.5:world.sun.directional_shadow_max_distance=1.2
+		if OS.get_cmdline_user_args().has("--showcase-no-shadows"):world.sun.shadow_enabled=false
 
 func plan():
 	# Original illustrative street plan, not a surveyed footprint or street claims.
@@ -98,6 +107,7 @@ func ground(point):
 	return height
 
 func create(distance):
+	if showcase!=null and distance<60:return await showcase.create(distance)
 	var begin=Time.get_ticks_usec()
 	var terrain_key=str(world.resident.keys())+str(world.regional_active)
 	if terrain_signature!=terrain_key:

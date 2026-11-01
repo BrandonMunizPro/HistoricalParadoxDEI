@@ -1,0 +1,496 @@
+{
+  "method": "600 settled wall intervals with a forced GPU draw, automatic render loop off, hidden window/no swap; retained shader caches; rendered comparison, not presented FPS.",
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "sceneInstantiationMs": {
+    "before": 3607.351,
+    "after": 3209.157
+  },
+  "pairs": [
+    {
+      "name": "roma-city",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.4912576675415,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "near": 0.0120000001043081,
+        "position": [
+          -83.4068450927734,
+          0.356905996799469,
+          -43.5072250366211
+        ]
+      },
+      "before": {
+        "averageFps": 66.6973252038187,
+        "maxMs": 19.369,
+        "meanMs": 14.993105,
+        "onePercentLowFps": 51.9197320941824,
+        "over16_67ms": 81,
+        "over33_33ms": 0,
+        "p99Ms": 19.115,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 67.4020908802612,
+        "maxMs": 17.156,
+        "meanMs": 14.836335,
+        "onePercentLowFps": 59.3918276845106,
+        "over16_67ms": 4,
+        "over33_33ms": 0,
+        "p99Ms": 16.604,
+        "samples": 600
+      }
+    },
+    {
+      "name": "roma-strategic",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.4912576675415,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -74.843864440918,
+          30.1694869995117,
+          -11.5497589111328
+        ]
+      },
+      "before": {
+        "averageFps": 120.01300941022,
+        "maxMs": 9.734,
+        "meanMs": 8.33243,
+        "onePercentLowFps": 106.598443662723,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.254,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 120.001824027725,
+        "maxMs": 10.512,
+        "meanMs": 8.33320666666666,
+        "onePercentLowFps": 106.350922594253,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.083,
+        "samples": 600
+      }
+    },
+    {
+      "name": "aricia-city",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.6733474731445,
+          41.7214012145996
+        ],
+        "fov": 42,
+        "near": 0.0120000001043081,
+        "position": [
+          -68.5147094726563,
+          0.917441606521606,
+          -24.6026000976563
+        ]
+      },
+      "before": {
+        "averageFps": 92.4287028093704,
+        "maxMs": 13.312,
+        "meanMs": 10.81915,
+        "onePercentLowFps": 78.3576241968344,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 12.499,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 55.7355607740555,
+        "maxMs": 23.392,
+        "meanMs": 17.9418666666667,
+        "onePercentLowFps": 45.4528237566759,
+        "over16_67ms": 483,
+        "over33_33ms": 0,
+        "p99Ms": 21.488,
+        "samples": 600
+      }
+    },
+    {
+      "name": "aricia-strategic",
+      "exactCameraMatch": true,
+      "camera": {
+        "far": 500,
+        "focus": [
+          12.6733474731445,
+          41.7214012145996
+        ],
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -59.951732635498,
+          30.7071361541748,
+          7.35486602783203
+        ]
+      },
+      "before": {
+        "averageFps": 119.999232004915,
+        "maxMs": 9.11,
+        "meanMs": 8.33338666666666,
+        "onePercentLowFps": 111.34617525888,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.907,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 113.965287313137,
+        "maxMs": 11.376,
+        "meanMs": 8.77460166666668,
+        "onePercentLowFps": 90.7852927825692,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.874,
+        "samples": 600
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "roma-city",
+      "averageFps": 67.4020908802612,
+      "maxMs": 17.156,
+      "meanMs": 14.836335,
+      "onePercentLowFps": 59.3918276845106,
+      "over16_67ms": 4,
+      "over33_33ms": 0,
+      "p99Ms": 16.604,
+      "samples": 600,
+      "readinessMs": 22070.635,
+      "readinessWorstMs": 177.838,
+      "gpuMeanMs": 7.39794667800268,
+      "drawCalls": 298,
+      "videoMemoryBytes": 1295110224
+    },
+    {
+      "name": "roma-strategic",
+      "averageFps": 120.001824027725,
+      "maxMs": 10.512,
+      "meanMs": 8.33320666666666,
+      "onePercentLowFps": 106.350922594253,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 9.083,
+      "samples": 600,
+      "readinessMs": 1558.369,
+      "readinessWorstMs": 50.708,
+      "gpuMeanMs": 6.15833333333333,
+      "drawCalls": 238,
+      "videoMemoryBytes": 1290030256
+    },
+    {
+      "name": "aricia-city",
+      "averageFps": 55.7355607740555,
+      "maxMs": 23.392,
+      "meanMs": 17.9418666666667,
+      "onePercentLowFps": 45.4528237566759,
+      "over16_67ms": 483,
+      "over33_33ms": 0,
+      "p99Ms": 21.488,
+      "samples": 600,
+      "readinessMs": 8392.262,
+      "readinessWorstMs": 382.167,
+      "gpuMeanMs": 9.00088001966476,
+      "drawCalls": 478,
+      "videoMemoryBytes": 1296687744
+    },
+    {
+      "name": "aricia-strategic",
+      "averageFps": 113.965287313137,
+      "maxMs": 11.376,
+      "meanMs": 8.77460166666668,
+      "onePercentLowFps": 90.7852927825692,
+      "over16_67ms": 0,
+      "over33_33ms": 0,
+      "p99Ms": 10.874,
+      "samples": 600,
+      "readinessMs": 1566.585,
+      "readinessWorstMs": 34.239,
+      "gpuMeanMs": 8.74839166561762,
+      "drawCalls": 315,
+      "videoMemoryBytes": 1291081424
+    },
+    {
+      "name": "civic-1",
+      "averageFps": 53.1491208426757,
+      "maxMs": 25.804,
+      "meanMs": 18.8149866666667,
+      "onePercentLowFps": 40.5197331100246,
+      "over16_67ms": 533,
+      "over33_33ms": 0,
+      "p99Ms": 23.822,
+      "samples": 600,
+      "readinessMs": 12001.564,
+      "readinessWorstMs": 64.313,
+      "gpuMeanMs": 9.46327998240789,
+      "drawCalls": 292,
+      "videoMemoryBytes": 1296962688
+    },
+    {
+      "name": "civic-2",
+      "averageFps": 69.3684282085326,
+      "maxMs": 16.835,
+      "meanMs": 14.41578,
+      "onePercentLowFps": 60.8500755555105,
+      "over16_67ms": 1,
+      "over33_33ms": 0,
+      "p99Ms": 16.14,
+      "samples": 600,
+      "readinessMs": 2648.196,
+      "readinessWorstMs": 56.676,
+      "gpuMeanMs": 7.19437166849772,
+      "drawCalls": 292,
+      "videoMemoryBytes": 1300849408
+    },
+    {
+      "name": "civic-3",
+      "averageFps": 69.1980784616252,
+      "maxMs": 18.22,
+      "meanMs": 14.4512683333333,
+      "onePercentLowFps": 56.2055624771665,
+      "over16_67ms": 16,
+      "over33_33ms": 0,
+      "p99Ms": 17.404,
+      "samples": 600,
+      "readinessMs": 2620.444,
+      "readinessWorstMs": 43.311,
+      "gpuMeanMs": 7.2043133354187,
+      "drawCalls": 292,
+      "videoMemoryBytes": 1300858928
+    },
+    {
+      "name": "religion-1",
+      "averageFps": 67.2478223473928,
+      "maxMs": 17.899,
+      "meanMs": 14.87037,
+      "onePercentLowFps": 58.3890462149301,
+      "over16_67ms": 6,
+      "over33_33ms": 0,
+      "p99Ms": 16.681,
+      "samples": 600,
+      "readinessMs": 2822.105,
+      "readinessWorstMs": 51.798,
+      "gpuMeanMs": 7.41286000967026,
+      "drawCalls": 262,
+      "videoMemoryBytes": 1301071648
+    },
+    {
+      "name": "religion-2",
+      "averageFps": 63.8619695904202,
+      "maxMs": 18.355,
+      "meanMs": 15.6587716666667,
+      "onePercentLowFps": 55.4882503629856,
+      "over16_67ms": 56,
+      "over33_33ms": 0,
+      "p99Ms": 17.643,
+      "samples": 600,
+      "readinessMs": 2862.768,
+      "readinessWorstMs": 52.505,
+      "gpuMeanMs": 7.78292832692464,
+      "drawCalls": 272,
+      "videoMemoryBytes": 1301075216
+    },
+    {
+      "name": "religion-3",
+      "averageFps": 52.2704770682883,
+      "maxMs": 30.279,
+      "meanMs": 19.1312583333333,
+      "onePercentLowFps": 36.0594259339391,
+      "over16_67ms": 442,
+      "over33_33ms": 0,
+      "p99Ms": 26.462,
+      "samples": 600,
+      "readinessMs": 2913.717,
+      "readinessWorstMs": 57.047,
+      "gpuMeanMs": 9.58395834525426,
+      "drawCalls": 272,
+      "videoMemoryBytes": 1303782080
+    },
+    {
+      "name": "farm-1",
+      "averageFps": 54.9137963225328,
+      "maxMs": 26.429,
+      "meanMs": 18.21036,
+      "onePercentLowFps": 40.4773630347228,
+      "over16_67ms": 475,
+      "over33_33ms": 0,
+      "p99Ms": 23.924,
+      "samples": 600,
+      "readinessMs": 9675.252,
+      "readinessWorstMs": 80.914,
+      "gpuMeanMs": 9.10094667514165,
+      "drawCalls": 497,
+      "videoMemoryBytes": 1296266576
+    },
+    {
+      "name": "farm-2",
+      "averageFps": 52.1248884527387,
+      "maxMs": 25.924,
+      "meanMs": 19.1846933333333,
+      "onePercentLowFps": 39.5462724342708,
+      "over16_67ms": 552,
+      "over33_33ms": 0,
+      "p99Ms": 24.512,
+      "samples": 600,
+      "readinessMs": 3466.999,
+      "readinessWorstMs": 34.429,
+      "gpuMeanMs": 9.63673998355866,
+      "drawCalls": 520,
+      "videoMemoryBytes": 1297001824
+    },
+    {
+      "name": "farm-3",
+      "averageFps": 49.5283824872262,
+      "maxMs": 27.697,
+      "meanMs": 20.1904433333333,
+      "onePercentLowFps": 36.9893162524891,
+      "over16_67ms": 576,
+      "over33_33ms": 0,
+      "p99Ms": 26.509,
+      "samples": 600,
+      "readinessMs": 3581.751,
+      "readinessWorstMs": 139.318,
+      "gpuMeanMs": 10.0178366804123,
+      "drawCalls": 522,
+      "videoMemoryBytes": 1298748096
+    },
+    {
+      "name": "civic-detail",
+      "averageFps": 58.5289223596286,
+      "maxMs": 26.079,
+      "meanMs": 17.08557,
+      "onePercentLowFps": 39.2169678747672,
+      "over16_67ms": 327,
+      "over33_33ms": 0,
+      "p99Ms": 24.554,
+      "samples": 600,
+      "readinessMs": 11303.22,
+      "readinessWorstMs": 64.951,
+      "gpuMeanMs": 8.54952167590459,
+      "drawCalls": 265,
+      "videoMemoryBytes": 1299390576
+    },
+    {
+      "name": "religion-detail",
+      "averageFps": 55.3820967772604,
+      "maxMs": 27.155,
+      "meanMs": 18.0563766666667,
+      "onePercentLowFps": 38.5998546072143,
+      "over16_67ms": 445,
+      "over33_33ms": 0,
+      "p99Ms": 25.063,
+      "samples": 600,
+      "readinessMs": 3339.143,
+      "readinessWorstMs": 61.07,
+      "gpuMeanMs": 9.10051333904266,
+      "drawCalls": 257,
+      "videoMemoryBytes": 1302097440
+    },
+    {
+      "name": "farm-detail",
+      "averageFps": 58.2749563957639,
+      "maxMs": 22.859,
+      "meanMs": 17.16003,
+      "onePercentLowFps": 44.9599856128046,
+      "over16_67ms": 382,
+      "over33_33ms": 0,
+      "p99Ms": 21.752,
+      "samples": 600,
+      "readinessMs": 9041.023,
+      "readinessWorstMs": 74.636,
+      "gpuMeanMs": 8.53425500949224,
+      "drawCalls": 445,
+      "videoMemoryBytes": 1297774832
+    },
+    {
+      "name": "spectacle-detail",
+      "averageFps": 56.8034161574477,
+      "maxMs": 24.769,
+      "meanMs": 17.604575,
+      "onePercentLowFps": 41.3824497030809,
+      "over16_67ms": 410,
+      "over33_33ms": 0,
+      "p99Ms": 23.73,
+      "samples": 600,
+      "readinessMs": 11653.68,
+      "readinessWorstMs": 64.455,
+      "gpuMeanMs": 8.83503500620524,
+      "drawCalls": 261,
+      "videoMemoryBytes": 1300462576
+    }
+  ],
+  "peakWorkingSetBytes": {
+    "before": 1468604416,
+    "after": 1525882880
+  },
+  "allAverage60": false,
+  "allOnePercentLow60": false,
+  "runtimeValidation": {
+    "emptySlotsPreserved": true,
+    "independentPreviewState": true,
+    "passed": true,
+    "renderedLevelsCheckedBeforeEveryCapture": true,
+    "slotCounts": [
+      6,
+      4
+    ],
+    "startingDataRestored": true,
+    "twoSettlementSelector": true
+  },
+  "swapCheck": {
+    "method": "Supplemental 60 FPS capped driver, one forced GPU draw with buffer swap requested per frame, automatic render loop disabled. 1200 settled intervals per view. Hidden-window control, not OS scan-out/PresentMon measurements. Retained shader caches, no quality reductions.",
+    "verifiedFrameCap": 60,
+    "views": [
+      {
+        "name": "roma-city",
+        "averageFps": 60.0026221145864,
+        "maxMs": 19.139,
+        "meanMs": 16.6659383333333,
+        "onePercentLowFps": 56.9981903074577,
+        "over16_67ms": 576,
+        "over33_33ms": 0,
+        "p99Ms": 17.26,
+        "samples": 1200,
+        "gpuMeanMs": 7.25302250146866
+      },
+      {
+        "name": "aricia-city",
+        "averageFps": 60.0015630407171,
+        "maxMs": 18.062,
+        "meanMs": 16.6662325,
+        "onePercentLowFps": 57.0692106852585,
+        "over16_67ms": 572,
+        "over33_33ms": 0,
+        "p99Ms": 17.338,
+        "samples": 1200,
+        "gpuMeanMs": 6.76303833524386
+      },
+      {
+        "name": "farm-3",
+        "averageFps": 60.0018960599154,
+        "maxMs": 18.45,
+        "meanMs": 16.66614,
+        "onePercentLowFps": 56.4323470213126,
+        "over16_67ms": 583,
+        "over33_33ms": 0,
+        "p99Ms": 17.397,
+        "samples": 1200,
+        "gpuMeanMs": 7.13231583396594
+      }
+    ]
+  }
+}

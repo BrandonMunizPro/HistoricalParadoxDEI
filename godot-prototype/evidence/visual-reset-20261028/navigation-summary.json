@@ -1,0 +1,70 @@
+{
+  "method": "Derived from existing roma-profile.gd raw stage frames; warmed zoom round trip plus pan/orbit",
+  "samples": 1549,
+  "averageFps": 98.09890155195751,
+  "onePercentLowFps": 55.518543193426616,
+  "maxMs": 24.012,
+  "over16_67ms": 50,
+  "over33_33ms": 0,
+  "stages": [
+    {
+      "distanceKm": 7.2,
+      "elapsedMs": 8914,
+      "samples": 781,
+      "averageFps": 87.61845740581832,
+      "onePercentLowFps": 53.80683346785042,
+      "maxMs": 24.012,
+      "over16_67ms": 49,
+      "over33_33ms": 0
+    },
+    {
+      "distanceKm": 1.20000069069259,
+      "elapsedMs": 1768,
+      "samples": 211,
+      "averageFps": 119.33795150467625,
+      "onePercentLowFps": 100.34115994380896,
+      "maxMs": 10.12,
+      "over16_67ms": 0,
+      "over33_33ms": 0
+    },
+    {
+      "distanceKm": 7.19999985593776,
+      "elapsedMs": 2022,
+      "samples": 202,
+      "averageFps": 99.91141517595042,
+      "onePercentLowFps": 88.80994671403198,
+      "maxMs": 11.785,
+      "over16_67ms": 0,
+      "over33_33ms": 0
+    },
+    {
+      "distanceKm": 44.9999999988511,
+      "elapsedMs": 2787,
+      "samples": 319,
+      "averageFps": 114.46960383469585,
+      "onePercentLowFps": 66.12116703859823,
+      "maxMs": 16.685,
+      "over16_67ms": 1,
+      "over33_33ms": 0
+    },
+    {
+      "distanceKm": 44.9999999999228,
+      "elapsedMs": 300,
+      "samples": 36,
+      "averageFps": 120.04201470514681,
+      "onePercentLowFps": 119.31750387781888,
+      "maxMs": 8.381,
+      "over16_67ms": 0,
+      "over33_33ms": 0
+    }
+  ],
+  "firstReadiness": {
+    "samples": 948,
+    "averageFps": 107.39020173158782,
+    "onePercentLowFps": 15.155625540866389,
+    "maxMs": 263.65,
+    "over16_67ms": 28,
+    "over33_33ms": 7
+  },
+  "note": "Existing passed flag records route completion only; onePercentLowFps below 60 fails that performance target. SourceRevision diagnostic-unversioned in the original benchmark is supplemented by this package production-source-manifest.json."
+}

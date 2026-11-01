@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/settlement-identities/lime-color.jpg" id="1_avjsw"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/stone-normal.jpg" id="2_43g0v"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/stone-roughness.jpg" id="3_urn5d"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.78431374, 0.70980394, 0.5568628, 1)
+albedo_texture = ExtResource("1_avjsw")
+roughness_texture = ExtResource("3_urn5d")
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("2_43g0v")
+texture_filter = 5

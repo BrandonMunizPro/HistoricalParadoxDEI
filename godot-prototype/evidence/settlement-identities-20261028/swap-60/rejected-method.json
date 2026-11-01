@@ -1,0 +1,4 @@
+{
+  "rejected": true,
+  "reason": "Intended 60 FPS cap was set before world._ready, which overwrote it. This run cannot substantiate the claimed cap. Raw samples retained. Corrected runner sets and asserts the cap after scene initialization; use swap-60-corrected instead."
+}

@@ -1,0 +1,234 @@
+{
+  "files": [
+    {
+      "path": "src/presentation/settlement-development-system.ts",
+      "sha256": "9fdc63a8dff03e82fa6322bc49683cd805372148c9886791afb423cafd6906ce"
+    },
+    {
+      "path": "tests/settlement-development-system.test.ts",
+      "sha256": "27528a6c3733a69d0f840ff874afed449ed31e130225a12703ed15405de3b89f"
+    },
+    {
+      "path": "godot-prototype/settlement_development.gd",
+      "sha256": "a36390cf2f03e90b7f5dc373b8765d06bad49ae158239f1502fbb18d0a8586c2"
+    },
+    {
+      "path": "godot-prototype/settlement_development_kit.gd",
+      "sha256": "987d012ff21ed6a40a8f9430f36f3650246d11cf589751e2f1f01af738875ae2"
+    },
+    {
+      "path": "godot-prototype/settlement_development_view.gd",
+      "sha256": "2a792b29c3e32659afd27211e818ce5a33a4f3e76dc1fdbbe71ba80c198d56be"
+    },
+    {
+      "path": "godot-prototype/settlement_development_ui.gd",
+      "sha256": "ae0746b4183cad92b9d512593fb454180ecb3502f1c87f24d408dd9642ab2985"
+    },
+    {
+      "path": "godot-prototype/roma_showcase.gd",
+      "sha256": "ad8a94bfad20392e83366b05a8a00168b9d9dec31a6477a9002a28d039fff8bf"
+    },
+    {
+      "path": "godot-prototype/roma_settlement.gd",
+      "sha256": "4a12fef0e78462ab0f6e06a32abf87835e508a8ca30b1713e04f83e211b16193"
+    },
+    {
+      "path": "godot-prototype/data/settlement-development-catalog.json",
+      "sha256": "e364b0a1ce1e3a64eae3db20a5cea1b377f942792ea231ce5a720546f74a7765"
+    },
+    {
+      "path": "godot-prototype/data/settlement-development-starts.json",
+      "sha256": "06f9f7f77ddd46f903df29defe4d964d8f0a713db5e9c492283c10af93a0c97c"
+    },
+    {
+      "path": "godot-prototype/data/settlement-development.schema.json",
+      "sha256": "59cc420a42c7462af0aa83ee0ba99742060c369592a412dae339ba1995d0a81c"
+    },
+    {
+      "path": "godot-prototype/data/roma-development-composition.json",
+      "sha256": "c5f9fadf54933740924bf44333febb84254ced86e8e9ca20a3a239016f6973fa"
+    },
+    {
+      "path": "godot-prototype/tools/development-bake.gd",
+      "sha256": "91b066ef74c013b0725dec1114461832f00060140dc84bfbcf4d792c9458de5b"
+    },
+    {
+      "path": "godot-prototype/tools/development-validate.gd",
+      "sha256": "b6c8d06c9f0ec63bc2713c08196332ee5bddb982f12f113b1097fa84cca886de"
+    },
+    {
+      "path": "godot-prototype/tools/development-profile.gd",
+      "sha256": "1dbda911aa16170c6ece9f910b154318c504d4214c05f7105cdff1aa2f5d2b0d"
+    },
+    {
+      "path": "godot-prototype/tools/development-capture.ps1",
+      "sha256": "32a637f54042375ea0bc6087ee7ac44e0f43f7a68486550d930e7277f420d7e8"
+    },
+    {
+      "path": "godot-prototype/tools/development-layout-check.mjs",
+      "sha256": "29ebb2773340a2a47188ed8ab57327d6be58d6c1242681fe5c30f397d940829c"
+    },
+    {
+      "path": "godot-prototype/tools/development-report.mjs",
+      "sha256": "a7566467050b13e64f7078c6a3c11dbc22d1cb26361350cd91aed9e48da22837"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "before/city.png",
+      "sha256": "9219eeffbbe5a0181d741d6e831d173cddbd27b913a4725f6ea01a7aff22083b"
+    },
+    {
+      "path": "before/strategic.png",
+      "sha256": "382d39c55980213d048e817c63ad88e2e5ae54f02fbd342af6bfbbbe6ef76b68"
+    },
+    {
+      "path": "after-final/city.png",
+      "sha256": "4e478641074ad5fe0a7ac036c757cb2c34d2a601e63a183b7f4ffa7cb74d47e2"
+    },
+    {
+      "path": "after-final/civic-1.png",
+      "sha256": "d2f63f5d24ffc9f888f92862a41e1e505802551160fbcc7f39f92571c8291674"
+    },
+    {
+      "path": "after-final/civic-2.png",
+      "sha256": "40666343afec6ad70eb629b0dd86c32cc9f351450a4b5826a8f8c54e86f003b8"
+    },
+    {
+      "path": "after-final/civic-3.png",
+      "sha256": "d4109afc75fabfb5e748bc848b4509262446eea99b4c40f670f5b1649945b4cd"
+    },
+    {
+      "path": "after-final/grain-1.png",
+      "sha256": "2ef5cd20eab0efabe89ec3c76a1f1d879f256241ec27f9d9e3cf484a81d4ca02"
+    },
+    {
+      "path": "after-final/grain-2.png",
+      "sha256": "ee5980fd72067210d3b0d5d05edc6db0f1ee19a828cb17278b81201af9f9c3da"
+    },
+    {
+      "path": "after-final/grain-3.png",
+      "sha256": "a7fd36eb0e7ca81aa62a687ef514008c22a5245a8d4ab01e2fa643442c1df089"
+    },
+    {
+      "path": "after-final/strategic-1.png",
+      "sha256": "94ac67bf4b130b72eea1f61433f80b87c340b20fc6ee8d5abd9cc5f4817488bd"
+    },
+    {
+      "path": "after-final/strategic-2.png",
+      "sha256": "34d6a235cd5a6782f821b375892a3e8a75ded2bbeb2e015a462fa7e1a80120ca"
+    },
+    {
+      "path": "after-final/strategic-3.png",
+      "sha256": "0e2c91de4feba5b550550845a06d7713a5140194b6776ebd9777d9c1983de0e0"
+    }
+  ],
+  "initialConfiguration": {
+    "schemaVersion": 1,
+    "notice": "Only Roma configured. Research records are not automatically promoted or assigned cultures, deposits or invented buildings. Granary scale/location is illustrative. Forum III is a design classification, not three literal historical stages.",
+    "settlements": [
+      {
+        "settlementId": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+        "class": "major",
+        "architectureCulture": "roman-italic",
+        "regionalStyle": "latium",
+        "yearBce": 278,
+        "terrain": [
+          "urban",
+          "cultivable",
+          "freshwater"
+        ],
+        "deposits": [],
+        "technologies": [
+          "appia-conduit"
+        ],
+        "waterRoutes": [],
+        "slots": [
+          {
+            "id": "roma-slot-1",
+            "anchorM": [
+              47,
+              -22
+            ],
+            "yawDegrees": -18,
+            "allowedCategories": [],
+            "building": {
+              "chain": "civic-forum",
+              "startingLevel": 3,
+              "landmark": "forum-romanum",
+              "evidence": [
+                "https://colosseo.it/en/area/the-roman-forum/",
+                "https://pleiades.stoa.org/places/423025"
+              ],
+              "confidence": "attested"
+            }
+          },
+          {
+            "id": "roma-slot-2",
+            "anchorM": [
+              111,
+              55
+            ],
+            "yawDegrees": -43,
+            "allowedCategories": [],
+            "building": {
+              "chain": "grain-storage",
+              "startingLevel": 2,
+              "landmark": null,
+              "evidence": [
+                "https://pleiades.stoa.org/places/423025",
+                "docs/research/settlement-procedural-component-catalog.md"
+              ],
+              "confidence": "interpretive"
+            }
+          },
+          {
+            "id": "roma-slot-3",
+            "anchorM": [
+              -110,
+              95
+            ],
+            "yawDegrees": 30,
+            "allowedCategories": [],
+            "building": null
+          },
+          {
+            "id": "roma-slot-4",
+            "anchorM": [
+              145,
+              -80
+            ],
+            "yawDegrees": 0,
+            "allowedCategories": [],
+            "building": null
+          },
+          {
+            "id": "roma-slot-5",
+            "anchorM": [
+              -25,
+              120
+            ],
+            "yawDegrees": 0,
+            "allowedCategories": [],
+            "building": null
+          },
+          {
+            "id": "roma-slot-6",
+            "anchorM": [
+              65,
+              -115
+            ],
+            "yawDegrees": 0,
+            "allowedCategories": [],
+            "building": null
+          }
+        ],
+        "evidence": [
+          "https://pleiades.stoa.org/places/423025",
+          "https://colosseo.it/en/area/the-roman-forum/"
+        ]
+      }
+    ]
+  },
+  "protectedSnapshotSha256": "05ea138fd16d78670f24688fd2ef1905c10c720b48ba1d52377e2c7a4c292a59"
+}

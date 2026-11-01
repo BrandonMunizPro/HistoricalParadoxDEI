@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "details": {
+        "max": 0.0,
+        "mean": 0.0,
+        "pixelsOverOneByte": 0
+      },
+      "name": "Close FFT waves and sunlight preserved",
+      "passed": true
+    },
+    {
+      "details": {
+        "max": 0.0,
+        "mean": 0.0,
+        "pixelsOverOneByte": 0
+      },
+      "name": "59.3 km geographic terrain preserved",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Zero below transition, full beyond threshold",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Blend is continuous and reverses without hysteretic jumps",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "No ownership or boundaries supplied",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Neutral material RGB channels equal",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Missing cartography safely remains neutral",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Existing 35-site / 687-record geographic validator passed",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Political mode fully active in the existing world",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "One marker instance per approved site",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "All strategic marker XZ coordinates exact",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Close-detail roots hidden in political view",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Existing pointer selection works on political settlement points",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Political mode suspends FFT updates without stopping world clock",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Existing reduced-motion clock preserved",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Returning to geography resumes FFT",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Existing settlement selection retained",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Existing campaign preset retained",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "Both-direction transition returns to geography",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

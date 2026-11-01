@@ -1,0 +1,79 @@
+{
+    "gpuScope":  "Device-wide",
+    "elapsedMs":  11514,
+    "exitCode":  0,
+    "peakWorkingSetBytes":  1242583040,
+    "arguments":  [
+                      "--path",
+                      "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                      "--resolution",
+                      "1920x1080",
+                      "--script",
+                      "res://tools/ocean-profile.gd",
+                      "--",
+                      "--settlement-development",
+                      "--settlement-identities",
+                      "--automation-input-lock",
+                      "--output=res://evidence/ocean-20261028/surface-before",
+                      "--legacy-ocean",
+                      "--quick",
+                      "--surface",
+                      "--ocean-quality=balanced"
+                  ],
+    "gpuSamples":  [
+                       {
+                           "deviceWideCsv":  [
+                                                 "1417 MiB, 14 %, 59, 1425 MHz, 28.95 W"
+                                             ],
+                           "elapsedMs":  1381
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1822 MiB, 15 %, 59, 1425 MHz, 26.24 W"
+                                             ],
+                           "elapsedMs":  2624
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2070 MiB, 8 %, 59, 1425 MHz, 26.98 W"
+                                             ],
+                           "elapsedMs":  3811
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2604 MiB, 21 %, 57, 735 MHz, 20.19 W"
+                                             ],
+                           "elapsedMs":  5035
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2616 MiB, 98 %, 68, 1627 MHz, 87.78 W"
+                                             ],
+                           "elapsedMs":  6247
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2630 MiB, 54 %, 72, 1837 MHz, 81.31 W"
+                                             ],
+                           "elapsedMs":  7438
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2647 MiB, 55 %, 73, 1807 MHz, 84.11 W"
+                                             ],
+                           "elapsedMs":  8680
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2656 MiB, 56 %, 73, 1747 MHz, 86.06 W"
+                                             ],
+                           "elapsedMs":  9898
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2656 MiB, 99 %, 74, 1537 MHz, 83.39 W"
+                                             ],
+                           "elapsedMs":  11121
+                       }
+                   ]
+}

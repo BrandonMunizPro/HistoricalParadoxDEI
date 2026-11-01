@@ -1,0 +1,112 @@
+{
+  "checks": [
+    {
+      "details": {
+        "max": 0.192156851291656,
+        "mean": 0.0000616544123273343
+      },
+      "passed": true,
+      "test": "Close ocean appearance unchanged"
+    },
+    {
+      "details": {
+        "sourceLandProbes": 2480,
+        "waterColoredLandProbes": 1631
+      },
+      "passed": true,
+      "test": "Reproduce source-land depth conflict"
+    },
+    {
+      "details": {
+        "after": {
+          "sourceLandProbes": 2480,
+          "waterColoredLandProbes": 16
+        },
+        "before": {
+          "sourceLandProbes": 2480,
+          "waterColoredLandProbes": 1631
+        }
+      },
+      "passed": true,
+      "test": "Ocean no longer wins depth on low source land"
+    },
+    {
+      "details": {
+        "after": {
+          "pixelSecondDifference": 0.0000028562042197431,
+          "samples": 1373
+        },
+        "before": {
+          "pixelSecondDifference": 0.0203618798825486,
+          "samples": 1373
+        }
+      },
+      "passed": true,
+      "test": "Distant lake ripple aliasing reduced"
+    },
+    {
+      "details": {
+        "max": 0.00392156839370728,
+        "mean": 0.00000604575127363205
+      },
+      "passed": true,
+      "test": "Resolved close inland-water rendering preserved"
+    },
+    {
+      "details": {
+        "maximumCoastPixelFraction": 0.02,
+        "sourceLandProbes": 2480,
+        "waterColoredLandProbes": 3
+      },
+      "passed": true,
+      "test": "No broad lowland speckling at 1800.0 km yaw -20.0"
+    },
+    {
+      "details": {
+        "maximumCoastPixelFraction": 0.02,
+        "sourceLandProbes": 2480,
+        "waterColoredLandProbes": 15
+      },
+      "passed": true,
+      "test": "No broad lowland speckling at 2800.0 km yaw 0.0"
+    },
+    {
+      "details": {
+        "maximumCoastPixelFraction": 0.02,
+        "sourceLandProbes": 2480,
+        "waterColoredLandProbes": 16
+      },
+      "passed": true,
+      "test": "No broad lowland speckling at 4000.0 km yaw 20.0"
+    },
+    {
+      "details": {
+        "maximumCoastPixelFraction": 0.02,
+        "sourceLandProbes": 2428,
+        "waterColoredLandProbes": 26
+      },
+      "passed": true,
+      "test": "No broad lowland speckling at 8500.0 km yaw 0.0"
+    },
+    {
+      "details": {
+        "maximumCoastPixelFraction": 0.02,
+        "sourceLandProbes": 2480,
+        "waterColoredLandProbes": 16
+      },
+      "passed": true,
+      "test": "No broad lowland speckling at 3300.0 km yaw 0.0"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Existing geography validator passes"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Approved political transition configuration unchanged"
+    }
+  ],
+  "passed": true
+}

@@ -13,6 +13,8 @@ var placed={}
 var enabled=true
 var roma_visual
 var roma_enabled=true
+var identity_models={}
+var rural_identities={}
 func _init(owner):
 	world=owner;tuning=world.read_json("data/foundation-settings.json").settlements
 	enabled=not OS.get_cmdline_user_args().has("--no-settlement-visuals");stats["enabled"]=enabled
@@ -24,6 +26,17 @@ func _init(owner):
 			stats.waterRejected.append(r.id);continue
 		records.append(r)
 	stats.landAccepted=records.size()
+	if OS.get_cmdline_user_args().has("--settlement-identities"):
+		var catalog=preload("res://settlement_identity_catalog.gd").merge_catalog(world.read_json("data/settlement-development-catalog.json"),world.read_json("data/settlement-identity-overlay.json"))
+		var layouts=world.read_json("data/settlement-identity-layouts.json")
+		for start in world.read_json("data/settlement-identity-starts.json").settlements:
+			var model=preload("res://settlement_development.gd").new(catalog,start)
+			assert(model.validate(world.sites.map(func(s):return s.id)).is_empty())
+			for site in world.sites:
+				if site.id==start.settlementId:
+					identity_models[site.key]=model
+					if start.class=="minor":rural_identities[site.id]=preload("res://settlement_rural_identity.gd").new(world,site,model,layouts[site.key])
+		world.set_meta("identity_models",identity_models)
 	roma_visual=preload("res://roma_settlement.gd").new(world)
 	roma_enabled=not OS.get_cmdline_user_args().has("--roma-neutral-baseline")
 	stats["romaPrototypeEnabled"]=roma_enabled
@@ -37,6 +50,7 @@ func tick():
 	for id in world.resident:
 		if world.resident[id].reveal<1:return
 	var next=str(Vector2i(floori(world.focus.x*5),floori(world.focus.y*5)))+"|"+str(int(world.distance/(2.0 if world.distance<30 else 10.0)))+str(world.resident.keys())
+	if not identity_models.is_empty():next+="|identity:"+str(world.distance>=3)+"|"+str(world.distance>=15)
 	if signature==next:return
 	signature=next
 	build(next)
@@ -78,7 +92,8 @@ func build(request):
 			# The hidden neutral topology must not trigger repeated Roma rebuilds.
 			count=int(tuning.close_houses);footprint=roma_visual.display_scale(world.distance)
 		var roma_lod=roma_visual.lod(world.distance) if r.get("key","")=="roma" else ""
-		if nodes.has(r.id) and nodes[r.id].get_meta("count")==count and nodes[r.id].get_meta("terrain")==terrain_key and nodes[r.id].get_meta("footprint")==footprint and nodes[r.id].get_meta("roma_lod","")==roma_lod:
+		var identity_lod=(str(world.distance>=3)+"|"+str(world.distance>=15)) if identity_models.has(r.get("key","")) else ""
+		if nodes.has(r.id) and nodes[r.id].get_meta("count")==count and nodes[r.id].get_meta("terrain")==terrain_key and nodes[r.id].get_meta("footprint")==footprint and nodes[r.id].get_meta("roma_lod","")==roma_lod and nodes[r.id].get_meta("identity_lod","")==identity_lod:
 			total_houses+=nodes[r.id].multimesh.instance_count;continue
 		var center=world.project(r.lon,r.lat)
 		var layout=preload("res://neutral_settlement.gd").layout(r.id.hash(),count)
@@ -99,6 +114,7 @@ func build(request):
 		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_ON if close else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		node.set_meta("footprint",footprint)
 		node.set_meta("roma_lod",roma_lod)
+		node.set_meta("identity_lod",identity_lod)
 		node.set_meta("count",count);node.set_meta("terrain",terrain_key);node.set_meta("anchor",Vector2(r.lon,r.lat));node.set_meta("approved",r.approved)
 		if r.get("key","")=="roma" and roma_enabled:
 			# Keep the canonical node/anchor and shared placement audit intact.
@@ -107,6 +123,9 @@ func build(request):
 			node.add_child(await roma_visual.create(world.distance))
 			stats["roma"]=roma_visual.stats.duplicate(true)
 			chunk=Time.get_ticks_usec()
+		elif rural_identities.has(r.id):
+			mm.visible_instance_count=0
+			node.add_child(rural_identities[r.id].create(world.distance))
 		if not r.approved:
 			var label=Label3D.new();label.text="R · "+r.name;label.font_size=34;label.outline_size=8
 			label.billboard=BaseMaterial3D.BILLBOARD_ENABLED;label.no_depth_test=true
@@ -133,7 +152,7 @@ func update_labels():
 	if not enabled:return
 	var occupied=[];var visible_count=0
 	for m in world.markers:
-		if roma_enabled and m.site.key=="roma" and world.distance<3:
+		if roma_enabled and (m.site.key=="roma" or identity_models.has(m.site.key)) and world.distance<3:
 			m.label.pixel_size=max(.00004,world.distance*.00025)
 		if m.label.visible:occupied.append(Rect2(world.camera.unproject_position(m.label.position)-Vector2(50,14),Vector2(120,30)))
 	for id in nodes:

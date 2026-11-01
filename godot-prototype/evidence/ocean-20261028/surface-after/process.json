@@ -1,0 +1,91 @@
+{
+    "gpuScope":  "Device-wide",
+    "elapsedMs":  13813,
+    "exitCode":  0,
+    "peakWorkingSetBytes":  1231224832,
+    "arguments":  [
+                      "--path",
+                      "C:\\Users\\brand\\historicalgame\\godot-prototype",
+                      "--resolution",
+                      "1920x1080",
+                      "--script",
+                      "res://tools/ocean-profile.gd",
+                      "--",
+                      "--settlement-development",
+                      "--settlement-identities",
+                      "--automation-input-lock",
+                      "--output=res://evidence/ocean-20261028/surface-after",
+                      "--reference-before=res://evidence/ocean-20261028/before/performance.json",
+                      "--quick",
+                      "--surface",
+                      "--ocean-quality=balanced"
+                  ],
+    "gpuSamples":  [
+                       {
+                           "deviceWideCsv":  [
+                                                 "1458 MiB, 12 %, 59, 1425 MHz, 27.68 W"
+                                             ],
+                           "elapsedMs":  1350
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1842 MiB, 22 %, 59, 1425 MHz, 26.22 W"
+                                             ],
+                           "elapsedMs":  2592
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2098 MiB, 14 %, 58, 622 MHz, 21.42 W"
+                                             ],
+                           "elapsedMs":  3811
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2632 MiB, 36 %, 57, 510 MHz, 19.32 W"
+                                             ],
+                           "elapsedMs":  5038
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2641 MiB, 81 %, 69, 1627 MHz, 80.33 W"
+                                             ],
+                           "elapsedMs":  6249
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2650 MiB, 77 %, 71, 1567 MHz, 82.75 W"
+                                             ],
+                           "elapsedMs":  7454
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2650 MiB, 66 %, 72, 1597 MHz, 81.19 W"
+                                             ],
+                           "elapsedMs":  8673
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2647 MiB, 73 %, 73, 1590 MHz, 80.03 W"
+                                             ],
+                           "elapsedMs":  9906
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2643 MiB, 82 %, 72, 1492 MHz, 75.64 W"
+                                             ],
+                           "elapsedMs":  11139
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "2643 MiB, 99 %, 73, 1417 MHz, 81.86 W"
+                                             ],
+                           "elapsedMs":  12363
+                       },
+                       {
+                           "deviceWideCsv":  [
+                                                 "1281 MiB, 6 %, 66, 1665 MHz, 33.36 W"
+                                             ],
+                           "elapsedMs":  13609
+                       }
+                   ]
+}

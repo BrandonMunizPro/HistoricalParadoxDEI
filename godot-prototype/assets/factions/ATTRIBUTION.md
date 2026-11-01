@@ -1,0 +1,9 @@
+# Original faction emblems
+
+All 131 SVG emblems, the PNG atlas and native Godot atlas in this directory were generated specifically for HistoricalParadoxDEI by `tools/faction-emblem-bake.gd` using `faction_emblems.gd` and the scenario catalog. No Total War, Divide et Impera, Imperator, commercial-game files, downloaded flag packs or third-party logo artwork were used.
+
+The revised coin-style medallions use historical coin/artifact motifs where documented, later regional inspirations where explicitly stated, and original devices elsewhere. Every faction's evidence classification, notes and source keys are recorded in `data/factions/presentation.json`. Seven use documented ancient motifs, twelve use explicitly later adaptations (including Rome's 269–266 BCE wolf-and-twins coin, Numidian horses and selected Gallic boars), and 112 remain original designs. These categories describe motif evidence, **not historical national flags**. Colors and medallion framing are original readability/art-direction choices. All shapes are newly drawn; no museum photograph, modern heraldic SVG, reference-game art or copyrighted tracing was imported.
+
+References include the Metropolitan Museum (Seleucid anchor), Penn Museum (Ptolemaic eagle), Acropolis Museum (Athenian owl), Spurlock Museum (Rhodian rose), British Museum (Tarentine dolphin rider and Roman wolf/twins), University of Colorado (Croton tripod), and published Numidian coin/Gallic archaeological studies. Exact URLs and dates are in the presentation manifest. The dated objects support the motifs without proving an official flag in 278 BCE. No museum images are bundled.
+
+The geographic data has separate CC BY 4.0 attribution in `data/factions/README.md` and `LICENSE-CLIOPATRIA.md`. That license does not come from or license either reference game's proprietary art.

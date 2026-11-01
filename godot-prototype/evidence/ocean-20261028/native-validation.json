@@ -1,0 +1,259 @@
+{
+  "checks": [
+    {
+      "after": {
+        "finite": true,
+        "layers": [
+          {
+            "coarsestMoment": [
+              0.0000647902488708496,
+              -0.00000733137130737305,
+              0.050933837890625,
+              0.00446319580078125
+            ],
+            "displacementSha256": "2a0fb1124364c3cdafa72613929ed3cd6b03fd48153a8f0cb28eaaf6a01f262d",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.2705078125,
+            "maxHeightMetres": 0.390625,
+            "minHeightMetres": -0.455322265625,
+            "previousMatches": true,
+            "slopeEnergy": 206.496837142727
+          },
+          {
+            "coarsestMoment": [
+              0.000281333923339844,
+              -0.0000582337379455566,
+              0.042205810546875,
+              0.00366020202636719
+            ],
+            "displacementSha256": "0efef421f7541d9c95a98766b0ecb3d3ade20b6421d7820927963ba61b937753",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.25244140625,
+            "maxHeightMetres": 1.3779296875,
+            "minHeightMetres": -1.345703125,
+            "previousMatches": true,
+            "slopeEnergy": 167.420650587666
+          },
+          {
+            "coarsestMoment": [
+              0.0000409483909606934,
+              0.0000025629997253418,
+              0.023101806640625,
+              0.00217247009277344
+            ],
+            "displacementSha256": "1c84c15cf693dbdad92ca5dc0a05639f3ad889ad2cb3a4957013221f487f52cf",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.36767578125,
+            "maxHeightMetres": 3.462890625,
+            "minHeightMetres": -3.15625,
+            "previousMatches": true,
+            "slopeEnergy": 95.3773503516827
+          }
+        ],
+        "normalMipLevels": 9,
+        "resolution": 256
+      },
+      "before": {
+        "finite": true,
+        "layers": [
+          {
+            "coarsestMoment": [
+              -0.0000979304313659668,
+              0.000034034252166748,
+              0.050933837890625,
+              0.00457000732421875
+            ],
+            "displacementSha256": "3b1b3dd984ab1e45e05d337d808f71836bee13f6cbc260b0db9f1c604670e05d",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.321044921875,
+            "maxHeightMetres": 0.467041015625,
+            "minHeightMetres": -0.427001953125,
+            "previousMatches": true,
+            "slopeEnergy": 204.558479090674
+          },
+          {
+            "coarsestMoment": [
+              0.0000870823860168457,
+              0.000031590461730957,
+              0.042633056640625,
+              0.00378799438476563
+            ],
+            "displacementSha256": "9646261448e75d68b4b43775f605b51ddc82f4b88281e9779a586e8501e3acf3",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.299072265625,
+            "maxHeightMetres": 1.4501953125,
+            "minHeightMetres": -1.3203125,
+            "previousMatches": true,
+            "slopeEnergy": 174.226972032439
+          },
+          {
+            "coarsestMoment": [
+              0.000101327896118164,
+              0.0000340938568115234,
+              0.0229644775390625,
+              0.00217056274414063
+            ],
+            "displacementSha256": "ba153d10271d2e1d6f8bbeb2049078098be4bdfdcfd1d3b0cb7eca1d8f483fd8",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.39111328125,
+            "maxHeightMetres": 3.60546875,
+            "minHeightMetres": -3.65625,
+            "previousMatches": true,
+            "slopeEnergy": 96.0948705517894
+          }
+        ],
+        "normalMipLevels": 9,
+        "resolution": 256
+      },
+      "passed": true,
+      "test": "Balanced GPU FFT produces finite signed animated waves, moment mipmaps and synchronized histories"
+    },
+    {
+      "capMetres": 0.75,
+      "passed": true,
+      "test": "Conservative crest cap below land floor; geography masks unchanged"
+    },
+    {
+      "data": {
+        "finite": true,
+        "layers": [
+          {
+            "coarsestMoment": [
+              -0.000133395195007324,
+              -0.0000614523887634277,
+              0.036407470703125,
+              0.0019073486328125
+            ],
+            "displacementSha256": "21b646d7c80c71b78d5f5acb2be0382a2920ac2e183035bfadb85a11374737a7",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.16015625,
+            "maxHeightMetres": 0.364501953125,
+            "minHeightMetres": -0.3349609375,
+            "previousMatches": true,
+            "slopeEnergy": 39.0998689206127
+          },
+          {
+            "coarsestMoment": [
+              0.0000295042991638184,
+              0.000043034553527832,
+              0.026123046875,
+              0.00124549865722656
+            ],
+            "displacementSha256": "9cc972efa78acdb469b46c4e63d1924044f2a87df5988513c1fff7b8a6b65fc3",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.248779296875,
+            "maxHeightMetres": 1.271484375,
+            "minHeightMetres": -1.1953125,
+            "previousMatches": true,
+            "slopeEnergy": 25.6553287743856
+          }
+        ],
+        "normalMipLevels": 8,
+        "resolution": 128
+      },
+      "passed": true,
+      "quality": "low",
+      "test": "Native quality preset and FFT resource lifecycle"
+    },
+    {
+      "data": {
+        "finite": true,
+        "layers": [
+          {
+            "coarsestMoment": [
+              0.0000695586204528809,
+              0.0000230669975280762,
+              0.048370361328125,
+              0.00389671325683594
+            ],
+            "displacementSha256": "950af5181b21a36e36a69f759893406dedfa2d0a7ed9200d10ffd51e8aa20f05",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.216796875,
+            "maxHeightMetres": 0.413330078125,
+            "minHeightMetres": -0.37646484375,
+            "previousMatches": true,
+            "slopeEnergy": 796.108646942676
+          },
+          {
+            "coarsestMoment": [
+              0.000151157379150391,
+              -0.000022590160369873,
+              0.060546875,
+              0.00800323486328125
+            ],
+            "displacementSha256": "3807c8dbf942472f1bd44a357920341830d72e5886b7a5dd307fac8a2277bfcf",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.483154296875,
+            "maxHeightMetres": 1.5107421875,
+            "minHeightMetres": -1.4169921875,
+            "previousMatches": true,
+            "slopeEnergy": 987.297262733165
+          },
+          {
+            "coarsestMoment": [
+              -0.0000812411308288574,
+              0.000059664249420166,
+              0.042236328125,
+              0.0070037841796875
+            ],
+            "displacementSha256": "2af3b4b0b32e7c1fc4c9bc45d5f7355e223dee9dd8f2189f1d8ac185a95a236e",
+            "displayMatchesCurrent": true,
+            "foamMax": 0.6748046875,
+            "maxHeightMetres": 5.07421875,
+            "minHeightMetres": -4.703125,
+            "previousMatches": true,
+            "slopeEnergy": 695.84441428919
+          }
+        ],
+        "normalMipLevels": 10,
+        "resolution": 512
+      },
+      "passed": true,
+      "quality": "high",
+      "test": "Native quality preset and FFT resource lifecycle"
+    },
+    {
+      "distanceKm": 0.12,
+      "passed": true,
+      "patchVisible": true,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "distanceKm": 0.8,
+      "passed": true,
+      "patchVisible": true,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "distanceKm": 9.9,
+      "passed": true,
+      "patchVisible": true,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "distanceKm": 10.1,
+      "passed": true,
+      "patchVisible": false,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "distanceKm": 32.0,
+      "passed": true,
+      "patchVisible": false,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "distanceKm": 520.0,
+      "passed": true,
+      "patchVisible": false,
+      "test": "Distance-dependent geometry budget"
+    },
+    {
+      "passed": true,
+      "test": "Legacy ocean/inland exclusion and shared coast-mask predicates retained"
+    }
+  ],
+  "count": 11,
+  "notice": "Structural and GPU correctness, not independent artistic approval",
+  "passed": true
+}

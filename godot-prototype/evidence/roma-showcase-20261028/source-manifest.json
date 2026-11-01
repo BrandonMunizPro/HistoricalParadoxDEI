@@ -1,0 +1,565 @@
+{
+  "recordedAtUtc": "2026-10-28T21:12:53.844Z",
+  "code": [
+    {
+      "path": "godot-prototype/canopy_assets.gd",
+      "sha256": "710e7b5b741a02db18f2e6895920d93757a632286656c74c0433a390c802f3a4"
+    },
+    {
+      "path": "godot-prototype/environment.gdshaderinc",
+      "sha256": "b9d54908cf94b1e009a40616c44164c1f2d5fa4d8dcfab16e806b5f67a14b439"
+    },
+    {
+      "path": "godot-prototype/environment_rules.gd",
+      "sha256": "20e941784ab506256e0a96eb620a7ad4c0497d1f3a66c44a5e9d8f2d3f7c4e4d"
+    },
+    {
+      "path": "godot-prototype/foliage.gdshader",
+      "sha256": "a600d3b12142a5849e12a3f7f7b342de6984b47c8b4d00e2395782e66f84d90c"
+    },
+    {
+      "path": "godot-prototype/habitat.gd",
+      "sha256": "76ff4bc65a6e2a98636bcd7488848cb7aafd374a9b7a40fc2f1d369f37201086"
+    },
+    {
+      "path": "godot-prototype/habitat.gdshaderinc",
+      "sha256": "812fa9559ceb58ba24e1bb624300e3de8563ca277668afd8802d925bcb9ee16e"
+    },
+    {
+      "path": "godot-prototype/navigation.gd",
+      "sha256": "ae861946a7f2a1bda6e2436a01388ed191b1a475f00a320e624fec6d4988d3f3"
+    },
+    {
+      "path": "godot-prototype/neutral_settlement.gd",
+      "sha256": "1c0cbe488353646d12cb429f512a70ea458ff3436ba12de73429c9713f1b068d"
+    },
+    {
+      "path": "godot-prototype/nile_water.gdshader",
+      "sha256": "f23dc55047d88ad25fcc991b40840c878f9fdae0a7e55bad65906b779179ec68"
+    },
+    {
+      "path": "godot-prototype/north_africa.gdshaderinc",
+      "sha256": "b14f35cdfd10758c0adf53b17f6575040c7fa5f4a5c75fe9e9a3b9d461341b9e"
+    },
+    {
+      "path": "godot-prototype/project.godot",
+      "sha256": "5e7ab1179e42c63e3fb8135ae92a70078e13d80cbb61bb59d49ac0d1f101e51e"
+    },
+    {
+      "path": "godot-prototype/regional_scenery.gd",
+      "sha256": "d5bdc6ef44368f308d96a3f9e2e11b4b4de0daf35ea8549dd7f7fc02990dd2a0"
+    },
+    {
+      "path": "godot-prototype/river_geometry.gd",
+      "sha256": "9210fd4ba7a24ab2f26e38b3c1229a77c155fd4421ac760d6d946483e787086a"
+    },
+    {
+      "path": "godot-prototype/roma_architecture.gd",
+      "sha256": "91214d5fdaa2f7c2a4cd1d6b6ec03c93527d318a2b8a0ce93b7e267c0b87a17d"
+    },
+    {
+      "path": "godot-prototype/roma_ground.gdshader",
+      "sha256": "d6b24b5399724b93ae44e175647c20da6861943a4691bbb0e314e198900fb532"
+    },
+    {
+      "path": "godot-prototype/roma_landscape.gd",
+      "sha256": "fd4e41ccd042749c57d78674f85c7e0cc6cca0e4c7586c444534e555dc1d2b7c"
+    },
+    {
+      "path": "godot-prototype/roma_roof.gdshader",
+      "sha256": "f7f9f76a1b663d6dffe403b323c6021ff8206f7e9bf231050299098ec90186a7"
+    },
+    {
+      "path": "godot-prototype/roma_settlement.gd",
+      "sha256": "39fa5ca90f80db95699fb77d3024fa792f9f91001e7f8238c2e14bc37e79a868"
+    },
+    {
+      "path": "godot-prototype/roma_showcase.gd",
+      "sha256": "9f0a64a4de7daed1bd6d787cd95c6406ad6ca07df713feb7f4c8a5da8d97465f"
+    },
+    {
+      "path": "godot-prototype/roma_showcase_edge.gdshader",
+      "sha256": "54b27d4daea72f9c1f829444e48eb20bde51c51376afef5f3cbf5869be29f492"
+    },
+    {
+      "path": "godot-prototype/roma_showcase_ground.gdshader",
+      "sha256": "f4b1cdf4aa26ee652cf3f7609c430a46fc7f9a4eaf86c4de43d2e57aa8214503"
+    },
+    {
+      "path": "godot-prototype/roma_showcase_kit.gd",
+      "sha256": "31e428fe4ef057854432aa5caf027976c1850b8d62b121cbdb53f08b1f922540"
+    },
+    {
+      "path": "godot-prototype/roma_showcase_surface.gdshaderinc",
+      "sha256": "de08e94eb2d0d188ee605a82c27b41d11e97429ebe2e232928a8ce78143fbbeb"
+    },
+    {
+      "path": "godot-prototype/roma_stone.gdshader",
+      "sha256": "3badc2138baddc050cc7f7ac130c401e3b81f3a46a705c51ea16e00d9d3a454d"
+    },
+    {
+      "path": "godot-prototype/settlement_population.gd",
+      "sha256": "8f554733b8cb3a537743c18c9e336f5c1c6094b317494d42341b8120975a1110"
+    },
+    {
+      "path": "godot-prototype/shoreline.gdshaderinc",
+      "sha256": "04e41efb1f0036477403fdd7a9798d404c48bcf80ec70f62e2dc480031ef84b7"
+    },
+    {
+      "path": "godot-prototype/terrain.gdshader",
+      "sha256": "20d61ef4df623f39716aeac061612612cb16053b58c0619988ce0b2fc78c8938"
+    },
+    {
+      "path": "godot-prototype/water.gdshader",
+      "sha256": "8ee6b70dd8221782357f3c3935b83130d9f2f4f623fafd63f8d7523236cc72b4"
+    },
+    {
+      "path": "godot-prototype/world.gd",
+      "sha256": "cc037d38302b3e44433df4ac2a45d4a2cdc5dc16043b820b049f6b685aea208b"
+    },
+    {
+      "path": "godot-prototype/world.tscn",
+      "sha256": "49c9ee5b0b04de07e731fec1b77e61d32b8b6aeab58a11e2dc7a4e44f1b27145"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-bake.gd",
+      "sha256": "d7a67d45bc27d05d1efbfc242139d23641fb8498de8cf4beec655aaf87047d86"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-bake.gd.uid",
+      "sha256": "508c79340796c3e38b4e03466caffe87644269d5fa82cd8f44ab0437266b5e56"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-capture.ps1",
+      "sha256": "0d13f75812abc81231dc8b7ac0605ba2ad612bc765f45f640287a421a810a823"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-download.ps1",
+      "sha256": "5fd5dbe205a6903f49393726cd1a14a314877fbefe3acc2e4ca4755cb42b83bc"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-import.mjs",
+      "sha256": "be6e663bc51c45e6728d0820cbae057f99b47b8fe0d00a85bf5aabfec4aa0d11"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-layout-check.mjs",
+      "sha256": "0e8cf334a070178101061df171ad2d5b5e65e9c3e9b20687f86356050e2e10aa"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-navigation.gd",
+      "sha256": "d896fba21e98a7f278d194b1b148f3eef56da896ca48843de172b58a374ab2e4"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-navigation.gd.uid",
+      "sha256": "34f6d6c0857e9065885e804019b355a8466034c1ab139d6376989fdba0657fe0"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-preview.gd",
+      "sha256": "b050898e0be51ab4c5391c6f5e7854c42381b0f40ca86197a8f6c0538f58deb9"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-preview.gd.uid",
+      "sha256": "a5a1d81ae06712411d02bba55b620b2c91f04b8cb983e99d77f7ce3efa6e2732"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-profile.gd",
+      "sha256": "c2ebd63dc8b762c21b5f96431a1cf22dfbb38852babca5dc4fa7e5817f52b8b2"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-profile.gd.uid",
+      "sha256": "d7913eebfe027437bd4c8aa8edbee25ae8eab534ae5c06d34be53698d95ebac2"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-report.mjs",
+      "sha256": "40adb3192c6cdd6be750c596b33383d382e14b16c2316f0012aca39cf4555b3f"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-validate.gd",
+      "sha256": "71c0904d1a4bc050d4e2cef30c66ff7f4a15d3a83c7cdeabc67413c41f1b853c"
+    },
+    {
+      "path": "godot-prototype/tools/showcase-validate.gd.uid",
+      "sha256": "2b706b1e7fe81e2f922b39d820a7fb57e0afc13e090d04c462482cf060e7a2a5"
+    },
+    {
+      "path": "godot-prototype/data/roma-showcase-district.json",
+      "sha256": "b2f6ccbd0513824317d8e2e4bc81230de8724a094b360965e6e806ad6614254c"
+    },
+    {
+      "path": "godot-prototype/evidence/protected-before.json",
+      "sha256": "05ea138fd16d78670f24688fd2ef1905c10c720b48ba1d52377e2c7a4c292a59"
+    }
+  ],
+  "assets": [
+    {
+      "path": "godot-prototype/assets/roma-showcase/atrium-0-far.res",
+      "bytes": 450464,
+      "sha256": "d196df9b5ad0ae5eda4843c3d3fadbdf731ea472a989c2864f711042e08d8ee7"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/atrium-0.res",
+      "bytes": 1319336,
+      "sha256": "8053d1baded01037c320a4af542252508fe0a9a8a1dc3a11b29a15c1b5b8523d"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/atrium-1-far.res",
+      "bytes": 450560,
+      "sha256": "19dca2c21d40ccf3d20fbe38a2fa75dcdd4eca5cbca107c262f082ef48a64322"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/atrium-1.res",
+      "bytes": 1319624,
+      "sha256": "61b7197bfcb7dd822160fc0a907ee54b686b0224720cb878972c1ea958379288"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/charcoal.tres",
+      "bytes": 186,
+      "sha256": "2c454e909e496bddb778101cbda26bb8c47df33fe73bec6d9e72725f76b9dbab"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/civic-far.res",
+      "bytes": 264477,
+      "sha256": "2fd5f1b73a3ccf5994cbf96b175d420d2855ec88b7bd089bbe50fe7aa59e481d"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/civic.res",
+      "bytes": 529037,
+      "sha256": "4d8172d7c65caea3cf6bc99507e7e25ffb1850e0da85f29515ad2578c52691cf"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/clay.tres",
+      "bytes": 626,
+      "sha256": "8616504a41b17a5c3e740349f998266c981901e7f355d8e8af8df7f9647333bc"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/geometry-manifest.json",
+      "bytes": 9307,
+      "sha256": "544ac6404820bc86c89d3f98d52178c7022afff6b65d2fca96af457e184d73c1"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/gravel-color.jpg",
+      "bytes": 843188,
+      "sha256": "d570c10b1d5302f4fde9e0e94f4cbab0d5e112fc3fe2b3b91c38a98bd3ddaf4b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/ground-color.jpg",
+      "bytes": 2624635,
+      "sha256": "1a2ddfa4652adbe00447b940c40019d46f4b88245bc1b341cdf622c2110b7bc5"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/ground-normal.jpg",
+      "bytes": 3799025,
+      "sha256": "c6aa14b042ce243f93a6ca807f46a085711c23ad316b104578e92df7770ee285"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/ground-roughness.jpg",
+      "bytes": 1495844,
+      "sha256": "fc0fff40e3378f2f54d225db6e3e566a8563bb2c143eef0f09b543c9d4698776"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/holm-oak-branch.png",
+      "bytes": 2426179,
+      "sha256": "d5cf08c8f379f8e9ed9773606804d98e73d2708e349130f450256af00ae31548"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-0-far.res",
+      "bytes": 127080,
+      "sha256": "c2e8a888a8b717273e47ce4435b4a71d145c61b579f9954562601da6a8b94652"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-0.res",
+      "bytes": 344536,
+      "sha256": "e692bbc4118fad1398b7cc9545af0ea217985d96dc317bdfbeb1f2862eb46f9b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-1-far.res",
+      "bytes": 193240,
+      "sha256": "d0ed8b58b96cee0e11096e19d5e6b56dad78609c9ce415446b3820c6ac7d36cd"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-1.res",
+      "bytes": 569568,
+      "sha256": "04150ba775ec5bb32e7b523c9fdaee3043159df9889bac3462eb6367fb48a5c4"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-2-far.res",
+      "bytes": 188888,
+      "sha256": "1052e1880e88efb9038f43611a9680357c7eff8b33f5c50af7e5a8b7373448da"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-2.res",
+      "bytes": 511920,
+      "sha256": "6e779e260768c6ac4ea65e61203aa9e20e53abf491fad00c380bb0f37914d6ec"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-3-far.res",
+      "bytes": 132320,
+      "sha256": "fa0dc329670637c7ded0810be5b97c2f1748313fd05a946d7dc60f468973bb01"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-3.res",
+      "bytes": 408560,
+      "sha256": "2243f089d2251bde6386859951490c9dea702053f7e112c24fbaa18d60d3307c"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-4-far.res",
+      "bytes": 179904,
+      "sha256": "dcf2b200ef622a73b8fcdf45eb97c76ec5dd0908f7d22b58de4f6e50587bbd5c"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-4.res",
+      "bytes": 712624,
+      "sha256": "ac03c156b39df52e1931fc1dd07936f4ebdc788e0ac7ab4a5ad4b81ddd129c1b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-5-far.res",
+      "bytes": 204176,
+      "sha256": "bbdb1e45bbdc349f946da70e039d20aa793f41e9f083f6dedb5e11498e21f1f0"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/home-5.res",
+      "bytes": 600080,
+      "sha256": "b6b15134e425072b73be0a85fc4a9d978d7c606790ad4b7d1c94da3bab214e41"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/interior.tres",
+      "bytes": 186,
+      "sha256": "35aca01edcf0a57a408f072615030ffa274d6c0adc46e0e18ff34d6e63a8e7e8"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/leaf.tres",
+      "bytes": 455,
+      "sha256": "9bebf8aba858fd8fd1c6f5d5a4e6ed38244eb20738f7f8a1a25a07915a96b148"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/linen.tres",
+      "bytes": 185,
+      "sha256": "04135224c0df91ad2088e0efb5c607542c864f1814ead352d2998b5b3f863b5f"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/manifest.json",
+      "bytes": 3985,
+      "sha256": "05e345270f6bb46876f4071230ba2a9db984a6563d789572b6fcdbc28455cd5b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/path-color.jpg",
+      "bytes": 2788295,
+      "sha256": "e6b353085d0fc0062832e70cfdf1b77f8b886a1fbb303541479e4f99a3b3ee79"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/path-manifest.json",
+      "bytes": 1237,
+      "sha256": "d4133548439551de61be3df62c34931c5a4de0d587be4da821f2c535bff3fc6a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/path-normal.jpg",
+      "bytes": 2506245,
+      "sha256": "e25c3e4574021fafb3737c56a2b7373c84f1f0b9bce99b94c2b565b8cd7fd55e"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/path-roughness.jpg",
+      "bytes": 1329811,
+      "sha256": "96bc66d10e0f29ca5d1a9efda7734fd0522b5e0c01ba4a828415176d754667b5"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/paving.res",
+      "bytes": 166896,
+      "sha256": "412ae0b61fb9bd00bce937c4b0e9914bb16df90f99ceb20199e9903b204d0522"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/plaster-color.jpg",
+      "bytes": 680077,
+      "sha256": "b86e9a408aac5b493c31a4ec221e5022b0b704d2f51596006f7d6840a6a3300a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/plaster-normal.jpg",
+      "bytes": 1041406,
+      "sha256": "c64dc8d1ad382b8832e430e738f099343ed959b7ae7d9390919a497536d1191e"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/plaster-roughness.jpg",
+      "bytes": 508548,
+      "sha256": "978bd1d9f8d4132564d40375f705975e897ca588c2d756e6257f68946651bab0"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/plaster.tres",
+      "bytes": 634,
+      "sha256": "8691bcd3da423556f75f8ba938f1b4d7dfb8740652cb7c19966cc1de746325e9"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/PROVENANCE.md",
+      "bytes": 4080,
+      "sha256": "e64c5f30ee2df930ad471bdde1c430395ed8be4114da179b7dbf0cc03f35608f"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/red-ochre.tres",
+      "bytes": 185,
+      "sha256": "e35306ddcaef07fbc892955ac7198859107ea92cfcd4df7cf1445af141b062b1"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/roof-color.jpg",
+      "bytes": 878367,
+      "sha256": "aac0f4e742a2cce21afb5dfb523b47c720c6a8e2782a312b823608fe3f80eae6"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/roof-normal.jpg",
+      "bytes": 1101177,
+      "sha256": "e6b364661f6c3045bf5268f684047968fc6550e5fa9b22b4b1266df47b495faa"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/roof-roughness.jpg",
+      "bytes": 306665,
+      "sha256": "9dbddfda928ea582e520d5e6fe7fadcfb886a169df9aa8ecaefa689363679b58"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/shops-0-far.res",
+      "bytes": 89012,
+      "sha256": "1c83ef98802cfa2e6558683acc4c20891ff10a448d2b334f56fbf4ab50f2f092"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/shops-0.res",
+      "bytes": 987652,
+      "sha256": "ce5d53ae943c4fe6e075341376ef73c1c5a533c32ba005c8d04185723acb5f8a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/shops-1-far.res",
+      "bytes": 88561,
+      "sha256": "6efd18ec0e93d2215f74a183c59d6474a4a5dd18f4b34d6910d07f969b6758c3"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/shops-1.res",
+      "bytes": 985345,
+      "sha256": "db37f9646e82d6002090058ac7c5636ba80fd7fb797b28bd900fbaabde66597e"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/stone-color.jpg",
+      "bytes": 2554296,
+      "sha256": "0b84bf19acc263bbb52071317de12a7fafcc0ffa95dd585fb4dfa33dcbed0e1d"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/stone-normal.jpg",
+      "bytes": 3715793,
+      "sha256": "f7b684c229f2e80100b700dcf41df312c345b13e4345f1db24a8dcfe5bb81f72"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/stone-roughness.jpg",
+      "bytes": 1215515,
+      "sha256": "83e849a0a2fb11c77b682014b228a18d0392801fba951e58db8dddaedd1ff31b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/temple-far.res",
+      "bytes": 768697,
+      "sha256": "00d2430ead629cc2248b963fbf60734fc3c6fac3459846b17459f28f8b174401"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/temple.res",
+      "bytes": 1886025,
+      "sha256": "63c1ec63eea79fdb63aafe2f41f0ad008e1a1daa9fa9705a8e0573b772668384"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/timber-color.jpg",
+      "bytes": 2223327,
+      "sha256": "0bd2b3195db9b54d55aa0f842801220ec5e1d389f5fc1e670b378bdaca3f8e7b"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/timber-normal.jpg",
+      "bytes": 2520021,
+      "sha256": "b75cb1e989407e442c3255f3e05ea8c40162c0e5dc2efc9ef2515fce61319194"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/timber-roughness.jpg",
+      "bytes": 810338,
+      "sha256": "38343cb062e7fadcda513ded0b17271c9d7f1da56765d03508dc84c8ff1bd475"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/timber.tres",
+      "bytes": 632,
+      "sha256": "373df29a5f6952bebdc3fcd5ada2933db56753f4b22f64a094601aefcb258c5a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-0-far.res",
+      "bytes": 95567,
+      "sha256": "44b853e7c0b819b4bceaa29c45714c0b368101119706a4ab0958f99bb3e36998"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-0.res",
+      "bytes": 167087,
+      "sha256": "08dc3a18e25cebabe1fb53b28ad5c2367724d1f1dfaca0ccf2848095565e542a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-1-far.res",
+      "bytes": 96463,
+      "sha256": "786bb98c9250f46c46fcfe92aeb37322d2306e27c82aad4448bf4ff3dc0db76d"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-1.res",
+      "bytes": 167279,
+      "sha256": "47df815bb2b8153872f05cb08b11a0f2c262695976725becb8cf09338073022a"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-2-far.res",
+      "bytes": 96399,
+      "sha256": "506d87ccc36e9ed90d6fae623ccf60507cad157e95fb6b134c8aa8ff97464b45"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-2.res",
+      "bytes": 167215,
+      "sha256": "d1ba40237b1b4f6b192728f0631dfb2d4913ce8374b831a5c7ca5f671971c33d"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-3-far.res",
+      "bytes": 96399,
+      "sha256": "6ba940d0bedd42233e4553aa1782d07202fb1f05480e94c4b99b7950a64522e5"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tree-3.res",
+      "bytes": 168239,
+      "sha256": "e682d671cd89b2225bc2187a4a7bf84e27e3e601e2b686004f913890327b7045"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/tuff.tres",
+      "bytes": 628,
+      "sha256": "3d38224913913a5c30d4786b2522dc92d7533caa8613cb6e924a36537f6a7ff9"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/wall.res",
+      "bytes": 119648,
+      "sha256": "969eba9f73405476a2a98dd5b340790890aee899a01c774d667c5dbcd713647c"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/warehouse-far.res",
+      "bytes": 123289,
+      "sha256": "66252a5bf7e3e725d51e8d7f0541fc3444c48f6e4be9ef52b71f83b9bff1c736"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/warehouse.res",
+      "bytes": 921273,
+      "sha256": "3fad3abf3d37cd63bd6319806929dfe7ccc656652bfef58ee407fb8ab27b57d8"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/water.tres",
+      "bytes": 185,
+      "sha256": "ad8079c9f7fc155b24d621c577923acea6dc12622c55c88103559b2413b87a0e"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/workshop-0-far.res",
+      "bytes": 120757,
+      "sha256": "6c20c7d5f2bef533a9b55f914b44f5760ee96d3445aeb4b307a444d625f881f6"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/workshop-0.res",
+      "bytes": 690149,
+      "sha256": "646be9faeb04a54b98b12bd957ee26d51066e301ae4efb8e8b64501117f2eed3"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/workshop-1-far.res",
+      "bytes": 123277,
+      "sha256": "f4a126f3c1befb0051466b6d5a0c6769cae5361d3bbfe19ab73f22983e638ab1"
+    },
+    {
+      "path": "godot-prototype/assets/roma-showcase/workshop-1.res",
+      "bytes": 693693,
+      "sha256": "f909906386682d7af9bcd8aa4dcdf9aa0882fc27982ce44931c4ca374da4c2fc"
+    }
+  ]
+}

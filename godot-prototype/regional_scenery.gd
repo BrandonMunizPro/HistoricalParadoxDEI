@@ -11,6 +11,7 @@ var tree_count=0
 var habitat=preload("res://habitat.gd")
 var rock_material: StandardMaterial3D
 var settings
+var quality=preload("res://vegetation_quality.gd").new()
 var tree_mesh_count=24
 var work_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"cellsBuilt":0,"cancelled":0,"generationCpuMs":0.0,"uploadCpuMs":0.0,"generationYieldFrames":0,"candidates":0}
 
@@ -135,6 +136,7 @@ func cone(surface,center,radius,height,color,sides,top):
 		for v in [p,r,q,q,r,s]:surface.add_vertex(v)
 
 func tick():
+	quality.update(world.distance,world.water_time)
 	for material in [meshes[0].surface_get_material(0),meshes[0].surface_get_material(1)]:material.set_shader_parameter("camera_distance",world.distance)
 	var global_keys=[]
 	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and world.distance<200:
@@ -311,6 +313,9 @@ func build(id,local_bounds={},is_local=false):
 		mm.use_colors=true
 		mm.use_custom_data=true
 		mm.mesh=meshes[species] if is_local or sparse_arid else coarse_meshes[species]
+		if quality.contains((b.west+b.east)*.5,(b.south+b.north)*.5):
+			var replacement=quality.mesh_for(species,not is_local and not sparse_arid)
+			if replacement!=null:mm.mesh=replacement
 		if sparse_arid and species>=tree_mesh_count:mm.mesh=arid_rocks[species-tree_mesh_count]
 		mm.instance_count=batches[species].size()
 		for i in mm.instance_count:

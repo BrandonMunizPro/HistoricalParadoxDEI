@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "details": {
+        "samples": [
+          {
+            "blend": 0.0,
+            "distanceKm": 59.3,
+            "yaw": 0.0
+          },
+          {
+            "blend": 1.0,
+            "distanceKm": 881.721480931171,
+            "yaw": 15.041782729805
+          },
+          {
+            "blend": 1.0,
+            "distanceKm": 1482.57478007313,
+            "yaw": 30.08356545961
+          },
+          {
+            "blend": 1.0,
+            "distanceKm": 1699.98429458754,
+            "yaw": 45.125348189415
+          },
+          {
+            "blend": 1.0,
+            "distanceKm": 1475.37783010504,
+            "yaw": 60.1671309192201
+          },
+          {
+            "blend": 1.0,
+            "distanceKm": 869.266507878391,
+            "yaw": 75.2089136490251
+          }
+        ]
+      },
+      "passed": true,
+      "test": "Political transition follows continuous distance blend while zooming, panning and rotating both directions"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Returning below threshold restores geographic presentation"
+    }
+  ],
+  "passed": true
+}

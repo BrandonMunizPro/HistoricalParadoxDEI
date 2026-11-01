@@ -23,3 +23,18 @@ environment/defaults/default_clear_color=Color(0.32, 0.43, 0.47, 1)
 
 [environment]
 defaults/default_clear_color=Color(0.32, 0.43, 0.47, 1)
+
+[shader_globals]
+
+political_blend={"type":"float","value":0.0}
+political_neutral={"type":"vec4","value":Vector4(0.30,0.30,0.30,1)}
+political_sea_deep={"type":"vec4","value":Vector4(0.022,0.105,0.16,1)}
+political_sea_coast={"type":"vec4","value":Vector4(0.055,0.20,0.25,1)}
+political_coast_band_km={"type":"float","value":2.5}
+political_layers_enabled={"type":"bool","value":false}
+political_boundaries_enabled={"type":"bool","value":false}
+political_layer_bounds={"type":"vec4","value":Vector4(-12,12,87,50)}
+political_color_layer={"type":"sampler2D","value":"res://political_empty_layer.tres"}
+political_boundary_layer={"type":"sampler2D","value":"res://political_empty_layer.tres"}
+political_palette={"type":"sampler2D","value":"res://political_empty_layer.tres"}
+political_ids_mode={"type":"bool","value":false}

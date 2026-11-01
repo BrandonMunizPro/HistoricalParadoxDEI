@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "sourceFilesCompared": 2925,
+  "modifiedExisting": [
+    "godot-prototype/ocean/ocean_controller.gd",
+    "godot-prototype/ocean/ocean_surface.gdshader",
+    "godot-prototype/project.godot",
+    "godot-prototype/terrain.gdshader",
+    "godot-prototype/world.gd"
+  ],
+  "deletedExisting": [],
+  "terrainAndOceanVertexCodeIdentical": true,
+  "projectionCodeIdentical": true,
+  "protectedFiles": 460,
+  "approvedSites": 35,
+  "researchRecords": 687,
+  "nativeGpuChecks": 19,
+  "navigationRegressionPassed": true,
+  "matchedViews": 9,
+  "nativeAnimationFrames": 144,
+  "noTerritoryLayersBound": true,
+  "closeWaterPixelDelta": {
+    "max": 0,
+    "mean": 0,
+    "pixelsOverOneByte": 0
+  },
+  "geographicTerrainPixelDelta": {
+    "max": 0,
+    "mean": 0,
+    "pixelsOverOneByte": 0
+  }
+}

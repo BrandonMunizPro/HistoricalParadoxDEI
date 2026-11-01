@@ -1,0 +1,278 @@
+{
+  "status": "Review candidate; artistic acceptance not established",
+  "method": "600 wall-clock intervals per settled view, one forced GPU render per interval with automatic render loop disabled and no buffer swap. Prevents hidden-window logic-only FPS. 1% low averages slowest six intervals. Sequential views, retained shader caches; not a cold-cache or presented-frame benchmark.",
+  "pairs": [
+    {
+      "view": "close",
+      "exactCameraMatch": true,
+      "camera": {
+        "farKm": 500,
+        "focus": [
+          12.4912586212158,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "nearKm": 0.010499999858439,
+        "position": [
+          -83.1991348266602,
+          0.294301599264145,
+          -43.7119064331055
+        ]
+      },
+      "before": {
+        "averageFps": 60.8794029759882,
+        "maxMs": 20.312,
+        "meanMs": 16.4259166666666,
+        "onePercentLowFps": 49.9754287475325,
+        "over16_67ms": 247,
+        "over33_33ms": 0,
+        "p99Ms": 19.748,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 64.4222180634101,
+        "maxMs": 19.188,
+        "meanMs": 15.522595,
+        "onePercentLowFps": 52.6163478992923,
+        "over16_67ms": 193,
+        "over33_33ms": 0,
+        "p99Ms": 18.856,
+        "samples": 600
+      },
+      "beforeGpuMs": 8.22457333008448,
+      "afterGpuMs": 7.76006666103999,
+      "beforeDrawCalls": 492,
+      "afterDrawCalls": 351,
+      "beforePrimitives": 1960221,
+      "afterPrimitives": 2371651,
+      "beforeVideoMemoryBytes": 1206179296,
+      "afterVideoMemoryBytes": 1267587664,
+      "beforeFirstRender": {
+        "averageFps": 60.2380452953404,
+        "maxMs": 209.287,
+        "meanMs": 16.6008042773817,
+        "onePercentLowFps": 16.7847015837415,
+        "over16_67ms": 605,
+        "over33_33ms": 16,
+        "p99Ms": 33.403,
+        "samples": 1543
+      },
+      "afterFirstRender": {
+        "averageFps": 61.7870914408562,
+        "maxMs": 165.649,
+        "meanMs": 16.1846103559871,
+        "onePercentLowFps": 13.0944898386759,
+        "over16_67ms": 475,
+        "over33_33ms": 32,
+        "p99Ms": 64.443,
+        "samples": 1545
+      },
+      "average60Pass": true,
+      "onePercentLow60Pass": false
+    },
+    {
+      "view": "regional",
+      "exactCameraMatch": true,
+      "camera": {
+        "farKm": 500,
+        "focus": [
+          12.4912586212158,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "nearKm": 0.180000007152557,
+        "position": [
+          -83.4990921020508,
+          5.12689208984375,
+          -38.760612487793
+        ]
+      },
+      "before": {
+        "averageFps": 96.3018021437744,
+        "maxMs": 14.267,
+        "meanMs": 10.3840216666667,
+        "onePercentLowFps": 72.2543352601156,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.565,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 109.621637264926,
+        "maxMs": 12.707,
+        "meanMs": 9.12228666666666,
+        "onePercentLowFps": 81.7917853783552,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.972,
+        "samples": 600
+      },
+      "beforeGpuMs": 10.3620183515549,
+      "afterGpuMs": 9.10176167170207,
+      "beforeDrawCalls": 643,
+      "afterDrawCalls": 323,
+      "beforePrimitives": 1475175,
+      "afterPrimitives": 1376627,
+      "beforeVideoMemoryBytes": 1206179296,
+      "afterVideoMemoryBytes": 1271368064,
+      "beforeFirstRender": {
+        "averageFps": 95.3960927392861,
+        "maxMs": 22.112,
+        "meanMs": 10.4826096256684,
+        "onePercentLowFps": 47.6860351446079,
+        "over16_67ms": 2,
+        "over33_33ms": 0,
+        "p99Ms": 19.829,
+        "samples": 187
+      },
+      "afterFirstRender": {
+        "averageFps": 107.345507428687,
+        "maxMs": 21.097,
+        "meanMs": 9.31571356783919,
+        "onePercentLowFps": 50.7717303005686,
+        "over16_67ms": 2,
+        "over33_33ms": 0,
+        "p99Ms": 18.295,
+        "samples": 199
+      },
+      "average60Pass": true,
+      "onePercentLow60Pass": true
+    },
+    {
+      "view": "strategic",
+      "exactCameraMatch": true,
+      "camera": {
+        "farKm": 500,
+        "focus": [
+          12.4912586212158,
+          41.8899765014648
+        ],
+        "fov": 42,
+        "nearKm": 1.125,
+        "position": [
+          -83.4990921020508,
+          31.8784160614014,
+          -12.0319747924805
+        ]
+      },
+      "before": {
+        "averageFps": 120.015361966332,
+        "maxMs": 9.311,
+        "meanMs": 8.33226666666667,
+        "onePercentLowFps": 110.566468875539,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.898,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 120.014977869238,
+        "maxMs": 9.271,
+        "meanMs": 8.33229333333334,
+        "onePercentLowFps": 109.19017288444,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.977,
+        "samples": 600
+      },
+      "beforeGpuMs": 5.57216500202815,
+      "afterGpuMs": 5.74294999519984,
+      "beforeDrawCalls": 229,
+      "afterDrawCalls": 274,
+      "beforePrimitives": 1252301,
+      "afterPrimitives": 1343929,
+      "beforeVideoMemoryBytes": 1204486896,
+      "afterVideoMemoryBytes": 1270001104,
+      "beforeFirstRender": {
+        "averageFps": 118.569703870201,
+        "maxMs": 24.399,
+        "meanMs": 8.43385761589404,
+        "onePercentLowFps": 62.4063904143784,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 11.715,
+        "samples": 302
+      },
+      "afterFirstRender": {
+        "averageFps": 119.517812903175,
+        "maxMs": 25.1,
+        "meanMs": 8.36695364238411,
+        "onePercentLowFps": 62.392762439557,
+        "over16_67ms": 2,
+        "over33_33ms": 0,
+        "p99Ms": 10.161,
+        "samples": 302
+      },
+      "average60Pass": true,
+      "onePercentLow60Pass": true
+    },
+    {
+      "view": "inspection",
+      "exactCameraMatch": true,
+      "camera": {
+        "farKm": 500,
+        "focus": [
+          12.4907693862915,
+          41.8903312683105
+        ],
+        "fov": 42,
+        "nearKm": 0.00400000018998981,
+        "position": [
+          -83.5025634765625,
+          0.113652490079403,
+          -43.755241394043
+        ]
+      },
+      "before": {
+        "averageFps": 65.9380512008968,
+        "maxMs": 19.349,
+        "meanMs": 15.16575,
+        "onePercentLowFps": 52.653748946925,
+        "over16_67ms": 181,
+        "over33_33ms": 0,
+        "p99Ms": 18.795,
+        "samples": 600
+      },
+      "after": {
+        "averageFps": 74.543319669957,
+        "maxMs": 18.157,
+        "meanMs": 13.4150183333333,
+        "onePercentLowFps": 57.5456768810243,
+        "over16_67ms": 9,
+        "over33_33ms": 0,
+        "p99Ms": 16.775,
+        "samples": 600
+      },
+      "beforeGpuMs": 7.57268000761668,
+      "afterGpuMs": 6.72984165827433,
+      "beforeDrawCalls": 468,
+      "afterDrawCalls": 274,
+      "beforePrimitives": 1877105,
+      "afterPrimitives": 2150071,
+      "beforeVideoMemoryBytes": 1206179296,
+      "afterVideoMemoryBytes": 1271368064,
+      "beforeFirstRender": {
+        "averageFps": 68.76093845514,
+        "maxMs": 27.953,
+        "meanMs": 14.5431406619385,
+        "onePercentLowFps": 50.0985271033032,
+        "over16_67ms": 145,
+        "over33_33ms": 0,
+        "p99Ms": 18.663,
+        "samples": 846
+      },
+      "afterFirstRender": {
+        "averageFps": 77.1242661355465,
+        "maxMs": 23.548,
+        "meanMs": 12.9660877192983,
+        "onePercentLowFps": 56.7054153671676,
+        "over16_67ms": 4,
+        "over33_33ms": 0,
+        "p99Ms": 16.41,
+        "samples": 855
+      },
+      "average60Pass": true,
+      "onePercentLow60Pass": false
+    }
+  ]
+}

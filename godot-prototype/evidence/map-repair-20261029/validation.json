@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "matchedViews": 33,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "cameraTolerance": 0.00001,
+  "sourceFilesCompared": 2936,
+  "changedExistingSources": [
+    "godot-prototype/nile_water.gdshader",
+    "godot-prototype/ocean/ocean_surface.gdshader"
+  ],
+  "deletedSources": [],
+  "protectedFiles": 460,
+  "approvedSites": 35,
+  "researchRecords": 687,
+  "nativeChecks": 12,
+  "navigationPassed": true,
+  "patchCrack": {
+    "before": {
+      "outliers": 32,
+      "peak": 70.5,
+      "region": "Known diagonal crack at x=1660..1917, y=round(249+(x-1644)*0.5) +/-2 pixels"
+    },
+    "after": {
+      "outliers": 2,
+      "peak": 37,
+      "region": "Known diagonal crack at x=1660..1917, y=round(249+(x-1644)*0.5) +/-2 pixels"
+    }
+  }
+}

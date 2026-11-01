@@ -1,0 +1,98 @@
+{
+  "checks": [
+    {
+      "details": {},
+      "passed": true,
+      "test": "Full faction roster binds through existing political renderer"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Cultural families remain separate from faction controllers"
+    },
+    {
+      "details": {
+        "coloredLandProbes": 11
+      },
+      "passed": true,
+      "test": "Actual strategic land pixels display faction colors"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "All territorial display anchors lie in their own resolved region"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Galatian arrivals have presence markers without settled territory"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Live faction color update changes palette and emblem"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Color update preserves original territory raster"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Control transfer updates palette and suppresses landless map label"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Control transfer preserves geography and identities"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Invalid controller or region cannot mutate state"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Faction roster search recognizes requested Massylian alias"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Roster focus uses existing geographic camera goals"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "All factions remain available in the roster"
+    },
+    {
+      "details": {
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "passed": true,
+      "test": "Close geographic presentation preserved: water-control"
+    },
+    {
+      "details": {
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "passed": true,
+      "test": "Close geographic presentation preserved: roma-control"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Approved zoom transition thresholds unchanged"
+    },
+    {
+      "details": {},
+      "passed": true,
+      "test": "Protected settlements and retained research unchanged"
+    }
+  ],
+  "passed": true
+}

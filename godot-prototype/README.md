@@ -1,5 +1,13 @@
 # Campaign world visual prototype
 
+Roma and Aricia settlement identities: run `./godot-prototype/settlement-identities.ps1` from the repository root. The selector previews an urban six-slot Roma and a rural four-slot Aricia with three-level civic, religious and agricultural assets. [Reference study, real Godot comparisons, licenses, tests and performance failures](evidence/settlement-identities-20261028/REVIEW.md). This is an opt-in review slice; other cultures remain planned art vocabulary.
+
+Settlement development vertical slice:
+
+Run `./godot-prototype/settlement-development.ps1` for Roma's data-defined Forum III, grain storage II and four available slots. The opt-in UI previews both complete three-level chains and restores their starting configuration. [Review, real screenshots, validation and performance](evidence/settlement-development-20261028/REVIEW.md). Other cultural families are definitions with explicit art gaps; no worldwide rollout or economy is implemented.
+
+Roma temple/market precinct candidate: [matched Godot comparisons](evidence/roma-showcase-20261028/index.html), [Rome II / DEI research, implementation and remaining limits](evidence/roma-showcase-20261028/PRECINCT-REVIEW.md). Launch `./roma-showcase.ps1` from this directory. Settled averages exceed 60 FPS; close-view lows and artistic acceptance remain outstanding. It is opt-in; regular campaign launches retain the earlier Roma presentation.
+
 World foundation and settlement-population candidate: [changes, placement counts and limitations](WORLD-FOUNDATION.md), [24 matched comparisons](evidence/foundation/comparison.html), [performance](evidence/foundation/MEASUREMENTS.md). Includes 539 land-supported neutral location representations; artistic and performance acceptance remain pending.
 
 North Africa/Egypt review candidate: [implementation and limitations](NORTH-AFRICA.md), [24 matched camera pairs](evidence/north-africa/comparison.html), [measurements](evidence/north-africa/MEASUREMENTS.md). Preserves Italy, Sicily and Illyria as regression baselines; independent review pending.

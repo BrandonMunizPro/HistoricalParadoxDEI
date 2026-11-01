@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "notice": "Only Roma configured. Research records are not automatically promoted or assigned cultures, deposits or invented buildings. Granary scale/location is illustrative. Forum III is a design classification, not three literal historical stages.",
+  "settlements": [
+    {
+      "settlementId": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+      "class": "major",
+      "architectureCulture": "roman-italic",
+      "regionalStyle": "latium",
+      "yearBce": 278,
+      "terrain": [
+        "urban",
+        "cultivable",
+        "freshwater"
+      ],
+      "deposits": [],
+      "technologies": [
+        "appia-conduit"
+      ],
+      "waterRoutes": [],
+      "slots": [
+        {
+          "id": "roma-slot-1",
+          "anchorM": [
+            47,
+            -22
+          ],
+          "yawDegrees": -18,
+          "allowedCategories": [],
+          "building": {
+            "chain": "civic-forum",
+            "startingLevel": 3,
+            "landmark": "forum-romanum",
+            "evidence": [
+              "https://colosseo.it/en/area/the-roman-forum/",
+              "https://pleiades.stoa.org/places/423025"
+            ],
+            "confidence": "attested"
+          }
+        },
+        {
+          "id": "roma-slot-2",
+          "anchorM": [
+            111,
+            55
+          ],
+          "yawDegrees": -43,
+          "allowedCategories": [],
+          "building": {
+            "chain": "grain-storage",
+            "startingLevel": 2,
+            "landmark": null,
+            "evidence": [
+              "https://pleiades.stoa.org/places/423025",
+              "docs/research/settlement-procedural-component-catalog.md"
+            ],
+            "confidence": "interpretive"
+          }
+        },
+        {
+          "id": "roma-slot-3",
+          "anchorM": [
+            -110,
+            95
+          ],
+          "yawDegrees": 30,
+          "allowedCategories": [],
+          "building": null
+        },
+        {
+          "id": "roma-slot-4",
+          "anchorM": [
+            145,
+            -80
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        },
+        {
+          "id": "roma-slot-5",
+          "anchorM": [
+            -25,
+            120
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        },
+        {
+          "id": "roma-slot-6",
+          "anchorM": [
+            65,
+            -115
+          ],
+          "yawDegrees": 0,
+          "allowedCategories": [],
+          "building": null
+        }
+      ],
+      "evidence": [
+        "https://pleiades.stoa.org/places/423025",
+        "https://colosseo.it/en/area/the-roman-forum/"
+      ]
+    }
+  ]
+}

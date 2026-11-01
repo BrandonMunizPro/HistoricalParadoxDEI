@@ -1,0 +1,1473 @@
+{
+  "version": 1,
+  "notice": "Original redrawn coin/artifact-inspired game devices, not historical national flags. Colors are modern readability choices. Source dates and later regional adaptations are explicit. Territory geometry and controllers are unchanged.",
+  "sources": {
+    "roman-wolf": {
+      "url": "https://www.britishmuseum.org/collection/object/C_1867-0101-31",
+      "title": "British Museum 1867,0101.31, Roman didrachm, 269–266 BCE",
+      "evidence": "She-wolf suckling twins on Republican coinage nine or more years after our start. A deliberate near-period game adaptation, not a documented 278 BCE state flag."
+    },
+    "croton-tripod": {
+      "url": "https://www.colorado.edu/project/expressionsofidentity/silver-nomos-croton-480-430-bce",
+      "title": "University of Colorado, Croton silver nomos, 480–430 BCE",
+      "evidence": "Tripod on both sides of Croton coinage, long before the campaign date."
+    },
+    "seleucid-anchor": {
+      "url": "https://www.metmuseum.org/art/collection/search/330169",
+      "title": "Metropolitan Museum, tetradrachm of Seleucus I, ca. 298–281 BCE",
+      "evidence": "Anchor used by Seleucus I and successors; the museum does not assert its meaning."
+    },
+    "carthage-tanit": {
+      "url": "https://omeka.uottawa.ca/museumclassicalantiquities/items/show/511",
+      "title": "University of Ottawa, Carthaginian Tanit stele, third century BCE",
+      "evidence": "Religious motif found at Carthage; not proof of an official state flag or a precise 278 BCE usage date."
+    },
+    "ptolemy-eagle": {
+      "url": "https://collections.penn.museum/collections/object/123253",
+      "title": "Penn Museum 29-70-509, coin of Ptolemy I",
+      "evidence": "Eagle on thunderbolt on a coin attributed to Ptolemy I."
+    },
+    "athens-owl": {
+      "url": "https://www.theacropolismuseum.gr/en/node/21907",
+      "title": "Acropolis Museum, Athenian tetradrachm, 483–480 BCE",
+      "evidence": "Owl and olive twig on Athenian coinage."
+    },
+    "rhodes-rose": {
+      "url": "https://www.spurlock.illinois.edu/collections/search-collection/details.php?a=1900.63.0010",
+      "title": "Spurlock Museum 1900.63.0010, Rhodian tetradrachm, 304–189 BCE",
+      "evidence": "Rose with bud; a documented city motif in a broad dated range that includes the campaign period."
+    },
+    "tarentum-dolphin": {
+      "url": "https://www.britishmuseum.org/collection/object/C_RPK-p292M-31-Tar",
+      "title": "British Museum RPK,p292M.31.Tar, ca. 280–272 BCE",
+      "evidence": "Dolphin rider on Tarentine coinage close to the campaign date."
+    },
+    "numidian-horse": {
+      "url": "https://www.siaen.org/documents/10901/11639/2012_256.pdf",
+      "title": "Santiago Padrino Fernández, Numisma 256 (2012), pp. 7–28",
+      "evidence": "Bearded-head/galloping-horse issues of Massinissa and successors: later than 278 BCE. Applied as regional inspiration, not either tribe’s documented 278 BCE emblem."
+    },
+    "gallic-boar": {
+      "url": "https://www.persee.fr/doc/afeaf_1624-6349_1991_num_9_1_1406",
+      "title": "Boudet and Moreau, Soulac boar standard, AFEAF 9 (1991)",
+      "evidence": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+    }
+  },
+  "factions": {
+    "kush": {
+      "color": "#823e37",
+      "emblem": {
+        "motif": "pyramid",
+        "monogram": "KS",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "main": {
+      "color": "#4150aa",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "MN",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "bosporus": {
+      "color": "#b58f27",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "BS",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "saba": {
+      "color": "#8d5e1b",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "SB",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "hadramaut": {
+      "color": "#592385",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "HD",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "scythian-polities": {
+      "color": "#608d1b",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "SC",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "qataban": {
+      "color": "#2186ab",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "QT",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "yuezhi": {
+      "color": "#38948c",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "YZ",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "atropatene": {
+      "color": "#5b7138",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "AT",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "carthage": {
+      "color": "#713fa2",
+      "emblem": {
+        "motif": "tanit",
+        "monogram": "CT",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "carthage-tanit"
+        ],
+        "note": "Religious motif found at Carthage; not proof of an official state flag or a precise 278 BCE usage date."
+      }
+    },
+    "maurya": {
+      "color": "#bc6930",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "MY",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "etruscan-polities": {
+      "color": "#98702d",
+      "emblem": {
+        "motif": "rosette",
+        "monogram": "ET",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "colchis": {
+      "color": "#176f15",
+      "emblem": {
+        "motif": "mountain",
+        "monogram": "CL",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "armenia": {
+      "color": "#ae593d",
+      "emblem": {
+        "motif": "mountain",
+        "monogram": "AR",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "antigonid-holdings": {
+      "color": "#3195b9",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "AG",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "rome": {
+      "color": "#a32e3e",
+      "emblem": {
+        "motif": "wolf_twins",
+        "monogram": "RM",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "roman-wolf"
+        ],
+        "note": "She-wolf suckling twins on Republican coinage nine or more years after our start. A deliberate near-period game adaptation, not a documented 278 BCE state flag."
+      }
+    },
+    "achaean-league": {
+      "color": "#852323",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "AC",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "bithynia": {
+      "color": "#888d1b",
+      "emblem": {
+        "motif": "rosette",
+        "monogram": "BT",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "paphlagonia": {
+      "color": "#24602a",
+      "emblem": {
+        "motif": "rosette",
+        "monogram": "PP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "pergamon": {
+      "color": "#27877c",
+      "emblem": {
+        "motif": "helmet",
+        "monogram": "PG",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "aetolian-league": {
+      "color": "#1d691c",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "AE",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "ptolemaic-egypt": {
+      "color": "#c68e18",
+      "emblem": {
+        "motif": "eagle",
+        "monogram": "PT",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "ptolemy-eagle"
+        ],
+        "note": "Eagle on thunderbolt on a coin attributed to Ptolemy I."
+      }
+    },
+    "pontus": {
+      "color": "#72517f",
+      "emblem": {
+        "motif": "rosette",
+        "monogram": "PN",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "seleucids": {
+      "color": "#2876ae",
+      "emblem": {
+        "motif": "anchor",
+        "monogram": "SL",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "seleucid-anchor"
+        ],
+        "note": "Anchor used by Seleucus I and successors; the museum does not assert its meaning."
+      }
+    },
+    "lusitani": {
+      "color": "#ab5121",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "L",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "gallaeci": {
+      "color": "#233d85",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "G",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "astures": {
+      "color": "#c57026",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "A",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "cantabri": {
+      "color": "#256024",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "vascones": {
+      "color": "#b94131",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "V",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "vaccaei": {
+      "color": "#4f2e7a",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "V",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "vettones": {
+      "color": "#419aaa",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "V",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "arevaci": {
+      "color": "#2ba17c",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "A",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "celtiberians": {
+      "color": "#6f1563",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "CC",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "carpetani": {
+      "color": "#8d1b3b",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "oretani": {
+      "color": "#2675c5",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "O",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "turdetani": {
+      "color": "#6f3f15",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "T",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "bastetani": {
+      "color": "#6d8d1b",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "contestani": {
+      "color": "#612e7a",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "edetani": {
+      "color": "#a18b2b",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "E",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "ilergetes": {
+      "color": "#236085",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "I",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "indigetes": {
+      "color": "#b97131",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "I",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "arverni": {
+      "color": "#4144aa",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "A",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "aedui": {
+      "color": "#4f9438",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "A",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "bituriges": {
+      "color": "#8d1b1b",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "carnutes": {
+      "color": "#2b9da1",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "senones-gaul": {
+      "color": "#245e60",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "SG",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "parisii": {
+      "color": "#6f156e",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "P",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "remi": {
+      "color": "#b95131",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "R",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "nervii": {
+      "color": "#1b8d5c",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "N",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "belgae": {
+      "color": "#c55d26",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "BCP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "armorican-veneti": {
+      "color": "#2ba16e",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "VA",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "aulerci": {
+      "color": "#ab4121",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "A",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "pictones": {
+      "color": "#1b478d",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "P",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "santones": {
+      "color": "#a12b2b",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "S",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "aquitani": {
+      "color": "#2ba152",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "AP",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "volcae": {
+      "color": "#aa4d41",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "V",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "allobroges": {
+      "color": "#a1392b",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "A",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "helvetii": {
+      "color": "#2b4aa1",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "H",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "dumnonii": {
+      "color": "#7a8d1b",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "durotriges": {
+      "color": "#3165b9",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "catuvellauni": {
+      "color": "#603924",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "iceni": {
+      "color": "#859438",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "I",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "dobunni": {
+      "color": "#2ba189",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "silures": {
+      "color": "#85236d",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "S",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "ordovices": {
+      "color": "#2166ab",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "O",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "brigantes": {
+      "color": "#767a2e",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "caledonian-polities": {
+      "color": "#582e7a",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "CP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "hibernian-polities": {
+      "color": "#156c6f",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "HP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "frisii": {
+      "color": "#1b548d",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "F",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "chauci": {
+      "color": "#308523",
+      "emblem": {
+        "motif": "oak",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "cherusci": {
+      "color": "#8d1b56",
+      "emblem": {
+        "motif": "spear",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "chatti": {
+      "color": "#3175b9",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "suebi": {
+      "color": "#389457",
+      "emblem": {
+        "motif": "oak",
+        "monogram": "SP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "lugii": {
+      "color": "#852361",
+      "emblem": {
+        "motif": "spear",
+        "monogram": "L",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "cimbri": {
+      "color": "#642385",
+      "emblem": {
+        "motif": "wheel",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "southern-scandinavian-polities": {
+      "color": "#948338",
+      "emblem": {
+        "motif": "oak",
+        "monogram": "SSP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "boii": {
+      "color": "#2156ab",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "insubres": {
+      "color": "#8d1b2e",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "I",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "cenomani": {
+      "color": "#ab8221",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "C",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "veneti-italy": {
+      "color": "#a12b5a",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "VA",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "ligurian-polities": {
+      "color": "#38944c",
+      "emblem": {
+        "motif": "standard",
+        "monogram": "LP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "samnites": {
+      "color": "#2b58a1",
+      "emblem": {
+        "motif": "helmet",
+        "monogram": "SP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "lucanians": {
+      "color": "#2ba160",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "L",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "bruttians": {
+      "color": "#aa4183",
+      "emblem": {
+        "motif": "standard",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "messapians": {
+      "color": "#649438",
+      "emblem": {
+        "motif": "helmet",
+        "monogram": "M",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "daunians": {
+      "color": "#3a9438",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "tarentum": {
+      "color": "#7a2e4d",
+      "emblem": {
+        "motif": "dolphin_rider",
+        "monogram": "T",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "tarentum-dolphin"
+        ],
+        "note": "Dolphin rider on Tarentine coinage close to the campaign date."
+      }
+    },
+    "rhegion": {
+      "color": "#1b8d41",
+      "emblem": {
+        "motif": "meander",
+        "monogram": "R",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "croton": {
+      "color": "#23852d",
+      "emblem": {
+        "motif": "tripod",
+        "monogram": "C",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "croton-tripod"
+        ],
+        "note": "Tripod on both sides of Croton coinage, long before the campaign date."
+      }
+    },
+    "epirus": {
+      "color": "#286c4c",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "E",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "macedonian-claimants": {
+      "color": "#8d416f",
+      "emblem": {
+        "motif": "star",
+        "monogram": "MC",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "athens": {
+      "color": "#852328",
+      "emblem": {
+        "motif": "owl",
+        "monogram": "A",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "athens-owl"
+        ],
+        "note": "Owl and olive twig on Athenian coinage."
+      }
+    },
+    "sparta": {
+      "color": "#b96131",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "S",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "messene": {
+      "color": "#691c67",
+      "emblem": {
+        "motif": "meander",
+        "monogram": "M",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "knossos": {
+      "color": "#753894",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "K",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "gortyn": {
+      "color": "#566024",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "G",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "ardiaeans": {
+      "color": "#6f5415",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "A",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "taulantii": {
+      "color": "#2688c5",
+      "emblem": {
+        "motif": "spear",
+        "monogram": "T",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "dardani": {
+      "color": "#2197ab",
+      "emblem": {
+        "motif": "helmet",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "liburni": {
+      "color": "#244960",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "L",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "delmatae": {
+      "color": "#418eaa",
+      "emblem": {
+        "motif": "spear",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "odrysian-polities": {
+      "color": "#449438",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "OP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "getae": {
+      "color": "#943888",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "G",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "dacian-polities": {
+      "color": "#389441",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "DP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "scordisci": {
+      "color": "#4a3894",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "S",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "taurisci": {
+      "color": "#7a9438",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "T",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "mauri": {
+      "color": "#247a7e",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "M",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "masaesyli": {
+      "color": "#ad5b25",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "M",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "numidian-horse"
+        ],
+        "note": "Bearded-head/galloping-horse issues of Massinissa and successors: later than 278 BCE. Applied as regional inspiration, not either tribe’s documented 278 BCE emblem."
+      }
+    },
+    "massylii": {
+      "color": "#40762b",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "M",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "numidian-horse"
+        ],
+        "note": "Bearded-head/galloping-horse issues of Massinissa and successors: later than 278 BCE. Applied as regional inspiration, not either tribe’s documented 278 BCE emblem."
+      }
+    },
+    "gaetuli": {
+      "color": "#6f2a15",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "GP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "garamantes": {
+      "color": "#2e7a59",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "G",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "nasamones": {
+      "color": "#1c6924",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "N",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "marmaridae": {
+      "color": "#803894",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "MP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "nabataea": {
+      "color": "#aa415e",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "N",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "lihyan": {
+      "color": "#15576f",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "L",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "gerrha": {
+      "color": "#1b6f8d",
+      "emblem": {
+        "motif": "sun",
+        "monogram": "G",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "kartli": {
+      "color": "#383b94",
+      "emblem": {
+        "motif": "mountain",
+        "monogram": "KI",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "caucasian-albanian-polities": {
+      "color": "#aa7e41",
+      "emblem": {
+        "motif": "mountain",
+        "monogram": "CAP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "dahae": {
+      "color": "#8d281b",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "D",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "massagetae": {
+      "color": "#3185b9",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "M",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "saka": {
+      "color": "#8d1b21",
+      "emblem": {
+        "motif": "horse",
+        "monogram": "SP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "syracuse": {
+      "color": "#5a9438",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "S",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "massalia": {
+      "color": "#403894",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "MC",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "rhodes": {
+      "color": "#a34831",
+      "emblem": {
+        "motif": "rose",
+        "monogram": "R",
+        "basis": "attested_motif",
+        "sourceKeys": [
+          "rhodes-rose"
+        ],
+        "note": "Rose with bud; a documented city motif in a broad dated range that includes the campaign period."
+      }
+    },
+    "chalcedon": {
+      "color": "#553894",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "heraclea-pontica": {
+      "color": "#6b3894",
+      "emblem": {
+        "motif": "wreath",
+        "monogram": "HP",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "chersonesos": {
+      "color": "#722e7a",
+      "emblem": {
+        "motif": "meander",
+        "monogram": "C",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "byzantion": {
+      "color": "#528d1b",
+      "emblem": {
+        "motif": "ship",
+        "monogram": "B",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "tectosages": {
+      "color": "#8d431b",
+      "emblem": {
+        "motif": "spiral",
+        "monogram": "T",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    },
+    "trocmi": {
+      "color": "#387b94",
+      "emblem": {
+        "motif": "boar",
+        "monogram": "T",
+        "basis": "later_regional_motif",
+        "sourceKeys": [
+          "gallic-boar"
+        ],
+        "note": "A real Gallic military-standard motif; proposed object date is first century BCE, later than the campaign and not attributable to individual tribes here."
+      }
+    },
+    "tolistobogii": {
+      "color": "#7a6c2e",
+      "emblem": {
+        "motif": "torc",
+        "monogram": "T",
+        "basis": "original_design",
+        "sourceKeys": [],
+        "note": "Original game device informed by a broad cultural theme; no known faction-specific 278 BCE emblem is claimed."
+      }
+    }
+  },
+  "paletteAudit": {
+    "method": "Greedy adjacency-aware OKLab separation from unchanged territory-ID raster; curated major colors are fixed. Not a color-vision-deficiency certification.",
+    "adjacentPairs": 178,
+    "minimumAdjacentDelta": 0.10656665780240725,
+    "weakestPairs": [
+      {
+        "a": "pergamon",
+        "b": "seleucids",
+        "deltaOklab": 0.10656665780240725
+      },
+      {
+        "a": "pontus",
+        "b": "seleucids",
+        "deltaOklab": 0.13153586553584745
+      },
+      {
+        "a": "armenia",
+        "b": "atropatene",
+        "deltaOklab": 0.15029586044777757
+      },
+      {
+        "a": "armenia",
+        "b": "pontus",
+        "deltaOklab": 0.15323602167073058
+      },
+      {
+        "a": "etruscan-polities",
+        "b": "rome",
+        "deltaOklab": 0.1598814730404177
+      },
+      {
+        "a": "atropatene",
+        "b": "seleucids",
+        "deltaOklab": 0.1749712792482504
+      },
+      {
+        "a": "masaesyli",
+        "b": "massylii",
+        "deltaOklab": 0.17798020572984666
+      },
+      {
+        "a": "gaetuli",
+        "b": "masaesyli",
+        "deltaOklab": 0.18105041191082613
+      },
+      {
+        "a": "epirus",
+        "b": "taulantii",
+        "deltaOklab": 0.1880772276619035
+      },
+      {
+        "a": "paphlagonia",
+        "b": "pontus",
+        "deltaOklab": 0.1933972055264127
+      },
+      {
+        "a": "carnutes",
+        "b": "senones-gaul",
+        "deltaOklab": 0.19553449190934674
+      },
+      {
+        "a": "bithynia",
+        "b": "paphlagonia",
+        "deltaOklab": 0.19641466428983936
+      }
+    ]
+  }
+}

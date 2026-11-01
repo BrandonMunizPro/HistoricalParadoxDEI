@@ -1,0 +1,89 @@
+{
+  "notice": "Roma-only authored staging overlay; canonical coordinates and original showcase remain unchanged.",
+  "replace": [
+    {
+      "kind": "civic",
+      "anchorM": [
+        47,
+        -22
+      ]
+    },
+    {
+      "kind": "warehouse",
+      "anchorM": [
+        111,
+        55
+      ]
+    }
+  ],
+  "relocate": [
+    {
+      "kind": "home-5",
+      "fromM": [
+        70,
+        10
+      ],
+      "toM": [
+        78,
+        88
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "a": [
+        22,
+        5
+      ],
+      "b": [
+        47,
+        -5
+      ],
+      "width": 5
+    },
+    {
+      "a": [
+        117,
+        86
+      ],
+      "b": [
+        121,
+        67
+      ],
+      "width": 5
+    }
+  ],
+  "wallPathM": [
+    [
+      155,
+      -165
+    ],
+    [
+      181,
+      -96
+    ],
+    [
+      204,
+      -18
+    ],
+    [
+      213,
+      53
+    ],
+    [
+      195,
+      110
+    ]
+  ],
+  "gate": {
+    "segment": 4,
+    "omitLastPiece": true
+  },
+  "strategicProxy": {
+    "startDistanceKm": 15,
+    "fullDistanceKm": 30,
+    "maxScale": 6,
+    "minimumClearanceM": 1,
+    "notice": "Strategic map-symbol exaggeration, not physical city size or geographic displacement. Close views retain metre scale."
+  }
+}

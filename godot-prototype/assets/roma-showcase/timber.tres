@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/timber-color.jpg" id="1_r35l5"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/timber-normal.jpg" id="2_e72fb"]
+[ext_resource type="Texture2D" path="res://assets/roma-showcase/timber-roughness.jpg" id="3_17a7d"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.54509807, 0.46666667, 0.3647059, 1)
+albedo_texture = ExtResource("1_r35l5")
+roughness_texture = ExtResource("3_17a7d")
+normal_enabled = true
+normal_scale = 0.35
+normal_texture = ExtResource("2_e72fb")
+texture_filter = 5

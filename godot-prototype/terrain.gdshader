@@ -1,9 +1,11 @@
 shader_type spatial;
 render_mode cull_disabled;
 #include "res://shoreline.gdshaderinc"
+#include "res://political_map.gdshaderinc"
 #include "res://habitat.gdshaderinc"
 #include "res://environment.gdshaderinc"
 #include "res://north_africa.gdshaderinc"
+#include "res://landscape_surface.gdshaderinc"
 uniform vec3 na_alluvium_tint=vec3(.55,1.15,.40);
 uniform vec3 na_sand_color=vec3(.43,.32,.20);
 uniform float na_rock_strength=.65;
@@ -17,6 +19,9 @@ uniform float foundation_photo_strength=.55;
 uniform float foundation_normal_strength=.3;
 uniform sampler2D roma_landscape_mask:filter_linear_mipmap,repeat_disable;
 uniform vec4 roma_landscape_rect=vec4(0.0);
+// Explicit opt-in Roma showcase replaces only its constructed local ground.
+uniform vec3 roma_showcase_ground=vec3(0.0);
+uniform vec3 minor_identity_ground=vec3(0.0);
 uniform sampler2D coast : filter_linear, repeat_disable;
 uniform sampler2D macro_color : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
 uniform sampler2D regional_land : filter_linear, repeat_disable;
@@ -81,6 +86,8 @@ void vertex(){
  world_pos=VERTEX;ground_normal=NORMAL;
 }
 void fragment(){
+ if(roma_showcase_ground.z>0.0&&camera_distance<15.0&&distance(world_pos.xz,roma_showcase_ground.xy)<roma_showcase_ground.z)discard;
+ if(minor_identity_ground.z>0.0&&camera_distance<15.0&&distance(world_pos.xz,minor_identity_ground.xy)<minor_identity_ground.z)discard;
  vec2 geo=vec2(UV.x*87.0-12.0,62.0-UV.y*50.0),region=vec2((geo.x-6.0)/14.0,(49.0-geo.y)/14.0);
  bool in_region=all(greaterThanEqual(region,vec2(0.0)))&&all(lessThanEqual(region,vec2(1.0)));
  // Keep a narrow parent strip under differently tessellated projected edges.
@@ -99,6 +106,13 @@ void fragment(){
  if(land<.5)discard;
  vec2 cover_inset=geo_overlap/vec2(87.0,50.0);
  for(int i=0;i<12;i++){if(i>=child_count)break;vec4 b=children[i];if(UV.x>b.x+cover_inset.x&&UV.y>b.y+cover_inset.y&&UV.x<b.z-cover_inset.x&&UV.y<b.w-cover_inset.y)discard;}
+ if(political_blend<1.){
+ float landscape_weight=landscape_scope(world_pos.xz);
+ NORMAL_MAP=vec3(.5,.5,1.);NORMAL_MAP_DEPTH=0.;
+ if(landscape_weight>.999){
+  vec3 c,n;float r;landscape_surface(world_pos,normalize(ground_normal),c,n,r);
+  ALBEDO=c;NORMAL=normalize(mat3(VIEW_MATRIX)*n);ROUGHNESS=r;SPECULAR=.28;
+ }else{
  vec3 macro=texture(macro_color,(UV*vec2(3915.0,2250.0)+.5)/vec2(3916.0,2251.0)).rgb;
  vec4 global_eco=texture(global_ecology,(UV*vec2(1392.0,800.0)+.5)/vec2(1393.0,801.0));
  vec2 river_size=vec2(textureSize(river_corridors,0));
@@ -259,6 +273,22 @@ void fragment(){
   NORMAL_MAP=mix(NORMAL_MAP,texture(foundation_normal,p/foundation_photo_tile_km).rgb,foundation_detail);
   NORMAL_MAP_DEPTH=max(NORMAL_MAP_DEPTH,foundation_detail*foundation_normal_strength);
  }
+ if(landscape_weight>0.){vec3 c,n;float r;landscape_surface(world_pos,normalize(ground_normal),c,n,r);ALBEDO=mix(ALBEDO,c,landscape_weight);NORMAL=normalize(mix(NORMAL,mat3(VIEW_MATRIX)*n,landscape_weight));ROUGHNESS=mix(ROUGHNESS,r,landscape_weight);NORMAL_MAP_DEPTH*=1.-landscape_weight;}
  if(debug_view==1){ALBEDO=vec3(0.0);EMISSION=vec3(eco.r,region_weight,steep);}
  if(debug_view==2){ALBEDO=vec3(0.0);EMISSION=vec3(global_eco.a,global_eco.b,global_eco.g);}
+ }
+ }
+ if(political_blend>0.){
+  vec2 size=vec2(textureSize(strategic_relief,0));
+  vec3 relief=normalize(texture(strategic_relief,(UV*(size-1.)+.5)/size).rgb*2.-1.);
+  vec3 normal=normalize(mix(ground_normal,relief,.75));
+  vec3 grey=political_land_color(coast_geo,world_pos.xz);
+  // Subtle source-derived hill shading; no height or coastline displacement.
+  float light=dot(normal,normalize(relief_light_direction))-normalize(relief_light_direction).y;
+  grey*=clamp(exp(light*.7),.82,1.12);
+  if(political_blend>=1.){ALBEDO=grey;NORMAL=normalize(mat3(VIEW_MATRIX)*normal);ROUGHNESS=.95;SPECULAR=.1;}
+  else{ALBEDO=mix(ALBEDO,grey,political_blend);NORMAL=normalize(mix(NORMAL,mat3(VIEW_MATRIX)*normal,political_blend));ROUGHNESS=mix(ROUGHNESS,.95,political_blend);SPECULAR=mix(SPECULAR,.1,political_blend);}
+  if(political_blend>=1.){NORMAL_MAP=vec3(.5,.5,1.);NORMAL_MAP_DEPTH=0.;}
+  else{NORMAL_MAP_DEPTH*=1.-political_blend;}
+ }
 }

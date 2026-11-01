@@ -1,0 +1,199 @@
+{
+  "bootStagesMs": {
+    "base_meshes": 236.232,
+    "canopy_meshes": 111.172,
+    "environment": 3.914,
+    "materials": 1999.22,
+    "water_ui_hydrology": 940.42
+  },
+  "materialLoads": [
+    {
+      "cpuMs": 170.127,
+      "resource": "regional/land"
+    },
+    {
+      "cpuMs": 156.265,
+      "resource": "regional/ocean"
+    },
+    {
+      "cpuMs": 215.115,
+      "resource": "regional/shore"
+    },
+    {
+      "cpuMs": 9.697,
+      "resource": "regional/ecology"
+    },
+    {
+      "cpuMs": 245.559,
+      "resource": "global/land"
+    },
+    {
+      "cpuMs": 262.329,
+      "resource": "global/ocean"
+    },
+    {
+      "cpuMs": 25.906,
+      "resource": "global/shore"
+    },
+    {
+      "cpuMs": 28.205,
+      "resource": "global/ecology"
+    },
+    {
+      "cpuMs": 42.769,
+      "resource": "slice/limestone-scree"
+    },
+    {
+      "cpuMs": 44.792,
+      "resource": "slice/mediterranean-ground"
+    },
+    {
+      "cpuMs": 42.655,
+      "resource": "slice/mediterranean-mosaic"
+    },
+    {
+      "cpuMs": 45.557,
+      "resource": "environment/temperate-ground"
+    },
+    {
+      "cpuMs": 52.159,
+      "resource": "environment/arid-ground"
+    },
+    {
+      "cpuMs": 40.804,
+      "resource": "environment/alluvial-ground"
+    }
+  ],
+  "maxCpuStageMs": {
+    "base_meshes": 236.232,
+    "camera_materials": 0.47,
+    "canopy_meshes": 111.172,
+    "city": 0.193,
+    "environment": 3.914,
+    "markers": 2.702,
+    "materials": 1999.22,
+    "rivers": 2.07,
+    "scenery": 1.28,
+    "tile_upload": 14.049,
+    "ui": 0.112,
+    "water_ui_hydrology": 940.42
+  },
+  "river": {
+    "cancelled": 0,
+    "completed": 2,
+    "maxChunkMs": 2.065,
+    "maxUploadMs": 18.333
+  },
+  "scenery": {
+    "cancelled": 0,
+    "candidates": 217025,
+    "cellsBuilt": 40,
+    "generationCpuMs": 5277.84699999999,
+    "generationYieldFrames": 1322,
+    "maxChunkMs": 5.863,
+    "maxUploadMs": 2.559,
+    "uploadCpuMs": 33.16
+  },
+  "slowFrames": [
+    {
+      "frame": 1614,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.183,
+        "city": 0.039,
+        "markers": 0.938,
+        "rivers": 0.026,
+        "scenery": 0.105,
+        "tile_upload": 0.003,
+        "ui": 0.016
+      },
+      "renderCpuMs": 0.238999992609024,
+      "renderGpuMs": 4.83799982070923,
+      "wallMs": 652.973
+    },
+    {
+      "frame": 2781,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.096,
+        "city": 0.034,
+        "markers": 0.999,
+        "rivers": 0.021,
+        "scenery": 0.085,
+        "tile_upload": 0.004,
+        "ui": 0.033
+      },
+      "renderCpuMs": 0.216999992728233,
+      "renderGpuMs": 3.05699992179871,
+      "wallMs": 578.958
+    },
+    {
+      "frame": 2,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.163,
+        "city": 0.014,
+        "markers": 0.373,
+        "rivers": 0.002,
+        "scenery": 0.075,
+        "tile_upload": 11.134,
+        "ui": 0.021
+      },
+      "renderCpuMs": 0.337000012397766,
+      "renderGpuMs": 32.1220016479492,
+      "wallMs": 75.814
+    },
+    {
+      "frame": 1,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.147,
+        "city": 0.015,
+        "markers": 0.407,
+        "rivers": 0.006,
+        "scenery": 0.112,
+        "tile_upload": 10.974,
+        "ui": 0.022
+      },
+      "renderCpuMs": 0.435000002384186,
+      "renderGpuMs": 25.9379997253418,
+      "wallMs": 75.369
+    },
+    {
+      "frame": 3,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.173,
+        "city": 0.018,
+        "markers": 0.43,
+        "rivers": 0.002,
+        "scenery": 0.085,
+        "tile_upload": 11.01,
+        "ui": 0.02
+      },
+      "renderCpuMs": 0.293000012636185,
+      "renderGpuMs": 9.49400043487549,
+      "wallMs": 39.341
+    }
+  ],
+  "tileLoadsMs": [
+    132.79,
+    10.915,
+    11.075,
+    10.927,
+    11.623,
+    10.988,
+    13.822,
+    10.842,
+    11.141,
+    11.039,
+    11.901,
+    10.834,
+    11.288,
+    10.895,
+    10.697,
+    10.422,
+    10.13,
+    11.177,
+    10.344,
+    10.197,
+    10.038,
+    10.476,
+    11.268
+  ]
+}

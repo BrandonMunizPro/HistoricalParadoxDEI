@@ -1,0 +1,55 @@
+{
+  "boot": {
+    "base_meshes": 215.913,
+    "canopy_meshes": 134.615,
+    "environment": 3.758,
+    "materials": 2020.031,
+    "water_ui_hydrology": 1040.786
+  },
+  "maxCpuStages": {
+    "base_meshes": 215.913,
+    "camera_materials": 0.457,
+    "canopy_meshes": 134.615,
+    "city": 0.169,
+    "environment": 3.758,
+    "markers": 3.279,
+    "materials": 2020.031,
+    "rivers": 2.035,
+    "scenery": 3.428,
+    "tile_upload": 14.15,
+    "ui": 0.08,
+    "water_ui_hydrology": 1040.786
+  },
+  "slowFrames": [
+    {
+      "frame": 1275,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.118,
+        "city": 0.05,
+        "markers": 1.277,
+        "rivers": 0.023,
+        "scenery": 0.076,
+        "tile_upload": 0.003,
+        "ui": 0.02
+      },
+      "renderCpuMs": 0.40200001001358,
+      "renderGpuMs": 4.95300006866455,
+      "wallMs": 411.811
+    },
+    {
+      "frame": 1,
+      "previousCpuStagesMs": {
+        "camera_materials": 0.195,
+        "city": 0.012,
+        "markers": 0.413,
+        "rivers": 0.002,
+        "scenery": 0.072,
+        "tile_upload": 10.754,
+        "ui": 0.023
+      },
+      "renderCpuMs": 0.382999986410141,
+      "renderGpuMs": 19.8780002593994,
+      "wallMs": 35.805
+    }
+  ]
+}

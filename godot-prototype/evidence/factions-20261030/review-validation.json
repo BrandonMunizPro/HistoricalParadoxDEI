@@ -1,0 +1,265 @@
+{
+  "passed": true,
+  "protectedFiles": 460,
+  "existingGodotFilesChecked": 3059,
+  "existingGodotFilesModified": [
+    "godot-prototype/political_map.gd",
+    "godot-prototype/political_map.gdshaderinc",
+    "godot-prototype/project.godot",
+    "godot-prototype/world.gd"
+  ],
+  "removedFiles": [],
+  "factions": 131,
+  "territories": 128,
+  "sourceReconstructedTerritories": 30,
+  "provisionalTerritories": 98,
+  "presenceOnlyFactions": 3,
+  "matchedCameraPairs": 9,
+  "nativeChecks": 17,
+  "motionChecks": 2,
+  "performance": [
+    {
+      "view": "mediterranean",
+      "before": {
+        "averageFps": 100.60041682106,
+        "maxMs": 11.554,
+        "meanMs": 9.94031666666667,
+        "onePercentLowFps": 87.9507475813544,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.186,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 103.451575610601,
+        "maxMs": 13.865,
+        "meanMs": 9.66635833333333,
+        "onePercentLowFps": 72.5584095196633,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.699,
+        "samples": 120
+      },
+      "beforeGpuMs": 8.4990666548411,
+      "afterGpuMs": 8.28799999952316,
+      "beforeDrawCalls": 26,
+      "afterDrawCalls": 427
+    },
+    {
+      "view": "western-world",
+      "before": {
+        "averageFps": 135.233971675245,
+        "maxMs": 9.158,
+        "meanMs": 7.39459166666667,
+        "onePercentLowFps": 110.053375887305,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.015,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 136.162796239184,
+        "maxMs": 11.089,
+        "meanMs": 7.34415,
+        "onePercentLowFps": 94.6073793755913,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.051,
+        "samples": 120
+      },
+      "beforeGpuMs": 6.16232502063115,
+      "afterGpuMs": 6.24356669187546,
+      "beforeDrawCalls": 30,
+      "afterDrawCalls": 387
+    },
+    {
+      "view": "africa",
+      "before": {
+        "averageFps": 133.840887721995,
+        "maxMs": 9.187,
+        "meanMs": 7.47155833333333,
+        "onePercentLowFps": 109.289617486339,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.113,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 133.669735501011,
+        "maxMs": 9.929,
+        "meanMs": 7.481125,
+        "onePercentLowFps": 103.06622004638,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.476,
+        "samples": 120
+      },
+      "beforeGpuMs": 6.18734999497732,
+      "afterGpuMs": 6.44888335069021,
+      "beforeDrawCalls": 22,
+      "afterDrawCalls": 120
+    },
+    {
+      "view": "eastern-world",
+      "before": {
+        "averageFps": 113.399041778097,
+        "maxMs": 10.473,
+        "meanMs": 8.81841666666667,
+        "onePercentLowFps": 95.6342944579926,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.44,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 104.046363059379,
+        "maxMs": 11.68,
+        "meanMs": 9.6111,
+        "onePercentLowFps": 86.8394772263471,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.351,
+        "samples": 120
+      },
+      "beforeGpuMs": 7.54274168809255,
+      "afterGpuMs": 8.50430836280187,
+      "beforeDrawCalls": 18,
+      "afterDrawCalls": 238
+    },
+    {
+      "view": "italia",
+      "before": {
+        "averageFps": 131.73249083087,
+        "maxMs": 8.958,
+        "meanMs": 7.59114166666666,
+        "onePercentLowFps": 111.963276045457,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.905,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 118.543807864196,
+        "maxMs": 10.102,
+        "meanMs": 8.4357,
+        "onePercentLowFps": 99.5321986662685,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.992,
+        "samples": 120
+      },
+      "beforeGpuMs": 6.33970000743866,
+      "afterGpuMs": 7.29401665528615,
+      "beforeDrawCalls": 46,
+      "afterDrawCalls": 177
+    },
+    {
+      "view": "hellenic",
+      "before": {
+        "averageFps": 212.575619347924,
+        "maxMs": 6.481,
+        "meanMs": 4.70420833333333,
+        "onePercentLowFps": 155.098875533152,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 6.414,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 200.282732457319,
+        "maxMs": 6.907,
+        "meanMs": 4.99294166666667,
+        "onePercentLowFps": 144.791138782307,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 6.906,
+        "samples": 120
+      },
+      "beforeGpuMs": 3.64243333935738,
+      "afterGpuMs": 4.01490832765897,
+      "beforeDrawCalls": 13,
+      "afterDrawCalls": 87
+    },
+    {
+      "view": "transition",
+      "before": {
+        "averageFps": 137.384339559134,
+        "maxMs": 9.946,
+        "meanMs": 7.27885,
+        "onePercentLowFps": 100.568210388696,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.941,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 130.305185603449,
+        "maxMs": 10.146,
+        "meanMs": 7.67429166666667,
+        "onePercentLowFps": 99.0736612671521,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.041,
+        "samples": 120
+      },
+      "beforeGpuMs": 5.88000000317891,
+      "afterGpuMs": 6.47854999303818,
+      "beforeDrawCalls": 43,
+      "afterDrawCalls": 52
+    },
+    {
+      "view": "water-control",
+      "before": {
+        "averageFps": 163.31307797519,
+        "maxMs": 8.957,
+        "meanMs": 6.12320833333333,
+        "onePercentLowFps": 116.346713205352,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.233,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 148.383730218594,
+        "maxMs": 9.403,
+        "meanMs": 6.73928333333334,
+        "onePercentLowFps": 107.463328139272,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.208,
+        "samples": 120
+      },
+      "beforeGpuMs": 4.70188333193461,
+      "afterGpuMs": 5.41893332799276,
+      "beforeDrawCalls": 8,
+      "afterDrawCalls": 8
+    },
+    {
+      "view": "roma-control",
+      "before": {
+        "averageFps": 94.8687846122831,
+        "maxMs": 13.109,
+        "meanMs": 10.540875,
+        "onePercentLowFps": 77.9028551396409,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 12.564,
+        "samples": 120
+      },
+      "after": {
+        "averageFps": 84.1959323541814,
+        "maxMs": 15.471,
+        "meanMs": 11.8770583333333,
+        "onePercentLowFps": 65.9043727551323,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.876,
+        "samples": 120
+      },
+      "beforeGpuMs": 8.91801667610804,
+      "afterGpuMs": 10.2724832932154,
+      "beforeDrawCalls": 396,
+      "afterDrawCalls": 396
+    }
+  ]
+}
