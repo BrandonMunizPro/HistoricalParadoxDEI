@@ -1,0 +1,818 @@
+{
+  "candidate": false,
+  "notice": "180 uncapped hidden-window submitted intervals per settled camera; GPU/CPU diagnostics separate; not sustained interactive FPS.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.70710676908493,
+          -0.70710676908493,
+          0.0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 1.5,
+        "position": [
+          63.3345527648926,
+          42.5029029846191,
+          115.541038513184
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.304,
+        "city": 0.053,
+        "markers": 1.783,
+        "rivers": 0.051,
+        "scenery": 1.056,
+        "tile_upload": 0.005,
+        "ui": 0.028
+      },
+      "drawCalls": {
+        "meanMs": 99.0,
+        "p95Ms": 99.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 7.81964445908864,
+        "p95Ms": 8.7519998550415,
+        "samples": 180
+      },
+      "name": "strategic",
+      "preset": [
+        14.25287,
+        40.839995,
+        60.0,
+        45.0,
+        0.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.410861110687256,
+        "p95Ms": 0.642000019550323,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0518,
+        "p95Ms": 0.08,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 7.896,
+        "completed": 1,
+        "distinctInstantiated": 11,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 165,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 11,
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 8.47266111111111,
+        "p95Ms": 9.716,
+        "samples": 180
+      },
+      "target": {
+        "geometry": {},
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 15,
+        "transformHash": "baseline-not-instrumented"
+      },
+      "textureMemoryBytes": 1585704448.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707106828689575,
+          -0.707106709480286,
+          0.0,
+          0.707106709480286,
+          0.707106828689575
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          63.3345527648926,
+          8.5617790222168,
+          81.5999145507813
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.214,
+        "city": 0.042,
+        "markers": 1.374,
+        "rivers": 0.028,
+        "scenery": 0.86,
+        "tile_upload": 0.004,
+        "ui": 0.02
+      },
+      "drawCalls": {
+        "meanMs": 443.0,
+        "p95Ms": 443.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 9.84173891809252,
+        "p95Ms": 10.8249998092651,
+        "samples": 180
+      },
+      "name": "regional",
+      "preset": [
+        14.25287,
+        40.839995,
+        12.0,
+        45.0,
+        0.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.665088889333937,
+        "p95Ms": 1.08599996566772,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0561222222222222,
+        "p95Ms": 0.085,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 7.896,
+        "completed": 1,
+        "distinctInstantiated": 11,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 165,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 11,
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 10.5808888888889,
+        "p95Ms": 11.777,
+        "samples": 180
+      },
+      "target": {
+        "geometry": {},
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 15,
+        "transformHash": "baseline-not-instrumented"
+      },
+      "textureMemoryBytes": 1585704448.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0375000014901161,
+        "position": [
+          63.3345527648926,
+          1.13715803623199,
+          74.17529296875
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.172,
+        "city": 0.04,
+        "markers": 1.476,
+        "rivers": 0.043,
+        "scenery": 0.817,
+        "tile_upload": 0.004,
+        "ui": 0.022
+      },
+      "drawCalls": {
+        "meanMs": 297.0,
+        "p95Ms": 297.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 8.43238330682119,
+        "p95Ms": 9.42599964141846,
+        "samples": 180
+      },
+      "name": "close",
+      "preset": [
+        14.25287,
+        40.839995,
+        1.5,
+        45.0,
+        0.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.510444444417953,
+        "p95Ms": 0.683000028133392,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0500944444444444,
+        "p95Ms": 0.079,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 10.206,
+        "completed": 2,
+        "distinctInstantiated": 11,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 45,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 1,
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 9.16756111111111,
+        "p95Ms": 10.524,
+        "samples": 180
+      },
+      "target": {
+        "geometry": {},
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 45,
+        "transformHash": "baseline-not-instrumented"
+      },
+      "textureMemoryBytes": 1585704448.0
+    },
+    {
+      "camera": {
+        "basis": [
+          0.70710676908493,
+          0.0,
+          -0.70710676908493,
+          -0.374709367752075,
+          0.848048210144043,
+          -0.374709367752075,
+          0.599660634994507,
+          0.52991908788681,
+          0.599660634994507
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0199999995529652,
+        "position": [
+          63.814281463623,
+          0.500433385372162,
+          73.5943603515625
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.22,
+        "city": 0.06,
+        "markers": 1.373,
+        "rivers": 0.033,
+        "scenery": 0.879,
+        "tile_upload": 0.004,
+        "ui": 0.021
+      },
+      "drawCalls": {
+        "meanMs": 348.0,
+        "p95Ms": 348.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 10.2691222031911,
+        "p95Ms": 11.6120004653931,
+        "samples": 180
+      },
+      "name": "oblique",
+      "preset": [
+        14.25287,
+        40.839995,
+        0.8,
+        32.0,
+        45.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.549172224104404,
+        "p95Ms": 0.814999997615814,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0484166666666666,
+        "p95Ms": 0.072,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 10.206,
+        "completed": 2,
+        "distinctInstantiated": 11,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 45,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 1,
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 20.8309388888889,
+        "p95Ms": 22.386,
+        "samples": 180
+      },
+      "target": {
+        "geometry": {},
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 45,
+        "transformHash": "baseline-not-instrumented"
+      },
+      "textureMemoryBytes": 1585704448.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707106709480286,
+          -0.70710688829422,
+          0.0,
+          0.70710688829422,
+          0.707106709480286
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          -83.4990921020508,
+          8.52100467681885,
+          -35.3665008544922
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.209,
+        "city": 0.039,
+        "markers": 1.325,
+        "rivers": 0.026,
+        "scenery": 1.473,
+        "tile_upload": 0.013,
+        "ui": 0.018
+      },
+      "drawCalls": {
+        "meanMs": 685.0,
+        "p95Ms": 685.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 9.48263332578871,
+        "p95Ms": 10.5659999847412,
+        "samples": 180
+      },
+      "name": "roma-control",
+      "preset": [
+        12.4912581745549,
+        41.8899769864849,
+        12.0,
+        45.0,
+        0.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.787166669633653,
+        "p95Ms": 1.02799999713898,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0483333333333333,
+        "p95Ms": 0.07,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 10.43,
+        "completed": 3,
+        "distinctInstantiated": 12,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 45,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 1,
+        "roma": {
+          "archetypes": 7,
+          "buildMs": 2816.538,
+          "buildings": 121,
+          "heightCacheEntries": 3270,
+          "landscape": {
+            "approaches": 4,
+            "cachedAssets": 13,
+            "cultivatedPlots": 10,
+            "heightCacheEntries": 3270,
+            "maxCpuSliceMs": 33.579,
+            "terrainPaint": true,
+            "trees": 479
+          },
+          "lightingWeight": 0.0,
+          "lod": "regional",
+          "maxArchetypeMs": 70.125,
+          "maxChunkMs": 926.43,
+          "texturePreparationMs": 192.529,
+          "yardCpuMs": 41.291
+        },
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 10.2128777777778,
+        "p95Ms": 11.437,
+        "samples": 180
+      },
+      "target": {},
+      "textureMemoryBytes": 1650739712.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          140.202011108398,
+          8.5310640335083,
+          451.682708740234
+        ]
+      },
+      "cpuStages": {
+        "camera_materials": 0.251,
+        "city": 0.048,
+        "markers": 1.124,
+        "rivers": 0.034,
+        "scenery": 2.179,
+        "tile_upload": 0.005,
+        "ui": 0.024
+      },
+      "drawCalls": {
+        "meanMs": 502.0,
+        "p95Ms": 502.0,
+        "samples": 180
+      },
+      "gpu": {
+        "meanMs": 10.4017500082652,
+        "p95Ms": 12.1400003433228,
+        "samples": 180
+      },
+      "name": "catana-control",
+      "preset": [
+        15.088142,
+        37.502959,
+        12.0,
+        45.0,
+        0.0
+      ],
+      "renderCpu": {
+        "meanMs": 0.62622222320901,
+        "p95Ms": 0.841000020503998,
+        "samples": 180
+      },
+      "settlementCpu": {
+        "meanMs": 0.0497166666666667,
+        "p95Ms": 0.077,
+        "samples": 180
+      },
+      "settlementStats": {
+        "approved": 35,
+        "buildCpuMs": 10.436,
+        "completed": 4,
+        "distinctInstantiated": 12,
+        "eligible": 581,
+        "enabled": true,
+        "houses": 0,
+        "landAccepted": 539,
+        "maxChunkMs": 3.066,
+        "maxSelectionCpuMs": 1.189,
+        "resident": 0,
+        "roma": {
+          "archetypes": 7,
+          "buildMs": 2816.538,
+          "buildings": 121,
+          "heightCacheEntries": 3270,
+          "landscape": {
+            "approaches": 4,
+            "cachedAssets": 13,
+            "cultivatedPlots": 10,
+            "heightCacheEntries": 3270,
+            "maxCpuSliceMs": 33.579,
+            "terrainPaint": true,
+            "trees": 479
+          },
+          "lightingWeight": 0.0,
+          "lod": "regional",
+          "maxArchetypeMs": 70.125,
+          "maxChunkMs": 926.43,
+          "texturePreparationMs": 192.529,
+          "yardCpuMs": 41.291
+        },
+        "romaPrototypeEnabled": true,
+        "waterRejected": [
+          "research:r16-ita-sipontum",
+          "research:r16-ita-hydruntum",
+          "research:r16-gre-elis",
+          "research:r16-gre-naupactus",
+          "research:r16-gre-thasos",
+          "research:r16-gre-itanos",
+          "research:r16-ana-cyme",
+          "research:r16-ana-sinope",
+          "research:r16-gre-eleusis",
+          "research:r16-gre-rhamnous",
+          "research:r16-gre-hermione",
+          "research:r16-gre-pylos",
+          "research:r16-gre-hierapytna",
+          "research:r16-gre-tenos",
+          "research:r16-ana-myrina",
+          "research:r16-ana-dardanos",
+          "research:r16-ana-prokonnesos",
+          "research:r16-ana-iasos",
+          "research:r16-ana-knidos",
+          "research:r16-ana-tios",
+          "research:r16-bal-epetion",
+          "research:r16-bal-torone",
+          "research:r16-bal-apollonia-pontica",
+          "research:r16-ibe-sexi",
+          "research:r16-ibe-carteia",
+          "research:r16-ibe-rhode",
+          "research:r16-gal-antipolis",
+          "research:r16-lev-aradus",
+          "research:r16-lev-sidon",
+          "research:r16-lev-sarepta",
+          "research:r16-lev-achzib",
+          "research:r16-lev-akko",
+          "research:r16-cyr-apollonia",
+          "research:r16-egy-canopus",
+          "research:r16-egy-herakleion",
+          "research:r16-nub-qasr-ibrim",
+          "research:r16-cau-myrmekion",
+          "research:r16-cau-chersonesos-taurica",
+          "research:r16-cau-hermonassa",
+          "research:r16-bri-hengistbury-head",
+          "research:r16-lev-salamis-cyprus",
+          "research:r16-afr-tingis"
+        ]
+      },
+      "submitted": {
+        "meanMs": 10.996,
+        "p95Ms": 12.749,
+        "samples": 180
+      },
+      "target": {},
+      "textureMemoryBytes": 1650739712.0
+    }
+  ]
+}

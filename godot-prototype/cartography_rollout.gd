@@ -2,6 +2,7 @@ extends RefCounted
 ## Visual work-area masks only; never used for ownership or settlement membership.
 var settings=JSON.parse_string(FileAccess.get_file_as_string("res://data/cartographic-rollout.json"))
 func contains(point:Vector2)->bool:
+	if contains_anatolia(point):return true
 	for r in settings.referenceRects:
 		if point.x>=r[0] and point.x<=r[2] and point.y>=r[1] and point.y<=r[3]:return true
 	var p=point*Vector2(.75,1.)
@@ -10,6 +11,11 @@ func contains(point:Vector2)->bool:
 		var t=clamp((p-a).dot(d)/d.length_squared(),0.,1.)
 		if p.distance_to(a+d*t)<=c[4]:return true
 	return false
+func anatolia_weight(point:Vector2)->float:
+	if not settings.get("anatoliaActive",false):return 0.
+	var south=35.8+1.5*smoothstep(35.8,39.5,point.x);var north=40.4+1.5*smoothstep(28.6,29.2,point.x)
+	return smoothstep(25.8,26.2,point.x)*(1.-smoothstep(42.2,42.6,point.x))*smoothstep(south-.2,south+.2,point.y)*(1.-smoothstep(north-.2,north+.2,point.y))
+func contains_anatolia(point:Vector2)->bool:return anatolia_weight(point)>.5
 func shader_scope(function_name="reference_rollout_scope",extension_only=false)->String:
 	var code="float "+function_name+"(vec2 geo){float weight=0.;"
 	for r in settings.extensionRects if extension_only else settings.referenceRects:

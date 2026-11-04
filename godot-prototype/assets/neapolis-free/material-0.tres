@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/roma/plaster-normal.jpg" id="1_cyey3"]
+[ext_resource type="Texture2D" path="res://assets/roma/plaster-roughness.jpg" id="2_ewhvg"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.85882354, 0.79607844, 0.6901961, 1)
+roughness = 0.92
+roughness_texture = ExtResource("2_ewhvg")
+normal_enabled = true
+normal_scale = 0.08
+normal_texture = ExtResource("1_cyey3")
+uv1_scale = Vector3(350, 350, 350)
+uv1_triplanar = true

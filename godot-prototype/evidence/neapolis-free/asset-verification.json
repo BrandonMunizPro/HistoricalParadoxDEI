@@ -1,0 +1,80 @@
+{
+  "meshes": [
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-0.res",
+      "surfaces": 2,
+      "triangles": 1980
+    },
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-0-far.res",
+      "surfaces": 2,
+      "triangles": 1144
+    },
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-1.res",
+      "surfaces": 3,
+      "triangles": 2220
+    },
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-1-far.res",
+      "surfaces": 3,
+      "triangles": 1384
+    },
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-2.res",
+      "surfaces": 2,
+      "triangles": 2478
+    },
+    {
+      "degenerate": 0,
+      "path": "res://assets/neapolis-free/house-2-far.res",
+      "surfaces": 2,
+      "triangles": 1472
+    }
+  ],
+  "notice": "CPU-side imported image data size, not independent VRAM allocation. All referenced maps already belong to the Roma material library.",
+  "passed": true,
+  "sharedTextures": {
+    "res://assets/roma/plaster-normal.jpg": {
+      "format": 4,
+      "height": 1024,
+      "imageDataBytes": 3145728,
+      "mipmaps": false,
+      "width": 1024
+    },
+    "res://assets/roma/plaster-roughness.jpg": {
+      "format": 0,
+      "height": 1024,
+      "imageDataBytes": 1048576,
+      "mipmaps": false,
+      "width": 1024
+    },
+    "res://assets/roma/roof-color.jpg": {
+      "format": 4,
+      "height": 1024,
+      "imageDataBytes": 3145728,
+      "mipmaps": false,
+      "width": 1024
+    },
+    "res://assets/roma/roof-normal.jpg": {
+      "format": 4,
+      "height": 1024,
+      "imageDataBytes": 3145728,
+      "mipmaps": false,
+      "width": 1024
+    },
+    "res://assets/roma/roof-roughness.jpg": {
+      "format": 0,
+      "height": 1024,
+      "imageDataBytes": 1048576,
+      "mipmaps": false,
+      "width": 1024
+    }
+  },
+  "textureImageDataBytes": 11534336
+}

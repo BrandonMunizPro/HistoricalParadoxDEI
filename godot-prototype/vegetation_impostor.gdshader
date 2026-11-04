@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode world_vertex_coords,cull_disabled,alpha_to_coverage;
+#include "res://scenery_fade.gdshaderinc"
 uniform sampler2D atlas:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
 uniform vec3 asset_center=vec3(0.);
 uniform float asset_width=.03;
@@ -31,6 +32,7 @@ vec4 frame(vec2 cell,vec2 local_uv){
  return textureGrad(atlas,uv,dFdx(local_uv)/vec2(8.,3.),dFdy(local_uv)/vec2(8.,3.));
 }
 void fragment(){
+	if(scenery_reveal<.999&&scenery_pixel_threshold(FRAGCOORD.xy)>scenery_reveal)discard;
  vec2 lo=floor(view_index),weight=fract(view_index);
  vec2 hi=vec2(mod(lo.x+1.,8.),min(lo.y+1.,2.));
  vec4 color=mix(mix(frame(lo,UV),frame(vec2(hi.x,lo.y),UV),weight.x),mix(frame(vec2(lo.x,hi.y),UV),frame(hi,UV),weight.x),weight.y);

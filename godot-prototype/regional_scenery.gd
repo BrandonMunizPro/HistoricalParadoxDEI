@@ -13,12 +13,20 @@ var rock_material: StandardMaterial3D
 var settings
 var quality=preload("res://vegetation_quality.gd").new()
 var tree_mesh_count=24
+var prebaking=false
+var cache_signature=""
+var skip_cache=false
+var cache_hits=0
+var cache_writes=0
+var coarse_prefetch_km=380.
+var local_prefetch_km=180.
+var reveal_seconds=.85
 var work_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"cellsBuilt":0,"cancelled":0,"generationCpuMs":0.0,"uploadCpuMs":0.0,"generationYieldFrames":0,"candidates":0}
 
 func expected_cells():
 	var cells={}
-	if world.distance>=200:return cells
-	if world.distance<settings.scenery.local_transition_km[1]:
+	if prebaking or world.distance>=coarse_prefetch_km:return cells
+	if world.distance<local_prefetch_km:
 		var center=Vector2i(floori(world.focus.x/.05),floori(world.focus.y/.05))
 		for dy in [-1,0,1]:
 			for dx in [-1,0,1]:
@@ -42,11 +50,21 @@ func pending_cells():
 	return pending
 
 func is_ready():
-	return not busy and pending_cells().is_empty()
+	if busy or not pending_cells().is_empty():return false
+	var expected=expected_cells()
+	for id in expected:
+		var group=local_roots if expected[id] else roots
+		if group.has(id) and group[id].get_meta("reveal",0.)<1.:return false
+	return true
 
 func _init(owner):
 	world=owner
 	settings=world.presentation.settings
+	skip_cache=OS.get_cmdline_user_args().has("--scenery-skip-cache")
+	var signature=["scenery-placement-cache-1",JSON.stringify(settings.scenery)]
+	for path in ["regional_scenery.gd","northern_italy_world.gd","anatolia_surface.gd","data/anatolia/source-metres.bin","data/anatolia/land.png","data/sites.json","data/environment-presentation.json","habitat.gd","data/global/manifest.json"]:
+		signature.append(FileAccess.get_sha256("res://"+path) if FileAccess.file_exists("res://"+path) else "missing")
+	cache_signature="|".join(signature).sha256_text().substr(0,20)
 	var factory=preload("res://canopy_assets.gd").new()
 	for species in 6:
 		for variant in 4:meshes.append(factory.build(species,variant))
@@ -138,29 +156,43 @@ func cone(surface,center,radius,height,color,sides,top):
 func tick():
 	quality.update(world.distance,world.water_time)
 	for material in [meshes[0].surface_get_material(0),meshes[0].surface_get_material(1)]:material.set_shader_parameter("camera_distance",world.distance)
+	if prebaking:return
 	var global_keys=[]
-	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and world.distance<200:
+	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and world.distance<coarse_prefetch_km:
 		for dx in [-1,0,1]:
 			for dy in [-1,0,1]:global_keys.append("global|%d|%d" % [floori(world.focus.x)+dx,floori(world.focus.y)+dy])
 	for id in roots.keys():
-		if (id.begins_with("global|") and not id in global_keys) or (not id.begins_with("global|") and not world.resident.has(id)):
-			roots[id].queue_free()
-			roots.erase(id)
-	for id in roots:roots[id].visible=world.distance>settings.scenery.coarse_transition_km[0] and world.distance<190
+		var keep=(id in global_keys) if id.begins_with("global|") else world.resident.has(id)
+		if keep:roots[id].set_meta("last_used",Time.get_ticks_msec())
+		if (world.distance>=440. or roots.size()>18) and not keep:roots[id].queue_free();roots.erase(id)
+	for id in roots:
+		var active=(id in global_keys) if id.begins_with("global|") else world.resident.has(id)
+		roots[id].visible=active and roots[id].get_meta("ready",false) and world.distance>settings.scenery.coarse_transition_km[0] and world.distance<190
+		update_reveal(roots[id])
 	var local_keys=[]
 	var cell=Vector2i(floori(world.focus.x/.05),floori(world.focus.y/.05))
-	if world.distance<settings.scenery.local_transition_km[1]:
+	if world.distance<local_prefetch_km:
 		for offset in [Vector2i(0,0),Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1),Vector2i(0,1),Vector2i(-1,-1),Vector2i(1,-1),Vector2i(-1,1),Vector2i(1,1)]:
 			var c=cell+offset
 			local_keys.append("local|%d|%d" % [c.x,c.y])
 	for id in local_roots.keys():
-		if not id in local_keys:
+		if id in local_keys:local_roots[id].set_meta("last_used",Time.get_ticks_msec())
+		if (world.distance>=220. or local_roots.size()>18) and not id in local_keys:
 			local_roots[id].queue_free()
 			local_roots.erase(id)
-	if busy or world.distance>=200 or not world.queue.is_empty():return
+	for id in local_roots:
+		local_roots[id].visible=id in local_keys and local_roots[id].get_meta("ready",false) and world.distance<37.
+		update_reveal(local_roots[id])
+	if prebaking or busy or world.distance>=coarse_prefetch_km or not world.queue.is_empty():return
 	# All placements must use settled terrain, including close cells.
 	for id in world.resident:
 		if world.resident[id].reveal<1:return
+	# Prepare the distant stand first, then its close replacements, before either
+	# becomes visible. Cached placements retain the same deterministic seed.
+	for id in global_keys:
+		if roots.has(id):continue
+		var split=id.split("|");var lon=float(split[1]);var lat=float(split[2])
+		build(id,{"west":lon,"east":lon+1,"south":lat,"north":lat+1});return
 	for id in local_keys:
 		if local_roots.has(id):continue
 		var split=id.split("|")
@@ -184,12 +216,20 @@ func tick():
 func build(id,local_bounds={},is_local=false):
 	busy=true
 	var root=Node3D.new()
+	root.visible=false;root.set_meta("ready",false);root.set_meta("last_used",Time.get_ticks_msec())
 	world.vegetation_root.add_child(root)
 	if is_local:local_roots[id]=root
 	else:roots[id]=root
 	var b=local_bounds if not local_bounds.is_empty() else world.tiles[id].bounds
 	var sparse_arid=world.presentation.north_africa((b.west+b.east)*.5,(b.south+b.north)*.5)>.5
 	var arid=settings.north_africa
+	var cached=read_cache(id)
+	if cached!=null:
+		cache_hits+=1
+		if prebaking:
+			write_cache(id,cached);root.set_meta("ready",true);root.set_meta("plants",cached.plants);root.set_meta("rocks",cached.rocks);busy=false;return
+		await upload_batches(id,root,b,is_local,sparse_arid,cached.batches,cached.colours,cached.customs,cached.plants,cached.rocks)
+		return
 	var rng=RandomNumberGenerator.new()
 	rng.seed=abs(id.hash())+278
 	var batches=[]
@@ -252,14 +292,14 @@ func build(id,local_bounds={},is_local=false):
 				var offset=world.unproject(p+Vector3(direction.x*footprint,0,direction.y*footprint))
 				if not world.is_land(offset.x,offset.y):coast_clear=false;break
 			if not coast_clear:continue
-		var h=world.elevation(lon,lat)
+		var h=ground_height(lon,lat)
 		if h<.003 or h>12.0:continue
 		p.y=h
 		var species=0;var size=1.0
 		if not is_rock:
 			if rng.randf()>1-smoothstep(1.8,2.7,h/1.5):continue
-			var gradient_x=(world.elevation(lon+.001,lat)-h)/(.111195*max(.3,cos(deg_to_rad(lat))))
-			var gradient_z=(world.elevation(lon,lat+.001)-h)/.111195
+			var gradient_x=(ground_height(lon+.001,lat)-h)/(.111195*max(.3,cos(deg_to_rad(lat))))
+			var gradient_z=(ground_height(lon,lat+.001)-h)/.111195
 			var slope=1.0-1.0/sqrt(1.0+gradient_x*gradient_x+gradient_z*gradient_z)
 			if rng.randf()>1-smoothstep(.15,.38,slope):continue
 			var pick=rng.randf();var family=0
@@ -281,8 +321,8 @@ func build(id,local_bounds={},is_local=false):
 			species=6;size=rng.randf_range(.6,1.8);rocks+=1
 			if africa>.5:
 				# Fewer, larger outcrops only where existing height/slope supports them.
-				var gx=(world.elevation(lon+.001,lat)-h)/(.111195*max(.3,cos(deg_to_rad(lat))))
-				var gz=(world.elevation(lon,lat+.001)-h)/.111195
+				var gx=(ground_height(lon+.001,lat)-h)/(.111195*max(.3,cos(deg_to_rad(lat))))
+				var gz=(ground_height(lon,lat+.001)-h)/.111195
 				if h<.25 and gx*gx+gz*gz<.002:
 					rocks-=1;continue
 				size*=2.5
@@ -294,7 +334,7 @@ func build(id,local_bounds={},is_local=false):
 			# Shear the stand's footprint onto the actual rendered tangent plane.
 			# Each instance origin and all geographical terrain remain unchanged.
 			var gx=world.unproject(p+Vector3(.1,0,0));var gz=world.unproject(p+Vector3(0,0,.1))
-			var gradient=Vector3((world.elevation(gx.x,gx.y)-h)/.1,0,(world.elevation(gz.x,gz.y)-h)/.1)
+			var gradient=Vector3((ground_height(gx.x,gx.y)-h)/.1,0,(ground_height(gz.x,gz.y)-h)/.1)
 			custom.b=basis.x.dot(gradient)/dimensions.y;custom.a=basis.z.dot(gradient)/dimensions.y
 		var variant=rng.randi_range(0,3)
 		batches[species*4+variant].append(Transform3D(basis,p))
@@ -305,6 +345,13 @@ func build(id,local_bounds={},is_local=false):
 		accepted+=1
 		if accepted>=int(tuning.max_instances_per_cell):break
 	record_generation_chunk(chunk_begin)
+	write_cache(id,{"signature":cache_signature,"batches":batches,"colours":colours,"customs":customs,"plants":plants,"rocks":rocks})
+	if prebaking:
+		root.set_meta("ready",true);root.set_meta("plants",plants);root.set_meta("rocks",rocks);busy=false;return
+	await upload_batches(id,root,b,is_local,sparse_arid,batches,colours,customs,plants,rocks)
+
+func upload_batches(id,root,b,is_local,sparse_arid,batches,colours,customs,plants,rocks):
+	var tuning=settings.scenery
 	var upload_begin=Time.get_ticks_usec()
 	for species in meshes.size():
 		if batches[species].is_empty():continue
@@ -339,12 +386,48 @@ func build(id,local_bounds={},is_local=false):
 		root.add_child(node)
 		tree_count+=mm.instance_count
 	root.set_meta("ready",true)
+	root.set_meta("ready_at",Time.get_ticks_msec());root.set_meta("reveal",0.)
 	root.set_meta("plants",plants);root.set_meta("rocks",rocks)
 	work_profile.maxUploadMs=max(work_profile.maxUploadMs,(Time.get_ticks_usec()-upload_begin)/1000.0)
 	work_profile.uploadCpuMs+=(Time.get_ticks_usec()-upload_begin)/1000.0
 	work_profile.cellsBuilt+=1
 	busy=false
 	print("REGIONAL_SCENERY_READY ",id," asset_variants=28 plants=",plants," rocks=",rocks)
+
+func ground_height(lon,lat):
+	return world.scenery_elevation(lon,lat) if world.has_method("scenery_elevation") else world.elevation(lon,lat)
+
+func cache_file(id,published=false):
+	return ("res://data/scenery-cache/" if published else "user://scenery-cache/")+cache_signature+"/"+id.replace("|","_")+".bin"
+
+func read_cache(id):
+	if skip_cache:return null
+	for published in [true,false]:
+		var path=cache_file(id,published)
+		if not FileAccess.file_exists(path):continue
+		var f=FileAccess.open(path,FileAccess.READ);var payload=f.get_var(false)
+		if not payload is Dictionary or payload.get("signature","")!=cache_signature:continue
+		if payload.batches.size()!=meshes.size() or payload.colours.size()!=meshes.size() or payload.customs.size()!=meshes.size():continue
+		return payload
+	return null
+
+func write_cache(id,payload):
+	if skip_cache:return
+	var path=cache_file(id,prebaking)
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir()))
+	var f=FileAccess.open(path+".tmp",FileAccess.WRITE)
+	if f!=null:
+		f.store_var(payload);f.close();DirAccess.rename_absolute(ProjectSettings.globalize_path(path+".tmp"),ProjectSettings.globalize_path(path));cache_writes+=1
+
+func update_reveal(root):
+	if not root.get_meta("ready",false):return
+	var reveal=clamp(float(Time.get_ticks_msec()-int(root.get_meta("ready_at",Time.get_ticks_msec())))/(reveal_seconds*1000.),0.,1.)
+	root.set_meta("reveal",reveal)
+	for child in root.get_children():
+		if child is GeometryInstance3D:
+			child.set_meta("scenery_reveal",reveal)
+			if child.multimesh.mesh.surface_get_material(0) is ShaderMaterial:child.set_instance_shader_parameter("scenery_reveal",reveal)
+			child.transparency=1.-(1.-smoothstep(0.,.45,world.political_map.blend))*reveal
 
 func resident_composition():
 	var result={"plants":0,"rocks":0,"paletteVariants":meshes.size()}

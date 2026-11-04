@@ -1,0 +1,242 @@
+{
+  "protectedSourcesUnchanged": true,
+  "existingGeometryAndInitialOwnersPreserved": true,
+  "approvedNewRegions": 0,
+  "publishedSourceAlignment": true,
+  "terrainTileEdgesMatch": true,
+  "streaming": {
+    "closeTiles": 14,
+    "heightAlignment": true,
+    "maximumAllowed": 24,
+    "releasedOnLeavingRegion": true
+  },
+  "testFiles": 37,
+  "tests": 514,
+  "nativeChecksPassed": true,
+  "cameras": [
+    {
+      "name": "anatolia-strategic",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 7.980075,
+      "afterSubmittedMeanMs": 18.1961416666667,
+      "beforeGpuMeanMs": 7.36472499370575,
+      "afterGpuMeanMs": 7.41908332506816,
+      "labelDrawMs": 4.565,
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 2.94,
+        "previousRegions": 0.027
+      },
+      "renderCpuMs": 0.331999987363815
+    },
+    {
+      "name": "ionian-coast",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 5.176525,
+      "afterSubmittedMeanMs": 14.93425,
+      "beforeGpuMeanMs": 4.57860834399859,
+      "afterGpuMeanMs": 3.66615833044052,
+      "labelDrawMs": 5.41,
+      "regionalCpuMs": {
+        "anatolia": 0.028,
+        "base": 2.362,
+        "previousRegions": 0.023
+      },
+      "renderCpuMs": 0.324000000953674
+    },
+    {
+      "name": "lycian-coast",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 7.92996666666667,
+      "afterSubmittedMeanMs": 18.663675,
+      "beforeGpuMeanMs": 7.29360833565394,
+      "afterGpuMeanMs": 6.55843334197998,
+      "labelDrawMs": 6.381,
+      "regionalCpuMs": {
+        "anatolia": 0.712,
+        "base": 3.079,
+        "previousRegions": 0.034
+      },
+      "renderCpuMs": 0.331999987363815
+    },
+    {
+      "name": "taurus-oblique",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 14.3513666666667,
+      "afterSubmittedMeanMs": 21.5237666666667,
+      "beforeGpuMeanMs": 10.1791250944138,
+      "afterGpuMeanMs": 7.52361663977305,
+      "labelDrawMs": 7.001,
+      "regionalCpuMs": {
+        "anatolia": 0.447,
+        "base": 2.013,
+        "previousRegions": 0.02
+      },
+      "renderCpuMs": 0.46399998664856
+    },
+    {
+      "name": "cappadocia",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 8.5693,
+      "afterSubmittedMeanMs": 16.7815833333333,
+      "beforeGpuMeanMs": 3.80900001525879,
+      "afterGpuMeanMs": 6.39039167960485,
+      "labelDrawMs": 4.166,
+      "regionalCpuMs": {
+        "anatolia": 0.587,
+        "base": 1.956,
+        "previousRegions": 0.018
+      },
+      "renderCpuMs": 0.228000000119209
+    },
+    {
+      "name": "pontic-mountains",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 10.8897083333333,
+      "afterSubmittedMeanMs": 21.762925,
+      "beforeGpuMeanMs": 3.9760000705719,
+      "afterGpuMeanMs": 4.52120001316071,
+      "labelDrawMs": 8.972,
+      "regionalCpuMs": {
+        "anatolia": 0.53,
+        "base": 2.296,
+        "previousRegions": 0.019
+      },
+      "renderCpuMs": 0.245000004768372
+    },
+    {
+      "name": "bithynia",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 10.2438833333333,
+      "afterSubmittedMeanMs": 19.9660916666667,
+      "beforeGpuMeanMs": 3.5699999332428,
+      "afterGpuMeanMs": 6.52012499570847,
+      "labelDrawMs": 7.011,
+      "regionalCpuMs": {
+        "anatolia": 0.626,
+        "base": 2.523,
+        "previousRegions": 0.021
+      },
+      "renderCpuMs": 0.321999996900558
+    },
+    {
+      "name": "eastern-anatolia",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 10.4900333333333,
+      "afterSubmittedMeanMs": 13.34075,
+      "beforeGpuMeanMs": 3.83400011062622,
+      "afterGpuMeanMs": 4.99125001430511,
+      "labelDrawMs": 3.217,
+      "regionalCpuMs": {
+        "anatolia": 0.024,
+        "base": 1.873,
+        "previousRegions": 0.019
+      },
+      "renderCpuMs": 0.254999995231628
+    },
+    {
+      "name": "greece-control",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 49.836125,
+      "afterSubmittedMeanMs": 19.795375,
+      "beforeGpuMeanMs": 7.41525000333786,
+      "afterGpuMeanMs": 7.54557502667109,
+      "labelDrawMs": 6.075,
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 2.42,
+        "previousRegions": 0.023
+      },
+      "renderCpuMs": 0.310999989509583
+    },
+    {
+      "name": "italy-control",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 46.2047333333333,
+      "afterSubmittedMeanMs": 29.1777583333333,
+      "beforeGpuMeanMs": 9.83141666253408,
+      "afterGpuMeanMs": 13.6805749972661,
+      "labelDrawMs": 9.152,
+      "regionalCpuMs": {
+        "anatolia": 0.039,
+        "base": 4.783,
+        "previousRegions": 0.035
+      },
+      "renderCpuMs": 0.649999976158142
+    },
+    {
+      "name": "sicily-control",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 33.0123416666667,
+      "afterSubmittedMeanMs": 18.9611333333333,
+      "beforeGpuMeanMs": 5.96735830307007,
+      "afterGpuMeanMs": 8.12953335046768,
+      "labelDrawMs": 4.307,
+      "regionalCpuMs": {
+        "anatolia": 0.032,
+        "base": 3.032,
+        "previousRegions": 0.027
+      },
+      "renderCpuMs": 0.244000002741814
+    }
+  ],
+  "controls": [
+    {
+      "name": "greece-control",
+      "fullFrameMeanAbsoluteChannelDelta": 0.003920717592592593,
+      "changedFraction": 0.007003761574074074,
+      "completedAreaCrop": [
+        200,
+        150,
+        1200,
+        950
+      ],
+      "cropChangedPixels": 6461,
+      "cropPixelsAboveOneChannelLevel": 24,
+      "cropMaximumChannelDelta": 73,
+      "cropMeanAbsoluteChannelDelta": 0.003075416666666667
+    },
+    {
+      "name": "italy-control",
+      "fullFrameMeanAbsoluteChannelDelta": 0,
+      "changedFraction": 0,
+      "completedAreaCrop": [
+        200,
+        150,
+        1200,
+        950
+      ],
+      "cropChangedPixels": 0,
+      "cropPixelsAboveOneChannelLevel": 0,
+      "cropMaximumChannelDelta": 0,
+      "cropMeanAbsoluteChannelDelta": 0
+    },
+    {
+      "name": "sicily-control",
+      "fullFrameMeanAbsoluteChannelDelta": 0,
+      "changedFraction": 0,
+      "completedAreaCrop": [
+        200,
+        150,
+        1200,
+        950
+      ],
+      "cropChangedPixels": 0,
+      "cropPixelsAboveOneChannelLevel": 0,
+      "cropMaximumChannelDelta": 0,
+      "cropMeanAbsoluteChannelDelta": 0
+    }
+  ],
+  "runtime": {
+    "changedPaletteEntries": [
+      19
+    ],
+    "diagnosticNotice": "Nonhistorical temporary owner assignments for locality verification only; original owners restored.",
+    "geometryUnchanged": true,
+    "insidePixelDelta": 0.135052382946014,
+    "invalidStateRejectedAtomically": true,
+    "neighborPixelDelta": 0,
+    "sharedOwnerNeighborPreserved": true
+  },
+  "performanceNotice": "Uncapped hidden-window submission intervals; GPU values and last-frame CPU diagnostics are separate. Not sustained interactive FPS. Initial concurrent suite hit two timeouts; controlled four-worker rerun recorded separately."
+}

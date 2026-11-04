@@ -1,6 +1,7 @@
 shader_type spatial;
 render_mode cull_disabled;
 #include "res://habitat.gdshaderinc"
+#include "res://scenery_fade.gdshaderinc"
 varying vec3 position_world;
 varying float crown_height;
 varying float stand_proxy;
@@ -26,6 +27,7 @@ void vertex(){
  position_world=(MODEL_MATRIX*vec4(VERTEX,1.0)).xyz;
 }
 void fragment(){
+	if(scenery_reveal<.999&&scenery_pixel_threshold(FRAGCOORD.xy)>scenery_reveal)discard;
  if(woody){ALBEDO=pow(COLOR.rgb,vec3(2.0));ROUGHNESS=1.0;SPECULAR=.02;}
  else{
  float leaves=sin(position_world.x*2700.0+sin(position_world.z*2300.0))*sin(position_world.y*3200.0);

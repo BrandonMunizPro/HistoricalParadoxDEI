@@ -45,7 +45,7 @@ func update():
 		var live=[]
 		for ref in geometry:
 			var node=ref.get_ref()
-			if node!=null:node.transparency=detail_fade;live.append(ref)
+			if node!=null:node.transparency=1.-(1.-detail_fade)*float(node.get_meta("scenery_reveal",1.));live.append(ref)
 		geometry=live;last_geometry_blend=detail_fade
 	if points==null:return
 	world.vegetation_root.visible=world.vegetation_root.visible and detail_fade<1.

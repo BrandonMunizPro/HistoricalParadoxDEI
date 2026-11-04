@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "activeWave": "02-03-illyria-greece",
-  "notice": "Presentation scope only. These masks are not political polygons, region boundaries or ownership evidence. Later waves remain inactive.",
+  "activeWave": "06-anatolia",
+  "notice": "Visual coverage only; no sovereignty or control-centre assignments. Anatolia requested separately from the Caucasus and wider Aegean.",
   "referenceRects": [
     [
       6,
@@ -91,7 +91,7 @@
         "Illyrian interior",
         "Epirus interface"
       ],
-      "status": "current"
+      "status": "inspection-ready"
     },
     {
       "id": "03-greece",
@@ -101,16 +101,16 @@
         "Central Greece",
         "Peloponnese"
       ],
-      "status": "current"
+      "status": "inspection-ready"
     },
     {
       "id": "04-aegean",
       "areas": [
         "Crete",
-        "Aegean islands",
-        "Western Anatolian coast"
+        "Remaining Aegean islands"
       ],
-      "status": "queued"
+      "status": "queued",
+      "notice": "Western Anatolian coast included in the Anatolia batch; adjacent shore islands have shared physical coverage."
     },
     {
       "id": "05-thrace-danube",
@@ -128,7 +128,7 @@
         "Armenia",
         "Caucasus"
       ],
-      "status": "queued"
+      "status": "Anatolia current; Armenia/Caucasus queued"
     },
     {
       "id": "07-levant",
@@ -273,5 +273,6 @@
       42.2,
       0.8
     ]
-  ]
+  ],
+  "anatoliaActive": true
 }

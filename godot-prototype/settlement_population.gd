@@ -15,6 +15,11 @@ var roma_visual
 var roma_enabled=true
 var identity_models={}
 var rural_identities={}
+var neapolis_trial_enabled=OS.get_cmdline_user_args().has("--neapolis-residential-trial")
+var neapolis_assets
+func set_neapolis_trial(value):
+	if neapolis_trial_enabled==value:return
+	neapolis_trial_enabled=value;signature=""
 func _init(owner):
 	world=owner;tuning=world.read_json("data/foundation-settings.json").settlements
 	enabled=not OS.get_cmdline_user_args().has("--no-settlement-visuals");stats["enabled"]=enabled
@@ -51,6 +56,7 @@ func tick():
 		if world.resident[id].reveal<1:return
 	var next=str(Vector2i(floori(world.focus.x*5),floori(world.focus.y*5)))+"|"+str(int(world.distance/(2.0 if world.distance<30 else 10.0)))+str(world.resident.keys())
 	if not identity_models.is_empty():next+="|identity:"+str(world.distance>=3)+"|"+str(world.distance>=15)
+	if neapolis_trial_enabled:next+="|neapolis:"+str(world.distance>=3)+"|"+str(world.distance>=30)
 	if signature==next:return
 	signature=next
 	build(next)
@@ -93,7 +99,8 @@ func build(request):
 			count=int(tuning.close_houses);footprint=roma_visual.display_scale(world.distance)
 		var roma_lod=roma_visual.lod(world.distance) if r.get("key","")=="roma" else ""
 		var identity_lod=(str(world.distance>=3)+"|"+str(world.distance>=15)) if identity_models.has(r.get("key","")) else ""
-		if nodes.has(r.id) and nodes[r.id].get_meta("count")==count and nodes[r.id].get_meta("terrain")==terrain_key and nodes[r.id].get_meta("footprint")==footprint and nodes[r.id].get_meta("roma_lod","")==roma_lod and nodes[r.id].get_meta("identity_lod","")==identity_lod:
+		var neapolis_lod=("far" if world.distance>=3 else "near") if neapolis_trial_enabled and r.get("key","")=="neapolis" and world.distance<30 else ""
+		if nodes.has(r.id) and nodes[r.id].get_meta("count")==count and nodes[r.id].get_meta("terrain")==terrain_key and nodes[r.id].get_meta("footprint")==footprint and nodes[r.id].get_meta("roma_lod","")==roma_lod and nodes[r.id].get_meta("identity_lod","")==identity_lod and nodes[r.id].get_meta("neapolis_lod","")==neapolis_lod:
 			total_houses+=nodes[r.id].multimesh.instance_count;continue
 		var center=world.project(r.lon,r.lat)
 		var layout=preload("res://neutral_settlement.gd").layout(r.id.hash(),count)
@@ -116,6 +123,11 @@ func build(request):
 		node.set_meta("roma_lod",roma_lod)
 		node.set_meta("identity_lod",identity_lod)
 		node.set_meta("count",count);node.set_meta("terrain",terrain_key);node.set_meta("anchor",Vector2(r.lon,r.lat));node.set_meta("approved",r.approved)
+		node.set_meta("neapolis_lod",neapolis_lod)
+		if neapolis_lod!="":
+			if neapolis_assets==null:neapolis_assets=preload("res://neapolis_housing_assets.gd").new()
+			await neapolis_assets.attach(node,world,neapolis_lod=="far")
+			chunk=Time.get_ticks_usec()
 		if r.get("key","")=="roma" and roma_enabled:
 			# Keep the canonical node/anchor and shared placement audit intact.
 			# Only Roma replaces the neutral proxy with this review-stage art kit.

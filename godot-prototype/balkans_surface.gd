@@ -66,10 +66,10 @@ func weight(geo:Vector2):
 		var a=Vector2(c[0]*.75,c[1]);var b=Vector2(c[2]*.75,c[3]);var d=b-a;var p=geo*Vector2(.75,1.);var t=clamp((p-a).dot(d)/d.length_squared(),0.,1.)
 		result=max(result,1.-smoothstep(c[4]-.15,c[4]+.15,p.distance_to(a+d*t)))
 	return result
-func elevation(geo:Vector2,parent_height):
+func elevation(geo:Vector2,parent_height,force_near=false):
 	var blend=weight(geo)
 	if blend<=0.:return parent_height
-	var step=1. if world.distance<250. else 4.
+	var step=1. if force_near or world.distance<250. else 4.
 	var x=clamp((geo.x-14.)*128./step,0.,float(manifest.width-1)/step-.0001);var y=clamp((46.-geo.y)*128./step,0.,float(manifest.height-1)/step-.0001)
 	var i=int(x)*int(step);var j=int(y)*int(step);var u=x-floor(x);var v=y-floor(y);var w=int(manifest.width);var s=int(step)
 	var a=heights[j*w+i];var b=heights[j*w+i+s];var c=heights[(j+s)*w+i];var d=heights[(j+s)*w+i+s]

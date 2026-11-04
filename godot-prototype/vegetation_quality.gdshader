@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode cull_disabled, alpha_to_coverage;
+#include "res://scenery_fade.gdshaderinc"
 uniform sampler2D leaf_color:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
 uniform sampler2D bark_color:source_color,filter_linear_mipmap_anisotropic,repeat_enable;
 uniform sampler2D bark_normal:hint_normal,filter_linear_mipmap_anisotropic,repeat_enable;
@@ -22,6 +23,7 @@ void vertex(){
  VERTEX.x+=wind*flexibility*(.00006+(woody?0.:.00009)*sin(foliage_time*1.7+VERTEX.y*2500.));
 }
 void fragment(){
+	if(scenery_reveal<.999&&scenery_pixel_threshold(FRAGCOORD.xy)>scenery_reveal)discard;
  if(!FRONT_FACING)NORMAL=-NORMAL;
  if(woody){
   ALBEDO=texture(bark_color,UV).rgb;

@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neapolis — zero-budget housing review</title>
+<style>body{margin:28px auto;max-width:1500px;padding:0 22px;background:#181d20;color:#e5e4db;font:16px/1.6 system-ui}h1,h2{line-height:1.2}h2{margin-top:40px}a{color:#add4e6}p{max-width:1000px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}figure{margin:0;background:#252d31}figcaption{padding:8px 12px}img{display:block;width:100%;height:auto}button{font:inherit;background:#3b4c55;color:white;border:1px solid #84969e;border-radius:4px;padding:6px 12px;cursor:pointer}.notice{padding:16px;border-left:4px solid #d3b77a;background:#2d302e}.pair.large{grid-template-columns:1fr}.missing{padding:40px;color:#dfc19a}code{color:#e6ca9c}@media(max-width:850px){.pair{grid-template-columns:1fr}}</style>
+<h1>Neapolis: free residential prototype</h1>
+<p class="notice">Six matched campaign views and a 120-frame camera path per mode are captured. Isolated, opt-in prototype; manual acceptance is pending. Low-angle ground-contact appearance, roof texture aliasing, sparse inherited layout and proxy transitions still need review. This is a feasibility result, not approval for rollout.</p>
+<p><a href="REPORT.md">Architecture, historical limits, sources and verification report</a> · <a href="../../godot-prototype/assets/neapolis-free/PROVENANCE.md">Asset provenance and license</a> · <a href="../../godot-prototype/evidence/neapolis-free/before/views.json">Baseline camera transforms and measurements</a> · <a href="../../godot-prototype/evidence/neapolis-free/final/views.json">Candidate measurements, if captured</a></p>
+<p>Only plain CC0 Kenney components are adapted into three courtyard-house assemblies. The finished fantasy/medieval houses are excluded. These are comparative Greek archetypes, not an archaeological reconstruction of Neapolis in 278 BCE. Terrain, vegetation, geographic coordinates, political ownership and other settlements are preserved.</p>
+<p>Launch the campaign with <code>--neapolis-residential-trial</code> for the candidate; omit it for the existing buildings. The prototype uses the existing deterministic population placement and MultiMesh renderer. Click an image for its full-resolution file. Use the button to stack each pair at full page width.</p>
+<button onclick="document.querySelectorAll('.pair').forEach(p=>p.classList.toggle('large'))">Toggle side-by-side / stacked</button>
+<h2>The three derived assemblies</h2>
+<p>This resource-inspection image uses the lightweight Compatibility renderer on a neutral inspection floor. It demonstrates the baked geometry and revised plaster material; it is not a campaign-map screenshot or evidence of campaign performance.</p>
+<a href="../../godot-prototype/evidence/neapolis-free/assemblies.png"><img src="../../godot-prototype/evidence/neapolis-free/assemblies.png" alt="Three free-component courtyard-house assemblies on an inspection floor"></a>
+<main id="views"></main>
+<h2>Matched moving-camera samples</h2>
+<p>The same 120 camera transforms were used for baseline and candidate, zooming from 36 to 0.8 km while rotating and lowering pitch. Seven sampled frames are shown here; this is a contact sheet, not a smooth playback or an FPS demonstration. <a href="../../godot-prototype/evidence/neapolis-free/final/motion.json">Full movement measurements</a> · <a href="verification.json">Verified cameras, image differences and performance comparison</a></p>
+<label>Sample <input id="motion-slider" type="range" min="0" max="6" value="0" oninput="updateMotion(this.value)"></label> <span id="motion-label"></span>
+<div class="pair"><figure><a id="motion-before-link"><img id="motion-before" alt="Baseline movement sample"></a><figcaption>Baseline</figcaption></figure><figure><a id="motion-after-link"><img id="motion-after" alt="Candidate movement sample"></a><figcaption>Candidate</figcaption></figure></div>
+<h2>Inspection checklist</h2>
+<p>Check courtyard and roof silhouettes, wall thickness, terrain contact, visible texture scale, material consistency, settlement-label legibility, low-angle appearance, the 3 km near/far transition and the 30 km proxy transition. A mesh count or passing ownership test cannot establish those qualities. The full settlement still uses schematic enlarged footprints and retains its existing layout and lack of authored street fabric.</p>
+<p>Performance figures are short, uncapped hidden-window samples, with GPU and CPU diagnostics separate. They do not establish sustained interactive frame rates. Both movement modes exhibit substantial streaming hitches under memory pressure. The initial full-map candidate attempt exhausted available memory during existing raster initialization; the eventual successful capture is retained with those limitations.</p>
+<script>
+const root='../../godot-prototype/evidence/neapolis-free/';
+function updateMotion(index){const frame=[0,20,40,60,80,100,119][Number(index)],suffix=String(frame).padStart(3,'0')+'.png';for(const [id,mode] of [['before','baseline'],['after','candidate']]){const url=root+'final/motion/'+mode+'-'+suffix;document.getElementById('motion-'+id).src=url;document.getElementById('motion-'+id+'-link').href=url}document.getElementById('motion-label').textContent='Frame '+frame+' — commanded distance '+(36*Math.pow(.8/36,frame/119)).toFixed(2)+' km'}
+updateMotion(0);
+for(const [key,title] of [['strategic','Strategic — 60 km, pitch 45°'],['regional','Regional — 12 km, pitch 45°'],['close','Close — 1.5 km, pitch 45°'],['oblique','Oblique — 0.8 km, pitch 32°, yaw 45°'],['roma-control','Roma control — unchanged'],['catana-control','Catana control — unchanged']]){
+ const h=document.createElement('h2');h.textContent=title;document.querySelector('main').append(h);
+ const pair=document.createElement('div');pair.className='pair';
+ for(const [folder,label] of [['before','Existing baseline'],['final','Neapolis candidate']]){
+  const f=document.createElement('figure'),a=document.createElement('a'),img=document.createElement('img'),caption=document.createElement('figcaption');
+  a.href=root+folder+'/'+key+'.png';a.target='_blank';img.src=a.href;img.alt=label+' — '+title;img.loading='lazy';
+  img.onerror=()=>{a.remove();const p=document.createElement('p');p.className='missing';p.textContent='Capture unavailable — verification pending.';f.prepend(p)};
+  caption.textContent=label;a.append(img);f.append(a,caption);pair.append(f);
+ }
+ document.querySelector('main').append(pair);
+}
+</script></html>

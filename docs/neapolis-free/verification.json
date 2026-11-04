@@ -1,0 +1,535 @@
+{
+  "status": "captures-complete-manual-review-required",
+  "matchedViews": 6,
+  "views": [
+    {
+      "view": "strategic",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 0,
+      "meanChannelDifference": 0,
+      "maxChannelDifference": 0,
+      "baselineGpu": {
+        "meanMs": 7.81964445908864,
+        "p95Ms": 8.7519998550415,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 8.45668334696028,
+        "p95Ms": 9.80500030517578,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.410861110687256,
+        "p95Ms": 0.642000019550323,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.442700000107288,
+        "p95Ms": 0.666999995708466,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 8.47266111111111,
+        "p95Ms": 9.716,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 9.22178333333333,
+        "p95Ms": 10.903,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 99,
+        "p95Ms": 99,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 99,
+        "p95Ms": 99,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1585704448,
+      "candidateTextureBytes": 1585704448,
+      "candidateTarget": {
+        "geometry": {},
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 15,
+        "transformHash": "baseline-not-instrumented"
+      }
+    },
+    {
+      "view": "regional",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 3043,
+      "meanChannelDifference": 0.0674635095164609,
+      "maxChannelDifference": 173,
+      "baselineGpu": {
+        "meanMs": 9.84173891809252,
+        "p95Ms": 10.8249998092651,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 11.6868111133575,
+        "p95Ms": 13.9300003051758,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.665088889333937,
+        "p95Ms": 1.08599996566772,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.683499998847644,
+        "p95Ms": 0.926999986171722,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 10.5808888888889,
+        "p95Ms": 11.777,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 14.5128166666667,
+        "p95Ms": 15.353,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 443,
+        "p95Ms": 443,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 456,
+        "p95Ms": 456,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1585704448,
+      "candidateTextureBytes": 1600384512,
+      "candidateTarget": {
+        "geometry": {
+          "assemblies": 3,
+          "assetWaitMs": 316.059,
+          "attachActiveCpuMs": 1.992,
+          "attachWallMs": 352.589,
+          "detail": "far",
+          "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+          "instanceCounts": [
+            12,
+            16,
+            12
+          ],
+          "instancedTriangles": 53536,
+          "longestActiveChunkMs": 0.961,
+          "mainPassSurfaceGroups": 7,
+          "uniqueTriangles": 4000
+        },
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 40,
+        "transformHash": "47d48eec1a718283ca8048ca3b1aff140cdaa209724eab4338dc90dbd22220e8"
+      }
+    },
+    {
+      "view": "close",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 224954,
+      "meanChannelDifference": 5.993068737139918,
+      "maxChannelDifference": 217,
+      "baselineGpu": {
+        "meanMs": 8.43238330682119,
+        "p95Ms": 9.42599964141846,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 10.5862833129035,
+        "p95Ms": 12.1260004043579,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.510444444417953,
+        "p95Ms": 0.683000028133392,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.543955554399225,
+        "p95Ms": 0.717000007629395,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 9.16756111111111,
+        "p95Ms": 10.524,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 11.3955777777778,
+        "p95Ms": 13.23,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 297,
+        "p95Ms": 297,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 315,
+        "p95Ms": 315,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1585704448,
+      "candidateTextureBytes": 1600384512,
+      "candidateTarget": {
+        "geometry": {
+          "assemblies": 3,
+          "assetWaitMs": 0.124,
+          "attachActiveCpuMs": 0.4,
+          "attachWallMs": 32.246,
+          "detail": "near",
+          "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+          "instanceCounts": [
+            13,
+            18,
+            14
+          ],
+          "instancedTriangles": 100392,
+          "longestActiveChunkMs": 0.124,
+          "mainPassSurfaceGroups": 7,
+          "uniqueTriangles": 6678
+        },
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 45,
+        "transformHash": "296c1036656d4a3c0850b7376f771e7b50b77539f2f19a35ccc861681dc7bdb3"
+      }
+    },
+    {
+      "view": "oblique",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 767112,
+      "meanChannelDifference": 18.83832400977366,
+      "maxChannelDifference": 221,
+      "baselineGpu": {
+        "meanMs": 10.2691222031911,
+        "p95Ms": 11.6120004653931,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 14.3728444523282,
+        "p95Ms": 16.2450008392334,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.549172224104404,
+        "p95Ms": 0.814999997615814,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.677672222587797,
+        "p95Ms": 1.08899998664856,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 20.8309388888889,
+        "p95Ms": 22.386,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 28.8493777777778,
+        "p95Ms": 31.227,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 348,
+        "p95Ms": 348,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 366,
+        "p95Ms": 366,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1585704448,
+      "candidateTextureBytes": 1600384512,
+      "candidateTarget": {
+        "geometry": {
+          "assemblies": 3,
+          "assetWaitMs": 0.124,
+          "attachActiveCpuMs": 0.4,
+          "attachWallMs": 32.246,
+          "detail": "near",
+          "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+          "instanceCounts": [
+            13,
+            18,
+            14
+          ],
+          "instancedTriangles": 100392,
+          "longestActiveChunkMs": 0.124,
+          "mainPassSurfaceGroups": 7,
+          "uniqueTriangles": 6678
+        },
+        "id": "1f50fd31-a377-5df8-b182-d84e962aed97",
+        "slotCount": 45,
+        "transformHash": "296c1036656d4a3c0850b7376f771e7b50b77539f2f19a35ccc861681dc7bdb3"
+      }
+    },
+    {
+      "view": "roma-control",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 23104,
+      "meanChannelDifference": 0.005003215020576132,
+      "maxChannelDifference": 66,
+      "baselineGpu": {
+        "meanMs": 9.48263332578871,
+        "p95Ms": 10.5659999847412,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 11.7013888888889,
+        "p95Ms": 13.6169996261597,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.787166669633653,
+        "p95Ms": 1.02799999713898,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.877022219035361,
+        "p95Ms": 1.23399996757507,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 10.2128777777778,
+        "p95Ms": 11.437,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 12.5614833333333,
+        "p95Ms": 14.633,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 685,
+        "p95Ms": 685,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 685,
+        "p95Ms": 685,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1650739712,
+      "candidateTextureBytes": 1665419776,
+      "candidateTarget": {}
+    },
+    {
+      "view": "catana-control",
+      "sameCamera": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "changedPixels": 0,
+      "meanChannelDifference": 0,
+      "maxChannelDifference": 0,
+      "baselineGpu": {
+        "meanMs": 10.4017500082652,
+        "p95Ms": 12.1400003433228,
+        "samples": 180
+      },
+      "candidateGpu": {
+        "meanMs": 12.8985500388675,
+        "p95Ms": 14.6850004196167,
+        "samples": 180
+      },
+      "baselineRenderCpu": {
+        "meanMs": 0.62622222320901,
+        "p95Ms": 0.841000020503998,
+        "samples": 180
+      },
+      "candidateRenderCpu": {
+        "meanMs": 0.822616668542226,
+        "p95Ms": 1.10899996757507,
+        "samples": 180
+      },
+      "baselineSubmitted": {
+        "meanMs": 10.996,
+        "p95Ms": 12.749,
+        "samples": 180
+      },
+      "candidateSubmitted": {
+        "meanMs": 13.7530833333333,
+        "p95Ms": 16.239,
+        "samples": 180
+      },
+      "baselineDrawCalls": {
+        "meanMs": 502,
+        "p95Ms": 502,
+        "samples": 180
+      },
+      "candidateDrawCalls": {
+        "meanMs": 502,
+        "p95Ms": 502,
+        "samples": 180
+      },
+      "baselineTextureBytes": 1650739712,
+      "candidateTextureBytes": 1665419776,
+      "candidateTarget": {}
+    }
+  ],
+  "motion": {
+    "framesPerMode": 120,
+    "sameCamera": true,
+    "baselineSubmitted": {
+      "meanMs": 82.3320833333333,
+      "p95Ms": 843.924,
+      "maxMs": 1000.351
+    },
+    "candidateSubmitted": {
+      "meanMs": 81.14610833333334,
+      "p95Ms": 782.171,
+      "maxMs": 907.081
+    },
+    "baselineGpu": {
+      "meanMs": 11.713658305009206,
+      "p95Ms": 14.0380001068115,
+      "maxMs": 15.16100025177
+    },
+    "candidateGpu": {
+      "meanMs": 12.333316636085517,
+      "p95Ms": 16.9979991912842,
+      "maxMs": 19.44700050354
+    },
+    "candidateUnsettledFrames": 30,
+    "notice": "Scripted submitted intervals, including streaming and two explicit draw requests. Not sustained gameplay FPS."
+  },
+  "native": {
+    "baselineSlotHash": "ee5a24b246c85617909a56ea03ed163e3b2207f610428c73244c02a6679b3972",
+    "geometry": {
+      "assemblies": 3,
+      "assetWaitMs": 60.103,
+      "attachActiveCpuMs": 0.85,
+      "attachWallMs": 85.761,
+      "detail": "near",
+      "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+      "instanceCounts": [
+        13,
+        18,
+        14
+      ],
+      "instancedTriangles": 100392,
+      "longestActiveChunkMs": 0.708,
+      "mainPassSurfaceGroups": 7,
+      "uniqueTriangles": 6678
+    },
+    "nearFarSwitch": true,
+    "otherResidentSettlementsUnchanged": 0,
+    "ownersUnchanged": true,
+    "passed": true,
+    "reversible": true,
+    "sameBaselineSlots": true,
+    "slotCount": 45
+  },
+  "assets": {
+    "meshes": [
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-0.res",
+        "surfaces": 2,
+        "triangles": 1980
+      },
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-0-far.res",
+        "surfaces": 2,
+        "triangles": 1144
+      },
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-1.res",
+        "surfaces": 3,
+        "triangles": 2220
+      },
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-1-far.res",
+        "surfaces": 3,
+        "triangles": 1384
+      },
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-2.res",
+        "surfaces": 2,
+        "triangles": 2478
+      },
+      {
+        "degenerate": 0,
+        "path": "res://assets/neapolis-free/house-2-far.res",
+        "surfaces": 2,
+        "triangles": 1472
+      }
+    ],
+    "notice": "CPU-side imported image data size, not independent VRAM allocation. All referenced maps already belong to the Roma material library.",
+    "passed": true,
+    "sharedTextures": {
+      "res://assets/roma/plaster-normal.jpg": {
+        "format": 4,
+        "height": 1024,
+        "imageDataBytes": 3145728,
+        "mipmaps": false,
+        "width": 1024
+      },
+      "res://assets/roma/plaster-roughness.jpg": {
+        "format": 0,
+        "height": 1024,
+        "imageDataBytes": 1048576,
+        "mipmaps": false,
+        "width": 1024
+      },
+      "res://assets/roma/roof-color.jpg": {
+        "format": 4,
+        "height": 1024,
+        "imageDataBytes": 3145728,
+        "mipmaps": false,
+        "width": 1024
+      },
+      "res://assets/roma/roof-normal.jpg": {
+        "format": 4,
+        "height": 1024,
+        "imageDataBytes": 3145728,
+        "mipmaps": false,
+        "width": 1024
+      },
+      "res://assets/roma/roof-roughness.jpg": {
+        "format": 0,
+        "height": 1024,
+        "imageDataBytes": 1048576,
+        "mipmaps": false,
+        "width": 1024
+      }
+    },
+    "textureImageDataBytes": 11534336
+  },
+  "baselineRendererSha256": "0b104a7461637fb1944e26bf00d2e9604ea82fcb3b6ce43fc9b71cc7c010da0b",
+  "candidateRendererSha256": "7b2d84ce3ea459cc898e701498513821ba2ea5cac61ad78cd0c89fc25c8c9b19",
+  "candidateAdapterSha256": "442b987a02db9926c7b2b2b4da77d90da6473749391f929115ae1252d0113180",
+  "notice": "Pixel equality is reported, not assumed; native correctness and test passes do not establish visual approval."
+}

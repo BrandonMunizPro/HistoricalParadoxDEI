@@ -4,6 +4,10 @@ extends "res://world.gd"
 var cartographic_rollout=preload("res://cartography_rollout.gd").new()
 var alpine_surface
 var balkans_surface
+var anatolia_surface
+var anatolia_identities
+var reference_labels
+var regional_cpu_ms={}
 var reference_faction_ids=["boii","insubres","cenomani","veneti-italy","ligurian-polities","etruscan-polities","rome","samnites","lucanians","bruttians","messapians","daunians","tarentum","rhegion","croton","syracuse"]
 func uses_northern_labels():
 	return cartographic_rollout.contains(focus) and distance>=30. and distance<=1400. and political_map.enabled and political_map.factions!=null and political_map.factions.enabled and political_map.blend>.01
@@ -63,6 +67,7 @@ func _ready():
 	code=code.replace("ALBEDO=mix(macro*.57,regional,region_weight);","ALBEDO=mix(macro*.57,mix(regional,macro*.57,.55*northern_weight),region_weight);")
 	code=preload("res://balkans_surface.gd").decorate_shader(code)
 	code=preload("res://alpine_surface.gd").decorate_shader(code)
+	code=preload("res://anatolia_surface.gd").decorate_shader(code)
 	shader.code=code
 	var bed=ImageTexture.create_from_image(Image.load_from_file("res://data/northern-italy-reference/lake-bed.png"))
 	base_material.set_shader_parameter("reference_lake_bed",bed)
@@ -78,7 +83,7 @@ func _ready():
 		node.material_override.set_shader_parameter("reference_sicily_ids",base_material.get_shader_parameter("reference_sicily_ids"))
 		node.material_override.set_shader_parameter("reference_controller_ids",political_map.factions.owner_texture)
 	var factions=political_map.factions
-	var labels=load("res://northern_italy_labels.gd").new();labels.world=self;factions.layer.add_child(labels)
+	reference_labels=load("res://northern_italy_labels.gd").new();reference_labels.world=self;factions.layer.add_child(reference_labels)
 	if FileAccess.file_exists("res://data/alpine/manifest.json") and not OS.get_cmdline_user_args().has("--alpine-baseline"):
 		alpine_surface=load("res://alpine_surface.gd").new(self)
 	if FileAccess.file_exists("res://data/balkans/manifest.json"):
@@ -86,18 +91,47 @@ func _ready():
 		for id in political_map.factions.by_id:
 			var f=political_map.factions.by_id[id]
 			if cartographic_rollout.contains(Vector2(f.label[0],f.label[1])) and not id in reference_faction_ids:reference_faction_ids.append(id)
+	if cartographic_rollout.settings.get("anatoliaActive",false) and FileAccess.file_exists("res://data/anatolia/manifest.json"):
+		anatolia_surface=load("res://anatolia_surface.gd").new(self)
+		anatolia_identities=load("res://political_identities.gd").new(self)
+		political_map.factions.local_identities=anatolia_identities;political_map.factions.populate_list("")
+		for id in political_map.factions.by_id:
+			var geo=political_map.factions.label_for(id)
+			if geo!=null and cartographic_rollout.contains_anatolia(geo) and not id in reference_faction_ids:reference_faction_ids.append(id)
 
 func _process(delta):
+	var profile_start=Time.get_ticks_usec()
 	super._process(delta)
+	var base_end=Time.get_ticks_usec()
 	if alpine_surface!=null:alpine_surface.tick()
 	if balkans_surface!=null:balkans_surface.tick()
+	var old_end=Time.get_ticks_usec()
+	if anatolia_surface!=null:anatolia_surface.tick()
+	regional_cpu_ms={"base":(base_end-profile_start)/1000.,"previousRegions":(old_end-base_end)/1000.,"anatolia":(Time.get_ticks_usec()-old_end)/1000.}
+
+func is_settled():
+	return super.is_settled() and (anatolia_surface==null or anatolia_surface.is_ready())
 
 func elevation(lon,lat):
 	var original=super.elevation(lon,lat)
 	if distance<3300.:
 		if alpine_surface!=null:original=alpine_surface.elevation(Vector2(lon,lat),original)
 		if balkans_surface!=null:original=balkans_surface.elevation(Vector2(lon,lat),original)
+		if anatolia_surface!=null:original=anatolia_surface.elevation(Vector2(lon,lat),original)
 	return original
+
+func scenery_elevation(lon,lat):
+	var geo=Vector2(lon,lat)
+	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(geo)>.001:return anatolia_surface.placement_height(geo)
+	if balkans_surface!=null:
+		var base=super.elevation(lon,lat)
+		if alpine_surface!=null:base=alpine_surface.elevation(geo,base)
+		return balkans_surface.elevation(geo,base,true)
+	return elevation(lon,lat)
+
+func is_land(lon,lat):
+	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(Vector2(lon,lat))>.001:return anatolia_surface.land_at(Vector2(lon,lat))
+	return super.is_land(lon,lat)
 
 func load_tile(id):
 	var result=super.load_tile(id)
@@ -105,5 +139,6 @@ func load_tile(id):
 		for parameter in ["reference_lake_bed","reference_local_ids","reference_controller_ids","reference_sicily_ids"]:resident[id].node.material_override.set_shader_parameter(parameter,base_material.get_shader_parameter(parameter))
 		if alpine_surface!=null:alpine_surface.bind(resident[id].node.material_override)
 		if balkans_surface!=null:balkans_surface.bind(resident[id].node.material_override)
+		if anatolia_surface!=null:anatolia_surface.bind(resident[id].node.material_override)
 	return result
 

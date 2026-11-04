@@ -17,11 +17,11 @@ User direction: keep the accepted Godot style and improve the regular map one ar
 | Wave | Area | Smaller passes | Status |
 |---|---|---|---|
 | 01 | Italy and Sicily | North/Po/Alps; central peninsula/Apennines; south/Apulia/Calabria; Sicily | Visual coverage implemented; expanded screenshots ready for review. Historical subdivisions still pending. |
-| 02 | Illyria | Eastern Adriatic coast; islands; inland barriers; Epirus interface | Current requested batch with Greece |
-| 03 | Greece | Macedonia/Thessaly; central Greece; Peloponnese | Current requested batch with Illyria |
-| 04 | Aegean | Crete; island chains; western Anatolian coast | Queued |
+| 02 | Illyria | Eastern Adriatic coast; islands; inland barriers; Epirus interface | Inspection-ready; historical/performance limitations recorded |
+| 03 | Greece | Macedonia/Thessaly; central Greece; Peloponnese | Inspection-ready; historical/performance limitations recorded |
+| 04 | Aegean | Crete; remaining island chains | Queued; western Anatolian coast covered in the Anatolia batch |
 | 05 | Thrace and Danube | Thrace; lower Danube; western Black Sea | Queued |
-| 06 | Anatolia and Caucasus | Anatolian interior; Armenia; Caucasus | Queued |
+| 06 | Anatolia and Caucasus | Anatolia coast/plateau/Taurus/Pontic ranges; Armenia/Caucasus separately | Anatolia requested and implemented for review; Armenia/Caucasus queued |
 | 07 | Levant | Syria; Phoenicia/Judaea; Cyprus | Queued |
 | 08 | Nile and Cyrenaica | Delta/Nile; Cyrenaica; Nubia/Kush | Queued |
 | 09 | Punic Africa and western islands | Punic Africa; Numidia/Mauretania; Sardinia/Corsica; smaller central Mediterranean islands | Queued |
@@ -64,3 +64,7 @@ Alpine follow-up to Wave 01: sourced crest detail and high-elevation snow are no
 
 
 Alpine snow appearance is deferred at the user's request. Its existing assets and surface treatment are unchanged by this batch.
+
+2026-11-04: User requested Anatolia next. The Anatolian coast and interior are the active batch; the remaining Aegean islands, Thrace, Armenia and Caucasus are not activated by this request. Greece/Illyria remain inspection-ready, with their documented historical limitations.
+
+2026-11-04 follow-up: Anatolia remains active for sharper relief, visible local political identities under imperial colour, and vegetation prefetch/cache/reveal corrections. See [refinement review](../anatolia-refinement/REVIEW.html) and [historical qualifications](../anatolia-refinement/REPORT.md). Inspect the matched stills and cached/cold zoom playback before accepting this wave. Remaining uncertain frontiers are not approved by visual acceptance.

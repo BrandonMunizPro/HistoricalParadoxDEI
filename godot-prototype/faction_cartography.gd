@@ -26,6 +26,7 @@ var enabled=true
 var regions
 var owner_image:Image
 var owner_texture:ImageTexture
+var local_identities
 func _init(owner,adapter):
 	world=owner;political_ref=weakref(adapter)
 	enabled=not OS.get_cmdline_user_args().has("--neutral-map")
@@ -137,6 +138,12 @@ func populate_list(query):
 		if query!="" and not query.to_lower() in search:continue
 		var button=Button.new();button.text=faction.name;button.alignment=HORIZONTAL_ALIGNMENT_LEFT;button.add_theme_color_override("font_color",Color("eee1bf"));button.tooltip_text=faction.status+"\n"+faction.notes+"\nEmblem: "+faction.emblem.basis.replace("_"," ")+"\n"+faction.emblem.note;button.pressed.connect(focus_faction.bind(faction.id))
 		var icon=AtlasTexture.new();icon.atlas=atlas;var index=faction.renderIndex;icon.region=Rect2((index%16)*64,(index/16)*64,64,64);button.icon=icon;button.expand_icon=true;button.add_theme_constant_override("icon_max_width",28);list.add_child(button)
+	if local_identities!=null:
+		var heading=Label.new();heading.text="Regional administrations / local polities";heading.add_theme_font_size_override("font_size",12);list.add_child(heading)
+		for r in local_identities.records:
+			if r.get("factionId")!=null:continue
+			if query!="" and not query.to_lower() in (r.name+" "+r.kind+" "+r.notes).to_lower():continue
+			var button=Button.new();button.text=r.name.capitalize();button.alignment=HORIZONTAL_ALIGNMENT_LEFT;button.tooltip_text=local_identities.subtitle(r)+"\n"+r.confidence+"\n"+r.notes;button.pressed.connect(local_identities.focus_identity.bind(r.id));list.add_child(button)
 func update():
 	if enabled and layer!=null:
 		layer.visible=political.blend>.01

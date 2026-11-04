@@ -1,6 +1,8 @@
 extends Control
 var cartography
 var anchors={}
+var geographic_anchors={}
+var anchor_revision=0
 var font:Font
 var entries=[]
 func _ready():
@@ -8,10 +10,13 @@ func _ready():
 	entries=cartography.data.factions.duplicate();entries.sort_custom(func(a,b):return a.priority>b.priority)
 	refresh_anchors()
 func refresh_anchors():
+	anchor_revision+=1
 	anchors.clear()
+	geographic_anchors.clear()
 	for faction in cartography.data.factions:
 		var label=cartography.label_for(faction.id)
 		if label==null:continue
+		geographic_anchors[faction.id]=label
 		var p=cartography.world.project(label.x,label.y);p.y=max(.001,cartography.world.elevation(label.x,label.y))+.04;anchors[faction.id]=p
 func _process(_delta):
 	if cartography.political.blend>.01:queue_redraw()
