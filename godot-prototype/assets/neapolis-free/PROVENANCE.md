@@ -23,4 +23,4 @@ The assemblies reuse the existing Roma CC0 Poly Haven plaster and clay roof text
 
 Broad courtyard/pastas precedents: University of Michigan Olynthos Project, https://sites.lsa.umich.edu/olynthos-project/olynthian-houses/ ; University of Bonn Priene housing project, https://www.iak.uni-bonn.de/de/institut/abteilungen/klassische-archaeologie/forschung-1/projekte/priene-wohnen-in-einer-hellenistischen-stadt . These are comparative Greek precedents, not evidence for a particular Neapolis house in 278 BCE. No rooms are assigned proven archaeological functions. Existing campaign building footprints are schematic and enlarged for readability; imported modules do not make those footprints surveyed archaeology.
 
-Run `--neapolis-residential-trial` to opt into the isolated candidate. Omitting the flag restores the original appearance. This is a visual prototype, not a global art replacement.
+Neapolis housing is enabled in normal campaign play. Run `--neapolis-neutral-baseline` to restore the original appearance for comparison. The change remains limited to Neapolis.

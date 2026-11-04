@@ -96,7 +96,7 @@ The experiment demonstrates that a few free CC0 modules can supply reusable Gree
 
 Recommendation: keep this opt-in candidate for inspection, retain the acquired source/license and current renderer integration, and decide whether these archetypes justify a second small Neapolis-only material/contact pass. Do not adopt the kit globally or present tests as visual acceptance.
 
-Enable the isolated prototype with `--neapolis-residential-trial`; omit it for the comparison baseline. The regular campaign defaults to the existing buildings. This explicit reversible switch is confined to this experiment, not a new map mode.
+Update: Neapolis housing is now enabled in normal campaign play at the user's request. Use `--neapolis-neutral-baseline` for the original buildings in comparison runs. The change remains limited to Neapolis; the visual limitations recorded above still apply.
 
 ### Recorded initial verification issue
 

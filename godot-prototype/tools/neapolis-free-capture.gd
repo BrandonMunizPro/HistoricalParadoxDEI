@@ -25,7 +25,7 @@ func run():
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
 	RenderingServer.render_loop_enabled=false;process_frame.connect(draw)
 	world=load("res://world.tscn").instantiate();root.add_child(world);world.capture_done=true
-	if candidate:world.settlements.set_neapolis_trial(true)
+	world.settlements.set_neapolis_trial(candidate)
 	Engine.max_fps=0;DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	for c in world.get_children():
 		if c is CanvasLayer and c.name!="FactionCartography":c.visible=false

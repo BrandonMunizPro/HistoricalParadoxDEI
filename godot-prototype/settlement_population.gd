@@ -15,7 +15,7 @@ var roma_visual
 var roma_enabled=true
 var identity_models={}
 var rural_identities={}
-var neapolis_trial_enabled=OS.get_cmdline_user_args().has("--neapolis-residential-trial")
+var neapolis_trial_enabled=not OS.get_cmdline_user_args().has("--neapolis-neutral-baseline")
 var neapolis_assets
 func set_neapolis_trial(value):
 	if neapolis_trial_enabled==value:return

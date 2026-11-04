@@ -7,6 +7,8 @@ func slots(node):
 func run():
 	Engine.max_fps=120
 	var world=load("res://world.tscn").instantiate();root.add_child(world);world.capture_done=true
+	assert(world.settlements.neapolis_trial_enabled,"Neapolis housing must be enabled in normal play")
+	world.settlements.set_neapolis_trial(false)
 	world.focus=Vector2(14.25287,40.839995);world.goal_focus=world.focus;world.distance=60.;world.goal_distance=60.;world.queue_tiles()
 	await settle(world)
 	world.distance=1.5;world.goal_distance=1.5;world.queue_tiles()
