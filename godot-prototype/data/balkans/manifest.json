@@ -1,0 +1,408 @@
+{
+  "bounds": {
+    "west": 14,
+    "east": 25,
+    "south": 36,
+    "north": 46
+  },
+  "width": 1409,
+  "height": 1281,
+  "heightScale": 1.5,
+  "near": {
+    "vertices": 1804929,
+    "triangles": 3604480
+  },
+  "far": {
+    "vertices": 113313,
+    "triangles": 225280
+  },
+  "sources": [
+    {
+      "id": "N36E20",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E020_00_DEM/Copernicus_DSM_COG_10_N36_00_E020_00_DEM.tif",
+      "notice": "No Copernicus land tile at this coordinate; existing world source retained."
+    },
+    {
+      "id": "N36E21",
+      "path": "public/data/regional-details/detail-greece-N36E21.json",
+      "sha256": "77ada69cd66bd7101271e729a965a15ec22ebdda6af3c03fafbac08d4a260ef6",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E021_00_DEM/Copernicus_DSM_COG_10_N36_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N36E22",
+      "path": "public/data/regional-details/detail-greece-N36E22.json",
+      "sha256": "4ffd26490209f982a75b56929e399a5b709d2432ef62ee73ac3f18b785eb082f",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E022_00_DEM/Copernicus_DSM_COG_10_N36_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N36E23",
+      "path": "public/data/regional-details/detail-greece-N36E23.json",
+      "sha256": "e35ea787ef0f35db9ee566d434a03ba30c69cfde4688ec6359ef0fdf5dd686bd",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E023_00_DEM/Copernicus_DSM_COG_10_N36_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N36E24",
+      "path": "public/data/regional-details/detail-greece-N36E24.json",
+      "sha256": "22020f44b3935bb43d8c1dfdd7165f3f5a592decc535a9ebe2a680e70820433b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E024_00_DEM/Copernicus_DSM_COG_10_N36_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N37E20",
+      "path": "data/geography/source-cache/balkans/N37E20.json",
+      "sha256": "c280a00cd206364ef3604410b325bfbcf4e1ffb21520c439346dad2d14823d96",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E020_00_DEM/Copernicus_DSM_COG_10_N37_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N37E21",
+      "path": "public/data/regional-details/detail-greece-N37E21.json",
+      "sha256": "695e028925e68c76ef0685fb4352c07862e7e04339348b30f0e7f53ab3c8b03b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E021_00_DEM/Copernicus_DSM_COG_10_N37_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N37E22",
+      "path": "public/data/regional-details/detail-greece-N37E22.json",
+      "sha256": "7cf88c2e59b630ad9897102f7c096ab081efed83e56a58294223c5142373867e",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E022_00_DEM/Copernicus_DSM_COG_10_N37_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N37E23",
+      "path": "public/data/regional-details/detail-greece-N37E23.json",
+      "sha256": "8f00ff95780bb229c8ec79b371e4a447a1bf88248bbb12eff2ae2747f811751c",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E023_00_DEM/Copernicus_DSM_COG_10_N37_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N37E24",
+      "path": "public/data/regional-details/detail-greece-N37E24.json",
+      "sha256": "6970f6251a3427bf130d11a19ee707d2e6337b41c11b256b829c9a8f605ca980",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E024_00_DEM/Copernicus_DSM_COG_10_N37_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N38E20",
+      "path": "data/geography/source-cache/balkans/N38E20.json",
+      "sha256": "f9f9803b9cebe19e63a0cdadbd775863912406b5ac5b9cd4f6ca0f1e7652dbb7",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E020_00_DEM/Copernicus_DSM_COG_10_N38_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N38E21",
+      "path": "public/data/regional-details/detail-greece-N38E21.json",
+      "sha256": "4d8042ea3717019e9c39177a665e456e9395b3a7a09b5d2e3697608e920dc5c1",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E021_00_DEM/Copernicus_DSM_COG_10_N38_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N38E22",
+      "path": "public/data/regional-details/detail-greece-N38E22.json",
+      "sha256": "5761ce6447f3804d88c53d51d5c46d95d04b553e7ba908773a71ddc9e36d4b91",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E022_00_DEM/Copernicus_DSM_COG_10_N38_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N38E23",
+      "path": "public/data/regional-details/detail-greece-N38E23.json",
+      "sha256": "44b50de262839e997022463dc87f0cd656b18b95e5830491d092696adb535d12",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E023_00_DEM/Copernicus_DSM_COG_10_N38_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N38E24",
+      "path": "public/data/regional-details/detail-greece-N38E24.json",
+      "sha256": "2b82686c6f22ee93d995e541e097a90f0b8b3834f87084e227611eeda23b8c97",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E024_00_DEM/Copernicus_DSM_COG_10_N38_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N39E18",
+      "path": "data/geography/source-cache/cop-N39E18.json",
+      "sha256": "be222c835617afd1c0c0523aa4516b05ef2b1f3dcfff2aa264985fea224802d0",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E018_00_DEM/Copernicus_DSM_COG_10_N39_00_E018_00_DEM.tif"
+    },
+    {
+      "id": "N39E19",
+      "path": "data/geography/source-cache/cop-N39E19.json",
+      "sha256": "63556b1c29b2ff3b2f2917eb3dd8456db891fd8d93c208f19df709f453096f2b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E019_00_DEM/Copernicus_DSM_COG_10_N39_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N39E20",
+      "path": "data/geography/source-cache/balkans/N39E20.json",
+      "sha256": "5304be7e9762cc181559edb3ce1bbb92d36e5b45e68fb8ff798bedeb38c4176a",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E020_00_DEM/Copernicus_DSM_COG_10_N39_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N39E21",
+      "path": "public/data/regional-details/detail-greece-N39E21.json",
+      "sha256": "c80227807a060262bc394ee372a6e528d34641742e0073125a9132a070c81d92",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E021_00_DEM/Copernicus_DSM_COG_10_N39_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N39E22",
+      "path": "public/data/regional-details/detail-greece-N39E22.json",
+      "sha256": "fc4a936bdd9115c9477b22d593f92e7972347387ea36f391a6556957c0698fa2",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E022_00_DEM/Copernicus_DSM_COG_10_N39_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N39E23",
+      "path": "public/data/regional-details/detail-greece-N39E23.json",
+      "sha256": "3e0b38a2aeaf13634bcc282322b49c6a1459b2cbf86f9d0b8fbf2a9469c98664",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E023_00_DEM/Copernicus_DSM_COG_10_N39_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N39E24",
+      "path": "public/data/regional-details/detail-greece-N39E24.json",
+      "sha256": "e969c9fecef65607df80b2eb70bfe081aada068b0abb957566c88d5f08edfbab",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_E024_00_DEM/Copernicus_DSM_COG_10_N39_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N40E18",
+      "path": "data/geography/source-cache/cop-N40E18.json",
+      "sha256": "68c7ce06aedd0d92647349aa6a3aaa96d9ee2f94a39ad51e75b48d4a860ef301",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E018_00_DEM/Copernicus_DSM_COG_10_N40_00_E018_00_DEM.tif"
+    },
+    {
+      "id": "N40E19",
+      "path": "data/geography/source-cache/cop-N40E19.json",
+      "sha256": "4b4d071a98479c8aa9d5707b77ef8fdcc2e911f635a82b54781edc6b02c38338",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E019_00_DEM/Copernicus_DSM_COG_10_N40_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N40E20",
+      "path": "data/geography/source-cache/balkans/N40E20.json",
+      "sha256": "8b8d0e3c8da8ad43e31a459f303bfaa7216f24497a5c38bf013b387e8e7e8794",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E020_00_DEM/Copernicus_DSM_COG_10_N40_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N40E21",
+      "path": "public/data/regional-details/detail-greece-N40E21.json",
+      "sha256": "5e2a1f1ae51c142feef2648a43b25bee0b86d010b673f6b062dcf677b46c3ea9",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E021_00_DEM/Copernicus_DSM_COG_10_N40_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N40E22",
+      "path": "public/data/regional-details/detail-greece-N40E22.json",
+      "sha256": "7a7e6fbdcd28f4f2f0e2209ebe590594460a2c44938bff55f8f4d02b72f5972a",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E022_00_DEM/Copernicus_DSM_COG_10_N40_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N40E23",
+      "path": "public/data/regional-details/detail-greece-N40E23.json",
+      "sha256": "703809c65a27670b4fe2f917d2056453954ede4bd30415943ec8d01759b291c2",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E023_00_DEM/Copernicus_DSM_COG_10_N40_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N40E24",
+      "path": "public/data/regional-details/detail-greece-N40E24.json",
+      "sha256": "55c8c59dd40d0af09ecc822375cc7f8f4821748d2cb8af35977ef3bf460e862b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N40_00_E024_00_DEM/Copernicus_DSM_COG_10_N40_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N41E17",
+      "path": "data/geography/source-cache/cop-N41E17.json",
+      "sha256": "d946dc7387885f98cd85bab0109fad2311334311c2d68b69d4e582e59304c950",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E017_00_DEM/Copernicus_DSM_COG_10_N41_00_E017_00_DEM.tif"
+    },
+    {
+      "id": "N41E18",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E018_00_DEM/Copernicus_DSM_COG_10_N41_00_E018_00_DEM.tif",
+      "notice": "No Copernicus land tile at this coordinate; existing world source retained."
+    },
+    {
+      "id": "N41E19",
+      "path": "data/geography/source-cache/cop-N41E19.json",
+      "sha256": "c9a63309e29c9748eb5a5b8c3937760050a4bab8e8135d1c227ab98267c6d038",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E019_00_DEM/Copernicus_DSM_COG_10_N41_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N41E20",
+      "path": "data/geography/source-cache/balkans/N41E20.json",
+      "sha256": "6605be2cc9c24e5b4bfdc74b2a0429c2a7dccfa4a05061700365d08f55e71a38",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E020_00_DEM/Copernicus_DSM_COG_10_N41_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N41E21",
+      "path": "data/geography/source-cache/balkans/N41E21.json",
+      "sha256": "73ba50712a064fa73fababaf91719eb7ac5fcc070d2f4c072add50e8b89e61b8",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E021_00_DEM/Copernicus_DSM_COG_10_N41_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N41E22",
+      "path": "data/geography/source-cache/balkans/N41E22.json",
+      "sha256": "f63e1a7832044ec90aec36a80565b3c9dcf825019fdbbf612369a96351762117",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E022_00_DEM/Copernicus_DSM_COG_10_N41_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N41E23",
+      "path": "data/geography/source-cache/balkans/N41E23.json",
+      "sha256": "47a3b16664867687436e517fe831f7fbfd9a85690dcfe76f7cdd0c30c911a9a8",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E023_00_DEM/Copernicus_DSM_COG_10_N41_00_E023_00_DEM.tif"
+    },
+    {
+      "id": "N41E24",
+      "path": "data/geography/source-cache/balkans/N41E24.json",
+      "sha256": "a7c37a3cd185a94ac80dbd4b4b1a2d9692625a666aa1bf7d99ec5b967c688e66",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N41_00_E024_00_DEM/Copernicus_DSM_COG_10_N41_00_E024_00_DEM.tif"
+    },
+    {
+      "id": "N42E15",
+      "path": "data/geography/source-cache/cop-N42E15.json",
+      "sha256": "557875b65f1fce642d6a74ab29104227b2be368d544bd0d579609e7a3b9ca699",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E015_00_DEM/Copernicus_DSM_COG_10_N42_00_E015_00_DEM.tif"
+    },
+    {
+      "id": "N42E16",
+      "path": "data/geography/source-cache/balkans/N42E16.json",
+      "sha256": "80e713830c101ae718e0343fbfb1f1500223f1b92da2c2a1e1fca7765be23020",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E016_00_DEM/Copernicus_DSM_COG_10_N42_00_E016_00_DEM.tif"
+    },
+    {
+      "id": "N42E17",
+      "path": "data/geography/source-cache/cop-N42E17.json",
+      "sha256": "4a1207c43522e53c3584a552ef46205b60ad6b65d76e23ee74e4fd9188a65856",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E017_00_DEM/Copernicus_DSM_COG_10_N42_00_E017_00_DEM.tif"
+    },
+    {
+      "id": "N42E18",
+      "path": "data/geography/source-cache/cop-N42E18.json",
+      "sha256": "86721be0a404d300d2837ad0cb6cf079e8ce554aa79218738cbd2455479bfff7",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E018_00_DEM/Copernicus_DSM_COG_10_N42_00_E018_00_DEM.tif"
+    },
+    {
+      "id": "N42E19",
+      "path": "data/geography/source-cache/cop-N42E19.json",
+      "sha256": "7aff7c7bdbfa2a9b1857dad272d8b412a35c9f842fcead1fb05226888f0d5fbe",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E019_00_DEM/Copernicus_DSM_COG_10_N42_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N42E20",
+      "path": "data/geography/source-cache/balkans/N42E20.json",
+      "sha256": "3cc6237cf965e1aa96fa4d060ccb4c549ba09711ff5ecb502145fc2bd983b911",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E020_00_DEM/Copernicus_DSM_COG_10_N42_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N42E21",
+      "path": "data/geography/source-cache/balkans/N42E21.json",
+      "sha256": "195d743bbda70f521affdc4be755610ad15d5b70fea1b77566d96138154bb159",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E021_00_DEM/Copernicus_DSM_COG_10_N42_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N42E22",
+      "path": "data/geography/source-cache/balkans/N42E22.json",
+      "sha256": "cb60dea8d6a22ae752bdda78b6b55ebc033b9dbcb6bf8179d63608f5764cfca5",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N42_00_E022_00_DEM/Copernicus_DSM_COG_10_N42_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N43E14",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E014_00_DEM/Copernicus_DSM_COG_10_N43_00_E014_00_DEM.tif",
+      "notice": "No Copernicus land tile at this coordinate; existing world source retained."
+    },
+    {
+      "id": "N43E15",
+      "path": "data/geography/source-cache/cop-N43E15.json",
+      "sha256": "7400b71fa816b47b94a6d88407b0013e2e69a44ec091f515bcc07a91f5e71306",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E015_00_DEM/Copernicus_DSM_COG_10_N43_00_E015_00_DEM.tif"
+    },
+    {
+      "id": "N43E16",
+      "path": "data/geography/source-cache/cop-N43E16.json",
+      "sha256": "0f6cfe1f04abc6f1d3b0366d6ee7187574dafc1a6367cfe737653bb532284079",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E016_00_DEM/Copernicus_DSM_COG_10_N43_00_E016_00_DEM.tif"
+    },
+    {
+      "id": "N43E17",
+      "path": "data/geography/source-cache/cop-N43E17.json",
+      "sha256": "c6a5b068448ea1b229fb0418d1cddc87ac7d57f00298eede934c35395a761209",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E017_00_DEM/Copernicus_DSM_COG_10_N43_00_E017_00_DEM.tif"
+    },
+    {
+      "id": "N43E18",
+      "path": "data/geography/source-cache/cop-N43E18.json",
+      "sha256": "5acdcc918e5aae0f6f8246f8d72aaacf9227f69c3f2ab81fca26b79eda2f5a2f",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E018_00_DEM/Copernicus_DSM_COG_10_N43_00_E018_00_DEM.tif"
+    },
+    {
+      "id": "N43E19",
+      "path": "data/geography/source-cache/cop-N43E19.json",
+      "sha256": "8ea90008145931429477df0ef16d85101afe583e2f8e2ebd5be1776ad94f0c07",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E019_00_DEM/Copernicus_DSM_COG_10_N43_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N43E20",
+      "path": "data/geography/source-cache/balkans/N43E20.json",
+      "sha256": "3330ab7d899d96a1b9381812aa9bd8976a300d3a326ff135b2743612bd7baca2",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E020_00_DEM/Copernicus_DSM_COG_10_N43_00_E020_00_DEM.tif"
+    },
+    {
+      "id": "N43E21",
+      "path": "data/geography/source-cache/balkans/N43E21.json",
+      "sha256": "db872c1e3050bc9b631fb967ba4ae9561029883b28252c273f75db2076fe1624",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E021_00_DEM/Copernicus_DSM_COG_10_N43_00_E021_00_DEM.tif"
+    },
+    {
+      "id": "N43E22",
+      "path": "data/geography/source-cache/balkans/N43E22.json",
+      "sha256": "e90f2a972d440d4dac9dc094fa8bc0e2e1ae3ab14624a704b31d6a563b6a3ff8",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N43_00_E022_00_DEM/Copernicus_DSM_COG_10_N43_00_E022_00_DEM.tif"
+    },
+    {
+      "id": "N44E14",
+      "path": "data/geography/source-cache/cop-N44E14.json",
+      "sha256": "59075564544e067474f7506d6851e5fe90922c14b3b78ad62ba920b99ba16a11",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E014_00_DEM/Copernicus_DSM_COG_10_N44_00_E014_00_DEM.tif"
+    },
+    {
+      "id": "N44E15",
+      "path": "data/geography/source-cache/cop-N44E15.json",
+      "sha256": "4d2534ad2a744943c825c68eebd35db068b1e4164245483b0bc306f1bdfecf1b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E015_00_DEM/Copernicus_DSM_COG_10_N44_00_E015_00_DEM.tif"
+    },
+    {
+      "id": "N44E16",
+      "path": "data/geography/source-cache/cop-N44E16.json",
+      "sha256": "0c583cb96f2e06329b2bb9499157820ae3662a22bc01d51a0d28ebbd5d97c7e1",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E016_00_DEM/Copernicus_DSM_COG_10_N44_00_E016_00_DEM.tif"
+    },
+    {
+      "id": "N44E17",
+      "path": "data/geography/source-cache/cop-N44E17.json",
+      "sha256": "6154d16767f96159cfa95f3fb9d01b5fe9d737e279144ad2a32c5a497fec6796",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E017_00_DEM/Copernicus_DSM_COG_10_N44_00_E017_00_DEM.tif"
+    },
+    {
+      "id": "N44E18",
+      "path": "data/geography/source-cache/cop-N44E18.json",
+      "sha256": "d680e541343fb555f567a5e3a1cd09af2ecd94320e63426ec4bb6fdeace100bd",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E018_00_DEM/Copernicus_DSM_COG_10_N44_00_E018_00_DEM.tif"
+    },
+    {
+      "id": "N44E19",
+      "path": "data/geography/source-cache/cop-N44E19.json",
+      "sha256": "71c306c604d939037f745f386b2508ece02dca36eaa77f77faeb642db8566e22",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N44_00_E019_00_DEM/Copernicus_DSM_COG_10_N44_00_E019_00_DEM.tif"
+    },
+    {
+      "id": "N45E14",
+      "path": "data/geography/source-cache/cop-N45E14.json",
+      "sha256": "f638a95289433ca2f2793e8bcd87aca02f115ce12d8f2fcd7b2904aa24782e34",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E014_00_DEM/Copernicus_DSM_COG_10_N45_00_E014_00_DEM.tif"
+    },
+    {
+      "id": "N45E15",
+      "path": "data/geography/source-cache/cop-N45E15.json",
+      "sha256": "5e64796886d9fa88bdd5d179ab0536c6011a0c7d36b2420839b56989d7b8e5eb",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E015_00_DEM/Copernicus_DSM_COG_10_N45_00_E015_00_DEM.tif"
+    },
+    {
+      "id": "N45E16",
+      "path": "data/geography/source-cache/cop-N45E16.json",
+      "sha256": "3714253cd8624c46ec6bb7722f3ea3c50792e0def4567bef3b2735c40fdca5b0",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E016_00_DEM/Copernicus_DSM_COG_10_N45_00_E016_00_DEM.tif"
+    },
+    {
+      "id": "N45E17",
+      "path": "data/geography/source-cache/cop-N45E17.json",
+      "sha256": "5357657158f3419689c9d368b0f57af37f903ece12141adc118f230104531e2e",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E017_00_DEM/Copernicus_DSM_COG_10_N45_00_E017_00_DEM.tif"
+    }
+  ],
+  "coast": {
+    "archive": "data/geography/source-cache/gshhg.zip",
+    "sha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41",
+    "source": "GSHHG 2.3.7 full-resolution L1"
+  },
+  "notice": "Modern Copernicus DSM and GSHHG physical presentation only; not reconstructed ancient coastlines. Existing political polygons rerasterized without geometry or ownership edits."
+}

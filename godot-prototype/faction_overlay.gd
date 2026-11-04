@@ -24,6 +24,7 @@ func _draw():
 	for child in cartography.world.get_children():
 		if child is CanvasLayer and child.name!="FactionCartography" and child.visible:sidebar=true
 	for faction in entries:
+		if cartography.world.has_method("uses_northern_labels") and cartography.world.uses_northern_labels() and faction.id in cartography.world.reference_faction_ids:continue
 		if not anchors.has(faction.id):continue
 		var p=anchors[faction.id]
 		if camera.is_position_behind(p):continue

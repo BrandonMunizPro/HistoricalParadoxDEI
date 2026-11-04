@@ -23,6 +23,9 @@ var overlay
 var placements={}
 var selected=""
 var enabled=true
+var regions
+var owner_image:Image
+var owner_texture:ImageTexture
 func _init(owner,adapter):
 	world=owner;political_ref=weakref(adapter)
 	enabled=not OS.get_cmdline_user_args().has("--neutral-map")
@@ -44,6 +47,11 @@ func _init(owner,adapter):
 		var territory=data.territories[i];assert(by_id.has(territory.initialController));assert(not territory_indices.has(territory.id))
 		control[territory.id]=territory.initialController;territory_indices[territory.id]=i+2
 		write_palette(territory)
+	regions=load("res://geographic_regions.gd").new()
+	assert(regions.configure(world.read_json("data/geographic-regions/definitions.json"),world.read_json("data/geographic-regions/initial-owners.json"),data.factions,world.sites))
+	owner_image=Image.create(size,1,false,Image.FORMAT_RGBA8)
+	for territory in data.territories:write_owner_identity(territory)
+	owner_texture=ImageTexture.create_from_image(owner_image)
 	palette=ImageTexture.create_from_image(palette_image)
 	var image=Image.load_from_file("res://data/factions/territory-ids.png")
 	ids=ImageTexture.create_from_image(image)
@@ -53,9 +61,32 @@ func _init(owner,adapter):
 	atlas=ImageTexture.create_from_image(load("res://assets/factions/emblems.res").get_image())
 	make_overlay()
 func write_palette(territory):
-	var color=Color(by_id[control[territory.id]].color)
+	var color=Color(by_id[control[territory.id]].color) if control[territory.id]!="" else Color(.30,.30,.30)
 	color.a=1.
 	palette_image.set_pixel(territory_indices[territory.id],0,color)
+func write_owner_identity(territory):
+	var owner=control[territory.id]
+	var index=by_id[owner].renderIndex+2 if owner!="" else 0
+	owner_image.set_pixel(territory_indices[territory.id],0,Color(float(index&255)/255.,float(index>>8)/255.,0,1))
+func set_region_owner(region_id:String,faction_id:String)->bool:
+	if regions==null or not regions.set_owner(region_id,faction_id):return false
+	var definition=regions.definitions[region_id]
+	control[definition.legacyTerritoryId]=faction_id
+	var territory=data.territories[definition.rasterIndex-2]
+	write_palette(territory);write_owner_identity(territory)
+	palette.update(palette_image);owner_texture.update(owner_image)
+	if overlay!=null:overlay.refresh_anchors()
+	return true
+func restore_region_state(state)->bool:
+	if regions==null or not regions.restore_state(state):return false
+	for id in regions.definitions:
+		var definition=regions.definitions[id]
+		control[definition.legacyTerritoryId]=regions.owners[id]
+		var territory=data.territories[definition.rasterIndex-2]
+		write_palette(territory);write_owner_identity(territory)
+	palette.update(palette_image);owner_texture.update(owner_image)
+	if overlay!=null:overlay.refresh_anchors()
+	return true
 func set_faction_color(id:String,color:Color)->bool:
 	if not by_id.has(id):return false
 	by_id[id].color="#"+color.to_html(false)
@@ -67,11 +98,8 @@ func set_faction_color(id:String,color:Color)->bool:
 		var image=atlas.get_image();image.clear_mipmaps();image.blit_rect(icon,Rect2i(0,0,64,64),Vector2i((index%16)*64,(index/16)*64));image.generate_mipmaps();(atlas as ImageTexture).update(image)
 	return true
 func set_region_controller(territory_id:String,faction_id:String)->bool:
-	if not control.has(territory_id) or not by_id.has(faction_id):return false
-	control[territory_id]=faction_id
-	write_palette(data.territories[territory_indices[territory_id]-2]);palette.update(palette_image)
-	if overlay!=null:overlay.refresh_anchors()
-	return true
+	if regions==null or not regions.legacy_ids.has(territory_id):return false
+	return set_region_owner(regions.legacy_ids[territory_id],faction_id)
 func label_for(id):
 	var faction=by_id[id]
 	if faction.status=="presence_only":return Vector2(faction.label[0],faction.label[1])

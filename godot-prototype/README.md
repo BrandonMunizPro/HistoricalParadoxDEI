@@ -81,3 +81,11 @@ Run captures sequentially, with other GPU-heavy applications idle. `compare.mjs`
 All added shaders, vegetation geometry, settlement geometry and material bitmaps were made for this prototype. No reference-game assets, shaders, binaries or code were copied or executed. No geographic datasets were downloaded. Modern DEMs/coastlines, generic vegetation placement and generic settlement forms do not establish ancient landscape or building accuracy.
 
 Godot's official stable Windows x64 **standard** build was downloaded from the [official release](https://github.com/godotengine/godot/releases/tag/4.7.2-stable). Archive SHA-256: `731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953`. The official SHA-512 manifest was verified before extraction; its archive and checksum file remain outside the repository in the tools directory. Engine version: `4.7.2.stable.official.ed1daf0bf`. [Godot licensing](https://godotengine.org/license/).
+
+Northern Italy geography and readability corrections now load in the regular campaign scene by default. See [audit and known limitations](../docs/northern-italy-audit/REPORT.md). Changes remain geographically scoped; approved settlement/research records are unchanged. Restart the app after updating the files.
+
+The accepted cartographic treatment now covers the Italian peninsula and Sicily in the regular campaign. See [regional rollout plan](../docs/map-rollout/ROLLOUT-PLAN.md) and [ten matched comparisons](../docs/map-rollout/REVIEW.html). Illyria is next, then Greece; later areas remain queued.
+
+
+The Alpine follow-up adds sourced crest terrain and static high-elevation rock/snow while retaining green valleys. [Matched review](../docs/alpine-correction/REVIEW.html); [source and historical limits](../docs/alpine-correction/REPORT.md). Restart the normal app to load it.
+

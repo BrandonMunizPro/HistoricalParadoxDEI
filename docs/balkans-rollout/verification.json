@@ -1,0 +1,127 @@
+{
+  "protectedSourcesUnchanged": true,
+  "existingGeometryAndOwnersPreserved": true,
+  "publishedGreekSampleAlignmentVerified": true,
+  "splitMeshEdgePositionsAndNormalsIdentical": true,
+  "approvedNewRegions": 0,
+  "testFiles": 37,
+  "tests": 514,
+  "nativeScopeAndFoundationPassed": true,
+  "normalStartupPassed": true,
+  "cameras": [
+    {
+      "name": "illyria-strategic",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 11.6514666666667,
+      "afterSubmittedMeanMs": 31.0550166666667,
+      "afterDrawCalls": 280
+    },
+    {
+      "name": "dalmatian-coast",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 8.21646666666667,
+      "afterSubmittedMeanMs": 26.1823,
+      "afterDrawCalls": 79
+    },
+    {
+      "name": "epirus",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 4.23496666666667,
+      "afterSubmittedMeanMs": 30.7472833333333,
+      "afterDrawCalls": 63
+    },
+    {
+      "name": "greece-strategic",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 5.54906666666667,
+      "afterSubmittedMeanMs": 24.191,
+      "afterDrawCalls": 161
+    },
+    {
+      "name": "greece-regional",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 4.277975,
+      "afterSubmittedMeanMs": 26.2365166666667,
+      "afterDrawCalls": 154
+    },
+    {
+      "name": "peloponnese",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 5.84824166666667,
+      "afterSubmittedMeanMs": 30.1669,
+      "afterDrawCalls": 101
+    },
+    {
+      "name": "macedonia",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 4.86230833333333,
+      "afterSubmittedMeanMs": 27.0303666666667,
+      "afterDrawCalls": 70
+    },
+    {
+      "name": "pindus-oblique",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 10.3676666666667,
+      "afterSubmittedMeanMs": 38.3136583333333,
+      "afterDrawCalls": 127
+    },
+    {
+      "name": "italy-control",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 23.681125,
+      "afterSubmittedMeanMs": 35.5962333333333,
+      "afterDrawCalls": 219
+    },
+    {
+      "name": "sicily-control",
+      "exactCameraMatch": true,
+      "beforeSubmittedMeanMs": 16.00275,
+      "afterSubmittedMeanMs": 26.1260166666667,
+      "afterDrawCalls": 106
+    }
+  ],
+  "controls": [
+    {
+      "name": "italy-control",
+      "fullFrameMeanAbsoluteChannelDelta": 1.7214305234053497,
+      "changedFraction": 0.06811197916666667,
+      "completedAreaCrop": [
+        200,
+        150,
+        1200,
+        950
+      ],
+      "completedAreaCropMeanAbsoluteChannelDelta": 0.00000375,
+      "completedAreaCropMaximumChannelDelta": 1,
+      "completedAreaCropChangedPixels": 9,
+      "notice": "Full frame includes newly treated neighbouring geography at the distant right edge. Completed-area crop differs only at isolated one-level 8-bit channels."
+    },
+    {
+      "name": "sicily-control",
+      "fullFrameMeanAbsoluteChannelDelta": 0.015091145833333333,
+      "changedFraction": 0.0013623649691358024,
+      "completedAreaCrop": [
+        200,
+        150,
+        1200,
+        950
+      ],
+      "completedAreaCropMeanAbsoluteChannelDelta": 0.0000033333333333333333,
+      "completedAreaCropMaximumChannelDelta": 1,
+      "completedAreaCropChangedPixels": 8,
+      "notice": "Full frame includes newly treated neighbouring geography at the distant right edge. Completed-area crop differs only at isolated one-level 8-bit channels."
+    }
+  ],
+  "runtime": {
+    "changedPaletteEntries": [
+      22
+    ],
+    "diagnosticNotice": "Nonhistorical temporary owner assignments for locality verification only; original owners restored.",
+    "geometryUnchanged": true,
+    "insidePixelDelta": 0.250919103622437,
+    "invalidStateRejectedAtomically": true,
+    "neighborPixelDelta": 0,
+    "sharedOwnerNeighborPreserved": true
+  },
+  "performanceNotice": "Uncapped hidden-window submitted timings, not sustained interactive frame rates. Driver/power/thermal conditions are not normalized; increased rendering cost remains unresolved."
+}

@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {PNG} from 'pngjs';
+const dir='godot-prototype/data/factions/';
+const data=JSON.parse(fs.readFileSync(dir+'scenario-278.json'));
+const image=PNG.sync.read(fs.readFileSync(dir+'territory-ids.png'));
+const inside=(p,r)=>{let yes=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>p[1])!==(b[1]>p[1])&&p[0]<(b[0]-a[0])*(p[1]-a[1])/(b[1]-a[1])+a[0])yes=!yes;}return yes;};
+const contains=(t,p)=>(t.geometry.type==='Polygon'?[t.geometry.coordinates]:t.geometry.coordinates).some(r=>inside(p,r[0])&&!r.slice(1).some(h=>inside(p,h)));
+const probes={Bononia:[11.34,44.50],Mediolanum:[9.19,45.46],Brixia:[10.21,45.54],Verona:[10.99,45.44],Patavium:[11.88,45.41],Mantua:[10.79,45.16],Ravenna:[12.20,44.42],Parma:[10.33,44.80],Aosta:[7.32,45.74],Como:[9.09,45.81]};
+const report=Object.entries(probes).map(([name,p])=>{const x=Math.floor((p[0]+12)/87*image.width),y=Math.floor((62-p[1])/50*image.height),at=(y*image.width+x)*4,id=image.data[at]+256*image.data[at+1];return {name,coordinate:p,purpose:'Geographic probe only; does not edit or endorse settlement catalog',polygonCandidates:data.territories.filter(t=>contains(t,p)).map(t=>({id:t.initialController,priority:t.priority,confidence:t.confidence})),rendered:id<2?['unassigned','disputed'][id]:data.territories[id-2].initialController};});
+fs.writeFileSync('docs/northern-italy-audit/probes.json',JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));
