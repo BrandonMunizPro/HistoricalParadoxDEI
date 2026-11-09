@@ -1,0 +1,72 @@
+{
+  "notice": "Interpretive potential floodplain/oasis habitat, not actual 278 BCE cultivation. No modern parcel or crop mask. No invented ancient distributaries or settlement anchors.",
+  "source": "data/geography/source-cache/rivers_lake_centerlines.json",
+  "sha256": "bb854a900ecbd3b408df46d5e16e3e0f974ba55993f9d8b5c26e855273c0905a",
+  "tuning": {
+    "valleyHeightMetres": [
+      5,
+      18
+    ],
+    "valleyDistanceKm": [
+      3,
+      9
+    ],
+    "deltaHeightMetres": [
+      20,
+      45
+    ],
+    "deltaDistanceKm": [
+      35,
+      75
+    ],
+    "oases": [
+      {
+        "researchId": "r16-egy-krokodilopolis",
+        "radiusKm": 23,
+        "maxHeightMetres": 45,
+        "strength": 0.7
+      },
+      {
+        "researchId": "r16-egy-kharga",
+        "radiusKm": 6,
+        "maxHeightMetres": 100,
+        "strength": 0.65
+      },
+      {
+        "researchId": "r16-egy-dakhla",
+        "radiusKm": 8,
+        "maxHeightMetres": 220,
+        "strength": 0.65
+      }
+    ]
+  },
+  "oases": [
+    {
+      "researchId": "r16-egy-krokodilopolis",
+      "radiusKm": 23,
+      "maxHeightMetres": 45,
+      "strength": 0.7,
+      "lat": 29.3083,
+      "lon": 30.8444,
+      "precision": "approximate representative point"
+    },
+    {
+      "researchId": "r16-egy-kharga",
+      "radiusKm": 6,
+      "maxHeightMetres": 100,
+      "strength": 0.65,
+      "lat": 25.44,
+      "lon": 30.55,
+      "precision": "approximate representative point"
+    },
+    {
+      "researchId": "r16-egy-dakhla",
+      "radiusKm": 8,
+      "maxHeightMetres": 220,
+      "strength": 0.65,
+      "lat": 25.5167,
+      "lon": 29.1667,
+      "precision": "approximate representative point"
+    }
+  ]
+}
