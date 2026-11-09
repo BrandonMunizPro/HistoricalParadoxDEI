@@ -1,0 +1,33 @@
+{
+  "suppressedReservoirs": [
+    {
+      "id": "source-lake-78-0",
+      "name": "Alcantara",
+      "source": "https://ceh.cedex.es/anuarioaforos/afo/embalse-datos.asp?ref_ceh=3019"
+    },
+    {
+      "id": "source-lake-84-0",
+      "name": "Cijara",
+      "source": "https://ceh.cedex.es/AnuarioAforos/afo/embalse-datos_anual.asp?ref_ceh=4002"
+    },
+    {
+      "id": "source-lake-90-0",
+      "name": "Mequinenza",
+      "source": "https://www.chebro.es/documents/20121/48992/Informe_Final_Embalse_de_Mequinenza_1996.pdf/e53f501d-7713-45de-5d2f-4bbd4e326955"
+    },
+    {
+      "id": "source-lake-91-0",
+      "name": "Ricobayo",
+      "source": "https://www.iberdrola.com/about-us/power/hydroelectric-power/ricobayo-hydroelectric-power-station"
+    }
+  ],
+  "bounds": {
+    "west": -10,
+    "east": 5,
+    "south": 35,
+    "north": 45
+  },
+  "sourceGeometry": "godot-prototype/data/hydrology.json",
+  "geometrySha256": "65d6abed760cd21b7e92a72ca3c6ae75015ca99c01027a9548d4c846af9b1dce",
+  "notice": "Confirmed modern reservoirs suppressed. Existing source river lines retained. Pre-dam elevations and banks are missing; modern DEM remains a surface proxy."
+}

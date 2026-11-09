@@ -1,0 +1,130 @@
+{
+  "notice": "Physical Iberian authoring extent including a Pyrenean buffer and Balearic islands; no political boundaries.",
+  "bounds": {
+    "west": -10,
+    "east": 5,
+    "south": 35,
+    "north": 45
+  },
+  "northLimit": [
+    [
+      -10,
+      44.4
+    ],
+    [
+      -2,
+      44.1
+    ],
+    [
+      0,
+      43.7
+    ],
+    [
+      3,
+      43.1
+    ],
+    [
+      5,
+      42.9
+    ]
+  ],
+  "southLimit": [
+    [
+      -10,
+      35.75
+    ],
+    [
+      -6.5,
+      35.75
+    ],
+    [
+      -5.6,
+      35.98
+    ],
+    [
+      -4.5,
+      35.85
+    ],
+    [
+      0,
+      35.7
+    ],
+    [
+      5,
+      35.7
+    ]
+  ],
+  "oases": [],
+  "dryFertilityRules": [
+    0.55,
+    0.85
+  ],
+  "snowLatitudeRules": [
+    27,
+    31
+  ],
+  "modernReservoirs": [
+    {
+      "id": "source-lake-78-0",
+      "name": "Alcantara",
+      "source": "https://ceh.cedex.es/anuarioaforos/afo/embalse-datos.asp?ref_ceh=3019"
+    },
+    {
+      "id": "source-lake-84-0",
+      "name": "Cijara",
+      "source": "https://ceh.cedex.es/AnuarioAforos/afo/embalse-datos_anual.asp?ref_ceh=4002"
+    },
+    {
+      "id": "source-lake-90-0",
+      "name": "Mequinenza",
+      "source": "https://www.chebro.es/documents/20121/48992/Informe_Final_Embalse_de_Mequinenza_1996.pdf/e53f501d-7713-45de-5d2f-4bbd4e326955"
+    },
+    {
+      "id": "source-lake-91-0",
+      "name": "Ricobayo",
+      "source": "https://www.iberdrola.com/about-us/power/hydroelectric-power/ricobayo-hydroelectric-power-station"
+    }
+  ],
+  "climateNotice": "Broad presentation suitability within source-supported climatic zones; no ancient forest or crop-boundary reconstruction.",
+  "climateZones": [
+    {
+      "name": "Interior Meseta exposure",
+      "center": [
+        -4.3,
+        40.2
+      ],
+      "radiusDegrees": [
+        3,
+        2.3
+      ],
+      "minimumAridity": 0.43,
+      "fertilityMultiplier": 0.7
+    },
+    {
+      "name": "Ebro dry basin",
+      "center": [
+        -0.7,
+        41.4
+      ],
+      "radiusDegrees": [
+        1.6,
+        0.7
+      ],
+      "minimumAridity": 0.6,
+      "fertilityMultiplier": 0.65
+    },
+    {
+      "name": "Southeastern semiarid transition",
+      "center": [
+        -1.8,
+        37.5
+      ],
+      "radiusDegrees": [
+        1.9,
+        1.1
+      ],
+      "minimumAridity": 0.76,
+      "fertilityMultiplier": 0.65
+    }
+  ]
+}
