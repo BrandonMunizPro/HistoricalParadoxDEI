@@ -1,0 +1,38 @@
+{
+  "accessPaths": 42,
+  "archetypes": [
+    "stoa",
+    "meeting_hall",
+    "sanctuary",
+    "market",
+    "store",
+    "guard",
+    "court_c",
+    "court_a",
+    "street_house",
+    "court_b",
+    "workshop"
+  ],
+  "buildings": 42,
+  "categories": [
+    "civic",
+    "religious",
+    "commercial",
+    "military",
+    "residential"
+  ],
+  "coastAccepted": 24,
+  "connectedJunctions": 25,
+  "deterministic": true,
+  "footprintsAndMeshesChecked": true,
+  "passed": true,
+  "rejectedOnFlat": [
+    {
+      "id": "west_lower_0",
+      "reason": "blocked_access"
+    }
+  ],
+  "reusableAlternateCulture": true,
+  "roads": 40,
+  "steepAccepted": 0
+}

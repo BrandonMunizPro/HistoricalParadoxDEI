@@ -1,0 +1,368 @@
+{
+  "method": "120 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.207911655306816,
+          -0.978147625923157,
+          0.0,
+          0.978147625923157,
+          0.207911655306816
+        ],
+        "far": 42700.0,
+        "fov": 42.0,
+        "near": 212.5,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.12,
+        "city": 0.004,
+        "markers": 0.83,
+        "rivers": 0.002,
+        "scenery": 0.058,
+        "tile_upload": 0.005,
+        "ui": 0.021
+      },
+      "drawCalls": 293.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        27.32,
+        26.767,
+        27.603,
+        26.787,
+        27.746,
+        28.155,
+        27.268,
+        27.74,
+        27.143,
+        28.155,
+        26.961,
+        27.035,
+        27.526,
+        27.406,
+        26.786,
+        27.387,
+        28.371,
+        28.237,
+        27.032,
+        27.442,
+        26.858,
+        26.837,
+        26.611,
+        27.413,
+        26.811,
+        26.732,
+        27.985,
+        26.678,
+        27.43,
+        26.736
+      ],
+      "gpu": {
+        "meanMs": 26.26210009257,
+        "p95Ms": 27.048999786377,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "world-overview",
+      "political": 1.0,
+      "preset": [
+        29,
+        37,
+        8500,
+        78,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.126,
+        "base": 1.045,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.384999990463257,
+      "resident": [
+        "context"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1091975486,
+      "steady": {
+        "averageFps": 36.63191518979,
+        "maxMs": 28.371,
+        "meanMs": 27.2986,
+        "onePercentLowFps": 35.2472595255719,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 28.371,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3066179520
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.309016972780228,
+          -0.95105654001236,
+          0.0,
+          0.95105654001236,
+          0.309016972780228
+        ],
+        "far": 30200.0,
+        "fov": 42.0,
+        "near": 150.0,
+        "position": [
+          -153.269866943359,
+          5707.58203125,
+          3687.63647460938
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.207,
+        "city": 0.043,
+        "markers": 1.304,
+        "rivers": 0.002,
+        "scenery": 0.059,
+        "tile_upload": 0.004,
+        "ui": 0.032
+      },
+      "drawCalls": 268.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        27.849,
+        28.523,
+        27.94,
+        28.656,
+        27.994,
+        27.829,
+        29.099,
+        27.833,
+        28.48,
+        28.31,
+        27.889,
+        28.038,
+        27.235,
+        28.17,
+        28.217,
+        27.872,
+        28.098,
+        27.738,
+        28.747,
+        28.097,
+        27.727,
+        28.426,
+        28.349,
+        27.791,
+        29.377,
+        27.989,
+        28.521,
+        28.179,
+        28.138,
+        28.214
+      ],
+      "gpu": {
+        "meanMs": 27.2453667322795,
+        "p95Ms": 28.2119998931885,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "africa-overview",
+      "political": 1.0,
+      "preset": [
+        12,
+        25,
+        6000,
+        72,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.135,
+        "base": 1.656,
+        "previousRegions": 0.016
+      },
+      "renderCpuMs": 0.477999985218048,
+      "resident": [
+        "context",
+        "world-22-8",
+        "world-22-13",
+        "world-27-8",
+        "world-17-8",
+        "world-27-13",
+        "world-22-3",
+        "world-17-13",
+        "world-27-3",
+        "world-22-18",
+        "world-17-3",
+        "world-27-18",
+        "world-32-8"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1093354148,
+      "steady": {
+        "averageFps": 35.4893088457102,
+        "maxMs": 29.377,
+        "meanMs": 28.1775,
+        "onePercentLowFps": 34.0402355584301,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 29.377,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3076550592
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.499999970197678,
+          -0.866025447845459,
+          0.0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 11700.0,
+        "fov": 42.0,
+        "near": 57.5,
+        "position": [
+          -1020.93688964844,
+          1993.15893554688,
+          1977.85559082031
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.392,
+        "city": 0.048,
+        "markers": 2.608,
+        "rivers": 0.002,
+        "scenery": 0.078,
+        "tile_upload": 0.004,
+        "ui": 0.025
+      },
+      "drawCalls": 242.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        20.403,
+        21.756,
+        20.357,
+        20.408,
+        21.754,
+        20.453,
+        20.67,
+        20.74,
+        20.673,
+        20.516,
+        20.664,
+        21.312,
+        20.498,
+        20.812,
+        20.822,
+        20.783,
+        21.185,
+        21.93,
+        20.965,
+        21.604,
+        21.467,
+        21.461,
+        21.48,
+        21.991,
+        21.429,
+        21.462,
+        22.422,
+        21.676,
+        21.868,
+        21.57
+      ],
+      "gpu": {
+        "meanMs": 20.1590333938599,
+        "p95Ms": 20.9740009307861,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "maghreb-overview",
+      "political": 1.0,
+      "preset": [
+        2.5,
+        33.5,
+        2300,
+        60,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.142,
+        "base": 3.163,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.669000029563904,
+      "resident": [
+        "context",
+        "world-27-8",
+        "world-27-3",
+        "world-32-8",
+        "world-32--2",
+        "world-32-3",
+        "world-27--2",
+        "world-37--2",
+        "world-37-3",
+        "world-32--7",
+        "world-27--7",
+        "world-37--7",
+        "world-22--2"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1093392758,
+      "steady": {
+        "averageFps": 47.2343500789601,
+        "maxMs": 22.422,
+        "meanMs": 21.1710333333333,
+        "onePercentLowFps": 44.5990545000446,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 22.422,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3076550592
+    }
+  ]
+}

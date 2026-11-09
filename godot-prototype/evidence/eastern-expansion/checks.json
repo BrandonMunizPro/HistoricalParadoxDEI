@@ -1,0 +1,66 @@
+{
+  "regression": {
+    "command": "npm.cmd test -- --reporter=dot",
+    "exitCode": 0,
+    "testFiles": 37,
+    "passedTests": 514
+  },
+  "typecheck": {
+    "command": "npm.cmd run typecheck (via validate)",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "npm.cmd run build",
+    "exitCode": 0,
+    "log": "build.log"
+  },
+  "targetedLint": {
+    "command": "npm.cmd exec -- eslint godot-prototype/tools/eastern-build.mjs godot-prototype/tools/eastern-review.mjs",
+    "exitCode": 0
+  },
+  "fullLint": {
+    "command": "npm.cmd run lint",
+    "exitCode": 1,
+    "errorsInUnchangedFiles": 66,
+    "log": "lint-final.log"
+  },
+  "native": {
+    "completedRegionScopeZero": true,
+    "heightAndMorphAlignment": true,
+    "regions": [
+      {
+        "heightSamples": 8,
+        "readinessMs": 15380,
+        "region": "levant",
+        "resident": 10
+      },
+      {
+        "heightSamples": 8,
+        "readinessMs": 18650,
+        "region": "egypt",
+        "resident": 8
+      }
+    ],
+    "residencyBoundedAndReleased": true,
+    "sourceDepressionPreserved": true
+  },
+  "anatoliaNative": {
+    "passed": true,
+    "closeTiles": 14,
+    "log": "anatolia-regression-output.log"
+  },
+  "integrity": {
+    "protectedFiles": 460,
+    "changed": [],
+    "approvedSites": 35,
+    "researchRecords": 687,
+    "canonicalCoordinatesExact": true,
+    "researchCopyByteIdentical": true
+  },
+  "renderedComparisons": 20,
+  "camerasExact": true,
+  "postEgyptLevantPixelIdentical": true,
+  "finalLogsFreeOfScriptShaderLeakErrors": true,
+  "reviewLocalLinksChecked": 41,
+  "finalSourceFilesVerified": 170
+}

@@ -1,0 +1,401 @@
+{
+  "notice": "180 uncapped submitted intervals, hidden-window GPU/CPU diagnostics; not sustained interactive FPS.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0375000014901161,
+        "position": [
+          63.3345527648926,
+          1.13715803623199,
+          74.17529296875
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 409.0,
+        "p95Ms": 409.0,
+        "samples": 180
+      },
+      "geometry": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "gpu": {
+        "meanMs": 10.2422888835271,
+        "p95Ms": 12.8470001220703,
+        "samples": 180
+      },
+      "name": "close",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 11.1854611111111,
+        "p95Ms": 13.765,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          0.70710676908493,
+          0.0,
+          -0.70710676908493,
+          -0.374709367752075,
+          0.848048210144043,
+          -0.374709367752075,
+          0.599660634994507,
+          0.52991908788681,
+          0.599660634994507
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0199999995529652,
+        "position": [
+          63.814281463623,
+          0.500433385372162,
+          73.5943603515625
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 441.0,
+        "p95Ms": 441.0,
+        "samples": 180
+      },
+      "geometry": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "gpu": {
+        "meanMs": 12.7500222259098,
+        "p95Ms": 15.3459997177124,
+        "samples": 180
+      },
+      "name": "oblique",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 25.7870833333333,
+        "p95Ms": 27.522,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.422620952129364,
+          -0.906306505203247,
+          0.0,
+          0.906306505203247,
+          0.422620952129364
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0162499994039536,
+        "position": [
+          63.3345527648926,
+          0.665598034858704,
+          73.3893356323242
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 344.0,
+        "p95Ms": 344.0,
+        "samples": 180
+      },
+      "geometry": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "gpu": {
+        "meanMs": 10.3395888752408,
+        "p95Ms": 12.9049997329712,
+        "samples": 180
+      },
+      "name": "district",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 20.8669444444444,
+        "p95Ms": 23.009,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.100000001490116,
+        "position": [
+          63.3345527648926,
+          2.90492510795593,
+          75.9430618286133
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 430.0,
+        "p95Ms": 430.0,
+        "samples": 180
+      },
+      "geometry": {
+        "agora": true,
+        "assetWaitMs": 42.894,
+        "attachActiveCpuMs": 415.372,
+        "attachWallMs": 1846.607,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "far",
+        "instancedTriangles": 45224,
+        "longestActiveChunkMs": 6.169,
+        "mainPassSurfaceGroups": 41,
+        "paths": 42,
+        "planningMs": 251.653,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 141.984
+      },
+      "gpu": {
+        "meanMs": 10.1531388865577,
+        "p95Ms": 12.8909997940063,
+        "samples": 180
+      },
+      "name": "regional",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 11.0603611111111,
+        "p95Ms": 13.745,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1595141632.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707106709480286,
+          -0.70710688829422,
+          0.0,
+          0.70710688829422,
+          0.707106709480286
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          -83.4990921020508,
+          8.52100467681885,
+          -35.3665008544922
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 685.0,
+        "p95Ms": 685.0,
+        "samples": 180
+      },
+      "geometry": {},
+      "gpu": {
+        "meanMs": 11.1932833353678,
+        "p95Ms": 13.8369998931885,
+        "samples": 180
+      },
+      "name": "roma-control",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 12.22075,
+        "p95Ms": 14.802,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1660176896.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          140.202011108398,
+          8.5310640335083,
+          451.682708740234
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 502.0,
+        "p95Ms": 502.0,
+        "samples": 180
+      },
+      "geometry": {},
+      "gpu": {
+        "meanMs": 11.8116444269816,
+        "p95Ms": 12.5559997558594,
+        "samples": 180
+      },
+      "name": "catana-control",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 12.6946444444445,
+        "p95Ms": 13.438,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1660176896.0
+    }
+  ]
+}

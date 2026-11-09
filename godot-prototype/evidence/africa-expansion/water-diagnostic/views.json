@@ -1,0 +1,231 @@
+{
+  "method": "120 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.207911655306816,
+          -0.978147625923157,
+          0.0,
+          0.978147625923157,
+          0.207911655306816
+        ],
+        "far": 42700.0,
+        "fov": 42.0,
+        "near": 212.5,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.175,
+        "city": 0.005,
+        "markers": 0.866,
+        "rivers": 0.001,
+        "scenery": 0.057,
+        "tile_upload": 0.003,
+        "ui": 0.022
+      },
+      "drawCalls": 293.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        36.999,
+        37.798,
+        37.184,
+        38.207,
+        36.83,
+        36.816,
+        37.703,
+        36.836,
+        37.178,
+        36.9,
+        37.437,
+        37.557,
+        36.84,
+        37.108,
+        37.971,
+        37.337,
+        37.351,
+        37.074,
+        37.491,
+        36.815,
+        37.148,
+        37.148,
+        37.268,
+        36.908,
+        37.501,
+        36.744,
+        37.181,
+        37.193,
+        38.098,
+        36.853
+      ],
+      "gpu": {
+        "meanMs": 36.2872332255046,
+        "p95Ms": 36.9290008544922,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "source-water",
+      "political": 1.0,
+      "preset": [
+        29,
+        37,
+        8500,
+        78,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.087,
+        "base": 1.134,
+        "previousRegions": 0.016
+      },
+      "renderCpuMs": 0.344999998807907,
+      "resident": [
+        "context"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1031737220,
+      "steady": {
+        "averageFps": 26.8462621949146,
+        "maxMs": 38.207,
+        "meanMs": 37.2491333333333,
+        "onePercentLowFps": 26.1732143324522,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 38.207,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3066162048
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.207911655306816,
+          -0.978147625923157,
+          0.0,
+          0.978147625923157,
+          0.207911655306816
+        ],
+        "far": 42700.0,
+        "fov": 42.0,
+        "near": 212.5,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.174,
+        "city": 0.004,
+        "markers": 0.828,
+        "rivers": 0.001,
+        "scenery": 0.06,
+        "tile_upload": 0.004,
+        "ui": 0.019
+      },
+      "drawCalls": 293.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        35.601,
+        35.551,
+        35.716,
+        36.037,
+        36.011,
+        36.406,
+        36.101,
+        36.746,
+        35.287,
+        35.115,
+        36.556,
+        36.514,
+        36.311,
+        35.864,
+        36.282,
+        36.372,
+        35.954,
+        36.912,
+        36.027,
+        36.366,
+        35.778,
+        36.613,
+        36.456,
+        36.315,
+        35.815,
+        36.596,
+        35.178,
+        36.174,
+        35.911,
+        36.888
+      ],
+      "gpu": {
+        "meanMs": 35.2020997365316,
+        "p95Ms": 36.0229988098145,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "legacy-water",
+      "political": 1.0,
+      "preset": [
+        29,
+        37,
+        8500,
+        78,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.081,
+        "base": 1.096,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.349999994039536,
+      "resident": [
+        "context"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1031777888,
+      "steady": {
+        "averageFps": 27.6892490952538,
+        "maxMs": 36.912,
+        "meanMs": 36.1151,
+        "onePercentLowFps": 27.0914607715648,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 36.912,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3066162048
+    }
+  ]
+}

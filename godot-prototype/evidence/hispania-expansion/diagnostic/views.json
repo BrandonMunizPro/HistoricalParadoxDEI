@@ -1,0 +1,749 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.207911655306816,
+          -0.978147625923157,
+          0.0,
+          0.978147625923157,
+          0.207911655306816
+        ],
+        "far": 42700.0,
+        "fov": 42.0,
+        "near": 212.5,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.232,
+        "city": 0.007,
+        "markers": 1.466,
+        "rivers": 0.001,
+        "scenery": 0.132,
+        "tile_upload": 0.007,
+        "ui": 0.039
+      },
+      "drawCalls": 294.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        26.271,
+        28.432,
+        26.73,
+        26.842,
+        28.186,
+        26.514,
+        28.326,
+        28.057,
+        28.112,
+        26.677,
+        27.632,
+        27.697,
+        27.0,
+        27.697,
+        27.164,
+        27.713,
+        28.401,
+        26.814,
+        28.6,
+        27.093,
+        28.55,
+        28.54,
+        27.291,
+        30.602,
+        29.948,
+        30.301,
+        29.917,
+        27.596,
+        28.704,
+        26.813
+      ],
+      "gpu": {
+        "meanMs": 26.6601666768392,
+        "p95Ms": 28.9330005645752,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "world-overview",
+      "political": 1.0,
+      "preset": [
+        29,
+        37,
+        8500,
+        78,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.272,
+        "base": 1.896,
+        "previousRegions": 0.028
+      },
+      "renderCpuMs": 1.04999995231628,
+      "resident": [
+        "context"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1188435114,
+      "steady": {
+        "averageFps": 35.7901266970485,
+        "maxMs": 30.602,
+        "meanMs": 27.9406666666667,
+        "onePercentLowFps": 32.6776027710607,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.602,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3217988224
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.499999970197678,
+          -0.866025447845459,
+          0.0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 9200.0,
+        "fov": 42.0,
+        "near": 45.0,
+        "position": [
+          -1397.31213378906,
+          1560.02563476563,
+          933.871704101563
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.728,
+        "city": 0.11,
+        "markers": 5.945,
+        "rivers": 0.005,
+        "scenery": 0.134,
+        "tile_upload": 0.01,
+        "ui": 0.038
+      },
+      "drawCalls": 214.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        18.002,
+        17.013,
+        17.361,
+        18.092,
+        16.633,
+        17.002,
+        17.02,
+        17.777,
+        18.573,
+        16.52,
+        16.602,
+        16.688,
+        16.369,
+        18.185,
+        17.064,
+        17.335,
+        17.21,
+        17.137,
+        17.476,
+        16.361,
+        16.798,
+        16.959,
+        16.741,
+        17.117,
+        16.156,
+        17.202,
+        17.108,
+        16.256,
+        16.955,
+        16.18
+      ],
+      "gpu": {
+        "meanMs": 15.7669333775838,
+        "p95Ms": 16.6940002441406,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "hispania-overview",
+      "political": 1.0,
+      "preset": [
+        -3,
+        40,
+        1800,
+        60,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.259,
+        "base": 6.981,
+        "previousRegions": 0.025
+      },
+      "renderCpuMs": 0.828000009059906,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-32--2",
+        "world-37--12",
+        "world-42--12",
+        "world-32--12",
+        "world-37-3",
+        "world-42-3",
+        "world-47--7"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1189860720,
+      "steady": {
+        "averageFps": 58.6061122267978,
+        "maxMs": 18.573,
+        "meanMs": 17.0630666666667,
+        "onePercentLowFps": 53.8415980186292,
+        "over16_67ms": 22,
+        "over33_33ms": 0,
+        "p99Ms": 18.573,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3228359296
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.642787635326386,
+          -0.766044437885284,
+          0.0,
+          0.766044437885284,
+          0.642787635326386
+        ],
+        "far": 2800.0,
+        "fov": 42.0,
+        "near": 13.0,
+        "position": [
+          -1397.31213378906,
+          399.523010253906,
+          368.121276855469
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.451,
+        "city": 0.057,
+        "markers": 3.504,
+        "rivers": 0.002,
+        "scenery": 0.085,
+        "tile_upload": 0.005,
+        "ui": 0.045
+      },
+      "drawCalls": 74.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        16.116,
+        17.066,
+        16.914,
+        16.879,
+        17.244,
+        16.507,
+        17.474,
+        16.297,
+        16.61,
+        18.042,
+        17.513,
+        16.288,
+        17.379,
+        16.695,
+        17.033,
+        16.506,
+        17.75,
+        16.388,
+        17.455,
+        16.309,
+        18.082,
+        17.741,
+        17.248,
+        16.226,
+        17.733,
+        17.165,
+        16.271,
+        17.517,
+        16.76,
+        16.542
+      ],
+      "gpu": {
+        "meanMs": 15.7805665651957,
+        "p95Ms": 16.6749992370605,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "hispania-strategic",
+      "political": 1.0,
+      "preset": [
+        -3,
+        40,
+        520,
+        50,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.191,
+        "base": 4.158,
+        "previousRegions": 0.034
+      },
+      "renderCpuMs": 0.569999992847443,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-32--2",
+        "world-37--12",
+        "world-42--12",
+        "world-32--12",
+        "world-37-3",
+        "world-42-3",
+        "world-47--7"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1189914972,
+      "steady": {
+        "averageFps": 58.8523786169691,
+        "maxMs": 18.082,
+        "meanMs": 16.9916666666667,
+        "onePercentLowFps": 55.3036168565424,
+        "over16_67ms": 19,
+        "over33_33ms": 0,
+        "p99Ms": 18.082,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3228359296
+    },
+    {
+      "camera": {
+        "basis": [
+          0.939692616462708,
+          0.0,
+          -0.342020213603973,
+          -0.191255271434784,
+          0.829037606716156,
+          -0.525469422340393,
+          0.283547610044479,
+          0.559192895889282,
+          0.779040515422821
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 1.125,
+        "position": [
+          -1786.7470703125,
+          25.4783821105957,
+          -311.618316650391
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.522,
+        "city": 0.046,
+        "markers": 2.094,
+        "rivers": 0.091,
+        "scenery": 0.941,
+        "tile_upload": 0.005,
+        "ui": 0.021
+      },
+      "drawCalls": 116.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 9,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        12.92,
+        13.208,
+        13.504,
+        13.711,
+        12.688,
+        13.281,
+        13.963,
+        12.96,
+        14.665,
+        13.709,
+        13.081,
+        12.997,
+        12.573,
+        12.503,
+        14.111,
+        13.12,
+        12.708,
+        12.595,
+        12.931,
+        12.558,
+        13.86,
+        13.433,
+        13.395,
+        13.174,
+        13.114,
+        12.659,
+        13.013,
+        12.989,
+        14.033,
+        12.975
+      ],
+      "gpu": {
+        "meanMs": 11.8631667137146,
+        "p95Ms": 12.7720003128052,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "galicia-close",
+      "political": 0.0,
+      "preset": [
+        -8.7,
+        42.5,
+        45,
+        34,
+        20
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.202,
+        "base": 3.727,
+        "previousRegions": 0.017
+      },
+      "renderCpuMs": 0.444000005722046,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-37--12",
+        "world-42--12",
+        "world-32--12",
+        "world-47--7",
+        "world-47--12",
+        "world-47--2",
+        "world-52--12"
+      ],
+      "sceneryInstances": 26850,
+      "staticMemoryBytes": 1201590048,
+      "steady": {
+        "averageFps": 75.6752120797818,
+        "maxMs": 14.665,
+        "meanMs": 13.2143666666667,
+        "onePercentLowFps": 68.1895669962496,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.665,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3238270176
+    },
+    {
+      "camera": {
+        "basis": [
+          0.906307458877563,
+          0.0,
+          -0.422618925571442,
+          -0.223953932523727,
+          0.848048090934753,
+          -0.480269849300385,
+          0.35840117931366,
+          0.529919326305389,
+          0.768592298030853
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 1.125,
+        "position": [
+          -1075.35827636719,
+          26.670804977417,
+          -178.892272949219
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.348,
+        "city": 0.04,
+        "markers": 2.094,
+        "rivers": 0.06,
+        "scenery": 1.51,
+        "tile_upload": 0.004,
+        "ui": 0.023
+      },
+      "drawCalls": 124.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 9,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        16.167,
+        15.946,
+        17.584,
+        17.114,
+        16.318,
+        17.082,
+        16.204,
+        17.37,
+        16.165,
+        16.387,
+        16.051,
+        16.65,
+        16.606,
+        17.197,
+        16.652,
+        16.986,
+        16.494,
+        16.764,
+        16.052,
+        17.282,
+        15.823,
+        16.695,
+        16.786,
+        18.438,
+        15.988,
+        15.516,
+        16.272,
+        17.664,
+        17.08,
+        14.899
+      ],
+      "gpu": {
+        "meanMs": 14.9174332936605,
+        "p95Ms": 15.7180004119873,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "pyrenees-close",
+      "political": 0.0,
+      "preset": [
+        0.1,
+        42.65,
+        45,
+        32,
+        25
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.392,
+        "base": 4.085,
+        "previousRegions": 0.018
+      },
+      "renderCpuMs": 0.805000007152557,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-42--12",
+        "world-47--7",
+        "world-47--2",
+        "world-42-3",
+        "world-37-3",
+        "world-32--2",
+        "world-47-3"
+      ],
+      "sceneryInstances": 59250,
+      "staticMemoryBytes": 1214742768,
+      "steady": {
+        "averageFps": 60.2129128598725,
+        "maxMs": 18.438,
+        "meanMs": 16.6077333333333,
+        "onePercentLowFps": 54.2358173337672,
+        "over16_67ms": 13,
+        "over33_33ms": 0,
+        "p99Ms": 18.438,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3240862176
+    },
+    {
+      "camera": {
+        "basis": [
+          0.906307518482208,
+          0.0,
+          -0.42261877655983,
+          -0.223953783512115,
+          0.848048150539398,
+          -0.480269700288773,
+          0.35840106010437,
+          0.529919147491455,
+          0.768592417240143
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 1.125,
+        "position": [
+          -1476.39514160156,
+          27.9697570800781,
+          386.792083740234
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.678,
+        "city": 0.049,
+        "markers": 2.266,
+        "rivers": 0.075,
+        "scenery": 1.599,
+        "tile_upload": 0.005,
+        "ui": 0.023
+      },
+      "drawCalls": 78.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "egypt": 0,
+        "hispania": 6,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        18.263,
+        16.002,
+        18.24,
+        17.517,
+        17.063,
+        16.561,
+        17.277,
+        16.616,
+        17.336,
+        17.54,
+        16.183,
+        18.141,
+        15.81,
+        16.983,
+        18.131,
+        17.379,
+        16.947,
+        16.023,
+        16.519,
+        18.832,
+        16.07,
+        16.913,
+        16.738,
+        16.151,
+        17.358,
+        16.983,
+        17.185,
+        17.17,
+        16.31,
+        16.803
+      ],
+      "gpu": {
+        "meanMs": 15.3621334393819,
+        "p95Ms": 16.5820007324219,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "sierra-nevada-close",
+      "political": 0.0,
+      "preset": [
+        -3.4,
+        37.05,
+        45,
+        32,
+        25
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.207,
+        "base": 4.701,
+        "previousRegions": 0.016
+      },
+      "renderCpuMs": 0.52700001001358,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-37-3",
+        "world-32--2",
+        "world-37--12",
+        "world-32--12",
+        "world-27--7",
+        "world-27--2",
+        "world-32-3"
+      ],
+      "sceneryInstances": 54313,
+      "staticMemoryBytes": 1213558074,
+      "steady": {
+        "averageFps": 58.7033601803367,
+        "maxMs": 18.832,
+        "meanMs": 17.0348,
+        "onePercentLowFps": 53.1011045029737,
+        "over16_67ms": 20,
+        "over33_33ms": 0,
+        "p99Ms": 18.832,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3238931888
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "notice": "180 uncapped submitted intervals, hidden-window GPU/CPU diagnostics; not sustained interactive FPS.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0375000014901161,
+        "position": [
+          63.3345527648926,
+          1.13715803623199,
+          74.17529296875
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 315.0,
+        "p95Ms": 315.0,
+        "samples": 180
+      },
+      "geometry": {
+        "assemblies": 3,
+        "assetWaitMs": 136.078,
+        "attachActiveCpuMs": 0.751,
+        "attachWallMs": 165.712,
+        "detail": "near",
+        "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+        "instanceCounts": [
+          13,
+          18,
+          14
+        ],
+        "instancedTriangles": 100392,
+        "longestActiveChunkMs": 0.489,
+        "mainPassSurfaceGroups": 7,
+        "uniqueTriangles": 6678
+      },
+      "gpu": {
+        "meanMs": 10.4892555660672,
+        "p95Ms": 13.418999671936,
+        "samples": 180
+      },
+      "name": "close",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 11.4485555555556,
+        "p95Ms": 14.284,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          0.70710676908493,
+          0.0,
+          -0.70710676908493,
+          -0.374709367752075,
+          0.848048210144043,
+          -0.374709367752075,
+          0.599660634994507,
+          0.52991908788681,
+          0.599660634994507
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0199999995529652,
+        "position": [
+          63.814281463623,
+          0.500433385372162,
+          73.5943603515625
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 366.0,
+        "p95Ms": 366.0,
+        "samples": 180
+      },
+      "geometry": {
+        "assemblies": 3,
+        "assetWaitMs": 136.078,
+        "attachActiveCpuMs": 0.751,
+        "attachWallMs": 165.712,
+        "detail": "near",
+        "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+        "instanceCounts": [
+          13,
+          18,
+          14
+        ],
+        "instancedTriangles": 100392,
+        "longestActiveChunkMs": 0.489,
+        "mainPassSurfaceGroups": 7,
+        "uniqueTriangles": 6678
+      },
+      "gpu": {
+        "meanMs": 12.9750222100152,
+        "p95Ms": 15.9759998321533,
+        "samples": 180
+      },
+      "name": "oblique",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 26.28545,
+        "p95Ms": 28.992,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.422620952129364,
+          -0.906306505203247,
+          0.0,
+          0.906306505203247,
+          0.422620952129364
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.0162499994039536,
+        "position": [
+          63.3345527648926,
+          0.665598034858704,
+          73.3893356323242
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 231.0,
+        "p95Ms": 231.0,
+        "samples": 180
+      },
+      "geometry": {
+        "assemblies": 3,
+        "assetWaitMs": 136.078,
+        "attachActiveCpuMs": 0.751,
+        "attachWallMs": 165.712,
+        "detail": "near",
+        "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+        "instanceCounts": [
+          13,
+          18,
+          14
+        ],
+        "instancedTriangles": 100392,
+        "longestActiveChunkMs": 0.489,
+        "mainPassSurfaceGroups": 7,
+        "uniqueTriangles": 6678
+      },
+      "gpu": {
+        "meanMs": 10.5235388490889,
+        "p95Ms": 13.3400001525879,
+        "samples": 180
+      },
+      "name": "district",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 21.3761611111111,
+        "p95Ms": 23.462,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.100000001490116,
+        "position": [
+          63.3345527648926,
+          2.90492510795593,
+          75.9430618286133
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 362.0,
+        "p95Ms": 362.0,
+        "samples": 180
+      },
+      "geometry": {
+        "assemblies": 3,
+        "assetWaitMs": 0.086,
+        "attachActiveCpuMs": 0.319,
+        "attachWallMs": 30.878,
+        "detail": "far",
+        "foundationNotice": "Original slot origins and terrain sampling preserved. Foundation skirts retained; no terrain flattening. Live contact inspection remains necessary.",
+        "instanceCounts": [
+          13,
+          18,
+          14
+        ],
+        "instancedTriangles": 60392,
+        "longestActiveChunkMs": 0.13,
+        "mainPassSurfaceGroups": 7,
+        "uniqueTriangles": 4000
+      },
+      "gpu": {
+        "meanMs": 9.92747776243422,
+        "p95Ms": 12.581000328064,
+        "samples": 180
+      },
+      "name": "regional",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 10.8605055555556,
+        "p95Ms": 13.42,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1599335936.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707106709480286,
+          -0.70710688829422,
+          0.0,
+          0.70710688829422,
+          0.707106709480286
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          -83.4990921020508,
+          8.52100467681885,
+          -35.3665008544922
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 685.0,
+        "p95Ms": 685.0,
+        "samples": 180
+      },
+      "geometry": {},
+      "gpu": {
+        "meanMs": 10.479872253206,
+        "p95Ms": 12.8850002288818,
+        "samples": 180
+      },
+      "name": "roma-control",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 11.4476777777778,
+        "p95Ms": 13.89,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1664371200.0
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.707107186317444,
+          -0.707106351852417,
+          0.0,
+          0.707106351852417,
+          0.707107186317444
+        ],
+        "far": 500.0,
+        "fov": 42.0,
+        "near": 0.300000011920929,
+        "position": [
+          140.202011108398,
+          8.5310640335083,
+          451.682708740234
+        ]
+      },
+      "drawCalls": {
+        "meanMs": 502.0,
+        "p95Ms": 502.0,
+        "samples": 180
+      },
+      "geometry": {},
+      "gpu": {
+        "meanMs": 11.2863166544173,
+        "p95Ms": 13.7480001449585,
+        "samples": 180
+      },
+      "name": "catana-control",
+      "settlementCpu": {
+        "meanMs": 0.0,
+        "p95Ms": 0.0,
+        "samples": 180
+      },
+      "submitted": {
+        "meanMs": 12.21905,
+        "p95Ms": 14.625,
+        "samples": 180
+      },
+      "textureMemoryBytes": 1664371200.0
+    }
+  ]
+}

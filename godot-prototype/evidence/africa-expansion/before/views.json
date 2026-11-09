@@ -1,0 +1,4123 @@
+{
+  "method": "30 uncapped submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out. Metadata sample count corrected from inherited label; raw samples unchanged.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.207911655306816,
+          -0.978147625923157,
+          0,
+          0.978147625923157,
+          0.207911655306816
+        ],
+        "far": 42700,
+        "fov": 42,
+        "near": 212.5,
+        "position": [
+          1371.10949707031,
+          8315.7763671875,
+          2147.64794921875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.123,
+        "city": 0.005,
+        "markers": 0.892,
+        "rivers": 0.002,
+        "scenery": 0.06,
+        "tile_upload": 0.004,
+        "ui": 0.021
+      },
+      "drawCalls": 286,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        17.657,
+        17.067,
+        16.347,
+        19.428,
+        19.077,
+        18.076,
+        20.814,
+        17.462,
+        20.967,
+        17.612,
+        17.296,
+        18.078,
+        17.157,
+        18.336,
+        16.566,
+        20.118,
+        17.858,
+        23.077,
+        17.436,
+        18.067,
+        17.063,
+        24.712,
+        18.312,
+        20.177,
+        21.954,
+        16.38,
+        16.997,
+        17.471,
+        18.341,
+        16.023
+      ],
+      "gpu": {
+        "meanMs": 20.7210006713867,
+        "p95Ms": 20.7210006713867,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "world-overview",
+      "political": 1,
+      "preset": [
+        29,
+        37,
+        8500,
+        78,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.037,
+        "base": 1.113,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.986000001430511,
+      "resident": [
+        "context"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 475429881,
+      "steady": {
+        "averageFps": 53.964016793602,
+        "maxMs": 24.712,
+        "meanMs": 18.5308666666667,
+        "onePercentLowFps": 40.4661702816445,
+        "over16_67ms": 26,
+        "over33_33ms": 0,
+        "p99Ms": 24.712,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2043058944
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.309016972780228,
+          -0.95105654001236,
+          0,
+          0.95105654001236,
+          0.309016972780228
+        ],
+        "far": 30200,
+        "fov": 42,
+        "near": 150,
+        "position": [
+          -153.269866943359,
+          5707.58203125,
+          3687.63647460938
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.265,
+        "city": 0.074,
+        "markers": 1.351,
+        "rivers": 0.002,
+        "scenery": 0.088,
+        "tile_upload": 0.005,
+        "ui": 0.021
+      },
+      "drawCalls": 261,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        28.128,
+        22.116,
+        24.938,
+        27.013,
+        33.544,
+        26.708,
+        28.056,
+        25.953,
+        21.723,
+        22.945,
+        24.314,
+        24.613,
+        32.763,
+        21.779,
+        24.115,
+        22.522,
+        24.22,
+        23.035,
+        24.616,
+        23.893,
+        23.52,
+        22.698,
+        27.405,
+        25.406,
+        26.123,
+        27.104,
+        20.611,
+        20.191,
+        21.386,
+        21.718
+      ],
+      "gpu": {
+        "meanMs": 8.99699974060059,
+        "p95Ms": 8.99699974060059,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "africa-overview",
+      "political": 1,
+      "preset": [
+        12,
+        25,
+        6000,
+        72,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 1.812,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.42399999499321,
+      "resident": [
+        "context",
+        "world-22-8",
+        "world-22-13",
+        "world-27-8",
+        "world-17-8",
+        "world-27-13",
+        "world-22-3",
+        "world-17-13",
+        "world-27-3",
+        "world-22-18",
+        "world-17-3",
+        "world-27-18",
+        "world-32-8"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 476743523,
+      "steady": {
+        "averageFps": 40.3683748768765,
+        "maxMs": 33.544,
+        "meanMs": 24.7718666666667,
+        "onePercentLowFps": 29.8115907464822,
+        "over16_67ms": 30,
+        "over33_33ms": 1,
+        "p99Ms": 33.544,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2053430016
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.529919266700745,
+          -0.848048090934753,
+          0,
+          0.848048090934753,
+          0.529919266700745
+        ],
+        "far": 8700,
+        "fov": 42,
+        "near": 42.5,
+        "position": [
+          626.844787597656,
+          1441.71875,
+          2113.26879882813
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.606,
+        "city": 0.129,
+        "markers": 2.186,
+        "rivers": 0.006,
+        "scenery": 0.14,
+        "tile_upload": 0.013,
+        "ui": 0.024
+      },
+      "drawCalls": 89,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        16.816,
+        14.815,
+        14.244,
+        14.216,
+        14.84,
+        14.792,
+        14.22,
+        14.583,
+        14.691,
+        14.906,
+        14.145,
+        14.672,
+        14.063,
+        14.985,
+        14.371,
+        14.327,
+        16.111,
+        14.378,
+        14.928,
+        14.01,
+        14.294,
+        14.759,
+        15.219,
+        15.073,
+        16.294,
+        15.089,
+        14.916,
+        15.067,
+        15.834,
+        14.8
+      ],
+      "gpu": {
+        "meanMs": 7.73899984359741,
+        "p95Ms": 7.73899984359741,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "libya-overview",
+      "political": 1,
+      "preset": [
+        20,
+        30.4,
+        1700,
+        58,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.041,
+        "base": 3.116,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.569000005722046,
+      "resident": [
+        "context",
+        "world-22-13",
+        "world-27-8",
+        "world-27-13",
+        "world-22-18",
+        "world-27-18",
+        "world-32-18",
+        "world-27-23",
+        "world-32-13",
+        "world-32-23",
+        "world-22-23",
+        "world-37-18",
+        "world-37-13"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 476782121,
+      "steady": {
+        "averageFps": 67.3464164971782,
+        "maxMs": 16.816,
+        "meanMs": 14.8486,
+        "onePercentLowFps": 59.4671741198858,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 16.816,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2053430016
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.707106828689575,
+          -0.70710676908493,
+          0,
+          0.70710676908493,
+          0.707106828689575
+        ],
+        "far": 1900,
+        "fov": 42,
+        "near": 8.5,
+        "position": [
+          803.198913574219,
+          240.686904907227,
+          1248.55004882813
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.303,
+        "city": 0.063,
+        "markers": 2.014,
+        "rivers": 0.078,
+        "scenery": 0.111,
+        "tile_upload": 0.005,
+        "ui": 0.024
+      },
+      "drawCalls": 15,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        7.825,
+        7.909,
+        8.095,
+        7.89,
+        7.644,
+        7.655,
+        8.378,
+        7.982,
+        8.231,
+        8.968,
+        8.846,
+        9.456,
+        8.404,
+        8.487,
+        7.576,
+        8.073,
+        8.735,
+        8.71,
+        8.335,
+        8.253,
+        7.946,
+        7.923,
+        8.392,
+        8.795,
+        9.35,
+        9.339,
+        9.14,
+        8.591,
+        9.611,
+        8.855
+      ],
+      "gpu": {
+        "meanMs": 4.40999984741211,
+        "p95Ms": 4.40999984741211,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "cyrenaica",
+      "political": 1,
+      "preset": [
+        22,
+        32.1,
+        340,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.05,
+        "base": 2.605,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.35699999332428,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-22-18",
+        "world-27-18",
+        "world-32-18",
+        "world-27-23",
+        "world-32-13",
+        "world-32-23",
+        "world-22-23",
+        "world-37-18",
+        "world-37-23",
+        "world-32-28",
+        "world-27-28"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 476804865,
+      "steady": {
+        "averageFps": 118.39270069536,
+        "maxMs": 9.611,
+        "meanMs": 8.44646666666666,
+        "onePercentLowFps": 104.04744563521,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.611,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2053430016
+    },
+    {
+      "camera": {
+        "basis": [
+          0.906307876110077,
+          0,
+          -0.422618061304092,
+          -0.236325070261955,
+          0.829037487506866,
+          -0.506801009178162,
+          0.350366204977036,
+          0.559193015098572,
+          0.751363217830658
+        ],
+        "far": 500,
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          798.678039550781,
+          26.1266803741455,
+          971.082824707031
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.203,
+        "city": 0.04,
+        "markers": 1.291,
+        "rivers": 0.033,
+        "scenery": 0.387,
+        "tile_upload": 0.003,
+        "ui": 0.016
+      },
+      "drawCalls": 35,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        8.101,
+        8.081,
+        8,
+        8.913,
+        9,
+        8.287,
+        8.69,
+        7.858,
+        7.807,
+        7.617,
+        8.207,
+        7.983,
+        8.89,
+        8.623,
+        7.916,
+        8.06,
+        7.889,
+        7.626,
+        7.752,
+        7.833,
+        8.155,
+        8.101,
+        7.733,
+        8.301,
+        7.586,
+        8.013,
+        9.275,
+        8.916,
+        8.063,
+        7.945
+      ],
+      "gpu": {
+        "meanMs": 4.24700021743774,
+        "p95Ms": 4.24700021743774,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "akhdar-close",
+      "political": 0,
+      "preset": [
+        21.85,
+        32.75,
+        45,
+        34,
+        25
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.039,
+        "base": 1.978,
+        "previousRegions": 0.011
+      },
+      "renderCpuMs": 3.62800002098084,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-22-18",
+        "world-27-18",
+        "world-32-18",
+        "world-27-23",
+        "world-32-13",
+        "world-32-23",
+        "world-22-23",
+        "world-37-18",
+        "world-37-23",
+        "world-32-28",
+        "world-27-28"
+      ],
+      "sceneryInstances": 7782,
+      "staticMemoryBytes": 481768851,
+      "steady": {
+        "averageFps": 122.33862515853,
+        "maxMs": 9.275,
+        "meanMs": 8.17403333333333,
+        "onePercentLowFps": 107.816711590296,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.275,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055108640
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.70710676908493,
+          -0.70710676908493,
+          0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1850,
+        "fov": 42,
+        "near": 8.25,
+        "position": [
+          -18.8900737762451,
+          233.881637573242,
+          1261.87915039063
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.275,
+        "city": 0.045,
+        "markers": 1.538,
+        "rivers": 0.04,
+        "scenery": 0.209,
+        "tile_upload": 0.004,
+        "ui": 0.025
+      },
+      "drawCalls": 14,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        8.156,
+        8.244,
+        8.814,
+        8.315,
+        8.41,
+        9.506,
+        8.572,
+        8.316,
+        7.982,
+        8.108,
+        8.474,
+        8.959,
+        8.358,
+        8.446,
+        7.968,
+        9.564,
+        9.12,
+        8.945,
+        8.757,
+        7.801,
+        8.704,
+        8.857,
+        11.188,
+        8.309,
+        8.15,
+        8.688,
+        8.622,
+        8.505,
+        8.023,
+        8.966
+      ],
+      "gpu": {
+        "meanMs": 3.51600003242493,
+        "p95Ms": 3.51600003242493,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "tripolitania",
+      "political": 1,
+      "preset": [
+        13.3,
+        32.25,
+        330,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.053,
+        "base": 2.143,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.40599998831749,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-27-18",
+        "world-32-18",
+        "world-32-13",
+        "world-32-8",
+        "world-27-8",
+        "world-37-13",
+        "world-37-8",
+        "world-22-13",
+        "world-32-3",
+        "world-22-8",
+        "world-27-3"
+      ],
+      "sceneryInstances": 1906,
+      "staticMemoryBytes": 479504207,
+      "steady": {
+        "averageFps": 115.907536694394,
+        "maxMs": 11.188,
+        "meanMs": 8.62756666666667,
+        "onePercentLowFps": 89.3814801573114,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.188,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054638560
+    },
+    {
+      "camera": {
+        "basis": [
+          0.939692437648773,
+          0,
+          -0.342020601034164,
+          -0.191255673766136,
+          0.829037189483643,
+          -0.525469839572906,
+          0.283547788858414,
+          0.559193432331085,
+          0.779039978981018
+        ],
+        "far": 500,
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -72.5992279052734,
+          26.2070217132568,
+          1102.11340332031
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.157,
+        "city": 0.05,
+        "markers": 1.242,
+        "rivers": 0.043,
+        "scenery": 0.503,
+        "tile_upload": 0.004,
+        "ui": 0.015
+      },
+      "drawCalls": 37,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        9.538,
+        10.203,
+        9.554,
+        9.827,
+        10.26,
+        9.785,
+        9.564,
+        9.624,
+        9.739,
+        10.316,
+        9.408,
+        9.221,
+        9.266,
+        9.846,
+        9.399,
+        9.683,
+        9.089,
+        9.49,
+        10.453,
+        9.611,
+        9.526,
+        9.734,
+        10.134,
+        9.885,
+        9.651,
+        9.554,
+        10.178,
+        10.791,
+        9.719,
+        9.852
+      ],
+      "gpu": {
+        "meanMs": 5.80100011825562,
+        "p95Ms": 5.80100011825562,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "nafusa-close",
+      "political": 0,
+      "preset": [
+        12.6,
+        31.9,
+        45,
+        34,
+        20
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.034,
+        "base": 2.019,
+        "previousRegions": 0.009
+      },
+      "renderCpuMs": 0.361999988555908,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-27-18",
+        "world-32-18",
+        "world-32-13",
+        "world-32-8",
+        "world-27-8",
+        "world-37-13",
+        "world-37-8",
+        "world-22-13",
+        "world-32-3",
+        "world-22-8",
+        "world-27-3"
+      ],
+      "sceneryInstances": 4379,
+      "staticMemoryBytes": 481434385,
+      "steady": {
+        "averageFps": 102.424035506999,
+        "maxMs": 10.791,
+        "meanMs": 9.76333333333333,
+        "onePercentLowFps": 92.6698174404596,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.791,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054828912
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.669130563735962,
+          -0.743144869804382,
+          0,
+          0.743144869804382,
+          0.669130563735962
+        ],
+        "far": 2300,
+        "fov": 42,
+        "near": 10.5,
+        "position": [
+          0,
+          312.870819091797,
+          1926.72192382813
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.26,
+        "city": 0.043,
+        "markers": 1.528,
+        "rivers": 0.04,
+        "scenery": 0.375,
+        "tile_upload": 0.005,
+        "ui": 0.024
+      },
+      "drawCalls": 19,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        9.654,
+        9.12,
+        8.52,
+        9.506,
+        8.482,
+        8.795,
+        8.271,
+        8.404,
+        8.299,
+        8.794,
+        9.233,
+        8.501,
+        9.284,
+        8.549,
+        8.097,
+        8.506,
+        8.595,
+        8.615,
+        8.168,
+        8.471,
+        8.165,
+        8.534,
+        9.193,
+        9.863,
+        9.035,
+        9.202,
+        9.065,
+        8.706,
+        9.015,
+        9.008
+      ],
+      "gpu": {
+        "meanMs": 4.82399988174438,
+        "p95Ms": 4.82399988174438,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "fezzan",
+      "political": 1,
+      "preset": [
+        13.5,
+        26.7,
+        420,
+        48,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 2.282,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.412000000476837,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-27-18",
+        "world-32-13",
+        "world-32-8",
+        "world-27-8",
+        "world-22-13",
+        "world-22-8",
+        "world-27-3",
+        "world-22-18",
+        "world-17-13",
+        "world-17-8",
+        "world-22-3"
+      ],
+      "sceneryInstances": 3216,
+      "staticMemoryBytes": 480570131,
+      "steady": {
+        "averageFps": 113.787217902522,
+        "maxMs": 9.863,
+        "meanMs": 8.78833333333333,
+        "onePercentLowFps": 101.389029706986,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.863,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054735872
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.80901700258255,
+          -0.587785243988037,
+          0,
+          0.587785243988037,
+          0.80901700258255
+        ],
+        "far": 500,
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          1172.47119140625,
+          26.4513359069824,
+          1328.97546386719
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.208,
+        "city": 0.032,
+        "markers": 1.209,
+        "rivers": 0.029,
+        "scenery": 0.449,
+        "tile_upload": 0.003,
+        "ui": 0.016
+      },
+      "drawCalls": 38,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        8.959,
+        9.317,
+        8.978,
+        9.219,
+        9.076,
+        8.641,
+        9.582,
+        8.497,
+        8.733,
+        8.427,
+        9.354,
+        9.676,
+        8.649,
+        9.669,
+        11.085,
+        10.409,
+        9.826,
+        9.102,
+        8.559,
+        9.028,
+        9.454,
+        9.854,
+        9.569,
+        10.168,
+        11.178,
+        9.556,
+        9.066,
+        8.643,
+        8.394,
+        8.953
+      ],
+      "gpu": {
+        "meanMs": 5.31500005722046,
+        "p95Ms": 5.31500005722046,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "siwa",
+      "political": 0,
+      "preset": [
+        25.5167,
+        29.2,
+        45,
+        36,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 1.95,
+        "previousRegions": 0.011
+      },
+      "renderCpuMs": 0.298000007867813,
+      "resident": [
+        "context",
+        "world-27-13",
+        "world-27-18",
+        "world-22-18",
+        "world-27-23",
+        "world-22-23",
+        "world-27-28",
+        "world-32-23",
+        "world-22-28",
+        "world-32-28",
+        "world-32-18",
+        "world-17-23",
+        "world-27-33"
+      ],
+      "sceneryInstances": 7320,
+      "staticMemoryBytes": 482264649,
+      "steady": {
+        "averageFps": 107.288079221518,
+        "maxMs": 11.178,
+        "meanMs": 9.3207,
+        "onePercentLowFps": 89.4614421184469,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.178,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055067104
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.499999970197678,
+          -0.866025447845459,
+          0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 11700,
+        "fov": 42,
+        "near": 57.5,
+        "position": [
+          -1020.93688964844,
+          1993.15893554688,
+          1977.85559082031
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.298,
+        "city": 0.06,
+        "markers": 1.707,
+        "rivers": 0.002,
+        "scenery": 0.067,
+        "tile_upload": 0.004,
+        "ui": 0.024
+      },
+      "drawCalls": 236,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        17.762,
+        16.597,
+        16.72,
+        17.859,
+        18.367,
+        18.659,
+        18.482,
+        18.605,
+        19.037,
+        18.345,
+        18.876,
+        18.745,
+        19.901,
+        24.838,
+        20.136,
+        18.6,
+        16.351,
+        17.446,
+        16.651,
+        17.006,
+        16.317,
+        15.612,
+        16.028,
+        16.016,
+        16.829,
+        15.93,
+        16.898,
+        16.805,
+        16.595,
+        18.673
+      ],
+      "gpu": {
+        "meanMs": 7.69899988174438,
+        "p95Ms": 7.69899988174438,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "maghreb-overview",
+      "political": 1,
+      "preset": [
+        2.5,
+        33.5,
+        2300,
+        60,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.037,
+        "base": 2.17,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.425999999046326,
+      "resident": [
+        "context",
+        "world-32--2",
+        "world-32-3",
+        "world-27--2",
+        "world-27-3",
+        "world-37--2",
+        "world-37-3",
+        "world-32--7",
+        "world-27--7",
+        "world-32-8",
+        "world-27-8",
+        "world-37--7",
+        "world-22--2"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 478746127,
+      "steady": {
+        "averageFps": 56.1076968538544,
+        "maxMs": 24.838,
+        "meanMs": 17.8228666666667,
+        "onePercentLowFps": 40.2608905708994,
+        "over16_67ms": 21,
+        "over33_33ms": 0,
+        "p99Ms": 24.838,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054481504
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.669130682945251,
+          -0.743144750595093,
+          0,
+          0.743144750595093,
+          0.669130682945251
+        ],
+        "far": 2100,
+        "fov": 42,
+        "near": 9.5,
+        "position": [
+          -344.528747558594,
+          282.839447021484,
+          914.165954589844
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.193,
+        "city": 0.038,
+        "markers": 1.384,
+        "rivers": 0.034,
+        "scenery": 0.045,
+        "tile_upload": 0.004,
+        "ui": 0.019
+      },
+      "drawCalls": 29,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.274,
+        9.809,
+        11.762,
+        10.99,
+        10.768,
+        11.924,
+        10.872,
+        11.067,
+        10.835,
+        12.083,
+        13.73,
+        14.473,
+        10.595,
+        9.758,
+        10.149,
+        11.202,
+        10.102,
+        9.447,
+        9.026,
+        9.016,
+        9.296,
+        8.884,
+        9.975,
+        8.927,
+        8.774,
+        9.261,
+        9.002,
+        9.854,
+        9.199,
+        9.915
+      ],
+      "gpu": {
+        "meanMs": 4.12200021743774,
+        "p95Ms": 4.12200021743774,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "tunisia",
+      "political": 1,
+      "preset": [
+        9.7,
+        35.5,
+        380,
+        48,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.033,
+        "base": 1.721,
+        "previousRegions": 0.012
+      },
+      "renderCpuMs": 0.344999998807907,
+      "resident": [
+        "context",
+        "N36E9",
+        "N36E10",
+        "N37E9",
+        "N36E11",
+        "N37E10",
+        "N37E11",
+        "N36E12",
+        "N38E9",
+        "N37E12",
+        "N39E9",
+        "N38E12",
+        "N37E13"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 478897645,
+      "steady": {
+        "averageFps": 96.1634008507255,
+        "maxMs": 14.473,
+        "meanMs": 10.3989666666667,
+        "onePercentLowFps": 69.0941753610171,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.473,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054583568
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.80901700258255,
+          -0.587785243988037,
+          0,
+          0.587785243988037,
+          0.80901700258255
+        ],
+        "far": 500,
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -249.544845581055,
+          26.5757694244385,
+          555.106506347656
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.242,
+        "city": 0.043,
+        "markers": 1.503,
+        "rivers": 0.043,
+        "scenery": 0.867,
+        "tile_upload": 0.004,
+        "ui": 0.049
+      },
+      "drawCalls": 111,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.424,
+        9.186,
+        9.282,
+        11.058,
+        9.739,
+        10.225,
+        9.914,
+        10.071,
+        10.07,
+        9.787,
+        9.931,
+        9.773,
+        13.563,
+        10.441,
+        9.693,
+        11.373,
+        10.778,
+        12.863,
+        10.19,
+        9.528,
+        9.845,
+        11.06,
+        11.257,
+        13.626,
+        12.342,
+        11.477,
+        11.123,
+        11.381,
+        11.51,
+        11.743
+      ],
+      "gpu": {
+        "meanMs": 5.27400016784668,
+        "p95Ms": 5.27400016784668,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "cape-bon-close",
+      "political": 0,
+      "preset": [
+        10.7,
+        36.8,
+        45,
+        36,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.048,
+        "base": 2.757,
+        "previousRegions": 0.018
+      },
+      "renderCpuMs": 0.284999996423721,
+      "resident": [
+        "context",
+        "N36E9",
+        "N36E10",
+        "N37E9",
+        "N36E11",
+        "N37E10",
+        "N37E11",
+        "N36E12",
+        "N38E9",
+        "N37E12",
+        "N39E9",
+        "N38E12",
+        "N37E13"
+      ],
+      "sceneryInstances": 23010,
+      "staticMemoryBytes": 488656061,
+      "steady": {
+        "averageFps": 92.5203467662597,
+        "maxMs": 13.626,
+        "meanMs": 10.8084333333333,
+        "onePercentLowFps": 73.3891090562161,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.626,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2056404032
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.642787635326386,
+          -0.766044437885284,
+          0,
+          0.766044437885284,
+          0.642787635326386
+        ],
+        "far": 2950,
+        "fov": 42,
+        "near": 13.75,
+        "position": [
+          -818.108642578125,
+          422.253540039063,
+          1013.16809082031
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.251,
+        "city": 0.074,
+        "markers": 1.986,
+        "rivers": 0.004,
+        "scenery": 0.111,
+        "tile_upload": 0.004,
+        "ui": 0.056
+      },
+      "drawCalls": 24,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        9.1,
+        8.938,
+        9.665,
+        9.172,
+        9.351,
+        9.433,
+        9.264,
+        9.118,
+        9.07,
+        9.125,
+        11.588,
+        9.834,
+        10.426,
+        11.349,
+        10.821,
+        10.288,
+        9.987,
+        10.424,
+        10.133,
+        10.311,
+        10.066,
+        10.722,
+        10.765,
+        10.019,
+        10.709,
+        10.238,
+        10.216,
+        10.414,
+        10.436,
+        9.905
+      ],
+      "gpu": {
+        "meanMs": 3.98600006103516,
+        "p95Ms": 3.98600006103516,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "algeria",
+      "political": 1,
+      "preset": [
+        4.5,
+        35.2,
+        550,
+        50,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.071,
+        "base": 2.497,
+        "previousRegions": 0.037
+      },
+      "renderCpuMs": 0.321999996900558,
+      "resident": [
+        "context",
+        "world-32-3",
+        "world-32--2",
+        "world-37-3",
+        "world-27-3",
+        "world-37--2",
+        "world-32-8",
+        "world-27--2",
+        "world-37-8",
+        "world-27-8",
+        "world-32--7",
+        "world-42-3",
+        "world-37--7"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479396177,
+      "steady": {
+        "averageFps": 99.7052049440487,
+        "maxMs": 11.588,
+        "meanMs": 10.0295666666667,
+        "onePercentLowFps": 86.2961684501208,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.588,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054563232
+    },
+    {
+      "camera": {
+        "basis": [
+          0.939692616462708,
+          0,
+          -0.342020213603973,
+          -0.191255271434784,
+          0.829037606716156,
+          -0.525469422340393,
+          0.283547610044479,
+          0.559192895889282,
+          0.779040515422821
+        ],
+        "far": 500,
+        "fov": 42,
+        "near": 1.125,
+        "position": [
+          -818.123046875,
+          26.521541595459,
+          547.725524902344
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.252,
+        "city": 0.058,
+        "markers": 1.22,
+        "rivers": 0.034,
+        "scenery": 0.492,
+        "tile_upload": 0.003,
+        "ui": 0.017
+      },
+      "drawCalls": 27,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        10.79,
+        10.978,
+        11.07,
+        10.889,
+        11.861,
+        10.326,
+        13.045,
+        11.823,
+        15.051,
+        10.542,
+        10.533,
+        10.229,
+        11.97,
+        10.155,
+        12.504,
+        10.307,
+        10.316,
+        12.569,
+        9.908,
+        10.56,
+        13.403,
+        11.563,
+        10.266,
+        9.74,
+        9.084,
+        8.642,
+        11.023,
+        9.071,
+        8.952,
+        9.409
+      ],
+      "gpu": {
+        "meanMs": 5.74599981307983,
+        "p95Ms": 5.74599981307983,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "kabylie-close",
+      "political": 0,
+      "preset": [
+        4.2,
+        36.5,
+        45,
+        34,
+        20
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.038,
+        "base": 2.08,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.317999988794327,
+      "resident": [
+        "context",
+        "world-32-3",
+        "world-32--2",
+        "world-37-3",
+        "world-27-3",
+        "world-37--2",
+        "world-32-8",
+        "world-27--2",
+        "world-37-8",
+        "world-32--7",
+        "world-42-3",
+        "world-37--7",
+        "world-42--2"
+      ],
+      "sceneryInstances": 18765,
+      "staticMemoryBytes": 485783707,
+      "steady": {
+        "averageFps": 91.8613872906708,
+        "maxMs": 15.051,
+        "meanMs": 10.8859666666667,
+        "onePercentLowFps": 66.4407680552787,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.051,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055980048
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.642787635326386,
+          -0.766044437885284,
+          0,
+          0.766044437885284,
+          0.642787635326386
+        ],
+        "far": 3200,
+        "fov": 42,
+        "near": 15,
+        "position": [
+          -1720.4013671875,
+          462.570251464844,
+          1155.58959960938
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.222,
+        "city": 0.043,
+        "markers": 1.522,
+        "rivers": 0.002,
+        "scenery": 0.056,
+        "tile_upload": 0.004,
+        "ui": 0.023
+      },
+      "drawCalls": 23,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.009,
+        10.885,
+        9.844,
+        9.781,
+        10.933,
+        13.791,
+        9.75,
+        9.434,
+        14.186,
+        10.936,
+        11.382,
+        13.071,
+        10.069,
+        10.189,
+        10.282,
+        10.897,
+        9.952,
+        13.589,
+        10.848,
+        9.987,
+        15.848,
+        10.686,
+        9.772,
+        10.488,
+        10.215,
+        10.354,
+        13.395,
+        12.573,
+        10.521,
+        13.588
+      ],
+      "gpu": {
+        "meanMs": 4.21799993515015,
+        "p95Ms": 4.21799993515015,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "morocco",
+      "political": 1,
+      "preset": [
+        -5,
+        33,
+        600,
+        50,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.036,
+        "base": 1.877,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.402999997138977,
+      "resident": [
+        "context",
+        "world-32--2",
+        "world-37--2",
+        "world-27--2",
+        "world-32--7",
+        "world-37--7",
+        "world-27--7",
+        "world-32--12",
+        "world-27--12",
+        "world-37--12",
+        "world-22--7",
+        "world-22--12",
+        "world-22--2"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479098855,
+      "steady": {
+        "averageFps": 88.6904849891354,
+        "maxMs": 15.848,
+        "meanMs": 11.2751666666667,
+        "onePercentLowFps": 63.0994447248864,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.848,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054478848
+    },
+    {
+      "camera": {
+        "basis": [
+          0.906307876110077,
+          0,
+          -0.422618091106415,
+          -0.223953545093536,
+          0.848047971725464,
+          -0.480270177125931,
+          0.358400404453278,
+          0.529919445514679,
+          0.768592536449432
+        ],
+        "far": 525,
+        "fov": 42,
+        "near": 1.625,
+        "position": [
+          -2008.44970703125,
+          38.9633979797363,
+          969.493347167969
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.197,
+        "city": 0.037,
+        "markers": 1.535,
+        "rivers": 0.032,
+        "scenery": 0.46,
+        "tile_upload": 0.003,
+        "ui": 0.019
+      },
+      "drawCalls": 55,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        10.8,
+        10.893,
+        15.996,
+        12.505,
+        13.056,
+        11.922,
+        11.204,
+        11.919,
+        12.015,
+        11.896,
+        12.63,
+        11.303,
+        10.884,
+        13.568,
+        11.195,
+        10.601,
+        11.88,
+        11.237,
+        10.608,
+        14.012,
+        11.301,
+        12.014,
+        11.76,
+        12.787,
+        13.732,
+        13.752,
+        11.68,
+        15.081,
+        11.931,
+        15.522
+      ],
+      "gpu": {
+        "meanMs": 5.82200002670288,
+        "p95Ms": 5.82200002670288,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "atlas-close",
+      "political": 0.00506365740740741,
+      "preset": [
+        -7.9,
+        31.1,
+        65,
+        32,
+        25
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.058,
+        "base": 2.286,
+        "previousRegions": 0.012
+      },
+      "renderCpuMs": 0.344999998807907,
+      "resident": [
+        "context",
+        "world-32--2",
+        "world-27--2",
+        "world-32--7",
+        "world-37--7",
+        "world-27--7",
+        "world-32--12",
+        "world-27--12",
+        "world-37--12",
+        "world-22--7",
+        "world-22--12",
+        "world-22--2",
+        "world-17--12"
+      ],
+      "sceneryInstances": 7363,
+      "staticMemoryBytes": 482430785,
+      "steady": {
+        "averageFps": 81.1503878988541,
+        "maxMs": 15.996,
+        "meanMs": 12.3228,
+        "onePercentLowFps": 62.5156289072268,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.996,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055067888
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.743144750595093,
+          -0.669130682945251,
+          0,
+          0.669130682945251,
+          0.743144750595093
+        ],
+        "far": 1050,
+        "fov": 42,
+        "near": 4.25,
+        "position": [
+          -1657.28051757813,
+          115.086418151855,
+          668.571228027344
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.25,
+        "city": 0.046,
+        "markers": 1.465,
+        "rivers": 0.041,
+        "scenery": 0.686,
+        "tile_upload": 0.003,
+        "ui": 0.018
+      },
+      "drawCalls": 13,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        9.699,
+        9.924,
+        9.983,
+        9.381,
+        13.7,
+        10.571,
+        10.038,
+        11.484,
+        11.237,
+        10.766,
+        10.792,
+        9.989,
+        10.29,
+        14.547,
+        10.927,
+        11.082,
+        13.887,
+        9.976,
+        11.574,
+        10.903,
+        11.399,
+        12.424,
+        10.659,
+        10.103,
+        10.444,
+        10.343,
+        10.222,
+        9.806,
+        14.186,
+        11.5
+      ],
+      "gpu": {
+        "meanMs": 5.19999980926514,
+        "p95Ms": 5.19999980926514,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "rif",
+      "political": 0.980324074074074,
+      "preset": [
+        -4.8,
+        35.1,
+        170,
+        42,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.041,
+        "base": 2.522,
+        "previousRegions": 0.011
+      },
+      "renderCpuMs": 0.314000010490417,
+      "resident": [
+        "context",
+        "world-32--2",
+        "world-27--2",
+        "world-32--7",
+        "world-37--7",
+        "world-27--7",
+        "world-32--12",
+        "world-27--12",
+        "world-37--12",
+        "world-37--2",
+        "world-42--7",
+        "world-32-3",
+        "world-42--12"
+      ],
+      "sceneryInstances": 31174,
+      "staticMemoryBytes": 490997089,
+      "steady": {
+        "averageFps": 90.406104220157,
+        "maxMs": 14.547,
+        "meanMs": 11.0612,
+        "onePercentLowFps": 68.7426960885406,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.547,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2056986080
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.559192955493927,
+          -0.829037547111511,
+          0,
+          0.829037547111511,
+          0.559192955493927
+        ],
+        "far": 5700,
+        "fov": 42,
+        "near": 27.5,
+        "position": [
+          -2019.41064453125,
+          912.386169433594,
+          2470.5380859375
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.211,
+        "city": 0.062,
+        "markers": 1.483,
+        "rivers": 0.002,
+        "scenery": 0.063,
+        "tile_upload": 0.829,
+        "ui": 0.022
+      },
+      "drawCalls": 18,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.126,
+        11.854,
+        12.004,
+        15.534,
+        12.396,
+        11.466,
+        11.057,
+        12.317,
+        11.425,
+        11.898,
+        11.626,
+        11.513,
+        11.108,
+        11.261,
+        12.332,
+        12.109,
+        11.056,
+        14.746,
+        11.467,
+        11.31,
+        12.194,
+        10.749,
+        10.653,
+        14.085,
+        11.27,
+        12.199,
+        11.945,
+        11.345,
+        11.18,
+        11.028
+      ],
+      "gpu": {
+        "meanMs": 4.35799980163574,
+        "p95Ms": 4.35799980163574,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "sahara-west",
+      "political": 1,
+      "preset": [
+        -6,
+        23,
+        1100,
+        56,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.033,
+        "base": 2.678,
+        "previousRegions": 0.012
+      },
+      "renderCpuMs": 0.409000009298325,
+      "resident": [
+        "context",
+        "world-27--2",
+        "world-27--7",
+        "world-27--12",
+        "world-22--7",
+        "world-22--12",
+        "world-17--7",
+        "world-17--12",
+        "world-22--2",
+        "world-17--2",
+        "world-12--7",
+        "world-12--12",
+        "world-12--2"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479336435,
+      "steady": {
+        "averageFps": 84.2098171804869,
+        "maxMs": 15.534,
+        "meanMs": 11.8751,
+        "onePercentLowFps": 64.3749195313506,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.534,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054492160
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.743144750595093,
+          -0.669130682945251,
+          0,
+          0.669130682945251,
+          0.743144750595093
+        ],
+        "far": 1900,
+        "fov": 42,
+        "near": 8.5,
+        "position": [
+          -830.1171875,
+          230.666595458984,
+          2242.59301757813
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.186,
+        "city": 0.033,
+        "markers": 1.394,
+        "rivers": 0.068,
+        "scenery": 0.049,
+        "tile_upload": 0.004,
+        "ui": 0.014
+      },
+      "drawCalls": 12,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        10.643,
+        8.776,
+        8.76,
+        9.599,
+        9.234,
+        8.703,
+        8.616,
+        9.179,
+        10.434,
+        10.435,
+        13.579,
+        10.632,
+        9.65,
+        12.58,
+        9.042,
+        9.003,
+        8.864,
+        9.679,
+        8.756,
+        8.707,
+        8.469,
+        9.316,
+        9.115,
+        9.252,
+        9.62,
+        8.841,
+        9.557,
+        11.461,
+        9.315,
+        9.196
+      ],
+      "gpu": {
+        "meanMs": 4.29400014877319,
+        "p95Ms": 4.29400014877319,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "ahaggar",
+      "political": 1,
+      "preset": [
+        5.5,
+        23.3,
+        340,
+        42,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.034,
+        "base": 1.752,
+        "previousRegions": 0.009
+      },
+      "renderCpuMs": 0.363999992609024,
+      "resident": [
+        "context",
+        "world-27--2",
+        "world-22--7",
+        "world-22--2",
+        "world-17--2",
+        "world-22-3",
+        "world-17-3",
+        "world-22-8",
+        "world-27-3",
+        "world-17-8",
+        "world-27-8",
+        "world-12-3",
+        "world-22-13"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479335867,
+      "steady": {
+        "averageFps": 103.801559099418,
+        "maxMs": 13.579,
+        "meanMs": 9.63376666666667,
+        "onePercentLowFps": 73.6431254142426,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.579,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054492160
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.743144750595093,
+          -0.669130682945251,
+          0,
+          0.669130682945251,
+          0.743144750595093
+        ],
+        "far": 2100,
+        "fov": 42,
+        "near": 9.5,
+        "position": [
+          531.033569335938,
+          257.217742919922,
+          2570.88012695313
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.213,
+        "city": 0.035,
+        "markers": 1.328,
+        "rivers": 0.032,
+        "scenery": 0.042,
+        "tile_upload": 0.003,
+        "ui": 0.015
+      },
+      "drawCalls": 14,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        12.198,
+        12.962,
+        9.685,
+        10.16,
+        9.935,
+        9.622,
+        10.123,
+        13.805,
+        9.984,
+        10.498,
+        13.986,
+        9.37,
+        8.851,
+        10.657,
+        9.515,
+        9.457,
+        9.238,
+        12.639,
+        10.668,
+        11.947,
+        9.377,
+        8.828,
+        8.82,
+        12.559,
+        9.787,
+        9.366,
+        11.907,
+        8.994,
+        10.663,
+        9.878
+      ],
+      "gpu": {
+        "meanMs": 6.1729998588562,
+        "p95Ms": 6.1729998588562,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "tibesti",
+      "political": 1,
+      "preset": [
+        18.5,
+        20.8,
+        380,
+        42,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.027,
+        "base": 1.673,
+        "previousRegions": 0.009
+      },
+      "renderCpuMs": 0.321999996900558,
+      "resident": [
+        "context",
+        "world-22-8",
+        "world-17-8",
+        "world-22-13",
+        "world-17-18",
+        "world-17-13",
+        "world-22-18",
+        "world-12-18",
+        "world-12-13",
+        "world-17-23",
+        "world-22-23",
+        "world-27-18",
+        "world-27-13"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479341831,
+      "steady": {
+        "averageFps": 95.093492752291,
+        "maxMs": 13.986,
+        "meanMs": 10.5159666666667,
+        "onePercentLowFps": 71.5000715000715,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.986,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054492160
+    },
+    {
+      "camera": {
+        "basis": [
+          0.939692735671997,
+          0,
+          -0.34201979637146,
+          -0.181242823600769,
+          0.848048210144043,
+          -0.497961103916168,
+          0.290049284696579,
+          0.52991908788681,
+          0.796904742717743
+        ],
+        "far": 525,
+        "fov": 42,
+        "near": 1.625,
+        "position": [
+          559.846130371094,
+          38.9433670043945,
+          2451.2021484375
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.28,
+        "city": 0.041,
+        "markers": 1.6,
+        "rivers": 0.038,
+        "scenery": 0.464,
+        "tile_upload": 0.004,
+        "ui": 0.022
+      },
+      "drawCalls": 38,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.214,
+        12.924,
+        10.937,
+        10.578,
+        13.337,
+        13.676,
+        12.631,
+        12.629,
+        12.314,
+        13.75,
+        11.101,
+        14.044,
+        12.856,
+        11.932,
+        15.078,
+        13.418,
+        11.256,
+        11.109,
+        11.149,
+        11.431,
+        12.407,
+        11.083,
+        11.998,
+        12.454,
+        11.119,
+        14.448,
+        11.433,
+        11.377,
+        13.94,
+        13.105
+      ],
+      "gpu": {
+        "meanMs": 7.94799995422363,
+        "p95Ms": 7.94799995422363,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "tibesti-close",
+      "political": 0.00506365740740741,
+      "preset": [
+        18.55,
+        19.8,
+        65,
+        32,
+        20
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.044,
+        "base": 2.456,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.233999997377396,
+      "resident": [
+        "context",
+        "world-22-8",
+        "world-17-8",
+        "world-22-13",
+        "world-17-18",
+        "world-17-13",
+        "world-22-18",
+        "world-12-18",
+        "world-12-13",
+        "world-17-23",
+        "world-22-23",
+        "world-12-23",
+        "world-12-8"
+      ],
+      "sceneryInstances": 3024,
+      "staticMemoryBytes": 481212311,
+      "steady": {
+        "averageFps": 80.9218618501975,
+        "maxMs": 15.078,
+        "meanMs": 12.3576,
+        "onePercentLowFps": 66.321793341292,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.078,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054720768
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.5735764503479,
+          -0.819152057170868,
+          0,
+          0.819152057170868,
+          0.5735764503479
+        ],
+        "far": 5700,
+        "fov": 42,
+        "near": 27.5,
+        "position": [
+          -2058.6845703125,
+          901.473754882813,
+          3451.18774414063
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.259,
+        "city": 0.05,
+        "markers": 1.508,
+        "rivers": 0.002,
+        "scenery": 0.059,
+        "tile_upload": 0.004,
+        "ui": 0.024
+      },
+      "drawCalls": 17,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        11.098,
+        10.538,
+        13.128,
+        10.439,
+        10.395,
+        14.946,
+        10.616,
+        10.374,
+        14.478,
+        10.541,
+        10.647,
+        13.158,
+        10.228,
+        12.036,
+        10.967,
+        10.143,
+        10.487,
+        10.697,
+        10.356,
+        10.075,
+        13.921,
+        10.825,
+        10.307,
+        13.462,
+        10.581,
+        10.632,
+        13.761,
+        10.481,
+        12.866,
+        11.051
+      ],
+      "gpu": {
+        "meanMs": 3.79900002479553,
+        "p95Ms": 3.79900002479553,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "sahel-west",
+      "political": 1,
+      "preset": [
+        -5,
+        14.5,
+        1100,
+        55,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.035,
+        "base": 1.911,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.393999993801117,
+      "resident": [
+        "context",
+        "world-12--7",
+        "world-12--12",
+        "world-17--7",
+        "world-12--2",
+        "world-17--12",
+        "world-17--2",
+        "world-22--7",
+        "world-12-3",
+        "world-22--12",
+        "world-22--2",
+        "world-17-3",
+        "world-22-3"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479267127,
+      "steady": {
+        "averageFps": 87.4039285152403,
+        "maxMs": 14.946,
+        "meanMs": 11.4411333333333,
+        "onePercentLowFps": 66.9075337883046,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.946,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054478848
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.707106649875641,
+          -0.707106947898865,
+          0,
+          0.707106947898865,
+          0.707106649875641
+        ],
+        "far": 2100,
+        "fov": 42,
+        "near": 9.5,
+        "position": [
+          -1589.33666992188,
+          269.177734375,
+          2914.52587890625
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.226,
+        "city": 0.041,
+        "markers": 1.516,
+        "rivers": 0.039,
+        "scenery": 0.052,
+        "tile_upload": 0.004,
+        "ui": 0.03
+      },
+      "drawCalls": 16,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        13.401,
+        11.299,
+        10.445,
+        9.383,
+        9.106,
+        8.929,
+        9.423,
+        10.002,
+        10.933,
+        10.548,
+        10.751,
+        8.746,
+        9.103,
+        8.864,
+        8.857,
+        8.776,
+        9.208,
+        12.623,
+        9.495,
+        9.068,
+        12.693,
+        9.412,
+        9.091,
+        10.27,
+        9.142,
+        8.735,
+        8.924,
+        12.021,
+        9.475,
+        9.069
+      ],
+      "gpu": {
+        "meanMs": 4.52199983596802,
+        "p95Ms": 4.52199983596802,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "niger-bend",
+      "political": 1,
+      "preset": [
+        -1,
+        16.7,
+        380,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.037,
+        "base": 1.913,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.395999997854233,
+      "resident": [
+        "context",
+        "world-12--7",
+        "world-12--12",
+        "world-17--7",
+        "world-12--2",
+        "world-17--12",
+        "world-17--2",
+        "world-22--7",
+        "world-12-3",
+        "world-22--12",
+        "world-22--2",
+        "world-17-3",
+        "world-22-3"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479950083,
+      "steady": {
+        "averageFps": 100.741457124436,
+        "maxMs": 13.401,
+        "meanMs": 9.9264,
+        "onePercentLowFps": 74.6212969181404,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 13.401,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054776048
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.573576390743256,
+          -0.819152057170868,
+          0,
+          0.819152057170868,
+          0.573576390743256
+        ],
+        "far": 5200,
+        "fov": 42,
+        "near": 25,
+        "position": [
+          280.350982666016,
+          819.593627929688,
+          3628.13232421875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.243,
+        "city": 0.033,
+        "markers": 1.512,
+        "rivers": 0.001,
+        "scenery": 0.043,
+        "tile_upload": 0.014,
+        "ui": 0.024
+      },
+      "drawCalls": 17,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        9.87,
+        10.104,
+        10.25,
+        9.712,
+        14.29,
+        10.125,
+        9.639,
+        13.866,
+        10.166,
+        9.772,
+        12.695,
+        10.139,
+        10.489,
+        12.27,
+        10.827,
+        11.513,
+        10.393,
+        10.104,
+        10.004,
+        13.601,
+        10.471,
+        10.604,
+        13.966,
+        10.845,
+        10.309,
+        14.674,
+        10.703,
+        10.345,
+        14.214,
+        10.128
+      ],
+      "gpu": {
+        "meanMs": 4.20100021362305,
+        "p95Ms": 4.20100021362305,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "sahel-central",
+      "political": 1,
+      "preset": [
+        16,
+        14,
+        1000,
+        55,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.04,
+        "base": 1.877,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.347000002861023,
+      "resident": [
+        "context",
+        "world-12-3",
+        "world-12-13",
+        "world-12-18",
+        "world-12-8",
+        "world-17-13",
+        "world-17-18",
+        "world-17-8",
+        "world-12-23",
+        "world-22-13",
+        "world-17-23",
+        "world-22-18",
+        "world-22-8"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479963167,
+      "steady": {
+        "averageFps": 89.2623360548428,
+        "maxMs": 14.674,
+        "meanMs": 11.2029333333333,
+        "onePercentLowFps": 68.1477443096634,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.674,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054776048
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.642787635326386,
+          -0.76604437828064,
+          0,
+          0.76604437828064,
+          0.642787635326386
+        ],
+        "far": 3450,
+        "fov": 42,
+        "near": 16.25,
+        "position": [
+          1961.11865234375,
+          498.546905517578,
+          2570.84008789063
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.248,
+        "city": 0.038,
+        "markers": 1.465,
+        "rivers": 0.001,
+        "scenery": 0.049,
+        "tile_upload": 0.004,
+        "ui": 0.019
+      },
+      "drawCalls": 23,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        12.554,
+        14.117,
+        10.682,
+        10.382,
+        14,
+        10.485,
+        9.875,
+        13.46,
+        10.743,
+        10.553,
+        13.662,
+        10.4,
+        12.385,
+        10.371,
+        10.189,
+        10.334,
+        12.266,
+        11.322,
+        11.963,
+        10.973,
+        10.573,
+        10.796,
+        12.694,
+        10.373,
+        10.773,
+        14.331,
+        10.579,
+        14.673,
+        11.509,
+        10.796
+      ],
+      "gpu": {
+        "meanMs": 4.57399988174438,
+        "p95Ms": 4.57399988174438,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "nubia",
+      "political": 1,
+      "preset": [
+        32,
+        20.5,
+        650,
+        50,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.029,
+        "base": 1.828,
+        "previousRegions": 0.01
+      },
+      "renderCpuMs": 0.344999998807907,
+      "resident": [
+        "context",
+        "world-12-23",
+        "world-17-23",
+        "world-17-28",
+        "world-17-33",
+        "world-22-28",
+        "world-22-33",
+        "world-12-28",
+        "world-12-33",
+        "world-22-23",
+        "world-17-38",
+        "world-27-28",
+        "world-22-38"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479972245,
+      "steady": {
+        "averageFps": 86.2532452783536,
+        "maxMs": 14.673,
+        "meanMs": 11.5937666666667,
+        "onePercentLowFps": 68.1523887412254,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.673,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054776048
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.809017419815063,
+          -0.587784647941589,
+          0,
+          0.587784647941589,
+          0.809017419815063
+        ],
+        "far": 525,
+        "fov": 42,
+        "near": 1.625,
+        "position": [
+          1973.60192871094,
+          38.6252593994141,
+          2431.7216796875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.182,
+        "city": 0.062,
+        "markers": 1.379,
+        "rivers": 0.028,
+        "scenery": 0.464,
+        "tile_upload": 0.004,
+        "ui": 0.013
+      },
+      "drawCalls": 50,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        10.062,
+        12.056,
+        10.608,
+        10.8,
+        11.379,
+        10.913,
+        11.247,
+        10.064,
+        11.796,
+        11.313,
+        11.178,
+        14.609,
+        13.312,
+        13.254,
+        13.236,
+        12.07,
+        12.727,
+        11.534,
+        14.548,
+        11.268,
+        10.78,
+        14.778,
+        10.548,
+        10.508,
+        14.14,
+        10.695,
+        10.424,
+        15.937,
+        12.559,
+        15.387
+      ],
+      "gpu": {
+        "meanMs": 6.35400009155273,
+        "p95Ms": 6.35400009155273,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "nile-nubia-close",
+      "political": 0.00506365740740741,
+      "preset": [
+        31.8,
+        18.5,
+        65,
+        36,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.033,
+        "base": 2.136,
+        "previousRegions": 0.009
+      },
+      "renderCpuMs": 0.282999992370605,
+      "resident": [
+        "context",
+        "world-12-23",
+        "world-17-23",
+        "world-17-28",
+        "world-17-33",
+        "world-22-28",
+        "world-22-33",
+        "world-12-28",
+        "world-12-33",
+        "world-22-23",
+        "world-17-38",
+        "world-22-38",
+        "world-12-38"
+      ],
+      "sceneryInstances": 4994,
+      "staticMemoryBytes": 482637781,
+      "steady": {
+        "averageFps": 82.4787617188574,
+        "maxMs": 15.937,
+        "meanMs": 12.1243333333333,
+        "onePercentLowFps": 62.7470665746376,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.937,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055030464
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.642787754535675,
+          -0.766044318675995,
+          0,
+          0.766044318675995,
+          0.642787754535675
+        ],
+        "far": 3700,
+        "fov": 42,
+        "near": 17.5,
+        "position": [
+          2674.0517578125,
+          536.232055664063,
+          2618.0263671875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.202,
+        "city": 0.038,
+        "markers": 1.449,
+        "rivers": 0.002,
+        "scenery": 0.062,
+        "tile_upload": 0.003,
+        "ui": 0.02
+      },
+      "drawCalls": 20,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        10.922,
+        9.492,
+        13.488,
+        9.488,
+        9.587,
+        11.035,
+        9.971,
+        10.645,
+        10.105,
+        10.119,
+        9.57,
+        9.484,
+        15.943,
+        10.549,
+        9.873,
+        12.95,
+        9.75,
+        9.443,
+        9.564,
+        13.468,
+        10.639,
+        10.096,
+        9.522,
+        9.416,
+        11.526,
+        9.863,
+        9.629,
+        10.048,
+        10.088,
+        10.154
+      ],
+      "gpu": {
+        "meanMs": 5.06300020217896,
+        "p95Ms": 5.06300020217896,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "red-sea-africa",
+      "political": 1,
+      "preset": [
+        38.5,
+        19,
+        700,
+        50,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.042,
+        "base": 1.781,
+        "previousRegions": 0.012
+      },
+      "renderCpuMs": 0.488999992609024,
+      "resident": [
+        "context",
+        "world-17-28",
+        "world-17-33",
+        "world-22-28",
+        "world-22-33",
+        "world-12-28",
+        "world-12-33",
+        "world-17-38",
+        "world-22-38",
+        "world-12-38",
+        "world-17-43",
+        "world-12-43",
+        "world-22-43"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479710619,
+      "steady": {
+        "averageFps": 94.808597243598,
+        "maxMs": 15.943,
+        "meanMs": 10.5475666666667,
+        "onePercentLowFps": 62.7234522988145,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.943,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054630944
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.707106709480286,
+          -0.70710688829422,
+          0,
+          0.70710688829422,
+          0.707106709480286
+        ],
+        "far": 2600,
+        "fov": 42,
+        "near": 12,
+        "position": [
+          2858.134765625,
+          341.376251220703,
+          3162.02734375
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.172,
+        "city": 0.035,
+        "markers": 1.436,
+        "rivers": 0.03,
+        "scenery": 0.04,
+        "tile_upload": 0.003,
+        "ui": 0.019
+      },
+      "drawCalls": 14,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        8.648,
+        8.485,
+        10.572,
+        8.75,
+        8.044,
+        8.268,
+        9.452,
+        8.233,
+        8.217,
+        8.939,
+        9.348,
+        8.392,
+        8.546,
+        8.346,
+        9.725,
+        8.636,
+        9.379,
+        10.3,
+        9.104,
+        9.125,
+        9.916,
+        9.322,
+        9.791,
+        9.25,
+        12.834,
+        10.049,
+        8.899,
+        10.288,
+        9.669,
+        9.786
+      ],
+      "gpu": {
+        "meanMs": 4.84299993515015,
+        "p95Ms": 4.84299993515015,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "ethiopian-edge",
+      "political": 1,
+      "preset": [
+        39,
+        13,
+        480,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.027,
+        "base": 1.739,
+        "previousRegions": 0.01
+      },
+      "renderCpuMs": 0.261999994516373,
+      "resident": [
+        "context",
+        "world-17-28",
+        "world-17-33",
+        "world-22-33",
+        "world-12-28",
+        "world-12-33",
+        "world-17-38",
+        "world-22-38",
+        "world-12-38",
+        "world-17-43",
+        "world-12-43",
+        "world-22-43",
+        "world-12-48"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 479596715,
+      "steady": {
+        "averageFps": 107.792305785213,
+        "maxMs": 12.834,
+        "meanMs": 9.2771,
+        "onePercentLowFps": 77.9180302321957,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 12.834,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2054578704
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.669130563735962,
+          -0.743144869804382,
+          0,
+          0.743144869804382,
+          0.669130563735962
+        ],
+        "far": 2000,
+        "fov": 42,
+        "near": 9,
+        "position": [
+          1700.79125976563,
+          267.705047607422,
+          1380.89208984375
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.243,
+        "city": 0.038,
+        "markers": 1.309,
+        "rivers": 0.059,
+        "scenery": 0.049,
+        "tile_upload": 0.004,
+        "ui": 0.018
+      },
+      "drawCalls": 38,
+      "easternResidency": {
+        "egypt": 24,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        24.231,
+        23.944,
+        27.574,
+        27.188,
+        27.381,
+        23.373,
+        25.903,
+        28.348,
+        36.96,
+        33.905,
+        33.137,
+        34.489,
+        34.395,
+        32.967,
+        33.682,
+        34.637,
+        34.061,
+        33.376,
+        34.765,
+        33.966,
+        25.545,
+        27.495,
+        27.699,
+        27.637,
+        24.973,
+        25.461,
+        26.49,
+        27.417,
+        24.934,
+        25.112
+      ],
+      "gpu": {
+        "meanMs": 21.4950008392334,
+        "p95Ms": 21.4950008392334,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "egypt-control",
+      "political": 1,
+      "preset": [
+        31.1,
+        29.8,
+        360,
+        48,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.394,
+        "base": 1.725,
+        "previousRegions": 0.011
+      },
+      "renderCpuMs": 0.379000008106232,
+      "resident": [
+        "context",
+        "world-17-28",
+        "world-22-33",
+        "world-27-28",
+        "world-27-33",
+        "world-32-28",
+        "world-22-28",
+        "world-27-23",
+        "world-32-33",
+        "world-32-23",
+        "world-22-23",
+        "world-27-38",
+        "world-37-28"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 480131003,
+      "steady": {
+        "averageFps": 34.0504741528526,
+        "maxMs": 36.96,
+        "meanMs": 29.3681666666667,
+        "onePercentLowFps": 27.0562770562771,
+        "over16_67ms": 30,
+        "over33_33ms": 10,
+        "p99Ms": 36.96,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2075382448
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.70710676908493,
+          -0.70710676908493,
+          0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1700,
+        "fov": 42,
+        "near": 7.5,
+        "position": [
+          2059.72827148438,
+          214.125122070313,
+          788.063232421875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.303,
+        "city": 0.052,
+        "markers": 1.716,
+        "rivers": 0.089,
+        "scenery": 0.064,
+        "tile_upload": 0.006,
+        "ui": 0.025
+      },
+      "drawCalls": 37,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 24
+      },
+      "frameSamplesMs": [
+        19.274,
+        23.698,
+        19.278,
+        19.699,
+        22.788,
+        19.66,
+        22.745,
+        19.084,
+        19.397,
+        23.352,
+        18.642,
+        20.734,
+        21.446,
+        18.693,
+        22.64,
+        18.052,
+        22.373,
+        22.748,
+        18.66,
+        22.654,
+        20.388,
+        20.636,
+        24.111,
+        19.813,
+        19.668,
+        23.636,
+        19.706,
+        23.036,
+        23.755,
+        21.87
+      ],
+      "gpu": {
+        "meanMs": 17.3150005340576,
+        "p95Ms": 17.3150005340576,
+        "samples": 30
+      },
+      "labelDrawMs": 0,
+      "name": "levant-control",
+      "political": 1,
+      "preset": [
+        36,
+        34,
+        300,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.46,
+        "base": 2.273,
+        "previousRegions": 0.025
+      },
+      "renderCpuMs": 0.351000010967255,
+      "resident": [
+        "context",
+        "world-22-33",
+        "world-27-28",
+        "world-27-33",
+        "world-32-28",
+        "world-32-33",
+        "world-32-23",
+        "world-27-38",
+        "world-37-28",
+        "world-32-38",
+        "world-37-33",
+        "world-37-38",
+        "world-32-43"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 480045671,
+      "steady": {
+        "averageFps": 47.4506355221784,
+        "maxMs": 24.111,
+        "meanMs": 21.0745333333333,
+        "onePercentLowFps": 41.4748455062005,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 24.111,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2075313920
+    },
+    {
+      "camera": {
+        "basis": [
+          0.819152355194092,
+          0,
+          -0.573575973510742,
+          -0.286788046360016,
+          0.866025328636169,
+          -0.409576267004013,
+          0.49673131108284,
+          0.50000011920929,
+          0.709406673908234
+        ],
+        "far": 650,
+        "fov": 42,
+        "near": 2.25,
+        "position": [
+          1701.54479980469,
+          47.1011543273926,
+          376.62841796875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.283,
+        "city": 0.041,
+        "markers": 1.386,
+        "rivers": 0.033,
+        "scenery": 0.781,
+        "tile_upload": 0.002,
+        "ui": 0.018
+      },
+      "drawCalls": 144,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        31.909,
+        33.798,
+        31.776,
+        32.414,
+        32.873,
+        32.32,
+        34.076,
+        32.578,
+        31.212,
+        33.114,
+        29.26,
+        30.361,
+        28.278,
+        30.852,
+        29.297,
+        33.216,
+        32.528,
+        33.215,
+        31.359,
+        31.456,
+        33.334,
+        33.887,
+        30.134,
+        33.954,
+        30.693,
+        32.672,
+        33.56,
+        29.792,
+        33.169,
+        30.721
+      ],
+      "gpu": {
+        "meanMs": 8.84663333892822,
+        "p95Ms": 11.7200002670288,
+        "samples": 30
+      },
+      "labelDrawMs": 8.659,
+      "name": "anatolia-control",
+      "political": 0.15625,
+      "preset": [
+        32.3,
+        37.1,
+        90,
+        30,
+        35
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.399,
+        "base": 2.55,
+        "previousRegions": 0.021
+      },
+      "renderCpuMs": 0.5,
+      "resident": [
+        "context",
+        "world-27-28",
+        "world-27-33",
+        "world-32-28",
+        "world-32-33",
+        "world-32-23",
+        "world-37-28",
+        "world-32-38",
+        "world-37-33",
+        "world-37-38",
+        "world-37-23",
+        "world-42-28",
+        "world-42-33"
+      ],
+      "sceneryInstances": 30110,
+      "staticMemoryBytes": 492374939,
+      "steady": {
+        "averageFps": 31.3215174648781,
+        "maxMs": 34.076,
+        "meanMs": 31.9269333333333,
+        "onePercentLowFps": 29.3461673905388,
+        "over16_67ms": 30,
+        "over33_33ms": 6,
+        "p99Ms": 34.076,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2069755856
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.669130623340607,
+          -0.743144810199738,
+          0,
+          0.743144810199738,
+          0.669130623340607
+        ],
+        "far": 2350,
+        "fov": 42,
+        "near": 10.75,
+        "position": [
+          -82.2441482543945,
+          319.641265869141,
+          198.292098999023
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.346,
+        "city": 0.046,
+        "markers": 1.913,
+        "rivers": 0.066,
+        "scenery": 0.545,
+        "tile_upload": 0.003,
+        "ui": 0.02
+      },
+      "drawCalls": 219,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        37.44,
+        35.732,
+        36.703,
+        40.82,
+        40.441,
+        41.172,
+        39.657,
+        36.453,
+        41.346,
+        40.429,
+        39.342,
+        40.161,
+        36.416,
+        37.949,
+        38.015,
+        43.527,
+        40.647,
+        38.274,
+        37.689,
+        37.406,
+        42.015,
+        39.45,
+        40.493,
+        39.712,
+        40.249,
+        41.186,
+        39.399,
+        40.082,
+        40.271,
+        39.824
+      ],
+      "gpu": {
+        "meanMs": 14.2765333493551,
+        "p95Ms": 16.9169998168945,
+        "samples": 30
+      },
+      "labelDrawMs": 5.421,
+      "name": "italy-control",
+      "political": 1,
+      "preset": [
+        12.5,
+        42.3,
+        430,
+        48,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.035,
+        "base": 2.945,
+        "previousRegions": 0.013
+      },
+      "renderCpuMs": 0.381000012159348,
+      "resident": [
+        "context",
+        "N42E12",
+        "N41E12",
+        "N42E13",
+        "N42E11",
+        "N43E12",
+        "N41E11",
+        "N41E13",
+        "N43E13",
+        "N43E11",
+        "N42E10",
+        "N42E14",
+        "N40E13"
+      ],
+      "sceneryInstances": 15352,
+      "staticMemoryBytes": 488478969,
+      "steady": {
+        "averageFps": 25.3742704897234,
+        "maxMs": 43.527,
+        "meanMs": 39.41,
+        "onePercentLowFps": 22.9742458703793,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 43.527,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2057676304
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.544639050960541,
+          -0.838670551776886,
+          0,
+          0.838670551776886,
+          0.544639050960541
+        ],
+        "far": 2800,
+        "fov": 42,
+        "near": 13,
+        "position": [
+          61.7161064147949,
+          436.849578857422,
+          716.6298828125
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.24,
+        "city": 0.041,
+        "markers": 1.554,
+        "rivers": 0.003,
+        "scenery": 0.053,
+        "tile_upload": 0.004,
+        "ui": 0.023
+      },
+      "drawCalls": 106,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        27.134,
+        27.993,
+        27.591,
+        25.491,
+        23.942,
+        28.218,
+        28.162,
+        27.208,
+        23.468,
+        25.162,
+        27.132,
+        27.22,
+        27.022,
+        25.369,
+        24.785,
+        27.706,
+        28.731,
+        27.043,
+        24.896,
+        24.361,
+        26.904,
+        26.437,
+        24.611,
+        23.856,
+        33.492,
+        31.195,
+        35.419,
+        33.098,
+        32.044,
+        26.702
+      ],
+      "gpu": {
+        "meanMs": 9.02583335240682,
+        "p95Ms": 12.9420003890991,
+        "samples": 30
+      },
+      "labelDrawMs": 4.275,
+      "name": "sicily-control",
+      "political": 1,
+      "preset": [
+        14.2,
+        37.6,
+        520,
+        57,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.038,
+        "base": 1.925,
+        "previousRegions": 0.012
+      },
+      "renderCpuMs": 0.372999995946884,
+      "resident": [
+        "context",
+        "N37E14",
+        "N37E13",
+        "N38E14",
+        "N36E14",
+        "N38E13",
+        "N37E15",
+        "N38E15",
+        "N36E15",
+        "N37E12",
+        "N38E12",
+        "N36E12",
+        "N37E16"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 482542216,
+      "steady": {
+        "averageFps": 36.4789540754287,
+        "maxMs": 35.419,
+        "meanMs": 27.4130666666667,
+        "onePercentLowFps": 28.2334340325814,
+        "over16_67ms": 30,
+        "over33_33ms": 2,
+        "p99Ms": 35.419,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2056405920
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.743144869804382,
+          -0.669130563735962,
+          0,
+          0.669130563735962,
+          0.743144869804382
+        ],
+        "far": 1450,
+        "fov": 42,
+        "near": 6.25,
+        "position": [
+          776.854370117188,
+          167.283660888672,
+          513.539367675781
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.265,
+        "city": 0.064,
+        "markers": 1.439,
+        "rivers": 0.037,
+        "scenery": 0.05,
+        "tile_upload": 0.004,
+        "ui": 0.019
+      },
+      "drawCalls": 155,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        23.09,
+        23.281,
+        26.005,
+        22.385,
+        23.272,
+        22.627,
+        27.064,
+        23.519,
+        23.039,
+        26.034,
+        24.78,
+        24.912,
+        25.871,
+        29.364,
+        29.063,
+        26.811,
+        25.883,
+        24.038,
+        24.132,
+        26.713,
+        23.57,
+        25.375,
+        26.389,
+        26.106,
+        27.498,
+        23.905,
+        23.741,
+        26.926,
+        23.932,
+        24.803
+      ],
+      "gpu": {
+        "meanMs": 7.18863331476847,
+        "p95Ms": 8.97000026702881,
+        "samples": 30
+      },
+      "labelDrawMs": 5.219,
+      "name": "greece-control",
+      "political": 1,
+      "preset": [
+        22.4,
+        38.2,
+        250,
+        42,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.043,
+        "base": 1.884,
+        "previousRegions": 0.011
+      },
+      "renderCpuMs": 0.333000004291534,
+      "resident": [
+        "context",
+        "world-37-18",
+        "world-37-23",
+        "world-32-18",
+        "world-32-23",
+        "world-42-18",
+        "world-37-13",
+        "world-42-23",
+        "world-32-13",
+        "world-37-28",
+        "world-27-18",
+        "world-32-28",
+        "world-27-23"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 481324178,
+      "steady": {
+        "averageFps": 39.7810451276176,
+        "maxMs": 29.364,
+        "meanMs": 25.1376,
+        "onePercentLowFps": 34.0553058166462,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 29.364,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2055548128
+    },
+    {
+      "camera": {
+        "basis": [
+          1,
+          0,
+          0,
+          0,
+          0.70710676908493,
+          -0.70710676908493,
+          0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1550,
+        "fov": 42,
+        "near": 6.75,
+        "position": [
+          469.197570800781,
+          191.140228271484,
+          97.5334167480469
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.473,
+        "city": 0.06,
+        "markers": 1.906,
+        "rivers": 0.051,
+        "scenery": 0.114,
+        "tile_upload": 0.006,
+        "ui": 0.03
+      },
+      "drawCalls": 84,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        24.34,
+        30.262,
+        20.578,
+        18.437,
+        20.358,
+        19.471,
+        21.033,
+        22.766,
+        20.242,
+        21.282,
+        21.045,
+        19.424,
+        20.78,
+        19.698,
+        20.438,
+        21.868,
+        19.239,
+        21.699,
+        21.573,
+        19.461,
+        23.146,
+        22.916,
+        22.154,
+        23.331,
+        22.33,
+        20.928,
+        21.088,
+        22.381,
+        21.278,
+        22.153
+      ],
+      "gpu": {
+        "meanMs": 9.43086667060852,
+        "p95Ms": 10.8039999008179,
+        "samples": 30
+      },
+      "labelDrawMs": 6.99,
+      "name": "illyria-control",
+      "political": 1,
+      "preset": [
+        19.2,
+        42.2,
+        270,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.059,
+        "base": 2.649,
+        "previousRegions": 0.017
+      },
+      "renderCpuMs": 0.354000002145767,
+      "resident": [
+        "context",
+        "N42E19",
+        "N42E18",
+        "N41E19",
+        "N43E19",
+        "N43E18",
+        "N42E17",
+        "N40E19",
+        "N40E18",
+        "N41E17",
+        "N43E17",
+        "N44E19",
+        "N44E18"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 525244250,
+      "steady": {
+        "averageFps": 46.4612768488104,
+        "maxMs": 30.262,
+        "meanMs": 21.5233,
+        "onePercentLowFps": 33.0447425814553,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.262,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2024970256
+    }
+  ]
+}

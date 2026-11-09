@@ -1,0 +1,234 @@
+{
+  "baselineCommit": "525cb774479720817f8ff106f45cfe19c6861be4",
+  "method": "180 uncapped submitted intervals per exact recorded camera; GPU timings are diagnostic, not sustained gameplay FPS. Draw-call fields in capture stats use the generic meanMs key but contain counts.",
+  "protectedTrackedPathsUnchanged": [
+    "public/data",
+    "research",
+    "godot-prototype/data",
+    "godot-prototype/world.gd",
+    "godot-prototype/northern_italy_world.gd",
+    "godot-prototype/regional_scenery.gd",
+    "godot-prototype/ocean",
+    "godot-prototype/navigation.gd",
+    "godot-prototype/roma_settlement.gd",
+    "godot-prototype/inland_water.gdshader"
+  ],
+  "views": [
+    {
+      "name": "close",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 10.4892555660672,
+      "afterGpuMs": 10.2422888835271,
+      "gpuChangePercent": -2.354472926935236,
+      "beforeSceneDrawCalls": 315,
+      "afterSceneDrawCalls": 409,
+      "beforeSettlementTriangles": 100392,
+      "afterSettlementTriangles": 69794,
+      "construction": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "changedPixels": 135922,
+      "changedPixelPercent": 6.554880401234568,
+      "maxChannelDifference": 219,
+      "exactPixelMatch": false
+    },
+    {
+      "name": "oblique",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 12.9750222100152,
+      "afterGpuMs": 12.7500222259098,
+      "gpuChangePercent": -1.7341009553858533,
+      "beforeSceneDrawCalls": 366,
+      "afterSceneDrawCalls": 441,
+      "beforeSettlementTriangles": 100392,
+      "afterSettlementTriangles": 69794,
+      "construction": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "changedPixels": 512760,
+      "changedPixelPercent": 24.72800925925926,
+      "maxChannelDifference": 220,
+      "exactPixelMatch": false
+    },
+    {
+      "name": "district",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 10.5235388490889,
+      "afterGpuMs": 10.3395888752408,
+      "gpuChangePercent": -1.7479858865539932,
+      "beforeSceneDrawCalls": 231,
+      "afterSceneDrawCalls": 344,
+      "beforeSettlementTriangles": 100392,
+      "afterSettlementTriangles": 69794,
+      "construction": {
+        "agora": true,
+        "assetWaitMs": 36.821,
+        "attachActiveCpuMs": 529.893,
+        "attachWallMs": 2389.931,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "near",
+        "instancedTriangles": 69794,
+        "longestActiveChunkMs": 20.494,
+        "mainPassSurfaceGroups": 42,
+        "paths": 42,
+        "planningMs": 259.873,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 251.117
+      },
+      "changedPixels": 857433,
+      "changedPixelPercent": 41.34997106481482,
+      "maxChannelDifference": 228,
+      "exactPixelMatch": false
+    },
+    {
+      "name": "regional",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 9.92747776243422,
+      "afterGpuMs": 10.1531388865577,
+      "gpuChangePercent": 2.273096243815176,
+      "beforeSceneDrawCalls": 362,
+      "afterSceneDrawCalls": 430,
+      "beforeSettlementTriangles": 60392,
+      "afterSettlementTriangles": 45224,
+      "construction": {
+        "agora": true,
+        "assetWaitMs": 42.894,
+        "attachActiveCpuMs": 415.372,
+        "attachWallMs": 1846.607,
+        "batchNodes": 13,
+        "buildings": 42,
+        "categories": {
+          "civic": 2,
+          "commercial": 5,
+          "military": 1,
+          "religious": 1,
+          "residential": 33
+        },
+        "compositionVersion": 1,
+        "detail": "far",
+        "instancedTriangles": 45224,
+        "longestActiveChunkMs": 6.169,
+        "mainPassSurfaceGroups": 41,
+        "paths": 42,
+        "planningMs": 251.653,
+        "rejected": [
+          {
+            "id": "west_lower_0",
+            "reason": "blocked_access"
+          }
+        ],
+        "roads": 40,
+        "stairSteps": 431,
+        "surfaceActiveMs": 141.984
+      },
+      "changedPixels": 16618,
+      "changedPixelPercent": 0.8014081790123457,
+      "maxChannelDifference": 206,
+      "exactPixelMatch": false
+    },
+    {
+      "name": "roma-control",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 10.479872253206,
+      "afterGpuMs": 11.1932833353678,
+      "gpuChangePercent": 6.807440634054984,
+      "beforeSceneDrawCalls": 685,
+      "afterSceneDrawCalls": 685,
+      "beforeSettlementTriangles": null,
+      "afterSettlementTriangles": null,
+      "construction": null,
+      "changedPixels": 23104,
+      "changedPixelPercent": 1.1141975308641976,
+      "maxChannelDifference": 66,
+      "exactPixelMatch": false
+    },
+    {
+      "name": "catana-control",
+      "exactCameraMatch": true,
+      "beforeGpuMs": 11.2863166544173,
+      "afterGpuMs": 11.8116444269816,
+      "gpuChangePercent": 4.6545546137826355,
+      "beforeSceneDrawCalls": 502,
+      "afterSceneDrawCalls": 502,
+      "beforeSettlementTriangles": null,
+      "afterSettlementTriangles": null,
+      "construction": null,
+      "changedPixels": 0,
+      "changedPixelPercent": 0,
+      "maxChannelDifference": 0,
+      "exactPixelMatch": true
+    }
+  ]
+}

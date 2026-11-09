@@ -1,0 +1,856 @@
+{
+  "generated": "2026-11-05T17:44:54.252Z",
+  "notice": "Final regional inputs; protected and earlier-region input preservation additionally checked against audit-hashes.json and protected-before.json.",
+  "files": [
+    {
+      "path": "godot-prototype/data/eastern-regions.json",
+      "sha256": "8cf3d3d0d8959184786982aa06756bac474c0ece727431594278ae626932ea8d",
+      "bytes": 875
+    },
+    {
+      "path": "godot-prototype/data/egypt/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "godot-prototype/data/egypt/GSHHG-COPYING.LESSERv3",
+      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9",
+      "bytes": 7816
+    },
+    {
+      "path": "godot-prototype/data/egypt/GSHHG-LICENSE.TXT",
+      "sha256": "dc53a4833bf9121360a5286917683f041439327353ffe0231206c6b746005b81",
+      "bytes": 1375
+    },
+    {
+      "path": "godot-prototype/data/egypt/alluvium-rules.json",
+      "sha256": "326fa4a36bd27df41b5ad850f4e37e468adf41a8a6073dac76ffaac0a8f48a48",
+      "bytes": 1695
+    },
+    {
+      "path": "godot-prototype/data/egypt/alluvium.png",
+      "sha256": "a202668ed4c96795cd360fd17abb225e6bc65e12ad61185687ade7e8554b88d2",
+      "bytes": 34840
+    },
+    {
+      "path": "godot-prototype/data/egypt/far-heights.bin",
+      "sha256": "6773f030586809e8ab6cf0f2f8e6681611765b50e02d2d22045a2d1aa747c488",
+      "bytes": 297092
+    },
+    {
+      "path": "godot-prototype/data/egypt/far.bin",
+      "sha256": "e31503210fedba9bb846a4cabb5371587c32fbc311a4c563e6c7063d732609dc",
+      "bytes": 5928768
+    },
+    {
+      "path": "godot-prototype/data/egypt/hydrology-supplement.json",
+      "sha256": "fb13c324c3a50c8c1e9bdf7f623b6c0024135009236fbfb69b6e121aa742bad4",
+      "bytes": 148
+    },
+    {
+      "path": "godot-prototype/data/egypt/land.png",
+      "sha256": "e0fa0dda661f2bf2f1f2bfb05e19b68ae47f9214899da15572dc3dcfe92ffd97",
+      "bytes": 50886
+    },
+    {
+      "path": "godot-prototype/data/egypt/manifest.json",
+      "sha256": "6e0c61a39cdc7acffea4d754d68d1524732ced95e18a5cff0ac16da6ceb1651f",
+      "bytes": 40991
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-27.bin",
+      "sha256": "78bee73d039b1bf2688cd9014b90163865bc7fe36274c3eb9a3918671bf4a5ce",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-28.bin",
+      "sha256": "e60e4cd2c063d351c585495f185f505743b99e6196d4bbcc8127348909d3a13c",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-29.bin",
+      "sha256": "f4d6926bd934a77ce07555b8acee7d85bf6ede3e107508667fd5d283b9fd128a",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-30.bin",
+      "sha256": "1a0c85a631bb9cba7684d034bde434c6d09f465ad8cc7f6a661978aeafa7d670",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-31.bin",
+      "sha256": "0e4ed809a3b7344f250fed38b2956563acf34627dbbcda2adf1dd427aa1c5541",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-32.bin",
+      "sha256": "55827a3db9b024d989b6aad390eefe92be6cf273eb56333f0952ec262031c5a4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-33.bin",
+      "sha256": "242e9471ec67daf914b9752aa2e9db0d23e0ad46b5e566312d7f664153ef6916",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-24-34.bin",
+      "sha256": "b0457de67c835bb206887c0d2b2b0548b819285abaa3821792a450f38b46a0e4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-27.bin",
+      "sha256": "b52f665d03a31ce65b2ae81e463f904b3bdeac1a11e3bc9d9f0cd403bb2677b3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-28.bin",
+      "sha256": "0d88c401ceb1d3dd53b412e96373e214c01dcb925fe1dec28eeb76572d9253af",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-29.bin",
+      "sha256": "1cb7500992be1c29b496e98e996f30d487694c3c3341049e85b9c308ee422fad",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-30.bin",
+      "sha256": "be2fe85b768ba0e05c962424398f4676446410eb0625ddc16d31950091137732",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-31.bin",
+      "sha256": "51beef8c62624d259906f520fc679f4664a536fb9ab20fa6d419a9b094e32018",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-32.bin",
+      "sha256": "20d9229ccbd91ab60b29d2594adcec5552c24327103fc1cb8343c996f0d859bd",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-33.bin",
+      "sha256": "f73f2dd679b1f1f327668805d05724daa58d282390e9bd3348af337de193ff72",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-25-34.bin",
+      "sha256": "69666427a8017136cf749c4afd3e34c5bd7aa7a1fcc81bf02a75dcc4dd9eb339",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-27.bin",
+      "sha256": "5cf1944f322a81a5db06de471e8bf6286eaefd9529abfc0a1d472b8bd055bdf0",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-28.bin",
+      "sha256": "53ee1cb313d2569c3cd5b9ac9b9f9d66e12ee28e3d45520de38850888986e55c",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-29.bin",
+      "sha256": "277be097352e6d41648ff06917d85f0d8e6a4b4477c5934a360ae7387b4b4833",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-30.bin",
+      "sha256": "a03cd6dac3d7de2900091bac7f641eb569ad6b155e28b8706cbc3c2521f5dc3c",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-31.bin",
+      "sha256": "b86595bbfdfbf36e5568e9f1197af614eaa4266470eae4398a7cb9d31cab5bdd",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-32.bin",
+      "sha256": "215f1cc7698dc7a3ff3bb34c795acbdca242f6299603c0815e63f19403a8fbc3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-33.bin",
+      "sha256": "dba98332dd9d80d56f1ac9382e8d15c76500b6fb74886c856dfb5663262fffe1",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-26-34.bin",
+      "sha256": "5cecf656b0b35aeda1ddcc7d2971233d773952ce3834b0ece9defa255a3606e1",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-27.bin",
+      "sha256": "7f2a12ee69b135967f51506f0fe7af251eb564408df74528d2bc85dac7f3603d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-28.bin",
+      "sha256": "ca6d67a8b63e1a56d9821197557c3c47a033e14668f253955b17d551d3c6e9e7",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-29.bin",
+      "sha256": "acb2475e59994b333802c25f1fab857c893d71348d44a443152ba8d5cabaa414",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-30.bin",
+      "sha256": "69e648de0697573e1f522b6154e836213b616915513cdfd3f9b947ffbdf07391",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-31.bin",
+      "sha256": "850de0a6548ce9becb72f3e52e7637908dc5abfd30d319288f4c2e6d0a12c3f6",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-32.bin",
+      "sha256": "db21fda340effde3b71bc399fedbfc1615943b821432ee7fa8fc6f72a9d52e0b",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-33.bin",
+      "sha256": "58aa647bad01ea953dfd2086d5198fc98fee4ea897145494b238728333f02099",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-27-34.bin",
+      "sha256": "2e4c3ce0343a2703cb8acfafe60c11cb8b39ad5538a7593d86bca411a284e6f3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-27.bin",
+      "sha256": "4c0296b30004e325852d47c44badceaa61ec7f8a486a79eb8f9ef4b69fb8776f",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-28.bin",
+      "sha256": "22c6363c8fafc9416c546e81b9d6e1ac2bdb240219f360c819d7c1cf53a0c81a",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-29.bin",
+      "sha256": "cb38cc83b7af454a57d6c06fb5c918f4b6554e1df2ed47d053aa6b0ef4e315d2",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-30.bin",
+      "sha256": "8147d0bad071775980503d8330c156f1b5cac93c8e8c3deed2fe41577c18ef36",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-31.bin",
+      "sha256": "6eb2038636a873c4178b806d6d1abc1dbd67a024b99eed8c150c7db25fd55206",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-32.bin",
+      "sha256": "109fa45aa4209ad719b088143de46fe0c8a11036b5f692db899182c475322d72",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-33.bin",
+      "sha256": "111b8e8bdcb6e060cb260f1bdd8183d286c4f7984bd1981810e8da4090920209",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-28-34.bin",
+      "sha256": "a3250c3356bfed600287bef9900048e460232736e5e367669f22502f1a203b50",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-27.bin",
+      "sha256": "48be443a4fbbd2421333fa9d4f8717fab257bdd61cd2664d4ca585cf4952dcbf",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-28.bin",
+      "sha256": "0ec8d2b5733d4d45ae0025a89246368529ad34bcb8dd12435ef4dd7e17c5df53",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-29.bin",
+      "sha256": "67b5229824631db1f1396c60be5eaa6fcd939463f040dd09687657238ac29b9f",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-30.bin",
+      "sha256": "7e9bc0889c894334cfdfb471befb5e1ebf09e9da08e0cec9909f4b49cc920481",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-31.bin",
+      "sha256": "555f93c71e322a4f1d6769ddab93d5b6e0201007913c81a92b9f30fbd54005a8",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-32.bin",
+      "sha256": "2fb682d01e610f0ba4562dd4275c9d5633a8a018020de825ee4d516b3d1fe75e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-33.bin",
+      "sha256": "91b47ff14af573f8b1423134e7d9014897fb22ee222878cc6ed1be04626a9b21",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-29-34.bin",
+      "sha256": "b733b7af79d12c8c174f1f75b62bad86ca5c375e670cff450642073897b69193",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-27.bin",
+      "sha256": "f4582be40e7ae3f3349d687eab70f1033e438f868112f7982834078d7f73f86a",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-28.bin",
+      "sha256": "624e16d262f947253b3bf6725d98b86a67898456118aeba5b68c809894dc9a6a",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-29.bin",
+      "sha256": "f41c1999814b9cd3959e9322892b41af12fe5001bb9b5f49317cb214d2c149bf",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-30.bin",
+      "sha256": "875d80b679771f7125fe302f456183851039cb7073b547c046be409f6360a856",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-31.bin",
+      "sha256": "f41fad0fabb650fcbcfb49925d1daea97516573822f7bdb98782859153ef30c0",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-32.bin",
+      "sha256": "ef0581792c83735ef9ff078f2e41c8d6d6b43ac052c73fbe0decc7e02a37630e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-33.bin",
+      "sha256": "6ab85695201784047ad60f17be4755f03d4cd73c93fc2eaa3d82871bd02853a2",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-30-34.bin",
+      "sha256": "b1cb44e5bf0f6848b44bb6c9b0d75d4005c8a847b3c20b3e13b46ae0024fdd31",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-27.bin",
+      "sha256": "4cbf6611ed1112520bf5d4f60db4dd715ff3ab0fd79f647c6d4b146c57ff243b",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-28.bin",
+      "sha256": "beb965966e7798f47497b8c9d9d98ef4d53b9e6bcfa297c8b5d8e186efc396de",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-29.bin",
+      "sha256": "2ad0fe6b5b49b7786303462685d59605afb21107a116d24aebebe52ccd4b2f43",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-30.bin",
+      "sha256": "03d3c3c9c4701cfe8bf730938590cd7f19e942cfab86fada1b3d0dcda765a47d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-31.bin",
+      "sha256": "77f61241dd7c306468f7f31022810b525930f70bdf5fae9a72b1bc1d76b0ed7d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-32.bin",
+      "sha256": "ac0886784a3719a7f70f07e963f8a08f5cb3bee8954a890cc3e5ca837e6a3238",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-33.bin",
+      "sha256": "074f610f505411827658bfe1acc38c8636d62088738a820ade12c1610bbad96b",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-31-34.bin",
+      "sha256": "2e6f6f68be712b3677e703e54a77b7caf06cc65d71cb6d9d59ad3406199d2316",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-27.bin",
+      "sha256": "16e085e72c28cc846861d30b163f11bf983b8ccf7536879b5d299de71cddc920",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-28.bin",
+      "sha256": "5fcc7042d80c9d6374d7cc89b72ba0d29b55b5767a5bc7ab65045c2a4f6e1548",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-29.bin",
+      "sha256": "6b27abc8655d34d3cb8e0565510553ac529ba94f0b7b1d28a58884613f4a04e3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-30.bin",
+      "sha256": "372e8c23e443f74990f8f717e2e79bb1b9c4839857fb71fcdcf57db2a27914bf",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-31.bin",
+      "sha256": "1e68b15ae43c1e2d2448a622317f638698064c503fd40267328784ffe93979ce",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-32.bin",
+      "sha256": "70a21babb917a3b7ff5660d45024fca58ac8d5dc2a2404505c6d76d6abdd11a3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-33.bin",
+      "sha256": "bd373cd928e356a335051c9ad6cb2af89de18f2eb4d5300422cfa548f1ac35c6",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/near-32-34.bin",
+      "sha256": "653cd9f9f9ebb996587beb8b9db175f968ed0a7fd2b8cf8ff761d6583cd0dfe0",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/egypt/normals.png",
+      "sha256": "358899021e183118c932455ed3d0311284ee7f644ce0da9a255c6498d377ed9a",
+      "bytes": 852542
+    },
+    {
+      "path": "godot-prototype/data/egypt/ocean.png",
+      "sha256": "e0fa0dda661f2bf2f1f2bfb05e19b68ae47f9214899da15572dc3dcfe92ffd97",
+      "bytes": 50886
+    },
+    {
+      "path": "godot-prototype/data/egypt/shore.png",
+      "sha256": "0635f20c2744fbb7defd064e84859f93c08fbc60068d1943eb0b388d8877b86f",
+      "bytes": 34553
+    },
+    {
+      "path": "godot-prototype/data/egypt/source-metres.bin",
+      "sha256": "b11855f594e9f474b9e35d616aded047bc0775e9af02b5d3b9a86a2e087a941a",
+      "bytes": 4727300
+    },
+    {
+      "path": "godot-prototype/data/levant/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "godot-prototype/data/levant/GSHHG-COPYING.LESSERv3",
+      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9",
+      "bytes": 7816
+    },
+    {
+      "path": "godot-prototype/data/levant/GSHHG-LICENSE.TXT",
+      "sha256": "dc53a4833bf9121360a5286917683f041439327353ffe0231206c6b746005b81",
+      "bytes": 1375
+    },
+    {
+      "path": "godot-prototype/data/levant/far-heights.bin",
+      "sha256": "ccebc84610645f99f079687185d73c4cfd2746fa3a0e522512f355ce45cad636",
+      "bytes": 297092
+    },
+    {
+      "path": "godot-prototype/data/levant/far.bin",
+      "sha256": "fa983e34a05bc208d0067f8921dc60eadc7ce6834e516a50b69fcfb2411ba334",
+      "bytes": 5928768
+    },
+    {
+      "path": "godot-prototype/data/levant/hydrology-supplement.json",
+      "sha256": "6264da6a6dd221732b94dd6f7a5e1f9343e75432664c6c696923fe9c05287365",
+      "bytes": 5990
+    },
+    {
+      "path": "godot-prototype/data/levant/land.png",
+      "sha256": "679bc814a0381bc720a2fe9cf49094b086c78ae1dc248f884a3f0de11b380345",
+      "bytes": 37808
+    },
+    {
+      "path": "godot-prototype/data/levant/manifest.json",
+      "sha256": "20106422d45c092ffcc758c17138daef0b4d26bf146a571f33070ec06678d2c3",
+      "bytes": 32766
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-33.bin",
+      "sha256": "3488e28dea12e3a4026c51f37749d757ffc8304343886746aef51d45f562c0b0",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-34.bin",
+      "sha256": "2397d6b7d288e72fe307f35c3336fe1650a8362102d7569cf85f1cd441a090f4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-35.bin",
+      "sha256": "abcd856586ae7579f4cb796992feef87c21f1a7dd7ec7585083baeb4fb0a866d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-36.bin",
+      "sha256": "3fd379eb8e218cee48d9cff1b09decedd6e36a4e9275026a081882bb5026e4b4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-37.bin",
+      "sha256": "97d36dc88ad44321f51fd49c15ea8be40b56fe95d5a745457f5a7739ca96b212",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-38.bin",
+      "sha256": "73025229e2636f5b5ab30a620adc2845af2484f3e2861b7b0ef1c031061e1b22",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-39.bin",
+      "sha256": "6712d896a3e5179fb9abc9d16a9551adb3d0a8b85b84b65be3c5483cf49e90c6",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-40.bin",
+      "sha256": "47b4772407d12790823b2ad74c20f6874954b9e5e5e0f2850ef2ea605f915a22",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-30-41.bin",
+      "sha256": "a2edda7d6804959da58ddfdcfe06a1dfc9b98445e60141b51b5b95f7bc4f22ac",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-33.bin",
+      "sha256": "36267faaf0bd71cef6d50c1c38b9fc08a9887e2a7c45414c1de575d000ed1ded",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-34.bin",
+      "sha256": "e7d7174afc55859be228be217c46ea9507830ee1da4f7d8bde2a6d4fff758bb4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-35.bin",
+      "sha256": "e3ad5a15a15ec9fba3e9e93b06975d2591fe1b50a46ff115cafcad9ee693d777",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-36.bin",
+      "sha256": "c1bf27941dd8bed497506d9778317f581b540aaae05628e672c6d8de6e3e3a97",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-37.bin",
+      "sha256": "cfaffc65bb9cdd507d50f703d1cbd1deee569eff312bbfb989c22809e1f2f336",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-38.bin",
+      "sha256": "c73f6f94448caf4d66ba7472784cd4b26be51f869cdcf1dc2b0bee08d3658932",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-39.bin",
+      "sha256": "3d04ffcace40736bb4b78ddd4fcbab485335475cf4605469f7dc8aababcb9764",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-40.bin",
+      "sha256": "539ab55cdb875f0b95c798c90f0592d96a6f62be6980f0cbcfc6f43a7e46e261",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-31-41.bin",
+      "sha256": "d82b73f1a01b494a378167cbf2b9d127e183d56022dc671ab38b8085f1a205d9",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-33.bin",
+      "sha256": "6b7a8ec376a4c9bf6c3ab7121e4ea92b2270d563b5cd1916cf62516c5feff9f7",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-34.bin",
+      "sha256": "c96678ab13b6dcdf6360b27192552ac0794b1e3b50db9bf45285104b80e36043",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-35.bin",
+      "sha256": "c2ef94e28032ca3de49c6801b9d1543cb35c3fcacfd510524cd30ae29a89c7e7",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-36.bin",
+      "sha256": "72d5b57718024424904b249e548264f36f456a4696c139bdea4d9a3b78c39b64",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-37.bin",
+      "sha256": "a57b08ff045c190fe047b7b94fa3af8ba7a5f5d10b1213dd788b2b2ebf7aa50e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-38.bin",
+      "sha256": "9228b2303fe935a2c68f628ed758ce2bffa9f486b296ac2e1ea072e6769aa312",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-39.bin",
+      "sha256": "5069550782c4cb78b1690b7a604c4896ffb982e045210c14ffd0757b189e462a",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-40.bin",
+      "sha256": "13fdaadebf28caabe1c079f08898c2b0822ca47f7600fdb40f08ab3130fd5e7e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-32-41.bin",
+      "sha256": "e6862087b489a37da5a8c149e98300985e3e0870f9eac9c509bcd52d36c1d036",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-33.bin",
+      "sha256": "0278ca3fe036cf35a651cc48808c685b237b7f302c9bb795ffed8b7ee0826a29",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-34.bin",
+      "sha256": "309911f97874a77ab2528869e695c78534959fa057386e10eddd408803cc6501",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-35.bin",
+      "sha256": "32e9645d5b0b8aa5020ea8391b45c2419eed23db815c1536b2de278e03f109b3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-36.bin",
+      "sha256": "b11b059b8cd2b2de5355cabf879cae8bed483e47a8146e6aa0612d72c584a05d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-37.bin",
+      "sha256": "88d4780f428270700f8b6487a1f402917b1483d3aebfdfb5ee10e73dba9ebe2e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-38.bin",
+      "sha256": "ccccc9f463ad23a55f7aaa576e0f57cc1031abf56c88b49dcf7b7d41d412cfa9",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-39.bin",
+      "sha256": "27efb353408fd90e9b2b33d4dcdc8675b7b577446504004b13cc6c0aac070e60",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-40.bin",
+      "sha256": "c6992e1c697cd25aaf5a2f12035abcea4a8b5183c3014796435cf6acde3c6fe3",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-33-41.bin",
+      "sha256": "7325064a563cf9815e5e30bf7f0102211efe4377626c98a4badcb5bf42de7124",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-33.bin",
+      "sha256": "04c8217fadab945ce47182d188fe85bb9c8e40b1fc4cf96e37062b3bd88ff24f",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-34.bin",
+      "sha256": "963ae57a9f7b2988b0d5cee161131025153478b296d157394c7bd21f9440ad59",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-35.bin",
+      "sha256": "0183dbf74e61599a05853c6c731cec00991bac1a1689505664ca68535f04be17",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-36.bin",
+      "sha256": "52d620129f6c50f3a8998d9427823e9b74e8b00722cb032a1174930848155da4",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-37.bin",
+      "sha256": "e0f1fc37a938126b169b1a07f91501f497b543d27bcd0d9fd67a6af65a5423b9",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-38.bin",
+      "sha256": "17a337039e309345306a9eacdcbcbc3f9a0a244939b15387215bc3ec6961ace0",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-39.bin",
+      "sha256": "4f19b53814ef2e45e761424d0da8938e3fde42484b9063ab8423f9a4889680bd",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-40.bin",
+      "sha256": "0dfd95db6e6ac0df1e283934bf24bd97e1e1eedea056a4b9551b01733f7a026e",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-34-41.bin",
+      "sha256": "9b0bf922e66b755b8ecfb0d53e11d6563c5f006057ece79ca9001567f10367c8",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-33.bin",
+      "sha256": "e172a48e367e20448adc4c82c06075d88ff422082ea560cf20910183774e42be",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-34.bin",
+      "sha256": "5c80b2e3d77415c9e7ab1374a8ccc2894ad02d7e82f70fdfde82bf08477659ba",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-35.bin",
+      "sha256": "cf9af6bd6073e98b1c0650976d068e4ecf7a1ea7235961bba4706c7560779172",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-36.bin",
+      "sha256": "d6c0a77a85150339ec1a507858a5922c97648e73f15939cb3eeb784c931a8f9c",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-37.bin",
+      "sha256": "5dd12f36732251cbf704adbf85b4c29ef2046cecdbca4fae02536a86cc1444e7",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-38.bin",
+      "sha256": "d4843a0b7e8cad3a83a0ecf7d6fa7c63cba7f24dc0c7fbea0c4aafecac99558f",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-39.bin",
+      "sha256": "dd8fac45a23a908e1a574e21671582379716d7a567a4b944f314f95b898133be",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-40.bin",
+      "sha256": "bab155271c1561e507b65b736ff134398ac10f56347d5507a11b53ddc7bff654",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-35-41.bin",
+      "sha256": "8efdc85a05fe037f61f1ca29984e7179b3e6bddf68efe674eedffeb2c87a091d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-36-37.bin",
+      "sha256": "2b25d68c6c601498cebd921f8d93f7a99c7ef17d1fcbf9ba29aa79094efbeb82",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-36-38.bin",
+      "sha256": "f37931a304866652db65eee610f310e9e3f95c0945cd3d14cb1f4a20466803fc",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-36-39.bin",
+      "sha256": "1d221483161f1f1b2620a6e37a2e78ef40dd90b43d13e6fbd4e4ba95aa810994",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-36-40.bin",
+      "sha256": "56246a4547de569e0dae61e5a350568b1107f0efaab9324de2da5c8550dad3f8",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-36-41.bin",
+      "sha256": "b65cdfdabf7c252c79b66fd8d85dd8d01ce4eec5a142b39f48f6ffbd18dac84d",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-37-38.bin",
+      "sha256": "efcec65bff56add445b8ffb9acdf59b5f1799170cc841b6c984fbc70496652bd",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-37-39.bin",
+      "sha256": "5bf4f6672305cc1c3121f3a1b2b0f0204d2b231898145c327fe3c14b3454db69",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-37-40.bin",
+      "sha256": "324b6893c84a07b1f5355e9608b9ab837140d3b01b672aca8cd4511d154266ef",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/near-37-41.bin",
+      "sha256": "8c235db1b9d5a7740ff375b8d461907895385d610a391a1c87137e3c4fe87066",
+      "bytes": 1325120
+    },
+    {
+      "path": "godot-prototype/data/levant/normals.png",
+      "sha256": "1e9694ce3a3f98155d1a83dbc85c8e72513c5f2654acdcd4cc1f8d7f192e3d45",
+      "bytes": 837139
+    },
+    {
+      "path": "godot-prototype/data/levant/ocean.png",
+      "sha256": "fbd0246b7ad8135055b6bae8950dc6cb6d116f82c3dae87c50e7f4be5c925e71",
+      "bytes": 36579
+    },
+    {
+      "path": "godot-prototype/data/levant/shore.png",
+      "sha256": "34633045c190bdd51de03601c4d469c38c8f1360f5d96fa756532b60aa2234a6",
+      "bytes": 36502
+    },
+    {
+      "path": "godot-prototype/data/levant/source-metres.bin",
+      "sha256": "75b349eb7fbe0bc4f414549be328189865e61147a3d2422e030201ce403d4039",
+      "bytes": 4727300
+    },
+    {
+      "path": "godot-prototype/eastern_surface.gd",
+      "sha256": "c1d09dd2034a6bb6056d8cb3fd17d9eab03c7336fafbb2465ae539d89ec49ac5",
+      "bytes": 12159
+    },
+    {
+      "path": "godot-prototype/environment_rules.gd",
+      "sha256": "9466f86b75cfd904dc5e57a03a4c3e812425bde0d6d48e1eb0af19eb670f6329",
+      "bytes": 5511
+    },
+    {
+      "path": "godot-prototype/northern_italy_world.gd",
+      "sha256": "a2c58857e4ebb9bfa7475db665653846e8a6e3bef84d7db2998cbeb946c01567",
+      "bytes": 13756
+    },
+    {
+      "path": "godot-prototype/regional_scenery.gd",
+      "sha256": "d8ec9e0bae359353e2bcf5580befe7acabff4d7f3d88a221f5cb13661b84994f",
+      "bytes": 22371
+    },
+    {
+      "path": "godot-prototype/tools/eastern-build.mjs",
+      "sha256": "c91960b1c877d630d678919359fcc98da3f64c1b747357058882c112e631d042",
+      "bytes": 16212
+    },
+    {
+      "path": "godot-prototype/tools/eastern-capture.gd",
+      "sha256": "b2061028f161f63120b5d3dc6948605f809ee4aecae76f47d8a7bbfd19876609",
+      "bytes": 9813
+    },
+    {
+      "path": "godot-prototype/tools/eastern-review.mjs",
+      "sha256": "3ed03adbe0daf7ab9f4e0b11562c3a9d3ee80437ba9ae37771f0b0a0a11bd1e8",
+      "bytes": 4596
+    },
+    {
+      "path": "godot-prototype/tools/eastern-validate.gd",
+      "sha256": "71d3cda72a381faa000e17cee2654c88d9cb969f08e787b33f7846878976ac75",
+      "bytes": 3160
+    }
+  ]
+}

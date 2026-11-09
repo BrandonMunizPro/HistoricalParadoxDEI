@@ -1,0 +1,123 @@
+{
+  "method": "120 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.70710676908493,
+          -0.70710676908493,
+          0.0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1550.0,
+        "fov": 42.0,
+        "near": 6.75,
+        "position": [
+          469.197570800781,
+          191.140228271484,
+          97.5334167480469
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.473,
+        "city": 0.06,
+        "markers": 1.906,
+        "rivers": 0.051,
+        "scenery": 0.114,
+        "tile_upload": 0.006,
+        "ui": 0.03
+      },
+      "drawCalls": 84.0,
+      "easternResidency": {
+        "egypt": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        24.34,
+        30.262,
+        20.578,
+        18.437,
+        20.358,
+        19.471,
+        21.033,
+        22.766,
+        20.242,
+        21.282,
+        21.045,
+        19.424,
+        20.78,
+        19.698,
+        20.438,
+        21.868,
+        19.239,
+        21.699,
+        21.573,
+        19.461,
+        23.146,
+        22.916,
+        22.154,
+        23.331,
+        22.33,
+        20.928,
+        21.088,
+        22.381,
+        21.278,
+        22.153
+      ],
+      "gpu": {
+        "meanMs": 9.43086667060852,
+        "p95Ms": 10.8039999008179,
+        "samples": 30
+      },
+      "labelDrawMs": 6.99,
+      "name": "illyria-control",
+      "political": 1.0,
+      "preset": [
+        19.2,
+        42.2,
+        270,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.059,
+        "base": 2.649,
+        "previousRegions": 0.017
+      },
+      "renderCpuMs": 0.354000002145767,
+      "resident": [
+        "context",
+        "N42E19",
+        "N42E18",
+        "N41E19",
+        "N43E19",
+        "N43E18",
+        "N42E17",
+        "N40E19",
+        "N40E18",
+        "N41E17",
+        "N43E17",
+        "N44E19",
+        "N44E18"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 525244250,
+      "steady": {
+        "averageFps": 46.4612768488104,
+        "maxMs": 30.262,
+        "meanMs": 21.5233,
+        "onePercentLowFps": 33.0447425814553,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.262,
+        "samples": 30
+      },
+      "videoMemoryBytes": 2024970256
+    }
+  ]
+}

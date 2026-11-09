@@ -1,0 +1,19 @@
+{
+  "notice": "Physical presentation parameters, separate from historical membership and ownership. Habitat radii are illustrative, not ancient agricultural boundaries.",
+  "featherDegrees": 0.25,
+  "regions": {
+    "levant": {"bounds": {"west": 33, "east": 42, "south": 30, "north": 38}},
+    "egypt": {"bounds": {"west": 27, "east": 35, "south": 24, "north": 33}, "westFeatherDegrees": 1.3}
+  },
+  "floodplain": {
+    "valleyHeightMetres": [5, 18],
+    "valleyDistanceKm": [3, 9],
+    "deltaHeightMetres": [20, 45],
+    "deltaDistanceKm": [35, 75],
+    "oases": [
+      {"researchId": "r16-egy-krokodilopolis", "radiusKm": 23, "maxHeightMetres": 45, "strength": 0.7},
+      {"researchId": "r16-egy-kharga", "radiusKm": 6, "maxHeightMetres": 100, "strength": 0.65},
+      {"researchId": "r16-egy-dakhla", "radiusKm": 8, "maxHeightMetres": 220, "strength": 0.65}
+    ]
+  }
+}
