@@ -6,15 +6,20 @@ var alpine_surface
 var balkans_surface
 var anatolia_surface
 var anatolia_identities
+var eastern_surfaces=[]
 var reference_labels
 var regional_cpu_ms={}
 var reference_faction_ids=["boii","insubres","cenomani","veneti-italy","ligurian-polities","etruscan-polities","rome","samnites","lucanians","bruttians","messapians","daunians","tarentum","rhegion","croton","syracuse"]
 func uses_northern_labels():
 	return cartographic_rollout.contains(focus) and distance>=30. and distance<=1400. and political_map.enabled and political_map.factions!=null and political_map.factions.enabled and political_map.blend>.01
 func read_json(path):
+	if path=="data/hydrology.json" and FileAccess.file_exists("res://data/levant/hydrology-supplement.json") and not OS.get_cmdline_user_args().has("--eastern-baseline"):
+		var data=super.read_json(path);var extra=super.read_json("data/levant/hydrology-supplement.json")
+		data.rivers.append_array(extra.rivers);data.lakes.append_array(extra.lakes);return data
 	if path=="data/factions/scenario-278.json":return super.read_json("data/northern-italy-reference/scenario-278.json")
 	if path=="data/lakes.json":
 		var lakes=super.read_json(path)
+		if FileAccess.file_exists("res://data/levant/hydrology-supplement.json") and not OS.get_cmdline_user_args().has("--eastern-baseline"):lakes.append_array(super.read_json("data/levant/hydrology-supplement.json").renderLakes)
 		for source in super.read_json("data/northern-italy-reference/lake-rings.json"):
 			if source.rings.size()!=1:continue # Preserve island holes in original mesh.
 			var ring=source.rings[0];var points=PackedVector2Array();var vertices=[]
@@ -68,6 +73,7 @@ func _ready():
 	code=preload("res://balkans_surface.gd").decorate_shader(code)
 	code=preload("res://alpine_surface.gd").decorate_shader(code)
 	code=preload("res://anatolia_surface.gd").decorate_shader(code)
+	code=preload("res://eastern_surface.gd").decorate_shader(code)
 	shader.code=code
 	var bed=ImageTexture.create_from_image(Image.load_from_file("res://data/northern-italy-reference/lake-bed.png"))
 	base_material.set_shader_parameter("reference_lake_bed",bed)
@@ -98,6 +104,12 @@ func _ready():
 		for id in political_map.factions.by_id:
 			var geo=political_map.factions.label_for(id)
 			if geo!=null and cartographic_rollout.contains_anatolia(geo) and not id in reference_faction_ids:reference_faction_ids.append(id)
+	for region in ["levant","egypt"]:
+		if FileAccess.file_exists("res://data/"+region+"/manifest.json") and not OS.get_cmdline_user_args().has("--eastern-baseline"):
+			eastern_surfaces.append(load("res://eastern_surface.gd").new(self,region))
+	# Strategic river vertices are sampled once; refresh after source surfaces load.
+	if not eastern_surfaces.is_empty():
+		strategic_world_rivers.queue_free();strategic_regional_rivers.queue_free();make_rivers()
 
 func _process(delta):
 	var profile_start=Time.get_ticks_usec()
@@ -107,10 +119,18 @@ func _process(delta):
 	if balkans_surface!=null:balkans_surface.tick()
 	var old_end=Time.get_ticks_usec()
 	if anatolia_surface!=null:anatolia_surface.tick()
+	for surface in eastern_surfaces:surface.tick()
 	regional_cpu_ms={"base":(base_end-profile_start)/1000.,"previousRegions":(old_end-base_end)/1000.,"anatolia":(Time.get_ticks_usec()-old_end)/1000.}
 
 func is_settled():
+	for surface in eastern_surfaces:
+		if not surface.is_ready():return false
 	return super.is_settled() and (anatolia_surface==null or anatolia_surface.is_ready())
+
+func river_view_signature():
+	var signature=super.river_view_signature()
+	for surface in eastern_surfaces:signature+=str(surface.resident.keys())+str(surface.is_ready())
+	return signature
 
 func elevation(lon,lat):
 	var original=super.elevation(lon,lat)
@@ -118,10 +138,13 @@ func elevation(lon,lat):
 		if alpine_surface!=null:original=alpine_surface.elevation(Vector2(lon,lat),original)
 		if balkans_surface!=null:original=balkans_surface.elevation(Vector2(lon,lat),original)
 		if anatolia_surface!=null:original=anatolia_surface.elevation(Vector2(lon,lat),original)
+		for surface in eastern_surfaces:original=surface.elevation(Vector2(lon,lat),original)
 	return original
 
 func scenery_elevation(lon,lat):
 	var geo=Vector2(lon,lat)
+	for surface in eastern_surfaces:
+		if surface.weight(geo)>.001:return surface.elevation(geo,super.elevation(lon,lat),true)
 	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(geo)>.001:return anatolia_surface.placement_height(geo)
 	if balkans_surface!=null:
 		var base=super.elevation(lon,lat)
@@ -130,6 +153,8 @@ func scenery_elevation(lon,lat):
 	return elevation(lon,lat)
 
 func is_land(lon,lat):
+	for surface in eastern_surfaces:
+		if surface.weight(Vector2(lon,lat))>.001:return surface.land_at(Vector2(lon,lat))
 	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(Vector2(lon,lat))>.001:return anatolia_surface.land_at(Vector2(lon,lat))
 	return super.is_land(lon,lat)
 
@@ -140,5 +165,6 @@ func load_tile(id):
 		if alpine_surface!=null:alpine_surface.bind(resident[id].node.material_override)
 		if balkans_surface!=null:balkans_surface.bind(resident[id].node.material_override)
 		if anatolia_surface!=null:anatolia_surface.bind(resident[id].node.material_override)
+		for surface in eastern_surfaces:surface.bind(resident[id].node.material_override)
 	return result
 

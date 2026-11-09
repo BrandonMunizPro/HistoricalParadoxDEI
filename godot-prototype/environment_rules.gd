@@ -8,14 +8,17 @@ var river_index={}
 var projected_cells={}
 var town_cells={}
 var town_clearance=0.42
+var egypt_alluvium:Image
 func _init(owner):
 	world=owner
 	town_clearance=JSON.parse_string(FileAccess.get_file_as_string("res://data/foundation-settings.json")).settlements.clearance_km
 	settings=JSON.parse_string(FileAccess.get_file_as_string("res://data/environment-presentation.json"))
 	rivers=Image.load_from_file("res://data/environment/river-corridors.png")
 	rivers.convert(Image.FORMAT_R8)
+	if FileAccess.file_exists("res://data/egypt/alluvium.png") and not OS.get_cmdline_user_args().has("--eastern-baseline"):
+		egypt_alluvium=Image.load_from_file("res://data/egypt/alluvium.png");egypt_alluvium.convert(Image.FORMAT_R8)
 	# Quarter-degree index of source segments; projection cache stays bounded.
-	var hydrology=JSON.parse_string(FileAccess.get_file_as_string("res://data/hydrology.json"))
+	var hydrology=world.read_json("data/hydrology.json")
 	var margin=max(.005,settings.scenery.coarse_footprint_km/50.0)
 	for feature in hydrology.rivers:
 		var lines=feature.geometry.coordinates if feature.geometry.type=="MultiLineString" else [feature.geometry.coordinates]
@@ -46,6 +49,16 @@ func climate(lon,lat):
 	var uv=Vector2((lon+12)/87,(62-lat)/50)
 	var c=sample_image(world.global_ecology,uv)
 	c.a=sample_image(rivers,uv).r
+	if egypt_alluvium!=null and world.get("eastern_surfaces")!=null:
+		for surface in world.eastern_surfaces:
+			if surface.region!="egypt":continue
+			var w=surface.weight(Vector2(lon,lat))
+			if w<=.001:continue
+			var wet=sample_image(egypt_alluvium,Vector2((lon-27.)/8.,(33.-lat)/9.)).r
+			c.g=lerp(c.g,lerp(.08,.78,wet),w);c.b=lerp(c.b,lerp(.92,.28,wet),w);c.a=lerp(c.a,max(c.a*wet,wet*.45),w)
+	if world.get("eastern_surfaces")!=null:
+		for surface in world.eastern_surfaces:
+			if surface.get("oases_image")!=null:c=surface.climate_override(c,Vector2(lon,lat))
 	return c
 static func blend_weights(latitude:float,c:Color,latitude_rules:Array,dry_river_rules:Array)->Vector4:
 	var temperate=smoothstep(latitude_rules[0],latitude_rules[1],latitude)*(1-smoothstep(latitude_rules[2],latitude_rules[3],c.b))

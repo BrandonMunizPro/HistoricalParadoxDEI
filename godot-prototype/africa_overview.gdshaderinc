@@ -1,0 +1,62 @@
+// Distant response of the existing material families. No geometry/density loss.
+uniform vec2 africa_dry_rules=vec2(.45,.75);
+uniform vec2 africa_snow_latitudes=vec2(27.,31.);
+void africa_overview_surface(vec2 geo,vec2 coast_geo,vec3 position,vec3 n,float land,out vec3 color,out vec3 normal_out){
+ vec2 uv=vec2((geo.x+12.)/87.,(62.-geo.y)/50.);
+ vec4 c=texture(global_ecology,(uv*vec2(1392.,800.)+.5)/vec2(1393.,801.));
+ vec2 rs=vec2(textureSize(river_corridors,0));c.a=texture(river_corridors,(uv*(rs-1.)+.5)/rs).r;
+ c.g*=1.-smoothstep(africa_dry_rules.x,africa_dry_rules.y,c.b);
+ float oasis=texture(africa_oases,eastern_texel(AFRICA_OVERVIEW_UV(geo),textureSize(africa_oases,0))).r;
+ c.g=mix(c.g,.78,oasis);c.b=mix(c.b,.30,oasis);c.a=max(c.a,oasis*.35);
+ float h=position.y/1.5,slope=1.-clamp(n.y,0.,1.),africa=na_scope(geo);
+ float fertile=africa*na_plain(c,h,slope);
+ vec4 family=mix(environment_weights(geo.y,c),vec4(0.,0.,0.,1.),fertile);
+ // At these footprints metre-scale samples converge to their coarsest mips.
+ // Explicit sampling avoids dozens of redundant triplanar/detail fetches.
+ vec3 grass=textureLod(quality_ground,vec2(.5),16.).rgb;
+ vec3 arid=textureLod(quality_arid,vec2(.5),16.).rgb;
+ vec3 rock=textureLod(quality_rock,vec2(.5),16.).rgb;
+ vec3 temperate=textureLod(quality_temperate,vec2(.5),16.).rgb;
+ vec3 alluvium=textureLod(quality_alluvium,vec2(.5),16.).rgb;
+ vec3 mosaic=textureLod(quality_mosaic,vec2(.5),16.).rgb;
+ vec2 p=position.xz;
+ vec3 grain=grass*mix(vec3(.76,1.12,.68),vec3(1.13,1.04,.82),c.b*.65)*family.x+temperate*family.y+arid*family.z+alluvium*family.w;
+ float wide=.5+(noise(p*.035)-.5)*.25,middle=.5+(noise(p*.24)-.5)*.2;
+ float steep=smoothstep(.045,.30,slope),alpine=smoothstep(1.55,2.55,h);
+ float snow=smoothstep(2.8,3.65,h+wide*.30)*(1.-smoothstep(.24,.56,slope))*smoothstep(africa_snow_latitudes.x,africa_snow_latitudes.y,geo.y);
+ float forest=smoothstep(.25,.65,habitat_cover(p,c.g,c.b,h))*(1.-smoothstep(.15,.38,slope))*dot(family,environment_cover);
+ float canopy=habitat_noise(p*7.)*.6+habitat_noise(p*19.)*.4;
+ vec3 canopy_color=(vec3(.045,.085,.030)*family.x+vec3(.028,.065,.038)*family.y+vec3(.12,.13,.055)*family.z+vec3(.04,.11,.045)*family.w)*(.76+canopy*.6);
+ vec3 landscape=mix(grain*.86,canopy_color*(.65+canopy*.7),forest*habitat_strength);
+ landscape*=.94+habitat_noise(p*.8)*.07+middle*.04;
+ float rock_weight=max(steep,alpine*.91);
+ vec3 mineral=mix(rock,arid,family.z*.85);
+ float strata=.5+.5*sin(h*rock_strata_scale+noise(p*.9)*2.);
+ mineral*=mix(1.,.78+strata*.36,rock_strata_strength);
+ landscape=mix(landscape,mineral*.61,rock_weight);
+ landscape=mix(landscape,vec3(.60,.60,.55),snow*.80);
+ float coast_weight=(1.-smoothstep(.002,.045,h))*mix(1.,1.-smoothstep(.5,.98,land),africa);
+ landscape=mix(landscape,grain*vec3(1.12,1.05,.87),coast_weight*.48);
+ vec3 meso=mosaic*family.x+temperate*family.y+arid*family.z+alluvium*family.w;
+ vec3 mosaic_detail=clamp(meso/vec3(.15,.15,.10),vec3(.55),vec3(1.65));
+ color=landscape*mix(vec3(1.),mosaic_detail,mosaic_strength*(1.-max(rock_weight,snow)));
+ float dry=africa*(1.-fertile)*smoothstep(.28,.65,c.b);
+ vec3 sand=na_sand_color*(.68+dot(arid,vec3(.333))*1.65);
+ float exposure=clamp(smoothstep(.004,.09,slope)*.75+smoothstep(.18,.9,h)*.25,0.,1.);
+ color=mix(color,mix(sand,mineral*vec3(.77,.73,.65),exposure*na_rock_strength),dry*detail_strength);
+ vec3 moist=alluvium*mix(na_alluvium_tint,vec3(.76,.73,.48),habitat_noise(p*.9+vec2(7.,3.))*.22);
+ moist*=.72+habitat_noise(p*.55)*.34;moist*=1.-c.a*.13;
+ color=mix(color,moist,fertile*.88*detail_strength);
+ vec3 light_direction=normalize(relief_light_direction);float aspect=dot(n,light_direction)-light_direction.y;
+ color*=mix(1.,clamp(exp(aspect*na_relief_contrast),.60,1.35),dry);
+ color=mix(color,color*vec3(.40,.36,.34),africa_basalt(geo,h));
+ float shore_edge=1.-smoothstep(.5,.98,land);
+ float beach=(1.-smoothstep(.025,.12,h))*(1.-smoothstep(.06,.20,slope));
+ color=mix(color,mix(grain*vec3(.48,.49,.43),grain*vec3(.83,.79,.61),beach),shore_edge*shore_blend_strength);
+ color*=1.-shore_edge*.18;color*=clamp(exp(aspect*relief_contrast),.65,1.3);
+ vec2 sz=vec2(textureSize(strategic_relief,0));vec3 coarse=normalize(texture(strategic_relief,(uv*(sz-1.)+.5)/sz).rgb*2.-1.);
+ vec3 political_normal=normalize(mix(ground_normal,coarse,.75));
+ float fill=political_blend*mix(1.,.24,max(reference_rollout_scope(geo),africa_raw_union(geo)));
+ vec3 political=political_land_color(coast_geo,p)*clamp(exp((dot(political_normal,light_direction)-light_direction.y)*.7),.82,1.12);
+ color=mix(color,political,fill);normal_out=normalize(mix(n,political_normal,fill));
+}

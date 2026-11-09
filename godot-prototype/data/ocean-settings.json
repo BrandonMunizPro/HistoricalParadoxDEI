@@ -1,35 +1,86 @@
 {
   "enabled": true,
   "quality": "balanced",
-  "wind_direction_degrees": 28.0,
-  "wind_speed_multiplier": 1.0,
+  "wind_direction_degrees": 28,
+  "wind_speed_multiplier": 1,
   "wave_intensity": 0.65,
   "maximum_displacement_metres": 0.75,
   "foam_strength": 0.12,
   "shore_foam_strength": 0.09,
   "roughness": 0.14,
   "coastal_band_km": 1.8,
-  "deep_color": [0.012, 0.065, 0.115],
-  "coastal_color": [0.045, 0.23, 0.235],
+  "deep_color": [
+    0.012,
+    0.065,
+    0.115
+  ],
+  "coastal_color": [
+    0.045,
+    0.23,
+    0.235
+  ],
   "sea_spray_budget": 0,
   "strategic": {
-    "strength": 1.0,
-    "begin_km": 4.0,
-    "full_km": 24.0,
+    "strength": 1,
+    "begin_km": 4,
+    "full_km": 24,
     "drift_km_s": 0.009,
     "normal_strength": 0.06,
-    "roughness_strength": 0.10,
+    "roughness_strength": 0.1,
     "color_strength": 0.22
   },
   "presets": {
-    "low": {"resolution":128,"cascades":2,"grid":65,"near_hz":18.0,"regional_hz":8.0,"far_hz":2.0},
-    "balanced": {"resolution":256,"cascades":3,"grid":129,"near_hz":24.0,"regional_hz":12.0,"far_hz":3.0},
-    "high": {"resolution":512,"cascades":3,"grid":193,"near_hz":30.0,"regional_hz":15.0,"far_hz":4.0}
+    "low": {
+      "resolution": 128,
+      "cascades": 2,
+      "grid": 65,
+      "near_hz": 18,
+      "regional_hz": 8,
+      "far_hz": 2
+    },
+    "balanced": {
+      "resolution": 256,
+      "cascades": 3,
+      "grid": 129,
+      "near_hz": 24,
+      "regional_hz": 12,
+      "far_hz": 3
+    },
+    "high": {
+      "resolution": 512,
+      "cascades": 3,
+      "grid": 193,
+      "near_hz": 30,
+      "regional_hz": 15,
+      "far_hz": 4
+    }
   },
   "cascades": [
-    {"tile_metres":128.0,"wind_speed":4.0,"fetch_km":4.0,"displacement":0.28,"normal":0.5},
-    {"tile_metres":487.0,"wind_speed":5.5,"fetch_km":20.0,"displacement":0.40,"normal":0.65},
-    {"tile_metres":1973.0,"wind_speed":6.5,"fetch_km":60.0,"displacement":0.20,"normal":0.45}
+    {
+      "tile_metres": 128,
+      "wind_speed": 4,
+      "fetch_km": 4,
+      "displacement": 0.28,
+      "normal": 0.5
+    },
+    {
+      "tile_metres": 487,
+      "wind_speed": 5.5,
+      "fetch_km": 20,
+      "displacement": 0.4,
+      "normal": 0.65
+    },
+    {
+      "tile_metres": 1973,
+      "wind_speed": 6.5,
+      "fetch_km": 60,
+      "displacement": 0.2,
+      "normal": 0.45
+    }
   ],
-  "notice": "Rendering only. Source coastline/exclusion masks and all terrain heights remain authoritative. Shore colour is an appearance approximation, not measured bathymetry. No sea-spray particles in the Mediterranean preset."
+  "notice": "Rendering only. Source coastline/exclusion masks and all terrain heights remain authoritative. Shore colour is an appearance approximation, not measured bathymetry. No sea-spray particles in the Mediterranean preset.",
+  "overview_begin_km": 24,
+  "overview_full_km": 520,
+  "basin_scale_km": 420,
+  "basin_color_strength": 0.18
 }

@@ -25,7 +25,7 @@ float political_edge(vec2 q){float c=owner_id(q);vec2 dx=dFdx(q)*.85,dy=dFdy(q)*
 void fragment(){
  vec2 geo=coast_geographic(world_pos.xz),q=anatolia_uv(geo);
  float scope=anatolia_scope(geo);
- if(!anatolia_detail_enabled||camera_distance>=3300.||scope<.001)discard;
+ if(!anatolia_detail_enabled||scope<.001)discard;
  if(anatolia_coverage(geo)<.5)discard;
  if(!detail_mesh){for(int i=0;i<32;i++){if(i>=detail_count)break;vec4 b=detail_bounds[i];if(geo.x>b.x+.002&&geo.x<b.z-.002&&geo.y>b.y+.002&&geo.y<b.w-.002)discard;}}
  vec2 nq=anatolia_texel(q,textureSize(source_normals,0));

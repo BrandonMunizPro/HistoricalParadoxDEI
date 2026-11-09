@@ -116,7 +116,7 @@ export function validateFactionPresentation(value: unknown, scenario: FactionSce
   const factions=value['factions'], sources=value['sources'];
   const ids=new Set(scenario.factions.map(f=>f.id));
   requireValue(Object.keys(factions).length===ids.size, 'Presentation must cover the complete roster');
-  const supported=new Set(['anchor','wolf_twins','eagle','owl','rose','dolphin_rider','tripod','boar','torc','helmet','spear','standard','tanit','star','sun','rosette','wheel','spiral','horse','meander','ship','lotus','pyramid','fire','mountain','oak','wreath']);
+  const supported=new Set(['anchor','wolf_twins','eagle','eagle_stand','owl','rose','dolphin_rider','tripod','boar','boar_charging','boar_head','torc','helmet','spear','spearhead','standard','tanit','star','sun','rosette','wheel','sun_disc','sun_wheel','crescent','star_crescent','spiral','triskele','triskelion','horse','galloping_horse','horse_head','horse_grazing','horse_lyre','rider','bull','bull_head','lion','lion_head','wolf','bear','raven','bird','stag','deer','griffin','snake','serpent','elephant','ibex','ram_head','ostrich','camel','chariot','fish','dolphin','palm','incense_altar','pomegranate','grain_ear','grape','thunderbolt','club','lyre','labyrinth','pegasus','sphinx','sica','shield','bow','axe','draco','fleece','macedonian_shield','fire_altar','mountain_peak','cornucopia','mountain','fire','lotus','meander','ship','pyramid','oak','wreath']);
   for(const [id,entry] of Object.entries(factions)) {
     requireValue(ids.has(id) && object(entry) && Object.keys(entry).every(k=>k==='color'||k==='emblem'), 'Unknown faction or non-presentation override');
     requireValue(typeof entry['color']==='string' && /^#[0-9a-f]{6}$/i.test(entry['color']), 'Invalid presentation color');

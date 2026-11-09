@@ -21,6 +21,9 @@ var distance = 5200.0
 var goal_distance = 5200.0
 var yaw = 0.0
 var pitch = 62.0
+var view_pitch=62.0
+var view_yaw=0.0
+var strategic_camera
 var goal_focus = Vector2(13.0,37.0)
 var selected = ""
 var markers = []
@@ -123,6 +126,7 @@ func unproject(p):
 func _ready():
 	set_process(false)
 	visual_settings=read_json("data/visual-settings.json")
+	strategic_camera=preload("res://strategic_camera.gd").new(visual_settings.camera)
 	var presentation_mode=read_json("data/foundation-settings.json").rendering
 	if DisplayServer.get_name()!="headless":DisplayServer.window_set_vsync_mode(int(presentation_mode.vsync_mode))
 	Engine.max_fps=int(presentation_mode.frame_cap)
@@ -650,7 +654,7 @@ func jump(name):
 	resolved_view=name
 	print("PRODUCTION_VIEW_RESOLVED ",name," distance=",view[2])
 	goal_focus=Vector2(view[0],view[1])
-	goal_distance=view[2]
+	goal_distance=clamp(float(view[2]),visual_settings.camera.minimum_distance_km,visual_settings.camera.maximum_distance_km)
 	pitch=view[3]
 	yaw=view[4]
 	if ready_frame==0 or capture_name!="":focus=goal_focus;distance=goal_distance
@@ -767,6 +771,10 @@ func _process(delta):
 	if all_frame_times.size()>900:all_frame_times.pop_front()
 	ready_frame+=1
 	var dt=min(delta,.05)
+	goal_focus=goal_focus.clamp(Vector2(-11.9,12.1),Vector2(74.9,61.9))
+	var camera_aspect=get_viewport().get_visible_rect().size.x/max(1.,get_viewport().get_visible_rect().size.y)
+	var camera_limit=strategic_camera.maximum_at(self,goal_focus,pitch,yaw,camera_aspect)
+	goal_distance=clamp(goal_distance,visual_settings.camera.minimum_distance_km,camera_limit)
 	focus=focus.lerp(goal_focus,1.0-exp(-dt*9))
 	# Vector2 is float32: easing can stall several ULPs short of its endpoint.
 	if focus.distance_to(goal_focus)<.0001:focus=goal_focus
@@ -787,7 +795,10 @@ func _process(delta):
 	goal_focus.y=clamp(goal_focus.y,12.0,62.0)
 	target=project(focus.x,focus.y)
 	target.y=elevation(focus.x,focus.y)
-	var offset=Vector3(0,sin(deg_to_rad(pitch)),cos(deg_to_rad(pitch))).rotated(Vector3.UP,deg_to_rad(yaw))*distance
+	var desired_pitch=strategic_camera.pitch_for(pitch,distance)
+	view_pitch=lerp(view_pitch,desired_pitch,1.-exp(-dt*10.)) if ready_frame>1 else desired_pitch
+	view_yaw=rad_to_deg(lerp_angle(deg_to_rad(view_yaw),deg_to_rad(yaw),1.-exp(-dt*10.))) if ready_frame>1 else yaw
+	var offset=Vector3(0,sin(deg_to_rad(view_pitch)),cos(deg_to_rad(view_pitch))).rotated(Vector3.UP,deg_to_rad(view_yaw))*distance
 	camera.position=target+offset
 	# Kilometre units require a useful near plane on a 24-bit compatibility depth buffer.
 	# A metre-scale near plane at regional zoom quantizes coastal ground into the sea.
@@ -922,14 +933,14 @@ func _unhandled_input(event):
 				if d<near:best=m.site.key;near=d
 			if best!="":select_site(best)
 	if event is InputEventMouseMotion:
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):yaw-=event.relative.x*.22;pitch=clamp(pitch+event.relative.y*.18,8.0,89.0)
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
+		if event.button_mask & MOUSE_BUTTON_MASK_RIGHT:yaw-=event.relative.x*.22;pitch=clamp(pitch+event.relative.y*.18,8.0,89.0)
+		if event.button_mask & MOUSE_BUTTON_MASK_MIDDLE:
 			var p=project(goal_focus.x,goal_focus.y)
 			p+=Vector3(-event.relative.x,0,-event.relative.y).rotated(Vector3.UP,deg_to_rad(yaw))*distance*.0007
 			goal_focus=unproject(p)
 
 func zoom_at(screen,ratio):
-	var next=clamp(goal_distance*ratio,1.2,30000.0)
+	var next=clamp(goal_distance*ratio,visual_settings.camera.minimum_distance_km,visual_settings.camera.maximum_distance_km)
 	var ray=camera.project_ray_normal(screen)
 	if ray.y<-.01:
 		var origin=camera.project_ray_origin(screen)

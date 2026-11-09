@@ -4,7 +4,13 @@
     "detail_near_km": 250,
     "detail_far_km": 2400,
     "distant_material_weight": 0.62,
-    "max_zoom_step_fraction": 0.08
+    "max_zoom_step_fraction": 0.08,
+    "minimum_distance_km": 1.2,
+    "maximum_distance_km": 2800,
+    "strategic_begin_km": 180,
+    "strategic_full_km": 1800,
+    "strategic_min_pitch": 48,
+    "strategic_max_pitch": 62
   },
   "terrain": {
     "coverage_overlap_km": 0.6,

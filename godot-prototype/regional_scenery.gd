@@ -18,20 +18,25 @@ var cache_signature=""
 var skip_cache=false
 var cache_hits=0
 var cache_writes=0
-var coarse_prefetch_km=380.
+var coarse_visible_km=190.
 var local_prefetch_km=180.
 var reveal_seconds=.85
-var work_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"cellsBuilt":0,"cancelled":0,"generationCpuMs":0.0,"uploadCpuMs":0.0,"generationYieldFrames":0,"candidates":0}
+var was_hidden=false
+var work_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"cellsBuilt":0,"cancelled":0,"generationCpuMs":0.0,"uploadCpuMs":0.0,"generationYieldFrames":0,"candidates":0,"skippedHidden":0,"hiddenTicks":0}
+
+func coarse_visible(distance):
+	return distance>float(settings.scenery.coarse_transition_km[0]) and distance<coarse_visible_km
 
 func expected_cells():
 	var cells={}
-	if prebaking or world.distance>=coarse_prefetch_km:return cells
+	if prebaking:return cells
 	if world.distance<local_prefetch_km:
 		var center=Vector2i(floori(world.focus.x/.05),floori(world.focus.y/.05))
 		for dy in [-1,0,1]:
 			for dx in [-1,0,1]:
 				var c=center+Vector2i(dx,dy)
 				cells["local|%d|%d" % [c.x,c.y]]=true
+	if not coarse_visible(world.distance):return cells
 	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y):
 		for dy in [-1,0,1]:
 			for dx in [-1,0,1]:cells["global|%d|%d" % [floori(world.focus.x)+dx,floori(world.focus.y)+dy]]=false
@@ -62,9 +67,11 @@ func _init(owner):
 	settings=world.presentation.settings
 	skip_cache=OS.get_cmdline_user_args().has("--scenery-skip-cache")
 	var signature=["scenery-placement-cache-1",JSON.stringify(settings.scenery)]
-	for path in ["regional_scenery.gd","northern_italy_world.gd","anatolia_surface.gd","data/anatolia/source-metres.bin","data/anatolia/land.png","data/sites.json","data/environment-presentation.json","habitat.gd","data/global/manifest.json"]:
+	for path in ["regional_scenery.gd","northern_italy_world.gd","anatolia_surface.gd","data/anatolia/source-metres.bin","data/anatolia/land.png","eastern_surface.gd","data/levant/source-metres.bin","data/levant/land.png","data/levant/hydrology-supplement.json","data/egypt/source-metres.bin","data/egypt/land.png","data/sites.json","data/environment-presentation.json","habitat.gd","data/global/manifest.json"]:
 		signature.append(FileAccess.get_sha256("res://"+path) if FileAccess.file_exists("res://"+path) else "missing")
 	cache_signature="|".join(signature).sha256_text().substr(0,20)
+	for path in ["data/eastern-regions.json","data/egypt/alluvium.png"]:
+		if FileAccess.file_exists("res://"+path):cache_signature=(cache_signature+FileAccess.get_sha256("res://"+path)).sha256_text().substr(0,20)
 	var factory=preload("res://canopy_assets.gd").new()
 	for species in 6:
 		for variant in 4:meshes.append(factory.build(species,variant))
@@ -157,8 +164,14 @@ func tick():
 	quality.update(world.distance,world.water_time)
 	for material in [meshes[0].surface_get_material(0),meshes[0].surface_get_material(1)]:material.set_shader_parameter("camera_distance",world.distance)
 	if prebaking:return
+	var hidden=world.distance>=coarse_visible_km
+	if hidden:
+		work_profile.hiddenTicks+=1
+		if not was_hidden:work_profile.skippedHidden+=1
+		was_hidden=true
+	else:was_hidden=false
 	var global_keys=[]
-	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and world.distance<coarse_prefetch_km:
+	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and coarse_visible(world.distance):
 		for dx in [-1,0,1]:
 			for dy in [-1,0,1]:global_keys.append("global|%d|%d" % [floori(world.focus.x)+dx,floori(world.focus.y)+dy])
 	for id in roots.keys():
@@ -183,7 +196,7 @@ func tick():
 	for id in local_roots:
 		local_roots[id].visible=id in local_keys and local_roots[id].get_meta("ready",false) and world.distance<37.
 		update_reveal(local_roots[id])
-	if prebaking or busy or world.distance>=coarse_prefetch_km or not world.queue.is_empty():return
+	if prebaking or busy or world.distance>=coarse_visible_km or not world.queue.is_empty():return
 	# All placements must use settled terrain, including close cells.
 	for id in world.resident:
 		if world.resident[id].reveal<1:return
@@ -207,6 +220,7 @@ func tick():
 		var lon=float(split[1]);var lat=float(split[2])
 		build(id,{"west":lon,"east":lon+1,"south":lat,"north":lat+1})
 		return
+	if not coarse_visible(world.distance):return
 	for id in world.resident:
 		if world.resident[id].descriptor.kind!="regional" or roots.has(id):continue
 		if world.resident[id].reveal<1:return

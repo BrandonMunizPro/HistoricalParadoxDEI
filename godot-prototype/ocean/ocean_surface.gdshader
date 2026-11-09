@@ -65,6 +65,7 @@ float basin_field(vec2 p){
  vec2 cell=floor(p),f=fract(p);f=f*f*(3.-2.*f);
  return mix(mix(basin_hash(cell),basin_hash(cell+vec2(1.,0.)),f.x),mix(basin_hash(cell+vec2(0.,1.)),basin_hash(cell+vec2(1.,1.)),f.x),f.y)*2.-1.;
 }
+#include "res://ocean/strategic_water.gdshaderinc"
 // One continuous global phase; camera-centred geometry never owns a texture phase.
 void vertex(){
  // The huge background triangles can tie low land at shallow viewing angles,
@@ -145,7 +146,8 @@ void fragment(){
   }
  }
  // FFT texels are physically measured slopes, not colour-decoded normal maps.
- gradient=clamp(gradient*wave_intensity,vec2(-.7),vec2(.7));
+ float overview=smoothstep(overview_distance_km.x,overview_distance_km.y,camera_distance)*overview_strength;
+ gradient=clamp(gradient*wave_intensity,vec2(-.7),vec2(.7))*(1.-overview*.92);
  float coastal_damping=smoothstep(.01,.16,d);
  float strategic=smoothstep(strategic_distance_km.x,strategic_distance_km.y,camera_distance)*strategic_strength;
  float wind_patch=0.;float blue_patch=0.;
@@ -159,7 +161,7 @@ void fragment(){
   // Implicit anisotropic mip filtering suppresses fields smaller than a pixel.
   vec2 streak=texture(ripple_normals,wind_uv/vec2(11.,3.7)).rg*2.-1.;
   vec2 broad=texture(ripple_normals,mat2(vec2(.819,-.574),vec2(.574,.819))*wind_uv/vec2(67.,43.)+vec2(.317,.731)).rg*2.-1.;
-  float basin=basin_field(advected/3500.+vec2(1.73,6.19));
+  float basin=basin_field(advected/mix(3500.,basin_scale_km,overview)+vec2(1.73,6.19));
   wind_patch=clamp((dot(streak,vec2(.85,.35))+dot(broad,vec2(.35,.25)))*2.,-1.,1.)*resolved_wind;
   blue_patch=clamp(dot(broad,vec2(.8,.4))*1.5+basin*.3,-1.,1.);
   // Small effective slope variation shapes glint; no displacement is added.
@@ -179,7 +181,7 @@ void fragment(){
  SPECULAR=.35;METALLIC=0.;
  // Filtered second moments retain unresolved wave energy as roughness rather
  // than aliased sparkles when the camera climbs or the sea becomes subpixel.
- ROUGHNESS=clamp(roughness+sqrt(variance)*.42+crest*.6+wind_patch*strategic_roughness_strength*strategic,.09,.5);
+ ROUGHNESS=clamp(roughness+sqrt(variance)*.42+crest*.6+wind_patch*strategic_roughness_strength*strategic+overview*.18,.09,.5);
  BACKLIGHT=coastal_color*.12;
  }
  if(political_blend>0.){
@@ -189,6 +191,7 @@ void fragment(){
   float chart_shallow=exp(-d/max(.1,political_coast_band_km))*(1.-smoothstep(6.,13.,d));
   vec3 chart_water=political_water_color(chart_shallow);
   chart_water*=.98+basin_field(sea_position.xz/180.)*.035;
+  chart_water=campaign_chart_water(sea_position.xz,chart_shallow,chart_water,camera_distance);
   if(political_blend>=1.){ALBEDO=chart_water;NORMAL=normalize(mat3(VIEW_MATRIX)*vec3(0.,1.,0.));ROUGHNESS=.78;SPECULAR=.12;BACKLIGHT=vec3(0.);}
   else{ALBEDO=mix(ALBEDO,chart_water,political_blend);NORMAL=normalize(mix(NORMAL,mat3(VIEW_MATRIX)*vec3(0.,1.,0.),political_blend));ROUGHNESS=mix(ROUGHNESS,.78,political_blend);SPECULAR=mix(SPECULAR,.12,political_blend);BACKLIGHT*=1.-political_blend;}
  }

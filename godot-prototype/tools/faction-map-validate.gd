@@ -14,6 +14,9 @@ func run():
 	check("Presentation covers all factions without changing the scenario roster",faction.presentation.factions.size()==131 and faction.by_id.size()==131)
 	check("Coin motifs resolve consistently in Godot",faction.by_id.seleucids.emblem.motif=="anchor" and faction.by_id["ptolemaic-egypt"].emblem.motif=="eagle" and faction.by_id.athens.emblem.motif=="owl" and faction.by_id.rhodes.emblem.motif=="rose")
 	check("Later adaptations are explicitly classified",faction.by_id.rome.emblem.basis=="later_regional_motif" and faction.by_id.massylii.emblem.basis=="later_regional_motif")
+	var raster_ok=faction.raster_emblems.size()==131
+	for id in faction.raster_emblems:raster_ok=raster_ok and faction.raster_emblems[id]
+	check("All factions use the supplied raster banner set",raster_ok)
 	var all_fields_opaque=true
 	for i in faction.data.territories.size():all_fields_opaque=all_fields_opaque and faction.palette_image.get_pixel(i+2,0).a==1.
 	check("All faction fields use the defined full-strength palette",all_fields_opaque)
@@ -35,7 +38,7 @@ func run():
 	check("All territorial display anchors lie in their own resolved region",anchors_ok)
 	check("Galatian arrivals have presence markers without settled territory",faction.label_for("tectosages")!=null and not faction.control.values().has("tectosages") and not faction.by_id.has("bactria") and not faction.by_id.has("parthia"))
 	var old_color=Color(faction.by_id.rome.color);var entry=faction.territory_indices["territory:rome"];var previous_palette=faction.palette_image.get_data();var previous_emblem=faction.atlas.get_image().get_data()
-	check("Live faction color update changes palette and emblem",faction.set_faction_color("rome",Color("235fa9")) and faction.palette_image.get_data()!=previous_palette and faction.atlas.get_image().get_data()!=previous_emblem)
+	check("Live faction color update changes palette and preserves raster emblem",faction.set_faction_color("rome",Color("235fa9")) and faction.palette_image.get_data()!=previous_palette and faction.atlas.get_image().get_data()==previous_emblem)
 	check("Color update preserves original territory raster",ids.get_image().get_data()==original_ids)
 	faction.set_faction_color("rome",old_color)
 	check("Control transfer updates palette and suppresses landless map label",faction.set_region_controller("territory:samnites","rome") and faction.control["territory:samnites"]=="rome" and faction.label_for("samnites")==null)
@@ -45,7 +48,8 @@ func run():
 	check("Invalid controller or region cannot mutate state",not faction.set_region_controller("missing","rome") and not faction.set_region_controller("territory:rome","missing") and faction.control==current_control and faction.palette_image.get_data()==current_palette)
 	faction.populate_list("Massylian")
 	for i in 3:await process_frame
-	check("Faction roster search recognizes requested Massylian alias",faction.list.get_child_count()==1 and faction.list.get_child(0).text=="Massylii")
+	var massylian_buttons=faction.list.get_children().filter(func(c):return c is Button)
+	check("Faction roster search recognizes requested Massylian alias",massylian_buttons.size()==1 and massylian_buttons[0].text=="Massylii")
 	await pose(2200.,Vector2(8.,30.),0.,65.)
 	faction.panel.visible=true;faction.filter.text="Massylian";faction.populate_list("Massylian")
 	faction.focus_faction("massylii");world.goal_focus=world.focus;world.goal_distance=world.distance
@@ -55,13 +59,19 @@ func run():
 	check("Roster focus uses existing geographic camera goals",world.goal_focus==Vector2(faction.by_id.carthage.label[0],faction.by_id.carthage.label[1]) and world.goal_distance>=180.)
 	faction.panel.visible=false;faction.filter.text="";faction.populate_list("")
 	for i in 3:await process_frame
-	check("All factions remain available in the roster",faction.list.get_child_count()==131)
+	var faction_names=faction.data.factions.map(func(f):return f.name)
+	var available=0
+	for child in faction.list.get_children():
+		if child is Button and child.text in faction_names:available+=1
+	check("All factions remain available in the roster",available==131)
 	for view in JSON.parse_string(FileAccess.get_file_as_string("res://evidence/factions-20261030/before/views.json")).views:
 		if not view.name in ["water-control","roma-control"]:continue
 		await pose(view.preset[2],Vector2(view.preset[0],view.preset[1]),view.preset[4],view.preset[3])
 		world.comparison_camera={"position":view.camera.position,"distance":view.preset[2],"pitch":view.preset[3],"yaw":view.preset[4]}
 		for i in 4:await process_frame
 		var before=Image.load_from_file("res://evidence/factions-20261030/before/"+view.name+".png");var after=image_now();var delta=difference(before,after,Rect2i(0,0,1920,1080))
+		if delta.mean>=.0001:
+			before.save_png(directory+"/"+view.name+"-before.png");after.save_png(directory+"/"+view.name+"-after.png")
 		check("Close geographic presentation preserved: "+view.name,delta.mean<.0001,delta)
 	check("Approved zoom transition thresholds unchanged",world.political_map.settings.transition_begin_km==60. and world.political_map.settings.transition_full_km==180. and world.political_map.blend==0.)
 	world.validate_geography();check("Protected settlements and retained research unchanged",world.sites.size()==35 and world.research.size()==687)

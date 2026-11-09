@@ -27,6 +27,7 @@ var regions
 var owner_image:Image
 var owner_texture:ImageTexture
 var local_identities
+var raster_emblems={}
 func _init(owner,adapter):
 	world=owner;political_ref=weakref(adapter)
 	enabled=not OS.get_cmdline_user_args().has("--neutral-map")
@@ -39,6 +40,7 @@ func _init(owner,adapter):
 		if presentation.factions.has(faction.id):
 			faction.merge(presentation.factions[faction.id],true)
 		assert(not by_id.has(faction.id));by_id[faction.id]=faction
+		raster_emblems[faction.id]=FileAccess.file_exists("res://assets/factions/icons/"+faction.id+".png")
 		if placements.has(faction.id):faction.label=placements[faction.id]
 	var size=1
 	while size<data.territories.size()+2:size*=2
@@ -94,7 +96,7 @@ func set_faction_color(id:String,color:Color)->bool:
 	for territory in data.territories:
 		if control[territory.id]==id:write_palette(territory)
 	palette.update(palette_image)
-	if atlas!=null:
+	if atlas!=null and not raster_emblems.get(id,false):
 		var index=data.factions.find(by_id[id]);var icon=Image.new();icon.load_svg_from_string(load("res://faction_emblems.gd").svg(by_id[id],index))
 		var image=atlas.get_image();image.clear_mipmaps();image.blit_rect(icon,Rect2i(0,0,64,64),Vector2i((index%16)*64,(index/16)*64));image.generate_mipmaps();(atlas as ImageTexture).update(image)
 	return true

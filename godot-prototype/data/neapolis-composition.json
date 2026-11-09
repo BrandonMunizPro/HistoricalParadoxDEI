@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "settlementKey": "neapolis",
+  "culture": "greek_south_italic",
+  "seed": 278,
+  "residentialArchetypes": ["court_a", "court_b", "court_c", "street_house"],
+  "residentialScaleRange": [1.28, 1.43],
+  "serviceScaleRange": [1.02, 1.15],
+  "parcelOffsets": [[-0.021, -0.019], [0.021, -0.019], [-0.007, 0.021]],
+  "notice": "Schematic campaign district around the unchanged site anchor. All parcels, public buildings, streets and precinct positions are interpretive, not surveyed Neapolis archaeology.",
+  "streetX": [-0.24, -0.13, 0, 0.13, 0.24],
+  "streetZ": [-0.18, -0.09, 0, 0.09, 0.18],
+  "agora": {"center": [0, 0], "size": [0.100, 0.058]},
+  "neighborhoods": [
+    {"id": "northwest", "center": [-0.185, -0.135]},
+    {"id": "north_inner_west", "center": [-0.065, -0.135]},
+    {"id": "north_inner_east", "center": [0.065, -0.135]},
+    {"id": "northeast", "center": [0.185, -0.135]},
+    {"id": "west_upper", "center": [-0.185, -0.045], "archetypeOverrides": {"0": "workshop"}},
+    {"id": "east_upper", "center": [0.185, -0.045]},
+    {"id": "west_lower", "center": [-0.185, 0.045]},
+    {"id": "east_lower", "center": [0.185, 0.045], "archetypeOverrides": {"2": "workshop"}},
+    {"id": "southwest", "center": [-0.185, 0.135]},
+    {"id": "south_inner_west", "center": [-0.065, 0.135]},
+    {"id": "south_inner_east", "center": [0.065, 0.135]},
+    {"id": "southeast", "center": [0.185, 0.135]}
+  ],
+  "landmarks": [
+    {"id": "agora_stoa", "archetype": "stoa", "position": [-0.04, -0.052], "angle": 0, "scale": 1, "district": "agora", "requirements": ["agora_edge"]},
+    {"id": "meeting_house", "archetype": "meeting_hall", "position": [-0.078, 0.047], "angle": 3.141592653589793, "scale": 1.2, "district": "agora", "requirements": ["agora_edge"]},
+    {"id": "sanctuary_precinct", "archetype": "sanctuary", "position": [0.078, -0.047], "angle": 0, "scale": 1.45, "district": "sacred", "requirements": ["precinct"]},
+    {"id": "market_west", "archetype": "market", "position": [-0.023, 0.047], "angle": 3.141592653589793, "scale": 1.3, "district": "agora", "requirements": ["agora_edge"]},
+    {"id": "market_east", "archetype": "market", "position": [0.023, 0.047], "angle": 3.141592653589793, "scale": 1.3, "district": "agora", "requirements": ["agora_edge"]},
+    {"id": "market_store", "archetype": "store", "position": [0.083, 0.049], "angle": 3.141592653589793, "scale": 1, "district": "agora", "requirements": ["agora_edge"]},
+    {"id": "west_approach_watch", "archetype": "guard", "position": [-0.218, 0.017], "angle": -1.5707963267948966, "scale": 1, "district": "approach", "requirements": ["approach"]}
+  ]
+}

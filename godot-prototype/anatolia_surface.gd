@@ -14,7 +14,7 @@ var id_image:Image
 var land_image:Image
 static func decorate_shader(code:String)->String:
 	code=code.replace("float hash(vec2",FileAccess.get_file_as_string("res://anatolia_scope.gdshaderinc")+"\nfloat hash(vec2")
-	code=code.replace("if(land<.5)discard;","if(anatolia_detail_enabled&&camera_distance<3300.&&anatolia_scope(coast_geo)>.001)discard;\n if(land<.5)discard;")
+	code=code.replace("if(land<.5)discard;","if(anatolia_detail_enabled&&anatolia_scope(coast_geo)>.001)discard;\n if(land<.5)discard;")
 	return code
 func _init(owner):
 	world=owner;manifest=world.read_json("data/anatolia/manifest.json")
@@ -46,6 +46,9 @@ func _init(owner):
 	code=code.replace("if(camera_distance>2800.0)land=","if(anatolia_detail_enabled&&anatolia_scope(geo)>.001)land=texture(anatolia_ocean,anatolia_texel(anatolia_uv(geo),textureSize(anatolia_ocean,0))).r;\n if(camera_distance>2800.0)land=")
 	code=code.replace("if(camera_distance>2800.0){","if(anatolia_detail_enabled&&anatolia_scope(geo)>.001){ground=anatolia_coverage(geo);source_ground=texture(anatolia_land,anatolia_texel(anatolia_uv(geo),textureSize(anatolia_land,0))).r;}\n if(camera_distance>2800.0){")
 	code=code.replace("float shallow=exp","if(anatolia_detail_enabled&&anatolia_scope(geo)>.001)d=texture(anatolia_shore,anatolia_texel(anatolia_uv(geo),textureSize(anatolia_shore,0))).r*63.75;\n float shallow=exp")
+	# Reapply source masks after the inherited distant-water fallback. The same
+	# coast/lake classification must survive the 2800–4000 km transition.
+	code=code.replace("if(land>.5&&source_ground<.5)discard;","if(anatolia_detail_enabled&&anatolia_scope(geo)>.001){land=texture(anatolia_ocean,anatolia_texel(anatolia_uv(geo),textureSize(anatolia_ocean,0))).r;ground=anatolia_coverage(geo);source_ground=texture(anatolia_land,anatolia_texel(anatolia_uv(geo),textureSize(anatolia_land,0))).r;}\n if(land>.5&&source_ground<.5)discard;")
 	water_shader.code=code
 	for m in [world.water_material] if world.ocean_renderer==null else world.ocean_renderer.materials:
 		m.shader=water_shader;m.set_shader_parameter("anatolia_detail_enabled",true)
@@ -64,7 +67,9 @@ func owner_at(geo:Vector2)->String:
 	if id<2 or id-2>=world.political_map.factions.data.territories.size():return ""
 	return world.political_map.factions.control.get(world.political_map.factions.data.territories[id-2].id,"")
 func tick():
-	node.visible=world.distance<3300.
+	# Keep the inexpensive continuous backdrop at every zoom. Close terrain
+	# retains its existing bounded prefetch and morph thresholds below.
+	node.visible=true
 	material.set_shader_parameter("camera_distance",world.distance);detail_material.set_shader_parameter("camera_distance",world.distance)
 	var wanted={}
 	if world.distance<380. and world.cartographic_rollout.contains_anatolia(world.focus):

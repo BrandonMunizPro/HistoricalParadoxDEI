@@ -45,7 +45,7 @@ func _draw():
 		occupied.append(rect.grow(2))
 		var index=faction.renderIndex
 		draw_texture_rect_region(cartography.atlas,rect,Rect2((index%16)*64,(index/16)*64,64,64),Color(1,1,1,alpha))
-		if faction.emblem.basis=="original_design":
+		if faction.emblem.basis=="original_design" and not cartography.raster_emblems.get(faction.id,false):
 			var monogram=faction.emblem.monogram;var width=font.get_string_size(monogram,HORIZONTAL_ALIGNMENT_LEFT,-1,8).x
 			var position=xy+Vector2(-width*.5,icon_size*.5+4)
 			draw_string_outline(font,position,monogram,HORIZONTAL_ALIGNMENT_LEFT,-1,8,2,Color(.02,.02,.03,alpha));draw_string(font,position,monogram,HORIZONTAL_ALIGNMENT_LEFT,-1,8,Color(.97,.92,.77,alpha))

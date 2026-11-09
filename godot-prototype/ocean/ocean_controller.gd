@@ -45,6 +45,8 @@ func setup(owner,water,material):
 		for key in ["drift_km_s","normal_strength","roughness_strength","color_strength"]:
 			if strategic.has(key):mat.set_shader_parameter("strategic_"+key,strategic[key])
 		for key in ["wave_intensity","maximum_displacement_metres","foam_strength","shore_foam_strength","roughness","coastal_band_km"]:mat.set_shader_parameter(key,settings[key])
+		mat.set_shader_parameter("overview_distance_km",Vector2(settings.get("overview_begin_km",24.),settings.get("overview_full_km",520.)))
+		for key in ["basin_scale_km","basin_color_strength"]:mat.set_shader_parameter(key,settings.get(key,420. if key=="basin_scale_km" else .18))
 		for key in ["deep_color","coastal_color"]:mat.set_shader_parameter(key,Vector3(settings[key][0],settings[key][1],settings[key][2]))
 	fft=preload("res://ocean/fft.gd").new()
 	RenderingServer.call_on_render_thread(fft.initialize.bind(settings.duplicate(true),quality.duplicate(true),Callable(self,"on_gpu_ready")))

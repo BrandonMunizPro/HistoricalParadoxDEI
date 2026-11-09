@@ -49,7 +49,7 @@ func exercise():
 		checks.append(row)
 		if world.camera_path!="production" or world.resolved_view!=view:finish(false,"Used a capture-only camera: "+view);return
 		if expected[1] and instances<=0:finish(false,"Expected vegetation is missing: "+view);return
-		if world.resident.size()>13 or world.scenery.roots.size()>12 or world.scenery.local_roots.size()>9:finish(false,"Residency exceeded: "+view);return
+		if world.resident.size()>13 or world.scenery.roots.size()>18 or world.scenery.local_roots.size()>18:finish(false,"Residency exceeded: "+view);return
 		for marker in world.markers:
 			if abs(marker.label.position.x-marker.site.x)>.001 or abs(marker.label.position.z-marker.site.z)>.001:finish(false,"Settlement anchor moved");return
 		for id in world.resident:

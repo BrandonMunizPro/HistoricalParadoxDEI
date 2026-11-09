@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "units": "metres for footprints, kilometres for layout",
+  "categories": ["residential", "civic", "religious", "commercial", "military", "infrastructure"],
+  "cultures": {"greek_south_italic": {"notice": "Interpretive Hellenistic southern Italian forms; no exact building identification."}},
+  "placement": {"maxGrade": 0.14, "maxReliefM": 5.5, "publicMaxReliefM": 8, "sampleSpacingM": 5, "clearanceM": 2},
+  "archetypes": {
+    "court_a": {"category": "residential", "near": "res://assets/neapolis-free/house-0.res", "far": "res://assets/neapolis-free/house-0-far.res", "footprintM": [24, 24], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "court_b": {"category": "residential", "near": "res://assets/neapolis-free/house-1.res", "far": "res://assets/neapolis-free/house-1-far.res", "footprintM": [24, 24], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "court_c": {"category": "residential", "near": "res://assets/neapolis-free/house-2.res", "far": "res://assets/neapolis-free/house-2-far.res", "footprintM": [24, 24], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "street_house": {"category": "residential", "near": "res://assets/neapolis-composition/street-house.res", "far": "res://assets/neapolis-composition/street-house-far.res", "footprintM": [16, 24], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "stoa": {"category": "civic", "near": "res://assets/neapolis-composition/stoa.res", "far": "res://assets/neapolis-composition/stoa-far.res", "footprintM": [58, 18], "tier": 1, "requires": ["land", "street_access", "agora_edge", "gentle_slope"]},
+    "meeting_hall": {"category": "civic", "near": "res://assets/neapolis-composition/meeting-hall.res", "far": "res://assets/neapolis-composition/meeting-hall-far.res", "footprintM": [32, 32], "tier": 1, "requires": ["land", "street_access", "agora_edge", "gentle_slope"]},
+    "sanctuary": {"category": "religious", "near": "res://assets/neapolis-composition/sanctuary.res", "far": "res://assets/neapolis-composition/sanctuary-far.res", "footprintM": [28, 42], "tier": 1, "requires": ["land", "street_access", "precinct", "gentle_slope"]},
+    "market": {"category": "commercial", "near": "res://assets/neapolis-composition/market.res", "far": "res://assets/neapolis-composition/market-far.res", "footprintM": [22, 16], "tier": 1, "requires": ["land", "street_access", "agora_edge", "gentle_slope"]},
+    "workshop": {"category": "commercial", "near": "res://assets/neapolis-composition/workshop.res", "far": "res://assets/neapolis-composition/workshop-far.res", "footprintM": [28, 28], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "store": {"category": "commercial", "near": "res://assets/neapolis-composition/store.res", "far": "res://assets/neapolis-composition/store-far.res", "footprintM": [18, 28], "tier": 1, "requires": ["land", "street_access", "gentle_slope"]},
+    "guard": {"category": "military", "near": "res://assets/neapolis-composition/guard.res", "far": "res://assets/neapolis-composition/guard-far.res", "footprintM": [20, 22], "tier": 1, "requires": ["land", "street_access", "approach", "gentle_slope"]}
+  },
+  "infrastructure": {
+    "street": {"category": "infrastructure", "visual": "terrain_ribbon", "footprintM": [8, 0], "tier": 1, "requires": ["land", "connected", "gentle_slope"]},
+    "path": {"category": "infrastructure", "visual": "terrain_ribbon", "footprintM": [3, 0], "tier": 1, "requires": ["land", "connected", "gentle_slope"]},
+    "agora": {"category": "infrastructure", "visual": "terrain_surface", "footprintM": [100, 58], "tier": 1, "requires": ["land", "connected", "gentle_slope"]},
+    "drain": {"category": "infrastructure", "visual": "terrain_ribbon", "footprintM": [0.6, 0], "tier": 1, "requires": ["land", "street_edge"]}
+  }
+}

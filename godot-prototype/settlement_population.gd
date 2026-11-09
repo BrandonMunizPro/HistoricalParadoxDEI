@@ -7,7 +7,7 @@ var mesh
 var root:Node3D
 var busy=false
 var signature=""
-var stats={"eligible":0,"approved":35,"landAccepted":0,"waterRejected":[],"resident":0,"houses":0,"maxChunkMs":0.0,"buildCpuMs":0.0,"completed":0}
+var stats={"eligible":0,"approved":35,"landAccepted":0,"waterRejected":[],"resident":0,"houses":0,"maxChunkMs":0.0,"buildCpuMs":0.0,"completed":0,"skippedHidden":0,"hiddenTicks":0}
 var tuning
 var placed={}
 var enabled=true
@@ -17,6 +17,7 @@ var identity_models={}
 var rural_identities={}
 var neapolis_trial_enabled=not OS.get_cmdline_user_args().has("--neapolis-neutral-baseline")
 var neapolis_assets
+var neapolis_composition_enabled=not OS.get_cmdline_user_args().has("--neapolis-housing-baseline")
 func set_neapolis_trial(value):
 	if neapolis_trial_enabled==value:return
 	neapolis_trial_enabled=value;signature=""
@@ -52,6 +53,13 @@ func tick():
 	roma_visual.update_lighting(roma_enabled and enabled)
 	if not enabled:return
 	if busy or not world.queue.is_empty():return
+	var hidden=world.political_map!=null and world.political_map.weight_at(world.distance)>=1.
+	if hidden:
+		stats.hiddenTicks=int(stats.get("hiddenTicks",0))+1
+		if not signature.begins_with("hidden"):
+			signature="hidden"
+			stats.skippedHidden=int(stats.get("skippedHidden",0))+1
+		return
 	for id in world.resident:
 		if world.resident[id].reveal<1:return
 	var next=str(Vector2i(floori(world.focus.x*5),floori(world.focus.y*5)))+"|"+str(int(world.distance/(2.0 if world.distance<30 else 10.0)))+str(world.resident.keys())
@@ -125,7 +133,9 @@ func build(request):
 		node.set_meta("count",count);node.set_meta("terrain",terrain_key);node.set_meta("anchor",Vector2(r.lon,r.lat));node.set_meta("approved",r.approved)
 		node.set_meta("neapolis_lod",neapolis_lod)
 		if neapolis_lod!="":
-			if neapolis_assets==null:neapolis_assets=preload("res://neapolis_housing_assets.gd").new()
+			node.set_meta("composition_center",center)
+			if neapolis_assets==null:
+				neapolis_assets=preload("res://settlement_composition_renderer.gd").new() if neapolis_composition_enabled else preload("res://neapolis_housing_assets.gd").new()
 			await neapolis_assets.attach(node,world,neapolis_lod=="far")
 			chunk=Time.get_ticks_usec()
 		if r.get("key","")=="roma" and roma_enabled:
