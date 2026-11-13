@@ -1458,5 +1458,7 @@
     "archive": "data/geography/source-cache/gshhg.zip",
     "sha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41"
   },
-  "notice": "Modern physical source proxy; no ancient shoreline, land-cover, river or settlement reconstruction. Source negatives preserved."
+  "notice": "Modern physical source proxy; no ancient shoreline, land-cover, river or settlement reconstruction. Source negatives preserved.",
+  "continuousSourceHeight": true,
+  "heightContinuityNotice": "Full physical source backdrop through coverage feathers; near-mesh edge/reveal weighting retained. Original source-metres.bin unchanged."
 }
