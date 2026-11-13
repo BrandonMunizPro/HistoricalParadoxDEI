@@ -1,0 +1,41 @@
+{
+  "completeReadinessRequired": true,
+  "views": [
+    {
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 101,
+        "gpuReadbacks": 0,
+        "maxVertices": 69885,
+        "patches": 1,
+        "released": false,
+        "rockSegments": 50,
+        "segments": 151,
+        "vertices": 69885
+      },
+      "contactChecks": [
+        {
+          "cpuSignedDistanceKm": -0.0733523815870285,
+          "gpuSignedDistanceKm": -0.0750386342406273,
+          "offsetKm": -0.08
+        },
+        {
+          "cpuSignedDistanceKm": 0.0798593536019325,
+          "gpuSignedDistanceKm": 0.0794229581952095,
+          "offsetKm": 0.08
+        }
+      ],
+      "gpuMs": 11.581000328064,
+      "name": "india",
+      "preset": [
+        72.801244930487,
+        18.9622699641749,
+        1.2,
+        26.0,
+        -84.199273377955
+      ],
+      "readyMs": 6434,
+      "settled": true
+    }
+  ]
+}

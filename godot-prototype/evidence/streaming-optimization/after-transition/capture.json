@@ -1,0 +1,28 @@
+{
+  "frames": [
+    {
+      "afterThresholdMs": 0,
+      "centralReady": true,
+      "distanceKm": 31.6190548441709,
+      "file": "frame-0.png",
+      "readyLocalCells": 1
+    },
+    {
+      "afterThresholdMs": 3006,
+      "centralReady": true,
+      "distanceKm": 12.0000050027335,
+      "file": "frame-1.png",
+      "readyLocalCells": 1
+    },
+    {
+      "afterThresholdMs": 10007,
+      "centralReady": true,
+      "distanceKm": 12.0,
+      "file": "frame-2.png",
+      "readyLocalCells": 3
+    }
+  ],
+  "method": "Separate qualitative capture pass. Empty placement cache; same camera trajectory. PNG readback pauses rendering, so these are not benchmark timings.",
+  "region": "gaul",
+  "stage": "after"
+}

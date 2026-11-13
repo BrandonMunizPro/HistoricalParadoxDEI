@@ -1,0 +1,41 @@
+{
+  "completeReadinessRequired": true,
+  "views": [
+    {
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 102,
+        "gpuReadbacks": 0,
+        "maxVertices": 44910,
+        "patches": 1,
+        "released": false,
+        "rockSegments": 0,
+        "segments": 102,
+        "vertices": 44910
+      },
+      "contactChecks": [
+        {
+          "cpuSignedDistanceKm": -0.079993948340416,
+          "gpuSignedDistanceKm": -0.0798773467540741,
+          "offsetKm": -0.08
+        },
+        {
+          "cpuSignedDistanceKm": 0.0587024465203285,
+          "gpuSignedDistanceKm": 0.0603873319923878,
+          "offsetKm": 0.08
+        }
+      ],
+      "gpuMs": 16.7159996032715,
+      "name": "tarquinii",
+      "preset": [
+        11.6851805283172,
+        42.2420762228722,
+        1.2,
+        22.0,
+        -3.71252803964587
+      ],
+      "readyMs": 7180,
+      "settled": true
+    }
+  ]
+}

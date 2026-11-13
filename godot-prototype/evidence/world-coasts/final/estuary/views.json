@@ -1,0 +1,41 @@
+{
+  "completeReadinessRequired": true,
+  "views": [
+    {
+      "coast": {
+        "bankSegments": 55,
+        "beachSegments": 65,
+        "gpuReadbacks": 0,
+        "maxVertices": 48915,
+        "patches": 1,
+        "released": false,
+        "rockSegments": 0,
+        "segments": 120,
+        "vertices": 48915
+      },
+      "contactChecks": [
+        {
+          "cpuSignedDistanceKm": -0.0799993276596069,
+          "gpuSignedDistanceKm": -0.0805322080850601,
+          "offsetKm": -0.08
+        },
+        {
+          "cpuSignedDistanceKm": 0.0799902603030205,
+          "gpuSignedDistanceKm": 0.080623134970665,
+          "offsetKm": 0.08
+        }
+      ],
+      "gpuMs": 16.6040000915527,
+      "name": "estuary",
+      "preset": [
+        9.53199975056543,
+        42.0873198164717,
+        1.2,
+        24.0,
+        52.4836317199753
+      ],
+      "readyMs": 6185,
+      "settled": true
+    }
+  ]
+}

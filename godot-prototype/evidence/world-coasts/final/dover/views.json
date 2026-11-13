@@ -1,0 +1,41 @@
+{
+  "completeReadinessRequired": true,
+  "views": [
+    {
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 18,
+        "gpuReadbacks": 0,
+        "maxVertices": 56565,
+        "patches": 1,
+        "released": false,
+        "rockSegments": 119,
+        "segments": 137,
+        "vertices": 56565
+      },
+      "contactChecks": [
+        {
+          "cpuSignedDistanceKm": -0.0800044015049934,
+          "gpuSignedDistanceKm": -0.0820474773645401,
+          "offsetKm": -0.08
+        },
+        {
+          "cpuSignedDistanceKm": 0.0768657475709915,
+          "gpuSignedDistanceKm": 0.0770633146166801,
+          "offsetKm": 0.08
+        }
+      ],
+      "gpuMs": 13.3699998855591,
+      "name": "dover",
+      "preset": [
+        1.36872930369543,
+        51.1356249184818,
+        1.2,
+        25.0,
+        13.2320992871344
+      ],
+      "readyMs": 7326,
+      "settled": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "completeReadinessRequired": true,
+  "views": [
+    {
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 2,
+        "gpuReadbacks": 0,
+        "maxVertices": 65385,
+        "patches": 1,
+        "released": false,
+        "rockSegments": 173,
+        "segments": 175,
+        "vertices": 65385
+      },
+      "contactChecks": [
+        {
+          "cpuSignedDistanceKm": -0.0799992829561234,
+          "gpuSignedDistanceKm": -0.0815622210502625,
+          "offsetKm": -0.08
+        },
+        {
+          "cpuSignedDistanceKm": 0.0799983292818069,
+          "gpuSignedDistanceKm": 0.0796539187431335,
+          "offsetKm": 0.08
+        }
+      ],
+      "gpuMs": 11.7910003662109,
+      "name": "corsica",
+      "preset": [
+        9.16098171053943,
+        41.3837346759314,
+        1.2,
+        24.0,
+        -14.0219315812184
+      ],
+      "readyMs": 16143,
+      "settled": true
+    }
+  ]
+}

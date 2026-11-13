@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "unchangedProtectedFiles": 7671,
+  "authorizedRendererChanges": [
+    {
+      "file": "godot-prototype/world.gd",
+      "baseline": "ccd0a05c97a98c7f874aa9a1e7c167c7ab5b6bd80c28785d936c10583614f30f",
+      "current": "0372d4bdada8da23b1fa631f43859fa7d99035c87774d12b0702358fab34b6f9"
+    },
+    {
+      "file": "godot-prototype/regional_scenery.gd",
+      "baseline": "6eb4bb21d7d10569c839049c8a7f52858885207a40bf3cc4545e42e79cba687b",
+      "current": "39761e7198c01ac698967dc952232d2c952bce06fcf788e697edb7d403a5fbb4"
+    },
+    {
+      "file": "godot-prototype/environment_rules.gd",
+      "baseline": "3322a551c7ea3e68ec54949c9b9ae38bf7972816efaf414075e19f2104b61160",
+      "current": "8dd41df2b6e16ba05f60c1142003694f3ed5fa3bce721374051c60f2f220f19b"
+    },
+    {
+      "file": "godot-prototype/vegetation_quality.gd",
+      "baseline": "9667c84a9810c9815bc49557a72c7cf00c27a376248f211c6c6be981aabae3a0",
+      "current": "bea7747c4590e710e26c95f67c473eabf2bfef8a07fb1beff1c9cb79c6a0c35f"
+    },
+    {
+      "file": "godot-prototype/coast_catalog.gd",
+      "baseline": "de77203a093feb8972eb711412cba07c1c26ff6d3d27fcd9ec4cccefb7ddedc8",
+      "current": "b90ca6c16820cdcdf975f81ffcef755aceed2a0e7ce5977fdbf32b8ef2b8f994"
+    },
+    {
+      "file": "godot-prototype/world_coast.gd",
+      "baseline": "3adbe5bf721271bedc029ab8a9c2ef411aa0fd26476286e94a266601907ad8e7",
+      "current": "bcca7be43f3fdf4339b76d7849b0af6c7176ee77fe49c7eb2d66ba5ae5a8b63c"
+    }
+  ],
+  "notice": "The historical baseline was not rewritten. The strict historical validator still rejects renderer edits by design. This task explicitly authorizes these renderer changes, while every other protected file must remain byte-identical."
+}

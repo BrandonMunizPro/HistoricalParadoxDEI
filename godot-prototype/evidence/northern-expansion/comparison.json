@@ -1,0 +1,745 @@
+{
+  "matchingCameras": true,
+  "views": [
+    {
+      "name": "gaul-overview",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 445660,
+      "changedPercent": 21.492091049382715,
+      "meanAbsoluteChannelDifference": 7.937900752314815,
+      "beforeGpu": {
+        "meanMs": 12.515033308665,
+        "p95Ms": 13.1070003509521,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 19.7468999862671,
+        "p95Ms": 23.6070003509521,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 74.2638594927778,
+        "maxMs": 14.498,
+        "meanMs": 13.4655,
+        "onePercentLowFps": 68.975031038764,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 14.498,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 48.2139155002917,
+        "maxMs": 25.392,
+        "meanMs": 20.7409,
+        "onePercentLowFps": 39.3824826717076,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.392,
+        "samples": 30
+      }
+    },
+    {
+      "name": "massif-central",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 2071036,
+      "changedPercent": 99.87635030864197,
+      "meanAbsoluteChannelDifference": 31.378759805812756,
+      "beforeGpu": {
+        "meanMs": 6.2581000328064,
+        "p95Ms": 6.9520001411438,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 21.8275666554769,
+        "p95Ms": 23.882999420166,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 137.387799963363,
+        "maxMs": 8.491,
+        "meanMs": 7.27866666666667,
+        "onePercentLowFps": 117.771758332352,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.491,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 44.0125993401044,
+        "maxMs": 25.078,
+        "meanMs": 22.7207666666667,
+        "onePercentLowFps": 39.8755881649254,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.078,
+        "samples": 30
+      }
+    },
+    {
+      "name": "armorica",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 940689,
+      "changedPercent": 45.365017361111114,
+      "meanAbsoluteChannelDifference": 19.345123456790123,
+      "beforeGpu": {
+        "meanMs": 5.25196665128072,
+        "p95Ms": 5.41699981689453,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 15.2536666234334,
+        "p95Ms": 17.3540000915527,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 160.360918974973,
+        "maxMs": 8.105,
+        "meanMs": 6.23593333333333,
+        "onePercentLowFps": 123.380629241209,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.105,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 61.861537382927,
+        "maxMs": 18.762,
+        "meanMs": 16.1651333333333,
+        "onePercentLowFps": 53.2992218313613,
+        "over16_67ms": 13,
+        "over33_33ms": 0,
+        "p99Ms": 18.762,
+        "samples": 30
+      }
+    },
+    {
+      "name": "loire-basin",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 2037569,
+      "changedPercent": 98.26239390432099,
+      "meanAbsoluteChannelDifference": 35.310914673353906,
+      "beforeGpu": {
+        "meanMs": 6.48186664581299,
+        "p95Ms": 6.79500007629395,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 24.6099667231242,
+        "p95Ms": 26.431999206543,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 122.348603798516,
+        "maxMs": 11.418,
+        "meanMs": 8.17336666666667,
+        "onePercentLowFps": 87.5810124365038,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.418,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 39.3417856974249,
+        "maxMs": 28.281,
+        "meanMs": 25.4182666666667,
+        "onePercentLowFps": 35.359428591634,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 28.281,
+        "samples": 30
+      }
+    },
+    {
+      "name": "rhone",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1888850,
+      "changedPercent": 91.09037422839506,
+      "meanAbsoluteChannelDifference": 35.2427248906893,
+      "beforeGpu": {
+        "meanMs": 9.53750006357829,
+        "p95Ms": 10.3830003738403,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 24.0446333567301,
+        "p95Ms": 26.3320007324219,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 95.3307022059524,
+        "maxMs": 11.574,
+        "meanMs": 10.4898,
+        "onePercentLowFps": 86.400552963539,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 11.574,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 39.8264628259796,
+        "maxMs": 28.577,
+        "meanMs": 25.1089333333333,
+        "onePercentLowFps": 34.9931763306155,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 28.577,
+        "samples": 30
+      }
+    },
+    {
+      "name": "pyrenees-seam",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 434134,
+      "changedPercent": 20.93624614197531,
+      "meanAbsoluteChannelDifference": 5.342347929526749,
+      "beforeGpu": {
+        "meanMs": 14.0437666575114,
+        "p95Ms": 14.4930000305176,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 21.5457999547323,
+        "p95Ms": 23.6490001678467,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 66.6360141001806,
+        "maxMs": 16.2,
+        "meanMs": 15.0069,
+        "onePercentLowFps": 61.7283950617284,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 16.2,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 44.0913867475989,
+        "maxMs": 25.361,
+        "meanMs": 22.6801666666667,
+        "onePercentLowFps": 39.4306218209061,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.361,
+        "samples": 30
+      }
+    },
+    {
+      "name": "alps-seam",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 945529,
+      "changedPercent": 45.59842785493827,
+      "meanAbsoluteChannelDifference": 14.731091820987654,
+      "beforeGpu": {
+        "meanMs": 9.83100001017253,
+        "p95Ms": 10.8459997177124,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 14.1505999883016,
+        "p95Ms": 16.6490001678467,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 52.9685331600674,
+        "maxMs": 26.33,
+        "meanMs": 18.8791333333333,
+        "onePercentLowFps": 37.9794910748196,
+        "over16_67ms": 25,
+        "over33_33ms": 0,
+        "p99Ms": 26.33,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 52.3472507223921,
+        "maxMs": 27.055,
+        "meanMs": 19.1032,
+        "onePercentLowFps": 36.9617445943449,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 27.055,
+        "samples": 30
+      }
+    },
+    {
+      "name": "britannia-overview",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 419068,
+      "changedPercent": 20.20968364197531,
+      "meanAbsoluteChannelDifference": 7.588329475308642,
+      "beforeGpu": {
+        "meanMs": 7.30166664123535,
+        "p95Ms": 7.81899976730347,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 13.1679666519165,
+        "p95Ms": 15.8540000915527,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 121.778452520611,
+        "maxMs": 9.013,
+        "meanMs": 8.21163333333333,
+        "onePercentLowFps": 110.950848773993,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 9.013,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 71.1067288297491,
+        "maxMs": 16.786,
+        "meanMs": 14.0633666666667,
+        "onePercentLowFps": 59.5734540688669,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 16.786,
+        "samples": 30
+      }
+    },
+    {
+      "name": "highlands",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1466781,
+      "changedPercent": 70.73596643518519,
+      "meanAbsoluteChannelDifference": 24.444227430555557,
+      "beforeGpu": {
+        "meanMs": 5.81183336575826,
+        "p95Ms": 6.36499977111816,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 19.7693334579468,
+        "p95Ms": 21.7770004272461,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 148.457526301725,
+        "maxMs": 7.83,
+        "meanMs": 6.73593333333334,
+        "onePercentLowFps": 127.713920817369,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 7.83,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 47.972137782376,
+        "maxMs": 24.431,
+        "meanMs": 20.8454333333333,
+        "onePercentLowFps": 40.9316032909009,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 24.431,
+        "samples": 30
+      }
+    },
+    {
+      "name": "pennines",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1576029,
+      "changedPercent": 76.00448495370371,
+      "meanAbsoluteChannelDifference": 20.712055844907407,
+      "beforeGpu": {
+        "meanMs": 7.00500011444092,
+        "p95Ms": 7.00500011444092,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 24.4672668457031,
+        "p95Ms": 34.2130012512207,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 74.3251278392199,
+        "maxMs": 16.929,
+        "meanMs": 13.4544,
+        "onePercentLowFps": 59.070234508831,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 16.929,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 39.2416421842421,
+        "maxMs": 35.805,
+        "meanMs": 25.4831333333333,
+        "onePercentLowFps": 27.9290601871247,
+        "over16_67ms": 30,
+        "over33_33ms": 2,
+        "p99Ms": 35.805,
+        "samples": 30
+      }
+    },
+    {
+      "name": "wales",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1264163,
+      "changedPercent": 60.96465084876543,
+      "meanAbsoluteChannelDifference": 23.92048627186214,
+      "beforeGpu": {
+        "meanMs": 5.99700021743774,
+        "p95Ms": 5.99700021743774,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 22.0841335296631,
+        "p95Ms": 24.3560009002686,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 74.5386060286825,
+        "maxMs": 16.736,
+        "meanMs": 13.4158666666667,
+        "onePercentLowFps": 59.7514340344168,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 16.736,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 43.2664434118187,
+        "maxMs": 25.774,
+        "meanMs": 23.1126,
+        "onePercentLowFps": 38.7987894777683,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.774,
+        "samples": 30
+      }
+    },
+    {
+      "name": "chalk-downs",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1301967,
+      "changedPercent": 62.787760416666664,
+      "meanAbsoluteChannelDifference": 13.968959297839506,
+      "beforeGpu": {
+        "meanMs": 8.1230001449585,
+        "p95Ms": 8.1230001449585,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 22.3929996490479,
+        "p95Ms": 22.3929996490479,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 70.4337781617723,
+        "maxMs": 17.538,
+        "meanMs": 14.1977333333333,
+        "onePercentLowFps": 57.0190443608165,
+        "over16_67ms": 2,
+        "over33_33ms": 0,
+        "p99Ms": 17.538,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 33.6670486006291,
+        "maxMs": 33.96,
+        "meanMs": 29.7026333333333,
+        "onePercentLowFps": 29.4464075382803,
+        "over16_67ms": 30,
+        "over33_33ms": 1,
+        "p99Ms": 33.96,
+        "samples": 30
+      }
+    },
+    {
+      "name": "ireland",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1209379,
+      "changedPercent": 58.322675540123456,
+      "meanAbsoluteChannelDifference": 22.544777038323044,
+      "beforeGpu": {
+        "meanMs": 4.92899990081787,
+        "p95Ms": 4.92899990081787,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 22.0319995880127,
+        "p95Ms": 22.0319995880127,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 80.9858679660399,
+        "maxMs": 15.276,
+        "meanMs": 12.3478333333333,
+        "onePercentLowFps": 65.4621628698612,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 15.276,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 32.325531027661,
+        "maxMs": 36.333,
+        "meanMs": 30.9353,
+        "onePercentLowFps": 27.5231882861311,
+        "over16_67ms": 30,
+        "over33_33ms": 3,
+        "p99Ms": 36.333,
+        "samples": 30
+      }
+    },
+    {
+      "name": "italy-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 0,
+      "changedPercent": 0,
+      "meanAbsoluteChannelDifference": 0,
+      "beforeGpu": {
+        "meanMs": 15.4374667167664,
+        "p95Ms": 18.0510005950928,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 14.6187667210897,
+        "p95Ms": 15.5550003051758,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 21.2803235744134,
+        "maxMs": 50.616,
+        "meanMs": 46.9917666666667,
+        "onePercentLowFps": 19.7565987039671,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 50.616,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 23.051672629366,
+        "maxMs": 46.064,
+        "meanMs": 43.3808,
+        "onePercentLowFps": 21.7089267106634,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 46.064,
+        "samples": 30
+      }
+    },
+    {
+      "name": "sicily-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 0,
+      "changedPercent": 0,
+      "meanAbsoluteChannelDifference": 0,
+      "beforeGpu": {
+        "meanMs": 11.8644332885742,
+        "p95Ms": 15.9309997558594,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 10.5388999303182,
+        "p95Ms": 11.4790000915527,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 28.2553454404349,
+        "maxMs": 41.605,
+        "meanMs": 35.3915333333333,
+        "onePercentLowFps": 24.0355726475183,
+        "over16_67ms": 30,
+        "over33_33ms": 23,
+        "p99Ms": 41.605,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 30.987509967649,
+        "maxMs": 33.97,
+        "meanMs": 32.2710666666667,
+        "onePercentLowFps": 29.4377391816309,
+        "over16_67ms": 30,
+        "over33_33ms": 3,
+        "p99Ms": 33.97,
+        "samples": 30
+      }
+    },
+    {
+      "name": "illyria-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 0,
+      "changedPercent": 0,
+      "meanAbsoluteChannelDifference": 0,
+      "beforeGpu": {
+        "meanMs": 10.1430000623067,
+        "p95Ms": 13.1490001678467,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 9.25116669336955,
+        "p95Ms": 10.0749998092651,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 29.3938978268112,
+        "maxMs": 38.101,
+        "meanMs": 34.0206666666667,
+        "onePercentLowFps": 26.246030287919,
+        "over16_67ms": 30,
+        "over33_33ms": 16,
+        "p99Ms": 38.101,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 30.5393866469586,
+        "maxMs": 35.378,
+        "meanMs": 32.7446,
+        "onePercentLowFps": 28.2661541070722,
+        "over16_67ms": 30,
+        "over33_33ms": 9,
+        "p99Ms": 35.378,
+        "samples": 30
+      }
+    },
+    {
+      "name": "greece-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 58,
+      "changedPercent": 0.0027970679012345677,
+      "meanAbsoluteChannelDifference": 0.0025652649176954733,
+      "beforeGpu": {
+        "meanMs": 9.22963339487712,
+        "p95Ms": 11.3170003890991,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 7.84866665204366,
+        "p95Ms": 8.40299987792969,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 30.8076534426526,
+        "maxMs": 36.358,
+        "meanMs": 32.4594666666667,
+        "onePercentLowFps": 27.5042631607899,
+        "over16_67ms": 30,
+        "over33_33ms": 8,
+        "p99Ms": 36.358,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 35.1201695133515,
+        "maxMs": 29.994,
+        "meanMs": 28.4736666666667,
+        "onePercentLowFps": 33.3400013336001,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 29.994,
+        "samples": 30
+      }
+    },
+    {
+      "name": "anatolia-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 1676,
+      "changedPercent": 0.08082561728395062,
+      "meanAbsoluteChannelDifference": 0.03153227880658436,
+      "beforeGpu": {
+        "meanMs": 9.36106665929159,
+        "p95Ms": 12.7469997406006,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 7.52673333485921,
+        "p95Ms": 8.5959997177124,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 27.2920550098661,
+        "maxMs": 44.184,
+        "meanMs": 36.6407,
+        "onePercentLowFps": 22.6326271953648,
+        "over16_67ms": 30,
+        "over33_33ms": 25,
+        "p99Ms": 44.184,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 30.233980777235,
+        "maxMs": 36.019,
+        "meanMs": 33.0753666666667,
+        "onePercentLowFps": 27.763125017352,
+        "over16_67ms": 30,
+        "over33_33ms": 14,
+        "p99Ms": 36.019,
+        "samples": 30
+      }
+    },
+    {
+      "name": "egypt-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 0,
+      "changedPercent": 0,
+      "meanAbsoluteChannelDifference": 0,
+      "beforeGpu": {
+        "meanMs": 14.7729997634888,
+        "p95Ms": 14.7729997634888,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 10.9670000076294,
+        "p95Ms": 10.9670000076294,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 35.8221787049088,
+        "maxMs": 33.057,
+        "meanMs": 27.9156666666667,
+        "onePercentLowFps": 30.2507789575582,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 33.057,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 34.5541307735633,
+        "maxMs": 31.421,
+        "meanMs": 28.9401,
+        "onePercentLowFps": 31.8258489545209,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.421,
+        "samples": 30
+      }
+    },
+    {
+      "name": "libya-control",
+      "matchingCamera": true,
+      "changedPixelsAboveOneChannelLevel": 0,
+      "changedPercent": 0,
+      "meanAbsoluteChannelDifference": 0,
+      "beforeGpu": {
+        "meanMs": 16.0860004425049,
+        "p95Ms": 16.0860004425049,
+        "samples": 30
+      },
+      "afterGpu": {
+        "meanMs": 19.8990001678467,
+        "p95Ms": 19.8990001678467,
+        "samples": 30
+      },
+      "beforeWall": {
+        "averageFps": 42.0272252365082,
+        "maxMs": 26.546,
+        "meanMs": 23.7941,
+        "onePercentLowFps": 37.6704588261885,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 26.546,
+        "samples": 30
+      },
+      "afterWall": {
+        "averageFps": 43.2170171326662,
+        "maxMs": 25.057,
+        "meanMs": 23.1390333333333,
+        "onePercentLowFps": 39.9090074629844,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.057,
+        "samples": 30
+      }
+    }
+  ]
+}

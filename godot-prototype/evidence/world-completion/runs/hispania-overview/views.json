@@ -1,0 +1,143 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.499999970197678,
+          -0.866025447845459,
+          0.0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 9200.0,
+        "fov": 42.0,
+        "near": 45.0,
+        "position": [
+          -1397.31213378906,
+          1560.02563476563,
+          933.871704101563
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.367,
+        "city": 0.042,
+        "markers": 3.565,
+        "rivers": 0.001,
+        "scenery": 0.055,
+        "tile_upload": 0.005,
+        "ui": 0.024
+      },
+      "drawCalls": 151.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "arabian_plateau": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "eurasian_steppe": 0,
+        "europe_central": 0,
+        "europe_northeast": 0,
+        "europe_northwest": 0,
+        "gaul": 0,
+        "hispania": 0,
+        "indus_west": 0,
+        "iran_afghanistan": 0,
+        "levant": 0,
+        "mediterranean_islands": 0,
+        "mesopotamia_iran_west": 0,
+        "pontic_caucasus": 0
+      },
+      "frameSamplesMs": [
+        29.374,
+        29.026,
+        31.06,
+        30.142,
+        29.295,
+        27.272,
+        26.26,
+        27.575,
+        26.202,
+        26.649,
+        27.652,
+        21.642,
+        26.044,
+        25.926,
+        25.618,
+        28.575,
+        21.182,
+        27.344,
+        27.294,
+        26.097,
+        22.241,
+        27.926,
+        28.549,
+        26.25,
+        24.211,
+        24.891,
+        28.053,
+        27.039,
+        26.921,
+        20.978
+      ],
+      "gpu": {
+        "meanMs": 25.4544667561849,
+        "p95Ms": 29.3479995727539,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "hispania-overview",
+      "political": 1.0,
+      "preset": [
+        -3.0,
+        40.0,
+        1800.0,
+        60.0,
+        0.0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.282,
+        "base": 4.065,
+        "previousRegions": 0.016
+      },
+      "renderCpuMs": 0.532999992370605,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-42--2",
+        "world-32--2",
+        "world-37--12",
+        "world-42--12",
+        "world-32--12",
+        "world-37-3",
+        "world-42-3",
+        "world-47--7"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 2207910475,
+      "steady": {
+        "averageFps": 37.6275574196526,
+        "maxMs": 31.06,
+        "meanMs": 26.5762666666667,
+        "onePercentLowFps": 32.1957501609788,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.06,
+        "samples": 30
+      },
+      "videoMemoryBytes": 4604253184
+    }
+  ]
+}

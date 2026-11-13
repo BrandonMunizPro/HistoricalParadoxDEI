@@ -1,0 +1,270 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "method": "Native Forward+ 1920x1080. Whole coast source catalog preloaded. Isolated empty placement cache; driver/OS caches not flushed. Four-second eased zoom from 100 to 2 km. Centre/all-nine include existing reveal fade. Captures occur after timed intervals. Travel between routes does not wait for obsolete coarse jobs.",
+  "productionStartup": true,
+  "stage": "final-art",
+  "startup": {
+    "blockedMs": 35715,
+    "releases": [
+      {
+        "distance": 1100.0,
+        "focus": [
+          13.0,
+          42.0
+        ],
+        "ms": 35715
+      }
+    ],
+    "screens": 1,
+    "stageMs": {
+      "Warming rendered detail": 412
+    },
+    "startupPreparation": {
+      "coastMaterials": 2,
+      "elapsedMs": 7362,
+      "phases": [
+        {
+          "bytes": 132378576,
+          "chunks": 14,
+          "ms": 1548,
+          "stage": "worldCoastSources"
+        },
+        {
+          "ms": 5117,
+          "stage": "sharedAssets",
+          "variants": 132
+        },
+        {
+          "coarseCells": 12,
+          "localCells": 9,
+          "ms": 6889,
+          "stage": "openingArea"
+        }
+      ],
+      "scope": "Worldwide coastline sources, shared vegetation assets, coast materials and the opening area. Other procedural regions stream without loading screens.",
+      "warmedVariants": 132,
+      "worldCoastChunks": 14,
+      "worldCoastSourceBytes": 132378576
+    },
+    "visiblePendingAtRelease": 0
+  },
+  "trials": [
+    {
+      "allNineDelayMs": 8673,
+      "centreDelayMs": 1470,
+      "drawCallsAtReady": 445,
+      "frames": {
+        "maxMs": 115.342,
+        "meanMs": 26.1640857142857,
+        "p99Ms": 88.404
+      },
+      "instancesResident": 48821,
+      "loadingScreens": 1,
+      "name": "italy-cold",
+      "plantsResident": 28625,
+      "rocksResident": 3775,
+      "staticBytes": 2759880568,
+      "thresholdMs": 1400,
+      "timedOut": false,
+      "videoBytes": 5191489504,
+      "work": {
+        "cancelled": 0,
+        "candidates": 18547,
+        "cellsBuilt": 30,
+        "generationCpuMs": 3320.675,
+        "generationYieldFrames": 318,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.225,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 22.644
+      }
+    },
+    {
+      "allNineDelayMs": 11335,
+      "centreDelayMs": 2426,
+      "drawCallsAtReady": 415,
+      "frames": {
+        "maxMs": 68.668,
+        "meanMs": 22.2046063268893,
+        "p99Ms": 65.109
+      },
+      "instancesResident": 63625,
+      "loadingScreens": 1,
+      "name": "gaul-cold",
+      "plantsResident": 39635,
+      "rocksResident": 7569,
+      "staticBytes": 2764876336,
+      "thresholdMs": 1300,
+      "timedOut": false,
+      "videoBytes": 5196060528,
+      "work": {
+        "cancelled": 0,
+        "candidates": 57806,
+        "cellsBuilt": 39,
+        "generationCpuMs": 8341.929,
+        "generationYieldFrames": 839,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.225,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 28.752
+      }
+    },
+    {
+      "allNineDelayMs": 9790,
+      "centreDelayMs": 2028,
+      "drawCallsAtReady": 274,
+      "frames": {
+        "maxMs": 195.586,
+        "meanMs": 29.1603710526316,
+        "p99Ms": 64.839
+      },
+      "instancesResident": 72285,
+      "loadingScreens": 1,
+      "name": "messina-cold",
+      "plantsResident": 46800,
+      "rocksResident": 9064,
+      "staticBytes": 2768199155,
+      "thresholdMs": 1291,
+      "timedOut": false,
+      "videoBytes": 5232298512,
+      "work": {
+        "cancelled": 1,
+        "candidates": 110748,
+        "cellsBuilt": 48,
+        "generationCpuMs": 12268.023,
+        "generationYieldFrames": 1203,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.46,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 33.271
+      }
+    },
+    {
+      "allNineDelayMs": 0,
+      "centreDelayMs": 0,
+      "drawCallsAtReady": 507,
+      "frames": {
+        "maxMs": 243.042,
+        "meanMs": 42.5457096774194,
+        "p99Ms": 243.042
+      },
+      "instancesResident": 73057,
+      "loadingScreens": 1,
+      "name": "gaul-resident-revisit",
+      "plantsResident": 46800,
+      "rocksResident": 9064,
+      "staticBytes": 2768528631,
+      "thresholdMs": 1319,
+      "timedOut": false,
+      "videoBytes": 5238396176,
+      "work": {
+        "cancelled": 1,
+        "candidates": 111332,
+        "cellsBuilt": 49,
+        "generationCpuMs": 12300.568,
+        "generationYieldFrames": 1205,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.46,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 33.843
+      }
+    },
+    {
+      "allNineDelayMs": 0,
+      "centreDelayMs": 0,
+      "drawCallsAtReady": 583,
+      "frames": {
+        "maxMs": 57.554,
+        "meanMs": 35.4668108108108,
+        "p99Ms": 57.554
+      },
+      "instancesResident": 73057,
+      "loadingScreens": 1,
+      "name": "italy-resident-revisit",
+      "plantsResident": 46800,
+      "rocksResident": 9064,
+      "staticBytes": 2768516445,
+      "thresholdMs": 1312,
+      "timedOut": false,
+      "videoBytes": 5232357488,
+      "work": {
+        "cancelled": 1,
+        "candidates": 111332,
+        "cellsBuilt": 49,
+        "generationCpuMs": 12300.568,
+        "generationYieldFrames": 1205,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.46,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 33.843
+      }
+    },
+    {
+      "allNineDelayMs": 9300,
+      "centreDelayMs": 2414,
+      "drawCallsAtReady": 231,
+      "frames": {
+        "maxMs": 82.224,
+        "meanMs": 29.698837535014,
+        "p99Ms": 60.641
+      },
+      "instancesResident": 64004,
+      "loadingScreens": 1,
+      "name": "baltic-cold",
+      "plantsResident": 38856,
+      "rocksResident": 7955,
+      "staticBytes": 2765606711,
+      "thresholdMs": 1302,
+      "timedOut": false,
+      "videoBytes": 5243047248,
+      "work": {
+        "cancelled": 1,
+        "candidates": 161091,
+        "cellsBuilt": 58,
+        "generationCpuMs": 15775.793,
+        "generationYieldFrames": 1515,
+        "hiddenTicks": 62,
+        "maxChunkMs": 14.46,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 36.374
+      }
+    },
+    {
+      "allNineDelayMs": 15162,
+      "centreDelayMs": 2980,
+      "drawCallsAtReady": 189,
+      "frames": {
+        "maxMs": 81.178,
+        "meanMs": 29.4092767857143,
+        "p99Ms": 76.088
+      },
+      "instancesResident": 61886,
+      "loadingScreens": 1,
+      "name": "nile-cold",
+      "plantsResident": 38360,
+      "rocksResident": 6333,
+      "staticBytes": 2765165366,
+      "thresholdMs": 1307,
+      "timedOut": false,
+      "videoBytes": 5229760736,
+      "work": {
+        "cancelled": 2,
+        "candidates": 199020,
+        "cellsBuilt": 67,
+        "generationCpuMs": 22284.193,
+        "generationYieldFrames": 2054,
+        "hiddenTicks": 62,
+        "maxChunkMs": 15.972,
+        "maxUploadMs": 1.412,
+        "skippedHidden": 2,
+        "uploadCpuMs": 41.059
+      }
+    }
+  ]
+}

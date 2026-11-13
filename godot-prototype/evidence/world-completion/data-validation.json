@@ -1,0 +1,201 @@
+{
+  "passed": true,
+  "regions": [
+    {
+      "region": "mediterranean_islands",
+      "descriptors": 58,
+      "sourceEntries": 58,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "europe_northwest",
+      "descriptors": 172,
+      "sourceEntries": 172,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "europe_northeast",
+      "descriptors": 391,
+      "sourceEntries": 391,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "europe_central",
+      "descriptors": 103,
+      "sourceEntries": 103,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "pontic_caucasus",
+      "descriptors": 215,
+      "sourceEntries": 215,
+      "missingSources": 25,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "eurasian_steppe",
+      "descriptors": 480,
+      "sourceEntries": 480,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "arabian_plateau",
+      "descriptors": 443,
+      "sourceEntries": 443,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "mesopotamia_iran_west",
+      "descriptors": 30,
+      "sourceEntries": 30,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "iran_afghanistan",
+      "descriptors": 377,
+      "sourceEntries": 377,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    },
+    {
+      "region": "indus_west",
+      "descriptors": 59,
+      "sourceEntries": 59,
+      "missingSources": 0,
+      "finiteHeights": true,
+      "coastMasksAtTerrainSamplingDensity": true
+    }
+  ],
+  "heightContinuity": [
+    {
+      "region": "levant",
+      "checkedBackdropVertices": 1843,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "egypt",
+      "checkedBackdropVertices": 1844,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_cyrenaica",
+      "checkedBackdropVertices": 2098,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_tripolitania",
+      "checkedBackdropVertices": 2319,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_maghreb_east",
+      "checkedBackdropVertices": 3039,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_maghreb_west",
+      "checkedBackdropVertices": 2669,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_sahara_west",
+      "checkedBackdropVertices": 6602,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_sahara_central",
+      "checkedBackdropVertices": 4973,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "africa_nubia",
+      "checkedBackdropVertices": 5206,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "hispania",
+      "checkedBackdropVertices": 3175,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "gaul",
+      "checkedBackdropVertices": 4530,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "britannia",
+      "checkedBackdropVertices": 3430,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "mediterranean_islands",
+      "checkedBackdropVertices": 7024,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "europe_northwest",
+      "checkedBackdropVertices": 7236,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "europe_northeast",
+      "checkedBackdropVertices": 7024,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "europe_central",
+      "checkedBackdropVertices": 4298,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "pontic_caucasus",
+      "checkedBackdropVertices": 5449,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "eurasian_steppe",
+      "checkedBackdropVertices": 8377,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "arabian_plateau",
+      "checkedBackdropVertices": 9772,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "mesopotamia_iran_west",
+      "checkedBackdropVertices": 5248,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "iran_afghanistan",
+      "checkedBackdropVertices": 7045,
+      "sourceAndMeshAgree": true
+    },
+    {
+      "region": "indus_west",
+      "checkedBackdropVertices": 4953,
+      "sourceAndMeshAgree": true
+    }
+  ],
+  "landCoverageSamples": 3322,
+  "uncoveredLandSamples": 0,
+  "sampledMontBlancPeakMetres": 4463.4326171875,
+  "notice": "One-degree land sampling validates coverage, not every small island or ancient shore. Missing/ocean source samples use the prior world fallback."
+}

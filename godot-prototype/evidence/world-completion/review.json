@@ -1,0 +1,692 @@
+{
+  "views": [
+    {
+      "name": "alps-seam",
+      "comparison": {
+        "matchingPositionOrientationFov": true,
+        "matchingClippingPlanes": true,
+        "changedPixelsAboveOneChannelLevel": 1535063,
+        "meanAbsoluteChannelDifference": 11.740483217592592
+      },
+      "staticMiB": 2154.453718185425,
+      "videoMiB": 4406.494888305664,
+      "gpu": {
+        "meanMs": 20.1230334599813,
+        "p95Ms": 22.5259990692139,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 41.4860295795391,
+        "maxMs": 27.576,
+        "meanMs": 24.1045,
+        "onePercentLowFps": 36.2634174644619,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 27.576,
+        "samples": 30
+      }
+    },
+    {
+      "name": "gaul-overview",
+      "comparison": {
+        "matchingPositionOrientationFov": true,
+        "matchingClippingPlanes": true,
+        "changedPixelsAboveOneChannelLevel": 737011,
+        "meanAbsoluteChannelDifference": 10.815912101337448
+      },
+      "staticMiB": 2155.1107501983643,
+      "videoMiB": 4386.931655883789,
+      "gpu": {
+        "meanMs": 21.6985666275024,
+        "p95Ms": 24.4769992828369,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 44.2222847885659,
+        "maxMs": 25.768,
+        "meanMs": 22.6130333333333,
+        "onePercentLowFps": 38.8078236572493,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.768,
+        "samples": 30
+      }
+    },
+    {
+      "name": "hispania-overview",
+      "comparison": {
+        "matchingPositionOrientationFov": true,
+        "matchingClippingPlanes": true,
+        "changedPixelsAboveOneChannelLevel": 1587283,
+        "meanAbsoluteChannelDifference": 10.26174302340535
+      },
+      "staticMiB": 2155.190776824951,
+      "videoMiB": 4386.931655883789,
+      "gpu": {
+        "meanMs": 20.748033396403,
+        "p95Ms": 23.2490005493164,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 46.1989078578182,
+        "maxMs": 24.216,
+        "meanMs": 21.6455333333333,
+        "onePercentLowFps": 41.2950115626032,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 24.216,
+        "samples": 30
+      }
+    },
+    {
+      "name": "iberian-interior",
+      "comparison": null,
+      "staticMiB": 2111.916682243347,
+      "videoMiB": 4386.931655883789,
+      "gpu": {
+        "meanMs": 17.0226000467936,
+        "p95Ms": 26.4009990692139,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 55.2643940719727,
+        "maxMs": 30.89,
+        "meanMs": 18.0948333333333,
+        "onePercentLowFps": 32.3729362253156,
+        "over16_67ms": 16,
+        "over33_33ms": 0,
+        "p99Ms": 30.89,
+        "samples": 30
+      }
+    },
+    {
+      "name": "britannia-overview",
+      "comparison": null,
+      "staticMiB": 2110.394938468933,
+      "videoMiB": 4386.3330078125,
+      "gpu": {
+        "meanMs": 19.9849665641785,
+        "p95Ms": 24.9979991912842,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 47.236953153539,
+        "maxMs": 26.237,
+        "meanMs": 21.1698666666667,
+        "onePercentLowFps": 38.1141136562869,
+        "over16_67ms": 25,
+        "over33_33ms": 0,
+        "p99Ms": 26.237,
+        "samples": 30
+      }
+    },
+    {
+      "name": "europe-northwest",
+      "comparison": null,
+      "staticMiB": 2110.457844734192,
+      "videoMiB": 4386.3330078125,
+      "gpu": {
+        "meanMs": 21.8528999328613,
+        "p95Ms": 25.628999710083,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 43.7873743484804,
+        "maxMs": 26.86,
+        "meanMs": 22.8376333333333,
+        "onePercentLowFps": 37.2300819061802,
+        "over16_67ms": 28,
+        "over33_33ms": 0,
+        "p99Ms": 26.86,
+        "samples": 30
+      }
+    },
+    {
+      "name": "europe-central",
+      "comparison": null,
+      "staticMiB": 2155.2402629852295,
+      "videoMiB": 4386.931655883789,
+      "gpu": {
+        "meanMs": 21.7959668477376,
+        "p95Ms": 24.9500007629395,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 43.9460635313592,
+        "maxMs": 25.73,
+        "meanMs": 22.7551666666667,
+        "onePercentLowFps": 38.8651379712398,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 25.73,
+        "samples": 30
+      }
+    },
+    {
+      "name": "carpathians",
+      "comparison": null,
+      "staticMiB": 2110.6151914596558,
+      "videoMiB": 4386.3330078125,
+      "gpu": {
+        "meanMs": 21.3366999308268,
+        "p95Ms": 24.2140007019043,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 44.6810887291954,
+        "maxMs": 31.057,
+        "meanMs": 22.3808333333333,
+        "onePercentLowFps": 32.1988601603503,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.057,
+        "samples": 30
+      }
+    },
+    {
+      "name": "europe-northeast",
+      "comparison": null,
+      "staticMiB": 2113.222512245178,
+      "videoMiB": 4386.0830078125,
+      "gpu": {
+        "meanMs": 24.2010999679565,
+        "p95Ms": 28.6420001983643,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 39.6328937164689,
+        "maxMs": 31.109,
+        "meanMs": 25.2315666666667,
+        "onePercentLowFps": 32.1450384133209,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.109,
+        "samples": 30
+      }
+    },
+    {
+      "name": "black-sea",
+      "comparison": null,
+      "staticMiB": 2113.6120014190674,
+      "videoMiB": 4386.4580078125,
+      "gpu": {
+        "meanMs": 20.2926665941874,
+        "p95Ms": 24.5170001983643,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 46.7714450973392,
+        "maxMs": 26.288,
+        "meanMs": 21.3805666666667,
+        "onePercentLowFps": 38.0401704199635,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 26.288,
+        "samples": 30
+      }
+    },
+    {
+      "name": "caucasus",
+      "comparison": null,
+      "staticMiB": 2395.6725177764893,
+      "videoMiB": 4386.4580078125,
+      "gpu": {
+        "meanMs": 19.1032333056132,
+        "p95Ms": 23.5639991760254,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 49.5754687360569,
+        "maxMs": 26.109,
+        "meanMs": 20.1712666666667,
+        "onePercentLowFps": 38.3009690145161,
+        "over16_67ms": 27,
+        "over33_33ms": 0,
+        "p99Ms": 26.109,
+        "samples": 30
+      }
+    },
+    {
+      "name": "steppe",
+      "comparison": null,
+      "staticMiB": 2395.731122970581,
+      "videoMiB": 4386.4580078125,
+      "gpu": {
+        "meanMs": 22.194700050354,
+        "p95Ms": 27.798999786377,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 42.707544430082,
+        "maxMs": 30.683,
+        "meanMs": 23.4150666666667,
+        "onePercentLowFps": 32.5913372225662,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.683,
+        "samples": 30
+      }
+    },
+    {
+      "name": "crimea",
+      "comparison": null,
+      "staticMiB": 2116.7415494918823,
+      "videoMiB": 4406.178909301758,
+      "gpu": {
+        "meanMs": 20.1012998263041,
+        "p95Ms": 24.306999206543,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 46.9540148030357,
+        "maxMs": 25.09,
+        "meanMs": 21.2974333333333,
+        "onePercentLowFps": 39.8565165404544,
+        "over16_67ms": 27,
+        "over33_33ms": 0,
+        "p99Ms": 25.09,
+        "samples": 30
+      }
+    },
+    {
+      "name": "arabia",
+      "comparison": null,
+      "staticMiB": 2117.1322870254517,
+      "videoMiB": 4386.490676879883,
+      "gpu": {
+        "meanMs": 25.5240999857585,
+        "p95Ms": 28.5380001068115,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 37.5985080911989,
+        "maxMs": 30.604,
+        "meanMs": 26.5968,
+        "onePercentLowFps": 32.6754672591818,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.604,
+        "samples": 30
+      }
+    },
+    {
+      "name": "zagros",
+      "comparison": null,
+      "staticMiB": 2117.17430973053,
+      "videoMiB": 4386.490676879883,
+      "gpu": {
+        "meanMs": 17.9949332237244,
+        "p95Ms": 20.7269992828369,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 53.161703726281,
+        "maxMs": 21.612,
+        "meanMs": 18.8105333333333,
+        "onePercentLowFps": 46.2705904127337,
+        "over16_67ms": 22,
+        "over33_33ms": 0,
+        "p99Ms": 21.612,
+        "samples": 30
+      }
+    },
+    {
+      "name": "iran",
+      "comparison": null,
+      "staticMiB": 2117.232787132263,
+      "videoMiB": 4386.490676879883,
+      "gpu": {
+        "meanMs": 18.814399878184,
+        "p95Ms": 21.3169994354248,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 50.6840659433487,
+        "maxMs": 22.29,
+        "meanMs": 19.7300666666667,
+        "onePercentLowFps": 44.8631673396142,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 22.29,
+        "samples": 30
+      }
+    },
+    {
+      "name": "hindu-kush",
+      "comparison": null,
+      "staticMiB": 2119.129041671753,
+      "videoMiB": 4406.075637817383,
+      "gpu": {
+        "meanMs": 23.0639664332072,
+        "p95Ms": 25.4409999847412,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 41.7207297790053,
+        "maxMs": 26.691,
+        "meanMs": 23.9689,
+        "onePercentLowFps": 37.4658124461429,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 26.691,
+        "samples": 30
+      }
+    },
+    {
+      "name": "indus",
+      "comparison": null,
+      "staticMiB": 2119.0890579223633,
+      "videoMiB": 4386.464797973633,
+      "gpu": {
+        "meanMs": 28.3362667719523,
+        "p95Ms": 30.5809993743896,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 34.2629245461876,
+        "maxMs": 34.863,
+        "meanMs": 29.1860666666667,
+        "onePercentLowFps": 28.6837047873103,
+        "over16_67ms": 30,
+        "over33_33ms": 1,
+        "p99Ms": 34.863,
+        "samples": 30
+      }
+    },
+    {
+      "name": "western-india",
+      "comparison": null,
+      "staticMiB": 2119.1288452148438,
+      "videoMiB": 4386.464797973633,
+      "gpu": {
+        "meanMs": 14.2253332773844,
+        "p95Ms": 16.992000579834,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 65.9469654503848,
+        "maxMs": 18.099,
+        "meanMs": 15.1637,
+        "onePercentLowFps": 55.2516713630587,
+        "over16_67ms": 8,
+        "over33_33ms": 0,
+        "p99Ms": 18.099,
+        "samples": 30
+      }
+    },
+    {
+      "name": "cyprus",
+      "comparison": null,
+      "staticMiB": 2128.996404647827,
+      "videoMiB": 4393.902008056641,
+      "gpu": {
+        "meanMs": 15.6028999964396,
+        "p95Ms": 18.423999786377,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 60.3780875844538,
+        "maxMs": 19.593,
+        "meanMs": 16.5623,
+        "onePercentLowFps": 51.0386362476395,
+        "over16_67ms": 15,
+        "over33_33ms": 0,
+        "p99Ms": 19.593,
+        "samples": 30
+      }
+    },
+    {
+      "name": "crete",
+      "comparison": null,
+      "staticMiB": 2118.9915647506714,
+      "videoMiB": 4394.511047363281,
+      "gpu": {
+        "meanMs": 13.9430333773295,
+        "p95Ms": 18.1219997406006,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 66.823181407118,
+        "maxMs": 20.115,
+        "meanMs": 14.9648666666667,
+        "onePercentLowFps": 49.7141436738752,
+        "over16_67ms": 5,
+        "over33_33ms": 0,
+        "p99Ms": 20.115,
+        "samples": 30
+      }
+    },
+    {
+      "name": "sardinia-corsica",
+      "comparison": null,
+      "staticMiB": 2154.792247772217,
+      "videoMiB": 4386.410400390625,
+      "gpu": {
+        "meanMs": 17.675199953715,
+        "p95Ms": 20.9340000152588,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 53.0933983668471,
+        "maxMs": 22.411,
+        "meanMs": 18.8347333333333,
+        "onePercentLowFps": 44.6209450716166,
+        "over16_67ms": 25,
+        "over33_33ms": 0,
+        "p99Ms": 22.411,
+        "samples": 30
+      }
+    },
+    {
+      "name": "italy-control",
+      "comparison": null,
+      "staticMiB": 2157.8185358047485,
+      "videoMiB": 4388.284118652344,
+      "gpu": {
+        "meanMs": 23.6420668919881,
+        "p95Ms": 25.8500003814697,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 20.8590014935045,
+        "maxMs": 57.251,
+        "meanMs": 47.9409333333333,
+        "onePercentLowFps": 17.4669438088418,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 57.251,
+        "samples": 30
+      }
+    },
+    {
+      "name": "sicily-control",
+      "comparison": null,
+      "staticMiB": 2158.0402660369873,
+      "videoMiB": 4388.243850708008,
+      "gpu": {
+        "meanMs": 17.1243667602539,
+        "p95Ms": 20.5300006866455,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 28.4752365105686,
+        "maxMs": 41.217,
+        "meanMs": 35.1182333333333,
+        "onePercentLowFps": 24.2618337093918,
+        "over16_67ms": 30,
+        "over33_33ms": 29,
+        "p99Ms": 41.217,
+        "samples": 30
+      }
+    },
+    {
+      "name": "illyria-control",
+      "comparison": null,
+      "staticMiB": 2157.7940044403076,
+      "videoMiB": 4387.8089599609375,
+      "gpu": {
+        "meanMs": 15.967200088501,
+        "p95Ms": 18.1569995880127,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 30.1480571084597,
+        "maxMs": 35.596,
+        "meanMs": 33.1696333333333,
+        "onePercentLowFps": 28.0930441622654,
+        "over16_67ms": 30,
+        "over33_33ms": 17,
+        "p99Ms": 35.596,
+        "samples": 30
+      }
+    },
+    {
+      "name": "greece-control",
+      "comparison": null,
+      "staticMiB": 2156.336492538452,
+      "videoMiB": 4387.38542175293,
+      "gpu": {
+        "meanMs": 11.8359666188558,
+        "p95Ms": 15.1909999847412,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 35.7080368078443,
+        "maxMs": 31.879,
+        "meanMs": 28.0049,
+        "onePercentLowFps": 31.3686125662662,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.879,
+        "samples": 30
+      }
+    },
+    {
+      "name": "anatolia-control",
+      "comparison": null,
+      "staticMiB": 2418.959885597229,
+      "videoMiB": 4400.600173950195,
+      "gpu": {
+        "meanMs": 11.866299978892,
+        "p95Ms": 15.0190000534058,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 28.3448051058442,
+        "maxMs": 40.953,
+        "meanMs": 35.2798333333333,
+        "onePercentLowFps": 24.4182355383,
+        "over16_67ms": 30,
+        "over33_33ms": 25,
+        "p99Ms": 40.953,
+        "samples": 30
+      }
+    },
+    {
+      "name": "libya-control",
+      "comparison": null,
+      "staticMiB": 2156.5410556793213,
+      "videoMiB": 4407.023620605469,
+      "gpu": {
+        "meanMs": 21.341933631897,
+        "p95Ms": 24.9740009307861,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 44.455179547061,
+        "maxMs": 26.28,
+        "meanMs": 22.4945666666667,
+        "onePercentLowFps": 38.0517503805175,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 26.28,
+        "samples": 30
+      }
+    },
+    {
+      "name": "egypt-control",
+      "comparison": null,
+      "staticMiB": 2157.3700370788574,
+      "videoMiB": 4407.22053527832,
+      "gpu": {
+        "meanMs": 26.4095667521159,
+        "p95Ms": 29.503999710083,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 36.7226728230188,
+        "maxMs": 31.651,
+        "meanMs": 27.2311333333333,
+        "onePercentLowFps": 31.5945783703516,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 31.651,
+        "samples": 30
+      }
+    },
+    {
+      "name": "levant-control",
+      "comparison": null,
+      "staticMiB": 2157.195442199707,
+      "videoMiB": 4407.155242919922,
+      "gpu": {
+        "meanMs": 22.5123667399089,
+        "p95Ms": 25.1949996948242,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 42.6465299229377,
+        "maxMs": 28.213,
+        "meanMs": 23.4485666666667,
+        "onePercentLowFps": 35.4446531740687,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 28.213,
+        "samples": 30
+      }
+    },
+    {
+      "name": "tunisia-control",
+      "comparison": null,
+      "staticMiB": 2157.939790725708,
+      "videoMiB": 4386.410400390625,
+      "gpu": {
+        "meanMs": 21.6838666915894,
+        "p95Ms": 24.9400005340576,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 43.6761963274142,
+        "maxMs": 26.378,
+        "meanMs": 22.8957666666667,
+        "onePercentLowFps": 37.9103798620062,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 26.378,
+        "samples": 30
+      }
+    },
+    {
+      "name": "maghreb-control",
+      "comparison": null,
+      "staticMiB": 2157.987886428833,
+      "videoMiB": 4386.410400390625,
+      "gpu": {
+        "meanMs": 17.8982000668844,
+        "p95Ms": 20.9500007629395,
+        "samples": 30
+      },
+      "submittedIntervals": {
+        "averageFps": 53.1099411187786,
+        "maxMs": 22.334,
+        "meanMs": 18.8288666666667,
+        "onePercentLowFps": 44.7747828423032,
+        "over16_67ms": 21,
+        "over33_33ms": 0,
+        "p99Ms": 22.334,
+        "samples": 30
+      }
+    }
+  ],
+  "method": "Actual Godot captures. Only views with frozen earlier poses have comparisons. Short hidden-window timings are not sustained interactive FPS."
+}

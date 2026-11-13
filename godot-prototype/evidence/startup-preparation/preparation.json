@@ -1,0 +1,47 @@
+{
+  "blockedMs": 38941,
+  "releases": [
+    {
+      "distance": 1100.0,
+      "focus": [
+        13.0,
+        42.0
+      ],
+      "ms": 38941
+    }
+  ],
+  "screens": 1,
+  "stageMs": {
+    "Warming rendered detail": 381
+  },
+  "startupPreparation": {
+    "coastMaterials": 2,
+    "elapsedMs": 11212,
+    "phases": [
+      {
+        "bytes": 132378576,
+        "chunks": 14,
+        "ms": 1667,
+        "stage": "worldCoastSources"
+      },
+      {
+        "ms": 8787,
+        "stage": "sharedAssets",
+        "variants": 132
+      },
+      {
+        "coarseCells": 12,
+        "localCells": 9,
+        "ms": 10763,
+        "stage": "openingArea"
+      }
+    ],
+    "scope": "Worldwide coastline sources, shared vegetation assets, coast materials and the opening area. Other procedural regions stream without loading screens.",
+    "warmedVariants": 132,
+    "worldCoastChunks": 14,
+    "worldCoastSourceBytes": 132378576
+  },
+  "startupStaticBytes": 2750017683,
+  "startupVideoBytes": 5207788144,
+  "visiblePendingAtRelease": 0
+}

@@ -1,0 +1,143 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.642787635326386,
+          -0.766044437885284,
+          0.0,
+          0.766044437885284,
+          0.642787635326386
+        ],
+        "far": 2800.0,
+        "fov": 42.0,
+        "near": 13.0,
+        "position": [
+          -1480.88842773438,
+          399.093444824219,
+          351.503295898438
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.393,
+        "city": 0.046,
+        "markers": 3.638,
+        "rivers": 0.002,
+        "scenery": 0.066,
+        "tile_upload": 0.004,
+        "ui": 0.032
+      },
+      "drawCalls": 49.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "arabian_plateau": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "eurasian_steppe": 0,
+        "europe_central": 0,
+        "europe_northeast": 0,
+        "europe_northwest": 0,
+        "gaul": 0,
+        "hispania": 0,
+        "indus_west": 0,
+        "iran_afghanistan": 0,
+        "levant": 0,
+        "mediterranean_islands": 0,
+        "mesopotamia_iran_west": 0,
+        "pontic_caucasus": 0
+      },
+      "frameSamplesMs": [
+        17.65,
+        25.191,
+        21.026,
+        18.865,
+        24.84,
+        25.718,
+        15.419,
+        26.459,
+        22.017,
+        19.112,
+        25.183,
+        24.201,
+        18.405,
+        25.48,
+        22.485,
+        18.726,
+        26.225,
+        21.443,
+        19.094,
+        21.081,
+        23.546,
+        14.391,
+        18.295,
+        19.665,
+        21.241,
+        17.609,
+        20.373,
+        21.828,
+        14.814,
+        20.109
+      ],
+      "gpu": {
+        "meanMs": 19.8120666821798,
+        "p95Ms": 25.3659992218018,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "iberian-interior",
+      "political": 1.0,
+      "preset": [
+        -4.0,
+        40.0,
+        520.0,
+        50.0,
+        0.0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.275,
+        "base": 4.187,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.386999994516373,
+      "resident": [
+        "context",
+        "world-37--7",
+        "world-37--2",
+        "world-42--7",
+        "world-32--7",
+        "world-37--12",
+        "world-42--2",
+        "world-32--2",
+        "world-42--12",
+        "world-32--12",
+        "world-47--7",
+        "world-37-3",
+        "world-42-3"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 2207620060,
+      "steady": {
+        "averageFps": 47.5819638979779,
+        "maxMs": 26.459,
+        "meanMs": 21.0163666666667,
+        "onePercentLowFps": 37.7943232926414,
+        "over16_67ms": 27,
+        "over33_33ms": 0,
+        "p99Ms": 26.459,
+        "samples": 30
+      },
+      "videoMemoryBytes": 4599353600
+    }
+  ]
+}

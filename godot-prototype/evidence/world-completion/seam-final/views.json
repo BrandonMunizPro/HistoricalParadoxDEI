@@ -1,0 +1,261 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.499999970197678,
+          -0.866025447845459,
+          0.0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 7700.0,
+        "fov": 42.0,
+        "near": 37.5,
+        "position": [
+          -840.518615722656,
+          1299.43200683594,
+          138.631713867188
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.594,
+        "city": 0.092,
+        "markers": 2.776,
+        "rivers": 0.003,
+        "scenery": 0.113,
+        "tile_upload": 0.007,
+        "ui": 0.034
+      },
+      "drawCalls": 161.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "gaul": 0,
+        "hispania": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        30.981,
+        35.197,
+        32.727,
+        27.2,
+        32.429,
+        31.905,
+        28.112,
+        33.463,
+        27.765,
+        28.506,
+        29.881,
+        29.974,
+        25.827,
+        28.158,
+        24.806,
+        29.611,
+        26.643,
+        30.938,
+        28.982,
+        27.94,
+        30.607,
+        27.332,
+        32.517,
+        26.767,
+        28.866,
+        27.141,
+        21.593,
+        27.969,
+        28.034,
+        25.423
+      ],
+      "gpu": {
+        "meanMs": 57.0779991149902,
+        "p95Ms": 57.0779991149902,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "gaul-overview",
+      "political": 1.0,
+      "preset": [
+        2.5,
+        46.5,
+        1500,
+        60,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.18,
+        "base": 3.627,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 5070.11181640625,
+      "resident": [
+        "context",
+        "world-42--2",
+        "world-47--2",
+        "world-42-3",
+        "world-47-3",
+        "world-37--2",
+        "world-42--7",
+        "world-37-3",
+        "world-47--7",
+        "world-52--2",
+        "world-42-8",
+        "world-52-3",
+        "world-47-8"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1510759323,
+      "steady": {
+        "averageFps": 34.5903465260915,
+        "maxMs": 35.197,
+        "meanMs": 28.9098,
+        "onePercentLowFps": 28.4115123448021,
+        "over16_67ms": 30,
+        "over33_33ms": 2,
+        "p99Ms": 35.197,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3497912960
+    },
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.70710676908493,
+          -0.70710676908493,
+          0.0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1350.0,
+        "fov": 42.0,
+        "near": 5.75,
+        "position": [
+          -584.214172363281,
+          163.162078857422,
+          -308.186218261719
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.427,
+        "city": 0.048,
+        "markers": 2.79,
+        "rivers": 0.087,
+        "scenery": 0.054,
+        "tile_upload": 0.004,
+        "ui": 0.023
+      },
+      "drawCalls": 41.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "gaul": 24,
+        "hispania": 0,
+        "levant": 0
+      },
+      "frameSamplesMs": [
+        46.11,
+        45.014,
+        50.483,
+        50.799,
+        46.979,
+        45.789,
+        54.282,
+        46.634,
+        41.598,
+        40.551,
+        44.609,
+        42.258,
+        43.984,
+        40.837,
+        41.31,
+        44.834,
+        43.401,
+        39.656,
+        37.513,
+        41.914,
+        43.017,
+        40.594,
+        42.487,
+        41.646,
+        39.607,
+        42.977,
+        43.178,
+        40.955,
+        42.348,
+        40.264
+      ],
+      "gpu": {
+        "meanMs": 11.9720001220703,
+        "p95Ms": 11.9720001220703,
+        "samples": 30
+      },
+      "labelDrawMs": 14.392,
+      "name": "alps-seam",
+      "political": 1.0,
+      "preset": [
+        6,
+        45.5,
+        230,
+        45,
+        0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.327,
+        "base": 3.441,
+        "previousRegions": 0.021
+      },
+      "renderCpuMs": 0.569000005722046,
+      "resident": [
+        "context",
+        "N45E9",
+        "N44E9",
+        "N45E10",
+        "N44E10",
+        "N42E9",
+        "N43E10",
+        "N41E9",
+        "N42E10",
+        "N45E11",
+        "N44E11",
+        "N43E11",
+        "N40E9"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 1511978697,
+      "steady": {
+        "averageFps": 22.97744840031,
+        "maxMs": 54.282,
+        "meanMs": 43.5209333333333,
+        "onePercentLowFps": 18.4223131056335,
+        "over16_67ms": 30,
+        "over33_33ms": 30,
+        "p99Ms": 54.282,
+        "samples": 30
+      },
+      "videoMemoryBytes": 3519104080
+    }
+  ]
+}

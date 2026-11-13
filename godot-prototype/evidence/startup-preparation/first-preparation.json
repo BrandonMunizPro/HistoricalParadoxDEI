@@ -1,0 +1,36 @@
+{
+  "blockedMs": 195713,
+  "releases": [
+    {
+      "distance": 1100.0,
+      "focus": [
+        13.0,
+        42.0
+      ],
+      "ms": 195713
+    }
+  ],
+  "screens": 1,
+  "stageMs": {
+    "Warming rendered detail": 747
+  },
+  "startupPreparation": {
+    "elapsedMs": 166819,
+    "phases": [
+      {
+        "ms": 2890,
+        "stage": "sharedAssets",
+        "variants": 100
+      },
+      {
+        "coarseCells": 12,
+        "localCells": 9,
+        "ms": 165570,
+        "stage": "openingArea"
+      }
+    ],
+    "scope": "Shared vegetation assets and the opening area. Other procedural regions stream without loading screens.",
+    "warmedVariants": 100
+  },
+  "visiblePendingAtRelease": 0
+}

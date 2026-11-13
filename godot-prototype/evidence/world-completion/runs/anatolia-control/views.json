@@ -1,0 +1,143 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          0.819152355194092,
+          0.0,
+          -0.573575973510742,
+          -0.286788046360016,
+          0.866025328636169,
+          -0.409576267004013,
+          0.49673131108284,
+          0.50000011920929,
+          0.709406673908234
+        ],
+        "far": 650.0,
+        "fov": 42.0,
+        "near": 2.25,
+        "position": [
+          1701.54479980469,
+          47.1011543273926,
+          376.62841796875
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.424,
+        "city": 0.042,
+        "markers": 3.683,
+        "rivers": 0.065,
+        "scenery": 0.81,
+        "tile_upload": 0.003,
+        "ui": 0.021
+      },
+      "drawCalls": 148.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "arabian_plateau": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "eurasian_steppe": 0,
+        "europe_central": 0,
+        "europe_northeast": 0,
+        "europe_northwest": 0,
+        "gaul": 0,
+        "hispania": 0,
+        "indus_west": 0,
+        "iran_afghanistan": 0,
+        "levant": 0,
+        "mediterranean_islands": 0,
+        "mesopotamia_iran_west": 0,
+        "pontic_caucasus": 0
+      },
+      "frameSamplesMs": [
+        32.611,
+        34.844,
+        34.09,
+        33.344,
+        34.305,
+        34.74,
+        39.499,
+        35.423,
+        35.496,
+        37.805,
+        35.483,
+        35.17,
+        35.061,
+        33.444,
+        36.36,
+        36.17,
+        33.954,
+        32.506,
+        35.848,
+        34.453,
+        39.249,
+        39.049,
+        37.291,
+        40.953,
+        33.857,
+        32.879,
+        32.469,
+        33.803,
+        33.323,
+        34.916
+      ],
+      "gpu": {
+        "meanMs": 11.866299978892,
+        "p95Ms": 15.0190000534058,
+        "samples": 30
+      },
+      "labelDrawMs": 14.51,
+      "name": "anatolia-control",
+      "political": 0.15625,
+      "preset": [
+        32.3,
+        37.1,
+        90.0,
+        30.0,
+        35.0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.781,
+        "base": 5.054,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.300999999046326,
+      "resident": [
+        "context",
+        "world-37-28",
+        "world-32-28",
+        "world-37-33",
+        "world-32-33",
+        "world-37-23",
+        "world-32-23",
+        "world-42-28",
+        "world-27-28",
+        "world-42-33",
+        "world-27-33",
+        "world-37-38",
+        "world-32-38"
+      ],
+      "sceneryInstances": 30110,
+      "staticMemoryBytes": 2536463281,
+      "steady": {
+        "averageFps": 28.3448051058442,
+        "maxMs": 40.953,
+        "meanMs": 35.2798333333333,
+        "onePercentLowFps": 24.4182355383,
+        "over16_67ms": 30,
+        "over33_33ms": 25,
+        "p99Ms": 40.953,
+        "samples": 30
+      },
+      "videoMemoryBytes": 4614363728
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "method": "Native GPU frames at 1920x1080; six-second eased zoom from 300 to 2 km. Cold = isolated empty placement cache, not flushed driver/OS caches. Capture occurs after timed trial. Missing-frame counter tests all nine local cells and close coast readiness, not screenshot image analysis.",
+  "phase": "after",
+  "trials": [
+    {
+      "allLocalReadyMs": 22734,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 62,
+        "gpuReadbacks": 0,
+        "maxVertices": 26415,
+        "patches": 1,
+        "preparationMs": [
+          2085
+        ],
+        "released": false,
+        "requests": 3,
+        "rockSegments": 0,
+        "segments": 62,
+        "vertices": 26415
+      },
+      "coastDelayMs": 761,
+      "coastReadyMs": 4785,
+      "coastThresholdMs": 4024,
+      "drawCalls": 457.0,
+      "elapsedMs": 71075,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 235.448,
+        "meanMs": 15.3540771224887,
+        "p99Ms": 43.579,
+        "samples": 4629
+      },
+      "instances": 32621,
+      "loading": {
+        "blockedMs": 50850,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 50850
+          }
+        ],
+        "screens": 1,
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 1283,
+      "localDelayMs": 19689,
+      "localThresholdMs": 3045,
+      "name": "italy-cold",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 72796,
+        "cellsBuilt": 21,
+        "generationCpuMs": 27223.229,
+        "generationYieldFrames": 4594,
+        "hiddenTicks": 35,
+        "maxChunkMs": 18.617,
+        "maxUploadMs": 201.347,
+        "skippedHidden": 1,
+        "uploadCpuMs": 257.152
+      },
+      "staticBytes": 2651109434,
+      "tilePreparationMs": [
+        114.099,
+        15.84,
+        14.692,
+        16.015,
+        16.71,
+        16.188,
+        18.735,
+        15.292,
+        14.062,
+        13.16,
+        13.588,
+        12.514,
+        12.808
+      ],
+      "timedOut": false,
+      "videoBytes": 4856716352,
+      "warm": false
+    },
+    {
+      "allLocalReadyMs": 2840,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 62,
+        "gpuReadbacks": 0,
+        "maxVertices": 26415,
+        "patches": 2,
+        "preparationMs": [
+          2085,
+          1448
+        ],
+        "released": false,
+        "requests": 6,
+        "rockSegments": 0,
+        "segments": 62,
+        "vertices": 26415
+      },
+      "coastDelayMs": 141,
+      "coastReadyMs": 4163,
+      "coastThresholdMs": 4022,
+      "drawCalls": 457.0,
+      "elapsedMs": 6729,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 208.977,
+        "meanMs": 35.2288167539267,
+        "p99Ms": 54.655,
+        "samples": 191
+      },
+      "instances": 32621,
+      "loading": {
+        "blockedMs": 58893,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 50850
+          },
+          {
+            "distance": 2.0018559159673,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8043
+          }
+        ],
+        "screens": 2,
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 183,
+      "localDelayMs": 0,
+      "localThresholdMs": 2840,
+      "name": "italy-warm",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 72796,
+        "cellsBuilt": 21,
+        "generationCpuMs": 27223.229,
+        "generationYieldFrames": 4594,
+        "hiddenTicks": 84,
+        "maxChunkMs": 18.617,
+        "maxUploadMs": 201.347,
+        "skippedHidden": 2,
+        "uploadCpuMs": 257.152
+      },
+      "staticBytes": 2652715792,
+      "tilePreparationMs": [
+        114.099,
+        15.84,
+        14.692,
+        16.015,
+        16.71,
+        16.188,
+        18.735,
+        15.292,
+        14.062,
+        13.16,
+        13.588,
+        12.514,
+        12.808
+      ],
+      "timedOut": false,
+      "videoBytes": 4856777424,
+      "warm": true
+    },
+    {
+      "allLocalReadyMs": 31280,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 73,
+        "gpuReadbacks": 0,
+        "maxVertices": 155736,
+        "patches": 4,
+        "preparationMs": [
+          2085,
+          1448,
+          8711,
+          2195
+        ],
+        "released": false,
+        "requests": 8,
+        "rockSegments": 76,
+        "segments": 149,
+        "vertices": 63180
+      },
+      "coastDelayMs": 9601,
+      "coastReadyMs": 13608,
+      "coastThresholdMs": 4007,
+      "drawCalls": 287.0,
+      "elapsedMs": 75218,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 145.258,
+        "meanMs": 18.4085313264806,
+        "p99Ms": 41.212,
+        "samples": 4086
+      },
+      "instances": 24813,
+      "loading": {
+        "blockedMs": 91771,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 50850
+          },
+          {
+            "distance": 2.0018559159673,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8043
+          },
+          {
+            "distance": 2.0,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 32878
+          }
+        ],
+        "screens": 3,
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 1610,
+      "localDelayMs": 28449,
+      "localThresholdMs": 2831,
+      "name": "messina-cold",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 186325,
+        "cellsBuilt": 42,
+        "generationCpuMs": 48587.2739999996,
+        "generationYieldFrames": 8658,
+        "hiddenTicks": 130,
+        "maxChunkMs": 29.926,
+        "maxUploadMs": 201.347,
+        "skippedHidden": 3,
+        "uploadCpuMs": 265.905
+      },
+      "staticBytes": 2653763039,
+      "tilePreparationMs": [
+        114.099,
+        15.84,
+        14.692,
+        16.015,
+        16.71,
+        16.188,
+        18.735,
+        15.292,
+        14.062,
+        13.16,
+        13.588,
+        12.514,
+        12.808,
+        12.812,
+        14.742,
+        13.1,
+        13.752,
+        14.476,
+        15.293,
+        14.51,
+        14.434,
+        14.952,
+        13.704,
+        14.09,
+        14.051
+      ],
+      "timedOut": false,
+      "videoBytes": 4861515616,
+      "warm": false
+    },
+    {
+      "allLocalReadyMs": 2813,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 73,
+        "gpuReadbacks": 0,
+        "maxVertices": 155736,
+        "patches": 6,
+        "preparationMs": [
+          2085,
+          1448,
+          8711,
+          2195,
+          10009,
+          2331
+        ],
+        "released": false,
+        "requests": 10,
+        "rockSegments": 76,
+        "segments": 149,
+        "vertices": 63180
+      },
+      "coastDelayMs": 11034,
+      "coastReadyMs": 15026,
+      "coastThresholdMs": 3992,
+      "drawCalls": 287.0,
+      "elapsedMs": 15238,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 67.779,
+        "meanMs": 23.8470172143975,
+        "p99Ms": 46.379,
+        "samples": 639
+      },
+      "instances": 24813,
+      "loading": {
+        "blockedMs": 108366,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 50850
+          },
+          {
+            "distance": 2.0018559159673,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8043
+          },
+          {
+            "distance": 2.0,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 32878
+          },
+          {
+            "distance": 2.0,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 16595
+          }
+        ],
+        "screens": 4,
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 631,
+      "localDelayMs": 0,
+      "localThresholdMs": 2813,
+      "name": "messina-warm",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 186325,
+        "cellsBuilt": 42,
+        "generationCpuMs": 48587.2739999996,
+        "generationYieldFrames": 8658,
+        "hiddenTicks": 180,
+        "maxChunkMs": 29.926,
+        "maxUploadMs": 201.347,
+        "skippedHidden": 4,
+        "uploadCpuMs": 265.905
+      },
+      "staticBytes": 2653616287,
+      "tilePreparationMs": [
+        114.099,
+        15.84,
+        14.692,
+        16.015,
+        16.71,
+        16.188,
+        18.735,
+        15.292,
+        14.062,
+        13.16,
+        13.588,
+        12.514,
+        12.808,
+        12.812,
+        14.742,
+        13.1,
+        13.752,
+        14.476,
+        15.293,
+        14.51,
+        14.434,
+        14.952,
+        13.704,
+        14.09,
+        14.051
+      ],
+      "timedOut": false,
+      "videoBytes": 4861515616,
+      "warm": true
+    }
+  ]
+}

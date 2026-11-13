@@ -1,0 +1,143 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.499999970197678,
+          -0.866025447845459,
+          0.0,
+          0.866025447845459,
+          0.499999970197678
+        ],
+        "far": 7700.0,
+        "fov": 42.0,
+        "near": 37.5,
+        "position": [
+          -840.518615722656,
+          1299.43200683594,
+          138.631713867188
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.395,
+        "city": 0.047,
+        "markers": 3.427,
+        "rivers": 0.002,
+        "scenery": 0.06,
+        "tile_upload": 0.004,
+        "ui": 0.021
+      },
+      "drawCalls": 165.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "arabian_plateau": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "eurasian_steppe": 0,
+        "europe_central": 0,
+        "europe_northeast": 0,
+        "europe_northwest": 0,
+        "gaul": 0,
+        "hispania": 0,
+        "indus_west": 0,
+        "iran_afghanistan": 0,
+        "levant": 0,
+        "mediterranean_islands": 0,
+        "mesopotamia_iran_west": 0,
+        "pontic_caucasus": 0
+      },
+      "frameSamplesMs": [
+        29.785,
+        20.791,
+        36.527,
+        23.04,
+        31.206,
+        30.947,
+        31.297,
+        29.934,
+        29.064,
+        30.426,
+        25.415,
+        25.468,
+        28.875,
+        31.975,
+        27.566,
+        22.874,
+        27.702,
+        23.177,
+        26.312,
+        23.769,
+        22.924,
+        27.199,
+        27.412,
+        26.922,
+        25.564,
+        22.55,
+        25.4,
+        26.861,
+        18.667,
+        27.678
+      ],
+      "gpu": {
+        "meanMs": 25.7413666407267,
+        "p95Ms": 30.7789993286133,
+        "samples": 30
+      },
+      "labelDrawMs": 0.0,
+      "name": "gaul-overview",
+      "political": 1.0,
+      "preset": [
+        2.5,
+        46.5,
+        1500.0,
+        60.0,
+        0.0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.28,
+        "base": 3.965,
+        "previousRegions": 0.015
+      },
+      "renderCpuMs": 0.531000018119812,
+      "resident": [
+        "context",
+        "world-42--2",
+        "world-47--2",
+        "world-42-3",
+        "world-47-3",
+        "world-37--2",
+        "world-42--7",
+        "world-37-3",
+        "world-47--7",
+        "world-52--2",
+        "world-42-8",
+        "world-52-3",
+        "world-47-8"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 2501531916,
+      "steady": {
+        "averageFps": 37.1596639279994,
+        "maxMs": 36.527,
+        "meanMs": 26.9109,
+        "onePercentLowFps": 27.3770087880198,
+        "over16_67ms": 30,
+        "over33_33ms": 1,
+        "p99Ms": 36.527,
+        "samples": 30
+      },
+      "videoMemoryBytes": 4606088192
+    }
+  ]
+}

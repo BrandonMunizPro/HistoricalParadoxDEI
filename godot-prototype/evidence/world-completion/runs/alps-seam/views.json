@@ -1,0 +1,143 @@
+{
+  "method": "30 uncapped controlled submitted wall intervals per settled view; VSync off; hidden-window force_draw, not a sustained benchmark or scan-out.",
+  "views": [
+    {
+      "camera": {
+        "basis": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.70710676908493,
+          -0.70710676908493,
+          0.0,
+          0.70710676908493,
+          0.70710676908493
+        ],
+        "far": 1350.0,
+        "fov": 42.0,
+        "near": 5.75,
+        "position": [
+          -584.214172363281,
+          163.162078857422,
+          -308.186218261719
+        ]
+      },
+      "cpuStagesMs": {
+        "camera_materials": 0.374,
+        "city": 0.045,
+        "markers": 3.533,
+        "rivers": 0.098,
+        "scenery": 0.052,
+        "tile_upload": 0.004,
+        "ui": 0.02
+      },
+      "drawCalls": 43.0,
+      "easternResidency": {
+        "africa_cyrenaica": 0,
+        "africa_maghreb_east": 0,
+        "africa_maghreb_west": 0,
+        "africa_nubia": 0,
+        "africa_sahara_central": 0,
+        "africa_sahara_west": 0,
+        "africa_tripolitania": 0,
+        "arabian_plateau": 0,
+        "britannia": 0,
+        "egypt": 0,
+        "eurasian_steppe": 0,
+        "europe_central": 0,
+        "europe_northeast": 0,
+        "europe_northwest": 0,
+        "gaul": 24,
+        "hispania": 0,
+        "indus_west": 0,
+        "iran_afghanistan": 0,
+        "levant": 0,
+        "mediterranean_islands": 0,
+        "mesopotamia_iran_west": 0,
+        "pontic_caucasus": 0
+      },
+      "frameSamplesMs": [
+        26.684,
+        26.739,
+        27.484,
+        28.008,
+        27.798,
+        25.344,
+        24.699,
+        30.085,
+        28.426,
+        26.736,
+        23.211,
+        25.972,
+        28.322,
+        27.409,
+        23.243,
+        23.575,
+        23.904,
+        26.118,
+        24.817,
+        26.61,
+        27.207,
+        27.796,
+        26.329,
+        25.368,
+        26.683,
+        26.451,
+        26.972,
+        26.996,
+        27.332,
+        28.217
+      ],
+      "gpu": {
+        "meanMs": 21.8674334208171,
+        "p95Ms": 25.2910003662109,
+        "samples": 30
+      },
+      "labelDrawMs": 15.995,
+      "name": "alps-seam",
+      "political": 1.0,
+      "preset": [
+        6.0,
+        45.5,
+        230.0,
+        45.0,
+        0.0
+      ],
+      "regionalCpuMs": {
+        "anatolia": 0.362,
+        "base": 4.136,
+        "previousRegions": 0.014
+      },
+      "renderCpuMs": 0.40200001001358,
+      "resident": [
+        "context",
+        "N45E9",
+        "N44E9",
+        "N45E10",
+        "N44E10",
+        "N42E9",
+        "N43E10",
+        "N41E9",
+        "N42E10",
+        "N45E11",
+        "N44E11",
+        "N43E11",
+        "N40E9"
+      ],
+      "sceneryInstances": 0,
+      "staticMemoryBytes": 2427523884,
+      "steady": {
+        "averageFps": 37.7579338858578,
+        "maxMs": 30.085,
+        "meanMs": 26.4845,
+        "onePercentLowFps": 33.2391557254446,
+        "over16_67ms": 30,
+        "over33_33ms": 0,
+        "p99Ms": 30.085,
+        "samples": 30
+      },
+      "videoMemoryBytes": 4620544784
+    }
+  ]
+}

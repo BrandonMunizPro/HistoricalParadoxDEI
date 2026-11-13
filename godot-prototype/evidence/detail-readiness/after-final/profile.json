@@ -1,0 +1,492 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "checks": [
+    {
+      "name": "italy-cold has no exposed missing-detail frames",
+      "passed": true
+    },
+    {
+      "name": "italy-warm has no exposed missing-detail frames",
+      "passed": true
+    },
+    {
+      "name": "messina-cold has no exposed missing-detail frames",
+      "passed": true
+    },
+    {
+      "name": "messina-warm has no exposed missing-detail frames",
+      "passed": true
+    },
+    {
+      "name": "Eased zoom samples retain one coast key within a resolution bucket",
+      "passed": true
+    },
+    {
+      "name": "A new cold destination is covered",
+      "passed": true
+    },
+    {
+      "name": "Loading cover fits resized viewport",
+      "passed": true
+    },
+    {
+      "name": "Loading blocks map orbit",
+      "passed": true
+    },
+    {
+      "name": "Pellaro opens after local shoreline and visible vegetation finish",
+      "passed": true
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "method": "Native GPU frames at 1920x1080; six-second eased zoom from 300 to 2 km. Cold = isolated empty placement cache, not flushed driver/OS caches. Capture occurs after timed trial. Missing-frame counter tests all nine local cells and close coast readiness, not screenshot image analysis.",
+  "passed": true,
+  "phase": "after-final",
+  "trials": [
+    {
+      "allLocalReadyMs": 15593,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 62,
+        "gpuReadbacks": 0,
+        "maxVertices": 26415,
+        "patches": 1,
+        "preparationMs": [
+          2192
+        ],
+        "released": false,
+        "requests": 3,
+        "rockSegments": 0,
+        "segments": 62,
+        "vertices": 26415
+      },
+      "coastDelayMs": 856,
+      "coastReadyMs": 4894,
+      "coastThresholdMs": 4038,
+      "drawCalls": 457.0,
+      "elapsedMs": 68430,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 706.085,
+        "meanMs": 17.7416105781695,
+        "p99Ms": 59.037,
+        "samples": 3857
+      },
+      "instances": 32621,
+      "loading": {
+        "blockedMs": 43246,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 43246
+          }
+        ],
+        "screens": 1,
+        "stageMs": {
+          "Preparing forests and outcrops": 9820,
+          "Preparing rivers and banks": 5427,
+          "Preparing terrain": 639,
+          "Settling terrain detail": 679,
+          "Warming rendered detail": 100
+        },
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 569,
+      "localDelayMs": 12766,
+      "localThresholdMs": 2827,
+      "name": "italy-cold",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 72796,
+        "cellsBuilt": 21,
+        "generationCpuMs": 26645.534,
+        "generationYieldFrames": 3820,
+        "hiddenTicks": 33,
+        "maxChunkMs": 18.071,
+        "maxUploadMs": 130.879,
+        "skippedHidden": 1,
+        "uploadCpuMs": 192.833
+      },
+      "staticBytes": 2651156468,
+      "tilePreparationMs": [
+        113.16,
+        15.54,
+        13.035,
+        12.493,
+        13.244,
+        12.716,
+        13.098,
+        13.304,
+        15.408,
+        19.086,
+        16.529,
+        15.516,
+        12.722
+      ],
+      "timedOut": false,
+      "videoBytes": 4856716352,
+      "warm": false
+    },
+    {
+      "allLocalReadyMs": 2838,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 62,
+        "gpuReadbacks": 0,
+        "maxVertices": 26415,
+        "patches": 1,
+        "preparationMs": [
+          2192
+        ],
+        "released": false,
+        "requests": 6,
+        "rockSegments": 0,
+        "segments": 62,
+        "vertices": 26415
+      },
+      "coastDelayMs": 842,
+      "coastReadyMs": 4858,
+      "coastThresholdMs": 4016,
+      "drawCalls": 457.0,
+      "elapsedMs": 6759,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 57.926,
+        "meanMs": 34.3081065989848,
+        "p99Ms": 54.467,
+        "samples": 197
+      },
+      "instances": 32621,
+      "loading": {
+        "blockedMs": 51293,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 43246
+          },
+          {
+            "distance": 2.0017024518681,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8047
+          }
+        ],
+        "screens": 2,
+        "stageMs": {
+          "Preparing forests and outcrops": 9820,
+          "Preparing rivers and banks": 11388,
+          "Preparing settlement surroundings": 293,
+          "Preparing shorelines and coastal cliffs": 93,
+          "Preparing terrain": 639,
+          "Preparing the destination view": 1546,
+          "Settling terrain detail": 679,
+          "Warming rendered detail": 254
+        },
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 189,
+      "localDelayMs": 0,
+      "localThresholdMs": 2838,
+      "name": "italy-warm",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 72796,
+        "cellsBuilt": 21,
+        "generationCpuMs": 26645.534,
+        "generationYieldFrames": 3820,
+        "hiddenTicks": 82,
+        "maxChunkMs": 18.071,
+        "maxUploadMs": 130.879,
+        "skippedHidden": 2,
+        "uploadCpuMs": 192.833
+      },
+      "staticBytes": 2652760226,
+      "tilePreparationMs": [
+        113.16,
+        15.54,
+        13.035,
+        12.493,
+        13.244,
+        12.716,
+        13.098,
+        13.304,
+        15.408,
+        19.086,
+        16.529,
+        15.516,
+        12.722
+      ],
+      "timedOut": false,
+      "videoBytes": 4856777424,
+      "warm": true
+    },
+    {
+      "allLocalReadyMs": 16564,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 73,
+        "gpuReadbacks": 0,
+        "maxVertices": 63180,
+        "patches": 2,
+        "preparationMs": [
+          2192,
+          3834
+        ],
+        "released": false,
+        "requests": 9,
+        "rockSegments": 76,
+        "segments": 149,
+        "vertices": 63180
+      },
+      "coastDelayMs": 5546,
+      "coastReadyMs": 9560,
+      "coastThresholdMs": 4014,
+      "drawCalls": 287.0,
+      "elapsedMs": 62450,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 328.983,
+        "meanMs": 20.3089443902439,
+        "p99Ms": 53.476,
+        "samples": 3075
+      },
+      "instances": 24813,
+      "loading": {
+        "blockedMs": 69477,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 43246
+          },
+          {
+            "distance": 2.0017024518681,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8047
+          },
+          {
+            "distance": 2.0,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 18184
+          }
+        ],
+        "screens": 3,
+        "stageMs": {
+          "Preparing forests and outcrops": 23012,
+          "Preparing rivers and banks": 14554,
+          "Preparing settlement surroundings": 717,
+          "Preparing shorelines and coastal cliffs": 93,
+          "Preparing terrain": 1254,
+          "Preparing the destination view": 1546,
+          "Settling terrain detail": 1348,
+          "Warming rendered detail": 372
+        },
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 601,
+      "localDelayMs": 13724,
+      "localThresholdMs": 2840,
+      "name": "messina-cold",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 186325,
+        "cellsBuilt": 42,
+        "generationCpuMs": 47832.8270000001,
+        "generationYieldFrames": 6870,
+        "hiddenTicks": 123,
+        "maxChunkMs": 31.787,
+        "maxUploadMs": 130.879,
+        "skippedHidden": 3,
+        "uploadCpuMs": 201.681
+      },
+      "staticBytes": 2653757901,
+      "tilePreparationMs": [
+        113.16,
+        15.54,
+        13.035,
+        12.493,
+        13.244,
+        12.716,
+        13.098,
+        13.304,
+        15.408,
+        19.086,
+        16.529,
+        15.516,
+        12.722,
+        14.588,
+        15.209,
+        14.688,
+        15.532,
+        16.566,
+        16.096,
+        15.496,
+        16.254,
+        16.114,
+        17.366,
+        14.556,
+        13.615
+      ],
+      "timedOut": false,
+      "videoBytes": 4861515616,
+      "warm": false
+    },
+    {
+      "allLocalReadyMs": 2826,
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 73,
+        "gpuReadbacks": 0,
+        "maxVertices": 63180,
+        "patches": 2,
+        "preparationMs": [
+          2192,
+          3834
+        ],
+        "released": false,
+        "requests": 11,
+        "rockSegments": 76,
+        "segments": 149,
+        "vertices": 63180
+      },
+      "coastDelayMs": 1720,
+      "coastReadyMs": 5720,
+      "coastThresholdMs": 4000,
+      "drawCalls": 287.0,
+      "elapsedMs": 6803,
+      "exposedMissingFrames": 0,
+      "frames": {
+        "maxMs": 261.223,
+        "meanMs": 37.5847955801105,
+        "p99Ms": 111.817,
+        "samples": 181
+      },
+      "instances": 24813,
+      "loading": {
+        "blockedMs": 77497,
+        "releases": [
+          {
+            "distance": 2.0,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 43246
+          },
+          {
+            "distance": 2.0017024518681,
+            "focus": [
+              12.6700000762939,
+              41.7299995422363
+            ],
+            "ms": 8047
+          },
+          {
+            "distance": 2.0,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 18184
+          },
+          {
+            "distance": 2.00160425475903,
+            "focus": [
+              15.5500001907349,
+              38.1800003051758
+            ],
+            "ms": 8020
+          }
+        ],
+        "screens": 4,
+        "stageMs": {
+          "Preparing forests and outcrops": 23012,
+          "Preparing rivers and banks": 18912,
+          "Preparing settlement surroundings": 1331,
+          "Preparing shorelines and coastal cliffs": 1474,
+          "Preparing terrain": 1254,
+          "Preparing the destination view": 3031,
+          "Settling terrain detail": 1348,
+          "Warming rendered detail": 554
+        },
+        "visiblePendingAtRelease": 0
+      },
+      "loadingFrames": 173,
+      "localDelayMs": 0,
+      "localThresholdMs": 2826,
+      "name": "messina-warm",
+      "scenery": {
+        "cancelled": 0,
+        "candidates": 186325,
+        "cellsBuilt": 42,
+        "generationCpuMs": 47832.8270000001,
+        "generationYieldFrames": 6870,
+        "hiddenTicks": 170,
+        "maxChunkMs": 31.787,
+        "maxUploadMs": 130.879,
+        "skippedHidden": 4,
+        "uploadCpuMs": 201.681
+      },
+      "staticBytes": 2653644489,
+      "tilePreparationMs": [
+        113.16,
+        15.54,
+        13.035,
+        12.493,
+        13.244,
+        12.716,
+        13.098,
+        13.304,
+        15.408,
+        19.086,
+        16.529,
+        15.516,
+        12.722,
+        14.588,
+        15.209,
+        14.688,
+        15.532,
+        16.566,
+        16.096,
+        15.496,
+        16.254,
+        16.114,
+        17.366,
+        14.556,
+        13.615
+      ],
+      "timedOut": false,
+      "videoBytes": 4861515616,
+      "warm": true
+    }
+  ]
+}

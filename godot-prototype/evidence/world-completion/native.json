@@ -1,0 +1,73 @@
+{
+  "alpineLegacyOverlayDisabled": true,
+  "atomicInvalidOwnerStateRejection": true,
+  "backdropsAt2800Km": true,
+  "closeTilesReleased": true,
+  "passed": true,
+  "regions": [
+    {
+      "closeTiles": 6,
+      "heightSamples": 6,
+      "region": "mediterranean_islands",
+      "terrainReadyMs": 560
+    },
+    {
+      "closeTiles": 5,
+      "heightSamples": 5,
+      "region": "europe_northwest",
+      "terrainReadyMs": 567
+    },
+    {
+      "closeTiles": 6,
+      "heightSamples": 5,
+      "region": "europe_northeast",
+      "terrainReadyMs": 541
+    },
+    {
+      "closeTiles": 9,
+      "heightSamples": 6,
+      "region": "europe_central",
+      "terrainReadyMs": 577
+    },
+    {
+      "closeTiles": 5,
+      "heightSamples": 3,
+      "region": "pontic_caucasus",
+      "terrainReadyMs": 524
+    },
+    {
+      "closeTiles": 6,
+      "heightSamples": 5,
+      "region": "eurasian_steppe",
+      "terrainReadyMs": 538
+    },
+    {
+      "closeTiles": 7,
+      "heightSamples": 5,
+      "region": "arabian_plateau",
+      "terrainReadyMs": 545
+    },
+    {
+      "closeTiles": 6,
+      "heightSamples": 2,
+      "region": "mesopotamia_iran_west",
+      "terrainReadyMs": 541
+    },
+    {
+      "closeTiles": 5,
+      "heightSamples": 4,
+      "region": "iran_afghanistan",
+      "terrainReadyMs": 520
+    },
+    {
+      "closeTiles": 3,
+      "heightSamples": 3,
+      "region": "indus_west",
+      "terrainReadyMs": 496
+    }
+  ],
+  "scope": "Terrain adapter readiness and source contacts; does not measure scenery/settlement generation readiness.",
+  "stableFactions": 131,
+  "stableTerritories": 128,
+  "unchangedInitialControllers": true
+}

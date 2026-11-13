@@ -1,0 +1,94 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "method": "Native Forward+ 1920x1080. Whole coast source catalog preloaded. Isolated empty placement cache; driver/OS caches not flushed. Four-second eased zoom from 100 to 2 km. Centre/all-nine include existing reveal fade. Captures occur after timed intervals. Travel between routes does not wait for obsolete coarse jobs.",
+  "stage": "before",
+  "trials": [
+    {
+      "allNineDelayMs": 19982,
+      "centreDelayMs": 4695,
+      "frames": {
+        "maxMs": 812.973,
+        "meanMs": 16.9519674344718,
+        "p99Ms": 59.766
+      },
+      "instancesResident": 16200,
+      "name": "italy-cold",
+      "plantsResident": 14578,
+      "rocksResident": 1622,
+      "staticBytes": 2741521873,
+      "thresholdMs": 1361,
+      "timedOut": false,
+      "videoBytes": 4803803216,
+      "work": {
+        "cancelled": 0,
+        "candidates": 19771,
+        "cellsBuilt": 9,
+        "generationCpuMs": 7411.15099999999,
+        "generationYieldFrames": 1250,
+        "hiddenTicks": 26,
+        "maxChunkMs": 10.035,
+        "maxUploadMs": 142.116,
+        "skippedHidden": 1,
+        "uploadCpuMs": 148.659
+      }
+    },
+    {
+      "allNineDelayMs": 52375,
+      "centreDelayMs": 9813,
+      "frames": {
+        "maxMs": 240.039,
+        "meanMs": 24.2707484191508,
+        "p99Ms": 40.823
+      },
+      "instancesResident": 17803,
+      "name": "gaul-cold",
+      "plantsResident": 11010,
+      "rocksResident": 3794,
+      "staticBytes": 2742364611,
+      "thresholdMs": 1361,
+      "timedOut": false,
+      "videoBytes": 4807336784,
+      "work": {
+        "cancelled": 0,
+        "candidates": 65435,
+        "cellsBuilt": 20,
+        "generationCpuMs": 18461.637,
+        "generationYieldFrames": 3454,
+        "hiddenTicks": 26,
+        "maxChunkMs": 10.035,
+        "maxUploadMs": 142.116,
+        "skippedHidden": 1,
+        "uploadCpuMs": 157.216
+      }
+    },
+    {
+      "allNineDelayMs": 52022,
+      "centreDelayMs": 13140,
+      "frames": {
+        "maxMs": 199.315,
+        "meanMs": 29.335748213304,
+        "p99Ms": 55.316
+      },
+      "instancesResident": 13459,
+      "name": "messina-cold",
+      "plantsResident": 7165,
+      "rocksResident": 1495,
+      "staticBytes": 2741547056,
+      "thresholdMs": 1339,
+      "timedOut": false,
+      "videoBytes": 4842534448,
+      "work": {
+        "cancelled": 0,
+        "candidates": 114978,
+        "cellsBuilt": 30,
+        "generationCpuMs": 27374.058,
+        "generationYieldFrames": 5264,
+        "hiddenTicks": 26,
+        "maxChunkMs": 10.037,
+        "maxUploadMs": 142.116,
+        "skippedHidden": 1,
+        "uploadCpuMs": 161.728
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campaign interface · art direction review</title>
+<style>
+body{margin:0;background:#eee1c7;color:#30271f;font:17px Georgia,serif}main{max-width:1700px;margin:auto;padding:24px}h1{font-weight:normal}p{line-height:1.6;max-width:1000px}a{color:#641e20}nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}button{font:inherit;padding:10px 16px;border:1px solid #987544;background:#f5e8cc;color:#30271f;cursor:pointer}button[aria-pressed=true]{background:#641e20;color:#eed49a}button:focus-visible{outline:3px solid #78552b;outline-offset:3px}img{display:block;width:100%;height:auto;border:1px solid #987544}figure{margin:20px 0}figcaption{padding:10px 0}.reference{max-width:1100px}header{border-bottom:3px double #987544}small{color:#6a5b46}
+</style>
+<main><header><h1>Historical Paradox DEI · campaign interface</h1><p>Actual Godot renders of the functional interface. The approved concept informs the materials and composition; the game continues to render its own map.</p></header>
+<nav aria-label="Choose captured view">
+<button aria-pressed="true" data-file="campaign.png">Campaign</button>
+<button aria-pressed="false" data-file="both-collapsed.png">Both bars retracted</button>
+<button aria-pressed="false" data-file="desktop.png">Management panel</button>
+<button aria-pressed="false" data-file="small.png">1000 × 700</button>
+<button aria-pressed="false" data-file="modal-small.png">Centered modal</button>
+</nav>
+<figure><img id="capture" src="../../godot-prototype/evidence/campaign-ui-marble/campaign.png" alt="Actual campaign interface"><figcaption id="caption">Campaign</figcaption></figure>
+<h2>Approved art direction</h2><figure class="reference"><img src="../../design-references/campaign-ui-concept.png" alt="Approved Roman campaign interface concept"><figcaption>Art reference only. Its resource figures and map are not imported into the game.</figcaption></figure>
+<p>Original procedural marble and vector carving replace the earlier dark interface. Sculpted busts and detailed figurative reliefs remain a visual limitation. <a href="MARBLE-REDESIGN.md">Implementation, changed files and verification details</a> · <a href="../../godot-prototype/evidence/campaign-ui-marble/validation.json">Native verification report</a>.</p>
+</main><script>
+document.querySelectorAll('button[data-file]').forEach(button=>button.addEventListener('click',()=>{
+document.querySelectorAll('button[data-file]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+document.querySelector('#capture').src='../../godot-prototype/evidence/campaign-ui-marble/'+button.dataset.file;
+document.querySelector('#capture').alt='Actual game capture: '+button.textContent;
+document.querySelector('#caption').textContent=button.textContent;
+}));
+</script></html>

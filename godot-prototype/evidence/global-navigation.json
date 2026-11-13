@@ -1,0 +1,30 @@
+{
+  "cameraToleranceKm": 0.0001,
+  "checks": [
+    {
+      "actualDistance": 95.0,
+      "cameraPath": "production",
+      "expectedDistance": 95.0,
+      "localCells": 9,
+      "pendingScenery": [],
+      "resolvedDistance": 95.0,
+      "sceneryReady": true,
+      "terrainTiles": 13,
+      "vegetationCells": 9,
+      "vegetationExpected": true,
+      "vegetationInstances": 22441,
+      "view": "greece"
+    }
+  ],
+  "evidence": {
+    "baseCommit": "",
+    "recordedAtUtc": "2026-11-13T15:22:01Z",
+    "sourceRevision": "diagnostic-unversioned"
+  },
+  "failure": "Terrain placement/edge mismatch: greece",
+  "maxPlacementErrorMetres": 4499.62013858021,
+  "maxSharedEdgeErrorMetres": 0.0,
+  "passed": false,
+  "selectable": 35,
+  "timeoutSeconds": 90.0
+}
