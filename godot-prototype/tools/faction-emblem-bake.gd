@@ -10,7 +10,8 @@ func fit_icon(path:String,size:int)->Image:
 	icon.blit_rect(source,Rect2i(0,0,width,height),Vector2i((size-width)/2,(size-height)/2))
 	return icon
 func _initialize():
-	var data=JSON.parse_string(FileAccess.get_file_as_string("res://data/factions/scenario-278.json"))
+	var scenario_path="res://data/world-border-review/scenario-278.json" if FileAccess.file_exists("res://data/world-border-review/scenario-278.json") else "res://data/factions/scenario-278.json"
+	var data=JSON.parse_string(FileAccess.get_file_as_string(scenario_path))
 	var presentation=JSON.parse_string(FileAccess.get_file_as_string("res://data/factions/presentation.json"))
 	var folder="res://assets/factions/";DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder));FileAccess.open(folder+".gdignore",FileAccess.WRITE).store_string("")
 	var image=Image.create(1024,ceili(data.factions.size()/16.)*64,false,Image.FORMAT_RGBA8)

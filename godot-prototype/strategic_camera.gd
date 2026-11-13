@@ -1,8 +1,6 @@
 extends RefCounted
 ## Camera presentation only; source geography and stream residency are unchanged.
 var settings={}
-var cache_key=[]
-var cache_limit=2800.
 func _init(config={}):settings=config
 func pitch_for(value,distance):
 	var t=smoothstep(settings.get("strategic_begin_km",180.),settings.get("strategic_full_km",1800.),distance)
@@ -18,25 +16,8 @@ func footprint(pitch,yaw,aspect):
 		if ray.y>=-.001:return []
 		points.append(offset+ray*(-offset.y/ray.y))
 	return points
-func supported(world,center,points,distance):
-	if points.is_empty():return false
-	for p in points:
-		var geo=world.unproject(center+p*distance)
-		if geo.x< -11.95 or geo.x>74.95 or geo.y<12.05 or geo.y>61.95:return false
-	return true
-func maximum_at(world,focus,pitch,yaw,aspect):
-	var key=[focus,pitch,yaw,aspect]
-	if key==cache_key:return cache_limit
-	cache_key=key
-	var maximum=float(settings.get("maximum_distance_km",2800.));var minimum=float(settings.get("minimum_distance_km",1.2))
-	var center=world.project(focus.x,focus.y)
-	var points=footprint(pitch_for(pitch,maximum),yaw,aspect)
-	if supported(world,center,points,maximum):cache_limit=maximum;return maximum
-	var low=minimum;var high=maximum
-	for i in 13:
-		var middle=(low+high)*.5
-		points=footprint(max(32.,pitch_for(pitch,middle)),yaw,aspect)
-		if supported(world,center,points,middle):low=middle
-		else:high=middle
-	cache_limit=max(minimum,low*.95)
-	return cache_limit
+func maximum_at(_world,_focus,_pitch,_yaw,_aspect):
+	# Bound zoom-out without changing the user's zoom while panning or orbiting.
+	# A view near the coverage edge may extend beyond it; shrinking the distance
+	# here makes traversing the map zoom in and permanently lose the chosen scale.
+	return float(settings.get("maximum_distance_km",2800.))

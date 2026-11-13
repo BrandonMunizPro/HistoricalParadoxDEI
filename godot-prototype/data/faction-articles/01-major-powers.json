@@ -1,0 +1,544 @@
+{
+  "sources": {
+    "plutarch-pyrrhus": {
+      "title": "Plutarch, Life of Pyrrhus",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Pyrrhus%2A.html",
+      "evidence": "Later ancient biography; speeches, anecdotes and exact motives require caution. Chapters 13–23 concern the Italian and Sicilian interventions."
+    },
+    "polybius-constitution": {
+      "title": "Polybius, Histories 6",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/6%2A.html",
+      "evidence": "Second-century BCE account of Roman and Carthaginian institutions. Used for broad comparison, not an exact 278 BCE office list."
+    },
+    "seleucid-iranica": {
+      "title": "Encyclopaedia Iranica: Seleucid Empire",
+      "url": "https://www.iranicaonline.org/articles/seleucid-empire/",
+      "evidence": "Modern scholarly overview of dynastic development and the Iranian territories."
+    },
+    "antiochus-iranica": {
+      "title": "Encyclopaedia Iranica: Antiochus",
+      "url": "https://www.iranicaonline.org/articles/antiochus-1-thirteen-kings-of-the-seleucid-dynasty/",
+      "evidence": "Modern scholarly chronology; distinguishes the different Seleucid kings of this name."
+    },
+    "maurya-scholarship": {
+      "title": "Mauryan Empire, The Encyclopedia of Empire",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118455074.wbeoe096",
+      "evidence": "Scholarly discussion of chronology and varied imperial relationships. Later Ashokan evidence is distinguished from the less documented reign of Bindusara."
+    }
+  },
+  "records": {
+    "rome": {
+      "text": "In Spring 278 BCE Rome is an expanding Italian republic, not yet the Mediterranean empire of later centuries. Its citizen armies and allied contingents have survived two costly encounters with Pyrrhus, but the war remains unresolved. The republic's greatest resource is not an unlimited treasury or an invincible army: it is a political and military network that can survive defeat without immediately accepting another power's settlement.",
+      "homeland": "Latium and central Italy; a wider Italian alliance network",
+      "politicalForm": "Aristocratic republic with citizen assemblies and annually elected magistrates",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "Origins and expansion",
+          "text": "Rome developed from a Latin city on the Tiber into the leading power of central Italy. The settlement after the Latin War of 340–338 BCE and the long Samnite conflicts tied neighbouring communities to it through different legal arrangements. Victory at Sentinum in 295 and the end of the Third Samnite War in 290 strengthened Roman predominance, but did not turn every Italian community into an identical Roman municipality.",
+          "sourceKeys": [
+            "livy-neapolis",
+            "polybius-constitution"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "Homeland and society",
+          "text": "The Tiber, the Latin plain and routes across the Apennines connect Rome with farming districts, colonies and allied towns. Political status varies sharply: Roman citizens, Latin communities and treaty-bound allies have different rights and obligations. Neapolis illustrates the distinction particularly well. Its place in the Roman alliance does not erase its Greek civic traditions, language or local institutions.",
+          "sourceKeys": [
+            "livy-neapolis"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Public affairs are conducted through elected magistrates, the Senate and assemblies of citizens. Senatorial families exert considerable influence, while plebeian institutions and the recent legacy of the lex Hortensia remain part of the political order. Annual commands and competition for honour encourage energetic campaigning. The immediate practical test is maintaining manpower, allied cooperation and confidence after fighting an experienced Hellenistic king; there is no documented basis for assigning a fictional domestic revolt at the opening.",
+          "sourceKeys": [
+            "polybius-constitution",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "External position and the Pyrrhic War",
+          "text": "Tarentum's appeal brought Pyrrhus to Italy in 280. Heraclea and Asculum demonstrated that Rome could lose battles without abandoning the conflict. Samnite, Lucanian and Greek interests complicate the southern theatre, and their relationships with Pyrrhus are not simply permanent annexations. Carthage and Rome can cooperate against a shared threat even while remaining independent powers. Neither a Roman conquest of Sicily nor an inevitable war with Carthage belongs to the starting situation.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "polybius-1"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "The opening falls before Pyrrhus crosses to Sicily. Rome faces an unfinished Italian war, with opponents still capable of fielding armies and southern allies whose cooperation matters. Its resilience comes from institutions and relationships built over earlier Italian conflicts. Victory is not yet the established fact that later Roman histories can make it seem.",
+          "sourceKeys": [
+            "attalus-278",
+            "polybius-constitution"
+          ]
+        }
+      ]
+    },
+    "carthage": {
+      "text": "Carthage is the foremost Punic power of the western Mediterranean, linking a wealthy North African city with dependent communities, maritime possessions and commercial partners. Its concerns in 278 BCE are concentrated on maintaining those connections and resisting threats in Sicily. It is not simply a merchant company, nor does every port visited by Punic traders form part of its sovereign territory.",
+      "homeland": "The Carthaginian heartland in North Africa and western Mediterranean possessions",
+      "politicalForm": "Punic civic state dominated by powerful families, councils and elected offices",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "A Phoenician city becomes a regional power",
+          "text": "Carthage emerged from the Phoenician settlement of the North African coast and gradually became the principal centre of a western Punic world. Its institutions and overseas commitments developed over centuries. Earlier struggles with Sicilian Greek rulers had already made the island a recurring military concern before Pyrrhus arrived in Italy. The city was an established African power long before its later conflicts with the Roman Republic.",
+          "sourceKeys": [
+            "polybius-1",
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "Africa and the maritime network",
+          "text": "The agricultural territory around Carthage supported the city alongside shipping and exchange. Libyan communities, Punic towns, overseas settlements and neighbouring North African populations had different relationships with its authorities. Western Sicily and Sardinia mattered strategically, but a trade connection alone is not evidence of direct rule. Numidian and other inland communities must retain their own political and cultural context rather than disappearing into a uniform Carthaginian population.",
+          "sourceKeys": [
+            "strabo-17C",
+            "polybius-constitution"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Carthaginian politics involved influential families, civic councils, popular participation and distinctions between civil and military authority. Aristotle and Polybius describe important parts of this tradition, but their accounts are separated from 278 by substantial intervals. They do not justify a complete roster of named office-holders or a precise starting balance between rival families. Sustaining overseas warfare while maintaining cooperation with African communities is the central institutional challenge that can safely be identified.",
+          "sourceKeys": [
+            "polybius-constitution"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Sicily, Rome and Pyrrhus",
+          "text": "Syracuse is the principal Greek rival in the Sicilian theatre, although Greek cities and local leaders do not always act together. Pyrrhus' possible crossing threatens to bring a successful field commander into that fragmented situation. Rome's own war against him creates opportunities for cooperation with Carthage. Messana, meanwhile, is held by the Mamertines: a temporary alliance or shared enemy does not make their city a Carthaginian possession.",
+          "sourceKeys": [
+            "polybius-1",
+            "spring-sicily",
+            "plutarch-pyrrhus"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "The opening precedes Pyrrhus' Sicilian expedition, when the balance between Punic positions, Greek cities and local military powers remains unsettled. Messana is held by the Mamertines, while Carthage's strongest Sicilian interests lie farther west. A shared concern about Pyrrhus can draw Carthage and Rome together; their later struggle over Sicily is still a different political situation.",
+          "sourceKeys": [
+            "spring-sicily",
+            "polybius-1"
+          ]
+        }
+      ]
+    },
+    "epirus": {
+      "text": "Epirus combines a northwestern Greek homeland with the ambitions of Pyrrhus, a king whose influence extends far beyond the resources of his own country. In Spring 278 BCE his Italian expedition is still active. Victories over Rome have brought prestige but no easy settlement, while opportunities in Sicily compete with the obligations he has already accepted in Italy.",
+      "homeland": "Northwestern Greece and the Epirote mountain-and-coastland communities",
+      "politicalForm": "Aiakid monarchy working with Epirote regional communities",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "The Aiakid kingdom",
+          "text": "The Molossian royal house claimed descent from the heroic family of Achilles. Its historical rise belonged to a region containing several communities, including Molossians, Thesprotians and Chaonians. Connections with Macedonia and the wider Greek world reshaped its political position. Pyrrhus' own early career involved exile, restoration and participation in the struggles of Alexander's successors, so the monarchy was experienced in both dynastic diplomacy and sudden reversals.",
+          "sourceKeys": [
+            "plutarch-pyrrhus"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "A homeland of several communities",
+          "text": "Mountain routes, pastoral districts, coastal access and sanctuaries such as Dodona connected the Epirote interior with neighbouring regions. Royal authority existed alongside local identities and collective political traditions. Epirus should not be described as a miniature Macedonian nation-state, and the fully developed republican Epirote federation of later decades should not simply be transplanted into Pyrrhus' reign. The king's personal military household was only one part of the political landscape.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "An overseas army increases royal prestige but also draws men, money and attention away from the homeland. Pyrrhus depends on his dynasty's position, trusted associates and the cooperation of Epirote communities while pursuing distant objectives. The evidence does not provide an exact spring administrative roster. A named regency associated with a later phase of the Sicilian expedition should therefore not be treated as a securely dated appointment already in force at this opening.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Italy, Macedonia and the Sicilian invitation",
+          "text": "Tarentum and other opponents of Rome sought an effective military protector. Pyrrhus' intervention brought a Hellenistic army into an Italian contest involving independent Greek cities and several indigenous peoples. His success at Heraclea and Asculum did not eliminate Rome's ability to continue the war. Across the strait, Sicilian Greek leaders saw him as a possible answer to Carthaginian pressure. Macedonia remained another arena of dynastic opportunity, rather than a permanently secured possession.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "The opening falls before Pyrrhus assumes command in Sicily. His Italian allies retain their own interests, and Syracuse has not become an Epirote province. The king stands at a strategic crossroads between sustaining an unresolved Italian commitment and accepting a new Sicilian role. His reputation offers opportunities, while distance, manpower and competing obligations make the choice difficult.",
+          "sourceKeys": [
+            "spring-sicily",
+            "attalus-278"
+          ]
+        }
+      ]
+    },
+    "seleucids": {
+      "text": "The Seleucid monarchy is one of the largest political constructions to emerge from Alexander's conquests. By 278 BCE Antiochus I has inherited a realm stretching across very different societies, from Syria and Mesopotamia into the Iranian world and Central Asia. Its scale is impressive, but the ability to claim territory is not identical to the ability to govern every locality directly.",
+      "homeland": "Syria and Mesopotamia, with extensive Iranian and eastern territories",
+      "politicalForm": "Hellenistic dynastic monarchy over diverse regional institutions",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "From Seleucus to Antiochus",
+          "text": "Seleucus established himself in Babylonia during the wars of Alexander's successors and built power through warfare, diplomacy and the recruitment of established regional elites. His victory over Lysimachus at Corupedium in 281 opened enormous western possibilities, but his assassination prevented their straightforward realization. Antiochus inherited both a powerful dynasty and unfinished problems. His earlier responsibilities in the eastern territories gave him experience beyond the Mediterranean court world.",
+          "sourceKeys": [
+            "seleucid-iranica",
+            "antiochus-iranica"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "Cities, royal lands and older traditions",
+          "text": "Greek and Macedonian foundations formed one layer of a landscape that also contained Babylonian temple communities, Iranian aristocratic networks, established towns and rural populations. Royal residences and strategic routes helped connect this uneven realm. A city could negotiate privileges while neighbouring countryside answered to different authorities. Cultural diversity is therefore fundamental to understanding the dynasty: political subordination did not make all subjects Greek or replace every inherited local institution.",
+          "sourceKeys": [
+            "seleucid-iranica"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Antiochus must preserve dynastic legitimacy after the violent death of Seleucus while maintaining cooperation across distant territories. Satraps, commanders, civic leaders and royal associates mediate authority, but the exact composition of the court in this year is incompletely documented. Administrative systems reconstructed from later Seleucid evidence cannot be assumed in every detail. The principal internal issue is connecting a personal monarchy with a very large and varied collection of communities.",
+          "sourceKeys": [
+            "antiochus-iranica",
+            "seleucid-iranica"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Anatolia and the eastern frontiers",
+          "text": "Western Anatolia contains competing dynasts and Greek cities whose relationships with great kings may involve patronage, alliance or limited military control. Bithynia and the developing Galatian movements complicate western campaigning. Ptolemaic activity in the eastern Mediterranean presents another challenge. Farther east, the later independent Greco-Bactrian and Arsacid kingdoms do not yet belong on the opening map, although local elites already matter to the dynasty's practical authority.",
+          "sourceKeys": [
+            "memnon",
+            "iranica-bactria",
+            "seleucid-iranica"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "Antiochus inherits an immense but uneven imperial network following his father's death. Local dynasts, civic communities and established regional institutions mediate the reach of royal authority. Anatolian resistance and the movements following the Balkan invasions complicate the western position. The kingdom's size is therefore both a source of resources and a continuing challenge of coordination and legitimacy.",
+          "sourceKeys": [
+            "attalus-278",
+            "memnon",
+            "iranica-bactria"
+          ]
+        }
+      ]
+    },
+    "ptolemaic-egypt": {
+      "text": "Ptolemaic Egypt is a powerful Hellenistic monarchy built upon the resources and institutions of the Nile valley. Ptolemy II has succeeded the dynasty's founder, and the kingdom's interests reach beyond Egypt into Cyprus and the Aegean. Its strength combines Egyptian agricultural wealth, a Macedonian royal house and an increasingly important Greek-speaking civic and military presence.",
+      "homeland": "The Nile valley and delta, with Cyprus and wider maritime connections",
+      "politicalForm": "Ptolemaic monarchy combining Egyptian and Greek-Macedonian institutions",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "From satrapy to royal dynasty",
+          "text": "Ptolemy son of Lagos took control of Egypt after Alexander's death in 323 BCE and eventually adopted the royal title. The country's defensible approaches, established agricultural system and strategic position helped sustain the new dynasty through the Successor wars. Alexandria became a royal and maritime centre, while older Egyptian settlements and religious institutions continued to be important. Ptolemy II's accession marks succession within an established kingdom rather than the creation of a new state in 278.",
+          "sourceKeys": [
+            "attalus-278",
+            "cliopatria"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "The Nile and Alexandria",
+          "text": "The annual Nile cycle, cultivated floodplain and delta waterways support settlements and royal revenues. Alexandria looks outward to the Mediterranean, while Egyptian temples, agricultural communities and older administrative traditions connect royal authority with the interior. Greek settlers and soldiers do not replace the existing population. The kingdom's political identity and the cultural identity of a village, sanctuary or city therefore need to be kept separate.",
+          "sourceKeys": [
+            "cliopatria"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Ptolemy II is consolidating the second generation of dynastic rule. Royal patronage, religious presentation and the memory of Ptolemy I contribute to legitimacy. Government depends on officials and established local intermediaries, but the exceptionally detailed evidence from later third-century papyri must not be treated as a complete description of this exact year. Nor should court developments associated with subsequent years automatically appear as accomplished facts at the opening.",
+          "sourceKeys": [
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "A maritime royal network",
+          "text": "Egypt's power extends through possessions and relationships around the eastern Mediterranean. Cyprus is strategically important, while islands and Greek cities may receive protection, gifts or support without becoming interchangeable Egyptian districts. Ptolemy II's assistance to Athens and connection with Miletus illustrate diplomacy through patronage. Relations with the Seleucid monarchy create a continuing field of competition, but later named Syrian wars should not be represented as already occurring in spring 278.",
+          "sourceKeys": [
+            "athens-kallias",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "Egypt begins as a major established kingdom with a productive territorial core and a wider maritime sphere. Rhodes' autonomy and Athens' civic institutions remain meaningful even when their interests align with Ptolemy's. Royal patronage can generate influence without direct annexation. The opening lies early in Ptolemy II's reign, before several better-known court and military developments.",
+          "sourceKeys": [
+            "athens-kallias",
+            "attalus-278"
+          ]
+        }
+      ]
+    },
+    "maurya": {
+      "text": "The Mauryan Empire gives the Indian subcontinent a major imperial centre well beyond the Mediterranean world. The conventional chronology places 278 BCE within Bindusara's reign, between the founding conquests of Chandragupta and the much better documented age of Ashoka. The empire is already substantial, but its political history cannot be reduced to later stories about Ashokan government or to a modern national outline.",
+      "homeland": "The Gangetic heartland, with extensive northern and regional imperial connections",
+      "politicalForm": "Mauryan monarchy with a varied pattern of direct and indirect authority",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "The foundation of Mauryan power",
+          "text": "Chandragupta established the dynasty after the decline of Nanda power and the disruption associated with Alexander's northwestern campaigns. His settlement with Seleucus brought the Mauryas into the diplomatic geography of the Hellenistic kingdoms. Pataliputra in the Ganges region served as the central royal setting. Greek observers such as Megasthenes describe an earlier reign, while later Indian traditions preserve valuable but chronologically complicated accounts of the dynasty.",
+          "sourceKeys": [
+            "iranica-bactria",
+            "cliopatria",
+            "maurya-scholarship"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "An empire of regions",
+          "text": "The Ganges plain provides a densely settled agricultural core, but authority across the wider empire passes through very different landscapes and communities. Northwestern routes connect it with Iran and Central Asia, while regional rulers and local elites remain important away from the centre. The extent and form of Mauryan penetration into the Deccan under Bindusara are not equally well established everywhere. Political influence, tributary relationships and direct administration should not be collapsed into one category.",
+          "sourceKeys": [
+            "cliopatria",
+            "maurya-scholarship"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Bindusara inherits a large monarchy whose institutions are less directly documented than those of his successor. Royal officials, revenues and military resources plainly matter, but a complete office list or provincial scheme for this year cannot be securely reconstructed. The Arthashastra is a composite work, not a surviving administrative manual issued by Bindusara. Its prescriptions can illuminate traditions of statecraft without proving that every described arrangement operated in the opening year.",
+          "sourceKeys": [
+            "cliopatria",
+            "maurya-scholarship"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Neighbours and diplomatic horizons",
+          "text": "The northwest links Mauryan power with the Seleucid sphere and the routes through the Hindu Kush. Contacts between Indian and Hellenistic courts belong to this wider setting rather than to a simple opposition between isolated civilizations. Southern communities must not be absorbed merely to produce a complete subcontinental empire on the map. The historical evidence supports a powerful regional monarchy, not knowledge of every frontier or treaty in spring 278.",
+          "sourceKeys": [
+            "iranica-bactria",
+            "cliopatria",
+            "maurya-scholarship"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "Before the Ashokan record",
+          "text": "Ashoka's edicts, the Kalinga campaign and later moral-administrative measures belong after the opening. They are not Bindusara's starting policies. The surviving record leaves substantial uncertainty about the exact sequence of provincial appointments and court politics. This article therefore gives the empire its historical scale and regional relationships without inventing a ruler list beneath the king, a fixed tax system or an inevitable religious transformation.",
+          "sourceKeys": [
+            "cliopatria",
+            "maurya-scholarship"
+          ]
+        }
+      ]
+    },
+    "macedonian-claimants": {
+      "text": "Macedonia enters 278 BCE under the shadow of invasion and dynastic collapse. The kingdom that supplied Alexander's armies remains a powerful historical homeland, but its kingship is not securely consolidated. This faction represents the contested Macedonian political field, not a stable later Antigonid state projected backward into a moment when commanders, claimants and local communities faced immediate insecurity.",
+      "homeland": "The Macedonian homeland and its contested neighbouring approaches",
+      "politicalForm": "Contested monarchy and military leadership during a succession crisis",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "From Argead kingdom to Successor prize",
+          "text": "Philip II and Alexander had transformed Macedonian power, but Alexander's death opened struggles over both the empire and the homeland. Antipatrid, Antigonid and other dynastic interests competed for control. Lysimachus' defeat and death in 281, followed by Seleucus' assassination, changed the balance again. Ptolemy Keraunos briefly gained the kingship before being killed during the Gallic invasion of 279, leaving no straightforward, uncontested succession.",
+          "sourceKeys": [
+            "attalus-278",
+            "plutarch-pyrrhus"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "The Macedonian political landscape",
+          "text": "The lowland centres and agricultural districts of Macedonia connect with upland communities, military households and routes toward Thessaly, Thrace and the Balkans. Kingship is rooted in more than possession of a single capital. Recognition by armed Macedonians and the cooperation of influential associates can be decisive. Cities retain local civic life even while military leadership and dynastic competition shape the wider kingdom's affairs.",
+          "sourceKeys": [
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "The aftermath of the invasion makes defence and legitimate leadership immediate concerns. Sosthenes is associated with resistance and effective command, but the sequence of his leadership and death is not dated uniformly in the surviving traditions. It would be misleading to populate the opening with a fully settled royal court or to assign every community the same enthusiasm for one claimant. The campaign's contested identity preserves that fragmented setting.",
+          "sourceKeys": [
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Invasion and competing dynasts",
+          "text": "Gallic groups moving through the Balkans have already demonstrated that Macedonia cannot be treated as secure. Antigonus Gonatas maintains his own position and Greek connections, while Pyrrhus remains an experienced royal competitor whose main army is currently engaged in Italy. Control of strongpoints in Greece can support a claim to broader leadership without proving possession of the Macedonian homeland. Alliances and military opportunity remain more immediate than a tidy dynastic frontier.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "The homeland faces the consequences of invasion, royal deaths and competing claims to legitimate command. The authority needed to coordinate defence is itself contested. Antigonus' later consolidation is not yet secure, and the exact sequence of short-lived leadership remains difficult to place within one spring. Macedonia's established social and military foundations survive amid this unusually unstable political moment.",
+          "sourceKeys": [
+            "attalus-278"
+          ]
+        }
+      ]
+    },
+    "antigonid-holdings": {
+      "text": "The Antigonid position in 278 BCE is a network of dynastic resources and Greek strongpoints, not yet an uncomplicated Macedonian kingdom. Antigonus Gonatas inherits the ambitions and surviving connections of Demetrius Poliorcetes. His prospects depend on holding useful positions, negotiating with Greek communities and exploiting the disorder created by the collapse of other Successor powers.",
+      "homeland": "Antigonid-associated strongpoints and interests in Greece",
+      "politicalForm": "Dynastic military holdings; distinct from secure Macedonian kingship",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "The inheritance of Antigonus and Demetrius",
+          "text": "Antigonus Monophthalmus and his son Demetrius had pursued dominance across Alexander's former empire. Defeat at Ipsus in 301 ended the elder Antigonus' bid for supremacy, but Demetrius continued to build power through fleets, garrisons and royal claims. His later reversals left Antigonus Gonatas with a reduced yet significant inheritance. The dynasty's influence therefore survived the loss of a single consolidated imperial domain.",
+          "sourceKeys": [
+            "attalus-278",
+            "plutarch-pyrrhus"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "Strongpoints and civic communities",
+          "text": "Fortified positions, ports and access routes can matter more to a royal claimant than broad continuous territory. Greek communities living near a royal garrison do not thereby lose their civic identities. Piraeus and Athens are especially instructive: control of the harbour's military position and the political affairs of the Athenian citizen body are related questions, but not the same one. The campaign keeps that distinction rather than colouring every connected place as one uniform state.",
+          "sourceKeys": [
+            "athens-kallias"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Dynastic legitimacy, loyal commanders and the ability to support military establishments are central to the Antigonid position. This is not an opening in which a securely installed Macedonian royal administration can simply be assumed. Garrisons and civic authorities may have competing priorities, and later institutional arrangements are not a complete guide to the year. The article describes those structural pressures without inventing a list of commanders or a documented internal conspiracy.",
+          "sourceKeys": [
+            "athens-kallias",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Greece and the Macedonian opportunity",
+          "text": "Macedonian instability gives Antigonus an opportunity, while the Gallic movements also create immediate danger. Greek leagues and individual poleis seek room for their own policies, and Ptolemaic patronage offers some communities an alternative source of support. Pyrrhus' standing as another Macedonian-connected king remains relevant even during his Italian intervention. A claim over Greece or Macedonia should therefore be distinguished from actual control of every city within that claim.",
+          "sourceKeys": [
+            "attalus-278",
+            "athens-kallias"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "Antigonid influence is strongest where garrisons, naval connections and dependable local relationships can sustain it. Piraeus illustrates how possession of a strategic fortress differs from control of every neighbouring civic community. The scattered position offers leverage in Greek affairs without guaranteeing the Macedonian crown. Antigonus' later successes must be separated from the resources and uncertainty of this opening.",
+          "sourceKeys": [
+            "polybius-2",
+            "athens-kallias"
+          ]
+        }
+      ]
+    },
+    "syracuse": {
+      "text": "Syracuse is the most prominent Greek centre of eastern Sicily, but in 278 BCE prominence does not mean uncontested control. The legacy of powerful rulers, competing civic factions and renewed Carthaginian pressure has left the island's Greek political order unstable. An appeal to Pyrrhus promises an experienced protector while also raising the question of how much authority local leaders would have to surrender.",
+      "homeland": "Southeastern Sicily and associated Greek communities",
+      "politicalForm": "Greek civic centre amid competing leaders and military pressures",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "A long Sicilian Greek history",
+          "text": "Founded as a Greek settlement in the eighth century BCE, Syracuse grew into an important city with repeated changes of government. The rule of Dionysius and, later, Agathocles demonstrated its capacity to dominate wider Sicilian affairs and challenge Carthage. Agathocles' death in 289 did not produce a permanent, peaceful settlement. The following years saw shifting leaders and renewed competition among cities, military forces and ambitious individuals.",
+          "sourceKeys": [
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "City, countryside and neighbouring Greeks",
+          "text": "Syracuse's urban centres, harbours and agricultural surroundings give it a strong southeastern base. Connections to other Greek cities extend its influence, but these communities retain their own histories and interests. Akragas is especially important in the politics of the period and should not be treated as an empty territorial appendage. Indigenous Sicilian communities likewise do not vanish simply because the most detailed surviving narratives focus on Greek and Punic leaders.",
+          "sourceKeys": [
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "The succession of Hicetas, Thoenon and the intervention of Sosistratus belongs to the troubled sequence around the opening year. The exact seasonal ordering is difficult to turn into one certain snapshot. What is clear is that civic authority and military leadership are divided enough to make an outside protector attractive. It would be anachronistic to begin with the later stable rule of Hiero II already established or with a united Sicilian Greek administration.",
+          "sourceKeys": [
+            "spring-sicily",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Carthage, the Mamertines and Pyrrhus",
+          "text": "Carthaginian pressure threatens Syracuse, while the Mamertines' possession of Messana complicates the northeastern approach to the island. Pyrrhus' victories in Italy make him a plausible military alternative to local stalemate. Inviting him is not a cost-free act: a protector with his own army and royal ambitions may challenge the autonomy of those who summon him. The external crisis and internal rivalries therefore reinforce one another.",
+          "sourceKeys": [
+            "plutarch-pyrrhus",
+            "polybius-1",
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "The opening precedes Pyrrhus' Sicilian command. Syracuse remains a major Greek centre, but the aftermath of Agathocles' rule has left difficult relationships among leaders and cities. Akragas is treated alongside Syracuse as a regional approximation, although its local political circumstances differ. Mamertine Messana and western Punic positions demonstrate the limits of any claim to a single unified Greek Sicily.",
+          "sourceKeys": [
+            "spring-sicily",
+            "polybius-1"
+          ]
+        }
+      ]
+    },
+    "mamertines": {
+      "text": "The Mamertines are a Campanian military community established in the Greek city of Messana. Their position is unusual: they are not an old territorial kingdom, but neither are they merely a foreign garrison awaiting orders from another state. By 278 BCE possession of a strategic city, its harbour and the approach to the strait gives them influence far beyond the size of their original mercenary following.",
+      "homeland": "Messana in northeastern Sicily; Campanian origins of the controlling community",
+      "politicalForm": "Mercenary-founded local political community",
+      "sections": [
+        {
+          "id": "origins",
+          "title": "From soldiers in service to a local power",
+          "text": "The Mamertines originated among Campanian mercenaries associated with the armies of Agathocles. Following his death, they seized Messana and established themselves through violence against the existing community. Their name was connected with Mamers, the Italic war god commonly identified with Mars. This origin matters politically: their authority grew from military occupation and settlement, not from an ancient hereditary claim to rule all northeastern Sicily.",
+          "sourceKeys": [
+            "polybius-1",
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "homeland",
+          "title": "A Greek city at the strait",
+          "text": "Messana occupies the Sicilian side of the narrow passage toward southern Italy. Ships, coastal movement and communications between the two shores give the location exceptional strategic value. The identity of its Campanian controlling group should be distinguished from the city's Greek civic past and wider urban population. A change in rulers is not evidence that buildings, language, religious practices and local relationships were instantly replaced by one uniform culture.",
+          "sourceKeys": [
+            "polybius-1"
+          ]
+        },
+        {
+          "id": "internal",
+          "title": "Internal position in 278 BCE",
+          "text": "Military solidarity and possession of the city are the basis of Mamertine power. The sources do not provide a secure constitutional description or a reliable roster of spring 278 leaders. It would therefore be misleading to invent a royal house, a democratic assembly copied from a Greek polis, or a named starting ruler. The plausible internal tension is structural: a soldier-founded community must secure local resources and sustain authority within a city whose previous history is not its own.",
+          "sourceKeys": [
+            "polybius-1",
+            "spring-sicily"
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Between Syracuse, Carthage and Italy",
+          "text": "Syracusan recovery threatens the Mamertines' position, while Carthage can be a useful counterweight without becoming their sovereign. The approaching prospect of Pyrrhus' intervention makes such calculations more urgent. The Campanian garrison across the strait at Rhegion provides a related but separate case of military seizure. Shared origins or cooperation do not make the two communities one state, and Rome is not already fighting the First Punic War over Messana.",
+          "sourceKeys": [
+            "polybius-1",
+            "spring-sicily",
+            "attalus-278"
+          ]
+        },
+        {
+          "id": "opening",
+          "title": "The Spring 278 BCE setting",
+          "text": "Messana is already under Mamertine control, giving a military community of Campanian origin a valuable Greek urban base at the strait. Its position invites conflict and negotiation with larger neighbours without yet creating the later Roman?Carthaginian crisis. The First Punic War belongs to another generation; in 278 the immediate political landscape includes Syracuse, local rivals and the prospect of Pyrrhus entering Sicily.",
+          "sourceKeys": [
+            "polybius-1"
+          ]
+        }
+      ]
+    }
+  }
+}

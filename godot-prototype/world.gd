@@ -100,6 +100,11 @@ var navigation_trace={}
 var landscape_quality
 var ocean_renderer
 var political_map
+var detail_loading
+# Project and direct-scene play both prepare assets. Camera-owning diagnostic
+# scripts explicitly opt into preparation through campaign_boot when required.
+var startup_preparation_requested=should_prepare_startup(OS.get_cmdline_args())
+static func should_prepare_startup(arguments):return not arguments.has("--script")
 
 func read_json(p):
 	return JSON.parse_string(FileAccess.get_file_as_string("res://"+p))
@@ -204,6 +209,8 @@ func _ready():
 		get_tree().quit(1)
 		return
 	startup_ms=Time.get_ticks_msec()-started
+	if not OS.get_cmdline_user_args().has("--detail-loading-baseline") and DisplayServer.get_name()!="headless" and scenery.has_method("visible_pending_cells"):
+		detail_loading=preload("res://detail_loading.gd").new();detail_loading.world=self;add_child(detail_loading)
 	set_process(true)
 	print("GEOGRAPHY_READY sites=",sites.size()," research=",research.size()," Catana=15.088142,37.502959 startup_ms=",startup_ms)
 	if OS.get_cmdline_user_args().has("--validate"):
@@ -481,7 +488,7 @@ func elevation(lon,lat):
 	if in_region and best.descriptor.kind!="regional":return regional_height(lon,lat)
 	return max(.001,sample_entry(best,lon,lat))
 
-func is_land(lon,lat):
+func is_land(lon,lat,_local_surfaces=null):
 	if contains(regional_manifest.bounds,lon,lat):
 		var x=clampi(roundi((lon-6)*512),0,7168)
 		var y=clampi(roundi((49-lat)*512),0,7168)
@@ -542,91 +549,11 @@ func make_markers():
 		marker_root.add_child(label)
 		markers.append({"site":s,"label":label})
 
+var campaign_ui
 func make_ui():
-	var canvas=CanvasLayer.new()
-	add_child(canvas)
-	var root=Control.new()
-	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	root.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	canvas.add_child(root)
-	ui_panel=PanelContainer.new()
-	ui_panel.position=Vector2(28,28)
-	ui_panel.size=Vector2(286,420)
-	var style=StyleBoxFlat.new()
-	style.bg_color=Color(.035,.067,.077,.91)
-	style.border_color=Color("85734b")
-	style.set_border_width_all(1)
-	style.content_margin_left=20
-	style.content_margin_right=20
-	style.content_margin_top=18
-	style.content_margin_bottom=18
-	ui_panel.add_theme_stylebox_override("panel",style)
-	root.add_child(ui_panel)
-	var box=VBoxContainer.new()
-	box.add_theme_constant_override("separation",10)
-	ui_panel.add_child(box)
-	var brand=Label.new()
-	brand.text="HISTORICAL PARADOX DEI"
-	brand.add_theme_color_override("font_color",Color("d1b979"))
-	brand.add_theme_font_size_override("font_size",13)
-	box.add_child(brand)
-	var heading=Label.new()
-	heading.text="Campaign World"
-	heading.add_theme_font_size_override("font_size",28)
-	box.add_child(heading)
-	var sub=Label.new()
-	sub.text="278 BCE  /  Geographic prototype"
-	sub.add_theme_color_override("font_color",Color("acbdbb"))
-	box.add_child(sub)
-	for item in [["Campaign strategic view","campaign"],["Campaign overview","overview"],["Alps & northern Italy","alps"],["Po Valley","po"],["Central Apennines","apennines"],["Southern Italy","south"],["Sicily & southern Italy","sicily"],["Catana · Mount Etna","etna"],["Catana settlement","catana"]]:
-		var button=Button.new()
-		button.text=item[0]
-		button.pressed.connect(jump.bind(item[1]))
-		box.add_child(button)
-	search=LineEdit.new()
-	var region_picker=OptionButton.new()
-	region_picker.add_item("Explore campaign regions…")
-	var region_keys=navigation.presets.keys()
-	for key in region_keys:region_picker.add_item(str(key).capitalize())
-	region_picker.item_selected.connect(func(index):
-		if index>0:jump(region_keys[index-1]))
-	box.add_child(region_picker)
-	search.placeholder_text="Find an approved settlement…"
-	search.text_changed.connect(filter_sites)
-	box.add_child(search)
-	site_list=ItemList.new()
-	site_list.custom_minimum_size=Vector2(240,135)
-	site_list.item_selected.connect(select_list)
-	box.add_child(site_list)
-	filter_sites("")
-	var check=CheckButton.new()
-	check.text="Research references (687 retained)"
-	check.toggled.connect(toggle_research)
-	box.add_child(check)
-	water_toggle=CheckButton.new()
-	water_toggle.text="Animated water"
-	water_toggle.button_pressed=water_animation_enabled
-	water_toggle.toggled.connect(set_water_animation)
-	box.add_child(water_toggle)
-	selection_label=Label.new()
-	selection_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	selection_label.custom_minimum_size.x=240
-	selection_label.text="35 approved sites · original coordinates"
-	box.add_child(selection_label)
-	var caveat=Label.new()
-	caveat.text="Modern terrain foundation. Vegetation and\nsettlement forms are interpretive scenery."
-	caveat.add_theme_font_size_override("font_size",12)
-	caveat.add_theme_color_override("font_color",Color("98aaa8"))
-	box.add_child(caveat)
-	status=Label.new()
-	status.position=Vector2(28,1010)
-	status.add_theme_font_size_override("font_size",15)
-	root.add_child(status)
-	var help=Label.new()
-	help.text="WASD / arrows: pan     Q E: rotate     wheel: zoom     right drag: orbit     middle drag: pan     Home: overview"
-	help.position=Vector2(365,30)
-	help.add_theme_color_override("font_color",Color("e0d4b7"))
-	root.add_child(help)
+	campaign_ui=preload("res://ui/campaign_ui.gd").new()
+	add_child(campaign_ui)
+	campaign_ui.setup(self)
 
 func filter_sites(query):
 	site_list.clear()
@@ -641,6 +568,7 @@ func select_site(key):
 	if capture_name!="":return
 	for s in sites:
 		if s.key==key:
+			if campaign_ui!=null:campaign_ui.show_settlement(s)
 			selected=key
 			goal_focus=Vector2(s.lon,s.lat)
 			goal_distance=12.0 if key=="catana" else 70.0
@@ -782,7 +710,7 @@ func _process(delta):
 	var max_zoom_step=visual_settings.camera.max_zoom_step_fraction
 	distance=clamp(next_distance,distance*(1.0-max_zoom_step),distance*(1.0+max_zoom_step))
 	if capture_name!="":distance=goal_distance
-	if not automation_input_locked and not (get_viewport().gui_get_focus_owner() is LineEdit) and capture_name=="":
+	if not automation_input_locked and (detail_loading==null or not detail_loading.covering) and not (get_viewport().gui_get_focus_owner() is LineEdit) and capture_name=="" and (campaign_ui==null or not campaign_ui.blocks_camera()):
 		var move=Vector2(float(Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT)),float(Input.is_physical_key_pressed(KEY_W) or Input.is_physical_key_pressed(KEY_UP))-float(Input.is_physical_key_pressed(KEY_S) or Input.is_physical_key_pressed(KEY_DOWN)))
 		if move.length()>0:
 			var p=project(goal_focus.x,goal_focus.y)
@@ -841,7 +769,7 @@ func _process(delta):
 	city_root.visible=distance<20
 	cpu_clock=profile_stage("camera_materials",cpu_clock,stages)
 	tick+=dt
-	if tick>.4:
+	if tick>.4 or (detail_loading!=null and detail_loading.refresh_needed()):
 		tick=0
 		queue_tiles()
 	if queue.size()>0:
@@ -912,14 +840,16 @@ func update_markers():
 		var screen=camera.unproject_position(m.label.position)
 		var width=lerp(90.,max(60.,s.name.length()*7.5),political_weight)
 		var rect=Rect2(screen-Vector2(lerp(38.,width*.5,political_weight),10),Vector2(width,25))
-		if screen.x<390 or screen.x>1900 or screen.y<60 or screen.y>1030:m.label.visible=false
+		var viewport_size=get_viewport().get_visible_rect().size
+		if screen.x<20 or screen.x>viewport_size.x-20 or screen.y<20 or screen.y>viewport_size.y-20:m.label.visible=false
+		if campaign_ui!=null and campaign_ui.obscures_marker(screen):m.label.visible=false
 		for r in occupied:
 			if rect.intersects(r):m.label.visible=false
 		if m.label.visible:occupied.append(rect)
 		m.label.modulate=Color("ffdc80") if s.key==selected else Color("f0e4c3")
 
 func _unhandled_input(event):
-	if automation_input_locked or capture_name!="":return
+	if automation_input_locked or capture_name!="" or (detail_loading!=null and detail_loading.covering) or (campaign_ui!=null and is_instance_valid(campaign_ui.modal)):return
 	if event is InputEventKey and event.pressed and event.keycode==KEY_HOME:jump("overview")
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index==MOUSE_BUTTON_WHEEL_UP:zoom_at(event.position,.85)

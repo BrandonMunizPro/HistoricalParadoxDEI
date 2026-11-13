@@ -26,18 +26,33 @@ static func region_settings():
 		var h=preload("res://hispania_regions.gd").settings()
 		cfg.regions["hispania"]={"kind":"hispania","bounds":h.bounds}
 		cfg["extensions"]=cfg.get("extensions",[])+["hispania"]
+	if not OS.get_cmdline_user_args().has("--northern-baseline"):
+		var northern=preload("res://northern_regions.gd").settings()
+		for r in northern.order:
+			if FileAccess.file_exists("res://data/"+r+"/manifest.json"):
+				cfg.regions[r]=northern.regions[r]
+				cfg["extensions"]=cfg.get("extensions",[])+[r]
+	if not OS.get_cmdline_user_args().has("--frontier-baseline"):
+		var frontier=preload("res://frontier_regions.gd").settings()
+		for r in frontier.order:
+			if FileAccess.file_exists("res://data/"+r+"/manifest.json"):
+				cfg.regions[r]=frontier.regions[r].duplicate();cfg.regions[r]["kind"]="frontier"
+				cfg["extensions"]=cfg.get("extensions",[])+[r]
 	return cfg
 static func helpers()->String:
 	var code=""
 	var settings=region_settings()
 	if settings.has("extensions"):code+=preload("res://africa_regions.gd").shader_helpers()
 	if settings.regions.has("hispania"):code+=preload("res://hispania_regions.gd").shader_helpers()
+	if settings.regions.has("gaul") or settings.regions.has("britannia"):code+=preload("res://northern_regions.gd").shader_helpers()
 	for r in settings.regions:
 		code+="uniform bool %s_enabled=false;\nuniform sampler2D %s_land:filter_linear,repeat_disable;\nuniform sampler2D %s_ocean:filter_linear,repeat_disable;\nuniform sampler2D %s_shore:filter_linear,repeat_disable;\n"%[r,r,r,r]
 		var bounds=settings.regions[r].bounds
 		var b=Vector4(bounds.west,bounds.south,bounds.east-bounds.west,bounds.north-bounds.south)
 		code+="vec2 %s_uv(vec2 g){vec2 q=vec2((g.x-(%.1f))/%.1f,(%.1f-g.y)/%.1f);return q;}\n"%[r,b.x,b.z,b.y+b.w,b.w]
 		if r=="hispania":continue # Its physical scope is supplied above.
+		if settings.regions[r].get("kind","")=="northern":continue
+		if settings.regions[r].get("kind","")=="frontier":continue
 		if settings.regions[r].get("kind","")=="africa":
 			code+="float %s_scope(vec2 g){float s=%s_raw_scope(g);if(s<=0.)return 0.;s*=1.-smoothstep(.001,.01,egypt_scope(g));if(s<=0.)return 0.;"%[r,r]
 			for earlier in settings.extensions:
@@ -49,6 +64,7 @@ static func helpers()->String:
 		if r=="levant":code+="s*=(1.-smoothstep(.001,.01,anatolia_scope(g)))*smoothstep(34.+.6*smoothstep(32.,33.,g.y),34.25+.6*smoothstep(32.,33.,g.y),g.x);"
 		else:code+="s*=1.-smoothstep(.001,.01,levant_scope(g));"
 		code+="return s;}\n"
+	if not OS.get_cmdline_user_args().has("--frontier-baseline"):code+=preload("res://frontier_regions.gd").shader_helpers(settings.regions)
 	code+="vec2 eastern_texel(vec2 q,ivec2 sz){return (q*(vec2(sz)-1.)+.5)/vec2(sz);}\n"
 	return code
 static func decorate_shader(code:String)->String:
@@ -69,22 +85,24 @@ func _init(owner,region_name):
 		textures[key]=ImageTexture.create_from_image(img)
 	material=world.base_material.duplicate()
 	var code=material.shader.code
-	var scope_expression=region+"_scope(geo)"
-	var africa=settings.regions[region].get("kind","") in ["africa","hispania"]
-	if africa and region!="hispania":scope_expression="africa_raw_union(geo)"
-	if region=="egypt" and FileAccess.file_exists("res://data/africa_cyrenaica/manifest.json") and not OS.get_cmdline_user_args().has("--africa-baseline"):scope_expression="max(egypt_scope(geo),africa_raw_union(geo))"
-	code=code.replace("float northern_weight=reference_rollout_scope(geo);","float northern_weight=max(reference_rollout_scope(geo),%s);"%scope_expression)
+	if region=="gaul":
+		# One source mesh now spans Gaul and the Alps; do not clip its Alpine half
+		# or draw the old independently feathered overlay through this surface.
+		code=code.replace("if(alpine_detail_enabled&&camera_distance<3300.){float aw=alpine_scope(coast_geo);if(alpine_overlay_mesh){if(aw<.0005)discard;}else{if(aw>.001)discard;}}else if(alpine_overlay_mesh){discard;}","")
+		if world.alpine_surface!=null:world.alpine_surface.regional_replacement=true;world.alpine_surface.tick()
+	var northern=settings.regions[region].get("kind","") in ["northern","frontier"]
+	var africa=settings.regions[region].get("kind","") in ["africa","hispania","northern","frontier"]
+	# Coverage feathers select fragments; the parent supplies the same constant
+	# material response on both sides of each regional join.
 	if africa:
 		oases_image=Image.load_from_file("res://data/"+region+"/oases.png");oases_image.convert(Image.FORMAT_R8)
-		code=code.replace("ALBEDO=mix(macro*.57,mix(regional,macro*.57,.55*northern_weight),region_weight);","ALBEDO=regional;")
 		code=code.replace("uniform float detail_strength=1.0;","uniform float detail_strength=1.0;\nuniform sampler2D africa_oases:filter_linear,repeat_disable;")
-		var rules=preload("res://hispania_regions.gd").settings() if region=="hispania" else preload("res://africa_regions.gd").settings()
+		var rules=physical_rules()
 		code=code.replace("vec3 eco=global_eco.rgb;","global_eco.g*=1.-smoothstep(%.6f,%.6f,global_eco.b);float oasis=texture(africa_oases,eastern_texel(%s_uv(geo),textureSize(africa_oases,0))).r;global_eco.g=mix(global_eco.g,.78,oasis);global_eco.b=mix(global_eco.b,.30,oasis);global_eco.a=max(global_eco.a,oasis*.35);\n vec3 eco=global_eco.rgb;"%[rules.dryFertilityRules[0],rules.dryFertilityRules[1],region])
 		code=code.replace("float volcanic=0.0;","snow*=smoothstep(%.6f,%.6f,geo.y);\n float volcanic=0.0;"%[rules.snowLatitudeRules[0],rules.snowLatitudeRules[1]])
 		code=code.replace("float foundation_detail=","ALBEDO=mix(ALBEDO,ALBEDO*vec3(.40,.36,.34),africa_basalt(geo,h));\n float foundation_detail=")
 	if region=="hispania":code=code.replace("vec3 eco=global_eco.rgb;","global_eco=hispania_climate(global_eco,geo);vec3 eco=global_eco.rgb;")
 	if region=="egypt":
-		code=code.replace("ALBEDO=mix(macro*.57,mix(regional,macro*.57,.55*northern_weight),region_weight);","ALBEDO=regional;")
 		code=code.replace("uniform float detail_strength=1.0;","uniform float detail_strength=1.0;\nuniform sampler2D eastern_alluvium:filter_linear,repeat_disable;")
 		code=code.replace("vec3 eco=global_eco.rgb;","float floodplain=texture(eastern_alluvium,eastern_texel(egypt_uv(geo),textureSize(eastern_alluvium,0))).r;\n global_eco.g=mix(.08,.78,floodplain);global_eco.b=mix(.92,.28,floodplain);global_eco.a=max(global_eco.a*floodplain,floodplain*.45);\n vec3 eco=global_eco.rgb;")
 	# Regional copies replace the parent's clip test, retaining all biome/political code.
@@ -96,15 +114,19 @@ func _init(owner,region_name):
 	code=code.replace("if(UV.x>b.x+cover_inset.x", "if(false&&UV.x>b.x+cover_inset.x")
 	code=code.replace("vec3 lighting_normal=normalize(mix(ground_normal,relief_normal,strategic*relief_strength));","vec3 lighting_normal=normalize(texture(eastern_normals,eastern_texel(%s_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.);\n relief_normal=lighting_normal;"%region)
 	if region=="egypt":code=code.replace("vec3 lighting_normal=normalize(texture(eastern_normals,eastern_texel(egypt_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.);","vec3 lighting_normal=normalize(mix(relief_normal,texture(eastern_normals,eastern_texel(egypt_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.,egypt_scope(geo)));")
+	# Regional mask replacement must not overwrite the finer streamed shoreline.
+	code=code.replace("if(land<.5)discard;","land=focus_coast_terrain_land(world_pos.xz,land);\n if(land<.5)discard;")
 	var shader=Shader.new();shader.code=code;material.shader=shader
 	if africa:material.set_shader_parameter("africa_oases",ImageTexture.create_from_image(oases_image))
 	if region=="egypt":material.set_shader_parameter("eastern_alluvium",ImageTexture.create_from_image(Image.load_from_file("res://data/egypt/alluvium.png")))
 	material.set_shader_parameter("eastern_normals",textures.normals);material.set_shader_parameter("child_count",0)
 	material.set_shader_parameter("clip_region",false);material.set_shader_parameter(region+"_enabled",true)
+	if settings.regions[region].get("kind","")=="frontier":material.set_shader_parameter(region+"_coverage",preload("res://frontier_regions.gd").texture_for(region))
 	for key in ["land","ocean","shore"]:material.set_shader_parameter(region+"_"+key,textures[key])
 	if africa:
 		var overview_helpers=FileAccess.get_file_as_string("res://africa_overview.gdshaderinc").replace("AFRICA_OVERVIEW_UV",region+"_uv")
 		if region=="hispania":overview_helpers=overview_helpers.replace("africa_raw_union(geo)","hispania_scope(geo)").replace("float h=position.y/1.5", "c=hispania_climate(c,geo);float h=position.y/1.5")
+		if northern:overview_helpers=overview_helpers.replace("africa_raw_union(geo)",region+"_scope(geo)")
 		code=code.replace("void fragment(){",overview_helpers+"\nvoid fragment(){")
 		var fragment=code.find("void fragment(){")
 		var overview_code=code.substr(0,fragment)+"void fragment(){vec2 geo=vec2(UV.x*87.-12.,62.-UV.y*50.),cg=coast_geographic(world_pos.xz);if(%s_scope(cg)<.001)discard;float land=coast_coverage(%s_land,eastern_texel(%s_uv(cg),textureSize(%s_land,0)));if(land<.5)discard;vec3 n=normalize(texture(eastern_normals,eastern_texel(%s_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.);vec3 c,nn;africa_overview_surface(geo,cg,world_pos,n,land,c,nn);ALBEDO=c;NORMAL=normalize(mat3(VIEW_MATRIX)*nn);ROUGHNESS=.95;SPECULAR=.12;}"%[region,region,region,region,region]
@@ -112,7 +134,7 @@ func _init(owner,region_name):
 		var end=code.rfind("}")
 		code=code.substr(0,end)+"if(camera_distance>700.){vec2 ag=vec2(UV.x*87.-12.,62.-UV.y*50.),cg=coast_geographic(world_pos.xz);vec3 n=normalize(texture(eastern_normals,eastern_texel(%s_uv(ag),textureSize(eastern_normals,0))).rgb*2.-1.);float land=coast_coverage(%s_land,eastern_texel(%s_uv(cg),textureSize(%s_land,0)));vec3 c,nn;africa_overview_surface(ag,cg,world_pos,n,land,c,nn);float blend=smoothstep(700.,1200.,camera_distance);ALBEDO=mix(ALBEDO,c,blend);NORMAL=normalize(mix(NORMAL,mat3(VIEW_MATRIX)*nn,blend));}\n}"%[region,region,region,region]
 		var full_shader=Shader.new();full_shader.code=code;material.shader=full_shader
-		var rules=preload("res://hispania_regions.gd").settings() if region=="hispania" else preload("res://africa_regions.gd").settings()
+		var rules=physical_rules()
 		material.set_shader_parameter("africa_dry_rules",Vector2(rules.dryFertilityRules[0],rules.dryFertilityRules[1]));material.set_shader_parameter("africa_snow_latitudes",Vector2(rules.snowLatitudeRules[0],rules.snowLatitudeRules[1]))
 		overview_material=material.duplicate();var overview_shader=Shader.new();overview_shader.code=overview_code;overview_material.shader=overview_shader
 	detail_material=material.duplicate();detail_material.set_shader_parameter("eastern_near",true)
@@ -134,7 +156,7 @@ func _init(owner,region_name):
 		var shader_water=Shader.new();shader_water.code=water_code
 		for mat in [world.water_material] if world.ocean_renderer==null else world.ocean_renderer.materials:mat.shader=shader_water
 	for mat in [world.water_material] if world.ocean_renderer==null else world.ocean_renderer.materials:
-		mat.set_shader_parameter(region+"_enabled",true)
+		bind(mat)
 		for key in ["land","ocean","shore"]:mat.set_shader_parameter(region+"_"+key,textures[key])
 	if region=="africa_nubia" and FileAccess.file_exists("res://data/africa_nubia/historical-water.json"):
 		var water_history=world.read_json("data/africa_nubia/historical-water.json");var b=water_history.bounds
@@ -164,23 +186,37 @@ func _init(owner,region_name):
 			for file in ["source-metres.bin","land.png","oases.png"]:source_signature.append(FileAccess.get_sha256("res://data/"+extension+"/"+file))
 		if settings.regions.has("hispania"):
 			for file in ["data/hispania-region.json","hispania_regions.gd"]:source_signature.append(FileAccess.get_sha256("res://"+file))
+		if settings.regions.has("gaul") or settings.regions.has("britannia"):
+			for file in ["data/northern-regions.json","northern_regions.gd"]:source_signature.append(FileAccess.get_sha256("res://"+file))
+		for file in ["data/frontier-regions.json","frontier_regions.gd"]:source_signature.append(FileAccess.get_sha256("res://"+file))
 		# Supply geographic input identity to the existing cache before generation
 		# begins. No cache scheduling or visibility policy is changed here.
 		world.scenery.cache_signature="|".join(source_signature).sha256_text().substr(0,20)
-func bind(mat):mat.set_shader_parameter(region+"_enabled",true)
+func physical_rules():
+	if settings.regions[region].get("kind","")=="frontier":return {"dryFertilityRules":[.55,.85],"snowLatitudeRules":[27.,31.]}
+	if settings.regions[region].get("kind","")=="northern":return preload("res://northern_regions.gd").settings().regions[region]
+	return preload("res://hispania_regions.gd").settings() if region=="hispania" else preload("res://africa_regions.gd").settings()
+func bind(mat):
+	mat.set_shader_parameter(region+"_enabled",true)
+	if settings.regions[region].get("kind","")=="frontier":mat.set_shader_parameter(region+"_coverage",preload("res://frontier_regions.gd").texture_for(region))
 func climate_override(c,geo):
 	if oases_image==null:return c
 	var w=weight(geo)
 	if w<=.001:return c
-	var rules=preload("res://hispania_regions.gd").settings() if region=="hispania" else preload("res://africa_regions.gd").settings();var b=manifest.bounds
+	var rules=physical_rules();var b=manifest.bounds
 	var oasis=preload("res://environment_rules.gd").sample_image(oases_image,Vector2((geo.x-b.west)/(b.east-b.west),(b.north-geo.y)/(b.north-b.south))).r
 	var g=c.g*(1.-smoothstep(rules.dryFertilityRules[0],rules.dryFertilityRules[1],c.b))
 	var result=Color(c.r,lerp(g,.78,oasis),lerp(c.b,.30,oasis),max(c.a,oasis*.35))
 	if region=="hispania":result=preload("res://hispania_regions.gd").climate(result,geo)
 	return c.lerp(result,w)
 func weight(geo):
-	if region=="hispania":return preload("res://hispania_regions.gd").weight(geo)
 	var b=manifest.bounds
+	# Every regional scope is zero outside its source rectangle. Avoid invoking
+	# mask sampling and regional precedence rules for unrelated world regions.
+	if geo.x<=b.west or geo.x>=b.east or geo.y<=b.south or geo.y>=b.north:return 0.
+	if settings.regions[region].get("kind","")=="frontier":return preload("res://frontier_regions.gd").weight(region,geo,world)
+	if settings.regions[region].get("kind","")=="northern":return preload("res://northern_regions.gd").weight(region,geo)
+	if region=="hispania":return preload("res://hispania_regions.gd").weight(geo)
 	if settings.regions[region].get("kind","")=="africa":
 		var rules=preload("res://africa_regions.gd");var w=rules.raw_weight(region,geo)
 		if w<=.001:return 0.

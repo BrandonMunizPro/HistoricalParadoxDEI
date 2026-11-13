@@ -16,6 +16,13 @@ func anatolia_weight(point:Vector2)->float:
 	var south=35.8+1.5*smoothstep(35.8,39.5,point.x);var north=40.4+1.5*smoothstep(28.6,29.2,point.x)
 	return smoothstep(25.8,26.2,point.x)*(1.-smoothstep(42.2,42.6,point.x))*smoothstep(south-.2,south+.2,point.y)*(1.-smoothstep(north-.2,north+.2,point.y))
 func contains_anatolia(point:Vector2)->bool:return anatolia_weight(point)>.5
+func weight(point):
+	var w=0.
+	for r in settings.referenceRects:w=max(w,smoothstep(r[0]-.2,r[0]+.2,point.x)*(1.-smoothstep(r[2]-.2,r[2]+.2,point.x))*smoothstep(r[1]-.2,r[1]+.2,point.y)*(1.-smoothstep(r[3]-.2,r[3]+.2,point.y)))
+	for c in settings.referenceCorridors:
+		var a=Vector2(c[0]*.75,c[1]);var b=Vector2(c[2]*.75,c[3]);var p=point*Vector2(.75,1.);var d=b-a;var t=clamp((p-a).dot(d)/d.length_squared(),0.,1.)
+		w=max(w,1.-smoothstep(c[4]-.15,c[4]+.15,p.distance_to(a+d*t)))
+	return w
 func shader_scope(function_name="reference_rollout_scope",extension_only=false)->String:
 	var code="float "+function_name+"(vec2 geo){float weight=0.;"
 	for r in settings.extensionRects if extension_only else settings.referenceRects:

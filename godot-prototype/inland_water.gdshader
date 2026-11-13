@@ -63,6 +63,12 @@ void fragment(){
   float variation=clamp(dot(broad,vec2(.8,.4))*1.5,-1.,1.);
   ALBEDO=mix(deep_color,coastal_color,.12)*(1.+variation*strategic_color_strength*strategic);
   ALBEDO=mix(ALBEDO,vec3(.075,.105,.070),bank*.65);
+  // Quiet moving contact on existing river/lake ribbons. UV banks and source
+  // water levels remain fixed; no ocean displacement crosses their margins.
+  float margin=min(UV.x,1.-UV.x);
+  float contact=(1.-smoothstep(.002,.024,margin))*(.5+.5*sin(water_time*.95+world_pos.x*31.+world_pos.z*23.));
+  float broken=.5+.5*sin(world_pos.x*170.+world_pos.z*113.+sin(world_pos.z*67.)*2.);
+  ALBEDO=mix(ALBEDO,vec3(.25,.31,.26),contact*broken*.23*(1.-smoothstep(20.,90.,camera_distance)));
   float rough_patch=clamp((dot(streak,vec2(.85,.35))+dot(broad,vec2(.35,.25)))*2.,-1.,1.)*resolved;
   ROUGHNESS=mix(clamp(river_roughness+sqrt(variance)*.42*inland_calmness+rough_patch*strategic_roughness_strength*strategic,.09,.5),.65,bank);
   SPECULAR=mix(river_specular,.13,bank);METALLIC=0.;

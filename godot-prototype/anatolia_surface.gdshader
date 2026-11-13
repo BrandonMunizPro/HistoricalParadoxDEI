@@ -26,7 +26,8 @@ void fragment(){
  vec2 geo=coast_geographic(world_pos.xz),q=anatolia_uv(geo);
  float scope=anatolia_scope(geo);
  if(!anatolia_detail_enabled||scope<.001)discard;
- if(anatolia_coverage(geo)<.5)discard;
+ if(focus_coast_terrain_land(world_pos.xz,anatolia_coverage(geo))<.5)discard;
+ if(focus_coast_weight(world_pos.xz)>.999){float fd=focus_coast_metres(world_pos.xz);if(fd>=0.&&fd<focus_coast_cut_metres(world_pos.xz))discard;}
  if(!detail_mesh){for(int i=0;i<32;i++){if(i>=detail_count)break;vec4 b=detail_bounds[i];if(geo.x>b.x+.002&&geo.x<b.z-.002&&geo.y>b.y+.002&&geo.y<b.w-.002)discard;}}
  vec2 nq=anatolia_texel(q,textureSize(source_normals,0));
  vec3 n=normalize(texture(source_normals,nq).rgb*2.-1.);

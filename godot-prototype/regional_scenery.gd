@@ -19,9 +19,30 @@ var skip_cache=false
 var cache_hits=0
 var cache_writes=0
 var coarse_visible_km=190.
-var local_prefetch_km=180.
+var coarse_prefetch_km=360.
+var local_prefetch_km=360.
+var local_release_km=420.
+var release_grace_ms=12000
+var buffer_packer=preload("res://scenery_buffers.gd")
 var reveal_seconds=.85
 var was_hidden=false
+var startup_pins={}
+var building_id=""
+var building_local=false
+var sampling_regions=[]
+var local_cache_capacity=36
+func regions_for(bounds):
+	var result=[]
+	if world.get("eastern_surfaces")==null:return result
+	# Includes all neighbouring height/footprint probes as well as the cell.
+	for surface in world.eastern_surfaces:
+		var b=surface.manifest.bounds
+		if b.east>=bounds.west-.2 and b.west<=bounds.east+.2 and b.north>=bounds.south-.2 and b.south<=bounds.north+.2:result.append(surface)
+	return result
+func pin_startup_cells():
+	for group in [roots,local_roots]:
+		for id in group:
+			if group[id].get_meta("ready",false):startup_pins[id]=true
 var work_profile={"maxChunkMs":0.0,"maxUploadMs":0.0,"cellsBuilt":0,"cancelled":0,"generationCpuMs":0.0,"uploadCpuMs":0.0,"generationYieldFrames":0,"candidates":0,"skippedHidden":0,"hiddenTicks":0}
 
 func coarse_visible(distance):
@@ -54,6 +75,18 @@ func pending_cells():
 		if not group.has(id) or not group[id].get_meta("ready",false):pending.append(id)
 	return pending
 
+func visible_pending_cells():
+	# Prefetch work may continue in the background. Only work that can actually
+	# contribute to this view prevents the loading screen from opening.
+	var pending=[]
+	if world.political_map!=null and world.political_map.weight_at(world.distance)>=1.:return pending
+	var expected=expected_cells()
+	for id in expected:
+		if expected[id] and world.distance>=37.:continue
+		var group=local_roots if expected[id] else roots
+		if not group.has(id) or not group[id].get_meta("ready",false) or group[id].get_meta("reveal",0.)<.999:pending.append(id)
+	return pending
+
 func is_ready():
 	if busy or not pending_cells().is_empty():return false
 	var expected=expected_cells()
@@ -67,6 +100,9 @@ func _init(owner):
 	settings=world.presentation.settings
 	skip_cache=OS.get_cmdline_user_args().has("--scenery-skip-cache")
 	var signature=["scenery-placement-cache-1",JSON.stringify(settings.scenery)]
+	signature.append("coast-baseline="+str(OS.get_cmdline_user_args().has("--coast-baseline")))
+	for path in ["coastal_focus.gd","world_coast.gd","coast_catalog.gd","data/world-coasts/manifest.json","data/coastal-focus/pellaro.json","data/coastal-focus/distance.bin","data/coastal-focus/coverage.bin"]:
+		signature.append(FileAccess.get_sha256("res://"+path) if FileAccess.file_exists("res://"+path) else "missing")
 	for path in ["regional_scenery.gd","northern_italy_world.gd","anatolia_surface.gd","data/anatolia/source-metres.bin","data/anatolia/land.png","eastern_surface.gd","data/levant/source-metres.bin","data/levant/land.png","data/levant/hydrology-supplement.json","data/egypt/source-metres.bin","data/egypt/land.png","data/sites.json","data/environment-presentation.json","habitat.gd","data/global/manifest.json"]:
 		signature.append(FileAccess.get_sha256("res://"+path) if FileAccess.file_exists("res://"+path) else "missing")
 	cache_signature="|".join(signature).sha256_text().substr(0,20)
@@ -171,13 +207,14 @@ func tick():
 		was_hidden=true
 	else:was_hidden=false
 	var global_keys=[]
-	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and coarse_visible(world.distance):
-		for dx in [-1,0,1]:
-			for dy in [-1,0,1]:global_keys.append("global|%d|%d" % [floori(world.focus.x)+dx,floori(world.focus.y)+dy])
+	if not world.contains(world.regional_manifest.bounds,world.focus.x,world.focus.y) and world.distance<coarse_prefetch_km:
+		for offset in [Vector2i(0,0),Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1),Vector2i(0,1),Vector2i(-1,-1),Vector2i(1,-1),Vector2i(-1,1),Vector2i(1,1)]:
+			global_keys.append("global|%d|%d" % [floori(world.focus.x)+offset.x,floori(world.focus.y)+offset.y])
 	for id in roots.keys():
 		var keep=(id in global_keys) if id.begins_with("global|") else world.resident.has(id)
 		if keep:roots[id].set_meta("last_used",Time.get_ticks_msec())
-		if (world.distance>=440. or roots.size()>18) and not keep:roots[id].queue_free();roots.erase(id)
+		var pinned=startup_pins.has(id) and roots.size()<=18
+		if (world.distance>=440. or roots.size()>18) and not keep and not pinned:roots[id].queue_free();roots.erase(id);startup_pins.erase(id)
 	for id in roots:
 		var active=(id in global_keys) if id.begins_with("global|") else world.resident.has(id)
 		roots[id].visible=active and roots[id].get_meta("ready",false) and world.distance>settings.scenery.coarse_transition_km[0] and world.distance<190
@@ -190,51 +227,60 @@ func tick():
 			local_keys.append("local|%d|%d" % [c.x,c.y])
 	for id in local_roots.keys():
 		if id in local_keys:local_roots[id].set_meta("last_used",Time.get_ticks_msec())
-		if (world.distance>=220. or local_roots.size()>18) and not id in local_keys:
+		var pinned=startup_pins.has(id) and local_roots.size()<=local_cache_capacity
+		# Bounded resident cache: a zoom out or a short visit elsewhere should
+		# not throw away already-prepared close foliage after only 12 seconds.
+		if (world.distance>=local_release_km or local_roots.size()>local_cache_capacity) and not id in local_keys and not pinned:
 			local_roots[id].queue_free()
-			local_roots.erase(id)
+			local_roots.erase(id);startup_pins.erase(id)
 	for id in local_roots:
-		local_roots[id].visible=id in local_keys and local_roots[id].get_meta("ready",false) and world.distance<37.
+		var ready=local_roots[id].get_meta("ready",false)
+		if id in local_keys and ready and world.distance<37.:local_roots[id].set_meta("was_visible",true)
+		local_roots[id].visible=(id in local_keys or local_roots[id].get_meta("was_visible",false)) and ready and world.distance<37.
 		update_reveal(local_roots[id])
-	if prebaking or busy or world.distance>=coarse_visible_km or not world.queue.is_empty():return
+	var close_waiting=false
+	if world.distance<37.:
+		for id in local_keys:
+			if not local_roots.has(id) or not local_roots[id].get_meta("ready",false):close_waiting=true;break
+	if busy and not building_local and close_waiting:
+		# Let the current coroutine notice its cancelled root before starting a
+		# new job. Never clear busy while an older generation can still resume.
+		if roots.has(building_id):roots[building_id].queue_free();roots.erase(building_id)
+	if prebaking or busy or world.distance>=coarse_prefetch_km or not world.queue.is_empty():return
 	# All placements must use settled terrain, including close cells.
 	for id in world.resident:
 		if world.resident[id].reveal<1:return
-	# Prepare the distant stand first, then its close replacements, before either
-	# becomes visible. Cached placements retain the same deterministic seed.
-	for id in global_keys:
-		if roots.has(id):continue
-		var split=id.split("|");var lon=float(split[1]);var lat=float(split[2])
-		build(id,{"west":lon,"east":lon+1,"south":lat,"north":lat+1});return
-	for id in local_keys:
-		if local_roots.has(id):continue
-		var split=id.split("|")
-		var lon=float(split[1])*.05;var lat=float(split[2])*.05
-		build(id,{"west":lon,"east":lon+.05,"south":lat,"north":lat+.05},true)
+	# Prepare focused detail, then the focused coarse cell. Never let eight
+	# off-screen coarse neighbours delay the first close vegetation.
+	var jobs=[]
+	if world.distance<80.:
+		jobs.append_array(local_keys);jobs.append_array(global_keys)
+	else:
+		if not local_keys.is_empty():jobs.append(local_keys[0])
+		jobs.append_array(global_keys);jobs.append_array(local_keys)
+	for id in jobs:
+		var local=id.begins_with("local|")
+		var group=local_roots if local else roots
+		if group.has(id):continue
+		var split=id.split("|");var step=.05 if local else 1.
+		var lon=float(split[1])*step;var lat=float(split[2])*step
+		build(id,{"west":lon,"east":lon+step,"south":lat,"north":lat+step},local)
 		return
-	for id in global_keys:
-		if roots.has(id):continue
-		for tile in world.resident:
-			if world.resident[tile].reveal<1:return
-		var split=id.split("|")
-		var lon=float(split[1]);var lat=float(split[2])
-		build(id,{"west":lon,"east":lon+1,"south":lat,"north":lat+1})
-		return
-	if not coarse_visible(world.distance):return
 	for id in world.resident:
 		if world.resident[id].descriptor.kind!="regional" or roots.has(id):continue
-		if world.resident[id].reveal<1:return
 		build(id)
 		return
 
 func build(id,local_bounds={},is_local=false):
 	busy=true
+	building_id=id;building_local=is_local
 	var root=Node3D.new()
 	root.visible=false;root.set_meta("ready",false);root.set_meta("last_used",Time.get_ticks_msec())
 	world.vegetation_root.add_child(root)
 	if is_local:local_roots[id]=root
 	else:roots[id]=root
 	var b=local_bounds if not local_bounds.is_empty() else world.tiles[id].bounds
+	sampling_regions=regions_for(b)
 	var sparse_arid=world.presentation.north_africa((b.west+b.east)*.5,(b.south+b.north)*.5)>.5
 	var arid=settings.north_africa
 	var cached=read_cache(id)
@@ -257,7 +303,10 @@ func build(id,local_bounds={},is_local=false):
 	for i in int(tuning.attempts):
 		# Footprint/terrain checks vary in cost. Retain the candidate-count cap,
 		# and yield earlier when the measured CPU slice reaches its time budget.
-		if i%int(tuning.yield_every)==0 or (i%8==0 and (Time.get_ticks_usec()-chunk_begin)/1000.0>=tuning.generation_budget_ms):
+		# GPU-bound low-FPS views otherwise get only 4 ms of generation work per
+		# slow frame, stretching a small CPU job into many seconds of wall time.
+		var loading_budget=12. if world.detail_loading!=null and world.detail_loading.covering else clamp(world.get_process_delta_time()*500.,maxf(8.,float(tuning.generation_budget_ms)),12.)
+		if i%int(tuning.yield_every)==0 or (i%8==0 and (Time.get_ticks_usec()-chunk_begin)/1000.0>=loading_budget):
 			record_generation_chunk(chunk_begin)
 			work_profile.generationYieldFrames+=1
 			await world.get_tree().process_frame
@@ -267,7 +316,7 @@ func build(id,local_bounds={},is_local=false):
 			work_profile.cancelled+=1;busy=false;return
 		var lon=rng.randf_range(b.west,b.east);var lat=rng.randf_range(b.south,b.north)
 		work_profile.candidates+=1
-		if not world.is_land(lon,lat):continue
+		if not world.is_land(lon,lat,sampling_regions):continue
 		var p=world.project(lon,lat)
 		# Roma-only transition from the bounded authored hinterland into native cells.
 		# Stable habitat noise avoids consuming RNG or changing other regions.
@@ -277,7 +326,7 @@ func build(id,local_bounds={},is_local=false):
 			if radius<1.6:
 				if world.settlements.roma_visual.landscape.in_field(p-c) or habitat.noise(Vector2(p.x,p.z)*31)>smoothstep(.42,1.6,radius):continue
 		if world.presentation.is_clear(Vector2(p.x,p.z)):continue
-		var climate=world.presentation.climate(lon,lat)
+		var climate=world.presentation.climate(lon,lat,sampling_regions)
 		var weights=world.presentation.weights(lat,climate)
 		var africa=world.presentation.north_africa(lon,lat)
 		var wet=world.presentation.fertile_plain(climate,0.0)
@@ -304,7 +353,7 @@ func build(id,local_bounds={},is_local=false):
 			var coast_clear=true
 			for direction in [Vector2(1,0),Vector2(-1,0),Vector2(0,1),Vector2(0,-1),Vector2(.707,.707),Vector2(-.707,.707),Vector2(.707,-.707),Vector2(-.707,-.707)]:
 				var offset=world.unproject(p+Vector3(direction.x*footprint,0,direction.y*footprint))
-				if not world.is_land(offset.x,offset.y):coast_clear=false;break
+				if not world.is_land(offset.x,offset.y,sampling_regions):coast_clear=false;break
 			if not coast_clear:continue
 		var h=ground_height(lon,lat)
 		if h<.003 or h>12.0:continue
@@ -366,6 +415,17 @@ func build(id,local_bounds={},is_local=false):
 
 func upload_batches(id,root,b,is_local,sparse_arid,batches,colours,customs,plants,rocks):
 	var tuning=settings.scenery
+	# Only packing immutable value arrays runs off-thread. GPU/scene work stays here.
+	var worker=Thread.new()
+	var started=worker.start(buffer_packer.pack.bind(batches,colours,customs))
+	var buffers
+	if started==OK:
+		while worker.is_alive():await world.get_tree().process_frame
+		buffers=worker.wait_to_finish()
+	else:buffers=buffer_packer.pack(batches,colours,customs)
+	var group=local_roots if is_local else roots
+	if not is_instance_valid(root) or not group.has(id) or group[id]!=root:
+		work_profile.cancelled+=1;busy=false;return
 	var upload_begin=Time.get_ticks_usec()
 	for species in meshes.size():
 		if batches[species].is_empty():continue
@@ -375,21 +435,12 @@ func upload_batches(id,root,b,is_local,sparse_arid,batches,colours,customs,plant
 		mm.use_custom_data=true
 		mm.mesh=meshes[species] if is_local or sparse_arid else coarse_meshes[species]
 		if quality.contains((b.west+b.east)*.5,(b.south+b.north)*.5):
-			var replacement=quality.mesh_for(species,not is_local and not sparse_arid)
+			var asset_index=quality.regional_index(species,(b.west+b.east)*.5,(b.south+b.north)*.5)
+			var replacement=quality.mesh_for(asset_index,not is_local and not sparse_arid)
 			if replacement!=null:mm.mesh=replacement
 		if sparse_arid and species>=tree_mesh_count:mm.mesh=arid_rocks[species-tree_mesh_count]
 		mm.instance_count=batches[species].size()
-		for i in mm.instance_count:
-			mm.set_instance_transform(i,batches[species][i]);mm.set_instance_color(i,colours[species][i])
-			mm.set_instance_custom_data(i,customs[species][i])
-			if (i+1)%int(tuning.upload_yield_every)==0:
-				work_profile.maxUploadMs=max(work_profile.maxUploadMs,(Time.get_ticks_usec()-upload_begin)/1000.0)
-				work_profile.uploadCpuMs+=(Time.get_ticks_usec()-upload_begin)/1000.0
-				await world.get_tree().process_frame
-				var group=local_roots if is_local else roots
-				if not is_instance_valid(root) or not group.has(id) or group[id]!=root:
-					work_profile.cancelled+=1;busy=false;return
-				upload_begin=Time.get_ticks_usec()
+		mm.buffer=buffers[species]
 		var node=MultiMeshInstance3D.new()
 		node.multimesh=mm
 		if not is_local:node.extra_cull_margin=tuning.coarse_footprint_km
@@ -409,7 +460,7 @@ func upload_batches(id,root,b,is_local,sparse_arid,batches,colours,customs,plant
 	print("REGIONAL_SCENERY_READY ",id," asset_variants=28 plants=",plants," rocks=",rocks)
 
 func ground_height(lon,lat):
-	return world.scenery_elevation(lon,lat) if world.has_method("scenery_elevation") else world.elevation(lon,lat)
+	return world.scenery_elevation(lon,lat,sampling_regions) if world.has_method("scenery_elevation") else world.elevation(lon,lat)
 
 func cache_file(id,published=false):
 	return ("res://data/scenery-cache/" if published else "user://scenery-cache/")+cache_signature+"/"+id.replace("|","_")+".bin"

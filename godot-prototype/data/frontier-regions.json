@@ -1,0 +1,16 @@
+{
+  "notice": "Physical terrain sections complete existing campaign coverage, not political boundaries. Earlier reviewed terrain takes precedence. No expansion beyond -12..75 E, 12..62 N.",
+  "order": ["mediterranean_islands","europe_northwest","europe_northeast","europe_central","pontic_caucasus","eurasian_steppe","arabian_plateau","mesopotamia_iran_west","iran_afghanistan","indus_west"],
+  "regions": {
+    "mediterranean_islands":{"bounds":{"west":6,"east":35,"south":30,"north":44}},
+    "europe_northwest":{"bounds":{"west":-12,"east":18,"south":48,"north":62}},
+    "europe_northeast":{"bounds":{"west":17,"east":46,"south":48,"north":62}},
+    "europe_central":{"bounds":{"west":6,"east":34,"south":42,"north":49}},
+    "pontic_caucasus":{"bounds":{"west":33,"east":56,"south":36,"north":49}},
+    "eurasian_steppe":{"bounds":{"west":45,"east":75,"south":45,"north":62}},
+    "arabian_plateau":{"bounds":{"west":34,"east":60,"south":12,"north":36}},
+    "mesopotamia_iran_west":{"bounds":{"west":34,"east":56,"south":26,"north":39}},
+    "iran_afghanistan":{"bounds":{"west":55,"east":75,"south":25,"north":46}},
+    "indus_west":{"bounds":{"west":57,"east":75,"south":12,"north":27}}
+  }
+}

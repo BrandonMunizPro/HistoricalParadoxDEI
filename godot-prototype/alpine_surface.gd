@@ -9,6 +9,7 @@ var heights:PackedFloat32Array
 var height_texture:ImageTexture
 var normal_texture:ImageTexture
 var manifest
+var regional_replacement=false
 static func decorate_shader(code:String)->String:
 	code=code.replace("float hash(vec2",FileAccess.get_file_as_string("res://alpine_surface.gdshaderinc")+"\nfloat hash(vec2")
 	code=code.replace("if(land<.5)discard;","if(alpine_detail_enabled&&camera_distance<3300.){float aw=alpine_scope(coast_geo);if(alpine_overlay_mesh){if(aw<.0005)discard;}else{if(aw>.001)discard;}}else if(alpine_overlay_mesh){discard;}\n if(land<.5)discard;")
@@ -31,13 +32,14 @@ func _init(owner):
 func bind(mat):
 	mat.set_shader_parameter("alpine_detail_enabled",true);mat.set_shader_parameter("alpine_source_metres",height_texture);mat.set_shader_parameter("alpine_source_normals",normal_texture)
 func tick():
-	node.visible=world.distance<3300.
+	node.visible=not regional_replacement and world.distance<3300.
 	node.mesh=near_mesh if world.distance<250. else far_mesh
 	material.set_shader_parameter("camera_distance",world.distance)
 	material.set_shader_parameter("detail_strength",world.regional_node.material_override.get_shader_parameter("detail_strength"))
 func weight(geo:Vector2):
 	return smoothstep(0.,.15,min(min(geo.x-6.,16.-geo.x),min(geo.y-44.,48.-geo.y)))
 func elevation(geo:Vector2,parent_height):
+	if regional_replacement:return parent_height
 	var blend=weight(geo)
 	if blend<=0.:return parent_height
 	var x=clamp((geo.x-6.)*128.,0.,float(manifest.width-1)-.0001);var y=clamp((48.-geo.y)*128.,0.,float(manifest.height-1)-.0001)

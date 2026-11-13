@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "opening": {
+    "yearBce": 278,
+    "season": "spring",
+    "convention": "before-pyrrhus-sicilian-expedition",
+    "exactDate": null
+  },
+  "records": [
+    {
+      "id": "relation:mamertines",
+      "researchId": "r16-ita-messana",
+      "controllerFactionId": "mamertines",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Mamertine control of Messana. The Campanian controlling community and the Greek civic/urban context remain distinct. No First Punic War trigger.",
+      "sources": [
+        "polybius-1"
+      ]
+    },
+    {
+      "id": "relation:akragas-spring",
+      "settlementId": "5c5f9130-5076-5a71-b63a-4a51353c70d9",
+      "siteKey": "akragas",
+      "researchId": "r16-ita-akragas",
+      "controllerFactionId": "syracuse",
+      "settlementCultureId": "hellenic",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Approved Akragas-Syracuse gameplay aggregation; distinct local government is retained in historical context. Pyrrhus has not yet taken command in Sicily.",
+      "sources": [
+        "spring-sicily"
+      ]
+    },
+    {
+      "id": "relation:neapolis-alliance",
+      "settlementId": "1f50fd31-a377-5df8-b182-d84e962aed97",
+      "siteKey": "neapolis",
+      "controllerFactionId": "rome",
+      "settlementCultureId": "hellenic",
+      "relationship": "allied_treaty",
+      "note": "Greek Neapolis in the Roman allied sphere. Political colour simplifies a treaty relationship; it does not assert direct Roman administration or Roman cultural identity.",
+      "sources": [
+        "livy-neapolis"
+      ]
+    },
+    {
+      "id": "relation:athens-city-spring",
+      "researchId": "r16-gre-athens",
+      "controllerFactionId": "athens",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Athenian civic authority distinguished from Macedonian military positions. District boundary is a scenario approximation.",
+      "sources": [
+        "athens-kallias"
+      ]
+    },
+    {
+      "id": "relation:piraeus-garrison-spring",
+      "researchId": "r16-gre-piraeus",
+      "controllerFactionId": "antigonid-holdings",
+      "settlementCultureId": "hellenic",
+      "relationship": "military_occupation",
+      "note": "Macedonian garrison reconstruction. Exact recovery chronology is debated; civic culture remains Greek.",
+      "sources": [
+        "athens-kallias"
+      ]
+    },
+    {
+      "id": "relation:aegium-before-accession",
+      "researchId": "r16-gre-aegium",
+      "controllerFactionId": "antigonid-holdings",
+      "settlementCultureId": "hellenic",
+      "relationship": "military_occupation",
+      "note": "Aegium precedes its later accession to the renewed Achaean League. Macedonian garrison control is the bounded starting approximation.",
+      "sources": [
+        "polybius-2"
+      ]
+    },
+    {
+      "id": "relation:chalcedon-city-spring",
+      "researchId": "r16-ana-chalcedon",
+      "controllerFactionId": "chalcedon",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Chalcedon remains separate from Byzantion on the Asian shore. The city point is unchanged.",
+      "sources": [
+        "memnon"
+      ]
+    },
+    {
+      "id": "relation:cenabum-association",
+      "researchId": "r16-gal-cenabum",
+      "controllerFactionId": "carnutes",
+      "settlementCultureId": "gallic",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Later Carnutian association guides this explicitly approximate 278 allocation.",
+      "sources": [
+        "strabo-gaul"
+      ]
+    },
+    {
+      "id": "relation:samarobriva-association",
+      "researchId": "r16-gal-samarobriva",
+      "controllerFactionId": "belgae",
+      "settlementCultureId": "gallic",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Ambianian community represented through the existing broader Belgic grouping; no new Ambiani faction or documented unified Belgic state is invented.",
+      "sources": [
+        "samarobriva"
+      ]
+    },
+    {
+      "id": "relation:burdigala-association",
+      "researchId": "r16-gal-burdigala",
+      "controllerFactionId": "bituriges",
+      "settlementCultureId": "gallic",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Bituriges Vivisci association represented through the existing Bituriges record. This is not a claim that Vivisci and Cubi formed one documented 278 state.",
+      "sources": [
+        "strabo-gaul"
+      ]
+    },
+    {
+      "id": "relation:tolosa-association",
+      "researchId": "r16-gal-tolosa",
+      "controllerFactionId": "volcae",
+      "settlementCultureId": "gallic",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Volcaean association is a regional starting approximation; this does not assign Tolosa to an Anatolian migration marker.",
+      "sources": [
+        "strabo-gaul"
+      ]
+    },
+    {
+      "id": "relation:lilybaeum-coverage",
+      "researchId": "r16-ita-lilybaeum",
+      "controllerFactionId": "carthage",
+      "settlementCultureId": "punic",
+      "relationship": "direct_control",
+      "note": "Targeted western Sicilian political coverage. Physical coastline and settlement position are unchanged.",
+      "sources": [
+        "spring-sicily"
+      ]
+    },
+    {
+      "id": "relation:massalia-city-coverage",
+      "researchId": "r16-gal-massalia",
+      "controllerFactionId": "massalia",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Restore political coverage at the existing Greek civic centre; no blanket ownership of colonial connections.",
+      "sources": [
+        "strabo-gaul"
+      ]
+    },
+    {
+      "id": "relation:panticapaeum-coverage",
+      "researchId": "r16-cau-panticapaeum",
+      "controllerFactionId": "bosporus",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Bounded coverage correction around the existing Bosporan civic centre, not a movement of its researched location.",
+      "sources": [
+        "cliopatria"
+      ]
+    },
+    {
+      "id": "relation:heraclea-city-coverage",
+      "researchId": "r16-ana-heraclea-pontica",
+      "controllerFactionId": "heraclea-pontica",
+      "settlementCultureId": "hellenic",
+      "relationship": "direct_control",
+      "note": "Restore the existing Heracleote point to its own political community. District extent is approximate.",
+      "sources": [
+        "memnon"
+      ]
+    },
+    {
+      "id": "context:r16-ibe-emporiae",
+      "researchId": "r16-ibe-emporiae",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek Emporitan community within the broader Indigete regional reconstruction; exact civic control is not inferred.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-ibe-rhode",
+      "researchId": "r16-ibe-rhode",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek community; colonial connection does not prove Massaliote ownership.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-gal-nikaia",
+      "researchId": "r16-gal-nikaia",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek colonial community in a Ligurian regional setting; ownership remains qualified.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-gal-antipolis",
+      "researchId": "r16-gal-antipolis",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek colonial community in a Ligurian regional setting; ownership remains qualified.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-bal-issa",
+      "researchId": "r16-bal-issa",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek island community; tribal envelope coverage does not establish direct civic ownership.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-bal-pharos",
+      "researchId": "r16-bal-pharos",
+      "controllerFactionId": null,
+      "settlementCultureId": "hellenic",
+      "relationship": "cultural_association",
+      "note": "Greek island community; regional control remains qualified.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-cas-koi-krylgan-kala",
+      "researchId": "r16-cas-koi-krylgan-kala",
+      "controllerFactionId": null,
+      "settlementCultureId": "chorasmian",
+      "relationship": "cultural_association",
+      "note": "Chorasmian urban context is distinct from the broader Massagetaean starting-map reconstruction.",
+      "sources": []
+    },
+    {
+      "id": "context:r16-cas-akchakhan-kala",
+      "researchId": "r16-cas-akchakhan-kala",
+      "controllerFactionId": null,
+      "settlementCultureId": "chorasmian",
+      "relationship": "cultural_association",
+      "note": "Chorasmian settlement culture does not follow the regional faction palette.",
+      "sources": []
+    },
+    {
+      "id": "relation:harmozica",
+      "researchId": "r16-cau-harmozica",
+      "controllerFactionId": "kartli",
+      "settlementCultureId": "kartlian",
+      "relationship": "regional_gameplay_aggregation",
+      "note": "Eastern Iberian regional starting allocation; no precisely bounded early dynasty is asserted.",
+      "sources": [
+        "iranica-colchis"
+      ]
+    }
+  ]
+}

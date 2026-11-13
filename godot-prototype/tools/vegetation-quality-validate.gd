@@ -11,16 +11,16 @@ func run():
 		if child is CanvasLayer:child.visible=false
 	await pose(1.2,Vector2(12.67,41.73),0.,38.)
 	var quality=world.scenery.quality
-	check("Trial is bounded to central Italy",quality.contains(12.5,41.9) and quality.contains(12.67,41.73) and not quality.contains(24.7,59.45) and not quality.contains(31.,30.))
+	check("Textured assets are available beyond the former Italy trial",quality.contains(12.5,41.9) and quality.contains(12.67,41.73) and quality.contains(24.7,59.45) and quality.contains(31.,30.))
 	var catalog=JSON.parse_string(FileAccess.get_file_as_string(quality.ROOT+"catalog.json"))
 	check("Twenty original generated variants and three detailed LODs",catalog.records.size()==20 and catalog.records.all(func(r):return r.triangles.size()==3 and r.triangles[2]<r.triangles[1] and r.triangles[1]<r.triangles[0]))
 	var valid=true
-	for i in 20:
+	for i in quality.variant_count:
 		var mesh=quality.mesh_for(i);var stand=quality.mesh_for(i,true)
-		valid=valid and mesh.get_surface_count()==1 and mesh.surface_get_arrays(0)[Mesh.ARRAY_INDEX].size()==6 and stand.surface_get_arrays(0)[Mesh.ARRAY_INDEX].size()==72
-	check("Campaign uses two triangles per tree and twelve-tree stand impostors",valid)
-	check("Unsupported palm/rock assets retain legacy fallback",quality.mesh_for(20)==null and quality.mesh_for(24)==null)
-	check("Twenty directional atlases have eight azimuths and three elevations",quality.impostors.size()==20 and quality.textures["oak-0-atlas"].get_width()==2048 and quality.textures["oak-0-atlas"].get_height()==768)
+		valid=valid and mesh.get_surface_count()==1 and mesh.surface_get_arrays(0)[Mesh.ARRAY_INDEX].size()==6 and stand.surface_get_arrays(0)[Mesh.ARRAY_INDEX].size()==144
+	check("Campaign uses two triangles per tree and preserves 24-tree grove population",valid)
+	check("Regional palms are supported while rocks retain their own assets",quality.regional_index(20,31,30)==32 and quality.regional_index(24,31,30)==-1)
+	check("36 directional atlases include the original eight-azimuth three-elevation library",quality.impostors.size()==36 and quality.textures["oak-0-atlas"].get_width()==2048 and quality.textures["oak-0-atlas"].get_height()==768)
 	check("Detailed generated meshes remain usable in Godot",quality.detail_mesh_for(0).get_surface_count()==2)
 	world.set_water_animation(false)
 	for i in 4:await process_frame

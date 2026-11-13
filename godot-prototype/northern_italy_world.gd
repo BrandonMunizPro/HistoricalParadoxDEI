@@ -9,10 +9,16 @@ var anatolia_identities
 var eastern_surfaces=[]
 var reference_labels
 var regional_cpu_ms={}
+var coastal_focus
 var reference_faction_ids=["boii","insubres","cenomani","veneti-italy","ligurian-polities","etruscan-polities","rome","samnites","lucanians","bruttians","messapians","daunians","tarentum","rhegion","croton","syracuse"]
 func uses_northern_labels():
 	return cartographic_rollout.contains(focus) and distance>=30. and distance<=1400. and political_map.enabled and political_map.factions!=null and political_map.factions.enabled and political_map.blend>.01
 func read_json(path):
+	if not OS.get_cmdline_user_args().has("--border-baseline") and FileAccess.file_exists("res://data/world-border-review/scenario-278.json"):
+		if path=="data/factions/scenario-278.json":return super.read_json("data/world-border-review/scenario-278.json")
+		if path=="data/factions/label-placements.json":return super.read_json("data/world-border-review/label-placements.json")
+		if path=="data/geographic-regions/definitions.json":return super.read_json("data/world-border-review/definitions.json")
+		if path=="data/geographic-regions/initial-owners.json" and FileAccess.file_exists("res://data/world-border-review/initial-owners.json"):return super.read_json("data/world-border-review/initial-owners.json")
 	if path=="data/hydrology.json" and FileAccess.file_exists("res://data/levant/hydrology-supplement.json") and not OS.get_cmdline_user_args().has("--eastern-baseline"):
 		var data=super.read_json(path);var extra=super.read_json("data/levant/hydrology-supplement.json")
 		data.rivers.append_array(extra.rivers);data.lakes.append_array(extra.lakes);return data
@@ -38,16 +44,17 @@ func _ready():
 	super._ready()
 	var shader=base_material.shader
 	var code=shader.code
-	# Geographic scope, independent of camera: preserve other regions' appearance.
+	# Terrain coverage no longer controls material opacity: all delivered sections
+	# share the same response, including the older Italian parent at their joins.
 	code=code.replace("political_blend","northern_political_blend")
-	var scope="float northern_weight=reference_rollout_scope(geo);\n float northern_political_blend=political_blend*mix(1.,%.6f,northern_weight);\n bool in_region="%cartographic_rollout.settings.politicalReplacement
+	var scope="float northern_weight=1.0;\n float northern_political_blend=political_blend*mix(1.,%.6f,northern_weight);\n bool in_region="%cartographic_rollout.settings.politicalReplacement
 	code=code.replace("bool in_region=",scope)
 	var political_code=FileAccess.get_file_as_string("res://political_map.gdshaderinc")
 	political_code=cartographic_rollout.shader_scope()+cartographic_rollout.shader_scope("reference_balkans_scope",true)+political_code
 	political_code="uniform sampler2D reference_local_ids : filter_nearest,repeat_disable;\nuniform sampler2D reference_sicily_ids : filter_nearest,repeat_disable;\n"+political_code
 	political_code=political_code.replace("vec3 political_land_color",FileAccess.get_file_as_string("res://reference_borders.gdshaderinc")+"\nvec3 political_land_color")
 	political_code=political_code.replace("vec3 political_land_color", "vec4 reference_owner(vec2 q,bool local,bool sicily){vec2 encoded=sicily?texture(reference_sicily_ids,q).rg:(local?texture(reference_local_ids,q).rg:texture(political_boundary_layer,q).rg);float id=round(encoded.r*255.)+256.*round(encoded.g*255.);return texture(political_palette,vec2((id+.5)/float(textureSize(political_palette,0).x),.5));}\nvec3 political_land_color")
-	political_code=political_code.replace("q.y=1.-q.y;", "q.y=1.-q.y;\n bool local=geo.x>=6.&&geo.x<=14.&&geo.y>=43.&&geo.y<=47.;\n bool sicily=!local&&reference_rollout_scope(geo)>.001;\n if(sicily)q=vec2((geo.x-6.)/14.,(49.-geo.y)/14.);\n if(local)q=vec2((geo.x-6.)/8.,(47.-geo.y)/4.);")
+	political_code=political_code.replace("q.y=1.-q.y;", "q.y=1.-q.y;\n bool local=geo.x>=6.&&geo.x<=14.&&geo.y>=43.&&geo.y<=47.&&reference_balkans_scope(geo)<=.001;\n bool sicily=!local&&(reference_balkans_scope(geo)>.001||(reference_rollout_scope(geo)>.001&&(geo.x>=14.||geo.y<43.)));\n if(sicily)q=vec2((geo.x-6.)/14.,(49.-geo.y)/14.);\n if(local)q=vec2((geo.x-6.)/8.,(47.-geo.y)/4.);")
 	political_code=political_code.replace("vec3 encoded=texture(political_boundary_layer,q).rgb;","vec3 encoded=sicily?texture(reference_sicily_ids,q).rgb:(local?texture(reference_local_ids,q).rgb:texture(political_boundary_layer,q).rgb);")
 	for expression in ["q","q+dx","q-dx","q+dy","q-dy","q+hx","q-hx","q+hy","q-hy"]:
 		political_code=political_code.replace("political_owner_color("+expression+")","reference_owner("+expression+",local,sicily)")
@@ -69,17 +76,27 @@ func _ready():
 	# Preserve source-derived normals; damp only high-frequency surface variation.
 	code=code.replace("float wide=noise(p*.035),middle=noise(p*.24);","float wide=.5+(noise(p*.035)-.5)*mix(1.,.25,northern_weight),middle=.5+(noise(p*.24)-.5)*mix(1.,.2,northern_weight);")
 	code=code.replace("landscape*=.65+habitat_noise(p*.8)*.50+middle*.15;","landscape*=mix(.65+habitat_noise(p*.8)*.50+middle*.15,.94+habitat_noise(p*.8)*.07+middle*.04,northern_weight);")
-	code=code.replace("ALBEDO=mix(macro*.57,regional,region_weight);","ALBEDO=mix(macro*.57,mix(regional,macro*.57,.55*northern_weight),region_weight);")
+	code=code.replace("ALBEDO=mix(macro*.57,regional,region_weight);","ALBEDO=regional;")
 	code=preload("res://balkans_surface.gd").decorate_shader(code)
 	code=preload("res://alpine_surface.gd").decorate_shader(code)
+	if not OS.get_cmdline_user_args().has("--northern-baseline") and FileAccess.file_exists("res://data/gaul/manifest.json"):
+		# Retiring the Alpine mesh also retires its clip in every inherited
+		# material, including the Balkan overlay. Otherwise both can discard
+		# the same Adriatic fragments and expose the background through land.
+		code=code.replace("if(alpine_detail_enabled&&camera_distance<3300.){float aw=alpine_scope(coast_geo);if(alpine_overlay_mesh){if(aw<.0005)discard;}else{if(aw>.001)discard;}}else if(alpine_overlay_mesh){discard;}","")
 	code=preload("res://anatolia_surface.gd").decorate_shader(code)
 	code=preload("res://eastern_surface.gd").decorate_shader(code)
+	code=code.replace("if(land<.5)discard;","if(focus_coast_weight(world_pos.xz)>.999){float fd=focus_coast_metres(world_pos.xz);if(abs(fd)<200.){land=step(0.,fd);if(fd>=0.&&fd<focus_coast_cut_metres(world_pos.xz))discard;}}\n if(land<.5)discard;")
 	shader.code=code
 	var bed=ImageTexture.create_from_image(Image.load_from_file("res://data/northern-italy-reference/lake-bed.png"))
 	base_material.set_shader_parameter("reference_lake_bed",bed)
-	var local_ids=ImageTexture.create_from_image(Image.load_from_file("res://data/northern-italy-reference/territory-ids.png"))
+	var local_path="res://data/northern-italy-reference/territory-ids.png"
+	if not OS.get_cmdline_user_args().has("--border-baseline") and FileAccess.file_exists("res://data/world-border-review/local-ids.png"):local_path="res://data/world-border-review/local-ids.png"
+	var local_ids=ImageTexture.create_from_image(Image.load_from_file(local_path))
 	base_material.set_shader_parameter("reference_local_ids",local_ids)
-	var detail_ids=Image.load_from_file("res://data/geographic-regions/italy-ids.png")
+	var detail_path="res://data/geographic-regions/italy-ids.png"
+	if not OS.get_cmdline_user_args().has("--border-baseline") and FileAccess.file_exists("res://data/world-border-review/sicily-ids.png"):detail_path="res://data/world-border-review/sicily-ids.png"
+	var detail_ids=Image.load_from_file(detail_path)
 	detail_ids.convert(Image.FORMAT_RG8) # Two identity bytes; confidence stays in source data.
 	base_material.set_shader_parameter("reference_sicily_ids",ImageTexture.create_from_image(detail_ids))
 	base_material.set_shader_parameter("reference_controller_ids",political_map.factions.owner_texture)
@@ -110,6 +127,9 @@ func _ready():
 	# Strategic river vertices are sampled once; refresh after source surfaces load.
 	if not eastern_surfaces.is_empty():
 		strategic_world_rivers.queue_free();strategic_regional_rivers.queue_free();make_rivers()
+	if FileAccess.file_exists("res://data/coastal-focus/pellaro.json") and not OS.get_cmdline_user_args().has("--coast-baseline"):
+		var coast_script="res://world_coast.gd" if FileAccess.file_exists("res://data/world-coasts/manifest.json") and not OS.get_cmdline_user_args().has("--world-coast-baseline") else "res://coastal_focus.gd"
+		coastal_focus=load(coast_script).new();add_child(coastal_focus);coastal_focus.setup(self)
 
 func _process(delta):
 	var profile_start=Time.get_ticks_usec()
@@ -123,6 +143,7 @@ func _process(delta):
 	regional_cpu_ms={"base":(base_end-profile_start)/1000.,"previousRegions":(old_end-base_end)/1000.,"anatolia":(Time.get_ticks_usec()-old_end)/1000.}
 
 func is_settled():
+	if coastal_focus!=null and coastal_focus.has_method("is_ready") and not coastal_focus.is_ready():return false
 	for surface in eastern_surfaces:
 		if not surface.is_ready():return false
 	return super.is_settled() and (anatolia_surface==null or anatolia_surface.is_ready())
@@ -141,9 +162,13 @@ func elevation(lon,lat):
 		for surface in eastern_surfaces:original=surface.elevation(Vector2(lon,lat),original)
 	return original
 
-func scenery_elevation(lon,lat):
+func scenery_elevation(lon,lat,local_surfaces=null):
+	if coastal_focus!=null:
+		var sample=coastal_focus.coastal_sample(lon,lat)
+		if sample!=null:return coastal_focus.profile_sample_height(sample)
 	var geo=Vector2(lon,lat)
-	for surface in eastern_surfaces:
+	var surfaces=eastern_surfaces if local_surfaces==null else local_surfaces
+	for surface in surfaces:
 		if surface.weight(geo)>.001:return surface.elevation(geo,super.elevation(lon,lat),true)
 	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(geo)>.001:return anatolia_surface.placement_height(geo)
 	if balkans_surface!=null:
@@ -152,8 +177,12 @@ func scenery_elevation(lon,lat):
 		return balkans_surface.elevation(geo,base,true)
 	return elevation(lon,lat)
 
-func is_land(lon,lat):
-	for surface in eastern_surfaces:
+func is_land(lon,lat,local_surfaces=null):
+	if coastal_focus!=null:
+		var sample=coastal_focus.coastal_sample(lon,lat)
+		if sample!=null:return sample.distance>coastal_focus.plant_clearance(sample)
+	var surfaces=eastern_surfaces if local_surfaces==null else local_surfaces
+	for surface in surfaces:
 		if surface.weight(Vector2(lon,lat))>.001:return surface.land_at(Vector2(lon,lat))
 	if anatolia_surface!=null and cartographic_rollout.anatolia_weight(Vector2(lon,lat))>.001:return anatolia_surface.land_at(Vector2(lon,lat))
 	return super.is_land(lon,lat)
@@ -161,6 +190,7 @@ func is_land(lon,lat):
 func load_tile(id):
 	var result=super.load_tile(id)
 	if resident.has(id):
+		if coastal_focus!=null:coastal_focus.bind(resident[id].node.material_override)
 		for parameter in ["reference_lake_bed","reference_local_ids","reference_controller_ids","reference_sicily_ids"]:resident[id].node.material_override.set_shader_parameter(parameter,base_material.get_shader_parameter(parameter))
 		if alpine_surface!=null:alpine_surface.bind(resident[id].node.material_override)
 		if balkans_surface!=null:balkans_surface.bind(resident[id].node.material_override)

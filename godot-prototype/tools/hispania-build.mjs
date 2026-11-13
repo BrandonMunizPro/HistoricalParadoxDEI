@@ -6,24 +6,39 @@ import {PNG} from 'pngjs';
 import {unzipSync} from 'fflate';
 import {read as readShape} from 'shapefile';
 import {projectLocalMapMetres} from '../../src/infrastructure/world-geography.ts';
-const config=JSON.parse(fs.readFileSync('godot-prototype/data/hispania-region.json'));
-const region='hispania';
+import {frontier,frontierMaskWeight} from './regional-scopes.mjs';
+const region=process.argv.find(a=>a.startsWith('--region='))?.slice(9)??'hispania';
+const isFrontier=Object.hasOwn(frontier.regions,region);
+if(!isFrontier&&!['hispania','gaul','britannia'].includes(region))throw Error('Unknown physical region '+region);
+const config=isFrontier?{oases:[],...frontier.regions[region]}:region==='hispania'?JSON.parse(fs.readFileSync('godot-prototype/data/hispania-region.json')):JSON.parse(fs.readFileSync('godot-prototype/data/northern-regions.json')).regions[region];
 const bounds=config.bounds;
 const {west:W,east:E,south:S,north:N}=bounds,R=128,width=(E-W)*R+1,height=(N-S)*R+1;
-const out='godot-prototype/data/'+region,cache='data/geography/source-cache/hispania';
+const out='godot-prototype/data/'+region,cache='data/geography/source-cache/'+region;
 fs.mkdirSync(out,{recursive:true});fs.mkdirSync(cache,{recursive:true});fs.writeFileSync(out+'/.gdignore','');
 const read=p=>JSON.parse(fs.readFileSync(p)),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
 function limit(points,x){for(let i=1;i<points.length;i++)if(x<=points[i][0]){const a=points[i-1],b=points[i];return a[1]+(b[1]-a[1])*Math.max(0,Math.min(1,(x-a[0])/(b[0]-a[0])));}return points.at(-1)[1];}
 function rect(b,x,y,west=.25){return smooth(b.west,b.west+west,x)*(1-smooth(b.east-.25,b.east,x))*smooth(b.south,b.south+.25,y)*(1-smooth(b.north-.25,b.north,y));}
-function weight(x,y){return rect(bounds,x,y)*(1-smooth(limit(config.northLimit,x)-.15,limit(config.northLimit,x)+.15,y))*smooth(limit(config.southLimit,x)-.05,limit(config.southLimit,x)+.05,y);}
+const iberia=region==='gaul'?JSON.parse(fs.readFileSync('godot-prototype/data/hispania-region.json')):null;
+function weight(x,y){
+ if(isFrontier)return frontierMaskWeight(region,x,y);
+ let w=rect(bounds,x,y)*(1-smooth(limit(config.northLimit,x)-.15,limit(config.northLimit,x)+.15,y))*smooth(limit(config.southLimit,x)-.05,limit(config.southLimit,x)+.05,y);
+ if(iberia){
+  const h=rect(iberia.bounds,x,y)*(1-smooth(limit(iberia.northLimit,x)-.15,limit(iberia.northLimit,x)+.15,y))*smooth(limit(iberia.southLimit,x)-.05,limit(iberia.southLimit,x)+.05,y);
+  w*=1-smooth(.001,.01,h);
+ }
+ return w;
+}
 const world=read('godot-prototype/data/world.json').tiles.filter(t=>t.kind==='world'&&t.bounds.west<E&&t.bounds.east>W&&t.bounds.south<N&&t.bounds.north>S).map(t=>read('public/data/world-terrain/'+t.id+'.json'));
-function sample(t,x,y){const b=t.bounds,px=Math.max(0,Math.min(t.width-1,(x-b.west)/(b.east-b.west)*(t.width-1))),py=Math.max(0,Math.min(t.height-1,(b.north-y)/(b.north-b.south)*(t.height-1))),i=Math.min(t.width-2,Math.floor(px)),j=Math.min(t.height-2,Math.floor(py)),u=px-i,v=py-j,a=t.elevations[j*t.width+i],bb=t.elevations[j*t.width+i+1],c=t.elevations[(j+1)*t.width+i],d=t.elevations[(j+1)*t.width+i+1];return (a*(1-u)+bb*u)*(1-v)+(c*(1-u)+d*u)*v;}
+function sample(t,x,y){if(!t)return 0;const b=t.bounds,px=Math.max(0,Math.min(t.width-1,(x-b.west)/(b.east-b.west)*(t.width-1))),py=Math.max(0,Math.min(t.height-1,(b.north-y)/(b.north-b.south)*(t.height-1))),i=Math.min(t.width-2,Math.floor(px)),j=Math.min(t.height-2,Math.floor(py)),u=px-i,v=py-j,a=t.elevations[j*t.width+i],bb=t.elevations[j*t.width+i+1],c=t.elevations[(j+1)*t.width+i],d=t.elevations[(j+1)*t.width+i+1];return (a*(1-u)+bb*u)*(1-v)+(c*(1-u)+d*u)*v;}
 const fallback=(x,y)=>sample(world.find(t=>x>=t.bounds.west&&x<=t.bounds.east&&y>=t.bounds.south&&y<=t.bounds.north),x,y);
 const tiles=new Map(),sources=[],jobs=[];
-for(let lat=S;lat<N;lat++)for(let lon=W;lon<E;lon++)if([0,.5,1].some(dx=>[0,.5,1].some(dy=>weight(lon+dx,lat+dy)>.001)))jobs.push({lon,lat});
-async function get({lon,lat}){
- const id=`N${lat}${lon<0?'W':'E'}${Math.abs(lon)}`,file=`${cache}/${id}.json`,paths=[`public/data/regional-details/detail-egypt-${id}.json`,`data/geography/source-cache/levant/${id}.json`,`data/geography/source-cache/egypt/${id}.json`,`data/geography/source-cache/cop-${id}.json`,file];
+const coarseLand=isFrontier?PNG.sync.read(fs.readFileSync('godot-prototype/data/global/land.png')):null;
+function landJob(lon,lat){if(!coarseLand)return true;for(let y=0;y<=6;y++)for(let x=0;x<=6;x++){const gx=lon+x/6,gy=lat+y/6,px=Math.min(coarseLand.width-1,Math.max(0,Math.round((gx+12)/87*(coarseLand.width-1)))),py=Math.min(coarseLand.height-1,Math.max(0,Math.round((62-gy)/50*(coarseLand.height-1))));if(coarseLand.data[(py*coarseLand.width+px)*4]>127&&weight(gx,gy)>.001)return true;}return false;}
+for(let lat=S;lat<N;lat++)for(let lon=W;lon<E;lon++)if(landJob(lon,lat)&&[0,.5,1].some(dx=>[0,.5,1].some(dy=>weight(lon+dx,lat+dy)>.001)))jobs.push({lon,lat});
+const cacheDirectories=fs.readdirSync('data/geography/source-cache',{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>'data/geography/source-cache/'+d.name);
+async function getOne({lon,lat}){
+ const id=`N${lat}${lon<0?'W':'E'}${Math.abs(lon)}`,file=`${cache}/${id}.json`,paths=[`public/data/regional-details/detail-egypt-${id}.json`,`data/geography/source-cache/levant/${id}.json`,`data/geography/source-cache/egypt/${id}.json`,`data/geography/source-cache/alpine/${id}.json`,`data/geography/source-cache/cop-${id}.json`,file,...cacheDirectories.map(d=>`${d}/${id}.json`)];
  if(fs.existsSync(`${cache}/${id}.missing.json`)){sources.push(read(`${cache}/${id}.missing.json`));return;}
  let path=paths.find(p=>fs.existsSync(p)),raw;
  if(path)raw=read(path);else{
@@ -40,6 +55,7 @@ async function get({lon,lat}){
  const elevations=path.includes('public/data')?Float32Array.from(raw.elevations):Float32Array.from(raw.elevations,(_,i)=>{const x=(i%129)/128*129-.5,y=Math.floor(i/129)/128*129-.5,a=Math.floor(x),b=Math.floor(y),u=x-a,v=y-b;return (at(a,b)*(1-u)+at(a+1,b)*u)*(1-v)+(at(a,b+1)*(1-u)+at(a+1,b+1)*u)*v;});
  tiles.set(`${lon},${lat}`,{...raw,elevations});sources.push({id,path,sha256:hash(fs.readFileSync(path)),url:raw.source});
 }
+async function get(job){for(let attempt=0;attempt<4;attempt++){try{return await getOne(job);}catch(error){if(attempt===3)throw error;console.log('SOURCE_RETRY',job.lon,job.lat,attempt+1);await new Promise(resolve=>globalThis.setTimeout(resolve,300*(attempt+1)));}}}
 for(let i=0;i<jobs.length;i+=4)await Promise.all(jobs.slice(i,i+4).map(get));
 const edges=new Map();let maxRawEdgeDifferenceMetres=0;
 for(const t of tiles.values())for(let y=0;y<129;y++)for(let x=0;x<129;x++)if(x===0||x===128||y===0||y===128){const key=`${t.bounds.west*128+x}/${t.bounds.north*128-y}`,e=edges.get(key)??[];e.push({t,i:y*129+x});edges.set(key,e);}
@@ -58,9 +74,8 @@ function project(x,y){const p=projectLocalMapMetres({lon:x,lat:y},{lon:13.5,lat:
 function normal(x,y){const dx=1/R,l=project(x-dx,y),r=project(x+dx,y),u=project(x,y+dx),d=project(x,y-dx),hx=(source(Math.min(E,x+dx),y)-source(Math.max(W,x-dx),y))*.0015/(r[0]-l[0]),hz=(source(x,Math.max(S,y-dx))-source(x,Math.min(N,y+dx)))*.0015/(d[1]-u[1]),n=Math.hypot(hx,1,hz);return [-hx/n,1/n,-hz/n];}
 const normals=new PNG({width,height});for(let y=0;y<height;y++)for(let x=0;x<width;x++)normals.data.set([...normal(W+x/R,N-y/R).map(v=>Math.round((v*.5+.5)*255)),255],(y*width+x)*4);
 fs.writeFileSync(out+'/normals.png',PNG.sync.write(normals));
-function originalHeight(x,y){const t=world.find(t=>x>=t.bounds.west&&x<=t.bounds.east&&y>=t.bounds.south&&y<=t.bounds.north),b=t.bounds,px=(x-b.west)/(b.east-b.west)*128,py=(b.north-y)/(b.north-b.south)*128,i=Math.min(127,Math.max(0,Math.floor(px))),j=Math.min(127,Math.max(0,Math.floor(py))),u=px-i,v=py-j,at=(a,c)=>Math.max(.001,t.elevations[c*129+a]*.0015),a=at(i,j),bb=at(i+1,j),c=at(i,j+1),d=at(i+1,j+1);return u+v<1?a+(bb-a)*u+(c-a)*v:d+(c-d)*(1-u)+(bb-d)*(1-v);}
 const fw=(E-W)*32+1,fh=(N-S)*32+1,farHeights=new Float32Array(fw*fh);
-for(let y=0;y<fh;y++)for(let x=0;x<fw;x++){const lon=W+x/32,lat=N-y/32,old=originalHeight(lon,lat);farHeights[y*fw+x]=old+(source(lon,lat)*.0015-old)*weight(lon,lat);}
+for(let y=0;y<fh;y++)for(let x=0;x<fw;x++){const lon=W+x/32,lat=N-y/32;farHeights[y*fw+x]=source(lon,lat)*.0015;}
 fs.writeFileSync(out+'/far-heights.bin',Buffer.from(farHeights.buffer));
 function parent(x,y){const px=(x-W)*32,py=(N-y)*32,i=Math.min(fw-2,Math.max(0,Math.floor(px))),j=Math.min(fh-2,Math.max(0,Math.floor(py))),u=px-i,v=py-j,a=farHeights[j*fw+i],b=farHeights[j*fw+i+1],c=farHeights[(j+1)*fw+i],d=farHeights[(j+1)*fw+i+1];return u+v<1?a+(b-a)*u+(c-a)*v:d+(c-d)*(1-u)+(b-d)*(1-v);}
 function mesh(b,rate,file,near=false){const w=(b.east-b.west)*rate+1,h=(b.north-b.south)*rate+1,count=w*h,pos=new Float32Array(count*3),norm=new Float32Array(count*3),uv=new Float32Array(count*2),uv2=new Float32Array(count*2),colors=new Float32Array(count*4);
@@ -73,18 +88,19 @@ const supplement={rivers:[],lakes:[],renderLakes:[],notice:'Existing local Natur
 fs.writeFileSync(out+'/hydrology-supplement.json',JSON.stringify(supplement));
 const archive=fs.readFileSync('data/geography/source-cache/gshhg.zip'),zip=unzipSync(archive,{filter:f=>/GSHHS_f_L1\.(shp|dbf)$|^(LICENSE.TXT|COPYINGv3|COPYING.LESSERv3)$/.test(f.name)});
 for(const name of ['LICENSE.TXT','COPYINGv3','COPYING.LESSERv3'])if(zip[name])fs.writeFileSync(out+'/GSHHG-'+name,zip[name]);
-const land=await readShape(zip['GSHHS_shp/f/GSHHS_f_L1.shp'].buffer,zip['GSHHS_shp/f/GSHHS_f_L1.dbf'].buffer),mw=(E-W)*512+1,mh=(N-S)*512+1,mask=new Uint8Array(mw*mh);
+const maskRate=isFrontier?128:512;
+const land=await readShape(zip['GSHHS_shp/f/GSHHS_f_L1.shp'].buffer,zip['GSHHS_shp/f/GSHHS_f_L1.dbf'].buffer),mw=(E-W)*maskRate+1,mh=(N-S)*maskRate+1,mask=new Uint8Array(mw*mh);
 function clip(ring){let p=ring;for(const [axis,v,sign] of [[0,W,1],[0,E,-1],[1,S,1],[1,N,-1]]){const q=[];for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],ai=(a[axis]-v)*sign>=0,bi=(b[axis]-v)*sign>=0;if(ai)q.push(a);if(ai!==bi){const t=(v-a[axis])/(b[axis]-a[axis]);q.push([a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1])]);}}p=q;}return p;}
-function fill(rings,buffer,value){const rr=rings.map(clip).filter(r=>r.length>2).map(r=>r.map(([x,y])=>[(x-W)*512,(N-y)*512]));if(!rr.length)return;let lo=mh-1,hi=0;for(const r of rr)for(const p of r){lo=Math.min(lo,p[1]);hi=Math.max(hi,p[1]);}for(let y=Math.max(0,Math.ceil(lo));y<=Math.min(mh-1,Math.floor(hi));y++){const xs=[];for(const r of rr)for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>y)!==(b[1]>y))xs.push(a[0]+(y-a[1])*(b[0]-a[0])/(b[1]-a[1]));}xs.sort((a,b)=>a-b);for(let i=0;i+1<xs.length;i+=2)buffer.fill(value,y*mw+Math.max(0,Math.ceil(xs[i])),y*mw+Math.min(mw,Math.floor(xs[i+1])+1));}}
+function fill(rings,buffer,value){const rr=rings.map(clip).filter(r=>r.length>2).map(r=>r.map(([x,y])=>[(x-W)*maskRate,(N-y)*maskRate]));if(!rr.length)return;let lo=mh-1,hi=0;for(const r of rr)for(const p of r){lo=Math.min(lo,p[1]);hi=Math.max(hi,p[1]);}for(let y=Math.max(0,Math.ceil(lo));y<=Math.min(mh-1,Math.floor(hi));y++){const xs=[];for(const r of rr)for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>y)!==(b[1]>y))xs.push(a[0]+(y-a[1])*(b[0]-a[0])/(b[1]-a[1]));}xs.sort((a,b)=>a-b);for(let i=0;i+1<xs.length;i+=2)buffer.fill(value,y*mw+Math.max(0,Math.ceil(xs[i])),y*mw+Math.min(mw,Math.floor(xs[i+1])+1));}}
 for(const f of land.features)for(const p of f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates])fill(p,mask,255);
 const ocean=mask.slice();for(const lake of [...read('godot-prototype/data/hydrology.json').lakes,...supplement.lakes]){fill(lake.rings,mask,0);fill(lake.rings,ocean,255);}
 function grey(file,bytes,w=mw,h=mh){if(bytes.every(v=>v===bytes[0])){bytes=bytes.subarray(0,1);w=1;h=1;}const p=new PNG({width:w,height:h});for(let i=0;i<bytes.length;i++)p.data.set([bytes[i],bytes[i],bytes[i],255],i*4);fs.writeFileSync(out+'/'+file,PNG.sync.write(p,{colorType:0}));}
 grey('land.png',mask);grey('ocean.png',ocean);
 const dist=new Float32Array(width*height),d=111.195/R,di=Math.SQRT2*d;
-for(let y=0;y<height;y++)for(let x=0;x<width;x++)dist[y*width+x]=ocean[y*4*mw+x*4]>127?0:64;
+for(let y=0;y<height;y++)for(let x=0;x<width;x++)dist[y*width+x]=ocean[y*(maskRate/R)*mw+x*(maskRate/R)]>127?0:64;
 for(let y=0;y<height;y++)for(let x=0;x<width;x++){const i=y*width+x;let v=dist[i];if(x)v=Math.min(v,dist[i-1]+d);if(y)v=Math.min(v,dist[i-width]+d);if(x&&y)v=Math.min(v,dist[i-width-1]+di);dist[i]=v;}
 for(let y=height-1;y>=0;y--)for(let x=width-1;x>=0;x--){const i=y*width+x;let v=dist[i];if(x+1<width)v=Math.min(v,dist[i+1]+d);if(y+1<height)v=Math.min(v,dist[i+width]+d);if(x+1<width&&y+1<height)v=Math.min(v,dist[i+width+1]+di);dist[i]=v;}
 grey('shore.png',Uint8Array.from(dist,v=>Math.min(255,Math.round(v*4))),width,height);
 fs.writeFileSync(out+'/manifest.json',JSON.stringify({region,bounds,width,height,heightScale:1.5,oases,far,details,sharedEdges:{reconciled:true,maxRawEdgeDifferenceMetres},sources:sources.sort((a,b)=>a.id.localeCompare(b.id)),coast:{archive:'data/geography/source-cache/gshhg.zip',sha256:hash(archive)},notice:'Modern physical source proxy; no ancient shoreline, land-cover, river or settlement reconstruction. Source negatives preserved.'},null,2));
-await import('./hispania-hydrology.mjs');
-console.log('HISPANIA_BUILD_OK',region,sources.length,details.length);
+if(region==='hispania')await import('./hispania-hydrology.mjs');
+console.log('REGION_BUILD_OK',region,sources.length,details.length);

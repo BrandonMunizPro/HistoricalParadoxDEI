@@ -3,6 +3,7 @@ shader_type spatial;
 // Keep terrain shadows on land; the campaign sea uses sky and sun lighting only.
 render_mode world_vertex_coords, cull_disabled, shadows_disabled;
 #include "res://shoreline.gdshaderinc"
+#include "res://ocean/coastal_contact.gdshaderinc"
 #include "res://political_map.gdshaderinc"
 uniform sampler2D strategic_land : filter_linear, repeat_disable;
 uniform sampler2D shore_mask : filter_linear, repeat_disable;
@@ -85,6 +86,7 @@ void vertex(){
   float shore=region?textureLod(regional_shore,rq,0.).r*63.75*(111.195/512.):1.;
   float edge=max(abs(original.x-patch_center.x),abs(original.y-patch_center.y))/patch_radius;
   float envelope=(1.-smoothstep(.05,.45,land))*smoothstep(.015,.3,shore)*(1.-smoothstep(.72,1.,edge));
+  envelope*=focus_coast_vertex_damping(original);
   for(int i=0;i<3;i++){if(i>=cascade_count)break;vec4 scale=cascade_scales[i];vec3 uv=vec3(original*1000.*scale.xy,float(i));displacement+=mix(textureLod(fft_previous_displacement,uv,0.).xyz,textureLod(fft_displacement,uv,0.).xyz,temporal_blend)*scale.z;}
   displacement=clamp(displacement*wave_intensity,vec3(-maximum_displacement_metres),vec3(maximum_displacement_metres))*envelope*.001;
   VERTEX+=displacement;
@@ -132,6 +134,11 @@ void fragment(){
  float d=mix(global_distance,regional_distance,atlas_weight);
  // Shore distance controls appearance only: it is not a bathymetric depth estimate.
  float shallow=exp(-d/max(.1,coastal_band_km));
+ if(focus_coast_weight(sea_position.xz)>.999){
+  float offshore=max(0.,-focus_coast_metres(sea_position.xz));
+  float beach=focus_coast_style(sea_position.xz).x;
+  shallow=mix(shallow,exp(-offshore/mix(12.,55.,beach)),1.-smoothstep(200.,450.,offshore));
+ }
 
  if(political_blend<1.){
  vec2 gradient=vec2(0.);float foam=0.,variance=0.;
@@ -177,6 +184,8 @@ void fragment(){
  // Retain shoreline colour and masks; broad variation grows offshore only.
  ALBEDO*=1.+blue_patch*strategic_color_strength*strategic*(1.-shallow);
  ALBEDO=mix(ALBEDO,vec3(.65,.70,.66),clamp(crest+swash,0.,.35));
+ float contact=campaign_coast_foam(sea_position.xz,water_time*animation_speed);
+ ALBEDO=mix(ALBEDO,vec3(.72,.78,.74),contact*.80);
  // IOR 1.33 corresponds to F0 about .02 in Godot's dielectric parameterization.
  SPECULAR=.35;METALLIC=0.;
  // Filtered second moments retain unresolved wave energy as roughness rather

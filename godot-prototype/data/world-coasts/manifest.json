@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "strideFloats": 12,
+  "chunkSize": 200000,
+  "chunks": [
+    {
+      "file": "segments-0.bin",
+      "start": 0,
+      "count": 200000
+    },
+    {
+      "file": "segments-1.bin",
+      "start": 200000,
+      "count": 200000
+    },
+    {
+      "file": "segments-2.bin",
+      "start": 400000,
+      "count": 200000
+    },
+    {
+      "file": "segments-3.bin",
+      "start": 600000,
+      "count": 200000
+    },
+    {
+      "file": "segments-4.bin",
+      "start": 800000,
+      "count": 200000
+    },
+    {
+      "file": "segments-5.bin",
+      "start": 1000000,
+      "count": 200000
+    },
+    {
+      "file": "segments-6.bin",
+      "start": 1200000,
+      "count": 200000
+    },
+    {
+      "file": "segments-7.bin",
+      "start": 1400000,
+      "count": 200000
+    },
+    {
+      "file": "segments-8.bin",
+      "start": 1600000,
+      "count": 200000
+    },
+    {
+      "file": "segments-9.bin",
+      "start": 1800000,
+      "count": 200000
+    },
+    {
+      "file": "segments-10.bin",
+      "start": 2000000,
+      "count": 200000
+    },
+    {
+      "file": "segments-11.bin",
+      "start": 2200000,
+      "count": 200000
+    },
+    {
+      "file": "segments-12.bin",
+      "start": 2400000,
+      "count": 200000
+    },
+    {
+      "file": "segments-13.bin",
+      "start": 2600000,
+      "count": 157887
+    }
+  ],
+  "segments": 2757887,
+  "runs": 39263,
+  "totalKm": 224223.54935353342,
+  "counts": {
+    "beach": 2151613,
+    "rock": 599618,
+    "bank": 6656
+  },
+  "cells": 291247,
+  "extent": [
+    -12,
+    12,
+    75,
+    62
+  ],
+  "source": "GSHHG 2.3.7 full-resolution L1 sea coasts; source DEM and existing river corridors guide illustrative shore suitability.",
+  "archiveSha256": "8dbbe7e071e77e9e75f2d639239099ebca8d5c16d6a07df8169729d49f15cf41",
+  "segmentsSha256": "3773ade2aba6eb5853efb802c57c948df5eb48df42701d4770b33fd169456ac7",
+  "notice": "No invented campaign-edge coasts. No lake or river polygons are relabeled as sea. Simplified within 18 metres before one corner-rounding pass. Beach/rock/bank classes are rendering proxies, not surveyed sediment or ancient coastline evidence."
+}

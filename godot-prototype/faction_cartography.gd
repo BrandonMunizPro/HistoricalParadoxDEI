@@ -1,4 +1,5 @@
 extends RefCounted
+signal control_changed
 ## Initial scenario control and render adapter, separate from geography,
 ## architectural culture and any future campaign simulation/ownership rules.
 var world
@@ -46,17 +47,22 @@ func _init(owner,adapter):
 	while size<data.territories.size()+2:size*=2
 	palette_image=Image.create(size,1,false,Image.FORMAT_RGBA8)
 	palette_image.set_pixel(1,0,Color(.45,.43,.45,.7))
-	for i in data.territories.size():
-		var territory=data.territories[i];assert(by_id.has(territory.initialController));assert(not territory_indices.has(territory.id))
-		control[territory.id]=territory.initialController;territory_indices[territory.id]=i+2
-		write_palette(territory)
 	regions=load("res://geographic_regions.gd").new()
 	assert(regions.configure(world.read_json("data/geographic-regions/definitions.json"),world.read_json("data/geographic-regions/initial-owners.json"),data.factions,world.sites))
+	for i in data.territories.size():
+		var territory=data.territories[i];assert(territory.initialController=="" or by_id.has(territory.initialController));assert(not territory_indices.has(territory.id))
+		var region_id=regions.legacy_ids[territory.id]
+		assert(regions.definitions[region_id].rasterIndex==i+2)
+		assert(regions.owners[region_id]==territory.initialController,"Starting ownership sources disagree: "+territory.id)
+		control[territory.id]=regions.owners[region_id];territory_indices[territory.id]=i+2
+		write_palette(territory)
 	owner_image=Image.create(size,1,false,Image.FORMAT_RGBA8)
 	for territory in data.territories:write_owner_identity(territory)
 	owner_texture=ImageTexture.create_from_image(owner_image)
 	palette=ImageTexture.create_from_image(palette_image)
-	var image=Image.load_from_file("res://data/factions/territory-ids.png")
+	var id_path="res://data/factions/territory-ids.png"
+	if not OS.get_cmdline_user_args().has("--border-baseline") and FileAccess.file_exists("res://data/world-border-review/territory-ids.png"):id_path="res://data/world-border-review/territory-ids.png"
+	var image=Image.load_from_file(id_path)
 	ids=ImageTexture.create_from_image(image)
 	assert(political.set_cartography_layers(palette,ids,Rect2(-12.,12.,87.,50.)))
 	RenderingServer.global_shader_parameter_set("political_palette",palette)
@@ -65,13 +71,14 @@ func _init(owner,adapter):
 	make_overlay()
 func write_palette(territory):
 	var color=Color(by_id[control[territory.id]].color) if control[territory.id]!="" else Color(.30,.30,.30)
-	color.a=1.
+	color.a=1. if control[territory.id]!="" else 0.
 	palette_image.set_pixel(territory_indices[territory.id],0,color)
 func write_owner_identity(territory):
 	var owner=control[territory.id]
 	var index=by_id[owner].renderIndex+2 if owner!="" else 0
 	owner_image.set_pixel(territory_indices[territory.id],0,Color(float(index&255)/255.,float(index>>8)/255.,0,1))
 func set_region_owner(region_id:String,faction_id:String)->bool:
+	var previous=regions.owners.get(region_id) if regions!=null else null
 	if regions==null or not regions.set_owner(region_id,faction_id):return false
 	var definition=regions.definitions[region_id]
 	control[definition.legacyTerritoryId]=faction_id
@@ -79,8 +86,10 @@ func set_region_owner(region_id:String,faction_id:String)->bool:
 	write_palette(territory);write_owner_identity(territory)
 	palette.update(palette_image);owner_texture.update(owner_image)
 	if overlay!=null:overlay.refresh_anchors()
+	if previous!=faction_id:control_changed.emit()
 	return true
 func restore_region_state(state)->bool:
+	var previous=regions.owners.duplicate() if regions!=null else {}
 	if regions==null or not regions.restore_state(state):return false
 	for id in regions.definitions:
 		var definition=regions.definitions[id]
@@ -89,6 +98,7 @@ func restore_region_state(state)->bool:
 		write_palette(territory);write_owner_identity(territory)
 	palette.update(palette_image);owner_texture.update(owner_image)
 	if overlay!=null:overlay.refresh_anchors()
+	if previous!=regions.owners:control_changed.emit()
 	return true
 func set_faction_color(id:String,color:Color)->bool:
 	if not by_id.has(id):return false
@@ -105,6 +115,7 @@ func set_region_controller(territory_id:String,faction_id:String)->bool:
 	return set_region_owner(regions.legacy_ids[territory_id],faction_id)
 func label_for(id):
 	var faction=by_id[id]
+	if faction.get("startPresence","") in ["pending_arrival","background"]:return null
 	if faction.status=="presence_only":return Vector2(faction.label[0],faction.label[1])
 	var result=null;var best=INF;var preferred=Vector2(faction.label[0],faction.label[1])
 	for territory in data.territories:
@@ -114,13 +125,16 @@ func label_for(id):
 	return result
 func focus_faction(id):
 	var faction=by_id[id];selected=id
-	world.goal_focus=Vector2(faction.label[0],faction.label[1]);world.goal_distance=clamp(faction.viewDistanceKm,180.,5000.)
+	if not faction.get("startPresence","") in ["pending_arrival","background"]:
+		world.goal_focus=Vector2(faction.label[0],faction.label[1]);world.goal_distance=clamp(faction.viewDistanceKm,180.,5000.)
 	detail.text=faction.name+" · "+faction.status.replace("_"," ")+"\n"+faction.notes+"\n\nEmblem: "+faction.emblem.basis.replace("_"," ")+". "+faction.emblem.note
 func make_overlay():
 	layer=CanvasLayer.new();layer.name="FactionCartography";layer.layer=2;world.add_child(layer)
 	overlay=load("res://faction_overlay.gd").new();overlay.cartography=self;overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;layer.add_child(overlay)
 	var box=VBoxContainer.new();layer.add_child(box);box.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT);box.offset_left=-300;box.offset_right=-20;box.offset_top=20;box.offset_bottom=20;box.custom_minimum_size=Vector2(280,0)
-	var toggle=Button.new();toggle.text="Factions · "+str(data.factions.size());toggle.pressed.connect(func():panel.visible=not panel.visible);box.add_child(toggle)
+	var toggle=Button.new();toggle.text="Factions · "+str(data.factions.size());toggle.pressed.connect(func():
+		if world.campaign_ui!=null:world.campaign_ui.open_panel("Factions")
+		else:panel.visible=not panel.visible);box.add_child(toggle)
 	panel=PanelContainer.new();panel.visible=false;box.add_child(panel)
 	var column=VBoxContainer.new();panel.add_child(column)
 	var notice=Label.new();notice.text="278 BCE · scenario reconstruction";notice.add_theme_font_size_override("font_size",13);column.add_child(notice)

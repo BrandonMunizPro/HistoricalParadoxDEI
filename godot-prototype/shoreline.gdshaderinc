@@ -1,4 +1,5 @@
 // Shared inverse map projection: terrain and water must clip the same shoreline.
+#include "res://coastal_focus.gdshaderinc"
 vec2 coast_geographic(vec2 p){
  vec2 origin=vec2(.235619449,.72431164),en=vec2(p.x,-p.y);
  float rho=max(length(en),.000001),c=rho/6371.0088;

@@ -1,0 +1,1179 @@
+{
+  "version": 1,
+  "sources": {
+    "cliopatria": {
+      "url": "https://github.com/Seshat-Global-History-Databank/cliopatria",
+      "revision": "5f433377139a6eeaeacbdc894b70f8805b72c8b5",
+      "license": "CC-BY-4.0",
+      "citation": "Bennett et al. (2025), Cliopatria, Scientific Data 12:247, DOI 10.1038/s41597-025-04516-9. Dated -278 inclusive subset; selected components/relabeling noted.",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Bennett et al.: Cliopatria, historical political boundaries dataset"
+    },
+    "dei-factions": {
+      "url": "https://divideetimperamod.com/factions/",
+      "role": "Reference roster/regional associations only; no copied artwork, game geometry or code."
+    },
+    "rome2-factions": {
+      "url": "https://wiki.totalwar.com/w/Factions",
+      "role": "Official faction families and presentation reference; 272 BCE is not our date."
+    },
+    "attalus-278": {
+      "url": "https://www.attalus.org/bc3/year278.html",
+      "role": "278 BCE chronology with ancient source references.",
+      "title": "Attalus: 278 BCE chronology and ancient references"
+    },
+    "oxford-galatia": {
+      "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548936586",
+      "role": "278 BCE crossing and later territorial settlement; guards against anachronistic fixed Galatia.",
+      "title": "Oxford Classical Dictionary: Galatia"
+    },
+    "imperator-reference": {
+      "url": "https://imperator.paradoxwikis.com/Countries",
+      "role": "Faction granularity/presentation reference; 304 BCE is not copied as 278 BCE."
+    },
+    "numidia": {
+      "url": "https://www.worldhistory.org/article/1196/the-masaesyli-and-massylii-of-numidia/",
+      "role": "Numidian regional identities; exact 278 extent remains a scenario abstraction."
+    },
+    "iranica-bactria": {
+      "url": "https://www.iranicaonline.org/articles/bactria/bactria-i-pre-islamic-period/",
+      "role": "Bactria/Parthia secession is later than this scenario; no independent kingdoms invented.",
+      "title": "Encyclopaedia Iranica: Bactria in the Pre-Islamic Period"
+    },
+    "northern-italy-audit": {
+      "role": "Provisional correction; see docs/northern-italy-audit/REPORT.md",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/2%2A.html"
+    },
+    "terrain-border-review": {
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "role": "Physical terrain and existing GSHHG WDBII river corridors guide bounded provisional-border drawing. Later ancient associations inform only broad placement; no claim of surveyed or confirmed 278 BCE borders."
+    },
+    "polybius-1": {
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/1%2A.html",
+      "role": "Later ancient testimony, 1.7-8: Mamertines, Messana and the Campanian garrison at Rhegion; not a contemporary border survey.",
+      "title": "Polybius, Histories, Book I"
+    },
+    "polybius-2": {
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/2%2A.html",
+      "role": "Later ancient testimony, 2.41: re-formation of the Achaean League and subsequent accession of Aegium.",
+      "title": "Polybius, Histories, Book II"
+    },
+    "spring-sicily": {
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/22%2A.html",
+      "role": "Later ancient fragments, 22.7-10: changing Sicilian regimes and Pyrrhus' intervention. Akragas-Syracuse is the explicitly approved gameplay aggregation.",
+      "title": "Diodorus Siculus, Library of History, Book XXII fragments"
+    },
+    "athens-kallias": {
+      "url": "https://www.atticinscriptions.com/inscription/IGII31/911",
+      "role": "Inscription of 270/269 recalling earlier events. Civic Athens and Macedonian military positions are distinct; exact Piraeus chronology is qualified.",
+      "title": "Athenian decree honouring Kallias of Sphettos, IG II? 1, 911"
+    },
+    "memnon": {
+      "url": "https://www.attalus.org/translate/memnon1.html",
+      "role": "Later ancient account preserved in an epitome: distinct Bosporus communities, Bithynian politics and Galatian movements.",
+      "title": "Memnon, History of Heraclea: surviving epitome"
+    },
+    "spring-convention": {
+      "url": "https://www.attalus.org/bc3/year278.html",
+      "role": "Modern concordance to ancient sources. Spring pre-expedition timing is an approved scenario convention, not a claim of an exact day."
+    },
+    "iranica-colchis": {
+      "url": "https://www.iranicaonline.org/articles/colchis/",
+      "role": "Modern scholarly regional geography; distinguish western Colchis from eastern Iberia.",
+      "title": "Encyclopaedia Iranica: Colchis"
+    },
+    "iranica-yuezhi": {
+      "url": "https://www.iranicaonline.org/articles/khalchayan/",
+      "role": "Modern scholarship places the migration into Bactria in the second century BCE. Existing western starting ownership is withdrawn, not the faction identity.",
+      "title": "Encyclopaedia Iranica: Khalchayan and the later Yuezhi setting"
+    },
+    "strabo-gaul": {
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/4B%2A.html",
+      "role": "Later testimony for regional associations. Transfers in Gaul are bounded gameplay reconstructions, not verified 278 BCE frontiers."
+    },
+    "samarobriva": {
+      "url": "https://chre.ashmus.ox.ac.uk/admin/ancientplace/303",
+      "role": "Modern scholarly gazetteer: Samarobriva Ambianorum. The existing Belgae faction is the approved broader regional approximation.",
+      "title": "Oxford Coin Hoards of the Roman Empire: Samarobriva place record"
+    },
+    "livy-neapolis": {
+      "url": "https://files.romanroadsstatic.com/materials/romans/historians/Livy_Early_History_Rome_1-0.pdf",
+      "role": "Later ancient testimony, Livy 8.26.6-7: Neapolis' treaty relationship. Roman colour represents an allied sphere, not uniform direct administration.",
+      "title": "Livy, History of Rome 8.26?27: Neapolis and the Roman treaty"
+    },
+    "strabo-3B": {
+      "title": "Strabo, Geography 3B",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/3B%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-3C": {
+      "title": "Strabo, Geography 3C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/3C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-3D": {
+      "title": "Strabo, Geography 3D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/3D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-4A": {
+      "title": "Strabo, Geography 4A",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/4A%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-4B": {
+      "title": "Strabo, Geography 4B",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/4B%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-4C": {
+      "title": "Strabo, Geography 4C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/4C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-4D": {
+      "title": "Strabo, Geography 4D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/4D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-5A": {
+      "title": "Strabo, Geography 5A",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/5A%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-5B": {
+      "title": "Strabo, Geography 5B",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/5B%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-5D": {
+      "title": "Strabo, Geography 5D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/5D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-6A": {
+      "title": "Strabo, Geography 6A",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/6A%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-6C": {
+      "title": "Strabo, Geography 6C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/6C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-7C": {
+      "title": "Strabo, Geography 7C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/7C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-7D": {
+      "title": "Strabo, Geography 7D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/7D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-7E": {
+      "title": "Strabo, Geography 7E",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/7E%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-8E": {
+      "title": "Strabo, Geography 8E",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/8E%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-10D": {
+      "title": "Strabo, Geography 10D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/10D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-11D": {
+      "title": "Strabo, Geography 11D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/11D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-11H": {
+      "title": "Strabo, Geography 11H",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/11H%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-11M": {
+      "title": "Strabo, Geography 11M",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/11M%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-11N": {
+      "title": "Strabo, Geography 11N",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/11N%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-12C": {
+      "title": "Strabo, Geography 12C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/12C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-13D": {
+      "title": "Strabo, Geography 13D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/13D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-16C": {
+      "title": "Strabo, Geography 16C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/16C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-16D": {
+      "title": "Strabo, Geography 16D",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/16D%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-17B": {
+      "title": "Strabo, Geography 17B",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17B%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "strabo-17C": {
+      "title": "Strabo, Geography 17C",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17C%2A.html",
+      "evidence": "Later ancient testimony. Regional associations do not establish 278 BCE borders or continuous political institutions."
+    },
+    "ptolemy-britain": {
+      "title": "Ptolemy, Geography 2.2",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Gazetteer/Periods/Roman/_Texts/Ptolemy/2/2%2A.html",
+      "evidence": "Second-century CE naming evidence, not a 278 BCE tribal census. Stevenson translation has known defects; used only for broad regional names."
+    },
+    "tacitus-germania": {
+      "title": "Tacitus, Germania",
+      "url": "https://adfonteslibrary.org/work-tacitus-germania",
+      "evidence": "Later Roman ethnography, c. 98 CE; not contemporary evidence of third-century BCE states."
+    },
+    "irish-archaeology": {
+      "title": "Heritage Ireland: Mesolithic–Iron Age",
+      "url": "https://heritageireland.ie/articles/mesolithic-iron-age-8000bc-400ad/",
+      "evidence": "Modern archaeological interpretation, Irish Office of Public Works. Does not establish an island-wide state."
+    },
+    "iranica-massagetae": {
+      "title": "Rüdiger Schmitt, Massagetae, Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/massagetae/",
+      "evidence": "Modern scholarship; ancient localization and political aggregation remain disputed."
+    },
+    "dadan-lihyan": {
+      "title": "French Ministry of Culture: Lihyanite / Dadanite",
+      "url": "https://archeologie.culture.gouv.fr/proche-orient/en/glossaire/lihyanite-dadanite",
+      "evidence": "Archaeological regional context around Dadan; precise dynastic chronology remains qualified."
+    }
+  },
+  "records": {
+    "rome": {
+      "sourceKeys": [
+        "livy-neapolis",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-rome-278bce.md"
+    },
+    "carthage": {
+      "sourceKeys": [
+        "polybius-1",
+        "spring-sicily"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-carthage-278bce.md"
+    },
+    "epirus": {
+      "sourceKeys": [
+        "spring-sicily",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-epirus-278bce.md"
+    },
+    "macedonian-claimants": {
+      "sourceKeys": [
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-macedon-278bce.md"
+    },
+    "antigonid-holdings": {
+      "sourceKeys": [
+        "athens-kallias",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "seleucids": {
+      "sourceKeys": [
+        "iranica-bactria",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-seleucid-278bce.md"
+    },
+    "ptolemaic-egypt": {
+      "sourceKeys": [
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-ptolemaic-egypt-278bce.md"
+    },
+    "maurya": {
+      "sourceKeys": [
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context",
+      "scopeNote": "Bindusara chronology is reconstructed; see the existing Maurya research sheet.",
+      "researchFile": "docs/research/r16-maurya-278bce.md"
+    },
+    "syracuse": {
+      "sourceKeys": [
+        "spring-sicily"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-syracuse-278bce.md"
+    },
+    "aetolian-league": {
+      "sourceKeys": [
+        "attalus-278",
+        "polybius-2"
+      ],
+      "evidenceScope": "opening-context",
+      "researchFile": "docs/research/r16-aetolian-league-278bce.md"
+    },
+    "achaean-league": {
+      "sourceKeys": [
+        "polybius-2"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "pergamon": {
+      "sourceKeys": [
+        "strabo-13D"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "mamertines": {
+      "sourceKeys": [
+        "polybius-1",
+        "spring-sicily"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "rhegion": {
+      "sourceKeys": [
+        "polybius-1",
+        "spring-sicily"
+      ],
+      "evidenceScope": "opening-context",
+      "scopeNote": "The exact seasonal timing of the garrison seizure remains unresolved."
+    },
+    "tarentum": {
+      "sourceKeys": [
+        "attalus-278",
+        "strabo-6A"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "croton": {
+      "sourceKeys": [
+        "strabo-6A"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "athens": {
+      "sourceKeys": [
+        "athens-kallias"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "sparta": {
+      "sourceKeys": [
+        "strabo-8E"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "messene": {
+      "sourceKeys": [
+        "strabo-8E"
+      ],
+      "evidenceScope": "regional-context"
+    },
+    "knossos": {
+      "sourceKeys": [
+        "strabo-10D"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "gortyn": {
+      "sourceKeys": [
+        "strabo-10D"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "massalia": {
+      "sourceKeys": [
+        "strabo-4A"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "rhodes": {
+      "sourceKeys": [
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-context",
+      "scopeNote": "See the existing Anatolian identity research for Rhodian autonomy and alliance evidence."
+    },
+    "chalcedon": {
+      "sourceKeys": [
+        "memnon"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "byzantion": {
+      "sourceKeys": [
+        "memnon"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "heraclea-pontica": {
+      "sourceKeys": [
+        "memnon"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "chersonesos": {
+      "sourceKeys": [
+        "strabo-7D"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "bosporus": {
+      "sourceKeys": [
+        "strabo-7D",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "bithynia": {
+      "sourceKeys": [
+        "memnon",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "pontus": {
+      "sourceKeys": [
+        "strabo-12C",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "paphlagonia": {
+      "sourceKeys": [
+        "strabo-12C",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "kush": {
+      "sourceKeys": [
+        "strabo-17B",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "atropatene": {
+      "sourceKeys": [
+        "strabo-11M"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "armenia": {
+      "sourceKeys": [
+        "strabo-11N",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "colchis": {
+      "sourceKeys": [
+        "iranica-colchis"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "kartli": {
+      "sourceKeys": [
+        "iranica-colchis"
+      ],
+      "evidenceScope": "regional-context",
+      "scopeNote": "Early dynastic chronology and precise political organization remain uncertain."
+    },
+    "caucasian-albanian-polities": {
+      "sourceKeys": [
+        "strabo-11D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "Later descriptions do not establish a unified Albanian monarchy at this opening."
+    },
+    "yuezhi": {
+      "sourceKeys": [
+        "iranica-yuezhi"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "tectosages": {
+      "sourceKeys": [
+        "oxford-galatia",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-convention",
+      "scopeNote": "The opening convention is not a claim of a precisely documented seasonal crossing date."
+    },
+    "trocmi": {
+      "sourceKeys": [
+        "oxford-galatia",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-convention",
+      "scopeNote": "The opening convention is not a claim of a precisely documented seasonal crossing date."
+    },
+    "tolistobogii": {
+      "sourceKeys": [
+        "oxford-galatia",
+        "attalus-278"
+      ],
+      "evidenceScope": "opening-convention",
+      "scopeNote": "The opening convention is not a claim of a precisely documented seasonal crossing date."
+    },
+    "hibernian-polities": {
+      "sourceKeys": [
+        "irish-archaeology"
+      ],
+      "evidenceScope": "archaeological-context"
+    },
+    "lusitani": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "gallaeci": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "astures": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "cantabri": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "vaccaei": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "vettones": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "carpetani": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "oretani": {
+      "sourceKeys": [
+        "strabo-3C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "vascones": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "arevaci": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "celtiberians": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "contestani": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "edetani": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "ilergetes": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "indigetes": {
+      "sourceKeys": [
+        "strabo-3D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "turdetani": {
+      "sourceKeys": [
+        "strabo-3B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "bastetani": {
+      "sourceKeys": [
+        "strabo-3B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "arverni": {
+      "sourceKeys": [
+        "strabo-4A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "volcae": {
+      "sourceKeys": [
+        "strabo-4A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "allobroges": {
+      "sourceKeys": [
+        "strabo-4A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "bituriges": {
+      "sourceKeys": [
+        "strabo-4B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "pictones": {
+      "sourceKeys": [
+        "strabo-4B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "santones": {
+      "sourceKeys": [
+        "strabo-4B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "aquitani": {
+      "sourceKeys": [
+        "strabo-4B"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "aedui": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "carnutes": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "senones-gaul": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "parisii": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "remi": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "nervii": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "belgae": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "helvetii": {
+      "sourceKeys": [
+        "strabo-4C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "armorican-veneti": {
+      "sourceKeys": [
+        "strabo-4D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "aulerci": {
+      "sourceKeys": [
+        "strabo-4D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "dumnonii": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "durotriges": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "catuvellauni": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "iceni": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "dobunni": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "silures": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "ordovices": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "brigantes": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "caledonian-polities": {
+      "sourceKeys": [
+        "ptolemy-britain"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "frisii": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "chauci": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "cherusci": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "chatti": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "suebi": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "lugii": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "cimbri": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "southern-scandinavian-polities": {
+      "sourceKeys": [
+        "tacitus-germania"
+      ],
+      "evidenceScope": "regional-reconstruction",
+      "scopeNote": "Later Roman northern ethnography does not identify a precise 278 BCE political roster."
+    },
+    "boii": {
+      "sourceKeys": [
+        "strabo-5A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "insubres": {
+      "sourceKeys": [
+        "strabo-5A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "cenomani": {
+      "sourceKeys": [
+        "strabo-5A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "veneti-italy": {
+      "sourceKeys": [
+        "strabo-5A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "etruscan-polities": {
+      "sourceKeys": [
+        "strabo-5B",
+        "cliopatria"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "ligurian-polities": {
+      "sourceKeys": [
+        "strabo-5B"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "samnites": {
+      "sourceKeys": [
+        "strabo-5D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "lucanians": {
+      "sourceKeys": [
+        "strabo-6A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "bruttians": {
+      "sourceKeys": [
+        "strabo-6A"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "messapians": {
+      "sourceKeys": [
+        "strabo-6C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "daunians": {
+      "sourceKeys": [
+        "strabo-6C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "ardiaeans": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "taulantii": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "dardani": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "liburni": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "delmatae": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "odrysian-polities": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "scordisci": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "taurisci": {
+      "sourceKeys": [
+        "strabo-7E"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "getae": {
+      "sourceKeys": [
+        "strabo-7C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "dacian-polities": {
+      "sourceKeys": [
+        "strabo-7C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "mauri": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "masaesyli": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "massylii": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "gaetuli": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "garamantes": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "nasamones": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "marmaridae": {
+      "sourceKeys": [
+        "strabo-17C"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "main": {
+      "sourceKeys": [
+        "strabo-16D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "saba": {
+      "sourceKeys": [
+        "strabo-16D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "hadramaut": {
+      "sourceKeys": [
+        "strabo-16D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "qataban": {
+      "sourceKeys": [
+        "strabo-16D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "nabataea": {
+      "sourceKeys": [
+        "strabo-16D"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "lihyan": {
+      "sourceKeys": [
+        "dadan-lihyan"
+      ],
+      "evidenceScope": "archaeological-context"
+    },
+    "gerrha": {
+      "sourceKeys": [
+        "strabo-16C"
+      ],
+      "evidenceScope": "regional-context"
+    },
+    "scythian-polities": {
+      "sourceKeys": [
+        "strabo-7D"
+      ],
+      "evidenceScope": "opening-context"
+    },
+    "dahae": {
+      "sourceKeys": [
+        "strabo-11H"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "saka": {
+      "sourceKeys": [
+        "strabo-11H"
+      ],
+      "evidenceScope": "later-regional-association",
+      "scopeNote": "The name and regional association are recorded in later sources. This opening represents earlier local communities, without assuming the later political structure."
+    },
+    "massagetae": {
+      "sourceKeys": [
+        "iranica-massagetae"
+      ],
+      "evidenceScope": "regional-context"
+    }
+  }
+}

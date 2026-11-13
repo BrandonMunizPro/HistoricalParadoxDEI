@@ -13,6 +13,9 @@ export interface ScenarioFaction {
   readonly id: string;
   readonly name: string;
   readonly culture: string;
+  /** null/absent means undecided; independent of AI control and starting land. */
+  readonly playerSelectable?: boolean | null;
+  readonly startPresence?: 'pending_arrival' | 'background';
   readonly color: string;
   readonly label: GeographicPoint;
   readonly status: FactionStatus;
@@ -23,6 +26,8 @@ export interface ScenarioFaction {
 export interface ScenarioTerritory {
   readonly id: string;
   readonly initialController: string;
+  /** A retained, withdrawn envelope is inert rather than a new political entity. */
+  readonly active?: boolean;
   readonly geometry: TerritoryGeometry;
   readonly confidence: 'source_reconstruction' | 'scenario_abstraction';
   readonly sources: readonly string[];
@@ -63,6 +68,8 @@ export function validateFactionScenario(value: unknown): asserts value is Factio
     requireValue(object(faction) && typeof faction['id'] === 'string' && /^[a-z0-9-]+$/.test(faction['id']), 'Invalid faction source key');
     requireValue(!factionIds.has(faction['id']), 'Duplicate faction');factionIds.add(faction['id']);
     requireValue(typeof faction['name'] === 'string' && faction['name'].length > 0 && typeof faction['culture'] === 'string' && cultureIds.has(faction['culture']), 'Invalid name/culture');
+    requireValue(faction['playerSelectable'] == null || typeof faction['playerSelectable'] === 'boolean', 'Invalid player-selectable status');
+    requireValue(faction['startPresence'] === undefined || ['pending_arrival','background'].includes(faction['startPresence'] as string), 'Invalid starting presence');
     requireValue(typeof faction['color'] === 'string' && /^#[0-9a-f]{6}$/i.test(faction['color']), 'Invalid faction color');
     requireValue(point(faction['label']), 'Invalid label coordinate');
     requireValue(['reconstruction', 'provisional', 'presence_only'].includes(faction['status'] as string), 'Invalid evidence status');
@@ -71,7 +78,7 @@ export function validateFactionScenario(value: unknown): asserts value is Factio
   }
   for (const territory of territories) {
     requireValue(object(territory) && typeof territory['id'] === 'string' && !territoryIds.has(territory['id']), 'Invalid/duplicate territory');territoryIds.add(territory['id']);
-    requireValue(typeof territory['initialController'] === 'string' && factionIds.has(territory['initialController']), 'Unknown territory controller');
+    requireValue(typeof territory['initialController'] === 'string' && (factionIds.has(territory['initialController']) || (territory['initialController'] === '' && territory['active'] === false)), 'Unknown territory controller');
     requireValue(['source_reconstruction', 'scenario_abstraction'].includes(territory['confidence'] as string), 'Missing territory confidence');checkSources(territory['sources']);
     const geometry = territory['geometry'];requireValue(object(geometry) && Array.isArray(geometry['coordinates']), 'Missing geographic geometry');
     requireValue(geometry['type'] === 'Polygon' || geometry['type'] === 'MultiPolygon', 'Only polygon territory geometry is allowed');
@@ -84,7 +91,7 @@ export function validateFactionScenario(value: unknown): asserts value is Factio
       }
     }
     const owner = factions.find((f: unknown) => object(f) && f['id'] === territory['initialController']) as Record<string, unknown>;
-    requireValue(owner['status'] !== 'presence_only', 'A migrating/presence-only faction cannot own settled territory');
+    requireValue(!owner || (owner['status'] !== 'presence_only' && owner['startPresence'] !== 'pending_arrival' && owner['startPresence'] !== 'background'), 'A migrating/background faction cannot own settled territory');
   }
 }
 /** Optional bridge to the existing canonical map read model, not a simulation. */

@@ -45,19 +45,20 @@ static func sample_image(image:Image,uv:Vector2)->Color:
 	var p=uv.clamp(Vector2.ZERO,Vector2.ONE)*Vector2(image.get_width()-1,image.get_height()-1)
 	var x=floori(p.x);var y=floori(p.y);var nx=mini(x+1,image.get_width()-1);var ny=mini(y+1,image.get_height()-1)
 	return image.get_pixel(x,y).lerp(image.get_pixel(nx,y),p.x-x).lerp(image.get_pixel(x,ny).lerp(image.get_pixel(nx,ny),p.x-x),p.y-y)
-func climate(lon,lat):
+func climate(lon,lat,local_surfaces=null):
 	var uv=Vector2((lon+12)/87,(62-lat)/50)
 	var c=sample_image(world.global_ecology,uv)
 	c.a=sample_image(rivers,uv).r
-	if egypt_alluvium!=null and world.get("eastern_surfaces")!=null:
-		for surface in world.eastern_surfaces:
+	var surfaces=world.get("eastern_surfaces") if local_surfaces==null else local_surfaces
+	if egypt_alluvium!=null and surfaces!=null:
+		for surface in surfaces:
 			if surface.region!="egypt":continue
 			var w=surface.weight(Vector2(lon,lat))
 			if w<=.001:continue
 			var wet=sample_image(egypt_alluvium,Vector2((lon-27.)/8.,(33.-lat)/9.)).r
 			c.g=lerp(c.g,lerp(.08,.78,wet),w);c.b=lerp(c.b,lerp(.92,.28,wet),w);c.a=lerp(c.a,max(c.a*wet,wet*.45),w)
-	if world.get("eastern_surfaces")!=null:
-		for surface in world.eastern_surfaces:
+	if surfaces!=null:
+		for surface in surfaces:
 			if surface.get("oases_image")!=null:c=surface.climate_override(c,Vector2(lon,lat))
 	return c
 static func blend_weights(latitude:float,c:Color,latitude_rules:Array,dry_river_rules:Array)->Vector4:

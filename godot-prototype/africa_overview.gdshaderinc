@@ -56,7 +56,7 @@ void africa_overview_surface(vec2 geo,vec2 coast_geo,vec3 position,vec3 n,float 
  color*=1.-shore_edge*.18;color*=clamp(exp(aspect*relief_contrast),.65,1.3);
  vec2 sz=vec2(textureSize(strategic_relief,0));vec3 coarse=normalize(texture(strategic_relief,(uv*(sz-1.)+.5)/sz).rgb*2.-1.);
  vec3 political_normal=normalize(mix(ground_normal,coarse,.75));
- float fill=political_blend*mix(1.,.24,max(reference_rollout_scope(geo),africa_raw_union(geo)));
+ float fill=political_blend*.24;
  vec3 political=political_land_color(coast_geo,p)*clamp(exp((dot(political_normal,light_direction)-light_direction.y)*.7),.82,1.12);
  color=mix(color,political,fill);normal_out=normalize(mix(n,political_normal,fill));
 }

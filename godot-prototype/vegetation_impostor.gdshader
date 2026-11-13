@@ -23,7 +23,9 @@ void vertex(){
  vec2 quad=vec2(UV.x-.5,.5-UV.y)*asset_width*tree_scale;
  vec3 world_vertex=world_center+(INV_VIEW_MATRIX[0].xyz*quad.x*scale_x+INV_VIEW_MATRIX[1].xyz*quad.y*scale_y)*fade;
  world_vertex.y+=(UV2.x*INSTANCE_CUSTOM.z+UV2.y*INSTANCE_CUSTOM.w)*scale_y;
- world_vertex.x+=sin(foliage_time*.8+world_center.x*17.)*.00008*UV.y;
+ // UV.y=1 is the rooted base. Wind only bends the upper canopy.
+ float flexibility=smoothstep(.2,.9,1.-UV.y);
+ world_vertex.x+=sin(foliage_time*.8+world_center.x*17.+world_center.z*13.)*.00012*flexibility;
  VERTEX=world_vertex;
  NORMAL=vec3(0.,1.,0.);
 }
@@ -35,9 +37,18 @@ void fragment(){
 	if(scenery_reveal<.999&&scenery_pixel_threshold(FRAGCOORD.xy)>scenery_reveal)discard;
  vec2 lo=floor(view_index),weight=fract(view_index);
  vec2 hi=vec2(mod(lo.x+1.,8.),min(lo.y+1.,2.));
- vec4 color=mix(mix(frame(lo,UV),frame(vec2(hi.x,lo.y),UV),weight.x),mix(frame(vec2(lo.x,hi.y),UV),frame(hi,UV),weight.x),weight.y);
+ // Regional groves are only a few pixels per crown: one directional sample
+ // keeps full stand density affordable. Close trees retain smooth four-way
+ // interpolation during orbit and pitch changes.
+ vec4 color;
+ if(stand||camera_distance>8.){
+  color=frame(vec2(mod(floor(view_index.x+.5),8.),clamp(floor(view_index.y+.5),0.,2.)),UV);
+ }else{
+  color=mix(mix(frame(lo,UV),frame(vec2(hi.x,lo.y),UV),weight.x),mix(frame(vec2(lo.x,hi.y),UV),frame(hi,UV),weight.x),weight.y);
+ }
  ALPHA=color.a;ALPHA_SCISSOR_THRESHOLD=.18;ALPHA_ANTIALIASING_EDGE=.10;ALPHA_TEXTURE_COORDINATE=UV;
- ALBEDO=color.rgb*vec3(.54,.58,.48);
+ float luminance=dot(color.rgb,vec3(.2126,.7152,.0722));
+ ALBEDO=mix(color.rgb,vec3(luminance),.18)*vec3(.52,.54,.44)*COLOR.rgb;
  NORMAL=normalize(mat3(VIEW_MATRIX)*vec3(0.,1.,0.));
- ROUGHNESS=.95;SPECULAR=.08;
+ ROUGHNESS=.95;SPECULAR=.08;BACKLIGHT=ALBEDO*.08;
 }

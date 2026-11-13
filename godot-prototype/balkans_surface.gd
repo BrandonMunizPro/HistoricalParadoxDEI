@@ -24,7 +24,9 @@ func _init(owner):
 	var bytes=FileAccess.get_file_as_bytes("res://data/balkans/source-metres.bin");heights=bytes.to_float32_array()
 	textures.balkans_source_metres=ImageTexture.create_from_image(Image.create_from_data(manifest.width,manifest.height,false,Image.FORMAT_RF,bytes))
 	for pair in [["balkans_source_normals","normals"],["balkans_land","land"],["balkans_ocean","ocean"],["balkans_shore","shore"],["reference_balkans_ids","territory-ids"]]:
-		var image=Image.load_from_file("res://data/balkans/"+pair[1]+".png")
+		var image_path="res://data/balkans/"+pair[1]+".png"
+		if pair[1]=="territory-ids" and not OS.get_cmdline_user_args().has("--border-baseline") and FileAccess.file_exists("res://data/world-border-review/balkans-ids.png"):image_path="res://data/world-border-review/balkans-ids.png"
+		var image=Image.load_from_file(image_path)
 		if pair[1]=="territory-ids":image.convert(Image.FORMAT_RG8)
 		elif pair[1]!="normals":image.convert(Image.FORMAT_L8)
 		else:image.generate_mipmaps()

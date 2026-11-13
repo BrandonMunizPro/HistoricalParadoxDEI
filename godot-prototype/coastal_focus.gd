@@ -1,0 +1,109 @@
+extends Node
+## A bounded beach/surf presentation pass on the production Pellaro coastline.
+var world
+var config
+var textures={}
+var images={}
+var materials=[]
+var beach:MeshInstance3D
+var surf:MeshInstance3D
+var active=false
+var built=false
+var stable=0
+func setup(owner):
+	world=owner;config=world.read_json("data/coastal-focus/pellaro.json")
+	for key in ["distance","coverage"]:
+		var bytes=FileAccess.get_file_as_bytes("res://data/coastal-focus/"+key+".bin")
+		images[key]=Image.create_from_data(int(config.size),int(config.size),false,Image.FORMAT_RF,bytes)
+		textures[key]=ImageTexture.create_from_image(images[key])
+	register_tree(world)
+	# Close-tile and overview variants may not have a visible node yet. Bind
+	# them now so a later LOD switch keeps the same shoreline as the backdrop.
+	bind(world.base_material)
+	if world.get("eastern_surfaces")!=null:
+		for surface in world.eastern_surfaces:
+			for mat in [surface.material,surface.detail_material,surface.overview_material]:
+				if mat!=null:bind(mat)
+	if world.get("anatolia_surface")!=null:
+		bind(world.anatolia_surface.material);bind(world.anatolia_surface.detail_material)
+	beach=MeshInstance3D.new();beach.name="PellaroBeach";beach.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var beach_material=ShaderMaterial.new();beach_material.shader=load("res://coastal_beach.gdshader");beach_material.set_shader_parameter("sand_texture",world.base_material.get_shader_parameter("quality_arid"));beach.material_override=beach_material
+	beach_material.set_shader_parameter("ground_texture",world.base_material.get_shader_parameter("quality_ground"))
+	surf=MeshInstance3D.new();surf.name="PellaroBreakingSurf";surf.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var surf_material=ShaderMaterial.new();surf_material.shader=load("res://coastal_surf.gdshader");surf.material_override=surf_material
+	world.add_child(beach);world.add_child(surf);bind(beach_material);bind(surf_material)
+func register_tree(node):
+	if node is MeshInstance3D and node.material_override is ShaderMaterial:bind(node.material_override)
+	for child in node.get_children():register_tree(child)
+func bind(mat):
+	for entry in materials:
+		if entry.get_ref()==mat:return
+	if not mat.shader.code.contains("shoreline.gdshaderinc") and not mat.shader.code.contains("focus_coast_"):return
+	materials.append(weakref(mat))
+	var b=config.bounds
+	mat.set_shader_parameter("focus_coast_bounds",Vector4(b[0],b[1],b[2]-b[0],b[3]-b[1]))
+	for key in textures:mat.set_shader_parameter("focus_coast_"+key,textures[key])
+	mat.set_shader_parameter("focus_coast_enabled",active)
+func profile_height(point,d):
+	if d<=0.:return d*.08
+	var geo=world.unproject(Vector3(point.x,0,point.y))
+	return lerp(d*.055,world.elevation(geo.x,geo.y)+.00015,smoothstep(.025,.10,d))
+func profile_sample_height(sample):return profile_height(sample.point,sample.distance)
+func plant_clearance(_sample):return .035
+func coastal_sample(lon,lat):
+	var p=world.project(lon,lat);var b=config.bounds
+	if p.x<=b[0] or p.x>=b[2] or p.z<=b[1] or p.z>=b[3]:return null
+	var q=Vector2((p.x-b[0])/(b[2]-b[0]),(p.z-b[1])/(b[3]-b[1]));var rules=preload("res://environment_rules.gd")
+	if rules.sample_image(images.coverage,q).r<.999:return null
+	var d=rules.sample_image(images.distance,q).r
+	if abs(d)>.13:return null
+	return {"point":Vector2(p.x,p.z),"distance":d}
+func build_meshes():
+	var vertices=PackedVector3Array();var water_vertices=PackedVector3Array();var normals=PackedVector3Array();var uv=PackedVector2Array();var indices=PackedInt32Array()
+	var centers=[];var lands=[];var alongs=[]
+	for segment in config.segments:
+		var a=Vector2(segment.a[0],segment.a[1]);var b=Vector2(segment.b[0],segment.b[1]);var steps=maxi(1,ceili(segment.len/.008))
+		for step in steps:
+			var t=float(step)/steps;centers.append(a.lerp(b,t));lands.append(Vector2(segment.n[0],segment.n[1]));alongs.append(segment.along+segment.len*t)
+	var last=config.segments[-1];centers.append(Vector2(last.b[0],last.b[1]));lands.append(Vector2(last.n[0],last.n[1]));alongs.append(last.along+last.len)
+	var columns=57
+	for row in centers.size():
+		# Average adjacent normals to avoid cracks at source segment junctions.
+		var land=lands[row]
+		if row>0:land=(land+lands[row-1]).normalized()
+		for col in columns:
+			var d=lerp(-.18,.12,float(col)/(columns-1));var p=centers[row]+land*d;var h=profile_height(p,d)
+			vertices.append(Vector3(p.x,h,p.y));water_vertices.append(Vector3(p.x,max(0.,h),p.y));normals.append(Vector3.UP);uv.append(Vector2(alongs[row],d))
+	for row in centers.size()-1:
+		for col in columns-1:
+			var a=row*columns+col;indices.append_array(PackedInt32Array([a,a+1,a+columns,a+1,a+columns+1,a+columns]))
+	for row in centers.size():
+		for col in columns:
+			var left=maxi(0,col-1);var right=mini(columns-1,col+1)
+			var slope=(vertices[row*columns+right].y-vertices[row*columns+left].y)/(float(right-left)*.30/(columns-1))
+			var land=lands[row];normals[row*columns+col]=Vector3(-land.x*slope,1.,-land.y*slope).normalized()
+	var arrays=[];arrays.resize(Mesh.ARRAY_MAX);arrays[Mesh.ARRAY_VERTEX]=vertices;arrays[Mesh.ARRAY_NORMAL]=normals;arrays[Mesh.ARRAY_TEX_UV]=uv;arrays[Mesh.ARRAY_INDEX]=indices
+	var mesh=ArrayMesh.new();mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays);beach.mesh=mesh
+	arrays[Mesh.ARRAY_VERTEX]=water_vertices;var water_mesh=ArrayMesh.new();water_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays);surf.mesh=water_mesh
+	built=true;print("PELLARO_COAST_READY vertices=",vertices.size()," shoreline_km=",alongs[-1])
+func is_ready():
+	if world.distance>=12.:return true
+	var p=world.project(world.focus.x,world.focus.y);var b=config.bounds
+	return built or not (p.x>b[0] and p.x<b[2] and p.z>b[1] and p.z<b[3])
+func _process(_delta):
+	var p=world.project(world.focus.x,world.focus.y);var b=config.bounds
+	var inside=p.x>b[0] and p.x<b[2] and p.z>b[1] and p.z<b[3]
+	var prepare=world.distance<36. and inside
+	var wanted=world.distance<12. and inside
+	if prepare and not built:
+		stable=stable+1 if world.queue.is_empty() else 0
+		if stable>=2:build_meshes()
+	var next=wanted and built
+	if next!=active:
+		active=next
+		materials=materials.filter(func(entry):return entry.get_ref()!=null)
+		for entry in materials:entry.get_ref().set_shader_parameter("focus_coast_enabled",active)
+	beach.visible=active;surf.visible=active
+	if active:
+		beach.material_override.set_shader_parameter("water_time",world.water_time)
+		surf.material_override.set_shader_parameter("water_time",world.water_time)

@@ -2,9 +2,25 @@ import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import { validateFactionScenario, validateFactionPresentation, factionCanonicalId, factionReadModel } from '../src/presentation/faction-cartography.js';
 import type { FactionScenario } from '../src/presentation/faction-cartography.js';
-const read = (): unknown => JSON.parse(readFileSync('godot-prototype/data/factions/scenario-278.json', 'utf8'));
+const read = (): unknown => JSON.parse(readFileSync('godot-prototype/data/world-border-review/scenario-278.json', 'utf8'));
 function scenario(): FactionScenario { const data = read();validateFactionScenario(data);return data; }
 describe('278 BCE faction cartography', () => {
+  it('retains 132 ordinary factions, Mamertine Messana, and undecided playability', () => {
+    const data=scenario();expect(data.factions).toHaveLength(132);
+    expect(data.factions.every(f=>f.playerSelectable===null)).toBe(true);
+    expect(data.factions.find(f=>f.id==='mamertines')?.culture).toBe('campanian');
+    expect(data.territories.find(t=>t.id==='territory:mamertines')?.initialController).toBe('mamertines');
+    Object.assign(data.factions[0]!,{playerSelectable:true});Object.assign(data.factions[1]!,{playerSelectable:false});
+    validateFactionScenario(data);expect(factionReadModel(data)).toHaveLength(132);
+    Object.assign(data.factions[0]!,{playerSelectable:'AI-only'});
+    expect(()=>validateFactionScenario(data)).toThrow(RangeError);
+  });
+  it('keeps withdrawn envelopes inert and rejects ownership by pending arrivals', () => {
+    const data=scenario();const withdrawn=data.territories.find(t=>t.active===false)!;
+    expect(withdrawn.initialController).toBe('');
+    Object.assign(withdrawn,{active:true});expect(()=>validateFactionScenario(data)).toThrow(RangeError);
+    Object.assign(withdrawn,{initialController:'tectosages'});expect(()=>validateFactionScenario(data)).toThrow(RangeError);
+  });
   it('validates the full roster, culture references, evidence and polygon rings', () => {
     const data=scenario();expect(data.factions.length).toBeGreaterThan(100);expect(data.territories.length).toBeGreaterThan(100);
     for (const id of ['rome','carthage','massylii','masaesyli','ptolemaic-egypt','seleucids','arverni','epirus']) expect(data.factions.some(f=>f.id===id)).toBe(true);

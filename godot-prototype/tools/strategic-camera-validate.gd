@@ -14,8 +14,21 @@ func run():
 	for focus in [Vector2(20,38),Vector2(-3,40),Vector2(69,35.5),Vector2(31,28.8)]:
 		for yaw in [0.,90.,180.,270.]:
 			var cap=policy.maximum_at(world,focus,57.,yaw,16./9.)
-			assert(policy.supported(world,world.project(focus.x,focus.y),policy.footprint(policy.pitch_for(57.,cap),yaw,16./9.),cap))
+			assert(cap==2800.,"Panning or orbiting must not reduce the zoom limit")
 			frames.append({"focus":[focus.x,focus.y],"yaw":yaw,"maximumKm":cap})
+	# Traverse the production controller at several scales and screen shapes.
+	# Edge proximity must never overwrite the requested zoom distance.
+	for aspect in [4./3.,16./9.,21./9.]:
+		root.size=Vector2i(int(720*aspect),720)
+		for requested in [520.,1700.,2800.]:
+			world.goal_distance=requested;world.distance=requested
+			for location in [Vector2(29,37),Vector2(-9,40),Vector2(73,35.5),Vector2(29,37)]:
+				world.goal_focus=location
+				for heading in [0.,90.,180.,270.]:
+					world.yaw=heading
+					await process_frame
+					assert(is_equal_approx(world.goal_distance,requested),"Traversal changed requested zoom")
+					assert(is_equal_approx(world.distance,requested),"Traversal changed camera scale")
 	# Exercise the production controller rather than a separate camera rig.
 	world.jump("overview");world.focus=world.goal_focus;world.distance=2800.;world.goal_distance=2800.
 	world.pitch=89.
@@ -43,7 +56,8 @@ func run():
 	for site in world.sites:
 		world.select_site(site.key);assert(world.selected==site.key and world.goal_focus.distance_to(Vector2(site.lon,site.lat))<.00001)
 	var result={"passed":true,"presets":records,"supportedFrames":frames,"selectionChecks":world.sites.size(),"wheelAndOrbit":true,"maximumKm":2800.,"trajectoryFrames":240,"maximumZoomStepFraction":maximum_fraction,"maximumPitchStepDegrees":maximum_pitch_step}
-	FileAccess.open("res://evidence/strategic-camera-water/native.json",FileAccess.WRITE).store_string(JSON.stringify(result,"  "))
+	result["traversalChecks"]=144
+	FileAccess.open("res://evidence/strategic-camera-navigation.json",FileAccess.WRITE).store_string(JSON.stringify(result,"  "))
 	print("STRATEGIC_CAMERA_OK presets=",records.size()," edge_rotations=",frames.size()," sites=",world.sites.size());world.queue_free()
 	for i in 10:await process_frame
 	quit()

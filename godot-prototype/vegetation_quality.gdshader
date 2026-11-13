@@ -19,7 +19,8 @@ void vertex(){
  VERTEX.y+=VERTEX.x*INSTANCE_CUSTOM.z+VERTEX.z*INSTANCE_CUSTOM.w;
  vec2 anchor=MODEL_MATRIX[3].xz;
  float wind=sin(foliage_time*.8+anchor.x*17.+anchor.y*13.);
- float flexibility=smoothstep(.001,.024,height);
+ // Red vertex colours mask the wind, leaving the base rooted.
+ float flexibility=COLOR.r;
  VERTEX.x+=wind*flexibility*(.00006+(woody?0.:.00009)*sin(foliage_time*1.7+VERTEX.y*2500.));
 }
 void fragment(){
@@ -38,6 +39,7 @@ void fragment(){
   ALPHA_TEXTURE_COORDINATE=UV;
   // Real branch cutouts provide holes, fine silhouettes and crown self-shadow.
   ALBEDO=leaf.rgb*mix(.68,.94,smoothstep(.002,.020,height));
-  ROUGHNESS=.84;SPECULAR=.20;BACKLIGHT=ALBEDO*.30;
+  ROUGHNESS=.88;SPECULAR=.14;BACKLIGHT=ALBEDO*.30;
+  SSS_TRANSMITTANCE_COLOR=vec4(ALBEDO*.35,1.);
  }
 }
