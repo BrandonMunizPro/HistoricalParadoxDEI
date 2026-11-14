@@ -1,0 +1,507 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "failures": [],
+  "fullStartup": false,
+  "loading": {
+    "blockedMs": 26452,
+    "releases": [
+      {
+        "distance": 1100.0,
+        "focus": [
+          13.0,
+          42.0
+        ],
+        "ms": 26452
+      }
+    ],
+    "screens": 1,
+    "stageMs": {
+      "Preparing terrain": 1207,
+      "Settling terrain detail": 654,
+      "Warming rendered detail": 185
+    },
+    "visiblePendingAtRelease": 0
+  },
+  "method": "1280x720 native GPU. 60 process-frame wall intervals/view after 12 frames; includes scheduling and streaming, not GPU-only time. Isolated mode explicitly bypasses ordinary loading-screen preparation. Test states are synthetic. Missing art cannot pass visual quality acceptance.",
+  "mode": "legacy",
+  "passed": true,
+  "pipeline": {
+    "assetWaitMs": 0.0,
+    "attachMs": 0.0,
+    "baselines": 0,
+    "cacheHits": 0,
+    "cacheMisses": 0,
+    "cachedBytes": 0,
+    "development": false,
+    "entries": {},
+    "generationMs": 0.0,
+    "lodSwitches": 0,
+    "maxGenerationChunkMs": 0.0,
+    "missingAssets": 52,
+    "missingRoles": {},
+    "productionAssets": 0,
+    "productionReady": false,
+    "rebuilds": 0,
+    "registered": 0
+  },
+  "renderer": "forward_plus",
+  "startupMs": 34024,
+  "views": [
+    {
+      "case": "roma",
+      "distanceKm": 0.65,
+      "drawCalls": 285.0,
+      "frames": {
+        "averageFps": 34.2561756748038,
+        "maxMs": 380.32,
+        "meanMs": 29.1918166666667,
+        "onePercentLowFps": 2.62936474547749,
+        "over16_67ms": 22,
+        "over33_33ms": 15,
+        "p99Ms": 380.32,
+        "samples": 60
+      },
+      "screenshot": "roma-0.65.png",
+      "settlementRefreshMs": 2194,
+      "staticBytes": 2704554562,
+      "videoBytes": 5330403472
+    },
+    {
+      "case": "roma",
+      "distanceKm": 4.0,
+      "drawCalls": 358.0,
+      "frames": {
+        "averageFps": 44.3216242988873,
+        "maxMs": 75.856,
+        "meanMs": 22.56235,
+        "onePercentLowFps": 13.1828728116431,
+        "over16_67ms": 54,
+        "over33_33ms": 1,
+        "p99Ms": 75.856,
+        "samples": 60
+      },
+      "screenshot": "roma-4.0.png",
+      "settlementRefreshMs": 1956,
+      "staticBytes": 2708210612,
+      "videoBytes": 5336495440
+    },
+    {
+      "case": "roma",
+      "distanceKm": 35.0,
+      "drawCalls": 404.0,
+      "frames": {
+        "averageFps": 46.4948320994121,
+        "maxMs": 28.66,
+        "meanMs": 21.5077666666667,
+        "onePercentLowFps": 34.8918353105373,
+        "over16_67ms": 41,
+        "over33_33ms": 0,
+        "p99Ms": 28.66,
+        "samples": 60
+      },
+      "screenshot": "roma-35.0.png",
+      "settlementRefreshMs": 1947,
+      "staticBytes": 2709917300,
+      "videoBytes": 5337645712
+    },
+    {
+      "case": "roma",
+      "distanceKm": 500.0,
+      "drawCalls": 326.0,
+      "frames": {
+        "averageFps": 39.9132020898552,
+        "maxMs": 60.507,
+        "meanMs": 25.0543666666667,
+        "onePercentLowFps": 16.5270134034079,
+        "over16_67ms": 34,
+        "over33_33ms": 10,
+        "p99Ms": 60.507,
+        "samples": 60
+      },
+      "screenshot": "roma-500.0.png",
+      "settlementRefreshMs": 2157,
+      "staticBytes": 2704033538,
+      "videoBytes": 5354081200
+    },
+    {
+      "case": "ostia",
+      "distanceKm": 0.65,
+      "drawCalls": 290.0,
+      "frames": {
+        "averageFps": 46.750963849038,
+        "maxMs": 37.929,
+        "meanMs": 21.3899333333333,
+        "onePercentLowFps": 26.3650504890717,
+        "over16_67ms": 53,
+        "over33_33ms": 1,
+        "p99Ms": 37.929,
+        "samples": 60
+      },
+      "screenshot": "ostia-0.65.png",
+      "settlementRefreshMs": 1804,
+      "staticBytes": 2705537236,
+      "videoBytes": 5357870480
+    },
+    {
+      "case": "ostia",
+      "distanceKm": 4.0,
+      "drawCalls": 309.0,
+      "frames": {
+        "averageFps": 56.8796937597288,
+        "maxMs": 21.509,
+        "meanMs": 17.5809666666667,
+        "onePercentLowFps": 46.4921660700172,
+        "over16_67ms": 53,
+        "over33_33ms": 0,
+        "p99Ms": 21.509,
+        "samples": 60
+      },
+      "screenshot": "ostia-4.0.png",
+      "settlementRefreshMs": 1683,
+      "staticBytes": 2711809772,
+      "videoBytes": 5358096272
+    },
+    {
+      "case": "ostia",
+      "distanceKm": 35.0,
+      "drawCalls": 380.0,
+      "frames": {
+        "averageFps": 47.1653617583247,
+        "maxMs": 36.292,
+        "meanMs": 21.202,
+        "onePercentLowFps": 27.5542819354128,
+        "over16_67ms": 55,
+        "over33_33ms": 1,
+        "p99Ms": 36.292,
+        "samples": 60
+      },
+      "screenshot": "ostia-35.0.png",
+      "settlementRefreshMs": 1788,
+      "staticBytes": 2718858122,
+      "videoBytes": 5357921360
+    },
+    {
+      "case": "ostia",
+      "distanceKm": 500.0,
+      "drawCalls": 314.0,
+      "frames": {
+        "averageFps": 58.5932922399044,
+        "maxMs": 41.728,
+        "meanMs": 17.0668,
+        "onePercentLowFps": 23.9647239263804,
+        "over16_67ms": 34,
+        "over33_33ms": 1,
+        "p99Ms": 41.728,
+        "samples": 60
+      },
+      "screenshot": "ostia-500.0.png",
+      "settlementRefreshMs": 1416,
+      "staticBytes": 2704296166,
+      "videoBytes": 5372265280
+    },
+    {
+      "case": "capua",
+      "distanceKm": 0.65,
+      "drawCalls": 99.0,
+      "frames": {
+        "averageFps": 120.825236364369,
+        "maxMs": 10.01,
+        "meanMs": 8.27641666666667,
+        "onePercentLowFps": 99.9000999000999,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 10.01,
+        "samples": 60
+      },
+      "screenshot": "capua-0.65.png",
+      "settlementRefreshMs": 1022,
+      "staticBytes": 2704016678,
+      "videoBytes": 5357202720
+    },
+    {
+      "case": "capua",
+      "distanceKm": 4.0,
+      "drawCalls": 317.0,
+      "frames": {
+        "averageFps": 63.3566344955756,
+        "maxMs": 18.867,
+        "meanMs": 15.7836666666667,
+        "onePercentLowFps": 53.0025971272592,
+        "over16_67ms": 9,
+        "over33_33ms": 0,
+        "p99Ms": 18.867,
+        "samples": 60
+      },
+      "screenshot": "capua-4.0.png",
+      "settlementRefreshMs": 1418,
+      "staticBytes": 2706799044,
+      "videoBytes": 5357913616
+    },
+    {
+      "case": "capua",
+      "distanceKm": 35.0,
+      "drawCalls": 353.0,
+      "frames": {
+        "averageFps": 74.1284349263534,
+        "maxMs": 16.432,
+        "meanMs": 13.4901,
+        "onePercentLowFps": 60.856864654333,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 16.432,
+        "samples": 60
+      },
+      "screenshot": "capua-35.0.png",
+      "settlementRefreshMs": 1344,
+      "staticBytes": 2709030592,
+      "videoBytes": 5359281648
+    },
+    {
+      "case": "capua",
+      "distanceKm": 500.0,
+      "drawCalls": 328.0,
+      "frames": {
+        "averageFps": 66.936943168304,
+        "maxMs": 16.462,
+        "meanMs": 14.9394333333333,
+        "onePercentLowFps": 60.7459603936338,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 16.462,
+        "samples": 60
+      },
+      "screenshot": "capua-500.0.png",
+      "settlementRefreshMs": 1246,
+      "staticBytes": 2705296152,
+      "videoBytes": 5358562320
+    },
+    {
+      "case": "aricia",
+      "distanceKm": 0.65,
+      "drawCalls": 98.0,
+      "frames": {
+        "averageFps": 120.00528023233,
+        "maxMs": 8.391,
+        "meanMs": 8.33296666666667,
+        "onePercentLowFps": 119.175306876415,
+        "over16_67ms": 0,
+        "over33_33ms": 0,
+        "p99Ms": 8.391,
+        "samples": 60
+      },
+      "screenshot": "aricia-0.65.png",
+      "settlementRefreshMs": 998,
+      "staticBytes": 2704986680,
+      "videoBytes": 5358275024
+    },
+    {
+      "case": "aricia",
+      "distanceKm": 4.0,
+      "drawCalls": 311.0,
+      "frames": {
+        "averageFps": 56.6599524622999,
+        "maxMs": 22.487,
+        "meanMs": 17.64915,
+        "onePercentLowFps": 44.4701383021301,
+        "over16_67ms": 46,
+        "over33_33ms": 0,
+        "p99Ms": 22.487,
+        "samples": 60
+      },
+      "screenshot": "aricia-4.0.png",
+      "settlementRefreshMs": 1569,
+      "staticBytes": 2707397146,
+      "videoBytes": 5358845264
+    },
+    {
+      "case": "aricia",
+      "distanceKm": 35.0,
+      "drawCalls": 426.0,
+      "frames": {
+        "averageFps": 61.3112013521163,
+        "maxMs": 32.302,
+        "meanMs": 16.3102333333333,
+        "onePercentLowFps": 30.9578354281469,
+        "over16_67ms": 25,
+        "over33_33ms": 0,
+        "p99Ms": 32.302,
+        "samples": 60
+      },
+      "screenshot": "aricia-35.0.png",
+      "settlementRefreshMs": 1545,
+      "staticBytes": 2709139908,
+      "videoBytes": 5359258352
+    },
+    {
+      "case": "aricia",
+      "distanceKm": 500.0,
+      "drawCalls": 320.0,
+      "frames": {
+        "averageFps": 68.8644369127155,
+        "maxMs": 18.841,
+        "meanMs": 14.5212833333333,
+        "onePercentLowFps": 53.0757390796667,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 18.841,
+        "samples": 60
+      },
+      "screenshot": "aricia-500.0.png",
+      "settlementRefreshMs": 1215,
+      "staticBytes": 2705460324,
+      "videoBytes": 5358520400
+    },
+    {
+      "case": "minturnae",
+      "distanceKm": 0.65,
+      "drawCalls": 101.0,
+      "frames": {
+        "averageFps": 118.470311339978,
+        "maxMs": 19.001,
+        "meanMs": 8.44093333333333,
+        "onePercentLowFps": 52.6288090100521,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 19.001,
+        "samples": 60
+      },
+      "screenshot": "minturnae-0.65.png",
+      "settlementRefreshMs": 1011,
+      "staticBytes": 2705186988,
+      "videoBytes": 5361488768
+    },
+    {
+      "case": "minturnae",
+      "distanceKm": 4.0,
+      "drawCalls": 358.0,
+      "frames": {
+        "averageFps": 45.7471539551846,
+        "maxMs": 25.429,
+        "meanMs": 21.8592833333333,
+        "onePercentLowFps": 39.3251799126981,
+        "over16_67ms": 56,
+        "over33_33ms": 0,
+        "p99Ms": 25.429,
+        "samples": 60
+      },
+      "screenshot": "minturnae-4.0.png",
+      "settlementRefreshMs": 1842,
+      "staticBytes": 2712653456,
+      "videoBytes": 5362010304
+    },
+    {
+      "case": "minturnae",
+      "distanceKm": 35.0,
+      "drawCalls": 352.0,
+      "frames": {
+        "averageFps": 57.0425708706408,
+        "maxMs": 32.857,
+        "meanMs": 17.5307666666667,
+        "onePercentLowFps": 30.4349149344128,
+        "over16_67ms": 32,
+        "over33_33ms": 0,
+        "p99Ms": 32.857,
+        "samples": 60
+      },
+      "screenshot": "minturnae-35.0.png",
+      "settlementRefreshMs": 1621,
+      "staticBytes": 2708503078,
+      "videoBytes": 5371354208
+    },
+    {
+      "case": "minturnae",
+      "distanceKm": 500.0,
+      "drawCalls": 316.0,
+      "frames": {
+        "averageFps": 35.2027148333679,
+        "maxMs": 60.23,
+        "meanMs": 28.4069,
+        "onePercentLowFps": 16.6030217499585,
+        "over16_67ms": 55,
+        "over33_33ms": 4,
+        "p99Ms": 60.23,
+        "samples": 60
+      },
+      "screenshot": "minturnae-500.0.png",
+      "settlementRefreshMs": 2218,
+      "staticBytes": 2705975458,
+      "videoBytes": 5405227280
+    },
+    {
+      "case": "formiae",
+      "distanceKm": 0.65,
+      "drawCalls": 245.0,
+      "frames": {
+        "averageFps": 100.47306066061,
+        "maxMs": 24.122,
+        "meanMs": 9.95291666666667,
+        "onePercentLowFps": 41.4559323439184,
+        "over16_67ms": 1,
+        "over33_33ms": 0,
+        "p99Ms": 24.122,
+        "samples": 60
+      },
+      "screenshot": "formiae-0.65.png",
+      "settlementRefreshMs": 1074,
+      "staticBytes": 2707963744,
+      "videoBytes": 5405973040
+    },
+    {
+      "case": "formiae",
+      "distanceKm": 4.0,
+      "drawCalls": 312.0,
+      "frames": {
+        "averageFps": 45.9966437782256,
+        "maxMs": 26.507,
+        "meanMs": 21.7407166666667,
+        "onePercentLowFps": 37.7258837288263,
+        "over16_67ms": 54,
+        "over33_33ms": 0,
+        "p99Ms": 26.507,
+        "samples": 60
+      },
+      "screenshot": "formiae-4.0.png",
+      "settlementRefreshMs": 1951,
+      "staticBytes": 2714088772,
+      "videoBytes": 5406092784
+    },
+    {
+      "case": "formiae",
+      "distanceKm": 35.0,
+      "drawCalls": 359.0,
+      "frames": {
+        "averageFps": 52.1555452210308,
+        "maxMs": 24.927,
+        "meanMs": 19.1734166666667,
+        "onePercentLowFps": 40.1171420548,
+        "over16_67ms": 55,
+        "over33_33ms": 0,
+        "p99Ms": 24.927,
+        "samples": 60
+      },
+      "screenshot": "formiae-35.0.png",
+      "settlementRefreshMs": 1697,
+      "staticBytes": 2721103292,
+      "videoBytes": 5406252752
+    },
+    {
+      "case": "formiae",
+      "distanceKm": 500.0,
+      "drawCalls": 319.0,
+      "frames": {
+        "averageFps": 54.1884022368972,
+        "maxMs": 45.575,
+        "meanMs": 18.4541333333333,
+        "onePercentLowFps": 21.9418540866703,
+        "over16_67ms": 40,
+        "over33_33ms": 1,
+        "p99Ms": 45.575,
+        "samples": 60
+      },
+      "screenshot": "formiae-500.0.png",
+      "settlementRefreshMs": 1482,
+      "staticBytes": 2705985182,
+      "videoBytes": 5419770720
+    }
+  ]
+}
