@@ -1,0 +1,82 @@
+{
+  "arrivals": [
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "delta"
+    },
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "aegean"
+    },
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "fjord"
+    },
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "india"
+    },
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "arabia"
+    },
+    {
+      "baseline": true,
+      "detailActive": false,
+      "detailBusy": false,
+      "name": "pellaro"
+    }
+  ],
+  "checks": 70,
+  "coast": {
+    "bankSegments": 0,
+    "baseline": {
+      "chunks": 1253,
+      "instanceBytes": 220630960,
+      "instances": 2757887,
+      "preparationMs": 16133,
+      "segments": 2757887,
+      "textureBytes": 240995936
+    },
+    "beachSegments": 0,
+    "cacheEntries": 1,
+    "cacheEvictions": 0,
+    "cacheHits": 0,
+    "cacheMisses": 1,
+    "cancelled": 0,
+    "detailComputePrepared": true,
+    "gpuReadbacks": 0,
+    "maxVertices": 11205,
+    "patches": 1,
+    "preparationMs": [
+      241
+    ],
+    "released": false,
+    "requests": 1,
+    "rockSegments": 18,
+    "segments": 18,
+    "vertices": 11205
+  },
+  "failures": [],
+  "notice": "First completed draw after each teleport; no wait for destination terrain, vegetation, beach mesh or compute refinement. Screenshots require visual inspection; readiness assertions alone do not prove pixel correctness.",
+  "passed": true,
+  "staticBytes": 2657665576,
+  "terrain": {
+    "meshCacheBytes": 90916800,
+    "meshCacheEvictions": 26,
+    "meshCacheHits": 0,
+    "meshCacheMisses": 86,
+    "meshDecodeMs": 7471.072
+  },
+  "videoBytes": 5120570368
+}

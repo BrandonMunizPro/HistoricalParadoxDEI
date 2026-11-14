@@ -1,0 +1,327 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "cache": "warm",
+  "cacheNamespace": "d75c5a51edf305ff5b94-world-readiness-v1-30638108",
+  "constructedMs": 28081,
+  "method": "Native GPU, 1280x720, same teleport/zoom route; 8-second navigation windows. PNG readbacks occur outside frame measurements. Cold means unique placement-cache namespace, not flushed OS or driver caches.",
+  "routes": [
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 3
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 102,
+        "gpuReadbacks": 0,
+        "maxVertices": 44910,
+        "patches": 1,
+        "preparationMs": [
+          1016
+        ],
+        "released": false,
+        "requests": 2,
+        "rockSegments": 0,
+        "segments": 102,
+        "vertices": 44910
+      },
+      "coastReadyMs": 1108.892,
+      "focus": [
+        11.6851805283172,
+        42.2420762228722
+      ],
+      "frames": {
+        "averageFps": 64.0699158898138,
+        "maxMs": 129.052,
+        "meanMs": 15.6079493177388,
+        "onePercentLowFps": 20.6138813877265,
+        "over16_67ms": 119,
+        "over33_33ms": 3,
+        "p99Ms": 26.186,
+        "samples": 513
+      },
+      "name": "tarquinii",
+      "staticBytes": 2066953532,
+      "terrain": null,
+      "videoBytes": 5082545696
+    },
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 11
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 329,
+        "gpuReadbacks": 0,
+        "maxVertices": 114795,
+        "patches": 2,
+        "preparationMs": [
+          1016,
+          3144
+        ],
+        "released": false,
+        "requests": 3,
+        "rockSegments": 0,
+        "segments": 329,
+        "vertices": 114795
+      },
+      "coastReadyMs": 3614.445,
+      "focus": [
+        31.0920548683938,
+        31.5512220572183
+      ],
+      "frames": {
+        "averageFps": 66.5240663603148,
+        "maxMs": 116.676,
+        "meanMs": 15.0321538461538,
+        "onePercentLowFps": 14.8901848864623,
+        "over16_67ms": 71,
+        "over33_33ms": 8,
+        "p99Ms": 35.143,
+        "samples": 533
+      },
+      "name": "delta",
+      "staticBytes": 2064576067,
+      "terrain": null,
+      "videoBytes": 5092018160
+    },
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 6
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 90,
+        "gpuReadbacks": 0,
+        "maxVertices": 118890,
+        "patches": 3,
+        "preparationMs": [
+          1016,
+          3144,
+          3303
+        ],
+        "released": false,
+        "requests": 4,
+        "rockSegments": 226,
+        "segments": 316,
+        "vertices": 118890
+      },
+      "coastReadyMs": 3512.826,
+      "focus": [
+        25.4001938900235,
+        36.3952085517366
+      ],
+      "frames": {
+        "averageFps": 62.7091763262117,
+        "maxMs": 59.497,
+        "meanMs": 15.9466294820717,
+        "onePercentLowFps": 26.01163587178,
+        "over16_67ms": 132,
+        "over33_33ms": 4,
+        "p99Ms": 24.989,
+        "samples": 502
+      },
+      "name": "aegean",
+      "staticBytes": 2066789505,
+      "terrain": null,
+      "videoBytes": 5092721472
+    },
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 11
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 79,
+        "gpuReadbacks": 0,
+        "maxVertices": 118890,
+        "patches": 4,
+        "preparationMs": [
+          1016,
+          3144,
+          3303,
+          1383
+        ],
+        "released": false,
+        "requests": 5,
+        "rockSegments": 63,
+        "segments": 142,
+        "vertices": 59490
+      },
+      "coastReadyMs": 1731.655,
+      "focus": [
+        41.6480407714844,
+        41.6430854797363
+      ],
+      "frames": {
+        "averageFps": 62.0302797628022,
+        "maxMs": 50.625,
+        "meanMs": 16.1211589537223,
+        "onePercentLowFps": 23.9596710816354,
+        "over16_67ms": 207,
+        "over33_33ms": 5,
+        "p99Ms": 35.402,
+        "samples": 497
+      },
+      "name": "blacksea",
+      "staticBytes": 2070698767,
+      "terrain": null,
+      "videoBytes": 5088124608
+    },
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 11
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 77,
+        "gpuReadbacks": 0,
+        "maxVertices": 118890,
+        "patches": 5,
+        "preparationMs": [
+          1016,
+          3144,
+          3303,
+          1383,
+          3080
+        ],
+        "released": false,
+        "requests": 6,
+        "rockSegments": 207,
+        "segments": 284,
+        "vertices": 90495
+      },
+      "coastReadyMs": 3422.018,
+      "focus": [
+        -4.49933378987373,
+        48.3800544464408
+      ],
+      "frames": {
+        "averageFps": 58.9407866122496,
+        "maxMs": 54.526,
+        "meanMs": 16.9661800847458,
+        "onePercentLowFps": 23.2520287395075,
+        "over16_67ms": 162,
+        "over33_33ms": 5,
+        "p99Ms": 35.264,
+        "samples": 472
+      },
+      "name": "brittany",
+      "staticBytes": 2067180729,
+      "terrain": null,
+      "videoBytes": 5091733280
+    },
+    {
+      "arrival": {
+        "baseline": false,
+        "detailActive": false,
+        "detailBusy": false,
+        "terrainPending": 11
+      },
+      "coast": {
+        "bankSegments": 0,
+        "beachSegments": 329,
+        "gpuReadbacks": 0,
+        "maxVertices": 118890,
+        "patches": 6,
+        "preparationMs": [
+          1016,
+          3144,
+          3303,
+          1383,
+          3080,
+          3699
+        ],
+        "released": false,
+        "requests": 7,
+        "rockSegments": 0,
+        "segments": 329,
+        "vertices": 114795
+      },
+      "coastReadyMs": 3973.755,
+      "focus": [
+        31.0920548683938,
+        31.5512220572183
+      ],
+      "frames": {
+        "averageFps": 59.4392901949772,
+        "maxMs": 975.114,
+        "meanMs": 16.8238886554622,
+        "onePercentLowFps": 4.43065624221866,
+        "over16_67ms": 47,
+        "over33_33ms": 3,
+        "p99Ms": 20.673,
+        "samples": 476
+      },
+      "name": "delta",
+      "staticBytes": 2064775869,
+      "terrain": null,
+      "videoBytes": 5092023792
+    }
+  ],
+  "stage": "before",
+  "startup": {
+    "blockedMs": 31114,
+    "releases": [
+      {
+        "distance": 1100.0,
+        "focus": [
+          13.0,
+          42.0
+        ],
+        "ms": 31114
+      }
+    ],
+    "screens": 1,
+    "stageMs": {
+      "Warming rendered detail": 342
+    },
+    "startupPreparation": {
+      "coastMaterials": 2,
+      "elapsedMs": 5798,
+      "phases": [
+        {
+          "bytes": 132378576,
+          "chunks": 14,
+          "ms": 1295,
+          "stage": "worldCoastSources"
+        },
+        {
+          "ms": 4010,
+          "stage": "sharedAssets",
+          "variants": 132
+        },
+        {
+          "coarseCells": 12,
+          "localCells": 9,
+          "ms": 5397,
+          "stage": "openingArea"
+        }
+      ],
+      "scope": "Worldwide coastline sources, shared vegetation assets, coast materials and the opening area. Other procedural regions stream without loading screens.",
+      "warmedVariants": 132,
+      "worldCoastChunks": 14,
+      "worldCoastSourceBytes": 132378576
+    },
+    "visiblePendingAtRelease": 0
+  },
+  "startupMs": 35630,
+  "viewportSize": [
+    1280,
+    720
+  ]
+}

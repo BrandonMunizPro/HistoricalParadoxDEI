@@ -1,9 +1,16 @@
 {
   "maximumKm": 2800.0,
-  "maximumPitchStepDegrees": 0.813241480108978,
+  "maximumPitchStepDegrees": 0.84777043631405,
   "maximumZoomStepFraction": 0.0800000000000001,
   "passed": true,
   "presets": [
+    {
+      "pitch": 22.0,
+      "preset": "pellaro",
+      "requestedKm": 1.2,
+      "resolvedKm": 1.2,
+      "supportedMaximumKm": 2800.0
+    },
     {
       "pitch": 42.0,
       "preset": "campaign",

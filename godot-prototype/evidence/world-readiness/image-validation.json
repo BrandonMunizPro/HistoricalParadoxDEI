@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "before": {
+    "file": "godot-prototype/evidence/world-readiness/iteration-gaps/fjord-arrival.png",
+    "pixels": 52954,
+    "largestBackgroundColouredComponent": 47134
+  },
+  "after": [
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/delta-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    },
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/aegean-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    },
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/fjord-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    },
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/india-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    },
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/arabia-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    },
+    {
+      "file": "godot-prototype/evidence/world-readiness/immediate/pellaro-arrival.png",
+      "pixels": 0,
+      "largestBackgroundColouredComponent": 0
+    }
+  ],
+  "notice": "Detects the specific background-coloured coastal gaps found during visual inspection, under the tested lighting and viewports. Does not establish coastline accuracy or absence of every visual defect."
+}
