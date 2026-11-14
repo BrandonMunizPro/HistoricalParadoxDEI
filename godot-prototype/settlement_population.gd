@@ -18,6 +18,7 @@ var rural_identities={}
 var neapolis_trial_enabled=not OS.get_cmdline_user_args().has("--neapolis-neutral-baseline")
 var neapolis_assets
 var neapolis_composition_enabled=not OS.get_cmdline_user_args().has("--neapolis-housing-baseline")
+var visual_pipeline
 func set_neapolis_trial(value):
 	if neapolis_trial_enabled==value:return
 	neapolis_trial_enabled=value;signature=""
@@ -46,11 +47,18 @@ func _init(owner):
 	roma_visual=preload("res://roma_settlement.gd").new(world)
 	roma_enabled=not OS.get_cmdline_user_args().has("--roma-neutral-baseline")
 	stats["romaPrototypeEnabled"]=roma_enabled
+	visual_pipeline=preload("res://settlement_visual_renderer.gd").new(world)
+	for model in identity_models.values():visual_pipeline.bind_development(model)
+	if world.has_meta("settlement_development") and identity_models.is_empty():visual_pipeline.bind_development(world.get_meta("settlement_development"))
 
-func is_ready():return not busy
+func is_ready():return not busy and (visual_pipeline==null or visual_pipeline.is_ready())
 
 func tick():
-	roma_visual.update_lighting(roma_enabled and enabled)
+	if visual_pipeline!=null:visual_pipeline.tick()
+	var owns_roma=false
+	for site in world.sites:
+		if site.key=="roma" and visual_pipeline!=null:owns_roma=visual_pipeline.owns(site.id);break
+	roma_visual.update_lighting(roma_enabled and enabled and not owns_roma)
 	if not enabled:return
 	if busy or not world.queue.is_empty():return
 	var hidden=world.political_map!=null and world.political_map.weight_at(world.distance)>=1.
@@ -75,6 +83,7 @@ func build(request):
 	var candidates=[]
 	var radius=max(5.0,world.distance*1.6)
 	for r in records:
+		if visual_pipeline!=null and visual_pipeline.owns(r.id):continue
 		var p=world.project(r.lon,r.lat)
 		var separation=Vector2(p.x-world.target.x,p.z-world.target.z).length()
 		if separation>=radius:continue

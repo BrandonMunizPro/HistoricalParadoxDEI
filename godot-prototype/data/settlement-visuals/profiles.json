@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "cultureAliases": {
+    "roman-italic": "roman_italic",
+    "latin": "roman_italic",
+    "italic": "roman_italic",
+    "campanian": "roman_italic",
+    "greek-hellenistic": "hellenistic",
+    "greek": "hellenistic",
+    "egyptian": "kemetic"
+  },
+  "cultures": {
+    "roman_italic": {
+      "status": "implemented",
+      "profile": "roman_italic"
+    },
+    "hellenistic": {
+      "status": "planned",
+      "profile": null
+    },
+    "punic": {
+      "status": "planned",
+      "profile": null
+    },
+    "kemetic": {
+      "status": "planned",
+      "profile": null
+    },
+    "persian_iranian": {
+      "status": "planned",
+      "profile": null
+    },
+    "anatolian": {
+      "status": "planned",
+      "profile": null
+    },
+    "celtic": {
+      "status": "planned",
+      "profile": null
+    },
+    "germanic": {
+      "status": "planned",
+      "profile": null
+    },
+    "iberian": {
+      "status": "planned",
+      "profile": null
+    },
+    "illyrian": {
+      "status": "planned",
+      "profile": null
+    },
+    "thracian": {
+      "status": "planned",
+      "profile": null
+    },
+    "arabian": {
+      "status": "planned",
+      "profile": null
+    },
+    "south_arabian": {
+      "status": "planned",
+      "profile": null
+    },
+    "caucasian": {
+      "status": "planned",
+      "profile": null
+    }
+  },
+  "populationBands": [
+    1000,
+    5000,
+    20000,
+    75000
+  ],
+  "prosperityBands": [
+    25,
+    50,
+    75,
+    90
+  ],
+  "chainWeights": {
+    "civic-forum": {
+      "civic": 1
+    },
+    "civic-square": {
+      "civic": 1
+    },
+    "grain-storage": {
+      "agricultural": 0.7,
+      "commercial": 0.3
+    },
+    "farm": {
+      "agricultural": 1
+    },
+    "irrigation": {
+      "agricultural": 1
+    },
+    "sanctuary": {
+      "religious": 1
+    },
+    "market": {
+      "commercial": 1
+    },
+    "spice-market": {
+      "commercial": 1
+    },
+    "warehouse": {
+      "commercial": 1
+    },
+    "port": {
+      "commercial": 1
+    },
+    "bronze-workshop": {
+      "commercial": 0.5,
+      "military": 0.5
+    },
+    "walls": {
+      "military": 0.3
+    },
+    "training-yard": {
+      "military": 1
+    },
+    "quarry": {
+      "commercial": 0.5,
+      "civic": 0.5
+    }
+  },
+  "profiles": {
+    "roman_italic": {
+      "assetPrefix": "roman_italic.",
+      "yearBce": 278,
+      "palette": [
+        "tufa",
+        "lime_stucco",
+        "terracotta",
+        "timber"
+      ],
+      "roofs": [
+        "pitched_tile",
+        "timber_shed"
+      ],
+      "ranks": {
+        "rural": {
+          "radiusM": 65,
+          "residentialClusters": 4,
+          "districtSlots": 1,
+          "landmarks": 0,
+          "defaultDensity": 0.65,
+          "wallEnabled": false
+        },
+        "town": {
+          "radiusM": 140,
+          "residentialClusters": 10,
+          "districtSlots": 3,
+          "landmarks": 1,
+          "defaultDensity": 0.75,
+          "wallEnabled": true
+        },
+        "city": {
+          "radiusM": 240,
+          "residentialClusters": 22,
+          "districtSlots": 5,
+          "landmarks": 2,
+          "defaultDensity": 0.8,
+          "wallEnabled": true
+        },
+        "major": {
+          "radiusM": 380,
+          "residentialClusters": 36,
+          "districtSlots": 8,
+          "landmarks": 3,
+          "defaultDensity": 0.85,
+          "wallEnabled": true
+        },
+        "capital": {
+          "radiusM": 560,
+          "residentialClusters": 52,
+          "districtSlots": 12,
+          "landmarks": 4,
+          "defaultDensity": 0.9,
+          "wallEnabled": true
+        }
+      },
+      "roles": {
+        "residential": [
+          "house_a",
+          "house_b",
+          "house_c",
+          "court_a",
+          "court_b",
+          "urban_a",
+          "urban_b"
+        ],
+        "civic": [
+          "forum",
+          "council"
+        ],
+        "religious": [
+          "shrine",
+          "temple_medium",
+          "temple_major"
+        ],
+        "military": [
+          "barracks",
+          "military_yard"
+        ],
+        "commercial": [
+          "market",
+          "workshop",
+          "warehouse"
+        ],
+        "agricultural": [
+          "farmstead",
+          "field_store",
+          "processing"
+        ],
+        "walls": [
+          "wall",
+          "wall_corner",
+          "gate",
+          "tower"
+        ],
+        "port": [
+          "quay",
+          "jetty",
+          "warehouse",
+          "maritime_store",
+          "waterfront_market",
+          "boat"
+        ],
+        "infrastructure": [
+          "road",
+          "gate_road",
+          "bridge"
+        ],
+        "landmarks": [
+          "hero_forum",
+          "hero_temple"
+        ]
+      },
+      "rankRoles": {
+        "rural": {
+          "residential": [
+            "house_a",
+            "house_b",
+            "house_c"
+          ]
+        },
+        "town": {
+          "residential": [
+            "house_a",
+            "house_b",
+            "house_c"
+          ]
+        }
+      },
+      "monumentSlots": {
+        "forum-romanum": {
+          "assetId": "roman_italic.hero_forum",
+          "settlementIds": [
+            "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda"
+          ],
+          "anchorM": [
+            45,
+            -15
+          ],
+          "footprintM": [
+            60,
+            60
+          ]
+        }
+      },
+      "boundary": [
+        [
+          -0.82,
+          -0.55
+        ],
+        [
+          -0.1,
+          -0.94
+        ],
+        [
+          0.76,
+          -0.65
+        ],
+        [
+          0.96,
+          0.18
+        ],
+        [
+          0.42,
+          0.83
+        ],
+        [
+          -0.63,
+          0.73
+        ]
+      ],
+      "lodDistancesKm": [
+        2.5,
+        15,
+        160
+      ],
+      "maxGrade": 0.14,
+      "maxReliefM": 0.45,
+      "harborSearchM": 5000
+    }
+  }
+}

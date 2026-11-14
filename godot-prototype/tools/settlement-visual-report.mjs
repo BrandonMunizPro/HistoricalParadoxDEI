@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+const root='godot-prototype/evidence/roman-settlement-slice';
+const runs=['legacy','preview','preview-startup'].map(name=>JSON.parse(fs.readFileSync(`${root}/${name}/runtime.json`)));
+const giB=n=>(n/2**30).toFixed(2),ms=n=>n.toFixed(2);
+let text=`# Native development-slice measurements\n\nGodot 4.7.2, RTX 3060 Laptop, Vulkan Forward+, 1280×720. Single sequential runs.\nEach view samples 60 process-frame wall intervals after 12 frames; streaming,\nOS scheduling and presentation are included. These are not isolated GPU times.\nDefault legacy and opt-in preview render different amounts of geometry; neither\ncomparison establishes an art-equivalent speedup. No settlement disk cache was\nadded. OS/driver caches were not flushed.\n\n| Mode | Preparation (s) | Planner active (s) | Longest planning chunk (ms) | Peak video (GiB) | Peak static (GiB) |\n|---|---:|---:|---:|---:|---:|\n`;
+for(const r of runs)text+=`| ${r.mode} | ${(r.startupMs/1000).toFixed(2)} | ${(r.pipeline.generationMs/1000).toFixed(2)} | ${ms(r.pipeline.maxGenerationChunkMs)} | ${giB(Math.max(...r.views.map(v=>v.videoBytes)))} | ${giB(Math.max(...r.views.map(v=>v.staticBytes)))} |\n`;
+text+='\nOnly preview-startup runs the ordinary loading-screen preparation. The other\npreparation values include source loading/baselines but bypass normal warmup.\nThey are not interchangeable cold/warm startup measurements.\n\n| Settlement, 0.65 km | Legacy mean / p99 (ms) | Preview mean / p99 (ms) | Full-startup preview mean / p99 (ms) |\n|---|---:|---:|---:|\n';
+for(const view of runs[0].views.filter(v=>v.distanceKm===.65))text+=`| ${view.case} | `+runs.map(r=>{const f=r.views.find(v=>v.case===view.case&&v.distanceKm===.65).frames;return `${ms(f.meanMs)} / ${ms(f.p99Ms)}`;}).join(' | ')+' |\n';
+const r=runs[2],p=r.pipeline;
+text+=`\nFull-startup preview: ${p.cacheHits} mesh-cache hits, ${p.cacheMisses} misses,\n${(p.cachedBytes/2**20).toFixed(2)} MiB retained estimated mesh bytes,\n${(p.heightCacheBytes/2**20).toFixed(2)} MiB retained source heights.\nPlans are reused on LOD changes. Attach/asset-wait metrics include async frame\nwaits and are not CPU upload timings. Raw reports retain draw-call counts and\neach view's mean, p99 and maximum interval. All 24 captures/view metrics exist\nper mode; no final architectural quality is asserted.\n\n| Real-map fixture | Accepted parcels | Enclosure rejection | Harbor rejection |\n|---|---:|---|---|\n`;
+for(const e of Object.values(p.entries))text+=`| ${e.site} | ${e.plan.acceptedPieces} | ${e.plan.walls||'—'} | ${e.plan.harbor||'—'} |\n`;
+text+='\nA blank rejection is not proof that authored art exists. The harbor validity\ncheck is relevant only when the fixture requests a port. Roma/Aricia/Formiae\nplacement and missing production art remain acceptance failures.\n';
+fs.writeFileSync('docs/roman-settlement-slice/MEASUREMENTS.md',text);
+console.log('SETTLEMENT_MEASUREMENTS_WRITTEN');

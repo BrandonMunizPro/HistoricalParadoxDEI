@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "scenarioKind": "visual-test-only",
+  "notice": "Rank, infrastructure and specialization scenarios exercise rendering. They are not historical populations, newly attested building starts, ownership or cultural conversion. Anchors are copied from existing approved sites, never moved. Ports use the existing rendered coast, not a claimed reconstructed 278 BCE harbor.",
+  "cases": [
+    {
+      "caseId": "roma",
+      "siteId": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+      "input": {
+        "settlementId": "0f50d3f1-9507-5ef2-b87d-3fd2b88d3bda",
+        "architectureCulture": "roman-italic",
+        "rank": "capital",
+        "population": null,
+        "prosperity": null,
+        "capital": true,
+        "terrain": "river",
+        "coastal": false,
+        "portLevel": 0,
+        "fortificationLevel": 2,
+        "roadLevel": 2,
+        "buildings": [
+          {
+            "chain": "civic-forum",
+            "level": 3,
+            "condition": "active"
+          },
+          {
+            "chain": "sanctuary",
+            "level": 2,
+            "condition": "active"
+          },
+          {
+            "chain": "market",
+            "level": 1,
+            "condition": "active"
+          }
+        ],
+        "monuments": [
+          "forum-romanum"
+        ],
+        "construction": "none",
+        "damage": "intact"
+      }
+    },
+    {
+      "caseId": "ostia",
+      "siteId": "2b6511b3-a6b3-50d2-b158-ceeee25cdbde",
+      "input": {
+        "settlementId": "2b6511b3-a6b3-50d2-b158-ceeee25cdbde",
+        "architectureCulture": "roman-italic",
+        "rank": "town",
+        "population": null,
+        "prosperity": null,
+        "capital": false,
+        "terrain": "river",
+        "coastal": true,
+        "portLevel": 1,
+        "fortificationLevel": 1,
+        "roadLevel": 1,
+        "buildings": [
+          {
+            "chain": "port",
+            "level": 1,
+            "condition": "active"
+          },
+          {
+            "chain": "warehouse",
+            "level": 2,
+            "condition": "active"
+          },
+          {
+            "chain": "market",
+            "level": 2,
+            "condition": "active"
+          }
+        ],
+        "monuments": [],
+        "construction": "none",
+        "damage": "intact"
+      }
+    },
+    {
+      "caseId": "capua",
+      "siteId": "699df490-1857-5816-b121-d46c4aca70ca",
+      "input": {
+        "settlementId": "699df490-1857-5816-b121-d46c4aca70ca",
+        "architectureCulture": "roman-italic",
+        "rank": "major",
+        "population": null,
+        "prosperity": null,
+        "capital": false,
+        "terrain": "plain",
+        "coastal": false,
+        "portLevel": 0,
+        "fortificationLevel": 1,
+        "roadLevel": 2,
+        "buildings": [
+          {
+            "chain": "civic-forum",
+            "level": 2,
+            "condition": "active"
+          },
+          {
+            "chain": "market",
+            "level": 2,
+            "condition": "active"
+          },
+          {
+            "chain": "sanctuary",
+            "level": 1,
+            "condition": "active"
+          }
+        ],
+        "monuments": [],
+        "construction": "none",
+        "damage": "intact"
+      }
+    },
+    {
+      "caseId": "aricia",
+      "siteId": "828bcd83-58e1-591b-932f-61a8c972f2c4",
+      "input": {
+        "settlementId": "828bcd83-58e1-591b-932f-61a8c972f2c4",
+        "architectureCulture": "roman-italic",
+        "rank": "rural",
+        "population": null,
+        "prosperity": null,
+        "capital": false,
+        "terrain": "hill",
+        "coastal": false,
+        "portLevel": 0,
+        "fortificationLevel": 0,
+        "roadLevel": 1,
+        "buildings": [
+          {
+            "chain": "farm",
+            "level": 2,
+            "condition": "active"
+          },
+          {
+            "chain": "grain-storage",
+            "level": 1,
+            "condition": "active"
+          }
+        ],
+        "monuments": [],
+        "construction": "none",
+        "damage": "intact"
+      }
+    },
+    {
+      "caseId": "minturnae",
+      "siteId": "aab183f4-75f4-5d27-a09b-5d06bcd93ac8",
+      "input": {
+        "settlementId": "aab183f4-75f4-5d27-a09b-5d06bcd93ac8",
+        "architectureCulture": "roman-italic",
+        "rank": "town",
+        "population": null,
+        "prosperity": null,
+        "capital": false,
+        "terrain": "plain",
+        "coastal": false,
+        "portLevel": 0,
+        "fortificationLevel": 2,
+        "roadLevel": 1,
+        "buildings": [
+          {
+            "chain": "training-yard",
+            "level": 3,
+            "condition": "active"
+          },
+          {
+            "chain": "bronze-workshop",
+            "level": 2,
+            "condition": "active"
+          }
+        ],
+        "monuments": [],
+        "construction": "none",
+        "damage": "intact"
+      }
+    },
+    {
+      "caseId": "formiae",
+      "siteId": "e54b4840-388e-5c57-bc5e-0a581d3cd0bb",
+      "input": {
+        "settlementId": "e54b4840-388e-5c57-bc5e-0a581d3cd0bb",
+        "architectureCulture": "roman-italic",
+        "rank": "city",
+        "population": null,
+        "prosperity": null,
+        "capital": false,
+        "terrain": "plain",
+        "coastal": true,
+        "portLevel": 2,
+        "fortificationLevel": 0,
+        "roadLevel": 2,
+        "buildings": [
+          {
+            "chain": "market",
+            "level": 3,
+            "condition": "active"
+          },
+          {
+            "chain": "warehouse",
+            "level": 3,
+            "condition": "active"
+          },
+          {
+            "chain": "port",
+            "level": 2,
+            "condition": "active"
+          }
+        ],
+        "monuments": [],
+        "construction": "none",
+        "damage": "intact"
+      }
+    }
+  ]
+}
