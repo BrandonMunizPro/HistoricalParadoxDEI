@@ -115,7 +115,8 @@ func _init(owner,region_name):
 	code=code.replace("vec3 lighting_normal=normalize(mix(ground_normal,relief_normal,strategic*relief_strength));","vec3 lighting_normal=normalize(texture(eastern_normals,eastern_texel(%s_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.);\n relief_normal=lighting_normal;"%region)
 	if region=="egypt":code=code.replace("vec3 lighting_normal=normalize(texture(eastern_normals,eastern_texel(egypt_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.);","vec3 lighting_normal=normalize(mix(relief_normal,texture(eastern_normals,eastern_texel(egypt_uv(geo),textureSize(eastern_normals,0))).rgb*2.-1.,egypt_scope(geo)));")
 	# Regional mask replacement must not overwrite the finer streamed shoreline.
-	code=code.replace("if(land<.5)discard;","land=focus_coast_terrain_land(world_pos.xz,land);\n if(land<.5)discard;")
+	code=code.replace("vec2 shore_surface=focus_coast_terrain_surface(world_pos.xz,land);land=shore_surface.x;if(shore_surface.y>.5)discard;","")
+	code=code.replace("if(land<.5)discard;","vec2 shore_surface=focus_coast_terrain_surface(world_pos.xz,land);land=shore_surface.x;if(shore_surface.y>.5)discard;\n if(land<.5)discard;")
 	var shader=Shader.new();shader.code=code;material.shader=shader
 	if africa:material.set_shader_parameter("africa_oases",ImageTexture.create_from_image(oases_image))
 	if region=="egypt":material.set_shader_parameter("eastern_alluvium",ImageTexture.create_from_image(Image.load_from_file("res://data/egypt/alluvium.png")))
@@ -153,6 +154,12 @@ func _init(owner,region_name):
 			water_code=water_code.replace("float envelope=",prefix+"{land=textureLod(%s_land,eastern_texel(%s_uv(geo),textureSize(%s_land,0)),0.).r;shore=textureLod(%s_shore,eastern_texel(%s_uv(geo),textureSize(%s_shore,0)),0.).r*63.75;}\n float envelope="%[r,r,r,r,r,r])
 			water_code=water_code.replace("if(camera_distance>2800.0)land=",prefix+"land=texture(%s_ocean,eastern_texel(%s_uv(geo),textureSize(%s_ocean,0))).r;\n if(camera_distance>2800.0)land="%[r,r,r])
 			water_code=water_code.replace("if(camera_distance>2800.0){",prefix+"{ground=coast_coverage(%s_land,eastern_texel(%s_uv(geo),textureSize(%s_land,0)));source_ground=texture(%s_ocean,eastern_texel(%s_uv(geo),textureSize(%s_ocean,0))).r;}\n if(camera_distance>2800.0){"%[r,r,r,r,r,r])
+		# Terrain can expose source-exact sea before a detailed coast patch is
+		# ready. Regional ocean masks must not reject the water beneath that band.
+		# Keep inland exclusions outside the source coast band unchanged.
+		if water_code.contains("vec4 coast_contact="):
+			water_code=water_code.replace("if(land>.5)discard;","if(land>.5&&ground<.5&&abs(coast_contact.r)>=.22)discard;")
+			water_code=water_code.replace("if(land>.5&&source_ground<.5)discard;","if(land>.5&&source_ground<.5&&abs(coast_contact.r)>=.22)discard;")
 		var shader_water=Shader.new();shader_water.code=water_code
 		for mat in [world.water_material] if world.ocean_renderer==null else world.ocean_renderer.materials:mat.shader=shader_water
 	for mat in [world.water_material] if world.ocean_renderer==null else world.ocean_renderer.materials:
@@ -282,7 +289,10 @@ func tick():
 	var rects=PackedVector4Array()
 	for id in resident:
 		resident[id].reveal=clamp(float(Time.get_ticks_msec()-resident[id].born)/450.,0.,1.);resident[id].node.set_instance_shader_parameter("eastern_reveal",resident[id].reveal)
-		var b=resident[id].descriptor.bounds;rects.append(Vector4(b.west,b.south,b.east,b.north))
+		# Keep the continuous source mesh until the replacement has finished its
+		# height reveal. Residency alone is not permission to punch a parent hole.
+		if resident[id].reveal>=1.:
+			var b=resident[id].descriptor.bounds;rects.append(Vector4(b.west,b.south,b.east,b.north))
 	material.set_shader_parameter("eastern_count",rects.size())
 	while rects.size()<24:rects.append(Vector4.ZERO)
 	material.set_shader_parameter("eastern_bounds",rects)

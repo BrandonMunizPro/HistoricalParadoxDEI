@@ -100,6 +100,7 @@ void fragment(){
  vec4 ray_view=INV_PROJECTION_MATRIX*vec4(SCREEN_UV*2.-1.,1.,1.);
  vec3 ray_world=mat3(INV_VIEW_MATRIX)*normalize(ray_view.xyz/ray_view.w);
  vec3 sea_position=render_patch?world_pos:CAMERA_POSITION_WORLD+ray_world*(-CAMERA_POSITION_WORLD.y/min(-.000001,ray_world.y));
+ vec4 coast_contact=focus_coast_sample(sea_position.xz);
  if(!render_patch&&patch_active&&max(abs(sea_position.x-patch_center.x),abs(sea_position.z-patch_center.y))<=patch_radius-.001)discard;
  vec2 geo=coast_geographic(sea_position.xz),q=vec2((geo.x-6.0)/14.0,(49.0-geo.y)/14.0);
  bool region=all(greaterThanEqual(q,vec2(0.0)))&&all(lessThanEqual(q,vec2(1.0)));
@@ -134,10 +135,14 @@ void fragment(){
  float d=mix(global_distance,regional_distance,atlas_weight);
  // Shore distance controls appearance only: it is not a bathymetric depth estimate.
  float shallow=exp(-d/max(.1,coastal_band_km));
- if(focus_coast_weight(sea_position.xz)>.999){
-  float offshore=max(0.,-focus_coast_metres(sea_position.xz));
-  float beach=focus_coast_style(sea_position.xz).x;
-  shallow=mix(shallow,exp(-offshore/mix(12.,55.,beach)),1.-smoothstep(200.,450.,offshore));
+ bool local_coast_color=focus_coast_local_weight(sea_position.xz)>.999;
+ if(abs(coast_contact.r)<(local_coast_color?.54:.2)){
+  float offshore=max(0.,-coast_contact.r*1000.);
+  float beach=coast_contact.b;
+  // The analytic baseline is bounded to 220 m. Blend into the existing sea
+  // before that bound; the completed local field retains its original 450 m
+  // colour transition. Otherwise the baseline ends in a visible polygon band.
+  shallow=mix(shallow,exp(-offshore/mix(12.,55.,beach)),1.-smoothstep(local_coast_color?200.:100.,local_coast_color?450.:200.,offshore));
  }
 
  if(political_blend<1.){
@@ -184,7 +189,7 @@ void fragment(){
  // Retain shoreline colour and masks; broad variation grows offshore only.
  ALBEDO*=1.+blue_patch*strategic_color_strength*strategic*(1.-shallow);
  ALBEDO=mix(ALBEDO,vec3(.65,.70,.66),clamp(crest+swash,0.,.35));
- float contact=campaign_coast_foam(sea_position.xz,water_time*animation_speed);
+ float contact=campaign_coast_foam(coast_contact,water_time*animation_speed);
  ALBEDO=mix(ALBEDO,vec3(.72,.78,.74),contact*.80);
  // IOR 1.33 corresponds to F0 about .02 in Godot's dielectric parameterization.
  SPECULAR=.35;METALLIC=0.;

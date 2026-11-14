@@ -16,13 +16,50 @@ var release_km=48.
 var last_needed_ms=0
 var patch_started_ms=0
 var startup_pinned_key=""
+var baseline
+var baseline_ready=false
+var patch_cache={}
+var cache_order=[]
+var cache_capacity=4
+var field_preparation_done=false
 var metrics={"patches":0,"maxVertices":0,"segments":0,"beachSegments":0,"rockSegments":0,"bankSegments":0,"gpuReadbacks":0,"released":true,"requests":0,"preparationMs":[]}
 func setup(owner):
 	super.setup(owner);catalog=preload("res://coast_catalog.gd").new()
 	beach.material_override.set_shader_parameter("rock_texture",world.base_material.get_shader_parameter("quality_rock"))
+	baseline=preload("res://coast_baseline.gd").new(world,self)
+	metrics.merge({"cacheHits":0,"cacheMisses":0,"cacheEvictions":0,"cacheEntries":0,"cancelled":0})
+func prepare_baseline(tree):
+	await baseline.prepare(tree)
+	baseline_ready=baseline.ready
+	metrics["baseline"]=baseline.metrics
+	# Compile the existing optional refinement compute pipeline under the cover.
+	RenderingServer.call_on_render_thread(field.prepare.bind(Callable(self,"field_prepared")))
+	var started=Time.get_ticks_msec()
+	while not field_preparation_done and Time.get_ticks_msec()-started<10000:await tree.process_frame
+func field_prepared(value):field_preparation_done=true;metrics["detailComputePrepared"]=value
 func bind(mat):
 	super.bind(mat)
 	if global_mode and field_texture!=null:bind_global(mat)
+	if baseline!=null:baseline.bind(mat)
+func protected_field_slots():
+	var slots=PackedInt32Array()
+	for entry in patch_cache.values():slots.append(entry.slot)
+	if field_texture!=null:slots.append(field.textures.find(field_texture))
+	return slots
+func remember_patch(key,meshes,bounds,texture,stats):
+	patch_cache[key]={"meshes":meshes,"bounds":bounds,"texture":texture,"stats":stats,"slot":field.textures.find(texture)}
+	cache_order.erase(key);cache_order.append(key)
+	while cache_order.size()>cache_capacity:
+		patch_cache.erase(cache_order.pop_front());metrics.cacheEvictions+=1
+	metrics.cacheEntries=patch_cache.size()
+func restore_patch(key):
+	if not patch_cache.has(key):return false
+	var entry=patch_cache[key];cache_order.erase(key);cache_order.append(key)
+	global_mode=true;field_texture=entry.texture;patch_bounds=entry.bounds;patch_key=key;global_meshes=entry.meshes;beach.mesh=entry.meshes[0];surf.mesh=entry.meshes[1];built=true
+	for reference in materials:
+		var mat=reference.get_ref()
+		if mat!=null:bind_global(mat)
+	metrics.cacheHits+=1;return true
 func bind_global(mat):
 	mat.set_shader_parameter("focus_coast_streamed",true);mat.set_shader_parameter("focus_coast_distance",field_texture);mat.set_shader_parameter("focus_coast_bounds",patch_bounds);mat.set_shader_parameter("focus_coast_enabled",active)
 func set_active(value):
@@ -66,6 +103,8 @@ func clip_edge(a,b,minimum,maximum):
 	if lo>=hi:return null
 	return Vector2(lo,hi)
 func request_patch(center,span,key):
+	if restore_patch(key):return
+	metrics.cacheMisses+=1
 	busy=true;requested_key=key;generation+=1;var job=generation
 	patch_started_ms=Time.get_ticks_msec();metrics.requests+=1
 	var minimum=center-Vector2.ONE*span*.5;var maximum=center+Vector2.ONE*span*.5
@@ -151,11 +190,12 @@ func request_patch(center,span,key):
 	packed.append_array(lookup)
 	var bounds=Vector4(minimum.x,minimum.y,span,span)
 	var stats={"segments":edges.size(),"vertices":vertices.size(),"beachSegments":style_counts[0],"rockSegments":style_counts[1],"bankSegments":style_counts[2]}
-	RenderingServer.call_on_render_thread(field.bake.bind(data,packed,Vector4(-span*.5,-span*.5,span,span),Callable(self,"field_ready").bind(job,[mesh,water_mesh],bounds,key,stats)))
+	RenderingServer.call_on_render_thread(field.bake.bind(data,packed,Vector4(-span*.5,-span*.5,span,span),Callable(self,"field_ready").bind(job,[mesh,water_mesh],bounds,key,stats),protected_field_slots()))
 func field_ready(texture,job,meshes,bounds,key,stats):
 	if job!=generation:return
 	busy=false
 	if texture==null:return
+	remember_patch(key,meshes,bounds,texture,stats)
 	global_mode=true;field_texture=texture;patch_bounds=bounds;patch_key=key;global_meshes=meshes;beach.mesh=meshes[0];surf.mesh=meshes[1];built=true
 	for entry in materials:
 		var mat=entry.get_ref()
@@ -173,6 +213,7 @@ func patch_plan():
 	var center=point.snapped(Vector2.ONE*span*.20)
 	return {"center":center,"span":span,"key":str(center)+"/"+str(span)}
 func _process(delta):
+	if baseline!=null:baseline.tick()
 	var p=world.project(world.focus.x,world.focus.y);var point=Vector2(p.x,p.z)
 	if local_contains(point):
 		if busy:generation+=1;requested_key="";busy=false
@@ -187,9 +228,8 @@ func _process(delta):
 		return
 	if not global_mode and active:set_active(false)
 	var plan=patch_plan()
-	if busy and requested_key!=plan.key:
-		# A zoom into a finer bucket should not wait for an obsolete wide patch.
-		generation+=1;busy=false;requested_key=""
+	# Finish bounded work and cache it while the persistent source coast covers
+	# movement. Cancelling every eased camera step previously starved completion.
 	var prepare=world.distance<prepare_km and (patch_key=="" or min(world.distance,world.goal_distance)<12.)
 	if prepare and plan.key!=patch_key and not busy and world.queue.is_empty():request_patch(plan.center,plan.span,plan.key)
 	if global_mode:

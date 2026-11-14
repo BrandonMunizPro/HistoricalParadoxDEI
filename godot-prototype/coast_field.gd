@@ -8,6 +8,7 @@ var textures=[]
 var transient=[]
 var slot=0
 var size=1024
+func prepare(callback):callback.call_deferred(initialize() if rd==null else true)
 func initialize():
 	rd=RenderingServer.get_rendering_device()
 	if rd==null:return false
@@ -15,15 +16,20 @@ func initialize():
 	var spirv=rd.shader_compile_spirv_from_source(source)
 	if spirv.get_stage_compile_error(RenderingDevice.SHADER_STAGE_COMPUTE)!="":push_error(spirv.get_stage_compile_error(RenderingDevice.SHADER_STAGE_COMPUTE));return false
 	shader=rd.shader_create_from_spirv(spirv);pipeline=rd.compute_pipeline_create(shader)
-	for i in 2:
+	# Four cached patches + one active patch + one in-flight destination.
+	for i in 6:
 		var format=RDTextureFormat.new();format.width=size;format.height=size;format.format=RenderingDevice.DATA_FORMAT_R32G32B32A32_SFLOAT;format.usage_bits=RenderingDevice.TEXTURE_USAGE_STORAGE_BIT|RenderingDevice.TEXTURE_USAGE_SAMPLING_BIT|RenderingDevice.TEXTURE_USAGE_CAN_COPY_FROM_BIT
 		var rid=rd.texture_create(format,RDTextureView.new());fields.append(rid)
 		var texture=Texture2DRD.new();texture.texture_rd_rid=rid;textures.append(texture)
 	return true
-func bake(data:PackedFloat32Array,bins:PackedInt32Array,bounds:Vector4,callback):
+func bake(data:PackedFloat32Array,bins:PackedInt32Array,bounds:Vector4,callback,protected_slots=PackedInt32Array()):
 	if rd==null and not initialize():callback.call_deferred(null);return
 	for rid in transient:rd.free_rid(rid)
-	transient.clear();slot=1-slot
+	transient.clear()
+	var available=false
+	for candidate in fields.size():
+		if not protected_slots.has(candidate):slot=candidate;available=true;break
+	if not available:callback.call_deferred(null);return
 	var bytes=data.to_byte_array();var segment_buffer=rd.storage_buffer_create(bytes.size(),bytes);var index_bytes=bins.to_byte_array();var index_buffer=rd.storage_buffer_create(index_bytes.size(),index_bytes)
 	var uniforms=[]
 	for entry in [[RenderingDevice.UNIFORM_TYPE_IMAGE,fields[slot]],[RenderingDevice.UNIFORM_TYPE_STORAGE_BUFFER,segment_buffer],[RenderingDevice.UNIFORM_TYPE_STORAGE_BUFFER,index_buffer]]:

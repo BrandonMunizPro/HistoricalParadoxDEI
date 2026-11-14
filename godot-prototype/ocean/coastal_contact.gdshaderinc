@@ -5,9 +5,8 @@ float contact_noise(vec2 p){
  vec4 q=fract(sin(vec4(dot(i,vec2(127.1,311.7)),dot(i+vec2(1,0),vec2(127.1,311.7)),dot(i+vec2(0,1),vec2(127.1,311.7)),dot(i+vec2(1,1),vec2(127.1,311.7))))*43758.5453);
  return mix(mix(q.x,q.y,f.x),mix(q.z,q.w,f.x),f.y);
 }
-float campaign_coast_foam(vec2 position,float time){
- if(!focus_coast_streamed||focus_coast_weight(position)<.999)return 0.;
- vec2 size=vec2(textureSize(focus_coast_distance,0));vec4 coast=texture(focus_coast_distance,(focus_coast_uv(position)*(size-1.)+.5)/size);
+float campaign_coast_foam(vec4 coast,float time){
+ if((!focus_coast_streamed&&!coast_baseline_enabled)||abs(coast.r)>=.2)return 0.;
  float offshore=-coast.r*1000.;if(offshore<0.||offshore>180.)return 0.;
  // Limit hash domains before fine sampling to retain precision on long coasts.
  float exposure=coast.g<0.?.15:1.;

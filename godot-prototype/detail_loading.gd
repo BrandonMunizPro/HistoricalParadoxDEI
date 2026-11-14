@@ -5,6 +5,7 @@ var covering=true
 var startup_complete=false
 var preparation_started=false
 var preparation_done=false
+var allow_background_detail=false
 var preparation
 var screen:Control
 var message:Label
@@ -31,7 +32,7 @@ func _ready():
 	var margin=MarginContainer.new();margin.add_theme_constant_override("margin_left",36);margin.add_theme_constant_override("margin_right",36);center.add_child(margin)
 	var box=VBoxContainer.new();box.add_theme_constant_override("separation",18);margin.add_child(box)
 	var font=SystemFont.new();font.font_names=PackedStringArray(["Palatino Linotype","Georgia","DejaVu Serif"])
-	for text in ["ANTIQUITY","Preparing the campaign world","Terrain, forests and coastal detail","The map will open when nearby detail is ready."]:
+	for text in ["ANTIQUITY","Preparing the campaign world","Terrain, forests and coastal detail","Preparing world coverage and the opening landscape."]:
 		var label=Label.new();label.text=text;label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.custom_minimum_size.x=420;label.add_theme_font_override("font",font);label.add_theme_color_override("font_color",Color("dfca98"));box.add_child(label)
 		label.add_theme_font_size_override("font_size",36 if box.get_child_count()==1 else 19)
 		if box.get_child_count()==2:message=label
@@ -48,6 +49,11 @@ func refresh_needed():
 	return false
 func pending_reason():
 	if world==null:return "Preparing the campaign world"
+	if world.startup_preparation_requested and world.get("coastal_focus")!=null and world.coastal_focus.has_method("prepare_baseline") and not world.coastal_focus.baseline_ready:return "Establishing worldwide shoreline coverage"
+	if not world.geographical_baseline_ready():return "Establishing worldwide terrain coverage"
+	if allow_background_detail:
+		if world.focus.distance_to(world.goal_focus)>.0002 or abs(world.distance-world.goal_distance)>max(.002,world.distance*.004):return "Preparing the destination view"
+		return ""
 	if not world.queue.is_empty():return "Preparing terrain · %d tiles remaining"%world.queue.size()
 	for tile in world.resident.values():
 		if tile.reveal<1.:return "Settling terrain detail"

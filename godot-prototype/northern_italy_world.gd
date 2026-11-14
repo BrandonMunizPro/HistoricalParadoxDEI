@@ -86,7 +86,7 @@ func _ready():
 		code=code.replace("if(alpine_detail_enabled&&camera_distance<3300.){float aw=alpine_scope(coast_geo);if(alpine_overlay_mesh){if(aw<.0005)discard;}else{if(aw>.001)discard;}}else if(alpine_overlay_mesh){discard;}","")
 	code=preload("res://anatolia_surface.gd").decorate_shader(code)
 	code=preload("res://eastern_surface.gd").decorate_shader(code)
-	code=code.replace("if(land<.5)discard;","if(focus_coast_weight(world_pos.xz)>.999){float fd=focus_coast_metres(world_pos.xz);if(abs(fd)<200.){land=step(0.,fd);if(fd>=0.&&fd<focus_coast_cut_metres(world_pos.xz))discard;}}\n if(land<.5)discard;")
+	code=code.replace("if(land<.5)discard;","vec2 shore_surface=focus_coast_terrain_surface(world_pos.xz,land);land=shore_surface.x;if(shore_surface.y>.5)discard;\n if(land<.5)discard;")
 	shader.code=code
 	var bed=ImageTexture.create_from_image(Image.load_from_file("res://data/northern-italy-reference/lake-bed.png"))
 	base_material.set_shader_parameter("reference_lake_bed",bed)

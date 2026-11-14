@@ -104,6 +104,12 @@ var detail_loading
 # Project and direct-scene play both prepare assets. Camera-owning diagnostic
 # scripts explicitly opt into preparation through campaign_boot when required.
 var startup_preparation_requested=should_prepare_startup(OS.get_cmdline_args())
+var terrain_mesh_resources={}
+var terrain_mesh_order=[]
+var terrain_mesh_bytes=0
+var terrain_mesh_budget=96*1024*1024
+var baseline_water_node
+var streaming_metrics={"meshCacheHits":0,"meshCacheMisses":0,"meshCacheEvictions":0,"meshDecodeMs":0.,"meshCacheBytes":0}
 static func should_prepare_startup(arguments):return not arguments.has("--script")
 
 func read_json(p):
@@ -352,6 +358,11 @@ func mesh_fingerprint(p,parent_path=""):
 	return "|".join(parts).sha256_text()
 
 func mesh_from_file(p,parent_path=""):
+	var cache_key=p+"|"+parent_path
+	if not mesh_cache_building and terrain_mesh_resources.has(cache_key):
+		terrain_mesh_order.erase(cache_key);terrain_mesh_order.append(cache_key);streaming_metrics.meshCacheHits+=1
+		return terrain_mesh_resources[cache_key].mesh
+	var decode_start=Time.get_ticks_usec();streaming_metrics.meshCacheMisses+=1
 	if not mesh_cache_building and mesh_cache.has(p):
 		var entry=mesh_cache[p]
 		if FileAccess.file_exists(entry.path) and entry.hash==mesh_fingerprint(p,parent_path):return ResourceLoader.load(entry.path,"ArrayMesh",ResourceLoader.CACHE_MODE_IGNORE)
@@ -395,7 +406,21 @@ func mesh_from_file(p,parent_path=""):
 	arrays[Mesh.ARRAY_INDEX]=f.get_buffer(indices*4).to_int32_array()
 	var mesh=ArrayMesh.new()
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+	var bytes=count*80+indices*4
+	if not mesh_cache_building and bytes<=terrain_mesh_budget:
+		while terrain_mesh_bytes+bytes>terrain_mesh_budget and not terrain_mesh_order.is_empty():
+			var oldest=terrain_mesh_order.pop_front();terrain_mesh_bytes-=terrain_mesh_resources[oldest].bytes;terrain_mesh_resources.erase(oldest);streaming_metrics.meshCacheEvictions+=1
+		terrain_mesh_resources[cache_key]={"mesh":mesh,"bytes":bytes};terrain_mesh_order.append(cache_key);terrain_mesh_bytes+=bytes
+	streaming_metrics.meshDecodeMs+=(Time.get_ticks_usec()-decode_start)/1000.;streaming_metrics.meshCacheBytes=terrain_mesh_bytes
 	return mesh
+
+func geographical_baseline_ready():
+	if context_node==null or context_node.mesh==null or regional_node==null or regional_node.mesh==null:return false
+	if baseline_water_node==null or baseline_water_node.mesh==null:return false
+	if get("eastern_surfaces")!=null:
+		for surface in get("eastern_surfaces"):
+			if surface.node==null or surface.node.mesh==null:return false
+	return true
 
 func load_tile(id):
 	var begin=Time.get_ticks_usec()
@@ -516,7 +541,7 @@ func make_water():
 	water_material.set_shader_parameter("global_land",global_textures.land)
 	water_material.set_shader_parameter("global_ocean",global_textures.ocean)
 	water_material.set_shader_parameter("global_shore",global_textures.shore)
-	var water=MeshInstance3D.new()
+	var water=MeshInstance3D.new();baseline_water_node=water
 	var plane=PlaneMesh.new()
 	plane.size=Vector2(40000,40000)
 	water.mesh=plane
@@ -621,6 +646,7 @@ func update_coverage():
 	var rectangles=PackedVector4Array()
 	for id in resident:
 		if id=="context":continue
+		if resident[id].reveal<1.:continue
 		var b=tiles[id].bounds
 		rectangles.append(Vector4((b.west+12)/87,(62-b.north)/50,(b.east+12)/87,(62-b.south)/50))
 	var count=rectangles.size()
@@ -629,7 +655,7 @@ func update_coverage():
 	context_node.material_override.set_shader_parameter("child_count",count)
 	var regional_rectangles=PackedVector4Array()
 	for id in resident:
-		if resident[id].descriptor.kind=="regional":
+		if resident[id].descriptor.kind=="regional" and resident[id].reveal>=1.:
 			var b=tiles[id].bounds
 			regional_rectangles.append(Vector4((b.west+12)/87,(62-b.north)/50,(b.east+12)/87,(62-b.south)/50))
 	var regional_count=regional_rectangles.size()
@@ -642,6 +668,7 @@ func update_coverage():
 		var detail_rects=PackedVector4Array()
 		for id in resident:
 			if not tiles[id].get("romaDetail",false):continue
+			if resident[id].reveal<1.:continue
 			var b=tiles[id].bounds
 			detail_rects.append(Vector4((b.west+12)/87,(62-b.north)/50,(b.east+12)/87,(62-b.south)/50))
 		parent_material.set_shader_parameter("child_count",detail_rects.size())
@@ -776,12 +803,16 @@ func _process(delta):
 		load_tile(queue.pop_front())
 		update_coverage()
 	cpu_clock=profile_stage("tile_upload",cpu_clock,stages)
+	var coverage_changed=false
 	for id in resident:
 		if id=="context":continue
+		var was_revealed=resident[id].reveal>=1.
 		resident[id].reveal=clamp((Time.get_ticks_msec()-resident[id].born)/650.0,0.0,1.0)
+		coverage_changed=coverage_changed or (not was_revealed and resident[id].reveal>=1.)
 		resident[id].node.material_override.set_shader_parameter("reveal",resident[id].reveal)
 		resident[id].node.material_override.set_shader_parameter("detail_strength",material_detail)
 		resident[id].node.material_override.set_shader_parameter("camera_distance",distance)
+	if coverage_changed:update_coverage()
 	if queue.is_empty() and city_root.get_child_count()==0 and resident.has("N37E15") and resident.N37E15.reveal>=1.0:
 		build_catana()
 	cpu_clock=profile_stage("city",cpu_clock,stages)
